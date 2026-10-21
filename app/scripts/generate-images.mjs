@@ -114,7 +114,19 @@ const extOf = (mime) => ({ "image/png": ".png", "image/jpeg": ".jpg", "image/web
 
 async function post(url, init, label) {
   for (let attempt = 1; attempt <= 4; attempt++) {
-    const res = await fetch(url, { ...init, headers: { Authorization: `Bearer ${KEY}`, ...(init.headers ?? {}) } });
+    let res;
+    try {
+      res = await fetch(url, { ...init, headers: { Authorization: `Bearer ${KEY}`, ...(init.headers ?? {}) } });
+    } catch (netErr) {
+      // Dropped connection or timeout: retry like a 5xx.
+      if (attempt < 4) {
+        const wait = 5000 * attempt;
+        console.log(`   ${label}: network error (${netErr.cause?.code ?? netErr.message}), retrying in ${wait / 1000}s`);
+        await sleep(wait);
+        continue;
+      }
+      throw netErr;
+    }
     if (res.ok) return res;
     const body = (await res.text()).slice(0, 400);
     if ((res.status === 429 || res.status >= 500) && attempt < 4) {
