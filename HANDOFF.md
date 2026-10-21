@@ -88,3 +88,10 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 - Sound: narration and hook lines are pre-rendered (gateway narrator, voice "ash") and live; music beds are generated locally with MusicGen (see Sound). Narrator voice choice (gateway vs Kokoro) is pending the owner's ear.
 - Latency: the gateway has a 2 to 4 s floor per call anywhere. The start gate calls `GET /api/dialogue?warm=1` (one 3-token model call) and `GET /api/tts`, which absorbs the gateway's slow first hop; measured after that, production replies take 3.4 to 4.4 s, the same as on a PC. `?probe=1` on the same route times both gateway hostnames from inside Vercel.
 - Open decision for the owner: the Neverwhere hero's name (default Rachel Mayhew).
+
+## Status 2026-10-22 00:15 (session cut off at usage limit)
+- Production (library-of-doors.vercel.app) verified: dialogue renders cleanly (no raw JSON, no overlapping text), music bed `cellar-dread` plays.
+- Music: `tools/gen_music.py` (MusicGen small, local, free) rendered throne, cellar-dread, the-years, cellar-wait into `app/public/clips/sandman/audio/music/`; `escape` and `library` may still be rendering (job was running). Then `cd app && node scripts/upload-clips.mjs`. Suno alternative: drop mp3s under the same ids.
+- Narrator: new "cinematic" DIRECTION in `tools/gen_narration.py` (faster, fewer dead pauses). Samples in `assets/audio/samples/narrator-1.1-OLD-ash.mp3` vs `narrator-1.1-NEW-ash-cinematic.mp3`. If the owner likes NEW: `python -I tools/gen_narration.py --engine gateway --voice ash --force` then upload.
+- Chatterbox (MIT, emotion dial) engine added to gen_narration.py; install into `tools/venv-tts` was in progress (`pip install chatterbox-tts imageio-ffmpeg`). Try: `tools/venv-tts/Scripts/python tools/gen_narration.py --engine chatterbox --voice assets/audio/samples/narrator-gptaudio-ash.mp3 --exaggeration 0.7 --cfg 0.3 1.1` with `NARRATION_OUT=assets/audio/samples/cb` to sample first (CPU, ~1 min/line).
+- Still parked: Aurie shots 1.1b and 1.2b-A face drift.
