@@ -82,7 +82,7 @@ function character(id, section, sheetLabel, portraitLabel, sheetRefs = []) {
 character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", [join(C("dream"), "photo.jpg")]);
 character("burgess", "### 3.2", "**Reference sheet:**", "**Hero portrait");
 character("alex-young", "### 3.3", "**Reference sheet:**", "**Hero portrait");
-character("alex-old", "### 3.4", "**Generate as an EDIT", "**Hero portrait", [join(C("alex-young"), "sheet.png")]);
+character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait");
 character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
