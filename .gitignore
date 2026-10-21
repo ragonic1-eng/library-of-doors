@@ -1,0 +1,21 @@
+# secrets
+.env
+.env.*
+ENV.env.txt
+models.json
+
+# personal and copyrighted material stays local
+*.pdf
+source-text/
+characters/
+
+# app build output and dependencies
+app/node_modules/
+app/.next/
+app/out/
+app/.vercel/
+app/*.tsbuildinfo
+app/next-env.d.ts
+
+# local tooling
+.claude/

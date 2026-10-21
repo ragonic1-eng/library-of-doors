@@ -1,0 +1,10 @@
+{
+  "name": "The Library of Doors",
+  "short_name": "Library",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#050507",
+  "theme_color": "#050507",
+  "icons": []
+}

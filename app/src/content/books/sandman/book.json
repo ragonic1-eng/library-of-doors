@@ -1,0 +1,288 @@
+{
+  "id": "sandman",
+  "title": "The Sandman",
+  "hero": "Aurie, Dream of the Endless",
+  "trait": "mercy",
+  "relic": "sand",
+  "start": "0.0",
+  "scenes": {
+    "0.0": {
+      "id": "0.0",
+      "title": "The Queen of Dreams",
+      "episodeTitle": "Episode 0 · The Queen of Dreams",
+      "pov": "3P",
+      "clips": [
+        "0.0a",
+        "0.0b",
+        "0.0c"
+      ],
+      "narration": "The Dreaming, before. A throne of stars. A nightmare on its knees. Lucienne with the day's report. Nothing in any world can touch her here.",
+      "hook": "“My lady?”",
+      "next": "1.1"
+    },
+    "1.1": {
+      "id": "1.1",
+      "title": "The ritual at Fawney Rig",
+      "pov": "3P",
+      "clips": [
+        "1.1b"
+      ],
+      "narration": "England, 1916. In a cellar beneath Fawney Rig, Roderick Burgess reads from a stolen book and reaches for Death. He catches her sister instead.",
+      "next": "1.2",
+      "episodeTitle": "Episode 1 · The Wrong Sister",
+      "hook": "Burgess, through the glass: “Death. At last.”"
+    },
+    "1.2": {
+      "id": "1.2",
+      "title": "Burgess's bargain",
+      "pov": "POV",
+      "clips": [
+        "1.2a"
+      ],
+      "narration": "Hours later. The cultists are gone. Burgess crouches at the glass, alone with what he has caught.",
+      "conversation": {
+        "character": "burgess",
+        "maxTurns": 6,
+        "canon": [
+          "The year is 1916. Burgess believes he has summoned Death and does not yet know this is Dream.",
+          "Aurie's helm, pouch of sand and ruby have already been taken from the circle and locked away.",
+          "Burgess wants three things: immortality, power, and the return of his son Randall who died at Gallipoli.",
+          "Burgess cannot open the sphere; the binding circle holds Aurie and only a broken circle frees her.",
+          "Aurie cannot be killed and cannot lie about what she is for long; the Endless are poor liars."
+        ],
+        "exits": {
+          "1.2.A": "Aurie says nothing at all and lets the silence answer him.",
+          "1.2.B": "Aurie threatens Burgess with what she will do to him when she is free.",
+          "1.2.C": "Aurie pretends to accept the bargain, offering him what he asks."
+        },
+        "opening": "You are awake. Good. I am Roderick Burgess, and you, creature, are mine. Give me what I want, and you will see daylight again. Immortality. Power. My son. Well?"
+      },
+      "choices": [
+        {
+          "id": "1.2.A",
+          "text": "Say nothing.",
+          "clip": "1.2b-A",
+          "effects": {},
+          "next": "1.3"
+        },
+        {
+          "id": "1.2.B",
+          "text": "Threaten him.",
+          "clip": "1.2b-B",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "vars": {
+              "dreaming": -10
+            }
+          },
+          "next": "1.3"
+        },
+        {
+          "id": "1.2.C",
+          "text": "Offer a false bargain.",
+          "clip": "1.2b-C",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "DECEIT": true
+            }
+          },
+          "next": "1.3"
+        }
+      ],
+      "hook": "He has no idea what he has caught. You do."
+    },
+    "1.3": {
+      "id": "1.3",
+      "title": "The world without dreams",
+      "pov": "3P",
+      "clips": [
+        "1.3a",
+        "1.3b",
+        "1.3c"
+      ],
+      "narration": "The years pass. A soldier who cannot sleep. A girl who cannot wake. And far away, a palace shedding its stone like sand.",
+      "next": "1.4",
+      "episodeTitle": "Episode 2 · Seventy Years",
+      "hook": "Burgess died old, and poor, and got nothing he asked for. His son inherited the glass."
+    },
+    "1.4": {
+      "id": "1.4",
+      "title": "Alex Burgess",
+      "pov": "POV",
+      "clips": [
+        "1.4a"
+      ],
+      "narration": "Roderick is dead. His son Alex, grey now, sits where his father sat. Behind him the guard, Paul, pretends not to listen.",
+      "conversation": {
+        "character": "alex",
+        "maxTurns": 6,
+        "canon": [
+          "It is the 1970s. Roderick Burgess died years ago; Alex inherited the house, the order and the prisoner.",
+          "Alex is frightened of Aurie and ashamed of his father. He has never once been cruel to her himself.",
+          "Paul McGuire is Alex's companion and guard and loves him; Paul will stop Alex from doing anything rash.",
+          "Alex could break the circle. He has thought about it for decades and never done it.",
+          "Aurie can show Alex a dream through the glass if she chooses; she cannot leave."
+        ],
+        "exits": {
+          "1.4.A": "Aurie shows Alex a dream of his father's cruelty to him as a child, so he knows she sees him.",
+          "1.4.B": "Aurie stares through Alex and gives him nothing.",
+          "1.4.C": "Aurie shows Alex a vision of his own death."
+        },
+        "opening": "I know you can hear me. I have always known. If I let you go... will you hurt me?"
+      },
+      "innerVoice": true,
+      "choices": [
+        {
+          "id": "1.4.A",
+          "text": "Show him you see him.",
+          "clip": "1.4b-A",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "ALEX_SEEN": true
+            }
+          },
+          "next": "1.5"
+        },
+        {
+          "id": "1.4.B",
+          "text": "Give him nothing.",
+          "clip": "1.4b-B",
+          "effects": {},
+          "next": "1.5"
+        },
+        {
+          "id": "1.4.C",
+          "text": "Show him his death.",
+          "clip": "1.4b-C",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            }
+          },
+          "next": "1.5"
+        }
+      ],
+      "episodeTitle": "Episode 3 · The Son",
+      "hook": "Years later, a guard yawns and slides down the glass. His breath fogs it."
+    },
+    "1.5": {
+      "id": "1.5",
+      "title": "Escape",
+      "pov": "3P",
+      "clips": [
+        "1.5a",
+        "1.5b",
+        "1.5c"
+      ],
+      "narration": "1988. A guard falls asleep against the glass. His breath fogs it. His dream is a door.",
+      "innerVoice": true,
+      "choices": [
+        {
+          "id": "1.5.A",
+          "text": "Eternal waking. Let him dream of waking forever, each time into something worse.",
+          "clip": "1.5d-A",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "ALEX_CURSED": true
+            }
+          },
+          "next": "2.1"
+        },
+        {
+          "id": "1.5.B",
+          "text": "One night of nightmares, then nothing.",
+          "clip": "1.5d-B",
+          "effects": {},
+          "next": "2.1"
+        },
+        {
+          "id": "1.5.C",
+          "text": "Walk away. He is old and already afraid.",
+          "clip": "1.5d-C",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            }
+          },
+          "next": "2.1"
+        }
+      ],
+      "episodeTitle": "Episode 4 · Breath on Glass",
+      "hook": "Somewhere a lantern has been burning for seventy-two years."
+    },
+    "2.1": {
+      "id": "2.1",
+      "title": "The library between",
+      "type": "hub",
+      "pov": "3P",
+      "clips": [
+        "2.1a",
+        "2.1b",
+        "2.1c"
+      ],
+      "narration": "The gates of Horn and Ivory, cracked. Beyond them, the library. Lucienne has kept a lantern lit for seventy years.",
+      "conversation": {
+        "character": "lucienne",
+        "maxTurns": 0,
+        "canon": [
+          "Aurie has been gone seventy-two years. The Dreaming decayed without her; many dreams and nightmares fled or faded.",
+          "Lucienne is the librarian of the Dreaming and keeps every book ever dreamed, including those never written.",
+          "On the far wall are three great locked doors carved NEVERWHERE, CORALINE and THE ALCHEMIST. Lucienne knows they are stories and that they will open in time; she will hint but not explain.",
+          "Aurie's three tools are still missing: the helm, the pouch of sand, the ruby. Lucienne knows they were stolen from Burgess's house and scattered.",
+          "The reading table has four empty places; Lucienne says nothing about what belongs there yet."
+        ],
+        "exits": {
+          "2.1.A": "Aurie answers her coldly, as a queen to a servant, and demands a report.",
+          "2.1.B": "Aurie tells Lucienne she is sorry to have been gone so long."
+        },
+        "opening": "My lady. Seventy-two years. We thought... forgive me. We thought you were dead. The realm is not as you left it."
+      },
+      "choices": [
+        {
+          "id": "2.1.A",
+          "text": "\"Then you thought wrong. Report.\"",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "end-ep1"
+        },
+        {
+          "id": "2.1.B",
+          "text": "\"I am sorry I was gone so long.\"",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "LUCIENNE_LOYAL": true
+            }
+          },
+          "next": "end-ep1"
+        }
+      ],
+      "episodeTitle": "The Library Between",
+      "hook": "Three doors. Four empty places at the table. And a librarian who will not say why."
+    },
+    "end-ep1": {
+      "id": "end-ep1",
+      "title": "End of the first night",
+      "type": "end",
+      "pov": "3P",
+      "clips": [],
+      "narration": "Three doors stand locked on the far wall. The helm, the sand and the ruby are out there somewhere. The story continues."
+    }
+  }
+}
