@@ -14,6 +14,22 @@ interface Turn {
 const PLACEHOLDER_SECONDS = 4; // how long a missing clip holds its title card
 // Clips are served from Vercel Blob in production and from /public locally.
 const CLIP_BASE = (process.env.NEXT_PUBLIC_CLIP_BASE ?? "/clips").replace(/\/$/, "");
+const MUSIC_VOLUME = 0.45; // bed level
+const DUCK_VOLUME = 0.16; // bed level while someone speaks
+const FADE_MS = 2500;
+
+/** Fade an audio element's volume to a target over ms; resolves when done. */
+function fadeTo(a: HTMLAudioElement, target: number, ms = FADE_MS): Promise<void> {
+  return new Promise((resolve) => {
+    const start = a.volume, t0 = performance.now();
+    const step = () => {
+      const k = Math.min(1, (performance.now() - t0) / ms);
+      a.volume = start + (target - start) * k;
+      if (k < 1) requestAnimationFrame(step); else resolve();
+    };
+    step();
+  });
+}
 
 /** Screen facts the layout depends on: true-phone portrait gets a rotate prompt; touch devices get no autofocus. */
 function useViewport() {
@@ -82,6 +98,23 @@ export default function Player({ book }: { book: Book }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  // Music bed: two players so one track can fade out while the next fades in; ducked while a voice plays.
+  const musicRef = useRef<{ a: HTMLAudioElement | null; track: string | null; voices: number }>({ a: null, track: null, voices: 0 });
+  const audioUrl = (kind: "music" | "narration" | "hooks", id: string) => `${CLIP_BASE}/${book.id}/audio/${kind}/${id}.mp3`;
+  const bedTarget = () => (musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
+  /** Play a voice file (narration, hook) with the music ducked; resolves when it ends or fails. */
+  const playVoice = useCallback((url: string, maxMs = 20000) => new Promise<boolean>((resolve) => {
+    const a = new Audio(url);
+    let done = false;
+    const finish = (ok: boolean) => { if (done) return; done = true; musicRef.current.voices = Math.max(0, musicRef.current.voices - 1); if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900); resolve(ok); };
+    a.onended = () => finish(true);
+    a.onerror = () => finish(false);
+    musicRef.current.voices += 1;
+    if (musicRef.current.a) void fadeTo(musicRef.current.a, DUCK_VOLUME, 500);
+    a.play().catch(() => finish(false));
+    setTimeout(() => finish(true), maxMs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [book.id]);
 
   const scene: Scene = book.scenes[sceneId];
   const clipUrl = (clip: string) => `${CLIP_BASE}/${book.id}/${clip}.mp4`;
@@ -110,6 +143,36 @@ export default function Player({ book }: { book: Book }) {
     saveProfile(p);
   }, [sceneId, profile, book.id]);
 
+  // Music follows the scene; a scene without a track keeps the previous one, "none" stops it.
+  const wantedTrack = scene.music ?? musicRef.current.track;
+  useEffect(() => {
+    if (!started) return;
+    const m = musicRef.current;
+    const next = wantedTrack === "none" ? null : wantedTrack ?? null;
+    if (next === m.track) return;
+    const old = m.a;
+    if (old) void fadeTo(old, 0).then(() => { old.pause(); old.src = ""; });
+    m.track = next;
+    m.a = null;
+    if (!next) return;
+    const a = new Audio(audioUrl("music", next));
+    a.loop = true;
+    a.volume = 0;
+    a.play().then(() => void fadeTo(a, bedTarget())).catch(() => { /* missing track or blocked: silence */ });
+    m.a = a;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wantedTrack, started]);
+
+  // Stop the bed when leaving the page.
+  useEffect(() => () => { musicRef.current.a?.pause(); }, []);
+
+  // Narration audio at the start of a scene (pre-rendered file; silent if absent).
+  useEffect(() => {
+    if (!started || phase !== "clips" || clipIndex !== 0 || !scene.narration) return;
+    void playVoice(audioUrl("narration", scene.id), 25000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sceneId, started]);
+
   // Remember the outgoing clip for the cross-fade.
   const lastSrc = useRef<string | undefined>(undefined);
   useEffect(() => {
@@ -126,6 +189,11 @@ export default function Player({ book }: { book: Book }) {
         audioRef.current?.pause();
         const a = new Audio(URL.createObjectURL(blob));
         audioRef.current = a;
+        musicRef.current.voices += 1;
+        if (musicRef.current.a) void fadeTo(musicRef.current.a, DUCK_VOLUME, 400);
+        const release = () => { musicRef.current.voices = Math.max(0, musicRef.current.voices - 1); if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900); };
+        a.onended = release;
+        a.onerror = release;
         await a.play();
       } catch {
         if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -227,7 +295,10 @@ export default function Player({ book }: { book: Book }) {
     };
     if (line) {
       setHook(line);
-      setTimeout(jump, 3200);
+      let jumped = false;
+      const go = () => { if (!jumped) { jumped = true; jump(); } };
+      void playVoice(audioUrl("hooks", scene.id), 7000).then(() => setTimeout(go, 600));
+      setTimeout(go, 7500);
     } else {
       jump();
     }
@@ -273,7 +344,10 @@ export default function Player({ book }: { book: Book }) {
     setHistory([...hist, ...(r.narration ? [{ role: "narration" as const, text: r.narration }] : []), { role: "character", text: r.dialogue }]);
     if (r.mood) setMood(r.mood);
     void speak(r.dialogue, who);
-    if (r.inner_thought) setInner(r.inner_thought);
+    if (r.inner_thought) {
+      setInner(r.inner_thought);
+      setTimeout(() => setInner((cur) => (cur === r.inner_thought ? null : cur)), 7000);
+    }
     // Consequences: her words change the story. Apply fired consequences, the speaker's feelings and memory together.
     let p = profileRef.current;
     if (p) {
@@ -393,7 +467,7 @@ export default function Player({ book }: { book: Book }) {
         <section className="talk">
           <div className="transcript">
             {history.slice(vp.h < 520 ? -2 : -4).map((t, i) => (
-              <p key={i} className={t.role}>
+              <p key={i} className={t.role === "narration" ? "aside" : t.role}>
                 {t.role === "character" ? <span className="who">{speakerName}</span> : t.role === "player" ? <span className="who">{profile.name}</span> : null}
                 {t.text}
               </p>

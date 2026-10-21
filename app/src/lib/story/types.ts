@@ -57,6 +57,7 @@ export interface Scene {
   clips: string[]; // played in order; files live at /clips/<bookId>/<clip>.mp4
   narration?: string; // fallback bridging text (the director may rewrite it)
   narrationIf?: { flag: string; text: string }[]; // extra sentences appended when earlier flags are set
+  music?: string; // music track id for this scene (plays until a scene names another; "none" stops it)
   hook?: string; // one-line cliffhanger shown for a few seconds as the scene ends (engagement-design.md §6)
   episodeTitle?: string; // micro-episode title shown as a card when this scene opens
   innerVoice?: boolean; // ask the AI for Aurie's private thought before choices
