@@ -229,6 +229,7 @@ Each plate: wide establishing shot, no people unless stated, one surreal detail.
 **4.1 Fawney Rig cellar, 1916, the ritual**
 ```
 A vaulted cellar beneath an English manor, 1916, barrel-vaulted in rough grey limestone sweating with damp, flagstone floor worn into shallow dips by centuries of feet. In the centre a magic circle three metres across chalked in thick white lines with Greek and Enochian letters, brass instruments at its cardinal points: an astrolabe, a censer trailing resinous smoke, a bowl of water, a knife. At the circle's heart a huge glass sphere, taller than a man, hand-blown with faint ripples and seams, resting in a low cradle of black iron. Twenty tall beeswax candles on iron spikes, their flames the only light, amber and unsteady, throwing the long shadows of hooded figures just out of frame up the vault. A carved wooden lectern with an open vellum grimoire, its pages weighted with a human skull. Wax drips frozen down the candle spikes; soot stains above old sconces. Smoke layers hang in the air at chest height. Cold blue leaks from a drain grate in one corner.
+SCALE (critical, every cellar image): the glass sphere is about 2.2 metres across, resting directly on the floor in its low iron cradle at the centre of the circle, big enough for a tall woman to stand inside, its top well above a man's head. It is never a crystal ball, never on a stand, table or crate. One single wide photograph, never a collage or grid.
 SURREAL DETAIL: the chalk lines of the circle are very faintly luminous, and the dust inside the circle hangs perfectly still while the dust outside drifts.
 [Style Bible]
 ```
@@ -236,6 +237,7 @@ SURREAL DETAIL: the chalk lines of the circle are very faintly luminous, and the
 **4.2 Fawney Rig cellar, 1970s, the long wait**
 ```
 The same vaulted limestone cellar fifty years on. Two bare incandescent bulbs on a twisted brown cable cast a sickly yellow light; one flickers. The chalk circle is faded, scuffed, re-chalked many times in slightly different hands. The glass sphere is clouded grey inside, dusty outside, a hand-print wiped clear at eye level. The brass instruments are green with verdigris and strung with cobwebs. A folding card table with a dented thermos, a tin mug, a transistor radio, a newspaper; a wooden chair; an empty wheelchair folded against the wall. Water stains and a slow drip from the vault. Cigarette ends swept into a corner.
+SCALE (critical, every cellar image): the glass sphere is about 2.2 metres across, resting directly on the floor in its low iron cradle at the centre of the circle, big enough for a tall woman to stand inside, its top well above a man's head. It is never a crystal ball, never on a stand, table or crate. One single wide photograph, never a collage or grid.
 SURREAL DETAIL: the hand-print wiped on the sphere is on the inside of the glass.
 [Style Bible]
 ```
@@ -243,6 +245,7 @@ SURREAL DETAIL: the hand-print wiped on the sphere is on the inside of the glass
 **4.3 Fawney Rig cellar, 1988, the escape**
 ```
 The same cellar at dawn. A single high barred window admits a hard shaft of grey-blue morning light that cuts diagonally through thick drifting dust. The chalk circle is broken, a scuff mark dragged through its line. The glass sphere stands empty, a web of cracks spreading from a single point on its inner surface, a fine spray of glass dust on the floor beneath. The wooden chair is overturned. A paperback lies face down. The bulbs are dark. Everything is still except the dust in the beam.
+SCALE (critical, every cellar image): the glass sphere is about 2.2 metres across, resting directly on the floor in its low iron cradle at the centre of the circle, big enough for a tall woman to stand inside, its top well above a man's head. It is never a crystal ball, never on a stand, table or crate. One single wide photograph, never a collage or grid.
 SURREAL DETAIL: footprints in the dust lead from the centre of the circle to the door, bare and narrow, and there are no footprints leading in.
 [Style Bible]
 ```
