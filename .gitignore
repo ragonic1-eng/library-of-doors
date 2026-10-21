@@ -6,8 +6,8 @@ models.json
 
 # personal and copyrighted material stays local
 *.pdf
-source-text/
-characters/
+/source-text/
+/characters/
 
 # app build output and dependencies
 app/node_modules/
