@@ -66,7 +66,7 @@ Clip IDs are what the app will reference. "3P" = third-person, "POV" = first-per
 | | 2.1b | POV | 10 s | Slow pan along the Doors wall: three dark locked doors carved *Neverwhere*, *Coraline*, *The Alchemist*; the empty reading table. |
 | | 2.1c | 3P | 5 s | Lucienne turns to the player: "Every story has a door, my lord. These are not yet open." |
 
-Totals: **26 clips** (21 base + 5 decision variants), 11 with the hero visible. Plus 9 location stills. Scene 2.1 doubles as the series hub; see `series-bible.md` §2 and §9.
+Totals: **24 scene clips** (19 base + 5 decision variants), 8 with the hero visible, plus **21 reaction loops** (section 3b) and 10 location plates. The machine-readable shot list, with keyframe and motion prompts, is `production/ep1-shots.json`. Scene 2.1 doubles as the series hub; see `series-bible.md` §2 and §9.
 
 ---
 

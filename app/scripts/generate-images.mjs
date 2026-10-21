@@ -109,6 +109,32 @@ for (const id of ["aurie", "burgess", "alex-young", "alex-old", "lucienne", "pau
   }
 }
 
+// Keyframes (production/ep1-shots.json): the exact first frame of each clip, composed from approved images.
+const SHOTS_FILE = join(ROOT, "production", "ep1-shots.json");
+if (existsSync(SHOTS_FILE)) {
+  const shots = JSON.parse(readFileSync(SHOTS_FILE, "utf8"));
+  const K = (id) => join(ROOT, "assets", "keyframes", "sandman", id);
+  const single = "One single cinematic photograph in 16:9, never a collage, grid or split screen, no text.";
+  for (const s of shots.shots) {
+    if (!s.keyframe?.prompt) continue; // shots that `use` an approved image need no keyframe
+    jobs.push({
+      id: `kf-${s.id}`, group: "keyframes", dir: join(K(s.id), "candidates"), approved: join(K(s.id), "keyframe.png"),
+      prompt: () => `${s.keyframe.prompt}\nAll people must match their reference images exactly: same faces, hair, spectacles, costumes and builds.\n${single}\n${STYLE}`,
+      refs: s.keyframe.refs.map((r) => join(ROOT, r)),
+    });
+  }
+  for (const [who, c] of Object.entries(shots.react.characters)) {
+    for (const [mood, feel] of Object.entries(shots.react.moods)) {
+      const id = `react-${who}-${mood}`;
+      jobs.push({
+        id: `kf-${id}`, group: "react-keyframes", dir: join(K(id), "candidates"), approved: join(K(id), "keyframe.png"),
+        prompt: () => `${c.setting} Expression: ${feel}, carried by the whole face, never a caricature. The person is exactly the one in the reference sheets.\n${single}\n${STYLE}`,
+        refs: c.refs.map((r) => join(ROOT, r)),
+      });
+    }
+  }
+}
+
 const plates = [
   ["cellar-1916", "**4.1 "],
   ["cellar-1970s", "**4.2 "],

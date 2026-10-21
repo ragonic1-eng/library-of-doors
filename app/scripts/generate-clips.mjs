@@ -1,0 +1,147 @@
+#!/usr/bin/env node
+// Episode 1 clip generator: approved keyframe -> image-to-video -> mp4.
+//
+// Reads production/ep1-shots.json. Each clip animates its approved keyframe
+// (assets/keyframes/sandman/<id>/keyframe.png, or the image a shot `use`s).
+// Finished clips land in assets/clips/sandman/ and are never regenerated or re-charged
+// unless --force. Submitted task ids are kept in a ledger so an interrupted run resumes
+// by polling instead of paying again.
+//
+// Usage (from the app folder):
+//   npm run clips -- list                     status of every clip
+//   npm run clips -- scenes [--dry]           all scene clips that are ready
+//   npm run clips -- react  [--dry]           all reaction loops that are ready
+//   npm run clips -- one <clip-id> [--dry]    one clip, e.g. one 1.5b or one react-burgess-hostile
+//   options: --model <id> overrides the model for this run; --force regenerates; --parallel 3
+
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { dirname, join, resolve, extname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const HERE = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(HERE, "..", "..");
+for (const f of [join(ROOT, ".env"), join(ROOT, "app", ".env.local")]) {
+  if (existsSync(f)) try { process.loadEnvFile(f); } catch { /* ignore */ }
+}
+const BASE = (process.env.INFISTAR_BASE_URL ?? "https://infistar.ai/v1").replace(/\/$/, "");
+const KEY = process.env.INFISTAR_API_KEY ?? "";
+const MODELS = { video: process.env.MODEL_VIDEO ?? "kling-v2-6", hero: process.env.MODEL_VIDEO_HERO ?? "kling-video-o1" };
+
+const argv = process.argv.slice(2);
+const cmd = argv[0] ?? "list";
+const dry = argv.includes("--dry");
+const force = argv.includes("--force");
+const modelOverride = argv.includes("--model") ? argv[argv.indexOf("--model") + 1] : null;
+const parallel = argv.includes("--parallel") ? Math.max(1, parseInt(argv[argv.indexOf("--parallel") + 1], 10) || 2) : 2;
+
+const book = "sandman";
+const spec = JSON.parse(readFileSync(join(ROOT, "production", "ep1-shots.json"), "utf8"));
+const KF = (id) => join(ROOT, "assets", "keyframes", book, id, "keyframe.png");
+const OUT = join(ROOT, "assets", "clips", book);
+const LEDGER = join(OUT, "_tasks.json");
+mkdirSync(join(OUT, "react"), { recursive: true });
+const ledger = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, "utf8")) : {};
+const saveLedger = () => writeFileSync(LEDGER, JSON.stringify(ledger, null, 2));
+const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
+
+// ---------- clip list ----------
+/** @type {{id:string, kind:string, model:string, seconds:number, keyframe:string, prompt:string, out:string}[]} */
+const clips = [];
+for (const s of spec.shots) {
+  clips.push({
+    id: s.id, kind: "scenes", model: s.model, seconds: s.seconds,
+    keyframe: s.keyframe.use ? join(ROOT, s.keyframe.use) : KF(s.id),
+    prompt: `${s.motion} ${spec.camera} ${spec.keep}`,
+    out: join(OUT, `${s.id}.mp4`),
+  });
+}
+for (const who of Object.keys(spec.react.characters)) {
+  for (const [mood, feel] of Object.entries(spec.react.moods)) {
+    const id = `react-${who}-${mood}`;
+    clips.push({
+      id, kind: "react", model: "video", seconds: spec.react.seconds, keyframe: KF(id),
+      prompt: `The character is ${feel}. ${spec.react.motion} ${spec.camera} ${spec.keep}`,
+      out: join(OUT, "react", `${who}-${mood}.mp4`),
+    });
+  }
+}
+
+const status = (c) => existsSync(c.out) ? "done" : ledger[c.id] ? `submitted (${ledger[c.id].model})` : existsSync(c.keyframe) ? "ready" : `waiting for ${rel(c.keyframe)}`;
+
+// ---------- gateway ----------
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const H = () => ({ Authorization: `Bearer ${KEY}` });
+const mimeOf = (f) => ({ ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" })[extname(f).toLowerCase()] ?? "image/png";
+
+async function submit(c, model) {
+  const fd = new FormData();
+  fd.append("model", model);
+  fd.append("prompt", c.prompt);
+  fd.append("seconds", String(c.seconds));
+  fd.append("size", "1280x720");
+  fd.append("input_reference", new Blob([readFileSync(c.keyframe)], { type: mimeOf(c.keyframe) }), "keyframe" + extname(c.keyframe));
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    let res;
+    try { res = await fetch(`${BASE}/videos`, { method: "POST", headers: H(), body: fd }); }
+    catch (e) { if (attempt < 3) { await sleep(5000 * attempt); continue; } throw e; }
+    const text = await res.text();
+    if (res.ok) return JSON.parse(text).id;
+    // 429 = route restricted or busy: worth one or two slow retries. Other errors: report, do not retry.
+    if (res.status === 429 && attempt < 3) { console.log(`   ${c.id}: 429 busy/restricted, retrying in ${20 * attempt}s`); await sleep(20000 * attempt); continue; }
+    throw new Error(`HTTP ${res.status} ${text.slice(0, 220)}`);
+  }
+}
+
+async function waitAndSave(c, taskId) {
+  for (let i = 0; i < 120; i++) {
+    let j;
+    try { j = await (await fetch(`${BASE}/videos/${taskId}`, { headers: H() })).json(); }
+    catch { await sleep(10000); continue; }
+    if (j.status === "completed") {
+      const url = j.metadata?.url ?? j.video_url ?? j.url;
+      const res = url ? await fetch(url) : await fetch(`${BASE}/videos/${taskId}/content`, { headers: H() });
+      if (!res.ok) throw new Error(`download HTTP ${res.status}`);
+      writeFileSync(c.out, Buffer.from(await res.arrayBuffer()));
+      delete ledger[c.id]; saveLedger();
+      return;
+    }
+    if (j.status === "failed") { delete ledger[c.id]; saveLedger(); throw new Error(`task failed: ${JSON.stringify(j.error ?? j).slice(0, 220)}`); }
+    await sleep(10000);
+  }
+  throw new Error("still running after 20 minutes; rerun the same command later to resume");
+}
+
+async function run(c) {
+  const model = modelOverride ?? MODELS[c.model];
+  if (existsSync(c.out) && !force) return console.log(`✓ ${c.id} already done`);
+  if (!existsSync(c.keyframe)) return console.log(`… ${c.id} skipped: no approved keyframe yet`);
+  if (dry) return console.log(`▶ ${c.id}  ${model}, ${c.seconds}s, from ${rel(c.keyframe)}`);
+  try {
+    let taskId = ledger[c.id]?.task;
+    if (taskId) console.log(`↻ ${c.id} resuming task ${taskId}`);
+    else {
+      taskId = await submit(c, model);
+      ledger[c.id] = { task: taskId, model, at: new Date().toISOString() }; saveLedger();
+      console.log(`▶ ${c.id} submitted to ${model} (${c.seconds}s)`);
+    }
+    await waitAndSave(c, taskId);
+    console.log(`✓ ${c.id} saved ${rel(c.out)}`);
+  } catch (e) {
+    console.log(`✗ ${c.id} FAILED: ${e.message}`);
+  }
+}
+
+async function main() {
+  if (cmd === "list") {
+    for (const c of clips) console.log(`${c.kind.padEnd(7)} ${c.id.padEnd(26)} ${status(c)}`);
+    return;
+  }
+  if (!KEY && !dry) { console.error("No INFISTAR_API_KEY in the project .env. Nothing was sent."); process.exit(1); }
+  const selected = cmd === "one" ? clips.filter((c) => c.id === argv[1]) : clips.filter((c) => c.kind === cmd);
+  if (!selected.length) { console.error(`Nothing matches "${argv.slice(0, 2).join(" ")}". Try: list, scenes, react, one <clip-id>.`); process.exit(1); }
+  console.log(`${dry ? "DRY RUN, nothing sent. " : ""}${selected.length} clip(s), ${parallel} at a time.`);
+  const queue = [...selected];
+  await Promise.all(Array.from({ length: parallel }, async () => { while (queue.length) await run(queue.shift()); }));
+}
+
+main().catch((e) => { console.error(e); process.exit(1); });
