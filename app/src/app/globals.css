@@ -249,3 +249,75 @@ button.ghost { border-color: transparent; color: var(--dim); }
 }
 .transcript .narration { color: #c9b98f; font-style: italic; }
 .narration-echo { color: var(--accent); font-style: italic; }
+
+/* ===================== Mobile layer: phones and foldables ===================== */
+
+/* Start gate: the one tap that unlocks sound, fullscreen and landscape lock */
+.gate {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem;
+  text-align: center; padding: 2rem; cursor: pointer; user-select: none;
+  background: radial-gradient(ellipse at 50% 40%, #1a1612 0%, #0a0908 55%, #000 100%);
+}
+.gate-title { font-size: clamp(1.8rem, 5vw, 3.5rem); letter-spacing: 0.12em; }
+.gate-sub { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; }
+.gate-cta { margin-top: 1.5rem; padding: 0.9rem 1.6rem; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); letter-spacing: 0.08em; animation: breathe 2.6s ease-in-out infinite; }
+.gate-hint { color: var(--dim); font-size: 0.8rem; margin-top: 0.4rem; }
+@keyframes breathe { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
+
+/* Rotate prompt: only for a phone held upright */
+.rotate {
+  position: absolute; inset: 0; z-index: 20;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+  background: rgba(5, 5, 7, 0.96); text-align: center; padding: 2rem;
+}
+.rotate-icon { font-size: 3rem; color: var(--accent); animation: spin 3s linear infinite; }
+.rotate-sub { color: var(--dim); font-size: 0.85rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Cross-fade: the old clip's last frame sits under the new one until it is playing */
+.film.prev { position: absolute; inset: 0; z-index: 0; }
+.film:not(.prev):not(.react) { position: absolute; inset: 0; z-index: 1; animation: fade-in 0.5s ease both; }
+.prefetch { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* Fit: wide phones crop a little (biased to keep faces); square-ish foldable screens letterbox instead */
+.film { object-position: center 40%; }
+@media (max-aspect-ratio: 13/10) {
+  .film { object-fit: contain; object-position: center 38%; background: #000; }
+}
+
+/* Touch targets and safe areas */
+.touch .say input { font-size: 16px; min-height: 44px; }
+.touch button { min-height: 44px; }
+.touch .options button { padding: 0.9rem 1rem; }
+.talk, .choose { padding-bottom: calc(1.25rem + env(safe-area-inset-bottom)); padding-left: max(clamp(1rem, 6vw, 5rem), env(safe-area-inset-left)); padding-right: max(clamp(1rem, 6vw, 5rem), env(safe-area-inset-right)); }
+.options { max-height: 42dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+/* Short landscape phone (about 450px tall): tighter panel so the picture stays visible */
+@media (max-height: 520px) {
+  .talk { padding-top: 0.5rem; padding-bottom: calc(0.5rem + env(safe-area-inset-bottom)); }
+  .transcript p { margin: 0.15rem 0; font-size: 0.95rem; line-height: 1.3; }
+  .say { margin-top: 0.4rem; gap: 0.4rem; }
+  .say input { padding: 0.45rem 0.7rem; }
+  button { padding: 0.45rem 0.8rem; }
+  .options { gap: 0.3rem; max-height: 34dvh; }
+  .options button { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+  .narration { top: 5%; font-size: 0.95rem; max-width: 85vw; }
+  .inner { top: 6%; font-size: 0.95rem; }
+  .epcard { font-size: 1rem; letter-spacing: 0.2em; }
+  .hook { font-size: 1.1rem; }
+  .ripple { top: 16%; font-size: 0.9rem; }
+  .endcard h2 { font-size: 1.2rem; }
+}
+
+/* Title screen doors on small screens */
+@media (max-width: 760px) {
+  .doors { gap: 0.6rem; bottom: calc(4% + env(safe-area-inset-bottom)); }
+  .door { width: 7.2rem; padding: 0.7rem; }
+  .door-title { font-size: 0.85rem; }
+  .title-plate h1 { font-size: clamp(1.6rem, 7vw, 3rem); }
+}
+@media (max-height: 520px) and (max-width: 1100px) {
+  .title-plate h1 { font-size: 2rem; }
+  .door { width: 6.5rem; aspect-ratio: 2 / 2.6; padding: 0.6rem; }
+}

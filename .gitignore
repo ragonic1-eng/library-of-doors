@@ -31,3 +31,6 @@ app/next-env.d.ts
 
 __pycache__/
 *.pyc
+
+.vercel
+/.vercel/
