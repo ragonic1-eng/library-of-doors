@@ -50,6 +50,11 @@ function available(scene: Scene, p: Profile, bookId: string) {
   return { exits, consequences };
 }
 
+/** Warm-up ping from the start gate: wakes this function before the first real line, no model call. */
+export async function GET() {
+  return NextResponse.json({ ok: true, model: models.dialogue, mock: mockMode });
+}
+
 export async function POST(req: Request) {
   const body = (await req.json()) as Body;
   const book = getBook(body.bookId);

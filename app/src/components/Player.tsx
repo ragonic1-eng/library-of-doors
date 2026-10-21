@@ -305,7 +305,18 @@ export default function Player({ book }: { book: Book }) {
     const resuming = sceneId !== book.start;
     return (
       <main className="stage">
-        <div className="gate" onClick={() => { void enterImmersive(); setStarted(true); }} role="button" tabIndex={0}>
+        <div
+          className="gate"
+          role="button"
+          tabIndex={0}
+          onClick={() => {
+            void enterImmersive();
+            // Wake the dialogue and voice functions now, so the first real reply is not a cold start.
+            void fetch("/api/dialogue").catch(() => undefined);
+            void fetch("/api/tts").catch(() => undefined);
+            setStarted(true);
+          }}
+        >
           <div className="gate-title">{book.title}</div>
           <div className="gate-sub">{resuming ? `Resume: ${scene.title}` : "for Aurie"}</div>
           <div className="gate-cta">{vp.touch ? "Touch the glass to begin" : "Click to begin"}</div>

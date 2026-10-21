@@ -5,6 +5,11 @@ import { gatewayJson, mockMode, models } from "@/lib/server/gateway";
 // Voice through the gateway. The key has no dedicated TTS model, so an audio chat model
 // (gpt-audio-1.5) is directed like a voice actor: it speaks the line verbatim, in character.
 // Voice and direction live on the character card; override the voice with env TTS_VOICE_<character>.
+/** Warm-up ping from the start gate. */
+export async function GET() {
+  return NextResponse.json({ ok: true, model: models.tts, mock: mockMode });
+}
+
 export async function POST(req: Request) {
   const { text, bookId, character } = (await req.json()) as { text: string; bookId: string; character: string };
   if (!text?.trim()) return NextResponse.json({ error: "empty" }, { status: 400 });
