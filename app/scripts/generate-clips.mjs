@@ -73,6 +73,12 @@ for (const who of Object.keys(spec.react.characters)) {
   }
 }
 
+// Reaction loops render in priority order, so a budget stop leaves only the least-used moods missing
+// (the player falls back to neutral for any missing mood).
+const MOOD_PRIORITY = ["neutral", "hostile", "warm", "afraid", "wary", "grieving", "amused"];
+const moodRank = (c) => (c.kind === "react" ? MOOD_PRIORITY.indexOf(c.id.split("-").pop()) : -1);
+clips.sort((a, b) => (a.kind === b.kind && a.kind === "react" ? moodRank(a) - moodRank(b) : 0));
+
 const status = (c) => existsSync(c.out) ? "done" : ledger[c.id] ? `submitted (${ledger[c.id].model})` : existsSync(c.keyframe) ? "ready" : `waiting for ${rel(c.keyframe)}`;
 
 // ---------- gateway ----------
