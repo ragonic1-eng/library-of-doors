@@ -12,7 +12,9 @@
 //   npm run clips -- scenes [--dry]           all scene clips that are ready
 //   npm run clips -- react  [--dry]           all reaction loops that are ready
 //   npm run clips -- one <clip-id> [--dry]    one clip, e.g. one 1.5b or one react-burgess-hostile
-//   options: --model <id> overrides the model for this run; --force regenerates; --parallel 3
+//   npm run clips -- spend                    real spend since the baseline, against the cap
+//   options: --model <id> overrides the model for this run; --force regenerates; --parallel 3;
+//            --budget <yuan> (default 200, or CLIP_BUDGET_CNY) stops before real spend would exceed it
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join, resolve, extname } from "node:path";
@@ -33,6 +35,11 @@ const dry = argv.includes("--dry");
 const force = argv.includes("--force");
 const modelOverride = argv.includes("--model") ? argv[argv.indexOf("--model") + 1] : null;
 const parallel = argv.includes("--parallel") ? Math.max(1, parseInt(argv[argv.indexOf("--parallel") + 1], 10) || 2) : 2;
+// Budget cap in yuan, enforced on REAL charges read from the gateway's usage counter.
+// The baseline is recorded once (first run) in assets/clips/<book>/_spend.json.
+const budget = argv.includes("--budget") ? Number(argv[argv.indexOf("--budget") + 1]) : Number(process.env.CLIP_BUDGET_CNY ?? 200);
+const QUOTA_PER_CNY = Number(process.env.QUOTA_PER_CNY ?? 500000); // gateway quota units per yuan (verify with `npm run clips -- spend`)
+const RATE_CNY_PER_SEC = Number(process.env.CLIP_RATE_CNY_PER_SEC ?? 0.6); // used only to look ahead one clip
 
 const book = "sandman";
 const spec = JSON.parse(readFileSync(join(ROOT, "production", "ep1-shots.json"), "utf8"));
@@ -71,6 +78,34 @@ const status = (c) => existsSync(c.out) ? "done" : ledger[c.id] ? `submitted (${
 // ---------- gateway ----------
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const H = () => ({ Authorization: `Bearer ${KEY}` });
+
+// ---------- budget ----------
+const SPEND = join(OUT, "_spend.json");
+async function usedQuota() {
+  const r = await fetch(`${new URL(BASE).origin}/api/usage/token`, { headers: H() });
+  const j = await r.json();
+  const used = j?.data?.total_used;
+  if (typeof used !== "number") throw new Error("gateway did not report usage; refusing to spend without a working cap");
+  return used;
+}
+async function spentCny() {
+  const now = await usedQuota();
+  let s = existsSync(SPEND) ? JSON.parse(readFileSync(SPEND, "utf8")) : null;
+  if (!s) { s = { baselineQuota: now, at: new Date().toISOString(), budgetCny: budget }; writeFileSync(SPEND, JSON.stringify(s, null, 2)); }
+  return (now - s.baselineQuota) / QUOTA_PER_CNY;
+}
+let budgetHit = false;
+async function canAfford(c) {
+  if (budgetHit) return false;
+  const spent = await spentCny();
+  const next = c.seconds * RATE_CNY_PER_SEC * 1.5; // 1.5x headroom in case 1080p bills above the listed 720p rate
+  if (spent + next > budget) {
+    budgetHit = true;
+    console.log(`■ budget stop: spent ¥${spent.toFixed(2)} of ¥${budget}; next clip (${c.id}) could cost up to ¥${next.toFixed(2)}. Nothing more will be submitted.`);
+    return false;
+  }
+  return true;
+}
 const mimeOf = (f) => ({ ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" })[extname(f).toLowerCase()] ?? "image/png";
 
 async function submit(c, model) {
@@ -120,6 +155,7 @@ async function run(c) {
     let taskId = ledger[c.id]?.task;
     if (taskId) console.log(`↻ ${c.id} resuming task ${taskId}`);
     else {
+      if (!(await canAfford(c))) return;
       taskId = await submit(c, model);
       ledger[c.id] = { task: taskId, model, at: new Date().toISOString() }; saveLedger();
       console.log(`▶ ${c.id} submitted to ${model} (${c.seconds}s)`);
@@ -134,6 +170,11 @@ async function run(c) {
 async function main() {
   if (cmd === "list") {
     for (const c of clips) console.log(`${c.kind.padEnd(7)} ${c.id.padEnd(26)} ${status(c)}`);
+    return;
+  }
+  if (cmd === "spend") {
+    const spent = await spentCny();
+    console.log(`Spent on clips since baseline: ¥${spent.toFixed(2)} of ¥${budget} (raw quota now ${await usedQuota()}).`);
     return;
   }
   if (!KEY && !dry) { console.error("No INFISTAR_API_KEY in the project .env. Nothing was sent."); process.exit(1); }

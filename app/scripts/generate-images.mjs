@@ -124,12 +124,19 @@ if (existsSync(SHOTS_FILE)) {
     });
   }
   for (const [who, c] of Object.entries(shots.react.characters)) {
+    // Once a base frame exists (assets/keyframes/sandman/react-<who>-base.png), every mood is an EDIT of it,
+    // so all seven loops share one framing and the player can cross-fade between them invisibly.
+    const base = join(ROOT, "assets", "keyframes", "sandman", `react-${who}-base.png`);
+    const expr = c.refs.find((r) => r.includes("expressions"));
     for (const [mood, feel] of Object.entries(shots.react.moods)) {
       const id = `react-${who}-${mood}`;
+      const hasBase = existsSync(base);
       jobs.push({
         id: `kf-${id}`, group: "react-keyframes", dir: join(K(id), "candidates"), approved: join(K(id), "keyframe.png"),
-        prompt: () => `${c.setting} Expression: ${feel}, carried by the whole face, never a caricature. The person is exactly the one in the reference sheets.\n${single}\n${STYLE}`,
-        refs: c.refs.map((r) => join(ROOT, r)),
+        prompt: () => hasBase
+          ? `Edit the first attached photograph. Keep it exactly the same: identical framing, camera position, lens, lighting, background, pose, hands, clothing and props, pixel for pixel wherever possible. Change ONLY the facial expression of the person to: ${feel}. The expression is carried by the whole face (eyes, brows, mouth, jaw), subtle and real, never a caricature; the second image shows how this person's face expresses emotions.\n${STYLE}`
+          : `${c.setting} Expression: ${feel}, carried by the whole face, never a caricature. The person is exactly the one in the reference sheets.\n${single}\n${STYLE}`,
+        refs: hasBase ? [base, ...(expr ? [join(ROOT, expr)] : [])] : c.refs.map((r) => join(ROOT, r)),
       });
     }
   }
