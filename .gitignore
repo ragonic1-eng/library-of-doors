@@ -22,3 +22,6 @@ app/next-env.d.ts
 
 # generated images and clips stay local until approved
 /assets/
+
+# generated video is served locally; uploaded to Vercel Blob for deploy
+/app/public/clips/

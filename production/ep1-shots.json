@@ -4,143 +4,300 @@
   "keep": "Keep every face, hair, costume and the set exactly as in the reference image. Photoreal, film grain, no text, no morphing, no extra people.",
   "shots": [
     {
-      "id": "0.0a", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/throne-room/plate.png", "characters/aurie/sheet.png", "characters/aurie/poses.png"],
-        "prompt": "Composite these references into one wide cinematic photograph: the woman from the character sheet (Aurie) sits upright on the black glass throne in the starfield throne room from the plate, one hand on the armrest, utterly still and regal, her long black hair lifting in its own slow wind. The pale-suited man kneels before her with his head bowed. Lucienne stands at her shoulder with lantern and ledger. Star-silver light, one candle on the throne arm." },
+      "id": "0.0a",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/throne-room/plate.png",
+          "characters/aurie/sheet.png",
+          "characters/aurie/poses.png"
+        ],
+        "prompt": "Composite these references into one wide cinematic photograph: the woman from the character sheet (Aurie) sits upright on the black glass throne in the starfield throne room from the plate, one hand on the armrest, utterly still and regal, her long black hair lifting in its own slow wind. The pale-suited man kneels before her with his head bowed. Lucienne stands at her shoulder with lantern and ledger. Star-silver light, one candle on the throne arm."
+      },
       "motion": "Aurie listens without moving; only her hair drifts upward and a thin stream of sand rises from the base of the throne. Lucienne turns a page of her ledger. The kneeling man does not lift his head. Very slow push-in toward Aurie's face."
     },
     {
-      "id": "0.0b", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/throne-room/plate.png", "characters/aurie/sheet.png"],
-        "prompt": "First-person view from the throne: a pale, long-fingered woman's hand in a black sleeve raised in the foreground, palm out. Ahead on the black glass floor a hunched shadowy nightmare creature, all teeth and smoke, is mid-lunge toward the throne. Starfield walls, cool silver light." },
+      "id": "0.0b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/throne-room/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "First-person view from the throne: a pale, long-fingered woman's hand in a black sleeve raised in the foreground, palm out. Ahead on the black glass floor a hunched shadowy nightmare creature, all teeth and smoke, is mid-lunge toward the throne. Starfield walls, cool silver light."
+      },
       "motion": "The raised hand closes slowly into a fist; the nightmare creature freezes mid-lunge and dissolves from the edges inward into drifting grey sand that pours across the black glass floor. Static first-person framing."
     },
     {
-      "id": "0.0c", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/throne-room/plate.png", "characters/aurie/sheet.png", "characters/aurie/expressions.png"],
-        "prompt": "Wide photograph of the starfield throne room: Aurie, the woman in the character sheet, stands before the throne mid-sentence, turning toward Lucienne, when chalk-white lines of a magic circle flare up through the black glass floor around her feet, bright as burning magnesium. Her expression: sudden alarm breaking through regal calm." },
+      "id": "0.0c",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/throne-room/plate.png",
+          "characters/aurie/sheet.png",
+          "characters/aurie/expressions.png"
+        ],
+        "prompt": "Wide photograph of the starfield throne room: Aurie, the woman in the character sheet, stands before the throne mid-sentence, turning toward Lucienne, when chalk-white lines of a magic circle flare up through the black glass floor around her feet, bright as burning magnesium. Her expression: sudden alarm breaking through regal calm."
+      },
       "motion": "The chalk lines blaze brighter and the circle tightens; Aurie looks down at her feet, then is pulled straight downward through the glass floor in one violent motion, her hair streaming upward. The lines flare white and the frame burns out to black."
     },
     {
-      "id": "1.1b", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/cellar-1916/plate.png", "characters/aurie/poses.png", "characters/burgess/sheet.png"],
-        "prompt": "The 1916 candle-lit cellar from the plate. Inside the huge glass sphere at the centre of the glowing circle, Aurie (the woman from the poses sheet) lies curled on the curved glass floor, bare-shouldered and pale, her black hair spread around her, one hand flat against the glass. Outside the sphere, gloved hands are lifting away a dark ornate helm, a small leather pouch and a red ruby on a chain. Roderick Burgess in his burgundy robe watches from beside the lectern." },
+      "id": "1.1b",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png",
+          "characters/aurie/poses.png",
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "The 1916 candle-lit cellar from the plate. Inside the huge glass sphere at the centre of the glowing circle, Aurie (the woman from the poses sheet) lies curled on the curved glass floor in her long black gown, dazed, her black hair spread around her, one hand flat against the glass. Outside the sphere, gloved hands are lifting away a dark ornate helm, a small leather pouch and a red ruby on a chain. Roderick Burgess in his burgundy robe watches from beside the lectern, triumphant."
+      },
       "motion": "Aurie stirs and slowly lifts her head, her palm pressing against the glass. The gloved hands carry the helm, pouch and ruby out of frame. Burgess steps closer to the sphere, triumphant. Candle flames shiver. Slow push-in toward the sphere."
     },
     {
-      "id": "1.2a", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/sphere-pov/plate.png", "characters/burgess/sheet.png"],
-        "prompt": "First-person view from inside the glass sphere, as in the plate: through the curved scratched glass, Roderick Burgess from the character sheet crouches close outside, his face slightly warped by the glass, lit from below by candlelight, the burgundy robe pooled on the flagstones." },
+      "id": "1.2a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/sphere-pov/plate.png",
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "First-person view from inside the glass sphere, as in the plate: through the curved scratched glass, Roderick Burgess from the character sheet crouches close outside, his face slightly warped by the glass, lit from below by candlelight, the burgundy robe pooled on the flagstones."
+      },
       "motion": "Burgess leans closer, his face swelling in the curve of the glass, lips moving as he speaks; he taps the glass twice with his signet ring and his breath briefly fogs it. Static first-person framing with slight breathing sway."
     },
     {
-      "id": "1.2b-A", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/cellar-1916/plate.png", "characters/burgess/expressions.png", "characters/aurie/sheet.png"],
-        "prompt": "Side view in the 1916 cellar: Burgess crouches at the glass sphere, face to face with Aurie inside it, who sits utterly still and silent, staring back. His expression: cold anger thinning his lips." },
+      "id": "1.2b-A",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png",
+          "characters/burgess/expressions.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Side view in the 1916 cellar: Burgess crouches at the glass sphere, face to face with Aurie inside it, who sits utterly still and silent, staring back. His expression: cold anger thinning his lips."
+      },
       "motion": "A long silent stare. Burgess waits, then his jaw tightens; he stands slowly, straightens his robe and turns away. Aurie does not move or blink. Slow lateral drift."
     },
     {
-      "id": "1.2b-B", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/cellar-1916/plate.png", "characters/burgess/poses.png", "characters/aurie/expressions.png"],
-        "prompt": "The 1916 cellar: Burgess recoiling a step back from the glass sphere, one arm half raised, as Aurie inside rises to her knees, her face set in cold fury, the glass between them fogging from her side." },
+      "id": "1.2b-B",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png",
+          "characters/burgess/poses.png",
+          "characters/aurie/expressions.png"
+        ],
+        "prompt": "The 1916 cellar: Burgess recoiling a step back from the glass sphere, one arm half raised, as Aurie inside rises to her knees, her face set in cold fury, the glass between them fogging from her side."
+      },
       "motion": "Burgess stumbles back another step, catching himself on the lectern; the candles nearest the sphere gutter and lean away from it. Aurie remains kneeling, staring. Quick small hand-held reaction."
     },
     {
-      "id": "1.2b-C", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/cellar-1916/plate.png", "characters/burgess/expressions.png"],
-        "prompt": "The 1916 cellar: Roderick Burgess beside the glass sphere, head thrown back in contemptuous laughter, one hand on his chest, candlelight on his teeth." },
+      "id": "1.2b-C",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png",
+          "characters/burgess/expressions.png"
+        ],
+        "prompt": "The 1916 cellar: Roderick Burgess beside the glass sphere, head thrown back in contemptuous laughter, one hand on his chest, candlelight on his teeth."
+      },
       "motion": "Burgess laughs, then stops abruptly and leans close to the glass, the smile gone, wagging one finger slowly. Slow push-in on his face."
     },
     {
-      "id": "1.3a", "model": "video", "seconds": 10,
-      "keyframe": { "refs": [],
-        "prompt": "A British soldier of 1916 lies on his back in a muddy trench at night, rain falling, eyes wide open and unblinking, staring at the sky as flares burst overhead. Exhausted, filthy, alive. Photoreal war photography." },
+      "id": "1.3a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [],
+        "prompt": "A British soldier of 1916 lies on his back in a muddy trench at night, rain falling, eyes wide open and unblinking, staring at the sky as flares burst overhead. Exhausted, filthy, alive. Photoreal war photography."
+      },
       "motion": "Flares drift down and light his face white then red; shells thud in the distance; men around him sleep; his eyes stay open and never close. Slow downward crane toward his face."
     },
     {
-      "id": "1.3b", "model": "video", "seconds": 10,
-      "keyframe": { "refs": [],
-        "prompt": "A girl of about ten, Edwardian, asleep in a white iron bed in a sunlit English bedroom of 1916, dark hair spread on the pillow, a calendar on the wall beside her. Peaceful, but too still." },
+      "id": "1.3b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [],
+        "prompt": "A girl of about ten, Edwardian, asleep in a white iron bed in a sunlit English bedroom of 1916, dark hair spread on the pillow, a calendar on the wall beside her. Peaceful, but too still."
+      },
       "motion": "Time-lapse: sunlight sweeps across the room again and again; calendar pages peel away and fall; the girl in the bed ages slowly into a grey-haired woman, still asleep, never waking. Static camera."
     },
     {
-      "id": "1.3c", "model": "video", "seconds": 10,
-      "keyframe": { "use": "assets/plates/palace-crumbling/plate.png" },
+      "id": "1.3c",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "use": "assets/plates/palace-crumbling/plate.png"
+      },
       "motion": "The palace towers dissolve from the top down into streams of grey sand that pour sideways on a soundless wind and vanish; a whole stairway crumbles away into the mist. The intact reflection below does not change. Slow aerial drift."
     },
     {
-      "id": "1.4a", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/sphere-pov/plate.png", "characters/alex-old/sheet.png", "characters/paul/sheet.png"],
-        "prompt": "First-person view from inside the glass sphere in the dusty 1970s cellar lit by a bare bulb: outside the curved glass, Alex Burgess from the character sheet (here about sixty, hair greying, the same black rectangular spectacles, standing, no wheelchair) leans close to the glass, frightened and tender. Behind him in the doorway stands Paul McGuire from his sheet, watching." },
+      "id": "1.4a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/sphere-pov/plate.png",
+          "characters/alex-old/sheet.png",
+          "characters/paul/sheet.png"
+        ],
+        "prompt": "First-person view from inside the glass sphere in the dusty 1970s cellar lit by a bare bulb: outside the curved glass, Alex Burgess from the character sheet (here about sixty, hair greying, the same black rectangular spectacles, standing, no wheelchair) leans close to the glass, frightened and tender. Behind him in the doorway stands Paul McGuire from his sheet, watching."
+      },
       "motion": "Alex lifts one hand and hesitates before laying his palm flat on the glass, his lips forming a question; Paul shifts his weight in the doorway. The bulb flickers once. Static first-person framing."
     },
     {
-      "id": "1.4b-A", "model": "video", "seconds": 10,
-      "keyframe": { "refs": ["characters/alex-old/sheet.png"],
-        "prompt": "A dim 1970s English bedroom at night. Alex Burgess from the character sheet (about sixty, black rectangular spectacles on the bedside table) sits bolt upright in bed, just woken, tears on his face, one hand over his mouth." },
+      "id": "1.4b-A",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/alex-old/sheet.png"
+        ],
+        "prompt": "A dim 1970s English bedroom at night. Alex Burgess from the character sheet (about sixty, black rectangular spectacles on the bedside table) sits bolt upright in bed, just woken, tears on his face, one hand over his mouth."
+      },
       "motion": "Alex's shoulders shake as he cries silently; he reaches for his spectacles, puts them on, and looks toward the door as if he might go down to the cellar. Slow push-in."
     },
     {
-      "id": "1.4b-B", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/sphere-pov/plate.png", "characters/alex-old/sheet.png"],
-        "prompt": "First-person view from inside the glass sphere in the 1970s cellar: Alex Burgess (about sixty, black rectangular spectacles) stands outside the glass, waiting, hands clasped, hope fading from his face." },
+      "id": "1.4b-B",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/sphere-pov/plate.png",
+          "characters/alex-old/sheet.png"
+        ],
+        "prompt": "First-person view from inside the glass sphere in the 1970s cellar: Alex Burgess (about sixty, black rectangular spectacles) stands outside the glass, waiting, hands clasped, hope fading from his face."
+      },
       "motion": "Nothing comes from the sphere. Alex's face falls; he lowers his eyes, turns and walks slowly to the door, looking back once before he goes. Static first-person framing."
     },
     {
-      "id": "1.4b-C", "model": "video", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/cellar-1988/plate.png", "characters/alex-old/sheet.png"],
-        "prompt": "A dream image: Alex Burgess (about sixty, black rectangular spectacles) stands in the grey-blue dawn cellar staring in horror at his own much older self, white-haired and slumped in a wheelchair under a tartan blanket, beside an empty cracked glass sphere." },
+      "id": "1.4b-C",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1988/plate.png",
+          "characters/alex-old/sheet.png"
+        ],
+        "prompt": "A dream image: Alex Burgess (about sixty, black rectangular spectacles) stands in the grey-blue dawn cellar staring in horror at his own much older self, white-haired and slumped in a wheelchair under a tartan blanket, beside an empty cracked glass sphere."
+      },
       "motion": "The old self in the wheelchair slowly raises its head and looks straight at the younger Alex; Alex stumbles backward and screams soundlessly; the dawn light snaps to black."
     },
     {
-      "id": "1.5a", "model": "video", "seconds": 5,
-      "keyframe": { "refs": ["assets/plates/sphere-pov/plate.png", "characters/guard/sheet.png"],
-        "prompt": "First-person view from inside the glass sphere at night, 1988: the sleeping security guard from the character sheet has slid down and sits with his back and head resting against the outside of the curved glass, mouth open, breath fogging a small oval on the glass." },
+      "id": "1.5a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/sphere-pov/plate.png",
+          "characters/guard/sheet.png"
+        ],
+        "prompt": "First-person view from inside the glass sphere at night, 1988: the sleeping security guard from the character sheet has slid down and sits with his back and head resting against the outside of the curved glass, mouth open, breath fogging a small oval on the glass."
+      },
       "motion": "The guard breathes slowly in deep sleep; the fogged oval on the glass widens with each breath, and inside the fog, faintly, a warm amber room begins to appear. Static first-person framing."
     },
     {
-      "id": "1.5b", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["characters/guard/portrait.png", "characters/aurie/sheet.png", "characters/aurie/poses.png"],
-        "prompt": "Keep the composition of the first reference image (the sleeping guard against the fogged glass sphere with a warm pub visible inside the fog), but the pale hand pressing out through the glass is now Aurie's, the woman from the character sheet, and her face and shoulders are just emerging through the fog and the glass, which bends like skin without breaking." },
+      "id": "1.5b",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/guard/portrait.png",
+          "characters/aurie/sheet.png",
+          "characters/aurie/poses.png"
+        ],
+        "prompt": "Keep the composition of the first reference image (the sleeping guard against the fogged glass sphere with a warm pub visible inside the fog), but the pale hand pressing out through the glass is now Aurie's, the woman from the character sheet, and her face and shoulders are just emerging through the fog and the glass, which bends like skin without breaking."
+      },
       "motion": "Aurie steps out through the fogged glass as if through water, rising to her full height beside the sleeping guard, her long black hair lifting in a wind that touches nothing else; behind her the chalk circle crumbles into drifting dust. Slow push-in from a low angle."
     },
     {
-      "id": "1.5c", "model": "video", "seconds": 5,
-      "keyframe": { "use": "characters/alex-old/portrait.png" },
+      "id": "1.5c",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "characters/alex-old/portrait.png"
+      },
       "motion": "Alex is wheeled through the doorway, half turning in the wheelchair, his hand flung up to ward something off, mouth open in a scream; the tartan blanket slides from his knees; dust turns in the dawn shaft."
     },
     {
-      "id": "1.5d-A", "model": "video", "seconds": 10,
-      "keyframe": { "refs": ["characters/alex-old/sheet.png", "characters/alex-old/expressions.png"],
-        "prompt": "Alex Burgess, white-haired, the black rectangular spectacles taped at one hinge, jolting awake in a hospital bed in a bare grey room at night, gasping, clutching the sheets." },
+      "id": "1.5d-A",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/alex-old/sheet.png",
+          "characters/alex-old/expressions.png"
+        ],
+        "prompt": "Alex Burgess, white-haired, the black rectangular spectacles taped at one hinge, jolting awake in a hospital bed in a bare grey room at night, gasping, clutching the sheets."
+      },
       "motion": "Alex wakes, gasps, looks around; the room behind him subtly changes, the walls a little closer, the light a little colder; he wakes again, and again, each time into a worse version of the same room. Static camera, hand-held sway."
     },
     {
-      "id": "1.5d-B", "model": "video", "seconds": 10,
-      "keyframe": { "refs": ["characters/alex-old/sheet.png", "characters/alex-old/expressions.png"],
-        "prompt": "Alex Burgess, white-haired, spectacles on the bedside table, asleep in an armchair by a window at night, twisting in a nightmare under a tartan blanket." },
+      "id": "1.5d-B",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/alex-old/sheet.png",
+          "characters/alex-old/expressions.png"
+        ],
+        "prompt": "Alex Burgess, white-haired, spectacles on the bedside table, asleep in an armchair by a window at night, twisting in a nightmare under a tartan blanket."
+      },
       "motion": "He twists and mutters through the night, then grey morning light fills the window and his face slowly goes slack and peaceful; he sleeps on, the nightmare gone. Static camera."
     },
     {
-      "id": "1.5d-C", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/cellar-1988/plate.png", "characters/aurie/sheet.png"],
-        "prompt": "The 1988 cellar at dawn, seen from behind Aurie, the woman from the character sheet, in her long black gown, as she walks away toward the open cellar door and the grey-blue morning beyond; the cracked empty sphere behind her; her bare footprints in the dust." },
+      "id": "1.5d-C",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1988/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The 1988 cellar at dawn, seen from behind Aurie, the woman from the character sheet, in her long black gown, as she walks away toward the open cellar door and the grey-blue morning beyond; the cracked empty sphere behind her; her bare footprints in the dust."
+      },
       "motion": "Aurie walks slowly out through the door without looking back, the gown swinging, her footprints appearing in the dust behind her; the dawn light grows as she passes into it. Camera stays, slight sway."
     },
     {
-      "id": "2.1a", "model": "hero", "seconds": 10,
-      "keyframe": { "refs": ["assets/plates/gates-ruined/plate.png", "characters/aurie/sheet.png", "characters/lucienne/sheet.png"],
-        "prompt": "Wide photograph at the ruined gates of horn and ivory from the plate: Aurie, the woman from the character sheet, stands before the split horn gate seen from behind and to the side, looking at the ruin. Beyond the threshold, small in the mist, Lucienne from her character sheet waits with her lantern raised." },
+      "id": "2.1a",
+      "model": "hero",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/gates-ruined/plate.png",
+          "characters/aurie/sheet.png",
+          "characters/lucienne/sheet.png"
+        ],
+        "prompt": "Wide photograph at the ruined gates of horn and ivory from the plate: Aurie, the woman from the character sheet, stands before the split horn gate seen from behind and to the side, looking at the ruin. Beyond the threshold, small in the mist, Lucienne from her character sheet waits with her lantern raised."
+      },
       "motion": "Aurie walks slowly between the broken gates, sand drifting around her bare feet; Lucienne lowers her lantern and comes forward a step to meet her. Slow follow from behind."
     },
     {
-      "id": "2.1b", "model": "video", "seconds": 10,
-      "keyframe": { "use": "assets/plates/library-hub/plate.png" },
+      "id": "2.1b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "use": "assets/plates/library-hub/plate.png"
+      },
       "motion": "A slow first-person walk down the long reading table toward the wall of doors; the lantern flame on the table leans as fog seeps under the Neverwhere door and sand trickles from under The Alchemist's door; dust turns in the light. Smooth forward dolly with slight sway."
     },
     {
-      "id": "2.1c", "model": "video", "seconds": 5,
-      "keyframe": { "use": "characters/lucienne/portrait.png" },
+      "id": "2.1c",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "characters/lucienne/portrait.png"
+      },
       "motion": "Lucienne turns toward the camera with the lantern raised, relief breaking through her composure, and her lips form the words 'My lady'; the book on the shelf writes another line by itself. Slow push-in."
     }
   ],
@@ -157,15 +314,27 @@
     },
     "characters": {
       "burgess": {
-        "refs": ["characters/burgess/sheet.png", "characters/burgess/expressions.png", "assets/plates/cellar-1916/plate.png"],
+        "refs": [
+          "characters/burgess/sheet.png",
+          "characters/burgess/expressions.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
         "setting": "Medium close-up in the candle-lit 1916 cellar: Roderick Burgess crouched at the curved glass of the sphere, looking straight into the camera as if through the glass."
       },
       "alex": {
-        "refs": ["characters/alex-old/sheet.png", "characters/alex-old/expressions.png", "assets/plates/cellar-1970s/plate.png"],
+        "refs": [
+          "characters/alex-old/sheet.png",
+          "characters/alex-old/expressions.png",
+          "assets/plates/cellar-1970s/plate.png"
+        ],
         "setting": "Medium close-up in the dusty 1970s cellar under a bare bulb: Alex Burgess, about sixty, hair greying, black rectangular spectacles, standing close to the curved glass of the sphere, looking straight into the camera as if through the glass."
       },
       "lucienne": {
-        "refs": ["characters/lucienne/sheet.png", "characters/lucienne/expressions.png", "assets/plates/library-hub/plate.png"],
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "characters/lucienne/expressions.png",
+          "assets/plates/library-hub/plate.png"
+        ],
         "setting": "Medium close-up in the endless library: Lucienne holding her lantern low, looking straight into the camera."
       }
     },
