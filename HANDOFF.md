@@ -106,3 +106,19 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Narrator: new "cinematic" DIRECTION in `tools/gen_narration.py` (faster, fewer dead pauses). Samples in `assets/audio/samples/narrator-1.1-OLD-ash.mp3` vs `narrator-1.1-NEW-ash-cinematic.mp3`. NEW is now LIVE for all 15 lines (old files backed up in `assets/audio/backup-old-ash/`). To re-render: `python -I tools/gen_narration.py --engine gateway --voice ash --force` then upload.
 - Chatterbox (MIT, emotion dial) engine added to gen_narration.py; installed in `tools/venv-tts` (gitignored; recreate with `pip install chatterbox-tts imageio-ffmpeg "setuptools<81"`; the old setuptools is required on Windows or the watermark module fails to import). Try: `tools/venv-tts/Scripts/python tools/gen_narration.py --engine chatterbox --voice assets/audio/samples/narrator-gptaudio-ash.mp3 --exaggeration 0.7 --cfg 0.3 1.1` with `NARRATION_OUT=assets/audio/samples/cb` to sample first (CPU, ~1.5 min/line). Sample for 1.1 is word-perfect: `assets/audio/samples/narrator-1.1-CHATTERBOX-free-local.mp3`. Owner to choose gateway NEW vs Chatterbox. Note: Blob files are cached 1 year in browsers; a phone that already played the old audio may need site data cleared.
 - Still parked: Aurie shots 1.1b and 1.2b-A face drift.
+
+
+## Experience audit follow-up (review branch; based on e5e7841)
+
+See `docs/EXPERIENCE-AUDIT.md` for the source audit, production priorities, progression plan, character voice assessment and verification limits.
+
+- Player-controlled conversation exits replace the 1.8-second auto-exit. Missing media and scene hooks wait for Continue.
+- Voice requests cancel on leaving/replacing a scene, release playback URLs, and retain text on failure. Added Voice on/off and replay; browser default voice fallback removed.
+- Choice effects and destination save atomically with an authored journal. Decisions cannot be committed twice; old valid saves gain the new fields. The first-night endpoint records `sandman.ep1`, without awarding the full-book relic.
+- Added a playable guard-dream threshold using existing `1.5a` footage; `1.5b/c` now follow the player's escape action. These are adaptation beats, with no new media generation.
+- Library home shows bookmark, honest content availability, reading table and journal. Added reading controls, mobile layout accommodations and corrected transcript positioning.
+- Six voice directions refined, existing voice IDs retained pending actual listening tests. Dialogue default matches the current Haiku handoff.
+- Eleven focused Node tests pass. Source syntax and diff checks pass. Full dependency/build/browser verification and real audio audition are outstanding; see the audit before merge. Nothing has been deployed by this review.
+- Choice replay protection currently assumes an acyclic scene graph. Add visit-aware decisions/checkpoint rollback before implementing repeatable hubs or puzzle retries.
+
+The review branch retains the latest Blob/media, music, narration, mobile start gate, API warm-up and JSON parsing fixes. New escape beats and the edited 1.5 narration use `narrationAudio: false` until corresponding recordings are prepared.

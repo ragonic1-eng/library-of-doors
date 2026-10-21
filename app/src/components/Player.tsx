@@ -2,30 +2,33 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Book, Choice, DialogueReply, Profile, Scene } from "@/lib/story/types";
-import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, remember, saveProfile } from "@/lib/state/profile";
+import { adjustRelation, applyConsequence, arrive, commitChoice, loadProfile, meets, remember, saveProfile } from "@/lib/state/profile";
+import { VoicePlayback } from "@/lib/audio/voice";
+import Journal from "@/components/Journal";
 
 type Phase = "clips" | "talk" | "choose" | "consequence" | "end";
+interface Turn { role: "player" | "character" | "narration"; text: string }
 
-interface Turn {
-  role: "player" | "character" | "narration";
-  text: string;
-}
-
-const PLACEHOLDER_SECONDS = 4; // how long a missing clip holds its title card
 // Clips are served from Vercel Blob in production and from /public locally.
 const CLIP_BASE = (process.env.NEXT_PUBLIC_CLIP_BASE ?? "/clips").replace(/\/$/, "");
 const MUSIC_VOLUME = 0.45; // bed level
 const DUCK_VOLUME = 0.16; // bed level while someone speaks
 const FADE_MS = 2500;
 
-/** Fade an audio element's volume to a target over ms; resolves when done. */
+const activeFades = new WeakMap<HTMLAudioElement, () => void>();
+/** A new fade supersedes an older fade on the same player. */
 function fadeTo(a: HTMLAudioElement, target: number, ms = FADE_MS): Promise<void> {
+  activeFades.get(a)?.();
   return new Promise((resolve) => {
     const start = a.volume, t0 = performance.now();
+    let frame = 0;
+    const cancel = () => { cancelAnimationFrame(frame); activeFades.delete(a); resolve(); };
+    activeFades.set(a, cancel);
     const step = () => {
       const k = Math.min(1, (performance.now() - t0) / ms);
       a.volume = start + (target - start) * k;
-      if (k < 1) requestAnimationFrame(step); else resolve();
+      if (k < 1) frame = requestAnimationFrame(step);
+      else { activeFades.delete(a); resolve(); }
     };
     step();
   });
@@ -64,6 +67,7 @@ async function enterImmersive() {
 export default function Player({ book }: { book: Book }) {
   const vp = useViewport();
   const [started, setStarted] = useState(false);
+  const [prevSrc, setPrevSrc] = useState<string | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [sceneId, setSceneId] = useState(book.start);
   const [clipIndex, setClipIndex] = useState(0);
@@ -73,75 +77,73 @@ export default function Player({ book }: { book: Book }) {
   const [showOptions, setShowOptions] = useState(false);
   const [busy, setBusy] = useState(false);
   const [pendingChoice, setPendingChoice] = useState<Choice | null>(null);
+  const [suggestedChoice, setSuggestedChoice] = useState<Choice | null>(null);
   const [input, setInput] = useState("");
   const [clipMissing, setClipMissing] = useState(false);
-  const [hook, setHook] = useState<string | null>(null);
-  // Diegetic feedback when a consequence fires ("Somewhere above, a man begins to weep.")
+  const [destination, setDestination] = useState<string | null>(null);
   const [ripple, setRipple] = useState<string | null>(null);
-  // Cross-fade: the previous clip stays on its last frame until the next one is actually playing.
-  const [prevSrc, setPrevSrc] = useState<string | null>(null);
-  // Always-current profile: delayed callbacks (auto-choose after a conversation) must never use a stale copy.
-  const profileRef = useRef<Profile | null>(null);
-  const commit = useCallback((p: Profile) => {
-    profileRef.current = p;
-    setProfile(p);
-    saveProfile(p);
-  }, []);
-  const showRipple = useCallback((text?: string) => {
-    if (!text) return;
-    setRipple(text);
-    setTimeout(() => setRipple((r) => (r === text ? null : r)), 4500);
-  }, []);
-  // Reaction loops: while talking, the speaking character's loop for their current mood plays over the scene.
+  const [error, setError] = useState<string | null>(null);
+  const [saveFailed, setSaveFailed] = useState(false);
+  const [voiceEnabled, setVoiceEnabled] = useState(true);
+  const [voiceStatus, setVoiceStatus] = useState<string | null>(null);
   const [mood, setMood] = useState("neutral");
   const [reactMissing, setReactMissing] = useState<Record<string, boolean>>({});
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const profileRef = useRef<Profile | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  // Music bed: two players so one track can fade out while the next fades in; ducked while a voice plays.
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const transcriptRef = useRef<HTMLDivElement>(null);
+  const voiceRef = useRef<VoicePlayback | null>(null);
+  const voiceEnabledRef = useRef(true);
+  const dialogueRef = useRef<AbortController | null>(null);
+  const generation = useRef(0);
+  const choosing = useRef(false);
+  const sending = useRef(false);
+  const advancedClip = useRef<string | null>(null);
+
+  const musicPlayers = useRef(new Set<HTMLAudioElement>());
   const musicRef = useRef<{ a: HTMLAudioElement | null; track: string | null; voices: number }>({ a: null, track: null, voices: 0 });
   const audioUrl = (kind: "music" | "narration" | "hooks", id: string) => `${CLIP_BASE}/${book.id}/audio/${kind}/${id}.mp3`;
-  const bedTarget = () => (musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
-  /** Play a voice file (narration, hook) with the music ducked; resolves when it ends or fails. */
-  const playVoice = useCallback((url: string, maxMs = 20000) => new Promise<boolean>((resolve) => {
-    const a = new Audio(url);
-    let done = false;
-    const finish = (ok: boolean) => { if (done) return; done = true; musicRef.current.voices = Math.max(0, musicRef.current.voices - 1); if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900); resolve(ok); };
-    a.onended = () => finish(true);
-    a.onerror = () => finish(false);
-    musicRef.current.voices += 1;
-    if (musicRef.current.a) void fadeTo(musicRef.current.a, DUCK_VOLUME, 500);
-    a.play().catch(() => finish(false));
-    setTimeout(() => finish(true), maxMs);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }), [book.id]);
+  const bedTarget = () => musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME;
+  const playVoice = useCallback((url: string) => voiceRef.current?.playUrl(url), []);
 
   const scene: Scene = book.scenes[sceneId];
-  const clipUrl = (clip: string) => `${CLIP_BASE}/${book.id}/${clip}.mp4`;
   const currentClip = phase === "consequence" ? pendingChoice?.clip : scene.clips[clipIndex];
-  const src = currentClip ? clipUrl(currentClip) : undefined;
-  // The clip most likely to play next, fetched early so scene changes do not stall on a phone network.
+  const src = currentClip ? `${CLIP_BASE}/${book.id}/${currentClip}.mp4` : undefined;
   const nextClip = phase === "clips" && clipIndex + 1 < scene.clips.length ? scene.clips[clipIndex + 1]
     : phase === "clips" && scene.next ? book.scenes[scene.next]?.clips[0] : undefined;
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
-  const reactFor = (m: string) => (talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined);
-  // Prefer the exact mood, then neutral; if neither exists yet, the scene's last frame stays on screen.
+  const reactFor = (m: string) => talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined;
   const reactSrc = [reactFor(mood), reactFor("neutral")].find((u) => u && !reactMissing[u]);
 
-  // Load the saved profile and resume position once.
   useEffect(() => {
-    const p = loadProfile();
-    if (p.position?.book === book.id && book.scenes[p.position.scene]) setSceneId(p.position.scene);
+    const transcript = transcriptRef.current;
+    if (transcript) transcript.scrollTop = transcript.scrollHeight;
+  }, [history, busy]);
+
+  const commit = useCallback((p: Profile) => {
     profileRef.current = p;
     setProfile(p);
-  }, [book]);
+    setSaveFailed(!saveProfile(p));
+  }, []);
 
-  // Persist position on every scene change.
+  const cancelPending = useCallback(() => {
+    generation.current += 1;
+    dialogueRef.current?.abort();
+    voiceRef.current?.stop();
+    sending.current = false;
+  }, []);
+
   useEffect(() => {
-    if (!profile) return;
-    const p = { ...profile, position: { book: book.id, scene: sceneId } };
-    saveProfile(p);
-  }, [sceneId, profile, book.id]);
+    const p = loadProfile();
+    const saved = p.position?.book === book.id && book.scenes[p.position.scene] ? p.position.scene : book.start;
+    setSceneId(saved);
+    commit(arrive(p, book, saved));
+    voiceRef.current = new VoicePlayback((active) => {
+      musicRef.current.voices = active ? 1 : 0;
+      if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), active ? 400 : 900);
+    });
+    return cancelPending;
+  }, [book, commit, cancelPending]);
 
   // Music follows the scene; a scene without a track keeps the previous one, "none" stops it.
   const wantedTrack = scene.music ?? musicRef.current.track;
@@ -151,25 +153,27 @@ export default function Player({ book }: { book: Book }) {
     const next = wantedTrack === "none" ? null : wantedTrack ?? null;
     if (next === m.track) return;
     const old = m.a;
-    if (old) void fadeTo(old, 0).then(() => { old.pause(); old.src = ""; });
+    if (old) void fadeTo(old, 0).then(() => { old.pause(); old.src = ""; musicPlayers.current.delete(old); });
     m.track = next;
     m.a = null;
     if (!next) return;
     const a = new Audio(audioUrl("music", next));
+    musicPlayers.current.add(a);
     a.loop = true;
     a.volume = 0;
-    a.play().then(() => void fadeTo(a, bedTarget())).catch(() => { /* missing track or blocked: silence */ });
+    a.muted = !voiceEnabledRef.current;
+    a.play().then(() => { if (musicPlayers.current.has(a)) void fadeTo(a, bedTarget()); }).catch(() => { /* missing track or blocked: silence */ });
     m.a = a;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wantedTrack, started]);
 
   // Stop the bed when leaving the page.
-  useEffect(() => () => { musicRef.current.a?.pause(); }, []);
+  useEffect(() => () => { for (const a of musicPlayers.current) { activeFades.get(a)?.(); a.pause(); a.src = ""; } musicPlayers.current.clear(); }, []);
 
   // Narration audio at the start of a scene (pre-rendered file; silent if absent).
   useEffect(() => {
-    if (!started || phase !== "clips" || clipIndex !== 0 || !scene.narration) return;
-    void playVoice(audioUrl("narration", scene.id), 25000);
+    if (!started || !voiceEnabledRef.current || scene.narrationAudio === false || phase !== "clips" || clipIndex !== 0 || !scene.narration) return;
+    void playVoice(audioUrl("narration", scene.id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sceneId, started]);
 
@@ -180,359 +184,268 @@ export default function Player({ book }: { book: Book }) {
     lastSrc.current = src;
   }, [src]);
 
-  const speak = useCallback(
-    async (text: string, character: string) => {
-      try {
-        const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character }) });
-        if (!res.ok) throw new Error("tts");
-        const blob = await res.blob();
-        audioRef.current?.pause();
-        const a = new Audio(URL.createObjectURL(blob));
-        audioRef.current = a;
-        musicRef.current.voices += 1;
-        if (musicRef.current.a) void fadeTo(musicRef.current.a, DUCK_VOLUME, 400);
-        const release = () => { musicRef.current.voices = Math.max(0, musicRef.current.voices - 1); if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900); };
-        a.onended = release;
-        a.onerror = release;
-        await a.play();
-      } catch {
-        if (typeof window !== "undefined" && "speechSynthesis" in window) {
-          const u = new SpeechSynthesisUtterance(text);
-          u.rate = 0.92;
-          window.speechSynthesis.cancel();
-          window.speechSynthesis.speak(u);
-        }
-      }
-    },
-    [book.id],
-  );
+  const speak = useCallback(async (text: string, character: string) => {
+    if (!voiceEnabledRef.current) return;
+    const turn = generation.current;
+    setVoiceStatus("Preparing voice…");
+    const result = await voiceRef.current?.speak(text, book.id, character);
+    if (turn !== generation.current || result === "cancelled" || !voiceEnabledRef.current) return;
+    setVoiceStatus(result === "unavailable" ? "Voice unavailable. You can keep reading, or replay the line." : null);
+  }, [book.id]);
 
-  const askAI = useCallback(
-    async (mode: "talk" | "inner", playerLine?: string, hist: Turn[] = history): Promise<DialogueReply | null> => {
-      if (!profile) return null;
-      try {
-        const res = await fetch("/api/dialogue", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ bookId: book.id, sceneId, mode, history: hist.filter((t) => t.role !== "narration"), playerLine, profile: profileRef.current ?? profile }),
-        });
-        if (!res.ok) return null;
-        return (await res.json()) as DialogueReply;
-      } catch {
-        return null;
-      }
-    },
-    [book.id, sceneId, history, profile],
-  );
+  const askAI = useCallback(async (mode: "talk" | "inner", playerLine?: string, hist: Turn[] = []): Promise<DialogueReply | null> => {
+    if (!profileRef.current) return null;
+    dialogueRef.current?.abort();
+    const request = new AbortController();
+    dialogueRef.current = request;
+    try {
+      const res = await fetch("/api/dialogue", {
+        method: "POST", headers: { "Content-Type": "application/json" }, signal: request.signal,
+        body: JSON.stringify({ bookId: book.id, sceneId, mode, history: hist.filter((t) => t.role !== "narration"), playerLine, profile: profileRef.current }),
+      });
+      if (!res.ok) return null;
+      return await res.json() as DialogueReply;
+    } catch { return null; }
+  }, [book.id, sceneId]);
 
-  // When the clips of a scene are done, decide what comes next.
+  const finishTransition = useCallback((next: string) => {
+    if (!book.scenes[next]) return;
+    cancelPending();
+    if (profileRef.current) commit(arrive(profileRef.current, book, next));
+    setDestination(null);
+    setSceneId(next);
+    setClipIndex(0);
+    setPhase("clips");
+    setHistory([]);
+    setMood("neutral");
+    setInner(null);
+    setShowOptions(false);
+    setPendingChoice(null);
+    setSuggestedChoice(null);
+    setClipMissing(false);
+    setBusy(false);
+    setInput("");
+    setError(null);
+    setVoiceStatus(null);
+    setRipple(null);
+    choosing.current = false;
+    advancedClip.current = null;
+  }, [book, cancelPending, commit]);
+
+  const goTo = useCallback((next: string) => {
+    if (!book.scenes[next]) return;
+    cancelPending();
+    if (scene.hook) {
+      setDestination(next);
+      if (voiceEnabledRef.current) void playVoice(`${CLIP_BASE}/${book.id}/audio/hooks/${scene.id}.mp3`);
+    }
+    else finishTransition(next);
+  }, [book.scenes, book.id, scene.hook, scene.id, cancelPending, finishTransition, playVoice]);
+
   const afterClips = useCallback(async () => {
-    if (scene.type === "end") return setPhase("end");
+    if (!profileRef.current) return;
+    if (scene.type === "end") { setPhase("end"); return; }
     if (scene.conversation) {
       setPhase("talk");
-      const opening = scene.conversation.opening;
-      if (opening) {
-        setHistory([{ role: "character", text: opening }]);
-        void speak(opening, scene.conversation.character);
+      if (scene.conversation.opening) {
+        setHistory([{ role: "character", text: scene.conversation.opening }]);
+        void speak(scene.conversation.opening, scene.conversation.character);
       }
-      return;
-    }
-    if (scene.choices?.length) {
+    } else if (scene.choices?.length) {
       setPhase("choose");
       if (scene.innerVoice) {
+        const turn = generation.current;
         setBusy(true);
-        const r = await askAI("inner", undefined, []);
+        const reply = await askAI("inner");
+        if (turn !== generation.current) return;
         setBusy(false);
-        if (r?.dialogue) {
-          setInner(r.dialogue);
-          void speak(r.dialogue, "dream");
-        }
+        if (reply?.dialogue) { setInner(reply.dialogue); void speak(reply.dialogue, "dream"); }
       }
-      return;
-    }
-    if (scene.next) goTo(scene.next);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scene, askAI, speak]);
+    } else if (scene.next) goTo(scene.next);
+  }, [scene, speak, askAI, goTo]);
 
-  const advanceClip = useCallback(() => {
+  useEffect(() => {
+    if (started && profile && phase === "clips" && scene.clips.length === 0) void afterClips();
+  }, [started, profile, phase, scene.clips.length, afterClips]);
+
+  function advanceClip() {
+    if (destination || (phase !== "clips" && phase !== "consequence")) return;
+    const key = `${sceneId}:${phase}:${clipIndex}`;
+    if (advancedClip.current === key) return;
+    advancedClip.current = key;
     setClipMissing(false);
     if (phase === "consequence") {
       if (pendingChoice) goTo(pendingChoice.next);
-      return;
-    }
-    if (clipIndex + 1 < scene.clips.length) setClipIndex((i) => i + 1);
+    } else if (clipIndex + 1 < scene.clips.length) setClipIndex((i) => i + 1);
     else void afterClips();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, pendingChoice, clipIndex, scene, afterClips]);
-
-  // A scene with no clips at all goes straight to its logic.
-  useEffect(() => {
-    if (started && phase === "clips" && scene.clips.length === 0) void afterClips();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sceneId, phase, started]);
-
-  // Missing clip: hold a title card, then move on.
-  useEffect(() => {
-    if (!clipMissing || !started) return;
-    const t = setTimeout(advanceClip, PLACEHOLDER_SECONDS * 1000);
-    return () => clearTimeout(t);
-  }, [clipMissing, advanceClip, started]);
-
-  // Scene change: hold the current scene's hook line for a beat, then move (engagement-design.md §6).
-  function goTo(next: string) {
-    const line = scene.hook;
-    const jump = () => {
-      setHook(null);
-      setSceneId(next);
-      setClipIndex(0);
-      setPhase("clips");
-      setHistory([]);
-      setMood("neutral");
-      setInner(null);
-      setShowOptions(false);
-      setPendingChoice(null);
-      setClipMissing(false);
-    };
-    if (line) {
-      setHook(line);
-      let jumped = false;
-      const go = () => { if (!jumped) { jumped = true; jump(); } };
-      void playVoice(audioUrl("hooks", scene.id), 7000).then(() => setTimeout(go, 600));
-      setTimeout(go, 7500);
-    } else {
-      jump();
-    }
   }
 
   function choose(choice: Choice) {
     const current = profileRef.current;
-    if (!current) return;
-    let p = applyEffect(current, book.id, choice.effects);
-    // Earlier deeds change what this choice costs or earns (a broken promise, a remembered confession).
-    for (const e of choice.effectsIf ?? []) {
-      if (current.flags[book.id]?.[e.flag]) {
-        p = applyEffect(p, book.id, e.effects);
-        showRipple(e.ripple);
-      }
-    }
-    commit(p);
-    audioRef.current?.pause();
+    if (!current || choosing.current || sending.current || busy || destination) return;
+    const next = commitChoice(current, book, sceneId, choice);
+    if (next === current) return;
+    choosing.current = true;
+    cancelPending();
+    commit(next);
+    setSuggestedChoice(null);
+    setVoiceStatus(null);
+    setRipple(choice.effectsIf?.filter((e) => current.flags[book.id]?.[e.flag]).map((e) => e.ripple).filter(Boolean).join(" ") || null);
     if (choice.clip) {
       setPendingChoice(choice);
       setPhase("consequence");
       setClipMissing(false);
-    } else {
-      goTo(choice.next);
-    }
+    } else goTo(choice.next);
   }
 
   async function send() {
     const line = input.trim();
-    if (!line || busy || !scene.conversation) return;
+    if (!line || busy || sending.current || choosing.current || !scene.conversation || destination) return;
+    sending.current = true;
+    inputRef.current?.blur();
+    voiceRef.current?.stop();
+    setVoiceStatus(null);
     setInput("");
-    inputRef.current?.blur(); // drop the phone keyboard so the reaction loop is visible
+    setError(null);
+    setSuggestedChoice(null);
     const hist: Turn[] = [...history, { role: "player", text: line }];
     setHistory(hist);
     setBusy(true);
-    const r = await askAI("talk", line, hist);
+    const turn = generation.current;
+    const reply = await askAI("talk", line, history);
+    if (turn !== generation.current) return;
+    sending.current = false;
     setBusy(false);
-    if (!r) {
-      setHistory([...hist, { role: "character", text: "..." }]);
+    if (!reply) {
+      setHistory(history);
+      setInput(line);
+      setError("The conversation is unavailable. Retry your words, or choose an action below.");
+      setShowOptions(true);
       return;
     }
     const who = scene.conversation.character;
-    setHistory([...hist, ...(r.narration ? [{ role: "narration" as const, text: r.narration }] : []), { role: "character", text: r.dialogue }]);
-    if (r.mood) setMood(r.mood);
-    void speak(r.dialogue, who);
-    if (r.inner_thought) {
-      setInner(r.inner_thought);
-      setTimeout(() => setInner((cur) => (cur === r.inner_thought ? null : cur)), 7000);
-    }
-    // Consequences: her words change the story. Apply fired consequences, the speaker's feelings and memory together.
+    setHistory([...hist, ...(reply.narration ? [{ role: "narration" as const, text: reply.narration }] : []), { role: "character", text: reply.dialogue }]);
+    setMood(reply.mood ?? "neutral");
+    void speak(reply.dialogue, who);
+    setInner(reply.inner_thought);
     let p = profileRef.current;
+    const ripples: string[] = [];
     if (p) {
-      for (const tag of r.consequences ?? []) {
-        const c = scene.conversation.consequences?.[tag];
-        if (!c) continue;
-        p = applyConsequence(p, book.id, who, tag, c);
-        showRipple(c.ripple);
+      for (const tag of reply.consequences ?? []) {
+        const consequence = scene.conversation.consequences?.[tag];
+        if (!consequence) continue;
+        const next = applyConsequence(p, book.id, who, tag, consequence);
+        if (next !== p && consequence.ripple) ripples.push(consequence.ripple);
+        p = next;
       }
-      p = adjustRelation(p, who, r.trust_delta ?? 0, r.fear_delta ?? 0);
-      p = remember(p, r.memory_note);
+      p = adjustRelation(p, who, reply.trust_delta ?? 0, reply.fear_delta ?? 0);
+      p = remember(p, reply.memory_note);
       commit(p);
-    }
-    if (r.decision) {
-      const c = scene.choices?.find((x) => x.id === r.decision);
-      if (c) setTimeout(() => choose(c), 1800);
+      setRipple(ripples.join(" ") || null);
+      const updated = p;
+      const suggested = scene.choices?.find((c) => c.id === reply.decision && meets(updated, book.id, c.requires));
+      if (suggested) setSuggestedChoice(suggested);
     }
   }
 
-  // Choices closed off by earlier events are hidden (and the AI cannot steer to them either).
-  const options = useMemo(() => (scene.choices ?? []).filter((c) => !profile || meets(profile, book.id, c.requires)), [scene, profile, book.id]);
+  const options = useMemo(() => (scene.choices ?? []).filter((c) => profile && meets(profile, book.id, c.requires)), [scene, profile, book.id]);
   const extraNarration = (scene.narrationIf ?? []).filter((n) => profile?.flags[book.id]?.[n.flag]).map((n) => n.text).join(" ");
-  const speakerName = scene.conversation ? cap(scene.conversation.character.split("-")[0]) : "";
+  const lastLine = [...history].reverse().find((turn) => turn.role === "character")?.text;
+  const voiceCharacter = scene.conversation?.character;
 
-  if (!profile) return <main className="stage" />;
+  if (!profile) return <main className="stage" aria-label="Opening your bookmark" />;
 
-  // Before the first tap: a still gate. The tap is what lets a phone browser play sound and go fullscreen.
-  if (!started) {
-    const resuming = sceneId !== book.start;
-    return (
-      <main className="stage">
-        <div
-          className="gate"
-          role="button"
-          tabIndex={0}
-          onClick={() => {
-            void enterImmersive();
-            // Wake the dialogue and voice functions now, so the first real reply is not a cold start.
-            void fetch("/api/dialogue?warm=1").catch(() => undefined);
-            void fetch("/api/tts").catch(() => undefined);
-            setStarted(true);
-          }}
-        >
-          <div className="gate-title">{book.title}</div>
-          <div className="gate-sub">{resuming ? `Resume: ${scene.title}` : "for Aurie"}</div>
-          <div className="gate-cta">{vp.touch ? "Touch the glass to begin" : "Click to begin"}</div>
-          <div className="gate-hint">Sound on. Best with your phone sideways.</div>
-        </div>
-      </main>
-    );
-  }
+  if (!started) return <main className="stage">
+    <button className="gate" onClick={() => {
+      void enterImmersive();
+      void fetch("/api/dialogue?warm=1").catch(() => undefined);
+      void fetch("/api/tts").catch(() => undefined);
+      setStarted(true);
+    }}>
+      <span className="gate-title">{book.title}</span>
+      <span className="gate-sub">{sceneId !== book.start ? `Resume: ${scene.title}` : "for Aurie"}</span>
+      <span className="gate-cta">{vp.touch ? "Touch the glass to begin" : "Begin your story"}</span>
+      <span className="gate-hint">Sound on. Best with your phone sideways.</span>
+    </button>
+  </main>;
 
   return (
     <main className={`stage ${vp.touch ? "touch" : ""}`}>
-      {vp.phonePortrait && (
-        <div className="rotate">
-          <div className="rotate-icon" aria-hidden="true">⟳</div>
-          <div>Turn your phone sideways</div>
-          <div className="rotate-sub">The story is filmed widescreen.</div>
-        </div>
-      )}
-
-      <div className="sway">
-        {prevSrc && prevSrc !== src && (
-          <video key={`prev-${prevSrc}`} className="film prev" src={prevSrc} muted playsInline preload="none" />
+      {vp.phonePortrait && <div className="rotate"><div className="rotate-icon" aria-hidden="true">⟳</div><div>Turn your phone sideways</div><div className="rotate-sub">The story is filmed widescreen.</div></div>}
+      <div className="sway" aria-hidden="true">
+        {prevSrc && prevSrc !== src && <video key={`prev-${prevSrc}`} className="film prev" src={prevSrc} muted playsInline preload="none" />}
+        {src && !clipMissing ? <video key={src} ref={videoRef} className="film" src={src} autoPlay playsInline preload="auto" muted={!voiceEnabled} onPlaying={() => setPrevSrc(null)} onEnded={advanceClip} onError={() => setClipMissing(true)} /> : (
+          <div className="film placeholder"><div className="placeholder-title">{scene.title}</div></div>
         )}
-        {src && !clipMissing ? (
-          <video
-            key={src}
-            ref={videoRef}
-            className="film"
-            src={src}
-            autoPlay
-            playsInline
-            preload="auto"
-            onPlaying={() => setTimeout(() => setPrevSrc(null), 500)}
-            onEnded={advanceClip}
-            onError={() => setClipMissing(true)}
-          />
-        ) : (
-          <div className="film placeholder">
-            <div className="placeholder-title">{scene.title}</div>
-            {currentClip && <div className="placeholder-sub">clip {currentClip} not yet generated</div>}
-          </div>
-        )}
-        {reactSrc && (
-          <video
-            key={reactSrc}
-            className="film react"
-            src={reactSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onError={() => setReactMissing((m) => ({ ...m, [reactSrc]: true }))}
-          />
-        )}
+        {reactSrc && <video key={reactSrc} className="film react" src={reactSrc} autoPlay loop muted playsInline onError={() => setReactMissing((m) => ({ ...m, [reactSrc]: true }))} />}
         <div className="vignette" />
       </div>
-      {nextClip && <video className="prefetch" src={clipUrl(nextClip)} preload="auto" muted playsInline aria-hidden="true" />}
-
-      {scene.episodeTitle && phase === "clips" && clipIndex === 0 && !hook && (
-        <div key={`ep-${scene.id}`} className="epcard">{scene.episodeTitle}</div>
-      )}
-
-      {hook && <div className="hook">{hook}</div>}
-
-      {phase === "clips" && scene.narration && clipIndex === 0 && !hook && (
-        <div className="narration">{scene.narration}{extraNarration ? <span className="narration-echo"> {extraNarration}</span> : null}</div>
-      )}
-
-      {ripple && <div key={ripple} className="ripple">{ripple}</div>}
-
-      {inner && (phase === "talk" || phase === "choose") && <div className="inner">{inner}</div>}
-
-      {phase === "talk" && scene.conversation && (
-        <section className="talk">
-          <div className="transcript">
-            {history.slice(vp.h < 520 ? -2 : -4).map((t, i) => (
-              <p key={i} className={t.role === "narration" ? "aside" : t.role}>
-                {t.role === "character" ? <span className="who">{speakerName}</span> : t.role === "player" ? <span className="who">{profile.name}</span> : null}
-                {t.text}
-              </p>
-            ))}
-            {busy && <p className="character thinking">…</p>}
-          </div>
-          <form
-            className="say"
-            onSubmit={(e) => {
-              e.preventDefault();
-              void send();
-            }}
-          >
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Speak…"
-              autoFocus={!vp.touch}
-              disabled={busy}
-              enterKeyHint="send"
-              autoComplete="off"
-              autoCapitalize="sentences"
-            />
-            <button type="submit" disabled={busy || !input.trim()}>Say</button>
-            {options.length > 0 && (
-              <button type="button" className="ghost" onClick={() => setShowOptions((s) => !s)}>
-                {showOptions ? "Hide" : vp.w < 700 ? "Options" : "What could I do?"}
-              </button>
-            )}
-          </form>
-          {showOptions && (
-            <ul className="options">
-              {options.map((c) => (
-                <li key={c.id}>
-                  <button onClick={() => choose(c)}>{c.text}</button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-      )}
-
-      {phase === "choose" && (
-        <section className="choose">
-          <ul className="options">
-            {options.map((c) => (
-              <li key={c.id}>
-                <button onClick={() => choose(c)}>{c.text}</button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {phase === "end" && (
-        <section className="endcard">
-          <h2>{scene.title}</h2>
-          <p>{scene.narration}</p>
-          <p className="meta">Mercy {profile.traits.mercy > 0 ? `+${profile.traits.mercy}` : profile.traits.mercy}</p>
-          <a href="/">Return to the library</a>
-        </section>
-      )}
+      {nextClip && <link rel="preload" as="video" href={`${CLIP_BASE}/${book.id}/${nextClip}.mp4`} />}
+      <nav className="player-tools" aria-label="Reading controls">
+        <a href="/" onClick={cancelPending}>Library</a>
+        <details className="journal-panel"><summary>Your journal</summary><Journal profile={profile} /></details>
+        <button aria-pressed={voiceEnabled} onClick={() => {
+          voiceEnabledRef.current = !voiceEnabled;
+          setVoiceEnabled(!voiceEnabled);
+          for (const a of musicPlayers.current) a.muted = voiceEnabled;
+          voiceRef.current?.stop();
+          setVoiceStatus(null);
+        }}>Voice {voiceEnabled ? "on" : "off"}</button>
+        {phase === "clips" && src && !clipMissing && <button onClick={() => {
+          const video = videoRef.current;
+          if (video?.paused) void video.play().catch(() => setClipMissing(true));
+          else video?.pause();
+        }}>Play / pause film</button>}
+      </nav>
+      {saveFailed && <p className="save-warning" role="status">Your bookmark could not be saved on this device. Keep this page open to continue.</p>}
+      {scene.episodeTitle && phase === "clips" && clipIndex === 0 && !destination && <div key={`ep-${scene.id}`} className="epcard">{scene.episodeTitle}</div>}
+      {destination ? (
+        <section className="hook"><p>{scene.hook}</p><button onClick={() => finishTransition(destination)}>Continue</button></section>
+      ) : <>
+        {phase === "clips" && scene.narration && <div className="narration">{scene.narration}<span className="narration-echo"> {extraNarration}</span></div>}
+        {ripple && <p className="ripple" role="status">{ripple}</p>}
+        {inner && (phase === "talk" || phase === "choose") && <div className="inner">{inner}</div>}
+        {(phase === "clips" || phase === "consequence") && <div className="film-controls">
+          {clipMissing && <p>The scene continues in words.</p>}
+          <button onClick={advanceClip}>{clipMissing ? "Continue reading" : "Skip this clip"}</button>
+        </div>}
+        {phase === "talk" && scene.conversation && (
+          <section className="talk" aria-label="Conversation">
+            {scene.objective && <p className="objective">{scene.objective}</p>}
+            <div ref={transcriptRef} className="transcript" role="log" aria-live="polite" aria-relevant="additions">
+              {history.map((turn, i) => <p key={i} className={turn.role}>
+                {turn.role !== "narration" && <span className="who">{turn.role === "player" ? profile.name : characterName(scene.conversation!.character)}</span>}{turn.text}
+              </p>)}
+              {busy && <p className="thinking">Listening…</p>}
+            </div>
+            {voiceStatus && <p className="reading-status" role="status">{voiceStatus}</p>}
+            {error && <p className="reading-status" role="status">{error}</p>}
+            {suggestedChoice && <button className="suggested-action" onClick={() => choose(suggestedChoice)}>Continue: {suggestedChoice.text}</button>}
+            <form className="say" onSubmit={(event) => { event.preventDefault(); void send(); }}>
+              <label className="sr-only" htmlFor="aurie-words">What will Aurie say or do?</label>
+              <input ref={inputRef} enterKeyHint="send" autoComplete="off" autoCapitalize="sentences" id="aurie-words" value={input} onChange={(event) => setInput(event.target.value)} placeholder="Speak, or describe what you do…" maxLength={2000} disabled={busy} />
+              <button type="submit" disabled={busy || !input.trim()}>Say</button>
+              {options.length > 0 && <button type="button" className="ghost" aria-expanded={showOptions} onClick={() => setShowOptions((value) => !value)}>{showOptions ? "Hide actions" : "What could I do?"}</button>}
+              {voiceEnabled && lastLine && voiceCharacter && <button type="button" className="ghost" disabled={busy} onClick={() => void speak(lastLine, voiceCharacter)}>Replay voice</button>}
+            </form>
+            {showOptions && <ul className="options">{options.map((choice) => <li key={choice.id}><button disabled={busy} onClick={() => choose(choice)}>{choice.text}</button></li>)}</ul>}
+          </section>
+        )}
+        {phase === "choose" && <section className="choose">
+          {scene.objective && <p className="objective">{scene.objective}</p>}
+          {scene.narration && <p>{scene.narration}</p>}
+          <ul className="options">{options.map((choice) => <li key={choice.id}><button disabled={busy} onClick={() => choose(choice)}>{choice.text}</button></li>)}</ul>
+        </section>}
+        {phase === "end" && <section className="endcard">
+          <p className="eyebrow">A bookmark, until the next night</p>
+          <h2>{scene.title}</h2><p>{scene.narration}</p>
+          <p className="meta">Your choices are written in the journal.</p>
+          <a href="/" onClick={cancelPending}>Return to the library</a>
+        </section>}
+      </>}
     </main>
   );
 }
 
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const characterNames: Record<string, string> = { burgess: "Roderick Burgess", alex: "Alex Burgess", "alex-old": "Alex Burgess", unity: "Unity Kincaid", lucienne: "Lucienne" };
+const characterName = (key: string) => characterNames[key] ?? key;

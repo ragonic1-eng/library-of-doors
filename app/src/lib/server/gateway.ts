@@ -4,7 +4,7 @@ const BASE = (process.env.INFISTAR_BASE_URL ?? "https://infistar.ai/v1").replace
 const KEY = process.env.INFISTAR_API_KEY ?? "";
 
 export const models = {
-  dialogue: process.env.MODEL_DIALOGUE ?? "grok-4.7",
+  dialogue: process.env.MODEL_DIALOGUE ?? "claude-haiku-5-5",
   tts: process.env.MODEL_TTS ?? "gpt-audio-1.5",
 };
 
@@ -43,3 +43,4 @@ export async function gatewayBinary(path: string, body: unknown, timeoutMs = 60_
     clearTimeout(timer);
   }
 }
+

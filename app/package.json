@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node tests/story.test.mjs && node tests/voice.test.mjs",
     "gen": "node scripts/generate-images.mjs",
     "clips": "node scripts/generate-clips.mjs",
     "upload": "node scripts/upload-clips.mjs"
@@ -28,3 +29,4 @@
     "typescript": "^5"
   }
 }
+

@@ -19,7 +19,7 @@
       "He will never beg; the nearest he comes is bargaining."
     ],
     "ttsVoice": "cedar",
-    "voiceDirection": "A man in his late fifties, educated upper-class English accent of 1916, deep and unhurried. Grandiose, savouring his own words. Menace by lowering the voice, never by shouting."
+    "voiceDirection": "Educated English man in late middle age, resonant middle-low register. Measured, possessive, enjoying the precision of a bargain. Anger tightens his consonants and lowers his volume; no theatrical villain growl. Let grief break the rhythm briefly only when the line concerns Randall. Speak clearly, without adding breaths or words to the text."
   },
   "alex": {
     "name": "Alex Burgess",
@@ -40,7 +40,7 @@
       "He cannot return the tools; he does not know where all of them went."
     ],
     "ttsVoice": "verse",
-    "voiceDirection": "An Englishman, soft and hesitant, gentle upper-class accent, apologetic pauses mid-sentence, a slight tremor of fear. He speaks to the glass more than to the listener."
+    "voiceDirection": "An Englishman in later middle age, soft educated accent, restrained and hesitant. Start a sentence as if rehearsed, then lose certainty. Short apologetic pauses, not a stammer on every word. A recognisable natural voice that can age into the older Alex; preserve its pitch centre and vowel shapes."
   },
   "lucienne": {
     "name": "Lucienne",
@@ -62,7 +62,7 @@
       "She never flatters."
     ],
     "ttsVoice": "sage",
-    "voiceDirection": "A woman of great age and composure, precise and dry, a cultivated English accent. Warmth held carefully underneath; every word deliberate."
+    "voiceDirection": "A composed woman with a cultivated English accent and clear middle register. Precise, dry, quietly capable. Timeless rather than physically frail. Warmth comes through a small relaxation of pace, irony through a very slight stress; never a generic mystical whisper. Give “my lady” affection without servility."
   },
   "dream": {
     "name": "Aurie",
@@ -77,7 +77,7 @@
       "Never addresses the player as a player. Never mentions options, meters or choices by name."
     ],
     "ttsVoice": "marin",
-    "voiceDirection": "A woman's private thought, low and close to the ear, almost a whisper. Proud, slow and grave, with weariness under the pride."
+    "voiceDirection": "Aurie’s private thought, a clear close female voice in a comfortable low-middle register. Intimate and unhurried, fully audible rather than breathy or whispered. Pride gives the line restraint; vulnerability opens its rhythm without making her timid. No trailer narration, no heavy reverberation."
   },
   "unity": {
     "name": "Unity Kincaid",
@@ -97,7 +97,7 @@
       "She never names Desire; she does not know the name."
     ],
     "ttsVoice": "shimmer",
-    "voiceDirection": "A sleepy English girl of about ten, soft and dreamy, half-whispering, wondering rather than afraid."
+    "voiceDirection": "A young English girl in a dream, light natural register and simple, curious phrasing. Soft but fully intelligible. Small pauses of wonder; no forced high pitch, baby talk, sing-song delivery or horror whisper. Let the unsettling content supply the unease."
   },
   "alex-old": {
     "name": "Alex Burgess",
@@ -118,6 +118,6 @@
       "He never claims he tried to free her if he did not."
     ],
     "ttsVoice": "verse",
-    "voiceDirection": "A frail, terrified old Englishman, breathless, voice cracking, pleading through tears, upper-class accent worn thin by age."
+    "voiceDirection": "The same educated English voice as the younger Alex, now frail and frightened. Preserve his pitch centre and vowel shapes; shorter breath groups and occasional roughness suggest age. He tries to maintain dignity while bargaining. Only break into tears when the words call for it; avoid constant sobbing or gasping that obscures the line."
   }
 }

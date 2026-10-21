@@ -9,7 +9,7 @@
     "0.0": {
       "id": "0.0",
       "title": "The Queen of Dreams",
-      "episodeTitle": "Episode 0 · The Queen of Dreams",
+      "episodeTitle": "Part 0 · The Queen of Dreams",
       "pov": "3P",
       "clips": [
         "0.0a",
@@ -30,7 +30,7 @@
       ],
       "narration": "England, 1916. In a cellar beneath Fawney Rig, Roderick Burgess reads from a stolen book and reaches for Death. He catches her sister instead.",
       "next": "1.2",
-      "episodeTitle": "Episode 1 · The Wrong Sister",
+      "episodeTitle": "Part 1 · The Wrong Sister",
       "hook": "Burgess, through the glass: “Death. At last.”",
       "music": "cellar-dread"
     },
@@ -172,6 +172,7 @@
         }
       ],
       "hook": "He has no idea what he has caught. You do.",
+      "objective": "He wants a bargain. What will you let him know about you?",
       "music": "cellar-dread"
     },
     "1.3": {
@@ -184,7 +185,7 @@
         "1.3b"
       ],
       "narration": "The years pass. A soldier who cannot sleep. A palace shedding its stone like sand. And in a sunlit room in Kent, a girl who cannot wake, whose dream lies just within your reach.",
-      "episodeTitle": "Episode 2 · Seventy Years",
+      "episodeTitle": "Part 2 · Seventy Years",
       "hook": "Burgess died old, and poor, and got nothing he asked for. His son inherited the glass.",
       "narrationIf": [
         {
@@ -201,13 +202,13 @@
         "character": "unity",
         "maxTurns": 4,
         "canon": [
-          "It is 1916. Unity Kincaid, about ten, has fallen into the sleeping sickness and will not wake for sixty years.",
+          "This encounter is a memory of 1916, held inside Unity’s dream while the montage shows passing decades. Unity Kincaid, about ten then, cannot wake from the sleeping sickness.",
           "Aurie is imprisoned in the glass sphere far away; her power only just reaches into one sleeping mind, this girl's.",
           "Unity answers only as a dreaming child: drowsy, curious, unafraid, in dream logic.",
           "Aurie cannot wake her and cannot escape through her.",
           "Something else has been visiting Unity's dream, a perfumed presence she cannot name (in truth Desire of the Endless); Unity does not know what it is."
         ],
-        "opening": "Is somebody there? I can't wake up. It's ever so quiet here... and something keeps visiting me that isn't you. It smells of roses.",
+        "opening": "Is somebody there? It is still that same afternoon here. I can’t wake up. Something keeps visiting me that isn’t you. It smells of roses.",
         "possibilities": [
           "She comforts the girl: Unity is soothed and the dream warms.",
           "She promises something: Unity holds the promise tightly, as children do.",
@@ -303,6 +304,7 @@
           "next": "1.4"
         }
       ],
+      "objective": "You cannot wake her. What can you leave with her?",
       "music": "the-years"
     },
     "1.4": {
@@ -422,14 +424,14 @@
               "ALEX_SEEN": true
             }
           },
-          "next": "1.5"
+          "next": "1.5-threshold"
         },
         {
           "id": "1.4.B",
           "text": "Give him nothing.",
           "clip": "1.4b-B",
           "effects": {},
-          "next": "1.5"
+          "next": "1.5-threshold"
         },
         {
           "id": "1.4.C",
@@ -440,10 +442,10 @@
               "mercy": -2
             }
           },
-          "next": "1.5"
+          "next": "1.5-threshold"
         }
       ],
-      "episodeTitle": "Episode 3 · The Son",
+      "episodeTitle": "Part 3 · The Son",
       "hook": "Years later, a guard yawns and slides down the glass. His breath fogs it.",
       "narrationIf": [
         {
@@ -455,18 +457,71 @@
           "text": "His father never forgave you for pitying him."
         }
       ],
+      "objective": "He could free you. Fear has kept his hand still.",
       "music": "cellar-wait"
+    },
+    "1.5-threshold": {
+      "id": "1.5-threshold",
+      "title": "A door in a breath",
+      "pov": "POV",
+      "clips": [
+        "1.5a"
+      ],
+      "narration": "1988. The guard sleeps against the sphere. Beyond his eyelids, someone is laughing in a warm room. His breath clouds the glass.",
+      "objective": "The glass has held you for seventy-two years. What has changed tonight?",
+      "choices": [
+        {
+          "id": "1.5-threshold.listen",
+          "text": "Listen beyond his breathing. Find what he is dreaming.",
+          "effects": {
+            "flags": {
+              "FOLLOWED_GUARD_DREAM": true
+            }
+          },
+          "journal": "You found a warm room in the guard’s sleep. A dream can cross what glass cannot.",
+          "next": "1.5-door"
+        },
+        {
+          "id": "1.5-threshold.glass",
+          "text": "Place your palm against the misted glass.",
+          "effects": {
+            "flags": {
+              "TOUCHED_MIST": true
+            }
+          },
+          "journal": "The glass held. But the mist carried a room that was not in the cellar.",
+          "next": "1.5-door"
+        }
+      ],
+      "music": "escape",
+      "narrationAudio": false
+    },
+    "1.5-door": {
+      "id": "1.5-door",
+      "title": "The other side of sleep",
+      "pov": "POV",
+      "clips": [],
+      "narration": "The glass is still unbroken. The warm room is not behind it; it is inside the guard’s dream. For the first time in seventy-two years, there is somewhere else you can go.",
+      "objective": "Follow the dream beyond the circle.",
+      "choices": [
+        {
+          "id": "1.5-door.enter",
+          "text": "Step into his dream. Leave the glass behind.",
+          "journal": "You escaped through a sleeping mind. Freedom came before judgment.",
+          "next": "1.5"
+        }
+      ],
+      "narrationAudio": false
     },
     "1.5": {
       "id": "1.5",
       "title": "Escape",
       "pov": "3P",
       "clips": [
-        "1.5a",
         "1.5b",
         "1.5c"
       ],
-      "narration": "1988. A guard falls asleep against the glass. His breath fogs it. His dream is a door.",
+      "narration": "1988. You step through the sleeping guard’s dream and back into the cellar. The circle falls to dust behind you. Alex is brought before you.",
       "innerVoice": false,
       "choices": [
         {
@@ -527,7 +582,7 @@
           ]
         }
       ],
-      "episodeTitle": "Episode 4 · Breath on Glass",
+      "episodeTitle": "The first night · Breath on Glass",
       "hook": "Somewhere a lantern has been burning for seventy-two years.",
       "narrationIf": [
         {
@@ -620,11 +675,13 @@
                 "mercy": 1
               }
             },
-            "ripple": "For a moment he is only a frightened old man, and so are you, almost."
+            "ripple": "For a moment he is only a frightened old man. You know what it is to lose a lifetime in this house."
           }
         }
       },
-      "music": "escape"
+      "objective": "You are free. His fate is finally yours to decide.",
+      "music": "escape",
+      "narrationAudio": false
     },
     "2.1": {
       "id": "2.1",
@@ -721,6 +778,7 @@
       ],
       "episodeTitle": "The Library Between",
       "hook": "Three doors. Four empty places at the table. And a librarian who will not say why.",
+      "objective": "Your realm is wounded. Decide how you will return to it.",
       "music": "library"
     },
     "end-ep1": {
@@ -730,6 +788,7 @@
       "pov": "3P",
       "clips": [],
       "narration": "Three doors stand locked on the far wall. The helm, the sand and the ruby are out there somewhere. The story continues.",
+      "completes": "sandman.ep1",
       "music": "library"
     }
   }

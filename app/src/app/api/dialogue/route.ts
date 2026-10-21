@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getBook, getCharacter } from "@/lib/story/load";
 import { gatewayJson, mockMode, models } from "@/lib/server/gateway";
+import { priorTurns, shouldConclude } from "@/lib/dialogue/turns";
 import { consequenceFlag, meets, relationOf } from "@/lib/state/profile";
 import type { Consequence, DialogueReply, Profile, Scene } from "@/lib/story/types";
 
@@ -41,7 +42,7 @@ const replySchema = {
 function available(scene: Scene, p: Profile, bookId: string) {
   const choiceById = Object.fromEntries((scene.choices ?? []).map((c) => [c.id, c]));
   const allExits = scene.conversation?.exits ?? Object.fromEntries((scene.choices ?? []).map((c) => [c.id, c.text]));
-  const exits = Object.fromEntries(Object.entries(allExits).filter(([id]) => meets(p, bookId, choiceById[id]?.requires)));
+  const exits = Object.fromEntries(Object.entries(allExits).filter(([id]) => choiceById[id] && meets(p, bookId, choiceById[id].requires)));
   const consequences: Record<string, Consequence> = Object.fromEntries(
     Object.entries(scene.conversation?.consequences ?? {}).filter(
       ([tag, c]) => !p.flags[bookId]?.[consequenceFlag(tag)] && meets(p, bookId, c.requires),
@@ -96,13 +97,14 @@ export async function POST(req: Request) {
   if (!card || !charKey) return NextResponse.json({ error: "no character" }, { status: 400 });
 
   const { exits, consequences } = available(scene, body.profile, book.id);
-  const turnsSoFar = body.history.filter((t) => t.role === "player").length;
+  body.history = priorTurns(body.history, body.playerLine);
   const maxTurns = scene.conversation?.maxTurns ?? 0;
-  const mustDecide = maxTurns > 0 && turnsSoFar + 1 >= maxTurns;
+  const mustDecide = shouldConclude(body.history, maxTurns);
 
   const system = buildSystem({ body, card, charKey, scene, exits, consequences, mustDecide });
 
-  if (mockMode) return NextResponse.json(mockReply(body, card.name, exits, consequences, mustDecide));
+  // Missing credentials must not invent character reactions or award pretend consequences.
+  if (mockMode) return NextResponse.json({ error: "dialogue offline" }, { status: 503 });
 
   const messages = [
     { role: "system", content: system },
@@ -145,7 +147,9 @@ function buildSystem(args: {
   const p = body.profile;
   const bookFlags = Object.entries(p.flags[body.bookId] ?? {}).filter(([, v]) => v).map(([k]) => k);
   const exitList = Object.entries(exits).map(([id, desc]) => `- ${id}: ${desc}`).join("\n");
-  const memory = p.memory.slice(-12).map((m) => `- ${m}`).join("\n") || "- (nothing yet)";
+  const memory = body.mode === "inner"
+    ? p.memory.slice(-12).map((m) => `- ${m}`).join("\n") || "- (nothing yet)"
+    : "Use only this conversation and the explicitly known echoes above. Private events are not your knowledge.";
   const rel = relationOf(p, charKey);
   const known = (p.echoes ?? []).filter((e) => e.knownBy.includes(charKey)).map((e) => `- ${e.text}`).join("\n");
   const menu = Object.entries(consequences).map(([tag, c]) => `- ${tag}: ${c.when}`).join("\n");
@@ -169,7 +173,7 @@ function buildSystem(args: {
     `HER INPUT CAN BE SPEECH OR ACTION. If she describes doing something (for example in *asterisks*, or "I press my palm to the glass"), treat it as happening in the scene: put its visible physical effect in "narration" (one sentence, present tense, second person, e.g. "The candle flames lean away from the glass.") and react to it in "dialogue". Otherwise narration may be null, or one short line of what changes in the room.`,
     `CONSEQUENCES. Her words and actions have consequences in this story. When her LATEST input clearly earns one of these, include its tag in "consequences" (at most two; only ones she has truly earned; never fire one just because it is listed):\n${menu || "- (none remaining)"}`,
     `RELATIONSHIP. Set trust_delta and fear_delta (integers -2 to 2) for how her latest input changes YOUR trust in her and fear of her. Usually 0 or 1; 2 only for something remarkable.`,
-    `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
+    `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${body.mode === "inner" ? bookFlags.join(", ") || "none" : "private; not available to this character"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
     `AUTHORED EXITS for this scene. When the conversation has clearly arrived at one of them, set "decision" to its id; otherwise null. ${mustDecide ? "This is the final exchange: end the scene in character and you MUST set decision to the closest exit." : "Do not rush to an exit; let her lead."}\n${exitList || "- none"}`,
     `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 to 3 sentences, spoken aloud), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
@@ -205,21 +209,3 @@ function safeParse(raw: string): DialogueReply {
   }
 }
 
-function mockReply(body: Body, name: string, exits: Record<string, string>, consequences: Record<string, Consequence>, mustDecide: boolean): DialogueReply {
-  const ids = Object.keys(exits);
-  const base = { narration: null, inner_thought: null, consequences: [] as string[], trust_delta: 0, fear_delta: 0, memory_note: null };
-  if (body.mode === "inner") return { ...base, dialogue: "Seventy years is nothing. And yet.", mood: "neutral", decision: null };
-  const line = body.playerLine?.trim() ?? "";
-  // Offline mode: fire the first consequence whose tag words appear in what she typed, so the engine can be tested without the API.
-  const hit = Object.keys(consequences).find((t) => t.split("_").some((w) => w.length > 3 && line.toLowerCase().includes(w.toLowerCase())));
-  return {
-    ...base,
-    dialogue: line ? `${name} (offline voice): "${line}"... You say that as if it changes anything.` : `${name} waits, watching you.`,
-    narration: line.startsWith("*") ? "The candle flames lean away from the glass." : null,
-    mood: "wary",
-    decision: mustDecide ? ids[0] ?? null : null,
-    consequences: hit ? [hit] : [],
-    fear_delta: hit ? 1 : 0,
-    memory_note: line ? `Said to ${name}: "${line.slice(0, 80)}"` : null,
-  };
-}

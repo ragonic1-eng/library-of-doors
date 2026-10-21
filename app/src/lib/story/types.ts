@@ -26,6 +26,7 @@ export interface Choice {
   effectsIf?: { flag: string; effects: Effect; ripple?: string }[]; // extra effects when an earlier flag is set
   requires?: Requires; // hidden when not met; the AI cannot steer to it either
   next: string; // scene id
+  journal?: string; // an authored, spoiler-free record of this decision
 }
 
 /** Something the player's words or actions can cause, chosen live by the AI from this authored menu. */
@@ -56,6 +57,7 @@ export interface Scene {
   pov: "3P" | "POV";
   clips: string[]; // played in order; files live at /clips/<bookId>/<clip>.mp4
   narration?: string; // fallback bridging text (the director may rewrite it)
+  narrationAudio?: boolean; // false while an edited narration awaits its matching recording
   narrationIf?: { flag: string; text: string }[]; // extra sentences appended when earlier flags are set
   music?: string; // music track id for this scene (plays until a scene names another; "none" stops it)
   hook?: string; // one-line cliffhanger shown for a few seconds as the scene ends (engagement-design.md §6)
@@ -64,6 +66,8 @@ export interface Scene {
   conversation?: Conversation;
   choices?: Choice[];
   next?: string; // for scenes with no choices
+  objective?: string; // the immediate question, never an ending requirement
+  completes?: string; // an episode/book milestone, awarded on arrival
 }
 
 export interface Book {
@@ -110,6 +114,8 @@ export interface Profile {
   echoes: { text: string; knownBy: string[] }[]; // story facts her choices created, for later characters
   playerModel: PlayerModel;
   position: { book: string; scene: string } | null;
+  decisions: Record<string, string>; // book:scene -> committed choice id
+  journal: { id: string; title: string; text: string }[];
 }
 
 export interface DialogueReply {
@@ -123,3 +129,4 @@ export interface DialogueReply {
   fear_delta: number; // -2..2, the speaker's change in fear
   memory_note: string | null;
 }
+
