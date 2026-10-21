@@ -274,6 +274,13 @@ SURREAL DETAIL: the books on the nearest shelves have blank spines, and the titl
 
 ---
 
+**4.9 The throne room of the Dreaming, at full power (cold open, Episode 0)**
+```
+The heart of the Dreaming's palace before the fall. A vast circular hall whose walls are not walls but open night sky, thick with slow-turning stars close enough to touch; a floor of black glass reflecting them so the room seems to float in space. At its centre a throne grown from the same black glass, tall and narrow, with a drift of fine grey sand rising upward from its base against gravity. Before the throne, kneeling, a tall man in a pale suit with his head bowed (the Corinthian, face not visible). To one side a tall woman in a charcoal coat with a brass lantern and a ledger (Lucienne). A path of pale stone leads from the throne toward two distant gates of horn and ivory. Light comes from the stars themselves, cool silver, with one warm source: a single candle on the arm of the throne.
+SURREAL DETAIL: the kneeling man's shadow is cast upward onto the stars.
+[Style Bible]
+```
+
 ## 5. Kling clip pattern (video, through the gateway)
 
 `POST /v1/videos` with `model`, `prompt`, `input_reference` (the approved still), `seconds` ("5" or "10"), `size` ("1280x720" or "1920x1080").

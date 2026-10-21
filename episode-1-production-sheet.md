@@ -45,8 +45,10 @@ Clip IDs are what the app will reference. "3P" = third-person, "POV" = first-per
 
 | Scene | Clip | Shot | Length | Content |
 |---|---|---|---|---|
-| 1.1 Ritual | 1.1a | 3P | 10 s | Cellar, cultists in robes, Burgess reading; the circle ignites. |
-| | 1.1b ★ | 3P | 10 s | Dream materialises inside the glass sphere, naked and pale, collapses. Helm, pouch and ruby lifted away by gloved hands. |
+| 0.0 Cold open (approved 2026-10-21) | 0.0a ★ | 3P | 10 s | The throne room of the Dreaming at full power: Aurie seated, the Corinthian kneeling, Lucienne at her shoulder with the day's report, her hair moving in its own wind, walls of stars. |
+| | 0.0b | POV | 5 s | She raises a hand; a nightmare dissolves into drifting sand at the gesture. |
+| | 0.0c ★ | 3P | 10 s | Mid-sentence, chalk-white lines flare across the floor beneath her; the pull; blackness; the cellar. Replaces the old 1.1a. |
+| 1.1 Ritual | 1.1b ★ | 3P | 10 s | Aurie materialises inside the glass sphere, bare and pale, collapses. Helm, pouch and ruby lifted away by gloved hands. |
 | 1.2 Bargain | 1.2a | POV | 5 s | Through the curved glass: Burgess crouches, lips moving. |
 | | 1.2b-A/B/C ★ | 3P | 5 s each | Three outcomes: silence / Burgess recoils from a threat / Burgess laughs at the false bargain. |
 | 1.3 Montage | 1.3a | 3P | 10 s | 1916 trench: a soldier who cannot sleep, eyes open, shells falling. |
@@ -64,7 +66,7 @@ Clip IDs are what the app will reference. "3P" = third-person, "POV" = first-per
 | | 2.1b | POV | 10 s | Slow pan along the Doors wall: three dark locked doors carved *Neverwhere*, *Coraline*, *The Alchemist*; the empty reading table. |
 | | 2.1c | 3P | 5 s | Lucienne turns to the player: "Every story has a door, my lord. These are not yet open." |
 
-Totals: **24 clips** (19 base + 5 decision variants), 9 with the hero visible. Plus 8 location stills. Scene 2.1 doubles as the series hub; see `series-bible.md` §2 and §9.
+Totals: **26 clips** (21 base + 5 decision variants), 11 with the hero visible. Plus 9 location stills. Scene 2.1 doubles as the series hub; see `series-bible.md` §2 and §9.
 
 ---
 
@@ -96,6 +98,7 @@ Minimum you must send: **Dream, Roderick, Alex.** The rest I can generate from t
 6. The gates of Horn and Ivory, ruined and strained variants.
 7. The guard's dream: a pub, a wife, warm light (the door Dream uses).
 8. Lucienne's library interior: endless shelves, the Doors wall with three locked doors, the reading table (the series hub).
+9. The throne room of the Dreaming at full power (cold open): a throne of black glass, walls that are open night sky, the Corinthian kneeling, sand drifting upward.
 
 Each gets one approved still before any video is generated.
 

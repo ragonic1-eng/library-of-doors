@@ -166,7 +166,7 @@ app/
 |---|---|---|---|---|---|
 | The Sandman | `story-map.md` | 7 / ~40 | 3 in Episode 1 | 5 | none |
 | Neverwhere | `story-map-neverwhere.md` | 8 / 48 | 22 | 5 + variant | Casting settled (§2c): Jessica stays fiancée; hero name default Rachel Mayhew. Tone notes applied (suicide posters rewritten, Door cast adult, crude asides cut) |
-| Coraline | `story-map-coraline.md` | 5 / 33 | 21 | 5 + variant | Casting settled (§2c): adult Coraline. Still open: spider look-away |
+| Coraline | `story-map-coraline.md` | 5 / 33 | 21 | 5 + variant | Casting settled (§2c): adult Coraline. Spiders: no sensitivity, no look-away; render them fully realistic, the beldam's final form included |
 | The Alchemist | `story-map-alchemist.md` | 7 / 40 | 21 | 5 + variant | Casting settled (§2c): Fatima's romance kept. Palette line below |
 
 Per-book palette: the shared Style Bible stays frozen. Each book appends one palette line after it. Sandman: cool, candle amber. Neverwhere: sodium orange and wet grey. Coraline: grey drizzle, one poison-bright colour per scene. The Alchemist: warm sand, white light, deep blue night.
