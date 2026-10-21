@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "gen": "node scripts/generate-images.mjs",
-    "clips": "node scripts/generate-clips.mjs"
+    "clips": "node scripts/generate-clips.mjs",
+    "upload": "node scripts/upload-clips.mjs"
   },
   "dependencies": {
     "next": "16.4.2",
@@ -20,6 +21,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vercel/blob": "^2.8.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
