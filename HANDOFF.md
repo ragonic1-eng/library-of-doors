@@ -49,14 +49,14 @@ npm run clips -- one <clip-id>                # render one clip (respects the bu
 npm run clips -- spend                        # real spend against the cap
 ```
 
-- Likeness check, free and local: `python -I tools/face_score.py aurie|alex <files>` (OpenCV YuNet and SFace; the models are downloaded into `tools/models/`, not committed). The score is mean cosine similarity to the real photos: 0.5 or above strong, 0.4 to 0.5 acceptable, below 0.4 reject. It cannot judge heavy aging (1988 Alex), so judge those by eye.
+- Likeness check, free and local: `python -I tools/face_score.py aurie|alex <files>` (OpenCV YuNet and SFace; the models are downloaded into `tools/models/`, not committed). The score is mean cosine similarity to the real photos: 0.5 or above strong, 0.4 to 0.5 acceptable, below 0.4 reject. It cannot judge heavy aging (1988 Alex), so judge those by eye. In clips, a low average is often composition, not drift (a hand over the face, glass distortion, another person in frame, a cut to black): always look at the frames before paying for a re-render.
 - Faces: always put the real photo face crops first and use the identity locks in `production/ep1-shots.json`. Keep faces large in frame. Never slim or beautify.
 
 ## Services and money
 
 - One gateway key (Infistar, OpenAI-compatible) covers everything. It lives in `.env` and `app/.env.local`, which are never committed. **Never put the key in chat or in git.**
-- Models in use: video `wan2.7-i2v` (Kling is restricted on this key), images `gemini-3-pro-image`, dialogue `grok-4.20-0309-reasoning` (20 to 40 s per reply; `claude-haiku-5-5` measured 2.5 s with better writing; the owner has not yet decided), voice `gpt-audio-1.5`.
-- **Budget is limited.** The clip generator enforces a real-spend cap (`CLIP_BUDGET_CNY`, currently 250 yuan). No rerolls without a reason. Measure with the face scorer before re-rendering.
+- Models in use: video `wan2.7-i2v` (Kling is restricted on this key), images `gemini-3-pro-image`, dialogue `claude-haiku-5-5` (about 2.5 s per reply; chosen over Grok, which took 20 to 40 s), voice `gpt-audio-1.5`.
+- **Budget is limited.** The clip generator enforces a real-spend cap (`CLIP_BUDGET_CNY`, currently 400 yuan). No rerolls without a reason. Measure with the face scorer before re-rendering.
 
 ## Not in git (local only)
 
@@ -66,4 +66,4 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 
 - Episode 1: 24 scene clips rendered; Alex's 1970s shots re-rendered with his real face; Aurie's master sheet regenerated from her photos (likeness 0.50) and her face shots need new keyframes and clips; reaction loops partly done.
 - Gameplay: consequence engine, relations, echoes, action narration, and two new conversations (the sleeping girl Unity in 1916, old Alex at the escape) are built.
-- Open decisions for the owner: dialogue model (Grok or Haiku), budget beyond 250 yuan, the Neverwhere hero's name (default Rachel Mayhew), the Vercel URL.
+- Open decisions for the owner: the Neverwhere hero's name (default Rachel Mayhew), the Vercel URL.

@@ -10,8 +10,7 @@
       "keyframe": {
         "refs": [
           "assets/plates/throne-room/plate.png",
-          "characters/aurie/sheet.png",
-          "characters/aurie/poses.png"
+          "characters/aurie/sheet.png"
         ],
         "prompt": "Medium shot from slightly below the throne: Aurie, the woman from the identity photographs, sits upright on the black glass throne, her face large and clearly lit in the upper third of the frame, utterly still and regal, her long black hair lifting in its own slow wind. At the frame edges: the pale-suited man kneeling with head bowed (back of his head only), Lucienne at her shoulder with lantern and ledger. Starfield walls behind, one candle on the throne arm lighting her face warmly."
       },
@@ -40,8 +39,7 @@
       "keyframe": {
         "refs": [
           "assets/plates/throne-room/plate.png",
-          "characters/aurie/sheet.png",
-          "characters/aurie/expressions.png"
+          "characters/aurie/sheet.png"
         ],
         "prompt": "Medium shot, waist up, slightly low angle: Aurie stands before the throne mid-sentence, her face large in frame, as chalk-white lines of a magic circle flare up through the black glass floor around her, lighting her face from below like burning magnesium. Expression: sudden alarm breaking through regal calm. Starfield behind her."
       },
@@ -57,7 +55,6 @@
       "keyframe": {
         "refs": [
           "assets/plates/cellar-1916/plate.png",
-          "characters/aurie/poses.png",
           "characters/burgess/sheet.png"
         ],
         "prompt": "Low close shot beside the huge glass sphere in the 1916 candle-lit cellar: inside it, close to the camera, Aurie lies curled on the curved glass in her long black gown, dazed, her face turned toward the camera and clearly visible through the glass, one palm flat against it, her black hair spread around her. Out of focus beyond the sphere: gloved hands lifting away a dark ornate helm, a small leather pouch and a red ruby on a chain, and Roderick Burgess in his burgundy robe watching, triumphant."
@@ -104,8 +101,7 @@
       "keyframe": {
         "refs": [
           "assets/plates/cellar-1916/plate.png",
-          "characters/burgess/poses.png",
-          "characters/aurie/expressions.png"
+          "characters/burgess/poses.png"
         ],
         "prompt": "Medium close shot: inside the glass sphere Aurie has risen to her knees, close to the glass, her face large and sharp in frame, set in cold fury, her breath fogging the glass in front of her. At the right edge of the frame, Burgess recoils a step back, one arm half raised, partly cut off by the frame."
       },
@@ -236,8 +232,7 @@
       "keyframe": {
         "refs": [
           "characters/guard/portrait.png",
-          "characters/aurie/sheet.png",
-          "characters/aurie/poses.png"
+          "characters/aurie/sheet.png"
         ],
         "prompt": "Medium close shot at night in the 1988 cellar: Aurie is stepping out through the fogged curved glass of the sphere as if through water, her face and shoulders emerging toward the camera, large and clearly lit by the warm amber glow of the pub visible inside the fog; the glass bends around her like skin without breaking. At the bottom edge of the frame the sleeping guard's head rests against the glass."
       },
