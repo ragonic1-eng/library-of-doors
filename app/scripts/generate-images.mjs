@@ -43,6 +43,10 @@ const cmd = argv[0] ?? "list";
 const dry = argv.includes("--dry");
 const via = argv.includes("--via") ? argv[argv.indexOf("--via") + 1] : "gemini";
 const perJob = argv.includes("--n") ? Math.max(1, parseInt(argv[argv.indexOf("--n") + 1], 10) || 2) : 2;
+// --ref <path> (repeatable): extra reference images appended to the job's own, e.g. a candidate that already looks right.
+const extraRefs = argv.flatMap((a, i) => (a === "--ref" && argv[i + 1] ? [resolve(process.cwd(), argv[i + 1])] : []));
+// --note "<text>": an extra instruction appended to the prompt for this run only.
+const runNote = argv.includes("--note") ? argv[argv.indexOf("--note") + 1] : "";
 
 // ---------- prompt extraction ----------
 const md = readFileSync(PROMPTS, "utf8").split(/\r?\n/);
@@ -81,8 +85,8 @@ function character(id, section, sheetLabel, portraitLabel, sheetRefs = []) {
 
 character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", [join(C("dream"), "photo.jpg")]);
 character("burgess", "### 3.2", "**Reference sheet:**", "**Hero portrait");
-character("alex-young", "### 3.3", "**Reference sheet:**", "**Hero portrait");
-character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait");
+character("alex-young", "### 3.3", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);
+character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);
 character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
@@ -190,7 +194,8 @@ function readiness(job) {
 }
 
 async function run(job) {
-  const prompt = job.prompt();
+  if (extraRefs.length) job = { ...job, refs: [...job.refs, ...extraRefs] };
+  const prompt = runNote ? `${job.prompt()}\n${runNote}` : job.prompt();
   const state = readiness(job);
   const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
   console.log(`\n▶ ${job.id}  (${job.refs.length ? `${job.refs.length} reference image(s)` : "text only"})`);

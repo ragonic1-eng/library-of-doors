@@ -117,10 +117,17 @@ SURREAL DETAIL: the candle flames nearest him lean toward him instead of rising.
 
 ### 3.3 Alex Burgess, young (1920s to 1930s, early 20s)
 
-**Reference sheet:**
+**Reference sheet** (attach `characters/alex/photo.jpg`, the author himself):
 ```
 [Reference sheet frame]
-A slight, anxious young Englishman of twenty-two, early 1930s. Height around 1.72 m, narrow-shouldered, thin wrists. Face: long and thin, his father's grey eyes but wide and wet and without any of the coldness, a high forehead, a slightly receding chin, prominent Adam's apple. Skin fair and dry, flaking slightly at the sides of the nose, a faint shaving nick on the jaw, pale freckles across the bridge of the nose. Hair fair, fine, side-parted and brilliantined flat, one strand escaped over the forehead. Round black-framed spectacles, thick matte black acetate rims, thin lenses, slightly smudged; they are his most recognisable feature. Lips pressed together as if about to apologise. Clothing: a fawn lambswool cardigan, bobbled at the elbows, buttoned over a white cotton shirt with a soft collar, a narrow brown knitted tie, grey flannel trousers with a crease, brown brogues scuffed at the toe. A fountain pen clipped in the cardigan pocket, ink stain on the right middle finger. Posture: shoulders rounded, hands clasped in front, weight on the back foot. Expression: wanting to be elsewhere.
+Use the attached photographs (the same man from two angles; the first is the main reference) as the exact face of this character. He must be instantly recognisable to anyone who knows him: keep his face shape, full cheeks, eyes, brows, nose, mouth, ears, hairline and the proportions between them exactly as they are. Keep his real build: a broad, solid, heavyset young man. Do not slim, lengthen or reshape his face or body. Change ONLY age, period styling and mood.
+AGE AND PERIOD: early twenties, early 1930s England, the son of the house at Fawney Rig.
+SPECTACLES: his own black-framed spectacles exactly as in the photo, rectangular matte black frames, thin lenses, slightly smudged; they are his signature feature and appear in every image of him at every age.
+HAIR: his own thick black hair with no grey at all (he is young), swept back and brilliantined in a 1930s style, short at the sides, one strand escaped over the forehead.
+SKIN: real texture, a faint shaving nick on the jaw, a little flush across the cheeks from nerves.
+CLOTHING: a fawn lambswool cardigan, bobbled at the elbows, buttoned over a white cotton shirt with a soft collar, a narrow brown knitted tie, grey flannel trousers with a crease, brown brogues scuffed at the toe. A fountain pen clipped in the cardigan pocket, an ink stain on the right middle finger.
+POSTURE: big shoulders rounded inward as if trying to take up less room, hands clasped in front, weight on the back foot.
+EXPRESSION: not his usual smile. Anxious and kind, lips pressed together as if about to apologise, eyes soft behind the lenses. Wanting to be elsewhere.
 SURREAL DETAIL: a single moth rests on his shoulder, perfectly still, its shadow sharp.
 [Style Bible]
 ```
@@ -136,10 +143,15 @@ SURREAL DETAIL: the fog of his breath on the glass forms, for an instant, the sh
 
 ### 3.4 Alex Burgess, old (1988, early 70s)
 
-**Reference sheet (standalone, no reference image needed):**
+**Reference sheet** (attach `characters/alex/photo.jpg`, the same author photo):
 ```
 [Reference sheet frame]
-A frail Englishman of seventy-two, 1988, the same man as young Alex fifty years on. Height around 1.70 m, shrunken and narrow-shouldered, thin wrists. Face: long and thin, a high forehead, a slightly receding chin, a prominent Adam's apple in a loose neck, pale freckles faded into age spots across the nose. Round black-framed spectacles, thick matte black acetate rims, now with thick lenses that magnify his eyes, repaired at one hinge with white tape; they are his most recognisable feature. Hair thin and white, combed over a freckled scalp. Skin papery and translucent, deep lines from nose to mouth, liver spots on the temples and the backs of trembling hands, a healed cut on one knuckle. Eyes wet grey, slightly clouded, the lower lids drooping, red-rimmed. Seated in a 1980s hospital wheelchair with chrome rims and a cracked vinyl seat, a tartan wool blanket over the knees, a grey cardigan buttoned one hole wrong over a checked shirt, slippers. Hands gripping the armrests, knuckles white. Posture collapsed forward. Expression: a lifetime of dread finally arriving.
+Use the attached photographs (the same man from two angles; the first is the main reference) as the face of this character, aged fifty years to seventy-two. He must still be recognisable as the man in the photo: keep his face shape, eye shape, brows, nose, mouth, ears and proportions, and keep his heavyset build, now softened and stooped by age. Do not slim or reshape him. Change ONLY age, period styling and mood.
+AGE: seventy-two, 1988. His swept-back hair now entirely white-grey, thinner at the crown. Skin with real age: deep lines from nose to mouth, crow's feet behind the lenses, loose skin at the jaw and neck, age spots on the temples and the backs of trembling hands, a healed cut on one knuckle. Eyes the same, a little clouded, lower lids drooping and red-rimmed.
+SPECTACLES: the same black-framed spectacles as in the photo, rectangular matte black frames, now with thicker lenses, repaired at one hinge with white tape. His signature feature.
+CLOTHING AND SETTING: seated in a 1980s hospital wheelchair with chrome rims and a cracked vinyl seat, a tartan wool blanket over the knees, a grey cardigan buttoned one hole wrong over a checked shirt, slippers. Hands gripping the armrests, knuckles white.
+POSTURE: big frame collapsed forward into the chair.
+EXPRESSION: not his usual smile. A lifetime of dread finally arriving.
 SURREAL DETAIL: on his lap, under the blanket's edge, the same moth from fifty years ago, now grey, still perfectly still.
 [Style Bible]
 ```
