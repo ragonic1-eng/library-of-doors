@@ -347,7 +347,36 @@ async function run(job) {
   if (minScore != null && who && kept < perJob) console.log(`   only ${kept} of ${perJob} passed the likeness gate in ${budgetTries} tries`);
 }
 
+// Face refine: keep a composed scene image, replace ONLY the face with the real person's face.
+// npm run gen -- refine <image> <aurie|alex> [--n 2]   (saves <image>-face-vN.png next to it, scored)
+const FACE_REFS = {
+  aurie: ["face-4.jpg", "face-6.jpg", "face-5.jpg", "face.jpg"].map((f) => join(C("dream"), f)),
+  alex: [join(C("alex"), "face.jpg"), join(C("alex"), "photo-2.jpg")],
+};
+const FACE_TEXT = {
+  aurie: "a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids and slightly downturned outer corners; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip",
+  alex: "a very broad, round, full face, heavy cheeks and a wide soft jaw; narrow single-lidded eyes behind rectangular matte-black glasses; a broad nose with a rounded tip; full lips with a prominent upper lip; prominent ears",
+};
+async function refine(file, who) {
+  const src = resolve(process.cwd(), file);
+  const refs = [src, ...FACE_REFS[who]];
+  const prompt = `Edit the FIRST image only. Keep it identical in every way: composition, framing, camera angle, lighting and its colour and direction, pose, hands, hair styling, costume, props, background, film grain. Change ONLY the face of the ${who === "aurie" ? "woman" : "man"} so that it is an exact likeness of the real person in images 2 to ${refs.length}: ${FACE_TEXT[who]}. Match the scene's lighting on the new face so it blends perfectly, same skin texture and grain. Do not slim, narrow, beautify or age the face. Do not change anything else.`;
+  for (let n = 0; n < perJob; n++) {
+    const base = src.replace(/\.(png|jpg|jpeg|webp)$/i, "");
+    let v = 1; while (existsSync(`${base}-face-v${v}.png`)) v++;
+    const { buf } = await viaGemini(prompt, refs);
+    const out = `${base}-face-v${v}.png`;
+    writeFileSync(out, buf);
+    const score = scoreFace(who, out);
+    console.log(`   refined ${out.replace(ROOT, "").replace(/^[\\/]/, "")}  likeness ${score == null ? "n/a" : score.toFixed(3)}`);
+  }
+}
+
 async function main() {
+  if (cmd === "refine") {
+    if (!KEY) { console.error("No INFISTAR_API_KEY found."); process.exit(1); }
+    return refine(argv[1], argv[2] ?? "aurie");
+  }
   if (cmd === "list") {
     for (const j of jobs) {
       const done = existsSync(j.approved) ? "approved" : readiness(j);

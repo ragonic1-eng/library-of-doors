@@ -9,10 +9,10 @@
       "seconds": 10,
       "keyframe": {
         "refs": [
-          "assets/plates/throne-room/plate.png",
-          "characters/aurie/sheet.png"
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png"
         ],
-        "prompt": "Medium shot from slightly below the throne: Aurie, the woman from the identity photographs, sits upright on the black glass throne, her face large and clearly lit in the upper third of the frame, utterly still and regal, her long black hair lifting in its own slow wind. At the frame edges: the pale-suited man kneeling with head bowed (back of his head only), Lucienne at her shoulder with lantern and ledger. Starfield walls behind, one candle on the throne arm lighting her face warmly."
+        "prompt": "Medium shot from slightly below the throne: Aurie, the woman from the identity photographs, sits upright on the black glass throne, her face large and clearly lit in the upper third of the frame, utterly still and regal, her long black hair lifting in its own slow wind. At the frame edges: the pale-suited man kneeling with head bowed (back of his head only), Lucienne at her shoulder with lantern and ledger. Starfield walls behind, one candle on the throne arm lighting her face warmly. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "Aurie listens without moving; only her hair drifts upward and a thin stream of sand rises from the base of the throne. Lucienne turns a page of her ledger. The kneeling man does not lift his head. Very slow push-in toward Aurie's face.",
       "identity": [
@@ -38,10 +38,10 @@
       "seconds": 10,
       "keyframe": {
         "refs": [
-          "assets/plates/throne-room/plate.png",
-          "characters/aurie/sheet.png"
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png"
         ],
-        "prompt": "Medium shot, waist up, slightly low angle: Aurie stands before the throne mid-sentence, her face large in frame, as chalk-white lines of a magic circle flare up through the black glass floor around her, lighting her face from below like burning magnesium. Expression: sudden alarm breaking through regal calm. Starfield behind her."
+        "prompt": "Medium shot, waist up, slightly low angle: Aurie stands before the throne mid-sentence, her face large in frame, as chalk-white lines of a magic circle flare up through the black glass floor around her, lighting her face from below like burning magnesium. Expression: sudden alarm breaking through regal calm. Starfield behind her. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "The chalk lines blaze brighter and the circle tightens; Aurie looks down at her feet, then is pulled straight downward through the glass floor in one violent motion, her hair streaming upward. The lines flare white and the frame burns out to black.",
       "identity": [
@@ -54,10 +54,10 @@
       "seconds": 10,
       "keyframe": {
         "refs": [
-          "assets/plates/cellar-1916/plate.png",
-          "characters/burgess/sheet.png"
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
         ],
-        "prompt": "Low close shot beside the huge glass sphere in the 1916 candle-lit cellar: inside it, close to the camera, Aurie lies curled on the curved glass in her long black gown, dazed, her face turned toward the camera and clearly visible through the glass, one palm flat against it, her black hair spread around her. Out of focus beyond the sphere: gloved hands lifting away a dark ornate helm, a small leather pouch and a red ruby on a chain, and Roderick Burgess in his burgundy robe watching, triumphant."
+        "prompt": "Low close shot beside the huge glass sphere in the 1916 candle-lit cellar: inside it, close to the camera, Aurie lies curled on the curved glass in her long black gown, dazed, her face turned toward the camera and clearly visible through the glass, one palm flat against it, her black hair spread around her. Out of focus beyond the sphere: gloved hands lifting away a dark ornate helm, a small leather pouch and a red ruby on a chain, and Roderick Burgess in his burgundy robe watching, triumphant. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "Aurie stirs and slowly lifts her head, her palm pressing against the glass. The gloved hands carry the helm, pouch and ruby out of frame. Burgess steps closer to the sphere, triumphant. Candle flames shiver. Slow push-in toward the sphere.",
       "identity": [
@@ -83,11 +83,11 @@
       "seconds": 5,
       "keyframe": {
         "refs": [
-          "assets/plates/cellar-1916/plate.png",
           "characters/burgess/expressions.png",
-          "characters/aurie/sheet.png"
+          "characters/aurie/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
         ],
-        "prompt": "Over-the-shoulder shot past Burgess's blurred shoulder and burgundy robe at the left edge: through the curved glass, Aurie sits utterly still inside the sphere, her face large, sharp and clearly visible, staring back at him in perfect silence. Candlelight on the glass."
+        "prompt": "Over-the-shoulder shot past Burgess's blurred shoulder and burgundy robe at the left edge: through the curved glass, Aurie sits utterly still inside the sphere, her face large, sharp and clearly visible, staring back at him in perfect silence. Candlelight on the glass. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "A long silent stare. Burgess waits, then his jaw tightens; he stands slowly, straightens his robe and turns away. Aurie does not move or blink. Slow lateral drift.",
       "identity": [
@@ -100,10 +100,10 @@
       "seconds": 5,
       "keyframe": {
         "refs": [
-          "assets/plates/cellar-1916/plate.png",
-          "characters/burgess/poses.png"
+          "characters/burgess/poses.png",
+          "assets/plates/cellar-1916/plate.png"
         ],
-        "prompt": "Medium close shot: inside the glass sphere Aurie has risen to her knees, close to the glass, her face large and sharp in frame, set in cold fury, her breath fogging the glass in front of her. At the right edge of the frame, Burgess recoils a step back, one arm half raised, partly cut off by the frame."
+        "prompt": "Medium close shot: inside the glass sphere Aurie has risen to her knees, close to the glass, her face large and sharp in frame, set in cold fury, her breath fogging the glass in front of her. At the right edge of the frame, Burgess recoils a step back, one arm half raised, partly cut off by the frame. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "Burgess stumbles back another step, catching himself on the lectern; the candles nearest the sphere gutter and lean away from it. Aurie remains kneeling, staring. Quick small hand-held reaction.",
       "identity": [
@@ -234,7 +234,7 @@
           "characters/guard/portrait.png",
           "characters/aurie/sheet.png"
         ],
-        "prompt": "Medium close shot at night in the 1988 cellar: Aurie is stepping out through the fogged curved glass of the sphere as if through water, her face and shoulders emerging toward the camera, large and clearly lit by the warm amber glow of the pub visible inside the fog; the glass bends around her like skin without breaking. At the bottom edge of the frame the sleeping guard's head rests against the glass."
+        "prompt": "Medium close shot at night in the 1988 cellar: Aurie is stepping out through the fogged curved glass of the sphere as if through water, her face and shoulders emerging toward the camera, large and clearly lit by the warm amber glow of the pub visible inside the fog; the glass bends around her like skin without breaking. At the bottom edge of the frame the sleeping guard's head rests against the glass. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
       "motion": "Aurie steps out through the fogged glass as if through water, rising to her full height beside the sleeping guard, her long black hair lifting in a wind that touches nothing else; behind her the chalk circle crumbles into drifting dust. Slow push-in from a low angle.",
       "identity": [
