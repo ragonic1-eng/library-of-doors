@@ -28,3 +28,6 @@ app/next-env.d.ts
 
 # downloaded face models (OpenCV zoo)
 /tools/models/
+
+__pycache__/
+*.pyc
