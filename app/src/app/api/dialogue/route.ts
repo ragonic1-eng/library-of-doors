@@ -50,9 +50,29 @@ function available(scene: Scene, p: Profile, bookId: string) {
   return { exits, consequences };
 }
 
-/** Warm-up ping from the start gate: wakes this function before the first real line, no model call. */
-export async function GET() {
-  return NextResponse.json({ ok: true, model: models.dialogue, mock: mockMode });
+/** Warm-up ping from the start gate: wakes this function before the first real line, no model call.
+ *  `?probe=1` additionally times a one-word model call through each gateway hostname (diagnostic, tiny cost). */
+export async function GET(req: Request) {
+  const url = new URL(req.url);
+  if (url.searchParams.get("probe") !== "1" || mockMode) return NextResponse.json({ ok: true, model: models.dialogue, mock: mockMode });
+  const hosts = ["https://infistar.ai/v1", "https://infistar.cc/v1"];
+  const key = process.env.INFISTAR_API_KEY ?? "";
+  const results: Record<string, string> = {};
+  for (const base of hosts) {
+    const t0 = Date.now();
+    try {
+      const r = await fetch(`${base}/chat/completions`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: models.dialogue, max_tokens: 5, messages: [{ role: "user", content: "Say: ready" }] }),
+        signal: AbortSignal.timeout(30_000),
+      });
+      results[base] = `${r.status} in ${Date.now() - t0} ms`;
+    } catch (e) {
+      results[base] = `error after ${Date.now() - t0} ms: ${(e as Error).message}`;
+    }
+  }
+  return NextResponse.json({ ok: true, model: models.dialogue, region: process.env.VERCEL_REGION ?? null, probe: results });
 }
 
 export async function POST(req: Request) {
