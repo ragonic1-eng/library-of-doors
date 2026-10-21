@@ -89,6 +89,17 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 - Latency: the gateway has a 2 to 4 s floor per call anywhere. The start gate calls `GET /api/dialogue?warm=1` (one 3-token model call) and `GET /api/tts`, which absorbs the gateway's slow first hop; measured after that, production replies take 3.4 to 4.4 s, the same as on a PC. `?probe=1` on the same route times both gateway hostnames from inside Vercel.
 - Open decision for the owner: the Neverwhere hero's name (default Rachel Mayhew).
 
+## Working from ChatGPT / Codex (no local media, no key)
+The repo holds code and story only. Clips, voices and music are NOT in git, but they are public on Vercel Blob, so you can still build and play the game:
+1. Setup (put this in the Codex environment's setup script, which runs with internet; the agent phase may not have it):
+   `cd app && npm ci`
+2. Create `app/.env.local` with:
+   `NEXT_PUBLIC_CLIP_BASE=https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips`
+   `MOCK_AI=1`  (canned NPC replies, no API key needed)
+3. `npm run build` must pass. `npm run dev` then open `/play/sandman` to see real clips and hear real music and narration.
+4. The live site https://library-of-doors.vercel.app is the verified reference (build, playback, dialogue, music, narration checked 2026-10-22).
+What ChatGPT cannot do from its sandbox: generate images, clips, voices or music (needs the owner's PC: tools/venv, models, photos, key) and deploy (needs the owner's Vercel login). Good jobs for it: story/branching in book.json, character cards, dialogue prompt in api/dialogue, UI in Player.tsx/globals.css. Push a branch; the owner deploys.
+
 ## Status 2026-10-22 (latest)
 - Production (library-of-doors.vercel.app) verified: dialogue renders cleanly (no raw JSON, no overlapping text), music bed `cellar-dread` plays.
 - Music: `tools/gen_music.py` (MusicGen small, local, free) rendered all six beds and they are uploaded to Blob. Suno alternative: drop mp3s under the same ids.
