@@ -312,7 +312,7 @@ export default function Player({ book }: { book: Book }) {
           onClick={() => {
             void enterImmersive();
             // Wake the dialogue and voice functions now, so the first real reply is not a cold start.
-            void fetch("/api/dialogue").catch(() => undefined);
+            void fetch("/api/dialogue?warm=1").catch(() => undefined);
             void fetch("/api/tts").catch(() => undefined);
             setStarted(true);
           }}

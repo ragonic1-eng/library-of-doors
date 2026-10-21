@@ -54,6 +54,16 @@ function available(scene: Scene, p: Profile, bookId: string) {
  *  `?probe=1` additionally times a one-word model call through each gateway hostname (diagnostic, tiny cost). */
 export async function GET(req: Request) {
   const url = new URL(req.url);
+  // `?warm=1`: one tiny real call through the configured gateway, so the model path is open before her first line.
+  if (url.searchParams.get("warm") === "1" && !mockMode) {
+    const t0 = Date.now();
+    try {
+      await gatewayJson("/chat/completions", { model: models.dialogue, max_tokens: 3, messages: [{ role: "user", content: "Say: ready" }] }, 20_000);
+      return NextResponse.json({ ok: true, warmed: true, ms: Date.now() - t0 });
+    } catch {
+      return NextResponse.json({ ok: true, warmed: false, ms: Date.now() - t0 });
+    }
+  }
   if (url.searchParams.get("probe") !== "1" || mockMode) return NextResponse.json({ ok: true, model: models.dialogue, mock: mockMode });
   const hosts = ["https://infistar.ai/v1", "https://infistar.cc/v1"];
   const key = process.env.INFISTAR_API_KEY ?? "";
