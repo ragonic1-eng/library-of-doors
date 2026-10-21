@@ -19,3 +19,6 @@ app/next-env.d.ts
 
 # local tooling
 .claude/
+
+# generated images and clips stay local until approved
+/assets/
