@@ -115,7 +115,7 @@ export async function POST(req: Request) {
       model: models.dialogue,
       messages,
       temperature: 0.9,
-      max_tokens: 600,
+      max_tokens: 1200,
       response_format: { type: "json_schema", json_schema: { name: "reply", strict: true, schema: replySchema } },
     });
     const parsed = safeParse(data.choices?.[0]?.message?.content ?? "");
@@ -171,7 +171,7 @@ function buildSystem(args: {
     `RELATIONSHIP. Set trust_delta and fear_delta (integers -2 to 2) for how her latest input changes YOUR trust in her and fear of her. Usually 0 or 1; 2 only for something remarkable.`,
     `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
     `AUTHORED EXITS for this scene. When the conversation has clearly arrived at one of them, set "decision" to its id; otherwise null. ${mustDecide ? "This is the final exchange: end the scene in character and you MUST set decision to the closest exit." : "Do not rush to an exit; let her lead."}\n${exitList || "- none"}`,
-    `FORMAT: JSON with dialogue (1 to 3 sentences, spoken aloud), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
+    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 to 3 sentences, spoken aloud), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
   ].join("\n\n");
 }
@@ -179,8 +179,12 @@ function buildSystem(args: {
 const clampInt = (n: unknown, lo: number, hi: number) => Math.max(lo, Math.min(hi, Math.round(Number(n) || 0)));
 
 function safeParse(raw: string): DialogueReply {
+  const empty: DialogueReply = { dialogue: "", narration: null, inner_thought: null, mood: "neutral", decision: null, consequences: [], trust_delta: 0, fear_delta: 0, memory_note: null };
+  const text = raw.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+  const start = text.indexOf("{");
+  const candidate = start >= 0 ? text.slice(start) : text;
   try {
-    const j = JSON.parse(raw.replace(/^```(?:json)?\s*|\s*```$/g, ""));
+    const j = JSON.parse(candidate);
     return {
       dialogue: String(j.dialogue ?? ""),
       narration: j.narration ?? null,
@@ -193,7 +197,11 @@ function safeParse(raw: string): DialogueReply {
       memory_note: j.memory_note ?? null,
     };
   } catch {
-    return { dialogue: raw.slice(0, 400), narration: null, inner_thought: null, mood: "neutral", decision: null, consequences: [], trust_delta: 0, fear_delta: 0, memory_note: null };
+    // Truncated or malformed JSON: salvage the spoken line and nothing else, so raw structure never reaches the screen.
+    const m = candidate.match(/"dialogue"\s*:\s*"((?:[^"\]|\.)*)"?/);
+    const line = m ? m[1].replace(/\\"/g, '"').replace(/\n/g, " ").trim() : "";
+    const mood = candidate.match(/"mood"\s*:\s*"([a-z]+)"/)?.[1];
+    return { ...empty, dialogue: line || "…", mood: mood && MOODS.includes(mood) ? mood : "neutral" };
   }
 }
 

@@ -69,6 +69,13 @@ npm run clips -- spend                        # real spend against the cap
 - Production env vars set: INFISTAR_BASE_URL, INFISTAR_API_KEY, MODEL_DIALOGUE, MODEL_TTS, MODEL_VIDEO, MODEL_VIDEO_HERO, MODEL_IMAGE, MODEL_STT, NEXT_PUBLIC_CLIP_BASE. Changing a `NEXT_PUBLIC_` variable needs a redeploy.
 - Target devices: Samsung Galaxy Fold 8 and S25 Ultra, mobile browser. The player has a tap-to-start gate (sound, fullscreen, landscape lock), a rotate prompt for upright phones, letterboxing on near-square screens, and touch-sized controls. Test sizes used: 1040x480 (S25 Ultra landscape), 960x860 (Fold inner), 480x1040 (upright phone).
 
+## Sound
+
+- **Music beds**: `tools/venv/Scripts/python tools/gen_music.py [track ...]` renders loop-ready 30 s MP3s with Meta MusicGen (small model, CPU, free, no account) into `app/public/clips/sandman/audio/music/<track>.mp3`. Track ids and prompts live in that script; scenes name their track with `music` in `book.json` (a scene without one keeps the previous track; `"none"` stops it). The player cross-fades between tracks and ducks the bed under any voice. Free alternative the owner mentioned: make tracks in Suno and drop them in the same folder under the same names.
+- **Narration and hooks**: `python -I tools/gen_narration.py --engine gateway --voice ash` renders every scene narration and hook line through the gateway's `gpt-audio-1.5` under a fixed audiobook-narrator direction into `audio/narration/<scene>.mp3` and `audio/hooks/<scene>.mp3`. `--engine kokoro --voice bm_george` renders with the free local Kokoro model instead (same output paths). The player plays narration at scene start and holds the hook card until its audio ends.
+- After rendering anything: `npm run upload` in `app/` (the uploader includes audio).
+- The local Python environment for these tools is `tools/venv` (not committed): torch CPU, transformers, kokoro, soundfile, imageio-ffmpeg. Windows note: both scripts force UTF-8 console output.
+
 ## Not in git (local only)
 
 The novels and extracted text, the family photos (`characters/`), generated images and clips (`assets/`, `app/public/clips/`), the face models, and the key. An assistant without access to the author's PC can work on design, story, prompts and code, but not generate media.
@@ -78,5 +85,6 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 - Live for the author's phones at https://library-of-doors.vercel.app (Singapore region, Blob-hosted clips, Haiku dialogue, gpt-audio voice). Clip spend about 299 of the 400 yuan cap.
 - Episode 1: all 24 scene clips and all 21 reaction loops exist and are uploaded. Alex (the author) is consistent everywhere. Charmaine (Aurie) is consistent in 0.0a, 1.2b-B and the master sheet; 0.0c was re-rendered (check its frames: the shot ends in a flare); 1.1b, 1.2b-A and 1.5b still use an older, drifted face because the glass distortion in those compositions defeats the face-refine pass. Fix idea: reframe those three as close-ups with less glass between camera and face, then generate, refine and gate at 0.40.
 - Gameplay: consequence engine, relations, echoes, action narration, and the Unity and old-Alex conversations are live.
+- Sound: narration and hook lines are pre-rendered (gateway narrator, voice "ash") and live; music beds are generated locally with MusicGen (see Sound). Narrator voice choice (gateway vs Kokoro) is pending the owner's ear.
 - Latency: the gateway has a 2 to 4 s floor per call anywhere. The start gate calls `GET /api/dialogue?warm=1` (one 3-token model call) and `GET /api/tts`, which absorbs the gateway's slow first hop; measured after that, production replies take 3.4 to 4.4 s, the same as on a PC. `?probe=1` on the same route times both gateway hostnames from inside Vercel.
 - Open decision for the owner: the Neverwhere hero's name (default Rachel Mayhew).
