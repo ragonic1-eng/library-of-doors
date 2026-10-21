@@ -198,8 +198,8 @@ function safeParse(raw: string): DialogueReply {
     };
   } catch {
     // Truncated or malformed JSON: salvage the spoken line and nothing else, so raw structure never reaches the screen.
-    const m = candidate.match(/"dialogue"\s*:\s*"((?:[^"\]|\.)*)"?/);
-    const line = m ? m[1].replace(/\\"/g, '"').replace(/\n/g, " ").trim() : "";
+    const m = candidate.match(/"dialogue"\s*:\s*"((?:[^"\\]|\\.)*)"?/);
+    const line = m ? m[1].replace(/\\"/g, '"').replace(/\\n/g, " ").trim() : "";
     const mood = candidate.match(/"mood"\s*:\s*"([a-z]+)"/)?.[1];
     return { ...empty, dialogue: line || "…", mood: mood && MOODS.includes(mood) ? mood : "neutral" };
   }
