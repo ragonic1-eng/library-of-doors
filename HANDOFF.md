@@ -59,6 +59,14 @@ npm run clips -- spend                        # real spend against the cap
 - Models in use: video `wan2.7-i2v` (Kling is restricted on this key), images `gemini-3-pro-image`, dialogue `claude-haiku-5-5` (about 2.5 s per reply; chosen over Grok, which took 20 to 40 s), voice `gpt-audio-1.5`.
 - **Budget is limited.** The clip generator enforces a real-spend cap (`CLIP_BUDGET_CNY`, currently 400 yuan). No rerolls without a reason. Measure with the face scorer before re-rendering.
 
+## Hosting (Vercel)
+
+- Project: `library-of-doors` (team `ragonic1-engs-projects`), live at https://library-of-doors.vercel.app, deploying automatically from `main`. Root directory is `app`.
+- The Vercel CLI on the author's PC is logged in; the project is linked locally in `.vercel/` (not committed). `vercel env ls`, `vercel env add NAME production`, `vercel env pull` all work from the project root.
+- Clips are served from Vercel Blob, store `library-clips` (`store_hhQMCfrITcZW1anP`, public). Base URL `https://hhqmcfritczw1anp.public.blob.vercel-storage.com`; the app reads `NEXT_PUBLIC_CLIP_BASE` (set to `<base>/clips`). Upload with `vercel blob put <file> --store-id store_hhQMCfrITcZW1anP --oidc-token <VERCEL_OIDC_TOKEN from vercel env pull> --pathname clips/sandman/<name>.mp4 --add-random-suffix false --allow-overwrite true`. New or re-rendered clips must be uploaded there; `app/public/clips` is local-only.
+- Production env vars set: INFISTAR_BASE_URL, INFISTAR_API_KEY, MODEL_DIALOGUE, MODEL_TTS, MODEL_VIDEO, MODEL_VIDEO_HERO, MODEL_IMAGE, MODEL_STT, NEXT_PUBLIC_CLIP_BASE. Changing a `NEXT_PUBLIC_` variable needs a redeploy.
+- Target devices: Samsung Galaxy Fold 8 and S25 Ultra, mobile browser. The player has a tap-to-start gate (sound, fullscreen, landscape lock), a rotate prompt for upright phones, letterboxing on near-square screens, and touch-sized controls. Test sizes used: 1040x480 (S25 Ultra landscape), 960x860 (Fold inner), 480x1040 (upright phone).
+
 ## Not in git (local only)
 
 The novels and extracted text, the family photos (`characters/`), generated images and clips (`assets/`, `app/public/clips/`), the face models, and the key. An assistant without access to the author's PC can work on design, story, prompts and code, but not generate media.
@@ -67,4 +75,4 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 
 - Episode 1: 24 scene clips rendered; Alex's 1970s shots re-rendered with his real face; Aurie's master sheet regenerated from her photos (likeness 0.50) and her face shots need new keyframes and clips; reaction loops partly done.
 - Gameplay: consequence engine, relations, echoes, action narration, and two new conversations (the sleeping girl Unity in 1916, old Alex at the escape) are built.
-- Open decisions for the owner: the Neverwhere hero's name (default Rachel Mayhew), the Vercel URL.
+- Open decisions for the owner: the Neverwhere hero's name (default Rachel Mayhew).
