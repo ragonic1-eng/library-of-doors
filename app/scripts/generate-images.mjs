@@ -19,7 +19,8 @@
 // Approving: copy the candidate you like to the job's "approved" path (printed by `list`),
 // or just tell Claude which file you picked.
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, renameSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, join, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -49,6 +50,10 @@ const perJob = argv.includes("--n") ? Math.max(1, parseInt(argv[argv.indexOf("--
 const extraRefs = argv.flatMap((a, i) => (a === "--ref" && argv[i + 1] ? [resolve(process.cwd(), argv[i + 1])] : []));
 // --note "<text>": an extra instruction appended to the prompt for this run only.
 const runNote = argv.includes("--note") ? argv[argv.indexOf("--note") + 1] : "";
+// Likeness gate (tools/face_score.py, OpenCV SFace, runs locally and free):
+// --min 0.5 keeps generating (up to --tries) until a candidate of a real person scores at least that.
+const minScore = argv.includes("--min") ? Number(argv[argv.indexOf("--min") + 1]) : null;
+const maxTries = argv.includes("--tries") ? Math.max(1, parseInt(argv[argv.indexOf("--tries") + 1], 10) || 4) : 4;
 
 // ---------- prompt extraction ----------
 const md = readFileSync(PROMPTS, "utf8").split(/\r?\n/);
@@ -85,7 +90,7 @@ function character(id, section, sheetLabel, portraitLabel, sheetRefs = []) {
   jobs.push({ id: `${id}-portrait`, group: "portraits", dir: join(C(id), "candidates"), approved: join(C(id), "portrait.png"), prompt: () => assemble(block(section, portraitLabel)), refs: [join(C(id), "sheet.png")] });
 }
 
-character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", [join(C("dream"), "photo.jpg")]);
+character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", [join(C("dream"), "face.jpg"), join(C("dream"), "photo.jpg")]);
 character("burgess", "### 3.2", "**Reference sheet:**", "**Hero portrait");
 character("alex-young", "### 3.3", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);
 character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);
@@ -115,12 +120,34 @@ if (existsSync(SHOTS_FILE)) {
   const shots = JSON.parse(readFileSync(SHOTS_FILE, "utf8"));
   const K = (id) => join(ROOT, "assets", "keyframes", "sandman", id);
   const single = "One single cinematic photograph in 16:9, never a collage, grid or split screen, no text.";
+  // Identity locks (likeness of real people): their photo refs go FIRST and their lock text leads the prompt.
+  const ids = shots.identities ?? {};
+  const lockRefs = (names) => [...new Set(names.flatMap((n) => ids[n]?.refs ?? []))];
+  const lockText = (names) => names.map((n) => ids[n]?.lock).filter(Boolean).join("\n");
+  const withLock = (names, refs) => [...new Set([...lockRefs(names), ...refs])].map((r) => join(ROOT, r));
+  // Say what each reference image is, so the model never mixes two people up.
+  const describe = (p) => {
+    const f = p.replace(/\\/g, "/");
+    const who = { dream: "Aurie", aurie: "Aurie", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
+    const m = f.match(/characters\/([^/]+)\/([^/.]+)/);
+    if (m) {
+      const name = who[m[1]] ?? m[1];
+      const kind = { face: "close-up photograph of the real face of", photo: "real photograph of", "photo-2": "second real photograph of", sheet: "costume and styling sheet for", portrait: "approved still of", poses: "pose reference for", expressions: "expression reference for" }[m[2]] ?? "reference for";
+      return `${kind} ${name}`;
+    }
+    const plate = f.match(/plates\/([^/]+)/);
+    if (plate) return `the location (${plate[1]}), no faces to copy from it`;
+    return "scene reference";
+  };
+  const refGuide = (paths) => `Reference images, in order: ${paths.map((p, i) => `(${i + 1}) ${describe(p)}`).join("; ")}.`;
   for (const s of shots.shots) {
     if (!s.keyframe?.prompt) continue; // shots that `use` an approved image need no keyframe
+    const names = s.identity ?? [];
+    const refs = withLock(names, s.keyframe.refs);
     jobs.push({
       id: `kf-${s.id}`, group: "keyframes", dir: join(K(s.id), "candidates"), approved: join(K(s.id), "keyframe.png"),
-      prompt: () => `${s.keyframe.prompt}\nAll people must match their reference images exactly: same faces, hair, spectacles, costumes and builds.\n${single}\n${STYLE}`,
-      refs: s.keyframe.refs.map((r) => join(ROOT, r)),
+      prompt: () => `${refGuide(refs)}\n${lockText(names)}\n${s.keyframe.prompt}\nAll people must match their reference images exactly: same faces, hair, spectacles, costumes and builds. Never give one person another person's face.\n${single}\n${STYLE}`.trim(),
+      refs,
     });
   }
   for (const [who, c] of Object.entries(shots.react.characters)) {
@@ -131,12 +158,14 @@ if (existsSync(SHOTS_FILE)) {
     for (const [mood, feel] of Object.entries(shots.react.moods)) {
       const id = `react-${who}-${mood}`;
       const hasBase = existsSync(base);
+      const lock = c.identity ? [c.identity] : [];
+      const face = lockRefs(lock)[0];
       jobs.push({
         id: `kf-${id}`, group: "react-keyframes", dir: join(K(id), "candidates"), approved: join(K(id), "keyframe.png"),
         prompt: () => hasBase
-          ? `Edit the first attached photograph. Keep it exactly the same: identical framing, camera position, lens, lighting, background, pose, hands, clothing and props, pixel for pixel wherever possible. Change ONLY the facial expression of the person to: ${feel}. The expression is carried by the whole face (eyes, brows, mouth, jaw), subtle and real, never a caricature; the second image shows how this person's face expresses emotions.\n${STYLE}`
-          : `${c.setting} Expression: ${feel}, carried by the whole face, never a caricature. The person is exactly the one in the reference sheets.\n${single}\n${STYLE}`,
-        refs: hasBase ? [base, ...(expr ? [join(ROOT, expr)] : [])] : c.refs.map((r) => join(ROOT, r)),
+          ? `Edit the first attached photograph. Keep it exactly the same: identical framing, camera position, lens, lighting, background, pose, hands, clothing and props, pixel for pixel wherever possible. Change ONLY the facial expression of the person to: ${feel}. The expression is carried by the whole face (eyes, brows, mouth, jaw), subtle and real, never a caricature.${face ? " The face must remain an exact likeness of the real person in the second image; do not slim or reshape it." : " The second image shows how this person's face expresses emotions."}\n${STYLE}`
+          : `${lockText(lock)}\n${c.setting} Expression: ${feel}, carried by the whole face, never a caricature. The person is exactly the one in the reference images.\n${single}\n${STYLE}`.trim(),
+        refs: hasBase ? [base, ...(face ? [join(ROOT, face)] : expr ? [join(ROOT, expr)] : [])] : withLock(lock, c.refs),
       });
     }
   }
@@ -244,10 +273,25 @@ async function viaOpenAI(prompt, refs) {
   throw new Error(`${OPENAI_MODEL}: no image in response`);
 }
 
+// ---------- likeness ----------
+// Which real person (if any) a job must look like, from its id.
+const identityOf = (id) => (/(^|-)aurie-|kf-(0\.0a|0\.0c|1\.1b|1\.2b-A|1\.2b-B|1\.5b)$/.test(id) ? "aurie"
+  : /(^|-)alex-|kf-(1\.4a|1\.4b-[ABC]|1\.5c|1\.5d-[AB])$/.test(id) ? "alex" : null);
+function scoreFace(identity, file) {
+  try {
+    const out = execFileSync("python", ["-I", join(ROOT, "tools", "face_score.py"), identity, file, "--json"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+    const r = JSON.parse(out.slice(out.indexOf("[")))[0];
+    return r.score;
+  } catch {
+    return null; // scorer unavailable: never block generation on it
+  }
+}
+
 // ---------- runner ----------
 function nextVersion(dir, id) {
-  if (!existsSync(dir)) return 1;
-  const used = readdirSync(dir).map((f) => f.match(new RegExp(`^${id}-v(\\d+)\\.`))?.[1]).filter(Boolean).map(Number);
+  // Count rejected candidates too, so a rejected file never shares (and overwrites) a version number.
+  const names = [dir, join(dir, "rejected")].filter(existsSync).flatMap((d) => readdirSync(d));
+  const used = names.map((f) => f.match(new RegExp(`^${id}-v(\\d+)\\.`))?.[1]).filter(Boolean).map(Number);
   return used.length ? Math.max(...used) + 1 : 1;
 }
 
@@ -272,18 +316,32 @@ async function run(job) {
     return;
   }
   mkdirSync(job.dir, { recursive: true });
-  for (let n = 0; n < perJob; n++) {
+  const who = identityOf(job.id);
+  let kept = 0;
+  const budgetTries = minScore != null && who ? Math.max(perJob, maxTries) : perJob;
+  for (let attempt = 0; attempt < budgetTries && kept < perJob; attempt++) {
     const v = nextVersion(job.dir, job.id);
     try {
       const { buf, mime } = via === "openai" ? await viaOpenAI(prompt, job.refs) : await viaGemini(prompt, job.refs);
       const file = join(job.dir, `${job.id}-v${v}${extOf(mime)}`);
       writeFileSync(file, buf);
-      console.log(`   saved ${rel(file)}  (${Math.round(buf.length / 1024)} KB)`);
+      const score = who ? scoreFace(who, file) : null;
+      const tag = score == null ? "" : `  likeness ${score.toFixed(3)}`;
+      if (minScore != null && who && (score == null || score < minScore)) {
+        const rejected = join(job.dir, "rejected");
+        mkdirSync(rejected, { recursive: true });
+        renameSync(file, join(rejected, file.split(/[\\/]/).pop()));
+        console.log(`   rejected v${v}${tag} (below ${minScore})`);
+        continue;
+      }
+      kept++;
+      console.log(`   saved ${rel(file)}  (${Math.round(buf.length / 1024)} KB)${tag}`);
     } catch (e) {
       console.log(`   FAILED: ${e.message}`);
       return;
     }
   }
+  if (minScore != null && who && kept < perJob) console.log(`   only ${kept} of ${perJob} passed the likeness gate in ${budgetTries} tries`);
 }
 
 async function main() {

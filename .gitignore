@@ -25,3 +25,6 @@ app/next-env.d.ts
 
 # generated video is served locally; uploaded to Vercel Blob for deploy
 /app/public/clips/
+
+# downloaded face models (OpenCV zoo)
+/tools/models/
