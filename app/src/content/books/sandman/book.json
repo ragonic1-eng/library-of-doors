@@ -55,7 +55,82 @@
           "1.2.B": "Aurie threatens Burgess with what she will do to him when she is free.",
           "1.2.C": "Aurie pretends to accept the bargain, offering him what he asks."
         },
-        "opening": "You are awake. Good. I am Roderick Burgess, and you, creature, are mine. Give me what I want, and you will see daylight again. Immortality. Power. My son. Well?"
+        "opening": "You are awake. Good. I am Roderick Burgess, and you, creature, are mine. Give me what I want, and you will see daylight again. Immortality. Power. My son. Well?",
+        "possibilities": [
+          "She mocks or threatens him: he hides his fear under ceremony, invokes the circle, and may order the wards doubled.",
+          "She speaks of his dead son: this is his wound; he grieves, then lashes out to cover it.",
+          "She tells him she is Dream, not Death: he is shaken, then greedy, and starts bargaining for dreams instead of death.",
+          "She bargains: he tests her, demands proof, and senses evasions, because the Endless lie badly.",
+          "She acts from inside the glass (candles gutter, the glass fogs, a nightmare touches him): he reacts physically and the cellar shows it.",
+          "She stays silent: he talks to fill the silence and reveals more than he means to."
+        ],
+        "consequences": {
+          "NAMED_RANDALL": {
+            "when": "She speaks of his dead son Randall, by name or as his son, in a way that wounds or exposes him.",
+            "fear": 1,
+            "trust": -1,
+            "ripple": "For the first time, Burgess cannot hold your gaze.",
+            "echo": {
+              "text": "In 1916 the prisoner spoke of Randall to Roderick Burgess. He never said his son's name aloud again, and the house heard him weeping at night.",
+              "knownBy": [
+                "alex",
+                "alex-old",
+                "lucienne"
+              ]
+            }
+          },
+          "REVEALED_DREAM": {
+            "when": "She tells him plainly that she is Dream of the Endless, not Death.",
+            "fear": 1,
+            "effects": {
+              "flags": {
+                "DREAM_REVEALED": true
+              }
+            },
+            "ripple": "Somewhere in the house, every sleeper wakes at once.",
+            "echo": {
+              "text": "Roderick Burgess learned his prisoner was Dream, not Death, and spent his remaining years trying to buy dreams from her.",
+              "knownBy": [
+                "alex",
+                "alex-old"
+              ]
+            }
+          },
+          "SHOWED_POWER": {
+            "when": "She acts on the world from inside the glass: guttering candles, fogging glass, a pressure in the air, a nightmare sent at him.",
+            "fear": 2,
+            "effects": {
+              "vars": {
+                "dreaming": -5
+              }
+            },
+            "ripple": "Burgess orders the wards doubled. The circle burns brighter, and the glass grows colder.",
+            "echo": {
+              "text": "In the first week the prisoner showed her power; Burgess doubled the wards and chained the cellar door.",
+              "knownBy": [
+                "alex",
+                "alex-old"
+              ]
+            }
+          },
+          "PITIED_HIM": {
+            "when": "She shows him real pity or understanding for his grief.",
+            "trust": 1,
+            "effects": {
+              "traits": {
+                "mercy": 1
+              }
+            },
+            "ripple": "His hand hovers over the chalk line. Then he remembers himself.",
+            "echo": {
+              "text": "Once, early, the prisoner pitied Roderick Burgess, and he never forgave her for it.",
+              "knownBy": [
+                "alex",
+                "alex-old"
+              ]
+            }
+          }
+        }
       },
       "choices": [
         {
@@ -102,13 +177,129 @@
       "pov": "3P",
       "clips": [
         "1.3a",
-        "1.3b",
-        "1.3c"
+        "1.3c",
+        "1.3b"
       ],
-      "narration": "The years pass. A soldier who cannot sleep. A girl who cannot wake. And far away, a palace shedding its stone like sand.",
-      "next": "1.4",
+      "narration": "The years pass. A soldier who cannot sleep. A palace shedding its stone like sand. And in a sunlit room in Kent, a girl who cannot wake, whose dream lies just within your reach.",
       "episodeTitle": "Episode 2 · Seventy Years",
-      "hook": "Burgess died old, and poor, and got nothing he asked for. His son inherited the glass."
+      "hook": "Burgess died old, and poor, and got nothing he asked for. His son inherited the glass.",
+      "narrationIf": [
+        {
+          "flag": "C_NAMED_RANDALL",
+          "text": "Upstairs, Burgess never says his son's name again."
+        },
+        {
+          "flag": "C_REVEALED_DREAM",
+          "text": "Burgess spends his last years bargaining for dreams he never receives."
+        }
+      ],
+      "innerVoice": false,
+      "conversation": {
+        "character": "unity",
+        "maxTurns": 4,
+        "canon": [
+          "It is 1916. Unity Kincaid, about ten, has fallen into the sleeping sickness and will not wake for sixty years.",
+          "Aurie is imprisoned in the glass sphere far away; her power only just reaches into one sleeping mind, this girl's.",
+          "Unity answers only as a dreaming child: drowsy, curious, unafraid, in dream logic.",
+          "Aurie cannot wake her and cannot escape through her.",
+          "Something else has been visiting Unity's dream, a perfumed presence she cannot name (in truth Desire of the Endless); Unity does not know what it is."
+        ],
+        "opening": "Is somebody there? I can't wake up. It's ever so quiet here... and something keeps visiting me that isn't you. It smells of roses.",
+        "possibilities": [
+          "She comforts the girl: Unity is soothed and the dream warms.",
+          "She promises something: Unity holds the promise tightly, as children do.",
+          "She gives her a good dream: the room fills with a place Unity loves.",
+          "She asks about the other visitor: Unity describes it innocently (roses, a smile, a glass heart), which should unsettle Aurie.",
+          "She tries to use the girl to escape, or commands her coldly: the dream turns grey and Unity is frightened."
+        ],
+        "exits": {
+          "1.3.W": "Aurie has given her something to keep in the long sleep (a promise, a gift, a warning), or has withdrawn from the dream."
+        },
+        "consequences": {
+          "UNITY_PROMISE": {
+            "when": "She promises to remember her, to return for her, or that her life will matter.",
+            "trust": 2,
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "UNITY_PROMISE": true
+              }
+            },
+            "ripple": "In a sunlit room in Kent, a sleeping girl smiles.",
+            "echo": {
+              "text": "In 1916 Dream promised the sleeping girl Unity Kincaid she would not be forgotten. Unity carried that promise through sixty years of sleep.",
+              "knownBy": [
+                "unity",
+                "lucienne"
+              ]
+            }
+          },
+          "UNITY_GIFT": {
+            "when": "She gives her a good dream to live in during the long sleep.",
+            "trust": 2,
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "UNITY_GIFT": true
+              }
+            },
+            "ripple": "The girl's dream fills with sea air and gulls.",
+            "echo": {
+              "text": "Unity Kincaid slept for sixty years inside a seaside dream that Dream gave her in 1916.",
+              "knownBy": [
+                "unity",
+                "lucienne"
+              ]
+            }
+          },
+          "UNITY_USED": {
+            "when": "She tries to use the girl as a way out, or commands her coldly.",
+            "fear": 2,
+            "effects": {
+              "traits": {
+                "mercy": -2
+              },
+              "flags": {
+                "UNITY_USED": true
+              }
+            },
+            "ripple": "The girl's dream turns grey at the edges.",
+            "echo": {
+              "text": "Dream once tried to use a sleeping child as a door. Unity Kincaid remembered the cold of it all her life.",
+              "knownBy": [
+                "unity",
+                "lucienne"
+              ]
+            }
+          },
+          "SENSED_VISITOR": {
+            "when": "She asks about the other visitor, or searches the dream for who else is there.",
+            "effects": {
+              "flags": {
+                "SENSED_DESIRE": true
+              }
+            },
+            "ripple": "For an instant you smell a perfume you know. Then it is gone.",
+            "echo": {
+              "text": "Dream sensed another of the Endless inside Unity Kincaid's dream in 1916 and told no one.",
+              "knownBy": [
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "1.3.W",
+          "text": "Leave the girl's dream.",
+          "next": "1.4"
+        }
+      ]
     },
     "1.4": {
       "id": "1.4",
@@ -133,7 +324,85 @@
           "1.4.B": "Aurie stares through Alex and gives him nothing.",
           "1.4.C": "Aurie shows Alex a vision of his own death."
         },
-        "opening": "I know you can hear me. I have always known. If I let you go... will you hurt me?"
+        "opening": "I know you can hear me. I have always known. If I let you go... will you hurt me?",
+        "possibilities": [
+          "She is kind: he softens, and may confess what he almost did in 1950.",
+          "She promises not to harm him: he holds onto it for years.",
+          "She threatens or horrifies him: he flees and stays away for a decade.",
+          "She speaks to Paul: Paul is moved, and becomes Alex's protector against her.",
+          "She asks about his father: he speaks of Roderick with fear and shame, drawing on whatever passed between his father and her.",
+          "She asks about her tools: he knows only that they vanished from the house when he was a boy."
+        ],
+        "consequences": {
+          "ALEX_CONFESSED": {
+            "when": "She is kind enough that he admits he once almost broke the circle, in 1950.",
+            "trust": 2,
+            "effects": {
+              "flags": {
+                "ALEX_CONFESSED": true
+              }
+            },
+            "ripple": "Behind him, Paul looks away and says nothing.",
+            "echo": {
+              "text": "Alex Burgess confessed to the prisoner that in 1950 he stood at the circle with a wet cloth and could not wipe it away.",
+              "knownBy": [
+                "alex-old",
+                "lucienne"
+              ]
+            }
+          },
+          "ALEX_PROMISE": {
+            "when": "She promises he will be safe from her, or that she will not harm him if he frees her.",
+            "trust": 2,
+            "effects": {
+              "flags": {
+                "ALEX_PROMISE": true
+              }
+            },
+            "ripple": "Afterwards he writes something down, and keeps it in his breast pocket.",
+            "echo": {
+              "text": "In the 1970s Dream promised Alex Burgess he would be safe from her.",
+              "knownBy": [
+                "alex-old",
+                "lucienne"
+              ]
+            }
+          },
+          "ALEX_TERRIFIED": {
+            "when": "She threatens him or shows him horror.",
+            "fear": 2,
+            "effects": {
+              "traits": {
+                "mercy": -1
+              },
+              "flags": {
+                "ALEX_TERRIFIED": true
+              }
+            },
+            "ripple": "He does not come down to the cellar again for eleven years.",
+            "echo": {
+              "text": "The prisoner terrified Alex Burgess so badly that he stayed away from the cellar for eleven years.",
+              "knownBy": [
+                "alex-old"
+              ]
+            }
+          },
+          "PAUL_MOVED": {
+            "when": "She speaks to Paul directly, or appeals to his kindness.",
+            "effects": {
+              "flags": {
+                "PAUL_ALLY": true
+              }
+            },
+            "ripple": "Paul's hand closes, very gently, on Alex's shoulder.",
+            "echo": {
+              "text": "The prisoner once spoke to Paul McGuire directly, and Paul never forgot it.",
+              "knownBy": [
+                "alex-old"
+              ]
+            }
+          }
+        }
       },
       "innerVoice": true,
       "choices": [
@@ -171,7 +440,17 @@
         }
       ],
       "episodeTitle": "Episode 3 · The Son",
-      "hook": "Years later, a guard yawns and slides down the glass. His breath fogs it."
+      "hook": "Years later, a guard yawns and slides down the glass. His breath fogs it.",
+      "narrationIf": [
+        {
+          "flag": "C_SHOWED_POWER",
+          "text": "The wards have been doubled since your first week."
+        },
+        {
+          "flag": "C_PITIED_HIM",
+          "text": "His father never forgave you for pitying him."
+        }
+      ]
     },
     "1.5": {
       "id": "1.5",
@@ -183,7 +462,7 @@
         "1.5c"
       ],
       "narration": "1988. A guard falls asleep against the glass. His breath fogs it. His dream is a door.",
-      "innerVoice": true,
+      "innerVoice": false,
       "choices": [
         {
           "id": "1.5.A",
@@ -197,7 +476,21 @@
               "ALEX_CURSED": true
             }
           },
-          "next": "2.1"
+          "next": "2.1",
+          "effectsIf": [
+            {
+              "flag": "ALEX_PROMISE",
+              "effects": {
+                "traits": {
+                  "mercy": -2
+                },
+                "flags": {
+                  "BROKE_PROMISE": true
+                }
+              },
+              "ripple": "You promised him. The Dreaming remembers."
+            }
+          ]
         },
         {
           "id": "1.5.B",
@@ -215,11 +508,117 @@
               "mercy": 2
             }
           },
-          "next": "2.1"
+          "next": "2.1",
+          "effectsIf": [
+            {
+              "flag": "ALEX_CONFESSED",
+              "effects": {
+                "traits": {
+                  "mercy": 1
+                }
+              },
+              "ripple": "You remember the wet cloth, and the circle he could not wipe away."
+            }
+          ]
         }
       ],
       "episodeTitle": "Episode 4 · Breath on Glass",
-      "hook": "Somewhere a lantern has been burning for seventy-two years."
+      "hook": "Somewhere a lantern has been burning for seventy-two years.",
+      "narrationIf": [
+        {
+          "flag": "ALEX_TERRIFIED",
+          "text": "Alex has not come down to the cellar in years. Tonight he has no choice."
+        },
+        {
+          "flag": "ALEX_PROMISE",
+          "text": "In his breast pocket there is a folded paper with your promise on it."
+        }
+      ],
+      "conversation": {
+        "character": "alex-old",
+        "maxTurns": 6,
+        "canon": [
+          "It is 1988. Aurie has just escaped the sphere. She is free and fully able to punish him; he knows it.",
+          "Alex Burgess is seventy-two, in a wheelchair. Paul McGuire pushed him in and stands behind him.",
+          "Roderick Burgess died in 1947.",
+          "In 1926 Roderick's mistress, Ethel Cripps, stole the helm, the pouch of sand and the ruby and fled. Alex knows her name, not where the tools are now.",
+          "Alex never harmed the prisoner himself; he also never freed her."
+        ],
+        "opening": "Please. Please, I never... it was my father, it was all my father. I kept you safe down here. I kept them from hurting you. What... what are you going to do to me?",
+        "possibilities": [
+          "She asks about her tools: he gives her Ethel Cripps's name to save himself.",
+          "She brings up what happened in the 1970s (a promise, a confession, terror): he answers from that shared history.",
+          "She threatens him: if Paul is his ally, Paul steps between them.",
+          "She listens to his plea: he asks forgiveness and tells her what seventy years in that house did to him.",
+          "She stays silent: he babbles, bargains, and finally weeps."
+        ],
+        "exits": {
+          "1.5.A": "Aurie condemns him to eternal waking.",
+          "1.5.B": "Aurie gives him one night of nightmares and then lets it end.",
+          "1.5.C": "Aurie turns and walks away, leaving him to his fear."
+        },
+        "consequences": {
+          "LEARNED_ETHEL": {
+            "when": "She asks where her helm, pouch and ruby went, and he tells her about Ethel Cripps.",
+            "effects": {
+              "flags": {
+                "KNOWS_ETHEL": true
+              }
+            },
+            "ripple": "A name, at last: Ethel Cripps.",
+            "echo": {
+              "text": "Alex Burgess told Dream that Ethel Cripps stole her helm, pouch and ruby in 1926.",
+              "knownBy": [
+                "lucienne"
+              ]
+            }
+          },
+          "PAUL_STEPS_IN": {
+            "when": "She threatens Alex and Paul, who cares for him, steps between them.",
+            "requires": {
+              "flags": [
+                "PAUL_ALLY"
+              ]
+            },
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "PAUL_STOOD": true
+              }
+            },
+            "ripple": "Paul steps in front of the wheelchair. His hands are shaking. He does not move.",
+            "echo": {
+              "text": "When Dream escaped in 1988, Paul McGuire stood between her and Alex Burgess.",
+              "knownBy": [
+                "lucienne"
+              ]
+            }
+          },
+          "PROMISE_INVOKED": {
+            "when": "Alex reminds her of the promise she made him in the 1970s, or she acknowledges it.",
+            "requires": {
+              "flags": [
+                "ALEX_PROMISE"
+              ]
+            },
+            "trust": 1,
+            "fear": -1,
+            "ripple": "He holds out the folded paper with your promise on it."
+          },
+          "HEARD_HIS_LIFE": {
+            "when": "She lets him tell her what seventy years in that house did to him.",
+            "trust": 1,
+            "effects": {
+              "traits": {
+                "mercy": 1
+              }
+            },
+            "ripple": "For a moment he is only a frightened old man, and so are you, almost."
+          }
+        }
+      }
     },
     "2.1": {
       "id": "2.1",
@@ -246,7 +645,48 @@
           "2.1.A": "Aurie answers her coldly, as a queen to a servant, and demands a report.",
           "2.1.B": "Aurie tells Lucienne she is sorry to have been gone so long."
         },
-        "opening": "My lady. Seventy-two years. We thought... forgive me. We thought you were dead. The realm is not as you left it."
+        "opening": "My lady. Seventy-two years. We thought... forgive me. We thought you were dead. The realm is not as you left it.",
+        "possibilities": [
+          "She confides fear, weakness or grief: Lucienne softens and becomes her confidant.",
+          "She asks about the three doors: Lucienne hints and will not explain.",
+          "She asks where her tools are: Lucienne knows only what Aurie has learned, and says what the Dreaming lost without them.",
+          "She is cold or blames Lucienne for the decay: Lucienne reports with icy precision and is quietly hurt.",
+          "She asks what happened while she was gone: Lucienne reports the dead, the fled and the faithful, and anything she knows of Aurie's own deeds."
+        ],
+        "consequences": {
+          "CONFIDED": {
+            "when": "She admits fear, weakness, grief or doubt to Lucienne.",
+            "trust": 2,
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "LUCIENNE_CONFIDANT": true
+              }
+            },
+            "ripple": "Lucienne takes off her spectacles, which she has never done in front of you."
+          },
+          "ASKED_DOORS": {
+            "when": "She asks about the three locked doors.",
+            "effects": {
+              "flags": {
+                "ASKED_DOORS": true
+              }
+            },
+            "ripple": "The keyhole of the smallest door glows, very faintly, for one breath."
+          },
+          "COLD_TO_LUCIENNE": {
+            "when": "She orders Lucienne about coldly, or blames her for the realm's decay.",
+            "trust": -1,
+            "effects": {
+              "flags": {
+                "LUCIENNE_HURT": true
+              }
+            },
+            "ripple": "Lucienne's pen stops for a moment, then continues."
+          }
+        }
       },
       "choices": [
         {

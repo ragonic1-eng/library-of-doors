@@ -90,7 +90,10 @@ function character(id, section, sheetLabel, portraitLabel, sheetRefs = []) {
   jobs.push({ id: `${id}-portrait`, group: "portraits", dir: join(C(id), "candidates"), approved: join(C(id), "portrait.png"), prompt: () => assemble(block(section, portraitLabel)), refs: [join(C(id), "sheet.png")] });
 }
 
-character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", [join(C("dream"), "face.jpg"), join(C("dream"), "photo.jpg")]);
+// Charmaine's four most consistent face crops (see tools/face_score.py); they lead every Aurie image.
+const AURIE_FACES = ["face-4.jpg", "face-6.jpg", "face-5.jpg", "face.jpg"].map((f) => join(C("dream"), f));
+character("aurie", "### 3.1", "**Reference sheet, Aurie", "**Hero portrait, your wife as Dream", AURIE_FACES);
+{ const p = jobs.find((j) => j.id === "aurie-portrait"); p.refs = [...AURIE_FACES, ...p.refs]; }
 character("burgess", "### 3.2", "**Reference sheet:**", "**Hero portrait");
 character("alex-young", "### 3.3", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);
 character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait", [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")]);

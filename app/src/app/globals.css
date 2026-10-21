@@ -225,3 +225,27 @@ button.ghost { border-color: transparent; color: var(--dim); }
   inset: 0;
   animation: fade-in 0.7s ease both;
 }
+
+/* Consequence ripple: the world reacting to what she said */
+.ripple {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform: translateX(-50%);
+  max-width: min(60ch, 80vw);
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: #d9c8a0;
+  text-shadow: 0 1px 8px #000;
+  pointer-events: none;
+  animation: ripple 4.5s ease both;
+}
+@keyframes ripple {
+  0% { opacity: 0; transform: translate(-50%, 6px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.transcript .narration { color: #c9b98f; font-style: italic; }
+.narration-echo { color: var(--accent); font-style: italic; }

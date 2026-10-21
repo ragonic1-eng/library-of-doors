@@ -383,11 +383,12 @@
   "identities": {
     "aurie": {
       "refs": [
-        "characters/dream/face.jpg",
-        "characters/dream/photo.jpg",
-        "characters/aurie/sheet.png"
+        "characters/dream/face-4.jpg",
+        "characters/dream/face-6.jpg",
+        "characters/dream/face-5.jpg",
+        "characters/dream/face.jpg"
       ],
-      "lock": "IDENTITY LOCK, highest priority: Aurie's face must be an exact likeness of the woman in the first two photographs (real photos of her). Copy her real face shape and features precisely: a full, round, soft face, wider than it is long, with full cheeks and a soft rounded jaw; straight, thick dark brows set fairly low; almond eyes with subtle single eyelids and slightly downturned outer corners, dark brown irises; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do NOT slim, narrow, lengthen, sharpen, westernise or beautify her face, do not make her younger, do not change her nose or jaw. Her styling (pale skin, black hair, black gown) may follow the character sheet, but her face follows the photographs."
+      "lock": "IDENTITY LOCK, highest priority: Aurie's face must be an exact likeness of the woman in the first four photographs (real photos of her, Charmaine). Copy her real face shape and features precisely: a full, round, soft face, wider than it is long, with full cheeks and a soft rounded jaw; straight, thick dark brows set fairly low; almond eyes with subtle single eyelids and slightly downturned outer corners, dark brown irises; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do NOT slim, narrow, lengthen, sharpen, westernise or beautify her face, do not make her younger, do not change her nose or jaw. Her styling (pale skin, black hair, black gown) may follow the character sheet, but her face follows the photographs."
     },
     "alex-1970s": {
       "refs": [

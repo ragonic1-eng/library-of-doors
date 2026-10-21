@@ -2,12 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Book, Choice, DialogueReply, Profile, Scene } from "@/lib/story/types";
-import { applyEffect, loadProfile, remember, saveProfile } from "@/lib/state/profile";
+import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, remember, saveProfile } from "@/lib/state/profile";
 
 type Phase = "clips" | "talk" | "choose" | "consequence" | "end";
 
 interface Turn {
-  role: "player" | "character";
+  role: "player" | "character" | "narration";
   text: string;
 }
 
@@ -26,6 +26,20 @@ export default function Player({ book }: { book: Book }) {
   const [input, setInput] = useState("");
   const [clipMissing, setClipMissing] = useState(false);
   const [hook, setHook] = useState<string | null>(null);
+  // Diegetic feedback when a consequence fires ("Somewhere above, a man begins to weep.")
+  const [ripple, setRipple] = useState<string | null>(null);
+  // Always-current profile: delayed callbacks (auto-choose after a conversation) must never use a stale copy.
+  const profileRef = useRef<Profile | null>(null);
+  const commit = useCallback((p: Profile) => {
+    profileRef.current = p;
+    setProfile(p);
+    saveProfile(p);
+  }, []);
+  const showRipple = useCallback((text?: string) => {
+    if (!text) return;
+    setRipple(text);
+    setTimeout(() => setRipple((r) => (r === text ? null : r)), 4500);
+  }, []);
   // Reaction loops: while talking, the speaking character's loop for their current mood plays over the scene.
   const [mood, setMood] = useState("neutral");
   const [reactMissing, setReactMissing] = useState<Record<string, boolean>>({});
@@ -44,6 +58,7 @@ export default function Player({ book }: { book: Book }) {
   useEffect(() => {
     const p = loadProfile();
     if (p.position?.book === book.id && book.scenes[p.position.scene]) setSceneId(p.position.scene);
+    profileRef.current = p;
     setProfile(p);
   }, [book]);
 
@@ -83,7 +98,7 @@ export default function Player({ book }: { book: Book }) {
         const res = await fetch("/api/dialogue", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ bookId: book.id, sceneId, mode, history: hist, playerLine, profile }),
+          body: JSON.stringify({ bookId: book.id, sceneId, mode, history: hist.filter((t) => t.role !== "narration"), playerLine, profile: profileRef.current ?? profile }),
         });
         if (!res.ok) return null;
         return (await res.json()) as DialogueReply;
@@ -171,10 +186,17 @@ export default function Player({ book }: { book: Book }) {
   }
 
   function choose(choice: Choice) {
-    if (!profile) return;
-    const p = applyEffect(profile, book.id, choice.effects);
-    setProfile(p);
-    saveProfile(p);
+    const current = profileRef.current;
+    if (!current) return;
+    let p = applyEffect(current, book.id, choice.effects);
+    // Earlier deeds change what this choice costs or earns (a broken promise, a remembered confession).
+    for (const e of choice.effectsIf ?? []) {
+      if (current.flags[book.id]?.[e.flag]) {
+        p = applyEffect(p, book.id, e.effects);
+        showRipple(e.ripple);
+      }
+    }
+    commit(p);
     audioRef.current?.pause();
     if (choice.clip) {
       setPendingChoice(choice);
@@ -198,14 +220,23 @@ export default function Player({ book }: { book: Book }) {
       setHistory([...hist, { role: "character", text: "..." }]);
       return;
     }
-    setHistory([...hist, { role: "character", text: r.dialogue }]);
+    const who = scene.conversation.character;
+    setHistory([...hist, ...(r.narration ? [{ role: "narration" as const, text: r.narration }] : []), { role: "character", text: r.dialogue }]);
     if (r.mood) setMood(r.mood);
-    void speak(r.dialogue, scene.conversation.character);
+    void speak(r.dialogue, who);
     if (r.inner_thought) setInner(r.inner_thought);
-    if (profile && r.memory_note) {
-      const p = remember(profile, r.memory_note);
-      setProfile(p);
-      saveProfile(p);
+    // Consequences: her words change the story. Apply fired consequences, the speaker's feelings and memory together.
+    let p = profileRef.current;
+    if (p) {
+      for (const tag of r.consequences ?? []) {
+        const c = scene.conversation.consequences?.[tag];
+        if (!c) continue;
+        p = applyConsequence(p, book.id, who, tag, c);
+        showRipple(c.ripple);
+      }
+      p = adjustRelation(p, who, r.trust_delta ?? 0, r.fear_delta ?? 0);
+      p = remember(p, r.memory_note);
+      commit(p);
     }
     if (r.decision) {
       const c = scene.choices?.find((x) => x.id === r.decision);
@@ -213,7 +244,9 @@ export default function Player({ book }: { book: Book }) {
     }
   }
 
-  const options = useMemo(() => scene.choices ?? [], [scene]);
+  // Choices closed off by earlier events are hidden (and the AI cannot steer to them either).
+  const options = useMemo(() => (scene.choices ?? []).filter((c) => !profile || meets(profile, book.id, c.requires)), [scene, profile, book.id]);
+  const extraNarration = (scene.narrationIf ?? []).filter((n) => profile?.flags[book.id]?.[n.flag]).map((n) => n.text).join(" ");
 
   if (!profile) return <main className="stage" />;
 
@@ -258,7 +291,11 @@ export default function Player({ book }: { book: Book }) {
 
       {hook && <div className="hook">{hook}</div>}
 
-      {phase === "clips" && scene.narration && clipIndex === 0 && !hook && <div className="narration">{scene.narration}</div>}
+      {phase === "clips" && scene.narration && clipIndex === 0 && !hook && (
+        <div className="narration">{scene.narration}{extraNarration ? <span className="narration-echo"> {extraNarration}</span> : null}</div>
+      )}
+
+      {ripple && <div key={ripple} className="ripple">{ripple}</div>}
 
       {inner && (phase === "talk" || phase === "choose") && <div className="inner">{inner}</div>}
 
@@ -267,7 +304,7 @@ export default function Player({ book }: { book: Book }) {
           <div className="transcript">
             {history.slice(-4).map((t, i) => (
               <p key={i} className={t.role}>
-                {t.role === "character" ? <span className="who">{book.id === "sandman" && scene.conversation ? cap(scene.conversation.character) : ""}</span> : <span className="who">{profile.name}</span>}
+                {t.role === "character" ? <span className="who">{scene.conversation ? cap(scene.conversation.character.split("-")[0]) : ""}</span> : t.role === "player" ? <span className="who">{profile.name}</span> : null}
                 {t.text}
               </p>
             ))}

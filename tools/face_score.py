@@ -24,9 +24,11 @@ DET = os.path.join(MODELS, "face_detection_yunet_2023mar.onnx")
 REC = os.path.join(MODELS, "face_recognition_sface_2021dec.onnx")
 
 REFS = {
-    "aurie": ["characters/dream/photo.jpg"],
+    # Charmaine's four most mutually consistent photos (pairwise 0.62 to 0.77); photo-7 is excluded (glare breaks alignment).
+    "aurie": ["characters/dream/photo.jpg", "characters/dream/photo-4.jpg", "characters/dream/photo-5.jpg", "characters/dream/photo-6.jpg"],
     "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg"],
 }
+# Score = MEAN similarity over all reference photos (stricter than the best single match).
 STRONG, OK = 0.50, 0.40
 
 detector = cv2.FaceDetectorYN.create(DET, "", (320, 320), 0.6, 0.3, 5000)
@@ -68,7 +70,7 @@ def best_match(img, refs):
     """Best similarity of any face in img to the person; also its width."""
     best, width = -1.0, 0
     for feat, w, _ in faces(img):
-        s = max(recognizer.match(r, feat, cv2.FaceRecognizerSF_FR_COSINE) for r in refs)
+        s = float(np.mean([recognizer.match(r, feat, cv2.FaceRecognizerSF_FR_COSINE) for r in refs]))
         if s > best:
             best, width = s, w
     return best, width

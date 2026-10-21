@@ -1,4 +1,4 @@
-import type { Effect, Profile } from "@/lib/story/types";
+import type { Consequence, Effect, Profile, Requires } from "@/lib/story/types";
 
 const KEY = "library-of-doors.profile.v1";
 
@@ -11,6 +11,8 @@ export function newProfile(name = "Aurie"): Profile {
     flags: {},
     vars: {},
     memory: [],
+    relations: {},
+    echoes: [],
     playerModel: {},
     position: null,
   };
@@ -56,6 +58,45 @@ export function remember(p: Profile, note: string | null | undefined): Profile {
   if (!note) return p;
   const memory = [...p.memory, note].slice(-60);
   return { ...p, memory };
+}
+
+export function relationOf(p: Profile, who: string) {
+  return p.relations?.[who] ?? { trust: 0, fear: 0 };
+}
+
+export function adjustRelation(p: Profile, who: string, trust = 0, fear = 0): Profile {
+  if (!trust && !fear) return p;
+  const r = relationOf(p, who);
+  return {
+    ...p,
+    relations: { ...(p.relations ?? {}), [who]: { trust: clamp(r.trust + trust, -5, 5), fear: clamp(r.fear + fear, -5, 5) } },
+  };
+}
+
+/** Flag name recording that a consequence already fired (each fires at most once per playthrough). */
+export const consequenceFlag = (tag: string) => `C_${tag}`;
+
+/** Apply one fired consequence: its effects, the speaker's feelings, its echo, and its one-time flag. */
+export function applyConsequence(p: Profile, bookId: string, who: string, tag: string, c: Consequence): Profile {
+  if (p.flags[bookId]?.[consequenceFlag(tag)]) return p;
+  let next = applyEffect(p, bookId, { ...(c.effects ?? {}), flags: { ...(c.effects?.flags ?? {}), [consequenceFlag(tag)]: true } });
+  next = adjustRelation(next, who, c.trust ?? 0, c.fear ?? 0);
+  if (c.echo) next = { ...next, echoes: [...(next.echoes ?? []), c.echo] };
+  return next;
+}
+
+/** Does the profile meet a gate? */
+export function meets(p: Profile, bookId: string, r?: Requires): boolean {
+  if (!r) return true;
+  const flags = p.flags[bookId] ?? {};
+  if (r.traits && Object.entries(r.traits).some(([t, v]) => (p.traits[t as keyof Profile["traits"]] ?? 0) < (v ?? 0))) return false;
+  if (r.flags?.some((f) => !flags[f])) return false;
+  if (r.notFlags?.some((f) => flags[f])) return false;
+  if (r.relation && Object.entries(r.relation).some(([who, m]) => {
+    const rel = relationOf(p, who);
+    return (m.trust != null && rel.trust < m.trust) || (m.fear != null && rel.fear < m.fear);
+  })) return false;
+  return true;
 }
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
