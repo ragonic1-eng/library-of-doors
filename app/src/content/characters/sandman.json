@@ -18,7 +18,8 @@
       "He cannot be killed or harmed through the glass.",
       "He will never beg; the nearest he comes is bargaining."
     ],
-    "ttsVoice": "English_Deep-VoicedGentleman"
+    "ttsVoice": "cedar",
+    "voiceDirection": "A man in his late fifties, educated upper-class English accent of 1916, deep and unhurried. Grandiose, savouring his own words. Menace by lowering the voice, never by shouting."
   },
   "alex": {
     "name": "Alex Burgess",
@@ -38,7 +39,8 @@
       "He will not break the circle in this scene; Paul stops him, or his own fear does.",
       "He cannot return the tools; he does not know where all of them went."
     ],
-    "ttsVoice": "English_Gentle-voiced_man"
+    "ttsVoice": "verse",
+    "voiceDirection": "An Englishman, soft and hesitant, gentle upper-class accent, apologetic pauses mid-sentence, a slight tremor of fear. He speaks to the glass more than to the listener."
   },
   "lucienne": {
     "name": "Lucienne",
@@ -59,16 +61,22 @@
       "She will not pretend the realm is well.",
       "She never flatters."
     ],
-    "ttsVoice": "English_Graceful_Lady"
+    "ttsVoice": "sage",
+    "voiceDirection": "A woman of great age and composure, precise and dry, a cultivated English accent. Warmth held carefully underneath; every word deliberate."
   },
   "dream": {
     "name": "Aurie",
     "address": "herself",
     "voice": "Her private thoughts. Formal, proud, slow to thaw; at low mercy cold and certain, at high mercy doubting herself. Short sentences. Never explains the rules of the game, only how the moment feels. One or two sentences at most.",
     "wants": "Her realm restored and her tools returned; underneath, something she will not name yet.",
-    "knows": ["Everything she has done so far in this story and how it felt."],
+    "knows": [
+      "Everything she has done so far in this story and how it felt."
+    ],
     "secrets": [],
-    "redLines": ["Never addresses the player as a player. Never mentions options, meters or choices by name."],
-    "ttsVoice": "English_Wiselady"
+    "redLines": [
+      "Never addresses the player as a player. Never mentions options, meters or choices by name."
+    ],
+    "ttsVoice": "marin",
+    "voiceDirection": "A woman's private thought, low and close to the ear, almost a whisper. Proud, slow and grave, with weariness under the pride."
   }
 }

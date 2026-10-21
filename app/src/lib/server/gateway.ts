@@ -5,7 +5,7 @@ const KEY = process.env.INFISTAR_API_KEY ?? "";
 
 export const models = {
   dialogue: process.env.MODEL_DIALOGUE ?? "grok-4.7",
-  tts: process.env.MODEL_TTS ?? "speech-2.8-turbo",
+  tts: process.env.MODEL_TTS ?? "gpt-audio-1.5",
 };
 
 export const mockMode = !KEY || process.env.MOCK_AI === "1";

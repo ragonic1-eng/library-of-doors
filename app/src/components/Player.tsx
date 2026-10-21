@@ -26,12 +26,19 @@ export default function Player({ book }: { book: Book }) {
   const [input, setInput] = useState("");
   const [clipMissing, setClipMissing] = useState(false);
   const [hook, setHook] = useState<string | null>(null);
+  // Reaction loops: while talking, the speaking character's loop for their current mood plays over the scene.
+  const [mood, setMood] = useState("neutral");
+  const [reactMissing, setReactMissing] = useState<Record<string, boolean>>({});
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const scene: Scene = book.scenes[sceneId];
   const currentClip = phase === "consequence" ? pendingChoice?.clip : scene.clips[clipIndex];
   const src = currentClip ? `/clips/${book.id}/${currentClip}.mp4` : undefined;
+  const talker = phase === "talk" ? scene.conversation?.character : undefined;
+  const reactFor = (m: string) => (talker ? `/clips/${book.id}/react/${talker}-${m}.mp4` : undefined);
+  // Prefer the exact mood, then neutral; if neither exists yet, the scene's last frame stays on screen.
+  const reactSrc = [reactFor(mood), reactFor("neutral")].find((u) => u && !reactMissing[u]);
 
   // Load the saved profile and resume position once.
   useEffect(() => {
@@ -149,6 +156,7 @@ export default function Player({ book }: { book: Book }) {
       setClipIndex(0);
       setPhase("clips");
       setHistory([]);
+      setMood("neutral");
       setInner(null);
       setShowOptions(false);
       setPendingChoice(null);
@@ -191,6 +199,7 @@ export default function Player({ book }: { book: Book }) {
       return;
     }
     setHistory([...hist, { role: "character", text: r.dialogue }]);
+    if (r.mood) setMood(r.mood);
     void speak(r.dialogue, scene.conversation.character);
     if (r.inner_thought) setInner(r.inner_thought);
     if (profile && r.memory_note) {
@@ -227,6 +236,18 @@ export default function Player({ book }: { book: Book }) {
             <div className="placeholder-title">{scene.title}</div>
             {currentClip && <div className="placeholder-sub">clip {currentClip} not yet generated</div>}
           </div>
+        )}
+        {reactSrc && (
+          <video
+            key={reactSrc}
+            className="film react"
+            src={reactSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onError={() => setReactMissing((m) => ({ ...m, [reactSrc]: true }))}
+          />
         )}
         <div className="vignette" />
       </div>

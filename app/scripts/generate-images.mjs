@@ -10,6 +10,8 @@
 //   npm run gen -- sheets [--dry]       character reference sheets
 //   npm run gen -- portraits [--dry]    hero portraits (need approved sheets)
 //   npm run gen -- plates [--dry]       location plates
+//   npm run gen -- expressions [--dry]  six-emotion sheets (need approved sheets)
+//   npm run gen -- poses [--dry]        six-action sheets (need approved sheets)
 //   npm run gen -- one <job-id> [--dry] a single job, e.g. one aurie-sheet
 //   add  --n 2        candidates per job (default 2)
 //   add  --via openai to use /v1/images instead of Gemini generateContent
@@ -90,6 +92,22 @@ character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait", [join(C
 character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
+
+// Movement library (character-prompts.md §3b): expression and pose sheets, built from the approved reference sheet.
+const EXPR_FRAME = block("## 3b.", "Expression frame");
+const POSE_FRAME = block("## 3b.", "Pose frame");
+for (const id of ["aurie", "burgess", "alex-young", "alex-old", "lucienne", "paul"]) {
+  for (const [kind, frame] of [["expressions", EXPR_FRAME], ["poses", POSE_FRAME]]) {
+    jobs.push({
+      id: `${id}-${kind}`,
+      group: kind,
+      dir: join(C(id), "candidates"),
+      approved: join(C(id), `${kind}.png`),
+      prompt: () => `${frame}\n${block("## 3b.", `**${id} ${kind}**`)}\n${STYLE}`,
+      refs: [join(C(id), "sheet.png")],
+    });
+  }
+}
 
 const plates = [
   ["cellar-1916", "**4.1 "],

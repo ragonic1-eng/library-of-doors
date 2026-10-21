@@ -60,6 +60,7 @@ export interface CharacterCard {
   redLines: string[]; // things they can never do or grant
   address: string; // how they address Aurie
   ttsVoice?: string; // gateway voice id
+  voiceDirection?: string; // how the voice actor should deliver this character's lines
 }
 
 export interface PlayerModel {

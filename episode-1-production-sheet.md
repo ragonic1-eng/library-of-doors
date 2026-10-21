@@ -70,6 +70,18 @@ Totals: **26 clips** (21 base + 5 decision variants), 11 with the hero visible. 
 
 ---
 
+### 3b. Reaction loops (movement during live dialogue)
+
+While Aurie talks with a character, the scene video is replaced by that character's loop for their current mood, chosen live by the dialogue model and cross-faded on every reply. Each loop is 5 s, seamless (first and last frames match), hand-held sway, the character breathing, blinking and shifting in place with the emotion readable throughout. Source frame: the matching panel of the character's expression sheet (`character-prompts.md` §3b). File: `public/clips/sandman/react/<character>-<mood>.mp4`. Missing loops fall back to neutral, then to the scene's last frame, so they can be added gradually.
+
+| Character | Scene | Moods (7 each) |
+|---|---|---|
+| burgess | 1.2 at the glass | neutral, warm, wary, hostile, amused, afraid, grieving |
+| alex | 1.4 at the glass (1970s, from the old-Alex sheet, made a decade younger) | same seven |
+| lucienne | 2.1 the library hub | same seven |
+
+Totals: 21 loops, about 105 s of video. Cheapest model is fine here (`kling-v2-6`); faces come from the approved expression panels.
+
 ## 4. Cast for Episode 1
 
 Characters are **generated**, not photographed (prompts in `character-prompts.md`). The only photo needed is of your wife, if she is to be the face of Dream: one clear front-facing shot in even light, no glasses or hat. Each character gets an approved three-view reference sheet, and every later image and clip is derived from that sheet.

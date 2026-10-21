@@ -222,6 +222,80 @@ SURREAL DETAIL: a long pale hand is pressing out through the fogged glass from i
 
 ---
 
+## 3b. Expression and pose sheets (movement library)
+
+Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
+
+Expression frame, used by all:
+```
+Expression sheet: a three-by-two grid of six head-and-shoulders photographs of the identical person in the attached reference sheet. Same face, hair, spectacles, clothing, same plain charcoal backdrop and the same soft key light in every frame, evenly spaced, no text, no labels, no borders. Each frame is a real, unposed-looking moment, the expression carried by the whole face (eyes, brows, mouth, jaw, neck tension), never a caricature. Left to right, top row then bottom row:
+```
+
+Pose frame, used by all:
+```
+Pose sheet: a three-by-two grid of six full-length photographs of the identical person in the attached reference sheet. Same face, hair, spectacles and clothing, same plain charcoal backdrop and soft key light in every frame, evenly spaced, no text, no labels, no borders. Each frame catches a real action mid-movement, weight shifting, fabric swinging, a trace of motion blur in the hands and hair only, the face sharp. Left to right, top row then bottom row:
+```
+
+**aurie expressions**
+```
+1 regal calm, eyes level, the faintest warmth at the mouth. 2 cold fury held perfectly still, nostrils slightly flared, jaw set. 3 sorrow, eyes wet but not crying, looking down and away. 4 a rare true smile, small and surprised by itself. 5 contempt, chin lifted, eyelids lowered, looking down the nose. 6 exhausted vulnerability, eyes closed, head tilted back, lips parted.
+```
+
+**aurie poses**
+```
+1 curled on the floor of the glass sphere, bare and pale, hair spread, one hand flat against the glass. 2 rising from a crouch, one hand trailing, hair lifting upward. 3 striding forward, the long gown swinging, hand raised to dissolve something into sand. 4 seated upright on a throne-like chair, one hand on the armrest, utterly still. 5 turning back over her shoulder mid-stride, hair swinging. 6 kneeling to touch the ground, fingers spread, sand rising from beneath her palm.
+```
+
+**burgess expressions**
+```
+1 proprietary calm, the satisfied purse of the lips. 2 triumphant, eyes wide, mouth open mid-proclamation. 3 cold anger, eyes narrowed, lips thinned white. 4 sudden fear he is trying to hide, eyes flicking sideways, a swallow. 5 grief for his dead son, the mask slipping, eyes red. 6 a sneer of contempt, one corner of the mouth pulled up.
+```
+
+**burgess poses**
+```
+1 reading aloud at a lectern, one hand flat on an open book, the other raised. 2 crouching to peer at something at floor level, robe pooling on the floor. 3 pacing, hands clasped behind his back, robe swinging. 4 pointing an accusing finger. 5 recoiling a step backward, arm half raised. 6 sitting heavily in a carved chair, head in one hand.
+```
+
+**alex-young expressions**
+```
+1 anxious politeness, lips pressed together. 2 a flinch, eyes squeezed half shut. 3 shy hope, the beginning of a smile. 4 tears held back, chin trembling. 5 guilt, unable to meet the camera's eye. 6 sudden resolve, jaw set, eyes steady behind the black frames.
+```
+
+**alex-young poses**
+```
+1 crouching close to something at eye level, one palm pressed flat on an invisible surface. 2 walking away and looking back over his shoulder. 3 standing with a wet cloth in one hand, frozen, about to wipe something away. 4 sitting on a wooden chair, elbows on knees, hands clasped. 5 reaching out a hand slowly, then stopping halfway. 6 hurrying forward, half running, cardigan swinging.
+```
+
+**alex-old expressions**
+```
+1 dread, eyes wide behind thick lenses. 2 screaming, mouth wide open, hands raised. 3 weary sadness, eyes downcast. 4 pleading, brows raised, lips parted. 5 brief peace, eyes closed, a faint smile. 6 confusion, waking suddenly, looking around.
+```
+
+**alex-old poses**
+```
+1 seated in the wheelchair, gripping the armrests. 2 leaning forward out of the wheelchair, one hand reaching toward the camera. 3 shrinking back into the wheelchair, arm across his face. 4 seated, head bowed, hands folded on the tartan blanket. 5 turning in the chair to look behind him. 6 slumped asleep in the chair, glasses askew.
+```
+
+**lucienne expressions**
+```
+1 precise attention, one eyebrow slightly raised. 2 relief breaking through composure, eyes shining. 3 dry disapproval, lips pressed, looking over her spectacles. 4 deep worry, brows drawn together. 5 warm affection, a small genuine smile. 6 grief held in check, eyes closed for one breath.
+```
+
+**lucienne poses**
+```
+1 walking briskly, lantern raised, coat swinging. 2 turning toward the camera with the lantern lifted. 3 reaching up to a high shelf, standing on tiptoe. 4 reading from an open ledger held in both hands. 5 bowing her head slightly, one hand at her chest. 6 standing very straight, hands folded in front, waiting.
+```
+
+**paul expressions**
+```
+1 patient kindness. 2 worry for someone else, brows drawn. 3 firm refusal, jaw set, a small shake of the head. 4 tiredness, eyes heavy. 5 a quiet laugh. 6 alarm, eyes wide, mouth open.
+```
+
+**paul poses**
+```
+1 sitting on a wooden chair holding a steaming tin cup. 2 pushing an empty wheelchair. 3 stepping forward to catch someone's arm. 4 standing in a doorway, keys in hand. 5 leaning back against a stone wall, arms folded. 6 kneeling beside a wheelchair, hand on its armrest.
+```
+
 ## 4. Location plates
 
 Each plate: wide establishing shot, no people unless stated, one surreal detail. Append the Style Bible.

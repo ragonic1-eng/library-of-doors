@@ -218,3 +218,10 @@ button.ghost { border-color: transparent; color: var(--dim); }
   text-shadow: 0 1px 8px #000;
   animation: fade-in 0.8s ease both;
 }
+
+/* Reaction loop layered over the scene; each new mood fades in over the last frame */
+.film.react {
+  position: absolute;
+  inset: 0;
+  animation: fade-in 0.7s ease both;
+}
