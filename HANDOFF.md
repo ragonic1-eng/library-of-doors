@@ -75,6 +75,8 @@ The novels and extracted text, the family photos (`characters/`), generated imag
 
 ## Current status (update this section as you go)
 
-- Episode 1: 24 scene clips rendered; Alex's 1970s shots re-rendered with his real face; Aurie's master sheet regenerated from her photos (likeness 0.50) and her face shots need new keyframes and clips; reaction loops partly done.
-- Gameplay: consequence engine, relations, echoes, action narration, and two new conversations (the sleeping girl Unity in 1916, old Alex at the escape) are built.
-- Open decisions for the owner: the Neverwhere hero's name (default Rachel Mayhew).
+- Live for the author's phones at https://library-of-doors.vercel.app (Singapore region, Blob-hosted clips, Haiku dialogue, gpt-audio voice). Clip spend about 299 of the 400 yuan cap.
+- Episode 1: all 24 scene clips and all 21 reaction loops exist and are uploaded. Alex (the author) is consistent everywhere. Charmaine (Aurie) is consistent in 0.0a, 1.2b-B and the master sheet; 0.0c was re-rendered (check its frames: the shot ends in a flare); 1.1b, 1.2b-A and 1.5b still use an older, drifted face because the glass distortion in those compositions defeats the face-refine pass. Fix idea: reframe those three as close-ups with less glass between camera and face, then generate, refine and gate at 0.40.
+- Gameplay: consequence engine, relations, echoes, action narration, and the Unity and old-Alex conversations are live.
+- Known gap: the first AI reply after idle can take 7 to 16 s on Vercel (about 3 to 4 s on a PC); the gateway itself has a 2 to 4 s floor per call. The start gate warms the functions; a `?probe=1` GET on `/api/dialogue` reports gateway timing from inside Vercel.
+- Open decision for the owner: the Neverwhere hero's name (default Rachel Mayhew).
