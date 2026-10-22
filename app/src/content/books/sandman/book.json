@@ -3214,6 +3214,7 @@
         "character": "johanna",
         "maxTurns": 2,
         "canon": [
+          "Rachel is DEAD. She died minutes ago, screaming, upstairs. Johanna has just come down from her body.",
           "Aurie has just taken the pouch and let Rachel die screaming, when she could have given her a gentle end.",
           "Johanna is shaking with grief and rage. She curses Aurie: may she remember the screaming every time she opens the pouch.",
           "An apology will not undo it, and Johanna will not pretend it does; but she will hear it."
@@ -3228,7 +3229,17 @@
           "2.4b.SORRY": "Aurie admits it was wrong, or says she is sorry.",
           "2.4b.COLD": "Aurie stays cold and walks away."
         },
-        "consequences": {}
+        "consequences": {},
+        "triggers": [
+          {
+            "exit": "2.4b.COLD",
+            "player": "means nothing|don.t care|walk away|not my concern|leave me|out of my way"
+          },
+          {
+            "exit": "2.4b.SORRY",
+            "player": "\bsorry\b|i was wrong|forgive me"
+          }
+        ]
       },
       "choices": [
         {
