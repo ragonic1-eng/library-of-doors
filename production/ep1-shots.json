@@ -766,6 +766,17 @@
         "use": "assets/keyframes/sandman/still-nada-free/keyframe.png"
       },
       "motion": "Nada closes her eyes and smiles through tears; her body slowly turns to warm golden light that drifts upward like rising sand until only light remains in the white room. Very slow push-in."
+    },
+    {
+      "id": "still-letter",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "Medium close-up in the endless library from the location plate: Lucienne, the woman from the character sheet, holds out toward the camera a heavy cream envelope sealed with dark red wax stamped with the sign of an open book. Her lantern beside her on the reading table. Her expression: respectful, worried. Warm lantern light, dust in the air."
+      }
     }
   ],
   "react": {

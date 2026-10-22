@@ -13,17 +13,30 @@ function faithful(script: string, heard: string) {
   return h.length <= a.length * 1.25 + 2 && hit / Math.max(a.length, 1) >= 0.8;
 }
 
+/** How each mood should colour the delivery. */
+const DELIVERY: Record<string, string> = {
+  neutral: "measured and present",
+  warm: "warm and tender, a little moved",
+  wary: "guarded and careful, weighing every word",
+  hostile: "cold and cutting, anger held just under control",
+  amused: "amused, a smile you can hear",
+  afraid: "frightened, breath catching, a little too fast",
+  grieving: "grief-stricken, the voice close to breaking",
+};
+
 /**
  * The key has no plain text-to-speech model, so an audio chat model (gpt-audio-1.5) reads the line.
  * Such a model can ANSWER a line instead of reading it ("Who is Rachel?" -> "I don't know Rachel"),
  * so it is told it is a text-to-speech engine, the line is fenced, and the transcript it returns is
  * checked against the script. Up to three takes; null when none is faithful (the player then falls back).
  */
-export async function synthLine(bookId: string, character: string, text: string, speaker?: string): Promise<Buffer | null> {
+export async function synthLine(bookId: string, character: string, text: string, speaker?: string, mood?: string): Promise<Buffer | null> {
   const card = getCharacter(bookId, character);
   const part = speaker ? card?.speakers?.[speaker] : undefined;
   const voice = part?.ttsVoice ?? process.env[`TTS_VOICE_${character}`] ?? card?.ttsVoice ?? "marin";
-  const direction = part?.voiceDirection ?? card?.voiceDirection ?? "Natural, unhurried, intimate, as if in the same room.";
+  const base = part?.voiceDirection ?? card?.voiceDirection ?? "Natural, unhurried, intimate, as if in the same room.";
+  // Act the feeling of this moment, not just the character's usual voice.
+  const direction = mood && DELIVERY[mood] ? `${base} In this line the feeling is: ${DELIVERY[mood]}. Let it show in pace, breath and pauses.` : base;
   const script = text.replace(/\b[A-Z]{3,}:\s*/g, "").trim();
   if (!script) return null;
   for (let attempt = 1; attempt <= 3; attempt++) {

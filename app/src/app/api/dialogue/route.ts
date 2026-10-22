@@ -26,17 +26,18 @@ const replySchema = {
   type: "object",
   additionalProperties: false,
   properties: {
+    subtext: { type: "string" },
+    mood: { type: "string", enum: MOODS },
     dialogue: { type: "string" },
     narration: { type: ["string", "null"] },
     inner_thought: { type: ["string", "null"] },
-    mood: { type: "string", enum: MOODS },
     decision: { type: ["string", "null"] },
     consequences: { type: "array", items: { type: "string" } },
     trust_delta: { type: "integer" },
     fear_delta: { type: "integer" },
     memory_note: { type: ["string", "null"] },
   },
-  required: ["dialogue", "narration", "inner_thought", "mood", "decision", "consequences", "trust_delta", "fear_delta", "memory_note"],
+  required: ["subtext", "mood", "dialogue", "narration", "inner_thought", "decision", "consequences", "trust_delta", "fear_delta", "memory_note"],
 };
 
 /** Exits the player can still reach, and consequences still available (not fired, requirements met). */
@@ -101,6 +102,9 @@ export async function POST(req: Request) {
   if (!card || !charKey) return NextResponse.json({ error: "no character" }, { status: 400 });
 
   const { exits, consequences } = available(scene, body.profile, book.id);
+  // The player sends her new line both as the last history turn and as playerLine; count and send it once.
+  const last = body.history[body.history.length - 1];
+  if (last?.role === "player" && body.playerLine !== undefined && last.text.trim() === body.playerLine.trim()) body.history = body.history.slice(0, -1);
   const turnsSoFar = body.history.filter((t) => t.role === "player").length;
   const maxTurns = scene.conversation?.maxTurns ?? 0;
   const intent = body.intent && body.intent in exits ? body.intent : undefined;
@@ -127,9 +131,10 @@ export async function POST(req: Request) {
       const m = soFar.match(/"dialogue"\s*:\s*"((?:[^"\\]|\\.)*)"/);
       if (!m) return;
       try { earlyLine = spokenOnly(JSON.parse(`"${m[1]}"`) as string); } catch { return; }
+      const feel = soFar.match(/"mood"\s*:\s*"([a-z]+)"/)?.[1];
       const line = earlyLine; marks.push(`line@${Date.now() - T0}`);
       voice = Promise.all(splitParts(line, !!card.speakers).map(async (p) => {
-        const audio = await synthLine(book.id, charKey, p.text, p.speaker); marks.push(`voice@${Date.now() - T0}`);
+        const audio = await synthLine(book.id, charKey, p.text, p.speaker, feel); marks.push(`voice@${Date.now() - T0}`);
         return { speaker: p.speaker, audio: audio ? audio.toString("base64") : null };
       }));
     };
@@ -238,13 +243,15 @@ function buildSystem(args: {
     `WHAT HAS ALREADY HAPPENED THAT YOU KNOW OF (use it; it is your history with her):\n${known || "- nothing beyond the canon"}`,
     `YOUR FEELINGS TOWARD HER (scale -5 to 5): trust ${rel.trust}, fear ${rel.fear}. Let them colour every line: high fear makes you placate or flee; low trust makes you guarded; high trust makes you honest.`,
     `HOW THIS SCENE CAN BEND (likely approaches; follow her lead, improvising within the story):\n${(scene.conversation?.possibilities ?? []).map((x) => `- ${x}`).join("\n") || "- follow her lead"}`,
+    `READ HER FIRST. Before you speak, write in "subtext" (private, one line) what Aurie is really feeling and wanting beneath her words: fear, pride, grief, guilt, longing, anger, mischief, testing you, hiding something. Notice what she did NOT say. Then answer THAT, the way someone who truly sees her would: name it or hint at it, press on it, comfort it, or use it against her, exactly as your character would. Pick up a word or phrase she actually used and turn it back to her. Never answer only the literal question.`,
+    `SOUND LIKE A PERSON IN THIS MOMENT, NOT AN INFORMATION DESK. Let feeling show in the words themselves: a pause (...), a sentence that breaks off, a sudden softness, a flash of anger, a laugh, a hard truth said quietly. Vary the rhythm: a short blow, then one longer line. One concrete physical or sensory detail when it helps (the cold, a smell, your hands). Never generic, never polite filler, never "I understand" or "That is a good question". Your feelings toward her (trust, fear, history) should be audible.`,
     `HER INPUT CAN BE SPEECH OR ACTION. If she describes doing something (for example in *asterisks*, or "I press my palm to the glass"), treat it as happening in the scene: put its visible physical effect in "narration" (one sentence, present tense, second person, e.g. "The candle flames lean away from the glass.") and react to it in "dialogue". Otherwise narration may be null, or one short line of what changes in the room.`,
     `CONSEQUENCES. Her words and actions have consequences in this story. When her LATEST input clearly earns one of these, include its tag in "consequences" (at most two; only ones she has truly earned; never fire one just because it is listed):\n${menu || "- (none remaining)"}`,
     `RELATIONSHIP. Set trust_delta and fear_delta (integers -2 to 2) for how her latest input changes YOUR trust in her and fear of her. Usually 0 or 1; 2 only for something remarkable.`,
     `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
     `STEERING (invisible; never mention options, ideas, buttons, menus or the game): ${steering}`,
     `HOW THE SCENE ENDS. Her words decide the story; she must never have to repeat herself or pick from a menu. ${ending}\n${exitList || "- none"}`,
-    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (AURIE's own private thought about this moment, first person, as the Queen of Dreams: calm, ancient, proud; one short line, or null. It must NEVER be in your character's voice, words or slang, and never repeat your dialogue), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
+    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys, in this order: subtext (your private read of what she feels and wants, one line, never shown), mood (${MOODS.join(", ")}: what YOU feel as you answer), dialogue (1 to 3 sentences, at most 40 words, spoken aloud; like a line in a film, never a speech; only spoken words, no *actions*), narration (one sentence or null), inner_thought (AURIE's own private thought about this moment, first person, as the Queen of Dreams: calm, ancient, proud; one short line, or null. It must NEVER be in your character's voice, words or slang, and never repeat your dialogue), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
   ].join("\n\n");
 }

@@ -2173,30 +2173,26 @@
         }
       ],
       "fx": "dust",
-      "next": "3.1"
+      "next": "3.0"
     },
     "3.1": {
       "id": "3.1",
       "title": "Destiny's Garden",
       "pov": "3P",
-      "episodeTitle": "Part Three · Chapter 12 · The Garden",
       "music": "throne",
       "fx": "mist",
       "recap": "Destiny, eldest of the Endless, called the family together for the first time in centuries.",
       "beats": [
         {
-          "card": "Some weeks later",
-          "still": "library-hub"
+          "card": "Destiny's garden",
+          "still": "destiny-garden"
         },
         {
-          "text": "The Dreaming is mending. Then a letter arrives, in a hand that never makes a mistake."
-        },
-        {
-          "text": "Destiny, eldest of the Endless, is calling the family together. It has not happened in centuries."
-        },
-        {
-          "text": "Aurie walks his garden, where every path is a choice someone once made.",
+          "text": "Destiny's garden lies at the edge of everything. Aurie walks it alone.",
           "clip": "3.1a"
+        },
+        {
+          "text": "Every path in it is a choice someone once made. The paths behind her rearrange themselves as she passes."
         },
         {
           "text": "Destiny is blind. He is chained to a book that holds everything that was, and everything that will be.",
@@ -2294,6 +2290,19 @@
         {
           "text": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it.",
           "still": "convocation"
+        },
+        {
+          "text": "Desire knows exactly where to cut.",
+          "still": "still-desire"
+        },
+        {
+          "text": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it."
+        },
+        {
+          "text": "Aurie passed her in the ice, on the way to her helm.",
+          "if": [
+            "NADA_PROMISE"
+          ]
         },
         {
           "text": "Desire leans forward, smiling. It has been waiting for this.",
@@ -2466,6 +2475,24 @@
           "still": "convocation"
         },
         {
+          "text": "Aurie goes home to prepare. She is going back into Hell, for Nada.",
+          "if": [
+            "NADA_QUEST"
+          ]
+        },
+        {
+          "text": "Aurie tells herself she does not care what Desire thinks. She is lying.",
+          "if": [
+            "STORMED_OUT"
+          ]
+        },
+        {
+          "text": "Aurie goes home certain she was right. Death does not call on her for a long time.",
+          "if": [
+            "PRIDE_LOCK"
+          ]
+        },
+        {
           "text": "Destiny closes his book. He already knows how this ends.",
           "still": "still-destiny"
         },
@@ -2496,10 +2523,19 @@
           ]
         },
         {
-          "text": "Aurie returns to Hell. Lucifer has sent for her, and she wants to know why.",
-          "unless": [
-            "NADA_QUEST"
+          "text": "Desire's words would not leave her. Within a week she is standing at the gates of Hell anyway.",
+          "if": [
+            "STORMED_OUT"
           ]
+        },
+        {
+          "text": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice.",
+          "if": [
+            "PRIDE_LOCK"
+          ]
+        },
+        {
+          "text": "The last time she came here, she walked past Nada in the ice."
         },
         {
           "text": "But Hell is empty.",
@@ -2602,11 +2638,17 @@
       "recap": "Gods, demons, Faerie and Heaven came to the Dreaming to bid for the key to Hell. Azazel held Nada's soul in a jar.",
       "beats": [
         {
-          "text": "Word travels fast. Within a night, every power in creation wants the key to Hell.",
+          "text": "By the time Aurie is home, every realm has heard: the Lady of Dreams holds the key to Hell.",
           "still": "suitors-hall"
         },
         {
-          "text": "They come to the Dreaming as guests, with gifts, and with threats.",
+          "text": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy."
+        },
+        {
+          "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another."
+        },
+        {
+          "text": "They come with gifts, and with threats.",
           "clip": "4.2a"
         },
         {
@@ -2618,7 +2660,7 @@
           "still": "still-azazel"
         },
         {
-          "text": "It is Nada's soul."
+          "text": "It is Nada's soul. When the demons left Hell, Azazel took her with him."
         },
         {
           "text": "The envoys of Faerie: Cluracan, and his sister Nuala, sent along as a gift.",
@@ -2627,6 +2669,9 @@
         {
           "text": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
           "still": "still-angels"
+        },
+        {
+          "text": "Before the night is over, Aurie must choose."
         }
       ],
       "conversation": {
@@ -2786,8 +2831,11 @@
       "recap": "Free at last, Nada faced the queen who condemned her.",
       "beats": [
         {
-          "text": "In a white room in the Dreaming, Nada stands free for the first time in ten thousand years.",
+          "text": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
           "still": "still-nada-free"
+        },
+        {
+          "text": "Nada stands free for the first time in ten thousand years."
         },
         {
           "text": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people."
@@ -2903,8 +2951,50 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Hell has new masters. Nada is gone.",
+          "text": "Hell has new masters.",
           "still": "library-hub"
+        },
+        {
+          "text": "Heaven's angels hold the keys. The damned may heal there now.",
+          "if": [
+            "HELL_KEY_ANGELS"
+          ]
+        },
+        {
+          "text": "Odin's Hell waits for the end of the world. Loki is still smiling.",
+          "if": [
+            "HELL_KEY_NORSE"
+          ]
+        },
+        {
+          "text": "Azazel's Hell is crueler than it ever was.",
+          "if": [
+            "HELL_KEY_DEMONS"
+          ]
+        },
+        {
+          "text": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
+          "if": [
+            "HELL_KEY_FAERIE"
+          ]
+        },
+        {
+          "text": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
+          "if": [
+            "LUCIFER_FREED"
+          ]
+        },
+        {
+          "text": "Nada is gone, born again into a life of her own.",
+          "if": [
+            "NADA_FORGIVEN"
+          ]
+        },
+        {
+          "text": "Nada is gone, and she did not forgive.",
+          "unless": [
+            "NADA_FORGIVEN"
+          ]
         },
         {
           "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called."
@@ -2912,6 +3002,86 @@
         {
           "text": "End of Part Four.",
           "style": "hook"
+        }
+      ]
+    },
+    "3.0": {
+      "id": "3.0",
+      "title": "The Mending",
+      "pov": "POV",
+      "episodeTitle": "Part Three · Chapter 12 · The Garden",
+      "music": "library",
+      "fx": "dust",
+      "recap": "Aurie rebuilt the Dreaming. Then Lucienne brought her a letter from Destiny.",
+      "beats": [
+        {
+          "card": "The Dreaming · weeks later",
+          "still": "throne-room"
+        },
+        {
+          "text": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm."
+        },
+        {
+          "text": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home."
+        },
+        {
+          "text": "Aurie walked her sister's rounds. Something of that walk has stayed with her.",
+          "if": [
+            "DEATH_ROUNDS"
+          ]
+        },
+        {
+          "text": "Then one evening Lucienne comes to her with a letter, sealed with the sign of a book.",
+          "still": "still-letter"
+        },
+        {
+          "text": "Only one member of her family seals his letters that way."
+        }
+      ],
+      "conversation": {
+        "character": "lucienne",
+        "maxTurns": 3,
+        "canon": [
+          "The Dreaming is being rebuilt. Lucienne has kept the library and the records through it all.",
+          "The letter is from Destiny, eldest of the Endless: a summons to a family gathering in his garden tonight. It has not happened in centuries.",
+          "The Endless are seven siblings older than the gods: Destiny, Death, Dream (Aurie), Destruction, Desire, Despair and Delirium. Destruction walked away from his duties three hundred years ago.",
+          "Lucienne fears Desire will be there; Desire has always enjoyed hurting Aurie."
+        ],
+        "opening": "My lady. This came for you an hour ago. It carries Destiny's seal. The family is gathering tonight, in his garden.",
+        "possibilities": [
+          "She asks who the Endless are: Lucienne tells her plainly, a line on each, and lingers on Desire.",
+          "She asks how the realm is: Lucienne reports with quiet pride, and a little worry.",
+          "She does not want to go: Lucienne reminds her that Destiny's summons are never refused.",
+          "She confides that she feels changed: Lucienne notices, and is glad."
+        ],
+        "suggestions": [
+          "Remind me who my family are.",
+          "How is the Dreaming?",
+          "Do I have to go?"
+        ],
+        "exits": {
+          "3.0.GO": "Aurie decides to answer Destiny's summons and go."
+        },
+        "triggers": [
+          {
+            "exit": "3.0.GO",
+            "player": "i.ll go|i will go|let.s go|take me|i must go|very well"
+          }
+        ],
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "3.0.GO",
+          "text": "Very well. I'll go.",
+          "effects": {},
+          "next": "3.1",
+          "aftermath": [
+            {
+              "text": "Lucienne bows. Behind her spectacles, she looks worried.",
+              "still": "library-hub"
+            }
+          ]
         }
       ]
     }
