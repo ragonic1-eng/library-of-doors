@@ -117,4 +117,13 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Dialogue resilience: the gateway's Claude channel failed intermittently ("OAuth refresh failed"). The route now falls back to MODEL_DIALOGUE_FALLBACK (default gpt-5.4-mini, then gemini-3-flash).
 - Spend: Y475.28 total (this round Y111 of the approved Y150). One 5 s loop about Y3, one 10 s clip about Y6, one image about Y0.46.
 - Next in the source: Episode 3, the Endless family (Destiny's garden, the convocation, Desire's bait). Needs a new budget.
+- Owner feedback round (2026-10-22, nine points) done and live:
+  - Story flow: every scene change must say WHERE, WHY and WHO. Chapters are named Prologue, Chapter 1-11, inside Part One / Part Two. Each scene has a `recap` line for "Story so far".
+  - The Three: card `speakers` (MAIDEN/MOTHER/CRONE) give each labelled part its own on-screen name and voice; the player splits "MAIDEN: ... CRONE: ..." replies.
+  - Player: fullscreen toggle and pause menu (Story so far, Chapters, Restart chapter, Play on another phone, Start over); "Your choice" card on every decision; "Previously" card when returning; offline/server errors shown with Retry.
+  - Steering: characters push toward the scene's exits in character, more plainly near maxTurns; asking questions never ends a scene.
+  - Saves: local always; optional cloud save code (`/api/save`, Vercel Blob `saves/<code>.json`, no login).
+  - Model safety net: gateway.ts circuit breaker benches a failing model for 3 minutes, uses MODEL_DIALOGUE_FALLBACK (gpt-5.4-mini, gemini-3-flash), then tries the main model again. `GET /api/dialogue?probe=0` shows what is benched.
+  - Story check: `npm run check` (also runs before every build) fails on duplicate Ideas lines, broken links, choices that are not exits, unknown characters, missing pictures or narration.
+- PRODUCTION RULE for new scenes (cost): default to a still image with `fx` (rain, embers, ash, dust, glitter, snow, mist, flicker) and the hand-held still camera; use video only for key moments (a transformation, a face that must move, an action beat). One still is about Y0.46; a 10 s clip about Y6.
 - Still parked: Aurie shots 1.1b and 1.2b-A face drift.
