@@ -1145,6 +1145,119 @@
         "use": "assets/keyframes/sandman/still-orpheus/keyframe.png"
       },
       "motion": "Orpheus slowly closes his eyes and smiles peacefully; he gently dissolves into soft golden light and drifting motes like pollen, which rise and float out of the cave toward the sea; only the flowers remain. The lamp flames lean after the light. Very slow push-in."
+    },
+    {
+      "id": "still-ruby-call",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/gates-strained/plate.png"
+        ],
+        "prompt": "Night at the misty edge of the Dreaming, a dark still sea stretching away. Aurie, the woman in the long black high-collared gown from the character sheet, seen only from behind: her long black hair and gown, her face not visible, stands at the water's edge looking out. Far across the ocean on the horizon a single small point of deep red light glows like a star, its reflection a thin red line on the water. Cold blue moonlight, mist, awe and longing."
+      }
+    },
+    {
+      "id": "still-dee-walkout",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png",
+          "assets/keyframes/sandman/still-arkham/keyframe.png"
+        ],
+        "prompt": "Night, heavy rain: John Dee, the bald man in round glasses from the character sheet, in his long tan raincoat, walks out through the open iron gates of an old American asylum (the building from the second image behind him, one barred window lit). In his right fist a red ruby glows so brightly the rain around his hand turns red. In the gatehouse booth a guard sleeps slumped over his desk. Dee smiles to himself. Medium-wide, eye level."
+      }
+    },
+    {
+      "id": "still-ruby-blaze",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png",
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "Point of view from the diner aisle: in the corner booth from the plate, John Dee, the man from the character sheet, half rises and thrusts the red ruby toward the camera in his open palm; a blinding red light bursts from it and thin crackling red tendrils reach for the camera, the edges of the frame breaking up into drifting grey sand. Dee's face lit red from below, triumphant and cruel. The other customers frozen with blank smiles."
+      }
+    },
+    {
+      "id": "still-ruby-inside",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Inside the ruby: a vast cathedral-like space made entirely of glowing deep-red crystal, enormous angular facets rising into a red haze, light refracting in long beams. Far below, small in the frame, Aurie, the woman in the long black high-collared gown from the character sheet, seen only from behind: her long black hair and gown, her face not visible, kneels on the faceted crystal floor with one hand pressed to it, a thin trail of grey sand spilling from her sleeve. Awe, danger, a sense of being swallowed."
+      }
+    },
+    {
+      "id": "still-diner-dreams",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "The diner from the plate at 3 a.m. under flickering fluorescent light: the waitress has fallen asleep on her feet against the counter, and around her head, like a soft double exposure, her dream is visible: a sunlit beach and a small child running. Beside her a heavy trucker sleeps with his head on the counter, and his dream floats above him as a faint image of an empty open highway at dawn. Between the two dreams, the faint translucent shadow of a woman in a long black gown passes, almost invisible."
+      }
+    },
+    {
+      "id": "still-dee-through-ruby",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png"
+        ],
+        "prompt": "Point of view from inside a red ruby looking out: the enormous face of John Dee, the bald man in round glasses from the character sheet, fills the frame, seen warped and multiplied through angular red crystal facets, each facet showing a slightly different fragment of his face. He is laughing, eyes wide and gleaming behind his glasses, red light on his skin. Claustrophobic and menacing."
+      }
+    },
+    {
+      "id": "still-dee-floor",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png",
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "Grey dawn in the empty diner from the plate: John Dee, the man from the character sheet, lies crumpled on the black-and-white checkered floor beside an overturned stool, small and frail, his glasses askew, surrounded by scattered shards of shattered red crystal that no longer glow. His eyes are open and wet. The customers are gone; cold blue light through the rain-streaked windows."
+      }
+    },
+    {
+      "id": "still-dee-cell",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png",
+          "assets/keyframes/sandman/still-arkham/keyframe.png"
+        ],
+        "prompt": "The same padded asylum cell as in the second image, just before dawn: John Dee, the man from the character sheet, in his grey institutional gown, lies asleep on the narrow cot, curled on his side, his face peaceful and gently smiling for the first time. Soft blue light from the barred window, and a faint warm golden shimmer of a kind dream drifting above him like dust in sunlight."
+      }
+    },
+    {
+      "id": "still-diner-empty",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "Close, low on the checkered floor of the empty diner from the plate at dawn: a pair of small round wire-rimmed glasses lies alone on the tiles among a few dull red shards of broken crystal, where a man used to be. Nobody in the diner. Grey light, rain on the windows, a coffee cup on its side on the counter above."
+      }
+    },
+    {
+      "id": "2.9b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-dee-walkout/keyframe.png"
+      },
+      "motion": "Dee walks steadily through the open gates toward the camera in the pouring rain, raincoat swinging, the ruby pulsing red in his fist and lighting the raindrops red; behind him the guard does not stir. Slow push-in."
+    },
+    {
+      "id": "2.9c",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-ruby-blaze/keyframe.png"
+      },
+      "motion": "The ruby's red light flares brighter and brighter; the red tendrils lash toward the camera; the edges of the frame crumble into grey sand that is sucked into the light; Dee laughs. Fast push-in, ending in red."
     }
   ],
   "react": {
@@ -1279,6 +1392,15 @@
           "assets/plates/destruction-island/plate.png"
         ],
         "setting": "Medium close-up of Destruction, the huge bearded man from the character sheet, sitting at the wooden table on the sunny terrace from the plate with a glass of wine, looking straight at the camera across the table, the sea behind him.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "dee": {
+        "refs": [
+          "characters/dee/sheet.png"
+        ],
+        "setting": "Point of view from inside a red ruby looking out: the face of John Dee, the bald man in round glasses from the character sheet, seen through angular red crystal facets, looking straight into the camera, red light on his skin.",
         "moods": [
           "talking"
         ]

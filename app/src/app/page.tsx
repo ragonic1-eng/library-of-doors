@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RotatePrompt from "@/components/RotatePrompt";
 import { listBooks } from "@/lib/story/load";
 
 const futureDoors = ["Neverwhere", "Coraline", "The Alchemist"];
@@ -7,6 +8,7 @@ export default function Home() {
   const books = listBooks();
   return (
     <main className="title">
+      <RotatePrompt className="by-css" />
       <div className="sway">
         <div className="film placeholder title-plate">
           <h1>The Library of Doors</h1>

@@ -1,6 +1,7 @@
 """Pre-render the narrator for every scene (narration) and every scene-ending hook.
 
-    python -I tools/gen_narration.py --engine gateway [--voice ash] [--force] [scene-id ...]
+    tools/venv/Scripts/python tools/gen_narration.py --engine gateway [--voice ash] [--force] [--ids id,id] [scene-id ...]
+    (each gateway take is transcribed and measured before it is kept; the venv's numpy adds the dead-air check)
     tools/venv/Scripts/python tools/gen_narration.py --engine kokoro [--voice bm_george] [--force]
 
 Output: assets/audio/lines-raw/<line id>.mp3, then run tools/pace_lines.py, which writes app/public/clips/sandman/audio/lines/<line id>.mp3 for every narrated beat and aftermath line
@@ -13,7 +14,7 @@ Engines:
               --voice <path.wav|mp3> clones that voice; --exaggeration 0.7 --cfg 0.3 for a dramatic read.
 Only lines without an existing file are rendered unless --force.
 """
-import sys, os, json, base64, urllib.request, subprocess, tempfile
+import sys, os, re, json, base64, urllib.request, subprocess, tempfile
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +25,7 @@ RAW = os.environ.get("NARRATION_OUT") or os.path.join(ROOT, "assets", "audio", "
 DIRECTION = ("You are the narrator of a prestige dark-fantasy series: think the opening narration of a Netflix thriller, "
              "or a film trailer voice with real acting behind it. Deep male voice, close to the microphone, intimate. "
              "Vary the pace on purpose: short sentences land fast and hard, then slow right down and lean into the long ones. "
-             "Build tension across the passage; let the voice drop to a near-whisper on the eerie beats and swell on the big ones. "
+             "Build tension across the passage; let the voice drop low and quiet on the eerie beats (always clearly audible, never a whisper) and swell on the big ones. "
              "Take a real pause at every full stop and a longer one at an ellipsis. Place names and years are spoken with weight. "
              "The last sentence is the sting: a breath before it, then say it quietly, like a secret the listener was not meant to hear. "
              "Never flat, never sing-song, never a documentary read. Add nothing to the words.")
@@ -65,8 +66,11 @@ def gateway_tts(text, voice):
         "model": os.environ.get("MODEL_TTS", "gpt-audio-1.5"),
         "modalities": ["text", "audio"], "audio": {"voice": voice, "format": "mp3"},
         "messages": [
-            {"role": "system", "content": f"You are a voice actor recording narration for a film. Speak the user's text aloud exactly as written, word for word; add nothing, omit nothing, never comment. Performance direction: {DIRECTION}"},
-            {"role": "user", "content": text},
+            {"role": "system", "content": "You are a text-to-speech engine recording narration for a film. You read the script line you are given aloud, "
+                                          "exactly and only those words, then stop. The performance direction below is for you only: never speak it, "
+                                          "describe it or announce a pause. Every word must be clearly audible from the first to the last. "
+                                          f"Performance direction: {DIRECTION}"},
+            {"role": "user", "content": f"Script line (read it aloud verbatim, nothing before or after):\n<<<{text}>>>"},
         ],
     }).encode()
     req = urllib.request.Request(f"{base}/chat/completions", data=body, headers={"Authorization": f"Bearer {os.environ['INFISTAR_API_KEY']}", "Content-Type": "application/json"})
@@ -130,6 +134,110 @@ def chatterbox_tts(text, voice, exaggeration=0.7, cfg=0.3):
     os.remove(tmp); os.remove(mp3)
     return data
 
+# ---------- checking a take before it is kept ----------
+# The voice model sometimes reads its direction aloud, repeats a phrase, skips words, or goes quiet partway
+# through while claiming it read everything. Each gateway take is listened to (gpt-audio as a transcriber)
+# and, when numpy is available (tools/venv), measured for dead air. A failed take is recorded again.
+def _words(t):
+    t = t.lower().replace("’", "'").replace("‘", "'")
+    t = re.sub(r"[-–—]", " ", t)
+    t = re.sub(r"[^a-z0-9' ]+", " ", t)
+    for a, b in (("any more", "anymore"), ("centre", "center"), ("whiskey", "whisky"), ("grey", "gray")):
+        t = t.replace(a, b)
+    return t.split()
+
+def _lev(a, b):
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+def _same(a, b):
+    a, b = a.rstrip("'s"), b.rstrip("'s")
+    n = max(len(a), len(b))
+    return a == b or (n >= 3 and _lev(a, b) <= max(1, n // 3))  # names are heard many ways: Aurie, Ori, Ari
+
+def compare(script, heard):
+    """(script words not heard, runs of 3+ heard words that are not in the script)."""
+    a, b = _words(script), _words(heard)
+    L = [[0] * (len(b) + 1) for _ in range(len(a) + 1)]
+    for i in range(len(a) - 1, -1, -1):
+        for j in range(len(b) - 1, -1, -1):
+            L[i][j] = L[i + 1][j + 1] + 1 if _same(a[i], b[j]) else max(L[i + 1][j], L[i][j + 1])
+    i = j = 0
+    missing, extra, run = [], [], []
+    while i < len(a) or j < len(b):
+        if i < len(a) and j < len(b) and _same(a[i], b[j]):
+            if len(run) >= 3: extra.append(" ".join(run))
+            run = []; i += 1; j += 1
+        elif j < len(b) and (i >= len(a) or L[i][j + 1] >= L[i + 1][j]):
+            run.append(b[j]); j += 1
+        else:
+            missing.append((i, a[i])); i += 1
+    if len(run) >= 3: extra.append(" ".join(run))
+    return missing, extra
+
+def listen(data):
+    base = os.environ["INFISTAR_BASE_URL"].rstrip("/")
+    body = json.dumps({"model": "gpt-audio-1.5", "modalities": ["text"], "messages": [{"role": "user", "content": [
+        {"type": "text", "text": "Transcribe exactly every word spoken in this audio, from the first sound to the last, including anything that sounds like an instruction. Output only the words."},
+        {"type": "input_audio", "input_audio": {"data": base64.b64encode(data).decode(), "format": "mp3"}}]}]}).encode()
+    for _ in range(3):
+        try:
+            req = urllib.request.Request(f"{base}/chat/completions", data=body, headers={"Authorization": f"Bearer {os.environ['INFISTAR_API_KEY']}", "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=120) as r:
+                t = (json.load(r)["choices"][0]["message"].get("content") or "").strip()
+            m = re.match(r'^\{\s*"[a-z_]+"\s*:\s*"(.*)"\s*\}$', t, re.S | re.I)  # it sometimes answers in JSON
+            t = m.group(1) if m else t
+            t = re.sub(r"^\s*(here is the )?transcription( of the audio)?\s*:\s*", "", t, flags=re.I).strip().strip('"')
+            if t and "<|" not in t and "provide the audio" not in t.lower():
+                return t
+        except Exception:
+            pass
+    return None
+
+def dead_air(data):
+    """(longest quiet hole, quiet tail) in seconds, or None without numpy/ffmpeg."""
+    try:
+        import numpy as np, imageio_ffmpeg, subprocess
+    except ImportError:
+        return None
+    raw = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", "pipe:0", "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                         input=data, capture_output=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
+    rms = np.array([np.sqrt(np.mean(x[i:i + 1600] ** 2)) for i in range(0, len(x) - 1599, 1600)])
+    if not len(rms):
+        return None
+    audible = rms > max(np.percentile(rms, 90) * 0.12, 0.004)
+    idx = np.flatnonzero(audible)
+    if not len(idx):
+        return (len(rms) / 10, len(rms) / 10)
+    hole = run = 0
+    for v in audible[idx[0]:idx[-1] + 1]:
+        run = 0 if v else run + 1
+        hole = max(hole, run)
+    return (hole / 10, (len(rms) - 1 - idx[-1]) / 10)
+
+def problem(text, data):
+    """Why this take should be recorded again, or None."""
+    gaps = dead_air(data)
+    if gaps and gaps[1] > 1.5: return f"went quiet {gaps[1]:.1f}s before the end"
+    if gaps and gaps[0] > 3.5: return f"a {gaps[0]:.1f}s silence mid-line"
+    heard = listen(data)
+    if heard is None: return None  # the listener failed; do not blame the take
+    missing, extra = compare(text, heard)
+    # Listeners mishear names (Aurie as Ori, Hob as Bob), so a missing name is not evidence on its own.
+    names = {"aurie", "aurie's"} | {w.lower().strip(".,:;!?") for w in re.findall(r"(?<=[a-z,;:] )[A-Z][a-z']+", text)}
+    missing = [(i, w) for i, w in missing if w not in names and w.rstrip("'s") not in names]
+    n = len(_words(text))
+    if extra: return f"spoke extra words: {' | '.join(extra)}"
+    if any(i >= n - 2 for i, _ in missing): return f"ending not heard ({' '.join(w for _, w in missing)})"
+    if len(missing) > max(1, n // 10): return f"words not heard ({' '.join(w for _, w in missing)})"
+    return None
+
 def main():
     args = sys.argv[1:]
     engine = args[args.index("--engine") + 1] if "--engine" in args else "gateway"
@@ -137,11 +245,12 @@ def main():
     force = "--force" in args
     exag = float(args[args.index("--exaggeration") + 1]) if "--exaggeration" in args else 0.7
     cfg = float(args[args.index("--cfg") + 1]) if "--cfg" in args else 0.3
-    flagged = {args[i + 1] for i, a in enumerate(args[:-1]) if a in ("--engine", "--voice", "--exaggeration", "--cfg")}
+    flagged = {args[i + 1] for i, a in enumerate(args[:-1]) if a in ("--engine", "--voice", "--exaggeration", "--cfg", "--ids")}
+    ids = set(args[args.index("--ids") + 1].split(",")) if "--ids" in args else None
     only = {a for a in args if not a.startswith("--") and a not in flagged}
     load_env()
     book = json.load(open(BOOK, encoding="utf-8"))
-    todo = [(s, t) for s, t in lines(book) if not only or s in only]
+    todo = [(s, t) for s, t in lines(book) if (not only or s in only) and (ids is None or line_id(t) in ids)]
     done = skipped = failed = 0
     for sid, text in todo:
         path = os.path.join(RAW, f"{line_id(text)}.mp3")
@@ -149,8 +258,17 @@ def main():
             skipped += 1; continue
         os.makedirs(os.path.dirname(path), exist_ok=True)
         try:
-            data = (gateway_tts(text, voice) if engine == "gateway" else
-                    chatterbox_tts(text, voice, exag, cfg) if engine == "chatterbox" else kokoro_tts(text, voice))
+            if engine == "gateway":
+                for take in range(1, 5):
+                    data = gateway_tts(text, voice)
+                    why = problem(text, data)
+                    if not why:
+                        break
+                    print(f"  take {take} of {line_id(text)} rejected: {why}", flush=True)
+                else:
+                    raise RuntimeError(f"no clean take in 4 tries (last: {why}); kept nothing")
+            else:
+                data = chatterbox_tts(text, voice, exag, cfg) if engine == "chatterbox" else kokoro_tts(text, voice)
             open(path, "wb").write(data)
             done += 1
             print(f"✓ {sid} {line_id(text)}  {text[:60]}", flush=True)

@@ -18,7 +18,7 @@
       "He cannot be killed or harmed through the glass.",
       "He will never beg; the nearest he comes is bargaining."
     ],
-    "ttsVoice": "cedar",
+    "ttsVoice": "echo",
     "voiceDirection": "A man in his late fifties, educated upper-class English accent of 1916, deep and unhurried. Grandiose, savouring his own words. Menace by lowering the voice, never by shouting."
   },
   "alex": {
@@ -375,7 +375,7 @@
     "speakers": {
       "ODIN": {
         "name": "Odin",
-        "ttsVoice": "cedar",
+        "ttsVoice": "echo",
         "voiceDirection": "An old, grave Norse king, deep and slow, every word weighed."
       },
       "THOR": {
@@ -390,17 +390,17 @@
       },
       "AZAZEL": {
         "name": "Azazel",
-        "ttsVoice": "echo",
+        "ttsVoice": "ballad",
         "voiceDirection": "A hissing, polite, menacing voice, as if many mouths speak at once."
       },
       "CLURACAN": {
         "name": "Cluracan",
-        "ttsVoice": "ballad",
+        "ttsVoice": "alloy",
         "voiceDirection": "A charming, flowery, slightly tipsy young nobleman, delighted with himself."
       },
       "REMIEL": {
         "name": "Remiel",
-        "ttsVoice": "alloy",
+        "ttsVoice": "sage",
         "voiceDirection": "A calm, kind, serene voice, certain and gentle."
       }
     }
@@ -421,7 +421,7 @@
       "He never threatens her.",
       "He never stops asking for Alex."
     ],
-    "ttsVoice": "cedar",
+    "ttsVoice": "echo",
     "voiceDirection": "An old, gentle English man, voice worn and trembling, pleading quietly, close to tears."
   },
   "calliope": {
@@ -638,7 +638,7 @@
       "He never comes back to his duties.",
       "He is never unkind."
     ],
-    "ttsVoice": "cedar",
+    "ttsVoice": "ballad",
     "voiceDirection": "A deep, warm, hearty man's voice, booming laugh, gentle and unhurried."
   },
   "orpheus": {
@@ -660,5 +660,24 @@
     ],
     "ttsVoice": "verse",
     "voiceDirection": "A young man's voice, soft, lyrical and exhausted, close to tears, very tender."
+  },
+  "dee-after": {
+    "name": "John Dee",
+    "address": "my lady",
+    "voice": "Mild, polite, soft-spoken, almost apologetic, and utterly mad. Small precise sentences. Giggles. Sudden flashes of rage. Calls the ruby his mother's. The 'my lady' is mock courtesy.",
+    "wants": "To be somebody; to remake the world in his image with the ruby; to never be locked up again.",
+    "knows": [
+      "He is the son of Ethel Cripps, who stole the ruby from Roderick Burgess's house in 1926.",
+      "He has changed the ruby so that it answers only to him.",
+      "He believes that if he destroys the ruby, Dream will die with it."
+    ],
+    "secrets": [
+      "He was a lonely, frightened boy, and his mother never came back for him."
+    ],
+    "redLines": [
+      "He never admits he is mad."
+    ],
+    "ttsVoice": "verse",
+    "voiceDirection": "A thin, soft, polite American man's voice, fragile and mad, giggling in places, sudden tremors of rage."
   }
 }

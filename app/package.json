@@ -14,10 +14,11 @@
     "prebuild": "node scripts/check-story.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "mpg123-decoder": "1.0.3",
     "next": "16.4.2",
     "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "@vercel/blob": "^2.8.2"
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",

@@ -1,17 +1,8 @@
-// Server-only: a character's voice for one line, guaranteed to be the scripted words.
+// Server-only: a character voice with script/transcript validation.
+import { faithful } from "@/lib/server/faithful";
+import { flaw, measure } from "@/lib/server/mp3";
 import { getCharacter } from "@/lib/story/load";
 import { gatewayJson, models } from "@/lib/server/gateway";
-
-const words = (t: string) => t.toLowerCase().replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).filter(Boolean);
-
-/** Did the voice say the script (and not answer it, or add to it)? */
-function faithful(script: string, heard: string) {
-  const a = words(script), h = words(heard);
-  if (!h.length) return false;
-  const want = new Set(a);
-  const hit = h.filter((w) => want.has(w)).length;
-  return h.length <= a.length * 1.25 + 2 && hit / Math.max(a.length, 1) >= 0.8;
-}
 
 /** How each mood should colour the delivery. */
 const DELIVERY: Record<string, string> = {
@@ -28,7 +19,8 @@ const DELIVERY: Record<string, string> = {
  * The key has no plain text-to-speech model, so an audio chat model (gpt-audio-1.5) reads the line.
  * Such a model can ANSWER a line instead of reading it ("Who is Rachel?" -> "I don't know Rachel"),
  * so it is told it is a text-to-speech engine, the line is fenced, and the transcript it returns is
- * checked against the script. Up to three takes; null when none is faithful (the player then falls back).
+ * checked against the script; the audio itself is measured for dead air. Up to four takes, two at a time;
+ * null when none is usable (the player then falls back to the phone's own voice).
  */
 export async function synthLine(bookId: string, character: string, text: string, speaker?: string, mood?: string): Promise<Buffer | null> {
   const card = getCharacter(bookId, character);
@@ -38,10 +30,10 @@ export async function synthLine(bookId: string, character: string, text: string,
   // Act the feeling of this moment, not just the character's usual voice.
   const direction = mood && DELIVERY[mood] ? `${base} In this line the feeling is: ${DELIVERY[mood]}. Let it show in pace, breath and pauses.` : base;
   const script = text.replace(/\b[A-Z]{3,}:\s*/g, "").trim();
-  if (!script) return null;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  if (!/[a-z0-9]/i.test(script)) return null; // "…" or a pause: nothing to say aloud
+  const oneTake = async (n: number): Promise<Buffer | null> => {
     try {
-      const data = await gatewayJson<{ choices: { message: { audio?: { data?: string; transcript?: string } } }[] }>(
+      const data = await gatewayJson<{ choices: { finish_reason?: string; message: { audio?: { data?: string; transcript?: string } } }[] }>(
         "/chat/completions",
         {
           model: models.tts,
@@ -51,23 +43,44 @@ export async function synthLine(bookId: string, character: string, text: string,
           messages: [
             {
               role: "system",
-              content: `You are a text-to-speech engine for a film. You never converse. You read the script line you are given aloud, exactly and only those words, in character, then stop. If the line is a question, you ASK it; you never answer it. Performance direction: ${direction}`,
+              content: `You are a text-to-speech engine for a film. You never converse. You read the script line you are given aloud, exactly and only those words, in character, then stop. If the line is a question, you ASK it; you never answer it. Every word must be clearly audible at a steady speaking volume from the first word to the last: lower the pitch or slow down for effect, but never whisper, never fade out, and never leave a silence longer than a breath. Performance direction: ${direction}`,
             },
-            { role: "user", content: `Script line (read it aloud verbatim, nothing before or after):\n<<<${script}>>>` },
+            { role: "user", content: `Script line (read it aloud verbatim, nothing before or after):
+<<<${script}>>>` },
           ],
         },
-        30_000,
+        25_000,
       );
       const audio = data.choices?.[0]?.message?.audio;
-      if (!audio?.data) continue;
-      if (audio.transcript && !faithful(script, audio.transcript)) {
-        console.error(`tts: off-script take ${attempt} for "${script.slice(0, 40)}": "${audio.transcript.slice(0, 80)}"`);
-        continue;
+      if (!audio?.data || data.choices?.[0]?.finish_reason === "length") return null;
+      if (!faithful(script, audio.transcript)) {
+        console.error(`tts: off-script take ${n} for "${script.slice(0, 40)}": "${(audio.transcript ?? "missing transcript").slice(0, 80)}"`);
+        return null;
       }
-      return Buffer.from(audio.data, "base64");
+      // The transcript can claim every word while the audio went quiet partway through, or ran on for a minute.
+      const buf = Buffer.from(audio.data, "base64");
+      const take = await measure(buf).catch(() => null);
+      const problem = take && flaw(take, script.split(/\s+/).length);
+      if (problem) {
+        console.error(`tts: take ${n} rejected, ${problem}: "${script.slice(0, 40)}"`);
+        return null;
+      }
+      return buf;
     } catch (e) {
-      console.error(`tts: take ${attempt} failed:`, (e as Error).message.slice(0, 120));
+      console.error(`tts: take ${n} failed:`, (e as Error).message.slice(0, 120));
+      return null;
     }
+  };
+  // About one take in four is unusable, so two are recorded at once and the first good one wins;
+  // a second pair is tried only if both fail and there is still time.
+  const began = Date.now();
+  for (let round = 0; round < 2 && (round === 0 || Date.now() - began < 14_000); round++) {
+    const takes = [oneTake(round * 2 + 1), oneTake(round * 2 + 2)];
+    const good = await new Promise<Buffer | null>((resolve) => {
+      let left = takes.length;
+      for (const t of takes) void t.then((b) => (b ? resolve(b) : --left === 0 && resolve(null)));
+    });
+    if (good) return good;
   }
   return null;
 }
@@ -85,3 +98,4 @@ export function splitParts(text: string, labelled: boolean): { speaker?: string;
   }
   return out;
 }
+

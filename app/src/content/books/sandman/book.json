@@ -1410,7 +1410,7 @@
       "title": "The Gates of Hell",
       "pov": "3P",
       "episodeTitle": "Chapter 8 · Hell",
-      "music": "cellar-dread",
+      "music": "hell-v1",
       "beats": [
         {
           "card": "Hell",
@@ -1519,7 +1519,7 @@
       "id": "2.6",
       "title": "Lucifer",
       "pov": "POV",
-      "music": "cellar-dread",
+      "music": "hell-v1",
       "beats": [
         {
           "text": "At the heart of Hell is an arena, and above it a throne.",
@@ -1697,7 +1697,7 @@
       "id": "2.8",
       "title": "Lucifer's Threat",
       "pov": "POV",
-      "music": "cellar-dread",
+      "music": "hell-v1",
       "beats": [
         {
           "text": "The helm is hers. But the legions of Hell now block the only way out.",
@@ -1810,7 +1810,7 @@
       "title": "Twenty-Four Hours",
       "pov": "3P",
       "episodeTitle": "Chapter 10 · The Ruby",
-      "music": "escape",
+      "music": "ruby",
       "innerVoice": true,
       "beats": [
         {
@@ -1887,7 +1887,7 @@
       "id": "2.10",
       "title": "Inside the Ruby",
       "pov": "POV",
-      "music": "escape",
+      "music": "ruby",
       "beats": [
         {
           "text": "Dee feels her inside his stone. He laughs, and stands, and lifts it high.",
@@ -1963,7 +1963,7 @@
         }
       ],
       "conversation": {
-        "character": "dee",
+        "character": "dee-after",
         "maxTurns": 3,
         "canon": [
           "The ruby is destroyed; Aurie is whole and powerful again. Dee is broken, powerless and terrified.",
@@ -2046,7 +2046,7 @@
       "title": "The Sound of Her Wings",
       "pov": "3P",
       "episodeTitle": "Chapter 11 · Her Sister",
-      "music": "library",
+      "music": "wings",
       "beats": [
         {
           "card": "The next morning",
@@ -2517,7 +2517,7 @@
       "title": "Hell, Empty",
       "pov": "POV",
       "episodeTitle": "Part Four · Chapter 14 · Hell, Empty",
-      "music": "cellar-dread",
+      "music": "hell-v1",
       "fx": "ash",
       "recap": "Aurie went back to Hell and found it empty. Lucifer had quit, and gave her the key.",
       "beats": [
@@ -2778,7 +2778,7 @@
               "still": "still-norse"
             },
             {
-              "text": "Nada's soul Aurie must buy from Azazel herself. It costs her a dream she loved.",
+              "text": "Aurie must buy Nada's soul from Azazel herself. It costs her a dream she loved.",
               "still": "still-azazel"
             }
           ]
@@ -2823,7 +2823,7 @@
               "still": "still-faerie"
             },
             {
-              "text": "Nada's soul Aurie takes from Azazel by force, and Faerie stands beside her.",
+              "text": "Aurie takes Nada's soul from Azazel by force, and Faerie stands beside her.",
               "still": "still-azazel"
             }
           ]
@@ -3879,7 +3879,7 @@
       "id": "5.2c",
       "title": "Unity",
       "pov": "POV",
-      "music": "library",
+      "music": "wings",
       "fx": "glitter",
       "recap": "Unity Kincaid, Rose's grandmother, took the vortex into herself and died in Rose's place.",
       "beats": [
@@ -4076,7 +4076,7 @@
       "title": "Men of Good Fortune",
       "pov": "3P",
       "episodeTitle": "Chapter 20 · Men of Good Fortune",
-      "music": "library",
+      "music": "tavern",
       "fx": "embers",
       "recap": "In 1389 Death granted Hob Gadling his wish never to die, and Aurie agreed to meet him once every hundred years.",
       "beats": [

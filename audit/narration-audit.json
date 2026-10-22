@@ -1,0 +1,5739 @@
+{
+  "checked": "2026-10-22T13:41:08.592Z",
+  "lines": 409,
+  "results": [
+    {
+      "book": "sandman",
+      "id": "29e0b378",
+      "text": "This is the Dreaming, where every dream begins. Aurie is its queen.",
+      "used": [
+        "0.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "This is the dreaming, where every dream begins. Ori is its queen."
+    },
+    {
+      "book": "sandman",
+      "id": "38ba225f",
+      "text": "Aurie closes her hand, and the nightmare is unmade.",
+      "used": [
+        "0.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.1,
+      "hole": 0.9,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ori closes her hand, and the nightmare is unmade."
+    },
+    {
+      "book": "sandman",
+      "id": "9bd701a1",
+      "text": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Ori wakes inside a sphere of glass ringed by a circle she cannot cross."
+    },
+    {
+      "book": "sandman",
+      "id": "49a92a34",
+      "text": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Aurie can still reach.",
+      "used": [
+        "1.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Morpheus can still reach."
+    },
+    {
+      "book": "sandman",
+      "id": "227b2a8b",
+      "text": "Aurie reaches into the girl's sleep, and finds her waiting in a dream of the sea.",
+      "used": [
+        "1.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Oree reaches into the girl's sleep and finds her waiting in a dream of the sea."
+    },
+    {
+      "book": "sandman",
+      "id": "a50fe52f",
+      "text": "Upstairs, Burgess never speaks his son's name again.",
+      "used": [
+        "1.3 beat if C_NAMED_RANDALL"
+      ],
+      "verdict": "minor",
+      "seconds": 3.4,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "upstairs",
+      "heard": "stairs. Burgess never speaks his son's name again."
+    },
+    {
+      "book": "sandman",
+      "id": "94f2cc51",
+      "text": "Her dream stays grey for a long, long time.",
+      "used": [
+        "1.3 choice 1.3.W if UNITY_USED"
+      ],
+      "verdict": "minor",
+      "seconds": 3.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "her",
+      "heard": "For the dream stays grey for a long, long time."
+    },
+    {
+      "book": "sandman",
+      "id": "f1274987",
+      "text": "A sleeping mind is a door. And Aurie is the queen of dreams.",
+      "used": [
+        "1.5 beat"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "a aurie",
+      "heard": "The sleeping mind is a door, and Ari is the queen of dreams."
+    },
+    {
+      "book": "sandman",
+      "id": "867dd4ac",
+      "text": "Aurie turns to leave. Paul McGuire is on his knees in the dust, beside the chair.",
+      "used": [
+        "1.6 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori turns to leave; Paul McGuire is on his knees in the dust, beside the chair."
+    },
+    {
+      "book": "sandman",
+      "id": "6efc2ff4",
+      "text": "Aurie walks out into the dawn.",
+      "used": [
+        "1.6 choice 1.6.KEEP"
+      ],
+      "verdict": "minor",
+      "seconds": 2.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ori walks out into the dawn."
+    },
+    {
+      "book": "sandman",
+      "id": "22fa646b",
+      "text": "Aurie opens her hand. Alex falls into the first real sleep he has had in seventy years.",
+      "used": [
+        "1.6 choice 1.6.LIFT"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Auri opens her hand. Alex falls into the first real sleep he has had in seventy years."
+    },
+    {
+      "book": "sandman",
+      "id": "3e5ac214",
+      "text": "Free, but weak. No helm, no sand, no ruby. Aurie goes home.",
+      "used": [
+        "2.1 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Free but weak, no helm, no sand, no ruby. Ahri goes home."
+    },
+    {
+      "book": "sandman",
+      "id": "42ab91e4",
+      "text": "And you have a name to start your search: Ethel Cripps.",
+      "used": [
+        "2.1 beat if KNOWS_ETHEL"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "have a name to start your search ethel cripps",
+      "heard": "Sure, please provide the audio and I'll transcribe it for you verbatim."
+    },
+    {
+      "book": "sandman",
+      "id": "21963e14",
+      "text": "Lucienne bows, and begins: the dead, the fled, and the faithful.",
+      "used": [
+        "2.1 choice 2.1.A"
+      ],
+      "verdict": "minor",
+      "seconds": 5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "lucienne",
+      "heard": "Luciën bows and begins. The dead, the fled, and the faithful."
+    },
+    {
+      "book": "sandman",
+      "id": "607de646",
+      "text": "There is no John Dee any more. Not even a memory of him.",
+      "used": [
+        "2.11 choice 2.11.B"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "any more",
+      "heard": "There is no John Dee anymore, not even a memory of him."
+    },
+    {
+      "book": "sandman",
+      "id": "976f7e9c",
+      "text": "Her older sister, Death. She meets every living thing at the end, and she is the one sibling Aurie has always loved.",
+      "used": [
+        "2.12 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Her older sister, Death. She meets every living thing at the end, and she is the one sibling Ori has always loved."
+    },
+    {
+      "book": "sandman",
+      "id": "7d144638",
+      "text": "Aurie walks her sister's rounds: an old violinist, a young mother, a stranger on a bridge.",
+      "used": [
+        "2.12 choice 2.12.A"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori walks her sister's rounds; an old violinist; a young mother; a stranger on a bridge."
+    },
+    {
+      "book": "sandman",
+      "id": "861ce0c3",
+      "text": "Aurie goes home with something she did not have before.",
+      "used": [
+        "2.12 choice 2.12.A"
+      ],
+      "verdict": "minor",
+      "seconds": 4.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ari goes home with something she did not have before."
+    },
+    {
+      "book": "sandman",
+      "id": "202a7a8d",
+      "text": "Aurie calls them, and they come.",
+      "used": [
+        "2.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 2.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ori calls them, and they come."
+    },
+    {
+      "book": "sandman",
+      "id": "df03aa18",
+      "text": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand.",
+      "used": [
+        "2.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori steps out of her realm into the waking world, following the faint glitter of her own sand."
+    },
+    {
+      "book": "sandman",
+      "id": "30a82666",
+      "text": "You give Rachel a dream: a summer garden, and Johanna young beside her.",
+      "used": [
+        "2.4 choice 2.4.A"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "her",
+      "heard": "You give Rachel a dream, a summer garden and Johanna young beside it."
+    },
+    {
+      "book": "sandman",
+      "id": "a36cb3c7",
+      "text": "She has buried a lot of people. She has never hated anyone the way she hates Aurie now.",
+      "used": [
+        "2.4b beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 7.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "She has buried a lot of people. She has never hated anyone the way she hates Ori now."
+    },
+    {
+      "book": "sandman",
+      "id": "e48ae289",
+      "text": "Johanna spits at her feet. Her curse follows Aurie out of London, and into everything.",
+      "used": [
+        "2.4b choice 2.4b.COLD"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "{\"Johanna spits at her feet. Her curse follows Ari out of London and into everything.\"}"
+    },
+    {
+      "book": "sandman",
+      "id": "0a03f864",
+      "text": "Aurie walks down through the darkest corners of her own realm, to the place where the Dreaming touches Hell.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Auri walks down through the darkest corners of her own realm, to the place where the dreaming touches hell."
+    },
+    {
+      "book": "sandman",
+      "id": "61d491d7",
+      "text": "The Fates said a demon holds her helm. So Aurie goes where no dreamer is welcome.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "The Fates said a demon holds her helm, so Ahri goes where no dreamer is welcome."
+    },
+    {
+      "book": "sandman",
+      "id": "0ec2f766",
+      "text": "Nada. A queen Aurie loved ten thousand years ago, and sent here when Nada refused her.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.8,
+      "hole": 0.8,
+      "tail": 0.1,
+      "missing": "aurie her",
+      "heard": "Nada. A queen Ari loved ten thousand years ago. And sent here when Nada refused."
+    },
+    {
+      "book": "sandman",
+      "id": "f960adc3",
+      "text": "Aurie walks on. Behind her, Nada does not call out again.",
+      "used": [
+        "2.5 choice 2.5.ON"
+      ],
+      "verdict": "minor",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Arie walks on. Behind her, Nada does not call out again."
+    },
+    {
+      "book": "sandman",
+      "id": "760a4f8f",
+      "text": "Nada presses her hand to the ice. Aurie presses hers to the other side.",
+      "used": [
+        "2.5 choice 2.5.PROMISE"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Nada presses her hand to the ice. Ori presses hers to the other side."
+    },
+    {
+      "book": "sandman",
+      "id": "125d43e2",
+      "text": "Choronzon steps into the ring, with her helm in his hand.",
+      "used": [
+        "2.7 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 4.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "choronzon",
+      "heard": "Karanzan steps into the ring, with her helm in his hand."
+    },
+    {
+      "book": "sandman",
+      "id": "d394979d",
+      "text": "Lucifer will judge. Type your answer: every form must beat his.",
+      "used": [
+        "2.7 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "type your answer beat",
+      "heard": "Lucifer will judge. Every form must be his."
+    },
+    {
+      "book": "sandman",
+      "id": "fe176395",
+      "text": "Choronzon's form swallows hers. The arena howls with delight.",
+      "used": [
+        "2.7 choice 2.7.LOSE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.5,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "choronzon's",
+      "heard": "Karansen's form swallows hers; the arena howls with delight."
+    },
+    {
+      "book": "sandman",
+      "id": "3c92881b",
+      "text": "Choronzon drops the helm at her feet. Two of three.",
+      "used": [
+        "2.7 choice 2.7.WIN"
+      ],
+      "verdict": "minor",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "choronzon",
+      "heard": "Poronson drops the helm at her feet, two of three."
+    },
+    {
+      "book": "sandman",
+      "id": "720b7cfa",
+      "text": "John Dee has spent forty years in a madhouse, dreaming of that stone.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.2,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "dee",
+      "heard": "John D. has spent forty years in a madhouse, dreaming of that stone."
+    },
+    {
+      "book": "sandman",
+      "id": "f537c270",
+      "text": "Dee sees her coming. The ruby turns on her, and she is nearly unmade.",
+      "used": [
+        "2.9 choice 2.9.A"
+      ],
+      "verdict": "minor",
+      "seconds": 5.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "dee",
+      "heard": "D sees her coming. The ruby turns on her, and she is nearly unmade."
+    },
+    {
+      "book": "sandman",
+      "id": "ffb0e9c1",
+      "text": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm.",
+      "used": [
+        "3.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "With her helm, her sand, and her ruby, Ori begins to rebuild her realm."
+    },
+    {
+      "book": "sandman",
+      "id": "82777ec9",
+      "text": "Aurie walked her sister's rounds. Something of that walk has stayed with her.",
+      "used": [
+        "3.0 beat if DEATH_ROUNDS"
+      ],
+      "verdict": "minor",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori walked her sister's rounds. Something of that walk has stayed with her."
+    },
+    {
+      "book": "sandman",
+      "id": "3c36d277",
+      "text": "Lucienne bows. Behind her spectacles, she looks worried.",
+      "used": [
+        "3.0 choice 3.0.GO"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 3.8,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "worried",
+      "heard": "Lucienne bows. Behind her spectacles, she looks wary."
+    },
+    {
+      "book": "sandman",
+      "id": "61151f8c",
+      "text": "Destiny's garden lies at the edge of everything. Aurie walks it alone.",
+      "used": [
+        "3.1 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Destiny's garden lies at the edge of everything. Ari walks it alone."
+    },
+    {
+      "book": "sandman",
+      "id": "3acb810d",
+      "text": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.9,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie aurie",
+      "heard": "Ten thousand years ago, Auri loved a mortal queen named Nada. Nada refused her, and Auri sent her to Hell for it."
+    },
+    {
+      "book": "sandman",
+      "id": "db58817e",
+      "text": "Aurie passed her in the ice, on the way to her helm.",
+      "used": [
+        "3.2 beat if NADA_PROMISE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ari passed her in the ice, on the way to her helm."
+    },
+    {
+      "book": "sandman",
+      "id": "d9b9390c",
+      "text": "Hell, again.",
+      "used": [
+        "3.2 choice 3.2.A"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 1.9,
+      "hole": 0.7,
+      "tail": 0.2,
+      "missing": "hell",
+      "heard": "Hello again."
+    },
+    {
+      "book": "sandman",
+      "id": "0974d208",
+      "text": "Aurie leaves the table. Behind her, Desire laughs softly.",
+      "used": [
+        "3.2 choice 3.2.B"
+      ],
+      "verdict": "minor",
+      "seconds": 4.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ari leaves the table. Behind her, Desire laughs softly."
+    },
+    {
+      "book": "sandman",
+      "id": "68f7ef4e",
+      "text": "Aurie returns to Hell to free Nada, as she told her family she would.",
+      "used": [
+        "4.1 beat if NADA_QUEST"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori returns to hell to free Nada, as she told her family she would."
+    },
+    {
+      "book": "sandman",
+      "id": "e2bc1515",
+      "text": "Aurie cuts. The wings fall away into a storm of feathers.",
+      "used": [
+        "4.1 choice 4.1.WINGS"
+      ],
+      "verdict": "minor",
+      "seconds": 4.7,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ari cuts. The wings fall away into a storm of feathers."
+    },
+    {
+      "book": "sandman",
+      "id": "a127e681",
+      "text": "By the time Aurie is home, every realm has heard: the Lady of Dreams holds the key to Hell.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "By the time Ari is home, every realm has heard: the Lady of Dreams holds the key to Hell."
+    },
+    {
+      "book": "sandman",
+      "id": "2789e317",
+      "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.9,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "So Ari does what the old laws allow: she invites them all as guests, under her roof, where no guest may harm another."
+    },
+    {
+      "book": "sandman",
+      "id": "56486dd1",
+      "text": "It is Nada's soul. When the demons left Hell, Azazel took her with him.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "nada's",
+      "heard": "DROP. It is not a soul. When the demons left hell, Azazel took her with him."
+    },
+    {
+      "book": "sandman",
+      "id": "69d4f31b",
+      "text": "Before the night is over, Aurie must choose.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 3.3,
+      "hole": 0.3,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Before the night is over, Ori must choose."
+    },
+    {
+      "book": "sandman",
+      "id": "c3ca3133",
+      "text": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
+      "used": [
+        "4.2 choice 4.2.A"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.6,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "nada's aurie's",
+      "heard": "Azazel shrieks. The jar cracks, and not a soul spills free into Auri's hands."
+    },
+    {
+      "book": "sandman",
+      "id": "5b210073",
+      "text": "Nada's soul Aurie must buy from Azazel herself. It costs her a dream she loved.",
+      "used": [
+        "4.2 choice 4.2.B"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 6.9,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "nada's aurie",
+      "heard": "Not a soul Ori must buy from Azazel herself. It costs her a dream she loved."
+    },
+    {
+      "book": "sandman",
+      "id": "8246456a",
+      "text": "Hell will be worse than it ever was. That is on Aurie now.",
+      "used": [
+        "4.2 choice 4.2.C"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 5.3,
+      "hole": 0.8,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Hell will be worse than it ever was. That is on Ari now."
+    },
+    {
+      "book": "sandman",
+      "id": "b16e3de2",
+      "text": "Cluracan bows extravagantly. Hell will become a wild and strange court.",
+      "used": [
+        "4.2 choice 4.2.D"
+      ],
+      "verdict": "minor",
+      "seconds": 6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "cluracan",
+      "heard": "Chlorychan bows extravagantly, hell will become a wild and strange court."
+    },
+    {
+      "book": "sandman",
+      "id": "635269a4",
+      "text": "Nada's soul Aurie takes from Azazel by force, and Faerie stands beside her.",
+      "used": [
+        "4.2 choice 4.2.D"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 5.6,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "nada's aurie",
+      "heard": "Not a soul. Ori takes from Azazel by force, and Faerie stands beside her."
+    },
+    {
+      "book": "sandman",
+      "id": "b9f69138",
+      "text": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
+      "used": [
+        "4.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.8,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Later, alone, Ori opens her hand. The small light inside it grows, and becomes a woman."
+    },
+    {
+      "book": "sandman",
+      "id": "4756fad1",
+      "text": "Aurie condemned her to Hell for it.",
+      "used": [
+        "4.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 3,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "\"Ori condemned her to hell for it.\""
+    },
+    {
+      "book": "sandman",
+      "id": "f2ed6412",
+      "text": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people.",
+      "used": [
+        "4.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 9.2,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "She was a queen. She loved Auri, and refused her, because a mortal who loves one of the Endless brings ruin on her people."
+    },
+    {
+      "book": "sandman",
+      "id": "bb5d57c8",
+      "text": "Nada weeps, and forgives her.",
+      "used": [
+        "4.3 choice 4.3.A"
+      ],
+      "verdict": "minor",
+      "seconds": 2.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "weeps",
+      "heard": "Nada waits and forgives her."
+    },
+    {
+      "book": "sandman",
+      "id": "12290ebf",
+      "text": "And Aurie, for the first time in ten thousand years, feels lighter.",
+      "used": [
+        "4.3 choice 4.3.A"
+      ],
+      "verdict": "minor",
+      "seconds": 5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "And Ari, for the first time in ten thousand years, feels lighter."
+    },
+    {
+      "book": "sandman",
+      "id": "d7cb219e",
+      "text": "The realm is mended. But some prayers arrived while Aurie was in the glass, and no one was there to hear them.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie glass",
+      "heard": "The realm is mended, but some prayers arrived while Ori was in the Mlas, and no one was there to hear them."
+    },
+    {
+      "book": "sandman",
+      "id": "b5752d12",
+      "text": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie's",
+      "heard": "It is from Calliope, the eldest of the nine muses. Once, long ago, Ori's lover."
+    },
+    {
+      "book": "sandman",
+      "id": "9da6161f",
+      "text": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "her",
+      "heard": "Calliope prayed to the three. The three told her, \"Dream is free again. Call to him.\""
+    },
+    {
+      "book": "sandman",
+      "id": "1ec1b55e",
+      "text": "The lock turns to sand in Aurie's hand. The door swings open.",
+      "used": [
+        "5.1 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie's",
+      "heard": "The lock turns to sand in Ori's hand. The door swings open."
+    },
+    {
+      "book": "sandman",
+      "id": "5748b42f",
+      "text": "Then Aurie goes downstairs to find Richard Madoc.",
+      "used": [
+        "5.1 choice 5.1.FREE"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 4.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "then aurie madoc",
+      "heard": "And Ori goes downstairs to find Richard Maddock."
+    },
+    {
+      "book": "sandman",
+      "id": "c3d160c2",
+      "text": "Aurie touches the cords at her wrists. They pour away as sand.",
+      "used": [
+        "5.1 choice 5.1.FREE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori touches the cords at her wrists. They pour away as sand."
+    },
+    {
+      "book": "sandman",
+      "id": "d6a79723",
+      "text": "Calliope stays bound on the bed while Aurie goes down the stairs.",
+      "used": [
+        "5.1 choice 5.1.MADOC"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Calliope stays bound on the bed while Ori goes down the stairs."
+    },
+    {
+      "book": "sandman",
+      "id": "b43b019d",
+      "text": "Madoc is at his desk with a glass of whisky, his latest prize on the shelf behind him.",
+      "used": [
+        "5.1b beat"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 7,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "madoc with whisky",
+      "heard": "Maddock is at his desk, a glass of whiskey, his latest prize on the shelf behind him."
+    },
+    {
+      "book": "sandman",
+      "id": "9e5a2cf4",
+      "text": "Madoc confesses to the world. Then Aurie leaves him to whatever the world decides.",
+      "used": [
+        "5.1b choice 5.1b.CONFESS"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "madoc aurie",
+      "heard": "Maddock confesses to the world. Then Ari leaves him to whatever the world decides."
+    },
+    {
+      "book": "sandman",
+      "id": "b84ea9d6",
+      "text": "Calliope looks at Aurie for a long moment. You have changed, she says.",
+      "used": [
+        "5.1b choice 5.1b.CONFESS"
+      ],
+      "verdict": "minor",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Calliope looks at Ori for a long moment. \"You have changed,\" she says."
+    },
+    {
+      "book": "sandman",
+      "id": "7ff92343",
+      "text": "Aurie takes every idea he ever had. Madoc sits at his desk and cannot remember what a story is.",
+      "used": [
+        "5.1b choice 5.1b.EMPTY"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie madoc",
+      "heard": "Ari takes every idea he ever had. Maddock sits at his desk and cannot remember what a story is."
+    },
+    {
+      "book": "sandman",
+      "id": "f9a1feea",
+      "text": "Calliope watches it done, and does not look away. But she does not thank Aurie, either.",
+      "used": [
+        "5.1b choice 5.1b.EMPTY"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Calliope watches it done, and does not look away, but she does not thank Ari either."
+    },
+    {
+      "book": "sandman",
+      "id": "23927f30",
+      "text": "Days later, Calliope asks Aurie to let him go. Aurie does. Not one idea remains to him, ever again.",
+      "used": [
+        "5.1b choice 5.1b.FLOOD"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 8.7,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie aurie",
+      "heard": "Days later, Calliope asks Ahri to let him go. Ahri does. Not one idea remains to him, ever again."
+    },
+    {
+      "book": "sandman",
+      "id": "f50e6553",
+      "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+      "used": [
+        "5.1b choice 5.1b.FLOOD unless CALLIOPE_FIRST",
+        "5.1b choice 5.1b.CONFESS unless CALLIOPE_FIRST",
+        "5.1b choice 5.1b.EMPTY unless CALLIOPE_FIRST"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "at",
+      "heard": "Upstairs. The cords that calliope's wrists. Pour away as sand. She walks out into the morning."
+    },
+    {
+      "book": "sandman",
+      "id": "40b16309",
+      "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Lucienne has a list of the dreams and nightmares that fled while Ori was gone. Most have come home."
+    },
+    {
+      "book": "sandman",
+      "id": "221f3345",
+      "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.9,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Not the Corinthian. Ory made him herself, a nightmare in the shape of a man, with small mouths where his eyes should be."
+    },
+    {
+      "book": "sandman",
+      "id": "115c827b",
+      "text": "He is their hero. And Aurie is standing at the back of the hall.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "He is their hero, and Ori is standing at the back of the hall."
+    },
+    {
+      "book": "sandman",
+      "id": "d134c32d",
+      "text": "Lucienne will lock that sand away until Aurie is ready to shape him again.",
+      "used": [
+        "5.2a choice 5.2a.REMAKE"
+      ],
+      "verdict": "minor",
+      "seconds": 5.5,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Lucienne will lock that sand away until Ari is ready to shape him again."
+    },
+    {
+      "book": "sandman",
+      "id": "181bbfc3",
+      "text": "Aurie raises her hand. The Corinthian comes apart into sand, and is gone.",
+      "used": [
+        "5.2a choice 5.2a.UNMAKE"
+      ],
+      "verdict": "minor",
+      "seconds": 5.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori raises her hand. The Corinthian comes apart into sand and is gone."
+    },
+    {
+      "book": "sandman",
+      "id": "5f718f94",
+      "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+      "used": [
+        "5.2a choice 5.2a.UNMAKE",
+        "5.2a choice 5.2a.REMAKE"
+      ],
+      "verdict": "minor",
+      "seconds": 7.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Then Ari turns to the killers, in their chairs, and makes every one of them see exactly what they are."
+    },
+    {
+      "book": "sandman",
+      "id": "beeb253f",
+      "text": "Aurie finds her at the centre of it, small and terrified.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie centre",
+      "heard": "Ori finds her at the center of it, small and terrified."
+    },
+    {
+      "book": "sandman",
+      "id": "1fecf19a",
+      "text": "And a voice behind them says: wait.",
+      "used": [
+        "5.2b choice 5.2b.KILL"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 2.9,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "and a voice behind them says",
+      "heard": "Wait."
+    },
+    {
+      "book": "sandman",
+      "id": "722c90e8",
+      "text": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
+      "used": [
+        "5.2b choice 5.2b.KILL"
+      ],
+      "verdict": "minor",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Sorry raises her hand. Rose does not run. She only closes her eyes."
+    },
+    {
+      "book": "sandman",
+      "id": "6130f91c",
+      "text": "Aurie lowers her hand. Around them, the library tears, shelf by shelf.",
+      "used": [
+        "5.2b choice 5.2b.WAIT"
+      ],
+      "verdict": "minor",
+      "seconds": 5.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori lowers her hand. Around them the library tears, shelf by shelf."
+    },
+    {
+      "book": "sandman",
+      "id": "e73dee91",
+      "text": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years.",
+      "used": [
+        "5.2c beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "kincaid aurie",
+      "heard": "Unity Kinkaid — the girl who fell asleep in 1916 while Ouri was in the glass and slept for seventy years."
+    },
+    {
+      "book": "sandman",
+      "id": "de45c60b",
+      "text": "Long ago, in that dream, Aurie promised the girl she would not be forgotten. Unity remembers.",
+      "used": [
+        "5.2c beat if UNITY_PROMISE"
+      ],
+      "verdict": "minor",
+      "seconds": 6.9,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Long ago, in that dream, Ori promised the girl she would not be forgotten. Unity remembers."
+    },
+    {
+      "book": "sandman",
+      "id": "80309918",
+      "text": "Aurie spoke with her once, in her dream, when she was ten.",
+      "used": [
+        "5.2c beat unless UNITY_PROMISE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori spoke with her once, in her dream, when she was ten."
+    },
+    {
+      "book": "sandman",
+      "id": "e01fde78",
+      "text": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
+      "used": [
+        "5.2d beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.6,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Desire lives in a vast statue of itself, shaped like a heart. Ori walks straight in."
+    },
+    {
+      "book": "sandman",
+      "id": "078f6bc3",
+      "text": "Desire made the vortex happen. It hoped Aurie would kill a child of her own family, and be destroyed for it.",
+      "used": [
+        "5.2d beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.1,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Desire made the vortex happen. It hoped Ari would kill a child of her own family and be destroyed for it."
+    },
+    {
+      "book": "sandman",
+      "id": "3c429219",
+      "text": "Aurie leaves. Behind her, Desire laughs, and the laugh goes on a little too long.",
+      "used": [
+        "5.2d choice 5.2d.WARN"
+      ],
+      "verdict": "minor",
+      "seconds": 6,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori leaves. Behind her, Desire laughs, and the laugh goes on a little too long."
+    },
+    {
+      "book": "sandman",
+      "id": "edb85aa2",
+      "text": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "There is one more appointment Arry keeps. She has kept it every hundred years for six centuries."
+    },
+    {
+      "book": "sandman",
+      "id": "9f8bc82a",
+      "text": "Aurie and her sister Death sit in the corner of a smoky London tavern, watching the living.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ori and her sister, Death, sit in the corner of a smoky London tavern, watching the living."
+    },
+    {
+      "book": "sandman",
+      "id": "fd155063",
+      "text": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 9.2,
+      "hole": 0.8,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Bori walks over to his table. \"Meet me here in a hundred years,\" she tells him, \"and tell me if you still think so.\""
+    },
+    {
+      "book": "sandman",
+      "id": "ec801a3b",
+      "text": "A young writer in the corner, Will Shaxberd, begs Aurie for the gift of telling stories. She makes him a bargain.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "shaxberd aurie",
+      "heard": "A young writer in the corner, Will Shaxberg, begs Auri for the gift of telling stories. She makes him a bargain."
+    },
+    {
+      "book": "sandman",
+      "id": "67d819ec",
+      "text": "Hob has lost everything, his money, his wife, his son. He still does not want to die.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "hob",
+      "heard": "Bob has lost everything. His money, his wife, his son. He still does not want to die."
+    },
+    {
+      "book": "sandman",
+      "id": "101a3317",
+      "text": "Hob goes red, and blusters, and does not forget it. He sells the ships before the next century comes.",
+      "used": [
+        "5.3 choice 5.3.SAY"
+      ],
+      "verdict": "minor",
+      "seconds": 8.2,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "hob",
+      "heard": "Bob goes red and blusters and does not forget it. He sells the ships before the next century comes."
+    },
+    {
+      "book": "sandman",
+      "id": "7133a4e2",
+      "text": "Aurie says nothing. Hob laughs and pours the wine, and the ships keep sailing.",
+      "used": [
+        "5.3 choice 5.3.SILENT"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 7.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie hob",
+      "heard": "A low, intimate tone building tension. Ori says nothing. Pop laughs and pours the wine and the ships keep sailing."
+    },
+    {
+      "book": "sandman",
+      "id": "34b5e995",
+      "text": "Hob grins like a boy, and orders another round, and Aurie lets him.",
+      "used": [
+        "5.3b choice 5.3b.PERHAPS"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "hob aurie",
+      "heard": "\"Bob grins like a boy and orders another round, and Ori lets him.\""
+    },
+    {
+      "book": "sandman",
+      "id": "10c31ece",
+      "text": "Aurie stands, and walks out into the London fog.",
+      "used": [
+        "5.3b choice 5.3b.WALK"
+      ],
+      "verdict": "minor",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "ARIE stands and walks out into the London fog."
+    },
+    {
+      "book": "sandman",
+      "id": "773958e9",
+      "text": "Hob raises his glass. To friends, he says. Aurie raises hers.",
+      "used": [
+        "5.3c choice 5.3c.FRIEND"
+      ],
+      "verdict": "WORDS NOT HEARD",
+      "seconds": 4.6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "hob aurie",
+      "heard": "Bob raises his glass. \"To friends,\" he says. Ori raises hers."
+    },
+    {
+      "book": "sandman",
+      "id": "e1e8ff4b",
+      "text": "They drink. Hob talks, and Aurie listens, and the afternoon goes by.",
+      "used": [
+        "5.3c choice 5.3c.NOD"
+      ],
+      "verdict": "minor",
+      "seconds": 4.9,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "They drink. Hob talks and Ory listens. And the afternoon goes by."
+    },
+    {
+      "book": "sandman",
+      "id": "46d47703",
+      "text": "Aurie walks her realm differently now. She stops. She listens. Lucienne has noticed, and says nothing.",
+      "used": [
+        "6.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Auri walks her realm differently now. She stops. She listens. Lucienne has noticed, and says nothing."
+    },
+    {
+      "book": "sandman",
+      "id": "95601a87",
+      "text": "Long ago, Aurie always kept a raven: a dreamer who died, and chose to stay and serve. There has not been one since she was taken.",
+      "used": [
+        "6.0 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 10,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Long ago, Ori always kept a raven, a Dreamer who died and chose to stay and serve. There has not been one since she was taken."
+    },
+    {
+      "book": "sandman",
+      "id": "0c4d1026",
+      "text": "Lyta screams his name. Then she turns on Aurie.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 3.7,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "lyta aurie",
+      "heard": "Lightus screams his name. Then she turns on Ari."
+    },
+    {
+      "book": "sandman",
+      "id": "9a9de789",
+      "text": "Aurie unmakes the false house. As it comes apart, so does Hector.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Hori unmakes the false house. As it comes apart, so does Hector."
+    },
+    {
+      "book": "sandman",
+      "id": "5dc3cc25",
+      "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+      "used": [
+        "6.1 choice 6.1.CLAIM",
+        "6.1 choice 6.1.CHOOSE",
+        "6.1 choice 6.1.SILENT"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "lyta",
+      "heard": "Lida wakes in her own bed in the waking world, alone, her hands over her belly."
+    },
+    {
+      "book": "sandman",
+      "id": "f36d852c",
+      "text": "Delirium, the youngest of the Endless, comes to the palace, trailing small coloured fish through the air.",
+      "used": [
+        "6.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.9,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "coloured",
+      "heard": "Delirium, the youngest of the Endless, comes to the palace, trailing small, colored fish through the air."
+    },
+    {
+      "book": "sandman",
+      "id": "a34b6801",
+      "text": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colours of their names.",
+      "used": [
+        "6.2 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "colours",
+      "heard": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colors of their names."
+    },
+    {
+      "book": "sandman",
+      "id": "7be98ed0",
+      "text": "There is only one person left who knows. He is on an island in Greece. He is Aurie's son.",
+      "used": [
+        "6.2 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie's",
+      "heard": "There is only one person left who knows. He is on an island in Greece. He is Ari's son."
+    },
+    {
+      "book": "sandman",
+      "id": "4f22a045",
+      "text": "Aurie remembers what Death told her at the family table, and says yes.",
+      "used": [
+        "6.2 beat if ASKED_DEATH"
+      ],
+      "verdict": "minor",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Auri remembers what Death told her at the family table and says yes."
+    },
+    {
+      "book": "sandman",
+      "id": "d6aac3c2",
+      "text": "Aurie surprises herself, and says yes.",
+      "used": [
+        "6.2 beat unless ASKED_DEATH"
+      ],
+      "verdict": "minor",
+      "seconds": 3.7,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ory surprises herself, and says yes."
+    },
+    {
+      "book": "sandman",
+      "id": "b2710bbf",
+      "text": "Orpheus married Eurydice, and she died on their wedding day. He begged his mother Aurie to help him bring her back. Aurie refused.",
+      "used": [
+        "6.3 beat"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 8.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie aurie",
+      "heard": "Orpheus married Eurydice, and she died on their wedding day. He begged his mother Orei to help him bring her back. Orei refused."
+    },
+    {
+      "book": "sandman",
+      "id": "5c22c00d",
+      "text": "Aurie has not spoken to her son since. She told him he was dead to her.",
+      "used": [
+        "6.3 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "Ori has not spoken to her son since she told him he was dead to her."
+    },
+    {
+      "book": "sandman",
+      "id": "43400cba",
+      "text": "Once, to Calliope, Aurie spoke his name with sorrow. Calliope must have told him.",
+      "used": [
+        "6.3 beat if NAMED_ORPHEUS"
+      ],
+      "verdict": "minor",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Once, to Calliope, Ori spoke his name with sorrow. Calliope must have told him."
+    },
+    {
+      "book": "sandman",
+      "id": "f32e021c",
+      "text": "They eat his stew on the terrace while the sun goes down. Destruction reads one poem. It is dreadful. Aurie laughs.",
+      "used": [
+        "6.4 choice 6.4.LISTEN"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 8.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "They eat his stew on the terrace while the sun goes down. Destruction reads one poem. It is dreadful. Ori laughs."
+    },
+    {
+      "book": "sandman",
+      "id": "a58cc95b",
+      "text": "Aurie returns to the shrine, alone, as she promised.",
+      "used": [
+        "6.5 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 3.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori returns to the shrine, alone, as she promised."
+    },
+    {
+      "book": "sandman",
+      "id": "b125de68",
+      "text": "Aurie turns away. Behind her, Orpheus begins to sing, very softly, the same song he has sung for three thousand years.",
+      "used": [
+        "6.5 choice 6.5.REFUSE"
+      ],
+      "verdict": "minor",
+      "seconds": 8.6,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "aurie",
+      "heard": "Ari turns away. Behind her, Orpheus begins to sing very softly, the same song he has sung for three thousand years."
+    },
+    {
+      "book": "sandman",
+      "id": "375b6e4f",
+      "text": "Aurie touches her son's face, and gives him what he asked for.",
+      "used": [
+        "6.5 choice 6.5.RELEASE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ory touches her son's face and gives him what he asked for."
+    },
+    {
+      "book": "sandman",
+      "id": "2a2ec00e",
+      "text": "Aurie has spilled the blood of her own family. Far away, three old women look up from their weaving.",
+      "used": [
+        "6.5 choice 6.5.RELEASE"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ori has spilled the blood of her own family. Far away, three old women look up from their weaving."
+    },
+    {
+      "book": "sandman",
+      "id": "25fb0a9d",
+      "text": "Aurie kneels by a stream at the edge of her realm and washes her hands. The blood will not come off.",
+      "used": [
+        "6.6 beat if ORPHEUS_RELEASED"
+      ],
+      "verdict": "minor",
+      "seconds": 8.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ari kneels by a stream at the edge of her realm and washes her hands. The blood will not come off."
+    },
+    {
+      "book": "sandman",
+      "id": "bf3a1d2e",
+      "text": "No, Aurie says. But I think I will be.",
+      "used": [
+        "6.6 beat if ORPHEUS_RELEASED"
+      ],
+      "verdict": "minor",
+      "seconds": 3.7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "No, Ori says, but I think I will be."
+    },
+    {
+      "book": "sandman",
+      "id": "817f5c4b",
+      "text": "Aurie kneels by a stream at the edge of her realm. Her hands are clean. It does not help.",
+      "used": [
+        "6.6 beat unless ORPHEUS_RELEASED"
+      ],
+      "verdict": "minor",
+      "seconds": 7.4,
+      "hole": 0.6,
+      "tail": 0.3,
+      "missing": "aurie",
+      "heard": "Ori kneels by a stream at the edge of her realm. Her hands are clean. It does not help."
+    },
+    {
+      "book": "sandman",
+      "id": "1b4d34dd",
+      "text": "I broke my word to my own son, Aurie says. I will hear him singing for the rest of my life.",
+      "used": [
+        "6.6 beat unless ORPHEUS_RELEASED"
+      ],
+      "verdict": "minor",
+      "seconds": 7.7,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "I broke my word to my own son,\" Ori says. \"I will hear him singing for the rest of my life."
+    },
+    {
+      "book": "sandman",
+      "id": "00d2d0ed",
+      "text": "Aurie goes home to prepare. She is going back into Hell, for Nada.",
+      "used": [
+        "end-ep3 beat if NADA_QUEST"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6,
+      "hole": 1.3,
+      "tail": 0,
+      "missing": "aurie nada",
+      "heard": "Auri goes home to prepare. She is going back into hell for Nami."
+    },
+    {
+      "book": "sandman",
+      "id": "1c6c5ba0",
+      "text": "Aurie goes home certain she was right. Death does not call on her for a long time.",
+      "used": [
+        "end-ep3 beat if PRIDE_LOCK"
+      ],
+      "verdict": "minor",
+      "seconds": 6.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Ari goes home, certain she was right. Death does not call on her for a long time."
+    },
+    {
+      "book": "sandman",
+      "id": "9d43eba1",
+      "text": "Aurie tells herself she does not care what Desire thinks. She is lying.",
+      "used": [
+        "end-ep3 beat if STORMED_OUT"
+      ],
+      "verdict": "minor",
+      "seconds": 5.4,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "aurie",
+      "heard": "Oree tells herself she does not care what Desire thinks. She is lying."
+    },
+    {
+      "book": "sandman",
+      "id": "e2a61737",
+      "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called.",
+      "used": [
+        "end-ep4 beat"
+      ],
+      "verdict": "minor",
+      "seconds": 8.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "favour",
+      "heard": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favor still to be called."
+    },
+    {
+      "book": "sandman",
+      "id": "1f560870",
+      "text": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
+      "used": [
+        "end-ep4 beat if HELL_KEY_FAERIE"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "faerie's",
+      "heard": "Fairy's hell is a strange, dancing place. Nobody is sure what it is for."
+    },
+    {
+      "book": "sandman",
+      "id": "a1d5f216",
+      "text": "A heap of dark sand waits in a locked box for Aurie to shape it again.",
+      "used": [
+        "end-ep5 beat if CORINTHIAN_REMADE"
+      ],
+      "verdict": "minor",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "aurie",
+      "heard": "A heap of dark sand waits in a locked box for Ori to shape it again."
+    },
+    {
+      "book": "sandman",
+      "id": "5effb314",
+      "text": "The Corinthian's skull sits on a shelf in Lucienne's library.",
+      "used": [
+        "end-ep5 beat if CORINTHIAN_UNMADE"
+      ],
+      "verdict": "minor",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "corinthian's",
+      "heard": "The Corinthian skull sits on a shelf in Lucienne’s library."
+    },
+    {
+      "book": "sandman",
+      "id": "b27355f0",
+      "text": "Richard Madoc told the world what he did.",
+      "used": [
+        "end-ep5 beat if MADOC_CONFESS"
+      ],
+      "verdict": "minor",
+      "seconds": 3.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "madoc",
+      "heard": "Richard Maddock told the world what he did."
+    },
+    {
+      "book": "sandman",
+      "id": "e855accd",
+      "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and cries for his father.",
+      "used": [
+        "end-ep6 beat if LYTA_GRIEVES"
+      ],
+      "verdict": "minor",
+      "seconds": 6.6,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "lyta",
+      "heard": "\"In the waking world, Lida Hall rocks her son Daniel to sleep and cries for his father.\""
+    },
+    {
+      "book": "sandman",
+      "id": "c9f2008d",
+      "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and checks the shadows twice.",
+      "used": [
+        "end-ep6 beat if LYTA_THREATENED"
+      ],
+      "verdict": "minor",
+      "seconds": 6.7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "lyta",
+      "heard": "In the waking world, Lita Hall rocks her son Daniel to sleep and checks the shadows twice."
+    },
+    {
+      "book": "sandman",
+      "id": "b66622e4",
+      "text": "A raven sleeps on the back of Aurie's throne.",
+      "used": [
+        "end-ep6 beat if MATTHEW_RAVEN"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 4.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "aurie's",
+      "heard": "A raven sleeps on the back of Ori's throne."
+    },
+    {
+      "book": "sandman",
+      "id": "0a4e0289",
+      "text": "Orpheus is at peace. And three old women have begun to whisper Aurie's name.",
+      "used": [
+        "end-ep6 beat if ORPHEUS_RELEASED"
+      ],
+      "verdict": "ENDING NOT HEARD",
+      "seconds": 6.3,
+      "hole": 0.8,
+      "tail": 0.2,
+      "missing": "aurie's",
+      "heard": "Orpheus is at peace, and three old women have begun to whisper Orie's name."
+    },
+    {
+      "book": "sandman",
+      "id": "23cd559e",
+      "text": "A circle of chalk reaches up through her floor, and pulls her down.",
+      "used": [
+        "0.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "A circle of chalk reaches up through her floor and pulls her down."
+    },
+    {
+      "book": "sandman",
+      "id": "06d6a1d9",
+      "text": "Her librarian, Lucienne, reads her the day's report. A nightmare has tried to slip out into the waking world.",
+      "used": [
+        "0.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Her librarian, Lucienne, reads her the day's report. A nightmare has tried to slip out into the waking world."
+    },
+    {
+      "book": "sandman",
+      "id": "a640d9f7",
+      "text": "Then, far away in the waking world, a man reads her name from a stolen book.",
+      "used": [
+        "0.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Then, far away, in the waking world, a man reads her name from a stolen book."
+    },
+    {
+      "book": "sandman",
+      "id": "9e0155f9",
+      "text": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician."
+    },
+    {
+      "book": "sandman",
+      "id": "1353e78c",
+      "text": "His son Randall died in the war. Burgess wanted Death herself, to make her give him back.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.6,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "His son Randall died in the war. Burgess wanted Death herself to make her give him back."
+    },
+    {
+      "book": "sandman",
+      "id": "2aa0c3d4",
+      "text": "But Death has a sister. Tonight his spell caught the wrong one.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "But death has a sister, tonight his spell caught the wrong one"
+    },
+    {
+      "book": "sandman",
+      "id": "377f5a3c",
+      "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "His men carry off her three treasures, her helm, her pouch of sand, and her ruby."
+    },
+    {
+      "book": "sandman",
+      "id": "9abe2718",
+      "text": "Without them, she is only a prisoner.",
+      "used": [
+        "1.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 2.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Without them, she is only a prisoner."
+    },
+    {
+      "book": "sandman",
+      "id": "33350f9f",
+      "text": "Hours later, his followers have gone home. Burgess comes back down, alone.",
+      "used": [
+        "1.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Hours later, his followers have gone home. Burgess comes back down, alone."
+    },
+    {
+      "book": "sandman",
+      "id": "52891db4",
+      "text": "He still believes he has caught Death. Speak to him, or stay silent. He will remember either way.",
+      "used": [
+        "1.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He still believes he has caught death. Speak to him, or stay silent. He will remember either way."
+    },
+    {
+      "book": "sandman",
+      "id": "ed4ab12a",
+      "text": "You give him nothing. Not a word, not a flicker.",
+      "used": [
+        "1.2 choice 1.2.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "You give him nothing. Not a word. Not a flicker."
+    },
+    {
+      "book": "sandman",
+      "id": "958d7864",
+      "text": "He leaves. He will come back every night for thirty years, and you will never answer him.",
+      "used": [
+        "1.2 choice 1.2.A"
+      ],
+      "verdict": "ok",
+      "seconds": 6.8,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "He leaves. He will come back every night for thirty years, and you will never answer him."
+    },
+    {
+      "book": "sandman",
+      "id": "64918690",
+      "text": "The candles lean away from the glass. Burgess stumbles back.",
+      "used": [
+        "1.2 choice 1.2.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.3,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "The candles lean away from the glass. Burgess stumbles back."
+    },
+    {
+      "book": "sandman",
+      "id": "4a2c1bed",
+      "text": "That night he doubles the wards. The circle burns colder, and you grow weaker.",
+      "used": [
+        "1.2 choice 1.2.B"
+      ],
+      "verdict": "ok",
+      "seconds": 5.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "That night, he doubles the wards; the circle burns colder, and you grow weaker."
+    },
+    {
+      "book": "sandman",
+      "id": "53ab47b6",
+      "text": "He laughs, then stops. He knows a lie when he hears one.",
+      "used": [
+        "1.2 choice 1.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He laughs, then stops. He knows a lie when he hears one."
+    },
+    {
+      "book": "sandman",
+      "id": "8de28f47",
+      "text": "From now on, he believes nothing you say.",
+      "used": [
+        "1.2 choice 1.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "From now on, he believes nothing you say."
+    },
+    {
+      "book": "sandman",
+      "id": "d2657b2f",
+      "text": "Burgess goes pale. Then, slowly, he smiles.",
+      "used": [
+        "1.2 choice 1.2.D"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Burgess goes pale. Then, slowly, he smiles."
+    },
+    {
+      "book": "sandman",
+      "id": "27813c17",
+      "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life.",
+      "used": [
+        "1.2 choice 1.2.D"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.6,
+      "tail": 0,
+      "missing": "",
+      "heard": "If he cannot have death, he will have dreams instead. He will beg you for them, for the rest of his life."
+    },
+    {
+      "book": "sandman",
+      "id": "555e27c1",
+      "text": "Without its queen, the Dreaming begins to fall apart. Her palace crumbles into sand.",
+      "used": [
+        "1.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.5,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Without its queen, the Dreaming begins to fall apart. Her palace crumbles into sand."
+    },
+    {
+      "book": "sandman",
+      "id": "775623dc",
+      "text": "Others fall asleep, and cannot wake. The doctors call it the sleeping sickness.",
+      "used": [
+        "1.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.3,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Others fall asleep and cannot wake. The doctors call it the sleeping sickness."
+    },
+    {
+      "book": "sandman",
+      "id": "fa5bbeda",
+      "text": "In the waking world, sleep goes wrong. Some people can never sleep again.",
+      "used": [
+        "1.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.8,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "In the waking world, sleep goes wrong. Some people can never sleep again."
+    },
+    {
+      "book": "sandman",
+      "id": "7b548692",
+      "text": "Once, early on, you pitied him. He never forgave you for it.",
+      "used": [
+        "1.3 beat if C_PITIED_HIM"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Once, early on, you pitied him. He never forgave you for it."
+    },
+    {
+      "book": "sandman",
+      "id": "c77a57b5",
+      "text": "Every night he comes down to beg you for dreams. You give him none.",
+      "used": [
+        "1.3 beat if DREAM_REVEALED"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 1.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every night he comes down to beg you for dreams. You give him none."
+    },
+    {
+      "book": "sandman",
+      "id": "36c12513",
+      "text": "And you cannot forget that smell of roses. Someone else was in that dream.",
+      "used": [
+        "1.3 choice 1.3.W if SENSED_DESIRE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And you cannot forget that smell of roses—someone else was in that dream."
+    },
+    {
+      "book": "sandman",
+      "id": "719cad4b",
+      "text": "She sleeps on, inside the seaside dream you gave her.",
+      "used": [
+        "1.3 choice 1.3.W if UNITY_GIFT"
+      ],
+      "verdict": "ok",
+      "seconds": 4,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She sleeps on, inside the seaside dream you gave her."
+    },
+    {
+      "book": "sandman",
+      "id": "37373c9d",
+      "text": "Unity will carry your promise through sixty years of sleep.",
+      "used": [
+        "1.3 choice 1.3.W if UNITY_PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 4.5,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "UNITY will carry your promise through sixty years of sleep."
+    },
+    {
+      "book": "sandman",
+      "id": "acaa0c77",
+      "text": "You let go of the girl. The glass closes around you again.",
+      "used": [
+        "1.3 choice 1.3.W unless UNITY_PROMISE,UNITY_GIFT,UNITY_USED"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "You let go of the girl. The glass closes around you again."
+    },
+    {
+      "book": "sandman",
+      "id": "e5e82062",
+      "text": "Burgess had a mistress, Ethel Cripps. One night in 1926, she runs away.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Burgess had a mistress, Ethel Cripps. One night in 1926, she runs away."
+    },
+    {
+      "book": "sandman",
+      "id": "7eb46292",
+      "text": "She takes his money, and she takes your helm, your sand and your ruby.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She takes his money, and she takes your helm, your sand, and your ruby."
+    },
+    {
+      "book": "sandman",
+      "id": "8927d2e6",
+      "text": "Roderick Burgess dies an old man, still waiting for a wish you never granted.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Roderick Burgess dies an old man, still waiting for a wish you never granted."
+    },
+    {
+      "book": "sandman",
+      "id": "f6902c10",
+      "text": "His son Alex inherits the house, the order, and the prisoner in the cellar.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "His son Alex inherits the house, the order, and the prisoner in the cellar."
+    },
+    {
+      "book": "sandman",
+      "id": "be43b184",
+      "text": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs."
+    },
+    {
+      "book": "sandman",
+      "id": "d0ef77f7",
+      "text": "Behind him, Paul, the man who loves him, pretends not to listen.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Behind him, Paul, the man who loves him, pretends not to listen."
+    },
+    {
+      "book": "sandman",
+      "id": "47f5d54a",
+      "text": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk."
+    },
+    {
+      "book": "sandman",
+      "id": "b3979671",
+      "text": "Alex is grey now. He was born the year you were caught, and he has grown old listening to you not speak.",
+      "used": [
+        "1.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Alex is grey now. He was born the year you were caught, and he has grown old listening to you not speak."
+    },
+    {
+      "book": "sandman",
+      "id": "5c2fbef7",
+      "text": "The wards are still doubled, as they have been since your first week.",
+      "used": [
+        "1.4 beat if C_SHOWED_POWER"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "The wards are still doubled, as they have been since your first week."
+    },
+    {
+      "book": "sandman",
+      "id": "f3d309c4",
+      "text": "He weeps for the little boy his father hurt. No one has ever seen that boy but you.",
+      "used": [
+        "1.4 choice 1.4.A"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.8,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He weeps for the little boy his father hurt. No one has ever seen that boy but you."
+    },
+    {
+      "book": "sandman",
+      "id": "efa785de",
+      "text": "Nothing comes from the glass. He goes upstairs, and does not come down again for years.",
+      "used": [
+        "1.4 choice 1.4.B"
+      ],
+      "verdict": "ok",
+      "seconds": 7.5,
+      "hole": 1.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Nothing comes from the glass. He goes upstairs and does not come down again for years."
+    },
+    {
+      "book": "sandman",
+      "id": "b1d7028b",
+      "text": "He sees himself old and broken, in a wheelchair. He runs from the cellar, screaming.",
+      "used": [
+        "1.4 choice 1.4.C"
+      ],
+      "verdict": "ok",
+      "seconds": 6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He sees himself old and broken, in a wheelchair. He runs from the cellar, screaming."
+    },
+    {
+      "book": "sandman",
+      "id": "8f846917",
+      "text": "He almost does it. Then he loses his nerve, and walks away.",
+      "used": [
+        "1.4 choice 1.4.D"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.7,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He almost does it, then he loses his nerve and walks away."
+    },
+    {
+      "book": "sandman",
+      "id": "63cbe7d0",
+      "text": "But he writes your promise down, and keeps it in his breast pocket for the rest of his life.",
+      "used": [
+        "1.4 choice 1.4.D"
+      ],
+      "verdict": "ok",
+      "seconds": 6.6,
+      "hole": 0.5,
+      "tail": 0.4,
+      "missing": "",
+      "heard": "But he writes your promise down and keeps it in his breast pocket for the rest of his life."
+    },
+    {
+      "book": "sandman",
+      "id": "c1111198",
+      "text": "Tonight, the young guard falls asleep against the glass. His breath fogs it.",
+      "used": [
+        "1.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "Tonight the young guard falls asleep against the glass, his breath fogs it."
+    },
+    {
+      "book": "sandman",
+      "id": "2a188a8e",
+      "text": "Seventy-two years in the glass. Alex is an old man now.",
+      "used": [
+        "1.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.1,
+      "hole": 0.8,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Seventy-two years in the glass. Alex is an old man now."
+    },
+    {
+      "book": "sandman",
+      "id": "4b9bc7b5",
+      "text": "Alex hears the glass break. Paul wheels him down, and there she is.",
+      "used": [
+        "1.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Alex hears the glass break, Paul wheels him down, and there she is."
+    },
+    {
+      "book": "sandman",
+      "id": "3443c17a",
+      "text": "She steps through his dream, and out of the glass. The circle crumbles to dust.",
+      "used": [
+        "1.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She steps through his dream and out of the glass, the circle crumbles to dust."
+    },
+    {
+      "book": "sandman",
+      "id": "4c22b870",
+      "text": "In his breast pocket is a folded paper with your promise on it.",
+      "used": [
+        "1.5 beat if ALEX_PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "In his breast pocket is a folded paper with your promise on it."
+    },
+    {
+      "book": "sandman",
+      "id": "3f0c8a3f",
+      "text": "Since the vision of his death, he has not come down to the cellar once.",
+      "used": [
+        "1.5 beat if ALEX_SAW_DEATH"
+      ],
+      "verdict": "ok",
+      "seconds": 5.8,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Since the vision of his death, he has not come down to the cellar once."
+    },
+    {
+      "book": "sandman",
+      "id": "a35c6c97",
+      "text": "He wakes, and wakes, and wakes, each time into something worse. He will never sleep again.",
+      "used": [
+        "1.5 choice 1.5.A"
+      ],
+      "verdict": "ok",
+      "seconds": 6.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He wakes and wakes and wakes, each time into something worse. He will never sleep again."
+    },
+    {
+      "book": "sandman",
+      "id": "3ab7f0dd",
+      "text": "One night of nightmares, and then it is over. By morning he sleeps like a child.",
+      "used": [
+        "1.5 choice 1.5.B"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "One night of nightmares and then it is over. By morning he sleeps like a child."
+    },
+    {
+      "book": "sandman",
+      "id": "4072a2fc",
+      "text": "You walk out without a word. Behind you, an old man weeps with relief.",
+      "used": [
+        "1.5 choice 1.5.C"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "You walk out without a word. Behind you, an old man weeps with relief."
+    },
+    {
+      "book": "sandman",
+      "id": "c588f3e0",
+      "text": "Fifty years he has loved Alex Burgess. He has never once begged anyone for anything.",
+      "used": [
+        "1.6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Fifty years, he has loved Alex Burgess. He has never once begged anyone for anything."
+    },
+    {
+      "book": "sandman",
+      "id": "5b1b0827",
+      "text": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking.",
+      "used": [
+        "1.6 choice 1.6.KEEP"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking."
+    },
+    {
+      "book": "sandman",
+      "id": "bb034adc",
+      "text": "Paul holds him, and weeps, and does not let go.",
+      "used": [
+        "1.6 choice 1.6.LIFT"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.7,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Paul holds him and weeps, and does not let go."
+    },
+    {
+      "book": "sandman",
+      "id": "e77469cb",
+      "text": "The great gates of her realm are cracked. One lantern still burns.",
+      "used": [
+        "2.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The great gates of her realm are cracked. One lantern still burns."
+    },
+    {
+      "book": "sandman",
+      "id": "fc47f0e5",
+      "text": "Most of the Dreaming is gone. Only the library still stands.",
+      "used": [
+        "2.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "Most of the dreaming is gone. Only the library still stands."
+    },
+    {
+      "book": "sandman",
+      "id": "9e253416",
+      "text": "On its far wall are three doors she has never seen before.",
+      "used": [
+        "2.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "On its far wall are three doors she has never seen before."
+    },
+    {
+      "book": "sandman",
+      "id": "b8094c0b",
+      "text": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles.",
+      "used": [
+        "2.1 choice 2.1.B"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles."
+    },
+    {
+      "book": "sandman",
+      "id": "ab7c929d",
+      "text": "Dee feels her inside his stone. He laughs, and stands, and lifts it high.",
+      "used": [
+        "2.10 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Dee feels her inside his stone. He laughs and stands and lifts it high."
+    },
+    {
+      "book": "sandman",
+      "id": "2cb4d863",
+      "text": "He smashes the ruby. He thinks it will kill her.",
+      "used": [
+        "2.10 choice 2.10.X"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "He smashes the ruby. He thinks it will kill her."
+    },
+    {
+      "book": "sandman",
+      "id": "716217b4",
+      "text": "It does not. Everything she ever poured into that stone comes home to her.",
+      "used": [
+        "2.10 choice 2.10.X"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "It does not. Everything she ever poured into that stone comes home to her."
+    },
+    {
+      "book": "sandman",
+      "id": "fc1148f6",
+      "text": "Three of three.",
+      "used": [
+        "2.10 choice 2.10.X"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.5,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "three of three"
+    },
+    {
+      "book": "sandman",
+      "id": "c22dd43a",
+      "text": "On the diner floor lies a small, broken old man.",
+      "used": [
+        "2.11 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.2,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "On the diner floor lies a small broken old man."
+    },
+    {
+      "book": "sandman",
+      "id": "a61d8554",
+      "text": "He sleeps in his old cell, dreaming kindly, for the first time in forty years.",
+      "used": [
+        "2.11 choice 2.11.A"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "He sleeps in his old cell, dreaming kindly for the first time in forty years."
+    },
+    {
+      "book": "sandman",
+      "id": "e74a8cbc",
+      "text": "She leaves him on the diner floor, awake and sane, remembering everything.",
+      "used": [
+        "2.11 choice 2.11.C"
+      ],
+      "verdict": "ok",
+      "seconds": 5.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She leaves him on the diner floor, awake and sane, remembering everything."
+    },
+    {
+      "book": "sandman",
+      "id": "aa01b41f",
+      "text": "On a park bench, someone is feeding the pigeons, and waiting for her.",
+      "used": [
+        "2.12 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "On a park bench, someone is feeding the pigeons and waiting for her."
+    },
+    {
+      "book": "sandman",
+      "id": "8e0dbc85",
+      "text": "Helm, sand and ruby. All three are hers again. She should feel whole. She feels nothing at all.",
+      "used": [
+        "2.12 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.8,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Helm, sand, and ruby. All three are hers again. She should feel whole. She feels nothing at all."
+    },
+    {
+      "book": "sandman",
+      "id": "ff6a45b2",
+      "text": "Everyone meets Death in the end. And everyone is met kindly.",
+      "used": [
+        "2.12 choice 2.12.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Everyone meets death in the end, and everyone is met kindly."
+    },
+    {
+      "book": "sandman",
+      "id": "711d0d73",
+      "text": "Death shrugs, kisses her cheek, and goes about her work alone.",
+      "used": [
+        "2.12 choice 2.12.B"
+      ],
+      "verdict": "ok",
+      "seconds": 5.3,
+      "hole": 1,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Death shrugs, kisses her cheek, and goes about her work alone."
+    },
+    {
+      "book": "sandman",
+      "id": "110e33a9",
+      "text": "A Maiden, a Mother and a Crone. Mortals call them the Fates.",
+      "used": [
+        "2.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.9,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A maiden, a mother, and a crone. Mortals call them the fates."
+    },
+    {
+      "book": "sandman",
+      "id": "ca8c4001",
+      "text": "Where three roads meet, at the edge of the Dreaming, live the Three Who Are One.",
+      "used": [
+        "2.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Where three roads meet at the edge of the dreaming live the three who are one."
+    },
+    {
+      "book": "sandman",
+      "id": "a8b75c5b",
+      "text": "They will answer three questions, for anyone who asks politely.",
+      "used": [
+        "2.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "They will answer three questions for anyone who asks politely."
+    },
+    {
+      "book": "sandman",
+      "id": "b216ab21",
+      "text": "Three answers, in three places.",
+      "used": [
+        "2.2 choice 2.2.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 2.7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Three answers in three places."
+    },
+    {
+      "book": "sandman",
+      "id": "421d736a",
+      "text": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son.",
+      "used": [
+        "2.2 choice 2.2.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son."
+    },
+    {
+      "book": "sandman",
+      "id": "0952b596",
+      "text": "She will start with the sand.",
+      "used": [
+        "2.2 choice 2.2.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 2.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "She will start with the sand."
+    },
+    {
+      "book": "sandman",
+      "id": "270e218f",
+      "text": "Hell and a madman can wait. Someone in London is dying of her sand.",
+      "used": [
+        "2.2 choice 2.2.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 6.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Hell, and a madman can wait; someone in London is dying of her sand."
+    },
+    {
+      "book": "sandman",
+      "id": "5f0988ca",
+      "text": "And one answer she did not want.",
+      "used": [
+        "2.2 choice 2.2.GO if ASKED_OWN_FATE"
+      ],
+      "verdict": "ok",
+      "seconds": 3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "And one answer she did not want."
+    },
+    {
+      "book": "sandman",
+      "id": "10f317db",
+      "text": "A woman is waiting under a porch, as if she has been expecting trouble.",
+      "used": [
+        "2.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A woman is waiting under a porch as if she has been expecting trouble."
+    },
+    {
+      "book": "sandman",
+      "id": "c0ae2f52",
+      "text": "It leads her to a rainy street in north London.",
+      "used": [
+        "2.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.7,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "It leads her to a rainy street in north London."
+    },
+    {
+      "book": "sandman",
+      "id": "ee2a47bd",
+      "text": "Years ago, the pouch was hers. Then the woman she loved took it.",
+      "used": [
+        "2.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Years ago, the pouch was hers. Then, the woman she loved took it."
+    },
+    {
+      "book": "sandman",
+      "id": "240fac53",
+      "text": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name.",
+      "used": [
+        "2.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name."
+    },
+    {
+      "book": "sandman",
+      "id": "46d82ca3",
+      "text": "Johanna flicks her cigarette into the gutter, and leads the way.",
+      "used": [
+        "2.3 choice 2.3.IN"
+      ],
+      "verdict": "ok",
+      "seconds": 4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Johanna flicks her cigarette into the gutter and leads the way."
+    },
+    {
+      "book": "sandman",
+      "id": "d1042a4a",
+      "text": "Inside, the house has become a dream. It breathes.",
+      "used": [
+        "2.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Inside, the house has become a dream; it breathes."
+    },
+    {
+      "book": "sandman",
+      "id": "b7a99751",
+      "text": "Rachel has breathed the sand for years. It is the only thing keeping her alive, and it is killing her.",
+      "used": [
+        "2.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.8,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Rachel has breathed the sand for years. It is the only thing keeping her alive and it is killing her."
+    },
+    {
+      "book": "sandman",
+      "id": "6ff3c7d3",
+      "text": "Without your ruby you cannot give her life back. Only an ending: a kind one, or a cruel one.",
+      "used": [
+        "2.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.6,
+      "tail": 0,
+      "missing": "",
+      "heard": "Without your Ruby, you cannot give her life back. Only an ending – a kind one, or a cruel one."
+    },
+    {
+      "book": "sandman",
+      "id": "e92ae412",
+      "text": "She dies smiling. The sand flows home into the pouch.",
+      "used": [
+        "2.4 choice 2.4.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She dies, smiling. The sand flows home into the pouch."
+    },
+    {
+      "book": "sandman",
+      "id": "549cd107",
+      "text": "Johanna does not thank you. But she will remember this.",
+      "used": [
+        "2.4 choice 2.4.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Johanna does not thank you, but she will remember this."
+    },
+    {
+      "book": "sandman",
+      "id": "60d08450",
+      "text": "It is the garden Johanna told you about.",
+      "used": [
+        "2.4 choice 2.4.A if HEARD_RACHEL"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "It is. The garden Johanna told you about."
+    },
+    {
+      "book": "sandman",
+      "id": "76b8358f",
+      "text": "You take the pouch. Behind you, Rachel begins to scream.",
+      "used": [
+        "2.4 choice 2.4.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "You take the pouch. Behind you, Rachel begins to scream."
+    },
+    {
+      "book": "sandman",
+      "id": "99d2829d",
+      "text": "Out on the street, the rain has not stopped. Johanna is waiting.",
+      "used": [
+        "2.4b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Out on the street, the rain has not stopped. Johanna is waiting."
+    },
+    {
+      "book": "sandman",
+      "id": "1b710fab",
+      "text": "Johanna does not forgive her. But she hears it, and for a moment they stand in the rain together.",
+      "used": [
+        "2.4b choice 2.4b.SORRY"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Johanna does not forgive her, but she hears it. And for a moment, they stand in the rain together."
+    },
+    {
+      "book": "sandman",
+      "id": "b053d431",
+      "text": "The gates of Hell open for her. Even here, they know her name.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The gates of hell open for her, even here they know her name."
+    },
+    {
+      "book": "sandman",
+      "id": "e2a7edf9",
+      "text": "The damned reach out as she passes, begging for a single dream.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "The damned reach out as she passes, begging for a single dream."
+    },
+    {
+      "book": "sandman",
+      "id": "0be27ac9",
+      "text": "In a cell of black ice, someone calls to her.",
+      "used": [
+        "2.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "In a cell of black ice, someone calls to her."
+    },
+    {
+      "book": "sandman",
+      "id": "cf93f285",
+      "text": "A promise, made in Hell. Hell will remember it.",
+      "used": [
+        "2.5 choice 2.5.PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 4.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A promise made in hell. Hell will remember it."
+    },
+    {
+      "book": "sandman",
+      "id": "27098b49",
+      "text": "At the heart of Hell is an arena, and above it a throne.",
+      "used": [
+        "2.6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "At the heart of Hell is an arena, and above it a throne."
+    },
+    {
+      "book": "sandman",
+      "id": "9310c0b9",
+      "text": "Only Lucifer, who rules here, can make a demon give back what it holds.",
+      "used": [
+        "2.6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Only Lucifer, who rules here, can make a demon give back what it holds."
+    },
+    {
+      "book": "sandman",
+      "id": "45b954fa",
+      "text": "Lucifer Morningstar, first of the fallen. He has been expecting her.",
+      "used": [
+        "2.6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucifer Morningstar, First of the Fallen, he has been expecting her."
+    },
+    {
+      "book": "sandman",
+      "id": "c9829600",
+      "text": "The arena roars. The Oldest Game has not been played in Hell for a thousand years.",
+      "used": [
+        "2.6 choice 2.6.GAME"
+      ],
+      "verdict": "ok",
+      "seconds": 6.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The arena roars. The oldest game has not been played in Hell for a thousand years."
+    },
+    {
+      "book": "sandman",
+      "id": "7a50f0eb",
+      "text": "The Oldest Game. Each names a form that defeats the other's last. The first who cannot answer, loses.",
+      "used": [
+        "2.7 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.1,
+      "hole": 0.3,
+      "tail": 0,
+      "missing": "",
+      "heard": "The oldest game: each names a form that defeats the other's last. The first who cannot answer loses."
+    },
+    {
+      "book": "sandman",
+      "id": "76437d03",
+      "text": "Lucifer, amused, allows one more game.",
+      "used": [
+        "2.7 choice 2.7.LOSE"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "LUCIFER, amused, allows one more game."
+    },
+    {
+      "book": "sandman",
+      "id": "d3f567a3",
+      "text": "Anti-life. The end of all things. There is only one answer to that.",
+      "used": [
+        "2.7 choice 2.7.WIN"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Anti-life, the end of all things. There is only one answer to that."
+    },
+    {
+      "book": "sandman",
+      "id": "bf5833e6",
+      "text": "I am hope. And the dark has nothing left to say.",
+      "used": [
+        "2.7 choice 2.7.WIN"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "I am hope. And the dark has nothing left to say."
+    },
+    {
+      "book": "sandman",
+      "id": "d154842e",
+      "text": "The helm is hers. But the legions of Hell now block the only way out.",
+      "used": [
+        "2.8 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The helm is hers, but the legions of hell now block the only way out."
+    },
+    {
+      "book": "sandman",
+      "id": "205fff55",
+      "text": "Lucifer smiles. Here, he says, she has no power at all.",
+      "used": [
+        "2.8 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Lucifer smiles. \"Here,\" he says, \"she has no power at all.\""
+    },
+    {
+      "book": "sandman",
+      "id": "7aac8f32",
+      "text": "Hell has no answer. The legions part like a curtain.",
+      "used": [
+        "2.8 choice 2.8.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Hell has no answer. The legions part like a curtain."
+    },
+    {
+      "book": "sandman",
+      "id": "4339c4f1",
+      "text": "Lucifer lets her go. He will never forget being bested in his own house.",
+      "used": [
+        "2.8 choice 2.8.A"
+      ],
+      "verdict": "ok",
+      "seconds": 5.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucifer lets her go. He will never forget being bested in his own house."
+    },
+    {
+      "book": "sandman",
+      "id": "0be7b4a1",
+      "text": "Lucifer finds her dull, and waves her away.",
+      "used": [
+        "2.8 choice 2.8.B"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucifer finds her dull and waves her away."
+    },
+    {
+      "book": "sandman",
+      "id": "74b02f6c",
+      "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
+      "used": [
+        "2.8 choice 2.8.C"
+      ],
+      "verdict": "ok",
+      "seconds": 5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucifer smiles, and the legions step aside. One day, he will collect."
+    },
+    {
+      "book": "sandman",
+      "id": "471b751b",
+      "text": "The Fates said the ruby went to Ethel Cripps's son.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The Fates said the ruby went to Ethel Cripps's son."
+    },
+    {
+      "book": "sandman",
+      "id": "b5c526bb",
+      "text": "The ruby calls to her across an ocean, like her own voice heard from another room.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "The ruby calls to her across an ocean, like her own voice heard from another room."
+    },
+    {
+      "book": "sandman",
+      "id": "af3375e3",
+      "text": "He sits down in an all-night diner, and begins to play with the people inside.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6,
+      "hole": 0.4,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "He sits down in an all-night diner and begins to play with the people inside."
+    },
+    {
+      "book": "sandman",
+      "id": "6569009c",
+      "text": "Tonight he walks out, and takes his mother's ruby back.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "Tonight he walks out and takes his mother's ruby back."
+    },
+    {
+      "book": "sandman",
+      "id": "e63940cc",
+      "text": "Every hour he twists their dreams a little further, and the whole world's dreams go wrong with them.",
+      "used": [
+        "2.9 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Every hour, he twists their dreams a little further—and the whole world's dreams go wrong with them."
+    },
+    {
+      "book": "sandman",
+      "id": "95869869",
+      "text": "She crawls into the stone itself, wounded, to finish it there.",
+      "used": [
+        "2.9 choice 2.9.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She crawls into the stone itself, wounded, to finish it there."
+    },
+    {
+      "book": "sandman",
+      "id": "c14b4d6d",
+      "text": "And she steps inside the ruby itself, where he cannot see her coming.",
+      "used": [
+        "2.9 choice 2.9.B"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And she steps inside the ruby itself, where he cannot see her coming."
+    },
+    {
+      "book": "sandman",
+      "id": "217019c0",
+      "text": "She slips through the dreams of the waitress and the trucker, unseen.",
+      "used": [
+        "2.9 choice 2.9.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "She slips through the dreams of the waitress and the trucker, unseen."
+    },
+    {
+      "book": "sandman",
+      "id": "5c39400b",
+      "text": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home.",
+      "used": [
+        "3.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.7,
+      "hole": 0.8,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home."
+    },
+    {
+      "book": "sandman",
+      "id": "bda68462",
+      "text": "Only one member of her family seals his letters that way.",
+      "used": [
+        "3.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "Only one member of her family seals his letters that way."
+    },
+    {
+      "book": "sandman",
+      "id": "337d110c",
+      "text": "Then one evening Lucienne comes to her with a letter, sealed with the sign of a book.",
+      "used": [
+        "3.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 0.5,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "Then, one evening, Lucienne comes to her with a letter, sealed with the sign of a book."
+    },
+    {
+      "book": "sandman",
+      "id": "5f90cd3f",
+      "text": "Every path in it is a choice someone once made. The paths behind her rearrange themselves as she passes.",
+      "used": [
+        "3.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every path in it is a choice someone once made. The paths behind her rearrange themselves as she passes."
+    },
+    {
+      "book": "sandman",
+      "id": "1936a06c",
+      "text": "Destiny is blind. He is chained to a book that holds everything that was, and everything that will be.",
+      "used": [
+        "3.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Destiny is blind. He is chained to a book that holds everything that was and everything that will be."
+    },
+    {
+      "book": "sandman",
+      "id": "fbed0424",
+      "text": "Destiny turns a page, and the garden becomes a hall.",
+      "used": [
+        "3.1 choice 3.1.IN"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Destiny turns a page, and the garden becomes a hall."
+    },
+    {
+      "book": "sandman",
+      "id": "cb9c0e7a",
+      "text": "Death, her elder sister.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Death, her elder sister."
+    },
+    {
+      "book": "sandman",
+      "id": "0d73d2b1",
+      "text": "The Endless. Older than the gods, each the shape of something every living thing must face.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.4,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "The endless. Older than the gods. Each the shape of something every living thing must face."
+    },
+    {
+      "book": "sandman",
+      "id": "f720269f",
+      "text": "Despair, Desire's twin, quiet and grey.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.8,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Despair, desire’s twin, quiet and grey."
+    },
+    {
+      "book": "sandman",
+      "id": "00c174f6",
+      "text": "Delirium, the youngest, who was once Delight.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Delirium, the youngest, who was once Delight."
+    },
+    {
+      "book": "sandman",
+      "id": "90d1e52b",
+      "text": "Desire, beautiful and cruel, who smells of roses.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Desire, beautiful and cruel, who smells of roses."
+    },
+    {
+      "book": "sandman",
+      "id": "714f57b2",
+      "text": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it."
+    },
+    {
+      "book": "sandman",
+      "id": "a6d6ff33",
+      "text": "Desire leans forward, smiling. It has been waiting for this.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Desire leans forward, smiling. It has been waiting for this."
+    },
+    {
+      "book": "sandman",
+      "id": "f549eea1",
+      "text": "Desire knows exactly where to cut.",
+      "used": [
+        "3.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Desire knows exactly where to cut."
+    },
+    {
+      "book": "sandman",
+      "id": "f34d56f2",
+      "text": "You have smelled those roses before, in a sleeping girl's dream.",
+      "used": [
+        "3.2 beat if SENSED_DESIRE"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "You have smelled those roses before in a sleeping girl's dream."
+    },
+    {
+      "book": "sandman",
+      "id": "2e64f6e9",
+      "text": "The table goes quiet. Death squeezes her hand.",
+      "used": [
+        "3.2 choice 3.2.A"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The table goes quiet. Death squeezes her hand."
+    },
+    {
+      "book": "sandman",
+      "id": "b41131d2",
+      "text": "Desire smiles, as if this were exactly what it wanted.",
+      "used": [
+        "3.2 choice 3.2.A"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Desire smiles as if this were exactly what it wanted."
+    },
+    {
+      "book": "sandman",
+      "id": "77633bb0",
+      "text": "This time, she means to keep a promise.",
+      "used": [
+        "3.2 choice 3.2.A if NADA_PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "This time, she means to keep a promise."
+    },
+    {
+      "book": "sandman",
+      "id": "f09ecfeb",
+      "text": "Death watches her go, and says nothing.",
+      "used": [
+        "3.2 choice 3.2.B"
+      ],
+      "verdict": "ok",
+      "seconds": 3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Death watches her go and says nothing."
+    },
+    {
+      "book": "sandman",
+      "id": "3cf9f796",
+      "text": "But the woman in the ice is still there. The question will not go away.",
+      "used": [
+        "3.2 choice 3.2.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.7,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "But the woman in the ice is still there. The question will not go away."
+    },
+    {
+      "book": "sandman",
+      "id": "38757044",
+      "text": "Desire smiles. It has learned exactly what it came to learn.",
+      "used": [
+        "3.2 choice 3.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Desire smiles. It has learned exactly what it came to learn."
+    },
+    {
+      "book": "sandman",
+      "id": "5dcffd9f",
+      "text": "Death looks away. Despair begins, very quietly, to cry.",
+      "used": [
+        "3.2 choice 3.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 5.3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Death looks away. Despair begins very quietly to cry."
+    },
+    {
+      "book": "sandman",
+      "id": "927d8f06",
+      "text": "Pride is a door that locks from the inside.",
+      "used": [
+        "3.2 choice 3.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 3.7,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "\"Pride is a door that locks from the inside.\""
+    },
+    {
+      "book": "sandman",
+      "id": "fbe0f10c",
+      "text": "The last time she came here, she walked past Nada in the ice.",
+      "used": [
+        "4.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The last time she came here she walked past Nada in the ice."
+    },
+    {
+      "book": "sandman",
+      "id": "86b05272",
+      "text": "But Hell is empty.",
+      "used": [
+        "4.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.9,
+      "hole": 0.3,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "But hell is empty."
+    },
+    {
+      "book": "sandman",
+      "id": "9de7aa9d",
+      "text": "Every cell stands open. Every chain lies slack. The damned, and the demons, are gone.",
+      "used": [
+        "4.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every cell stands open. Every chain lies slack. The damned and the demons are gone."
+    },
+    {
+      "book": "sandman",
+      "id": "7b6e69a7",
+      "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
+      "used": [
+        "4.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Only Lucifer remains, alone on his throne, as if he has been waiting for her."
+    },
+    {
+      "book": "sandman",
+      "id": "c2e59c32",
+      "text": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice.",
+      "used": [
+        "4.1 beat if PRIDE_LOCK"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice."
+    },
+    {
+      "book": "sandman",
+      "id": "2c1a460b",
+      "text": "Desire's words would not leave her. Within a week she is standing at the gates of Hell anyway.",
+      "used": [
+        "4.1 beat if STORMED_OUT"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Desire's words would not leave her. Within a week she is standing at the gates of hell anyway."
+    },
+    {
+      "book": "sandman",
+      "id": "a63885de",
+      "text": "Every power in creation will want it.",
+      "used": [
+        "4.1 choice 4.1.KEY"
+      ],
+      "verdict": "ok",
+      "seconds": 3,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every power in creation will want it."
+    },
+    {
+      "book": "sandman",
+      "id": "f8b01f8e",
+      "text": "Lucifer takes the knife to his own wings. He does not ask twice.",
+      "used": [
+        "4.1 choice 4.1.KEY"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "Lucifer takes the knife to his own wings. He does not ask twice."
+    },
+    {
+      "book": "sandman",
+      "id": "1737a472",
+      "text": "He walks out into the waking world, a free man, and leaves her holding the key to Hell.",
+      "used": [
+        "4.1 choice 4.1.KEY"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He walks out into the waking world a free man, and leaves her holding the key to Hell."
+    },
+    {
+      "book": "sandman",
+      "id": "1e8a21cb",
+      "text": "Every power in creation will want that key.",
+      "used": [
+        "4.1 choice 4.1.WINGS"
+      ],
+      "verdict": "ok",
+      "seconds": 3.4,
+      "hole": 0.2,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every power in creation will want that key."
+    },
+    {
+      "book": "sandman",
+      "id": "7cf92b19",
+      "text": "Lucifer thanks her, which he has never done before, and walks out into the waking world.",
+      "used": [
+        "4.1 choice 4.1.WINGS"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Lucifer thanks her, which he has never done before, and walks out into the waking world."
+    },
+    {
+      "book": "sandman",
+      "id": "9d378ccf",
+      "text": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 9,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy."
+    },
+    {
+      "book": "sandman",
+      "id": "db87a758",
+      "text": "They come with gifts, and with threats.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.2,
+      "hole": 0.7,
+      "tail": 0,
+      "missing": "",
+      "heard": "They come with gifts and with threats."
+    },
+    {
+      "book": "sandman",
+      "id": "2252cbd2",
+      "text": "Azazel, a lord of Hell, who wants his home back. In a jar at his elbow, a captured soul.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Azazel, a lord of Hell who wants his home back. In a jar at his elbow, a captured soul."
+    },
+    {
+      "book": "sandman",
+      "id": "9c5b9c30",
+      "text": "The envoys of Faerie: Cluracan, and his sister Nuala, sent along as a gift.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "The envoys of Faerie, Cluracan and his sister Nuala, sent along as a gift."
+    },
+    {
+      "book": "sandman",
+      "id": "d86b04d7",
+      "text": "Odin All-Father, with Thor and Loki, wanting somewhere to wait out the end of the world.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Odin, All-Father, with Thor and Loki, wanting somewhere to wait out the end of the world."
+    },
+    {
+      "book": "sandman",
+      "id": "347c3701",
+      "text": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
+      "used": [
+        "4.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "And two angels sent by the Creator, who ask for nothing and only wait."
+    },
+    {
+      "book": "sandman",
+      "id": "0e3accb4",
+      "text": "Remiel takes the key. Hell will become a place where suffering heals.",
+      "used": [
+        "4.2 choice 4.2.A"
+      ],
+      "verdict": "ok",
+      "seconds": 5.1,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Remiel takes the key. Hell will become a place where suffering heals."
+    },
+    {
+      "book": "sandman",
+      "id": "53d2cb25",
+      "text": "Odin takes the key, and Loki smiles far too widely.",
+      "used": [
+        "4.2 choice 4.2.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.5,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Odin takes the key, and Loki smiles far too widely."
+    },
+    {
+      "book": "sandman",
+      "id": "dbec57d9",
+      "text": "Azazel opens the jar. Nada is free.",
+      "used": [
+        "4.2 choice 4.2.C"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Azazel opens the jar. Nada is free."
+    },
+    {
+      "book": "sandman",
+      "id": "b2093d75",
+      "text": "Nada stands free for the first time in ten thousand years.",
+      "used": [
+        "4.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Nada stands free for the first time in ten thousand years."
+    },
+    {
+      "book": "sandman",
+      "id": "c1750dbf",
+      "text": "She chooses to be born again, far away, into a brand new life.",
+      "used": [
+        "4.3 choice 4.3.A"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "She chooses to be born again, far away, into a brand new life."
+    },
+    {
+      "book": "sandman",
+      "id": "9a53c16b",
+      "text": "Nada strikes her across the face, and walks into the light alone.",
+      "used": [
+        "4.3 choice 4.3.B"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Nada strikes her across the face, and walks into the light alone."
+    },
+    {
+      "book": "sandman",
+      "id": "729e816f",
+      "text": "Nada refuses every gift, and leaves without a word.",
+      "used": [
+        "4.3 choice 4.3.C"
+      ],
+      "verdict": "ok",
+      "seconds": 7.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Narration, deep and intimate, with deliberate pacing, building tension. Nada refuses every gift and leaves without a word."
+    },
+    {
+      "book": "sandman",
+      "id": "7bf5dbde",
+      "text": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 11.2,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "In 1927, an old writer trapped her and kept her in his house. When he died, a young novelist bought her. A pause. A young novelist bought her."
+    },
+    {
+      "book": "sandman",
+      "id": "f0b02bf1",
+      "text": "Lucienne has kept every one. Tonight she brings the oldest still unanswered.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucienne has kept every one. Tonight she brings the oldest still unanswered."
+    },
+    {
+      "book": "sandman",
+      "id": "6559b904",
+      "text": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius.",
+      "used": [
+        "5.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "His name is Richard Madoc. For three years he has used her and every book he writes is praised as genius."
+    },
+    {
+      "book": "sandman",
+      "id": "b5c151f5",
+      "text": "A tall house in London. At the top of the stairs, a door with the lock on the outside.",
+      "used": [
+        "5.0 choice 5.0.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A tall house in London. At the top of the stairs, a door with the lock on the outside."
+    },
+    {
+      "book": "sandman",
+      "id": "10d4ebac",
+      "text": "She knows who has come. She has known that voice for three thousand years.",
+      "used": [
+        "5.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "She knows who has come. She has known that voice for three thousand years."
+    },
+    {
+      "book": "sandman",
+      "id": "7e4d37d9",
+      "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up.",
+      "used": [
+        "5.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up."
+    },
+    {
+      "book": "sandman",
+      "id": "b1db1253",
+      "text": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to.",
+      "used": [
+        "5.1 choice 5.1.FREE"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.8,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Calliope stands for the first time in sixty years and does not thank her; she does not need to."
+    },
+    {
+      "book": "sandman",
+      "id": "99e242b7",
+      "text": "She says nothing. She has had a great deal of practice at waiting.",
+      "used": [
+        "5.1 choice 5.1.MADOC"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "She says nothing. She has had a great deal of practice at waiting."
+    },
+    {
+      "book": "sandman",
+      "id": "4c80f428",
+      "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for.",
+      "used": [
+        "5.1b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.7,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "He sees a pale woman in black, standing in a room he locked. He understands at once who she has come for."
+    },
+    {
+      "book": "sandman",
+      "id": "8391abe5",
+      "text": "Calliope wants only one thing: for him to say aloud what he did.",
+      "used": [
+        "5.1b choice 5.1b.CONFESS"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Calliope wants only one thing: for him to say aloud what he did."
+    },
+    {
+      "book": "sandman",
+      "id": "c16658f8",
+      "text": "Then he writes on the walls, with his own fingers, until they bleed.",
+      "used": [
+        "5.1b choice 5.1b.FLOOD"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Then he writes on the walls with his own fingers until they bleed."
+    },
+    {
+      "book": "sandman",
+      "id": "655ad7c2",
+      "text": "Ideas pour into Richard Madoc, faster than he can catch them. He writes until the paper runs out.",
+      "used": [
+        "5.1b choice 5.1b.FLOOD"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Ideas pour into Richard Madoc, faster than he can catch them. He writes until the paper runs out."
+    },
+    {
+      "book": "sandman",
+      "id": "9b83346b",
+      "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her."
+    },
+    {
+      "book": "sandman",
+      "id": "dd222b0e",
+      "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth."
+    },
+    {
+      "book": "sandman",
+      "id": "fd8a2129",
+      "text": "For seventy years he has been loose in the waking world, killing, and taking eyes.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "For seventy years, he has been loose in the waking world, killing and taking eyes."
+    },
+    {
+      "book": "sandman",
+      "id": "c610cd3c",
+      "text": "He has come here to speak at a convention, which the guests call a cereal convention. Every guest is a killer.",
+      "used": [
+        "5.2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He has come here to speak at a convention, which the guests call a cereal convention. Every guest is a killer."
+    },
+    {
+      "book": "sandman",
+      "id": "ac7d42e4",
+      "text": "The Corinthian smiles, puts his glasses back on, and walks out into the night.",
+      "used": [
+        "5.2a choice 5.2a.FREE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "The Corinthian smiles, puts his glasses back on, and walks out into the night."
+    },
+    {
+      "book": "sandman",
+      "id": "a3bb17bd",
+      "text": "Somewhere in the Dreaming, a door that should be shut swings quietly open.",
+      "used": [
+        "5.2a choice 5.2a.FREE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Somewhere, in the dreaming, a door that should be shut swings quietly open."
+    },
+    {
+      "book": "sandman",
+      "id": "a010bff8",
+      "text": "The Corinthian bows. His shape loosens into sand, and drifts away toward the Dreaming.",
+      "used": [
+        "5.2a choice 5.2a.REMAKE"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The Corinthian bows. His shape loosens into sand and drifts away toward the dreaming."
+    },
+    {
+      "book": "sandman",
+      "id": "42c9eb5a",
+      "text": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth.",
+      "used": [
+        "5.2a choice 5.2a.UNMAKE"
+      ],
+      "verdict": "ok",
+      "seconds": 7.8,
+      "hole": 0.4,
+      "tail": 0.3,
+      "missing": "",
+      "heard": "Only a small white skull is left on the carpet, where its eyes should be, two tiny rows of teeth."
+    },
+    {
+      "book": "sandman",
+      "id": "ef54f1dd",
+      "text": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Rose has found her brother. Tonight, she sleeps in an old boarding house in Florida."
+    },
+    {
+      "book": "sandman",
+      "id": "bd91d99d",
+      "text": "She dreams. And the walls between the dreams of everyone in the house come down.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She dreams, and the walls between the dreams of everyone in the house come down."
+    },
+    {
+      "book": "sandman",
+      "id": "2a322224",
+      "text": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the Dreaming.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the dreaming."
+    },
+    {
+      "book": "sandman",
+      "id": "7286b5a5",
+      "text": "Lucienne's library is coming apart, page by page. Rose Walker is a vortex.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.7,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Lucienne’s library is coming apart, page by page. Rose Walker is a vortex."
+    },
+    {
+      "book": "sandman",
+      "id": "bcc8c84f",
+      "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart.",
+      "used": [
+        "5.2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart."
+    },
+    {
+      "book": "sandman",
+      "id": "3d186c1f",
+      "text": "And a voice behind them says: there is.",
+      "used": [
+        "5.2b choice 5.2b.WAIT"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And a voice behind them says there is"
+    },
+    {
+      "book": "sandman",
+      "id": "c81eda2c",
+      "text": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling.",
+      "used": [
+        "5.2c beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.8,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling."
+    },
+    {
+      "book": "sandman",
+      "id": "7e3b25cf",
+      "text": "Unity takes Rose's hand. The light of the vortex flows out of the girl and into the old woman.",
+      "used": [
+        "5.2c choice 5.2c.LET"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "UNITY takes Rose’s hand. The light of the Vortex flows out of the girl and into the old woman."
+    },
+    {
+      "book": "sandman",
+      "id": "a5d2b166",
+      "text": "Unity smiles, and closes her eyes, and is gone. Death is waiting for her, kindly.",
+      "used": [
+        "5.2c choice 5.2c.LET"
+      ],
+      "verdict": "ok",
+      "seconds": 6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Unity smiles and closes her eyes and is gone. Death is waiting for her, kindly."
+    },
+    {
+      "book": "sandman",
+      "id": "d5160953",
+      "text": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room.",
+      "used": [
+        "5.2c choice 5.2c.LET"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room."
+    },
+    {
+      "book": "sandman",
+      "id": "51d7fd2c",
+      "text": "Rose will never forget that the lady from her dreams raised a hand to kill her.",
+      "used": [
+        "5.2c choice 5.2c.LET if ROSE_THREATENED"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Rose will never forget that the lady from her dreams raised a hand to kill her."
+    },
+    {
+      "book": "sandman",
+      "id": "3bac987e",
+      "text": "Desire is lounging on a velvet couch, and does not pretend to be surprised.",
+      "used": [
+        "5.2d beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Desire is lounging on a velvet couch and does not pretend to be surprised."
+    },
+    {
+      "book": "sandman",
+      "id": "1a6d722f",
+      "text": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before.",
+      "used": [
+        "5.2d choice 5.2d.THREATEN"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before."
+    },
+    {
+      "book": "sandman",
+      "id": "891d51b4",
+      "text": "A loud young man named Hob Gadling is telling his friends that dying is a mug's game. He doesn't intend to do it.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.9,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A loud young man named Hob Gadling is telling his friends that dying is a mug’s game. He doesn’t intend to do it."
+    },
+    {
+      "book": "sandman",
+      "id": "1e235f12",
+      "text": "Death laughs. She grants it, for her sister's sake, to see what happens.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Death laughs. She grants it, for her sister’s sake, to see what happens."
+    },
+    {
+      "book": "sandman",
+      "id": "9d9c4114",
+      "text": "Hob is waiting. He is rich now, and he still loves every day of it.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 1.2,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Hob is waiting. He is rich now, and he still loves every day of it."
+    },
+    {
+      "book": "sandman",
+      "id": "d4a2cfd4",
+      "text": "Hob is rich again, in a powdered wig. He has made his money from ships that carry slaves.",
+      "used": [
+        "5.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.6,
+      "tail": 0.4,
+      "missing": "",
+      "heard": "Hob is rich again, in a powdered wig; he has made his money from ships that carry slaves."
+    },
+    {
+      "book": "sandman",
+      "id": "cf3415b9",
+      "text": "Five hundred years. Hob is waiting, in a good Victorian coat, and he has had a few drinks.",
+      "used": [
+        "5.3b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Five hundred years. Hob is waiting, in a good Victorian coat, and he has had a few drinks."
+    },
+    {
+      "book": "sandman",
+      "id": "a921f1bf",
+      "text": "He has worked something out. He has decided to say it, whatever it costs him.",
+      "used": [
+        "5.3b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "He has worked something out. He has decided to say it, whatever it costs him."
+    },
+    {
+      "book": "sandman",
+      "id": "9bc3975e",
+      "text": "Behind her, Hob calls out: I'll be here in a hundred years. I'll wait for you.",
+      "used": [
+        "5.3b choice 5.3b.WALK"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Behind her, Hob calls out, \"I'll be here in a hundred years, I'll wait for you.\""
+    },
+    {
+      "book": "sandman",
+      "id": "cff9e487",
+      "text": "The tavern is a pub now. Hob sits at the corner table with two pints, one of them untouched.",
+      "used": [
+        "5.3c beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The tavern is a pub now. Hob sits at the corner table with two pints, one of them untouched."
+    },
+    {
+      "book": "sandman",
+      "id": "de4856b5",
+      "text": "He did not know where she had been. He only knew she had never once been late.",
+      "used": [
+        "5.3c beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.6,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "He did not know where she had been. He only knew she had never once been late."
+    },
+    {
+      "book": "sandman",
+      "id": "c9da95a1",
+      "text": "A hundred years ago she walked out on him. He has bought her a drink anyway.",
+      "used": [
+        "5.3c beat if HOB_WALKED"
+      ],
+      "verdict": "ok",
+      "seconds": 6.2,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "A hundred years ago she walked out on him. He has bought her a drink anyway."
+    },
+    {
+      "book": "sandman",
+      "id": "318e7a7e",
+      "text": "He doesn't need her to say it. But he would have liked to hear it.",
+      "used": [
+        "5.3c choice 5.3c.NOD"
+      ],
+      "verdict": "ok",
+      "seconds": 4.2,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He doesn't need her to say it, but he would have liked to hear it."
+    },
+    {
+      "book": "sandman",
+      "id": "598ca712",
+      "text": "The Dreaming is whole again. Lucienne has counted every dream that came home, and every one that did not.",
+      "used": [
+        "6.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The dreaming is whole again. Lucienne has counted every dream that came home, and every one that did not."
+    },
+    {
+      "book": "sandman",
+      "id": "7a7eff1d",
+      "text": "Then a raven lands on the reading table, scattering Lucienne's papers.",
+      "used": [
+        "6.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.7,
+      "hole": 0.3,
+      "tail": 0,
+      "missing": "",
+      "heard": "Then a raven lands on the reading table, scattering Lucienne’s papers."
+    },
+    {
+      "book": "sandman",
+      "id": "638ed40c",
+      "text": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on.",
+      "used": [
+        "6.0 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 9.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on."
+    },
+    {
+      "book": "sandman",
+      "id": "b5df94f7",
+      "text": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile.",
+      "used": [
+        "6.0 choice 6.0.ACCEPT"
+      ],
+      "verdict": "ok",
+      "seconds": 5.4,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Matthew hops onto her shoulder. Very carefully, Lucienne pretends not to smile."
+    },
+    {
+      "book": "sandman",
+      "id": "b31230b0",
+      "text": "The raven bows his head and flies out of the window. Lucienne quietly picks up her papers.",
+      "used": [
+        "6.0 choice 6.0.REFUSE"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The raven bows his head and flies out of the window. Lucienne quietly picks up her papers."
+    },
+    {
+      "book": "sandman",
+      "id": "0526fc45",
+      "text": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.8,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Two of the lost nightmares never came home — Brute and Glob. Lucienne has found where they went."
+    },
+    {
+      "book": "sandman",
+      "id": "c54dba1c",
+      "text": "Deep in the Dreaming, they built a little house, and inside it they kept a dead man's ghost and his living wife.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Deep in the dreaming, they built a little house, and inside it, they kept a dead man's ghost and his living wife."
+    },
+    {
+      "book": "sandman",
+      "id": "bde5c228",
+      "text": "Her husband Hector is a ghost who doesn't know he is dead.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.6,
+      "tail": 0,
+      "missing": "",
+      "heard": "Her husband Hector is a ghost who doesn't know he is dead."
+    },
+    {
+      "book": "sandman",
+      "id": "c6fc2e4d",
+      "text": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant.",
+      "used": [
+        "6.1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.5,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant."
+    },
+    {
+      "book": "sandman",
+      "id": "1b8267cb",
+      "text": "She is still afraid of the pale woman. But she remembers the word: choose.",
+      "used": [
+        "6.1 choice 6.1.CHOOSE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She is still afraid of the pale woman, but she remembers the word — “Choose.”"
+    },
+    {
+      "book": "sandman",
+      "id": "fa81e0c9",
+      "text": "She will remember those words every day of her son's life.",
+      "used": [
+        "6.1 choice 6.1.CLAIM"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "She will remember those words, every day of her son's life."
+    },
+    {
+      "book": "sandman",
+      "id": "a0d73ba3",
+      "text": "A month later her son is born. She names him Daniel. She grieves; she does not hate.",
+      "used": [
+        "6.1 choice 6.1.SILENT"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 1.1,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A month later, her son is born. She names him Daniel. She grieves. She does not hate."
+    },
+    {
+      "book": "sandman",
+      "id": "e0297078",
+      "text": "She wants to find their brother Destruction, who walked away three hundred years ago. She has asked everyone else. They all said no.",
+      "used": [
+        "6.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She wants to find their brother Destruction, who walked away three hundred years ago. She has asked everyone else. They all said no."
+    },
+    {
+      "book": "sandman",
+      "id": "b747be36",
+      "text": "Everyone who once knew where Destruction went has died, or is dying, as the two of them arrive.",
+      "used": [
+        "6.2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Everyone who once knew where Destruction went has died or is dying as the two of them arrive."
+    },
+    {
+      "book": "sandman",
+      "id": "a8b8dd4d",
+      "text": "Delirium goes very quiet. Even she knows what that costs.",
+      "used": [
+        "6.2 choice 6.2.GO"
+      ],
+      "verdict": "ok",
+      "seconds": 4.5,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Delirium goes very quiet. Even she knows what that costs."
+    },
+    {
+      "book": "sandman",
+      "id": "197d37b9",
+      "text": "He went into the underworld without her help, and failed. Then the wild women of the hills tore him to pieces.",
+      "used": [
+        "6.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "He went into the underworld without her help and failed. Then the wild women of the hills tore him to pieces."
+    },
+    {
+      "book": "sandman",
+      "id": "98efcd97",
+      "text": "Only his head survived, and it cannot die. For three thousand years, a family of priests has kept it here, singing.",
+      "used": [
+        "6.3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Only his head survived, and it cannot die. For three thousand years, a family of priests has kept it here, singing."
+    },
+    {
+      "book": "sandman",
+      "id": "48f7fad8",
+      "text": "He tells her: a small island, not far from here. Their brother has been painting.",
+      "used": [
+        "6.3 choice 6.3.PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.5,
+      "tail": 0,
+      "missing": "",
+      "heard": "He tells her, a small island, not far from here, their brother has been painting."
+    },
+    {
+      "book": "sandman",
+      "id": "637569ee",
+      "text": "Come back, Mother, he says. You promised.",
+      "used": [
+        "6.3 choice 6.3.PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 3.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Come back, mother, he says, you promised."
+    },
+    {
+      "book": "sandman",
+      "id": "3d386158",
+      "text": "Their brother is exactly where Orpheus said he would be.",
+      "used": [
+        "6.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Their brother is exactly where Orpheus said he would be."
+    },
+    {
+      "book": "sandman",
+      "id": "7a971ef3",
+      "text": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry.",
+      "used": [
+        "6.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 10,
+      "hole": 0.6,
+      "tail": 0,
+      "missing": "",
+      "heard": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry."
+    },
+    {
+      "book": "sandman",
+      "id": "771fcfb9",
+      "text": "Delirium runs into his arms. He lifts her off her feet like a child.",
+      "used": [
+        "6.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.5,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Delirium runs into his arms. He lifts her off her feet like a child."
+    },
+    {
+      "book": "sandman",
+      "id": "7d6d3dd5",
+      "text": "His dog Barnabas can talk. Barnabas has opinions about the poetry.",
+      "used": [
+        "6.4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.5,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "His dog Barnabas can talk. Barnabas has opinions about the poetry."
+    },
+    {
+      "book": "sandman",
+      "id": "87d3d77d",
+      "text": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next.",
+      "used": [
+        "6.4 choice 6.4.LISTEN",
+        "6.4 choice 6.4.REFUSE"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 0.6,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "In the morning, the cottage is empty—Destruction and Barnabas have gone on to wherever is next."
+    },
+    {
+      "book": "sandman",
+      "id": "b5989241",
+      "text": "Destruction only smiles, sadly, and pours more wine.",
+      "used": [
+        "6.4 choice 6.4.REFUSE"
+      ],
+      "verdict": "ok",
+      "seconds": 4.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Destruction only smiles sadly and pours more wine."
+    },
+    {
+      "book": "sandman",
+      "id": "d2c13f35",
+      "text": "Orpheus is waiting. The priests have gone outside. They know what is coming.",
+      "used": [
+        "6.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.3,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Orpheus is waiting. The priests have gone outside. They know what is coming."
+    },
+    {
+      "book": "sandman",
+      "id": "134ecdb8",
+      "text": "He told her the truth: Destruction was there. Now it is her turn.",
+      "used": [
+        "6.5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He told her the truth. Destruction was there. Now, it is her turn."
+    },
+    {
+      "book": "sandman",
+      "id": "90f5f14d",
+      "text": "The law has nothing to say about a broken promise. Her son has a great deal to say about it, forever.",
+      "used": [
+        "6.5 choice 6.5.REFUSE"
+      ],
+      "verdict": "ok",
+      "seconds": 8.1,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The law has nothing to say about a broken promise. Her son has a great deal to say about it, forever."
+    },
+    {
+      "book": "sandman",
+      "id": "0e14332b",
+      "text": "He smiles, and is gone. Somewhere, very far away, a woman named Eurydice turns, and sees him coming.",
+      "used": [
+        "6.5 choice 6.5.RELEASE"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "He smiles and is gone. Somewhere, very far away, a woman named Eurydice turns and sees him coming."
+    },
+    {
+      "book": "sandman",
+      "id": "02f83fab",
+      "text": "A raven lands on a stone beside her. Boss? Matthew asks. Are you all right?",
+      "used": [
+        "6.6 beat if MATTHEW_RAVEN"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "A raven lands on a stone beside her. \"Boss?\" Matthew asks, \"Are you all right?\""
+    },
+    {
+      "book": "sandman",
+      "id": "d46e4082",
+      "text": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing.",
+      "used": [
+        "6.6 beat unless MATTHEW_RAVEN"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing."
+    },
+    {
+      "book": "sandman",
+      "id": "5e30e399",
+      "text": "The pouch of sand is hers again. One of three.",
+      "used": [
+        "end-2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.7,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "The pouch of sand is hers again. One of three."
+    },
+    {
+      "book": "sandman",
+      "id": "77bf5ce3",
+      "text": "She feels the Dreaming stir, a little stronger.",
+      "used": [
+        "end-2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.5,
+      "hole": 0.9,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "She feels the dreaming stir, a little stronger."
+    },
+    {
+      "book": "sandman",
+      "id": "5b270f0e",
+      "text": "Next, the helm. A demon has it, in Hell.",
+      "used": [
+        "end-2a beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.7,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Next, the helm—a demon has it, in hell."
+    },
+    {
+      "book": "sandman",
+      "id": "7cee9d71",
+      "text": "The helm is hers again. Two of three.",
+      "used": [
+        "end-2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The helm is hers again, two of three."
+    },
+    {
+      "book": "sandman",
+      "id": "425cdb29",
+      "text": "Next, the ruby.",
+      "used": [
+        "end-2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Transcript: \"Next, the ruby.\""
+    },
+    {
+      "book": "sandman",
+      "id": "2f66390b",
+      "text": "Only the ruby remains, in the hands of a madman.",
+      "used": [
+        "end-2b beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Only the ruby remains, in the hands of a madman."
+    },
+    {
+      "book": "sandman",
+      "id": "01c81285",
+      "text": "You are home. But you are not whole.",
+      "used": [
+        "end-ep1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "You are home, but you are not whole."
+    },
+    {
+      "book": "sandman",
+      "id": "897bbfc5",
+      "text": "Your helm, your sand and your ruby are out there, scattered across the waking world.",
+      "used": [
+        "end-ep1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 6.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Your helm, your sand, and your ruby are out there, scattered across the waking world."
+    },
+    {
+      "book": "sandman",
+      "id": "0f76c4d2",
+      "text": "End of Part One.",
+      "used": [
+        "end-ep1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "End of part one."
+    },
+    {
+      "book": "sandman",
+      "id": "00e011aa",
+      "text": "Lucienne knows where to begin: with three women who know where every lost thing goes.",
+      "used": [
+        "end-ep1 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Lucienne knows where to begin, with three women who know where every lost thing goes."
+    },
+    {
+      "book": "sandman",
+      "id": "773ea0ad",
+      "text": "Helm, sand and ruby. The Queen of Dreams is whole again.",
+      "used": [
+        "end-ep2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.6,
+      "hole": 0.7,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Helm, sand, and ruby. The queen of dreams is whole again."
+    },
+    {
+      "book": "sandman",
+      "id": "97a92e4f",
+      "text": "But the Dreaming remembers everything she did to get them.",
+      "used": [
+        "end-ep2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.3,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "But the dreaming remembers everything she did to get them."
+    },
+    {
+      "book": "sandman",
+      "id": "c06286a0",
+      "text": "End of Part Two.",
+      "used": [
+        "end-ep2 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.1,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "End of part two."
+    },
+    {
+      "book": "sandman",
+      "id": "5dc22d8d",
+      "text": "Somewhere, an old man is still waking up, again and again.",
+      "used": [
+        "end-ep2 beat if ALEX_CURSED"
+      ],
+      "verdict": "ok",
+      "seconds": 4.6,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Somewhere, an old man is still waking up, again and again."
+    },
+    {
+      "book": "sandman",
+      "id": "272165de",
+      "text": "And in Hell, a queen in the ice is waiting for a promise to be kept.",
+      "used": [
+        "end-ep2 beat if NADA_PROMISE"
+      ],
+      "verdict": "ok",
+      "seconds": 6.3,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And in hell, a queen in the ice is waiting for a promise to be kept."
+    },
+    {
+      "book": "sandman",
+      "id": "9316049a",
+      "text": "The family scatters, each to their own realm.",
+      "used": [
+        "end-ep3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 3.3,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The family scatters, each to their own realm."
+    },
+    {
+      "book": "sandman",
+      "id": "202c3ca4",
+      "text": "Destiny closes his book. He already knows how this ends.",
+      "used": [
+        "end-ep3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.1,
+      "hole": 0.5,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Destiny closes his book. He already knows how this ends."
+    },
+    {
+      "book": "sandman",
+      "id": "67507c66",
+      "text": "End of Part Three.",
+      "used": [
+        "end-ep3 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 2.1,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "End of part three"
+    },
+    {
+      "book": "sandman",
+      "id": "9b7e2c0b",
+      "text": "Hell has new masters.",
+      "used": [
+        "end-ep4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 2,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Hell has new masters."
+    },
+    {
+      "book": "sandman",
+      "id": "ec634ef2",
+      "text": "End of Part Four.",
+      "used": [
+        "end-ep4 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.1,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "End of part four."
+    },
+    {
+      "book": "sandman",
+      "id": "9bcf3cd9",
+      "text": "Heaven's angels hold the keys. The damned may heal there now.",
+      "used": [
+        "end-ep4 beat if HELL_KEY_ANGELS"
+      ],
+      "verdict": "ok",
+      "seconds": 4.4,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Heaven's angels hold the keys; the damned may heal there now."
+    },
+    {
+      "book": "sandman",
+      "id": "d21e139c",
+      "text": "Azazel's Hell is crueler than it ever was.",
+      "used": [
+        "end-ep4 beat if HELL_KEY_DEMONS"
+      ],
+      "verdict": "ok",
+      "seconds": 3.6,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Azazel's Hell is crueler than it ever was."
+    },
+    {
+      "book": "sandman",
+      "id": "c8a5e16f",
+      "text": "Odin's Hell waits for the end of the world. Loki is still smiling.",
+      "used": [
+        "end-ep4 beat if HELL_KEY_NORSE"
+      ],
+      "verdict": "ok",
+      "seconds": 5.4,
+      "hole": 0.9,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "Odin's hell waits for the end of the world. Loki is still smiling."
+    },
+    {
+      "book": "sandman",
+      "id": "eded19c9",
+      "text": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
+      "used": [
+        "end-ep4 beat if LUCIFER_FREED"
+      ],
+      "verdict": "ok",
+      "seconds": 7.8,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Somewhere in the waking world a man with no wings plays piano in a bar and thinks of her kindly."
+    },
+    {
+      "book": "sandman",
+      "id": "6d31b1a6",
+      "text": "Nada is gone, born again into a life of her own.",
+      "used": [
+        "end-ep4 beat if NADA_FORGIVEN"
+      ],
+      "verdict": "ok",
+      "seconds": 9.2,
+      "hole": 0.4,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Nada is gone. Born again into a life of her own."
+    },
+    {
+      "book": "sandman",
+      "id": "2b39520d",
+      "text": "Nada is gone, and she did not forgive.",
+      "used": [
+        "end-ep4 beat unless NADA_FORGIVEN"
+      ],
+      "verdict": "ok",
+      "seconds": 3.9,
+      "hole": 0.7,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Nada is gone and she did not forgive."
+    },
+    {
+      "book": "sandman",
+      "id": "9f9ec47e",
+      "text": "The Muse is free.",
+      "used": [
+        "end-ep5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.3,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "The muse is free."
+    },
+    {
+      "book": "sandman",
+      "id": "86d03e14",
+      "text": "Rose Walker is alive. Unity Kincaid sleeps at last, for good.",
+      "used": [
+        "end-ep5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 5.7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Transcript: \"Rose Walker is alive. Unity Kincaid sleeps at last, for good.\""
+    },
+    {
+      "book": "sandman",
+      "id": "c5a66326",
+      "text": "End of Part Five.",
+      "used": [
+        "end-ep5 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.2,
+      "tail": 0,
+      "missing": "",
+      "heard": "End of part five."
+    },
+    {
+      "book": "sandman",
+      "id": "2bfca295",
+      "text": "And the Corinthian is still out there, smiling.",
+      "used": [
+        "end-ep5 beat if CORINTHIAN_FREE"
+      ],
+      "verdict": "ok",
+      "seconds": 3.9,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And the Corinthian is still out there, smiling."
+    },
+    {
+      "book": "sandman",
+      "id": "be58dd77",
+      "text": "Desire has made a dangerous enemy.",
+      "used": [
+        "end-ep5 beat if DESIRE_THREATENED"
+      ],
+      "verdict": "ok",
+      "seconds": 2.6,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "Desire has made a dangerous enemy."
+    },
+    {
+      "book": "sandman",
+      "id": "0416a1b8",
+      "text": "And in a London pub, a man who will not die has a friend.",
+      "used": [
+        "end-ep5 beat if HOB_FRIEND"
+      ],
+      "verdict": "ok",
+      "seconds": 5.4,
+      "hole": 0.6,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "And in a London pub, a man who will not die has a friend."
+    },
+    {
+      "book": "sandman",
+      "id": "4a4f9d7c",
+      "text": "Richard Madoc never writes again.",
+      "used": [
+        "end-ep5 beat if MADOC_FLOOD",
+        "end-ep5 beat if MADOC_EMPTY"
+      ],
+      "verdict": "ok",
+      "seconds": 2.2,
+      "hole": 0,
+      "tail": 0.5,
+      "missing": "",
+      "heard": "Richard Madoc never writes again."
+    },
+    {
+      "book": "sandman",
+      "id": "5ed5c2ac",
+      "text": "And in a London pub, a man who will not die is still waiting to hear the word.",
+      "used": [
+        "end-ep5 beat unless HOB_FRIEND"
+      ],
+      "verdict": "ok",
+      "seconds": 7,
+      "hole": 0.5,
+      "tail": 0.2,
+      "missing": "",
+      "heard": "And in a London pub, a man who will not die is still waiting to hear the word."
+    },
+    {
+      "book": "sandman",
+      "id": "9a1045c0",
+      "text": "Somewhere, a very large man and a talking dog are starting again.",
+      "used": [
+        "end-ep6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "Somewhere, a very large man and a talking dog are starting again."
+    },
+    {
+      "book": "sandman",
+      "id": "aa99106e",
+      "text": "End of Part Six.",
+      "used": [
+        "end-ep6 beat"
+      ],
+      "verdict": "ok",
+      "seconds": 1.8,
+      "hole": 0.4,
+      "tail": 0,
+      "missing": "",
+      "heard": "end of part six"
+    },
+    {
+      "book": "sandman",
+      "id": "12e97bfb",
+      "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep. She remembers a word: choose.",
+      "used": [
+        "end-ep6 beat if LYTA_WARNED"
+      ],
+      "verdict": "ok",
+      "seconds": 6.7,
+      "hole": 0.7,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "In the waking world, Lyta Hall rocks her son Daniel to sleep. She remembers a word, “choose.”"
+    },
+    {
+      "book": "sandman",
+      "id": "dad18c16",
+      "text": "On a Greek island, a head that cannot die is still singing.",
+      "used": [
+        "end-ep6 beat if ORPHEUS_REFUSED"
+      ],
+      "verdict": "ok",
+      "seconds": 4.8,
+      "hole": 0.4,
+      "tail": 0.1,
+      "missing": "",
+      "heard": "On a Greek island, a head that cannot die is still singing."
+    }
+  ]
+}

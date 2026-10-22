@@ -22,6 +22,9 @@ TRACKS = {
     "cellar-wait": "quiet suspenseful underscore, hushed strings and a faint music box, sorrow and patience, dusty and still, cinematic, very slow, no drums",
     "escape": "rising mysterious orchestral score, building tension to release, low brass swells, shimmering strings, a sense of awakening power, cinematic, 70 bpm, light percussion",
     "library": "warm mysterious wonder, soft harp and celesta, gentle strings, a vast library at night, magical and curious like a fantasy film main theme, cinematic, slow, no drums",
+    "wings": "tender bittersweet film score, solo piano with soft warm strings, gentle and kind, a quiet goodbye, consolation and grace, slow, major key with a touch of sadness, cinematic, no drums",
+    "tavern": "warm English folk tune, acoustic guitar and lute with a gentle fiddle melody, cosy old tavern by the fire, friendly and nostalgic, slow waltz, no drums",
+    "ruby": "unsettling psychological thriller underscore, detuned music box, ticking clock, eerie high violins, a creeping madness in a late-night diner, slow, no drums",
 }
 
 def parse():

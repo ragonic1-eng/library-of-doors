@@ -3,8 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
 import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, saveProfile } from "@/lib/state/profile";
-import { lineId } from "@/lib/story/lines";
+import { lineFile } from "@/lib/story/lines";
+import { watchPlayback, speechChunks } from "@/lib/story/audio";
+import { levelVoice } from "@/lib/story/level";
 import Ambience from "@/components/Ambience";
+import RotatePrompt from "@/components/RotatePrompt";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
 type Phase = "film" | "talk" | "choose" | "end";
@@ -239,6 +242,7 @@ export default function Player({ book }: { book: Book }) {
   const resumeWaiters = useRef<(() => void)[]>([]);
   const waitUnpaused = () => new Promise<void>((r) => (pausedRef.current ? resumeWaiters.current.push(r) : r()));
   const playing = useRef(new Set<HTMLAudioElement>()); // every voice currently audible
+  const mixer = useRef<AudioContext | null>(null); // evens out voice levels; unlocked by the first tap
   const pausedMedia = useRef<HTMLMediaElement[]>([]);
 
   // ---------- audio: music bed, narrator lines, character voices ----------
@@ -253,7 +257,7 @@ export default function Player({ book }: { book: Book }) {
     if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900);
   };
   const assetUrl = (kind: "music" | "lines", id: string) => `${CLIP_BASE}/${book.id}/audio/${kind}/${id}.mp3`;
-  const lineUrl = (text: string) => assetUrl("lines", lineId(text));
+  const lineUrl = (text: string) => `${CLIP_BASE}/${book.id}/audio/lines/${lineFile(text)}`;
   const clipUrl = (clip: string) => `${CLIP_BASE}/${book.id}/${clip}.mp4`;
   const stillUrl = (still: string) => `${CLIP_BASE}/${book.id}/stills/${still}.jpg`;
 
@@ -286,11 +290,18 @@ export default function Player({ book }: { book: Book }) {
     const url = lineUrl(text);
     const a = lineCache.current.get(url) ?? new Audio(url);
     lineCache.current.delete(url);
-    let finished = false, shown = false;
+    let finished = false, shown = false, silentMode = false;
+    let readTimer: ReturnType<typeof setInterval> | undefined;
+    let showTimer: ReturnType<typeof setTimeout> | undefined;
+    let unwatch = () => {};
     const show = () => { if (!shown && !finished) { shown = true; onStart(); } };
     const finish = () => {
       if (finished) return;
       finished = true;
+      unwatch();
+      clearInterval(readTimer);
+      clearTimeout(showTimer);
+      a.onplaying = a.onended = a.onerror = null;
       stoppers.current.delete(stop);
       playing.current.delete(a);
       a.pause();
@@ -300,24 +311,34 @@ export default function Player({ book }: { book: Book }) {
     const stop = () => finish();
     stoppers.current.add(stop);
     duck();
-    a.onplaying = show;
+    a.onplaying = () => { if (silentMode) a.pause(); else show(); };
     a.onended = finish;
     // No audio for this line: show it and give time to read it.
-    const silent = () => { show(); setTimeout(finish, readingMs(text)); };
+    const silent = () => {
+      if (finished || silentMode) return;
+      silentMode = true;
+      unwatch();
+      a.pause();
+      show();
+      let remaining = readingMs(text);
+      readTimer = setInterval(() => {
+        if (!pausedRef.current) remaining -= 250;
+        if (remaining <= 0) finish();
+      }, 250);
+    };
     a.onerror = silent;
     a.currentTime = 0;
     playing.current.add(a);
+    unwatch = watchPlayback(a, () => pausedRef.current, silent);
     a.play().catch(silent);
-    setTimeout(show, 2500); // a slow network must not hide the words for long
-    // Never hang the story on one line (but a paused game is not a hung one).
-    const guard = () => (pausedRef.current ? setTimeout(guard, 2000) : finish());
-    setTimeout(guard, readingMs(text) * 2 + 4000);
+    showTimer = setTimeout(show, 2500); // a slow network must not hide the words for long
+    // Healthy playback finishes only on ended; slow delivery and pauses have no deadline.
   });
 
   /** Fetch a character's voice for one line (or one speaker's part of a line). */
   const fetchVoice = useCallback(async (text: string, character: string, speaker?: string): Promise<Blob | null> => {
     try {
-      const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }) });
+      const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }), signal: AbortSignal.timeout(95_000) });
       return res.ok ? await res.blob() : null;
     } catch {
       return null;
@@ -329,46 +350,83 @@ export default function Player({ book }: { book: Book }) {
     let startRes!: () => void, endRes!: () => void;
     const started = new Promise<void>((r) => (startRes = r));
     const ended = new Promise<void>((r) => (endRes = r));
-    let stopped = false;
+    let stopped = false, ducked = false;
     let a: HTMLAudioElement | null = null;
+    let objectUrl: string | null = null;
+    let utterance: SpeechSynthesisUtterance | null = null;
+    let unwatch = () => {};
     const stop = () => {
+      if (stopped) return;
       stopped = true;
+      unwatch();
       setTalking(false);
-      if (a) { a.pause(); playing.current.delete(a); }
+      if (a) {
+        a.onplaying = a.onended = a.onerror = null;
+        a.pause();
+        playing.current.delete(a);
+      }
+      if (utterance) {
+        utterance.onstart = utterance.onend = utterance.onerror = utterance.onboundary = null;
+        window.speechSynthesis.cancel();
+        utterance = null;
+      }
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      if (ducked) unduck();
       stoppers.current.delete(stop);
       startRes();
       endRes();
     };
+    const begin = () => {
+      if (stopped) return;
+      if (!ducked) { ducked = true; duck(); }
+      setTalking(true);
+      startRes();
+    };
     stoppers.current.add(stop);
     void (async () => {
-      const b = await blob;
+      const b = await blob.catch(() => null);
+      await waitUnpaused();
       if (stopped) return;
       if (b) {
-        a = new Audio(URL.createObjectURL(b));
+        objectUrl = URL.createObjectURL(b);
+        a = new Audio(objectUrl);
         const el = a;
-        duck();
-        el.onplaying = () => { setTalking(true); startRes(); };
-        const done = () => { setTalking(false); unduck(); playing.current.delete(el); stoppers.current.delete(stop); endRes(); };
-        el.onended = done;
-        el.onerror = () => { startRes(); done(); };
-        await waitUnpaused();
+        await levelVoice(mixer.current, el, b);
         if (stopped) return;
+        el.onplaying = begin;
+        el.onended = stop;
+        el.onerror = stop;
         playing.current.add(el);
-        el.play().catch(() => { startRes(); done(); });
+        const unwatchStall = watchPlayback(el, () => pausedRef.current, stop);
+        // Backstop for a take the server's check missed: no real reading of these words lasts this long.
+        // Measured in playback time, so a paused game never trips it.
+        const longest = text.split(/\s+/).length / 1.1 + 8;
+        const overrun = setInterval(() => { if (el.currentTime > longest) stop(); }, 500);
+        unwatch = () => { unwatchStall(); clearInterval(overrun); };
+        el.play().catch(stop);
         return;
       }
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        const u = new SpeechSynthesisUtterance(text);
-        u.rate = 0.92;
-        u.onstart = () => { setTalking(true); startRes(); };
-        u.onend = () => { setTalking(false); endRes(); };
-        u.onerror = () => { startRes(); endRes(); };
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(u);
-      } else {
-        startRes();
-        endRes();
-      }
+        const chunks = speechChunks(text);
+        let index = 0;
+        const progress = { currentTime: 0 };
+        unwatch = watchPlayback(progress, () => pausedRef.current, stop);
+        const next = async () => {
+          await waitUnpaused();
+          if (stopped) return;
+          if (index >= chunks.length) { stop(); return; }
+          // Keep a strong reference until end: mobile browsers may otherwise drop it.
+          utterance = new SpeechSynthesisUtterance(chunks[index++]);
+          utterance.lang = "en-GB";
+          utterance.rate = 0.92;
+          utterance.onstart = () => { progress.currentTime++; begin(); };
+          utterance.onboundary = () => { progress.currentTime++; };
+          utterance.onend = () => { progress.currentTime++; void next(); };
+          utterance.onerror = stop;
+          window.speechSynthesis.speak(utterance);
+        };
+        void next();
+      } else stop();
     })();
     return { started, ended };
   }, []);
@@ -711,7 +769,8 @@ export default function Player({ book }: { book: Book }) {
     // Her words decided the scene: let the character finish speaking, then the story moves on.
     const c = reply.decision ? sc.choices?.find((x) => x.id === reply.decision) : undefined;
     if (c) {
-      await Promise.race([v.ended, sleep(25000)]);
+      await v.ended;
+      await waitUnpaused();
       await sleep(700);
       if (token === runRef.current) void choose(c);
     }
@@ -889,6 +948,27 @@ export default function Player({ book }: { book: Book }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wantedTrack, started]);
 
+  // Keep the screen awake while the story plays: long clips and narration go by with no touches,
+  // and a phone that dims mid-scene breaks the spell. The phone drops the lock whenever the page is
+  // hidden, so it is asked for again each time the game comes back into view.
+  useEffect(() => {
+    if (!started || !("wakeLock" in navigator)) return;
+    let lock: WakeLockSentinel | null = null;
+    let gone = false;
+    const hold = async () => {
+      if (document.visibilityState === "visible") void mixer.current?.resume().catch(() => {});
+      if (gone || document.visibilityState !== "visible" || (lock && !lock.released)) return;
+      try { lock = await navigator.wakeLock.request("screen"); } catch { /* low battery or not allowed: the phone may dim as usual */ }
+    };
+    void hold();
+    document.addEventListener("visibilitychange", hold);
+    return () => {
+      gone = true;
+      document.removeEventListener("visibilitychange", hold);
+      void lock?.release().catch(() => {});
+    };
+  }, [started]);
+
   // Stop the bed when leaving the page.
   useEffect(() => () => { musicRef.current.a?.pause(); }, []);
 
@@ -956,6 +1036,11 @@ export default function Player({ book }: { book: Book }) {
     const resuming = sceneId !== book.start;
     const begin = (from?: string) => {
       void enterImmersive();
+      // The tap that starts the story is what lets a phone open the audio mixer.
+      try {
+        mixer.current ??= new AudioContext();
+        void mixer.current.resume();
+      } catch { /* no Web Audio: voices play at their recorded level */ }
       // Wake the dialogue and voice functions now, so the first real reply is not a cold start.
       void fetch("/api/dialogue?warm=1").catch(() => undefined);
       void fetch("/api/tts").catch(() => undefined);
@@ -997,13 +1082,7 @@ export default function Player({ book }: { book: Book }) {
   const code = profile.syncCode ? `${profile.syncCode.slice(0, 5)}-${profile.syncCode.slice(5)}` : null;
   return (
     <main className={`stage ${vp.touch ? "touch" : ""}`} style={{ ["--ts" as string]: textScale }}>
-      {vp.phonePortrait && (
-        <div className="rotate">
-          <div className="rotate-icon" aria-hidden="true">⟳</div>
-          <div>Turn your phone sideways</div>
-          <div className="rotate-sub">The story is filmed widescreen.</div>
-        </div>
-      )}
+      {vp.phonePortrait && <RotatePrompt />}
 
       <div className={`sway ${top?.still ? "handheld" : ""}`}>
         {layers.map((l) => {
@@ -1307,3 +1386,4 @@ export default function Player({ book }: { book: Book }) {
     </main>
   );
 }
+

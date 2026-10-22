@@ -263,13 +263,28 @@ button.ghost { border-color: transparent; color: var(--dim); }
 
 /* Rotate prompt: only for a phone held upright */
 .rotate {
-  position: absolute; inset: 0; z-index: 20;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
-  background: rgba(5, 5, 7, 0.96); text-align: center; padding: 2rem;
+  position: fixed; inset: 0; z-index: 40;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.7rem;
+  background: radial-gradient(ellipse at 50% 40%, #17120c 0%, #050507 70%); text-align: center; padding: 2rem;
 }
-.rotate-icon { font-size: 3rem; color: var(--accent); animation: spin 3s linear infinite; }
-.rotate-sub { color: var(--dim); font-size: 0.85rem; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.rotate-title { font-size: 1.35rem; letter-spacing: 0.06em; color: var(--ink); margin-top: 1.4rem; }
+.rotate-sub { color: var(--dim); font-size: 0.95rem; max-width: 18rem; line-height: 1.5; }
+.rotate-hint { color: var(--dim); font-size: 0.78rem; max-width: 17rem; line-height: 1.5; opacity: 0.75; margin-top: 1.2rem; }
+/* A phone outline that tips onto its side, waits, and stands up again */
+.rotate-phone {
+  width: 3.4rem; height: 6rem; border: 2px solid var(--accent); border-radius: 0.7rem; position: relative;
+  box-shadow: 0 0 24px rgba(201, 162, 74, 0.25); animation: tip-sideways 3.2s ease-in-out infinite;
+}
+.rotate-phone span { position: absolute; left: 50%; bottom: 0.35rem; width: 0.9rem; height: 2px; margin-left: -0.45rem; border-radius: 1px; background: var(--accent); opacity: 0.7; }
+@keyframes tip-sideways {
+  0%, 18% { transform: rotate(0deg); }
+  45%, 80% { transform: rotate(-90deg); }
+  100% { transform: rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) { .rotate-phone { animation: none; transform: rotate(-90deg); } }
+/* The title page has no script to measure the screen, so the same rule (narrower than 4:5) is CSS */
+.rotate.by-css { display: none; }
+@media (max-aspect-ratio: 4/5) { .rotate.by-css { display: flex; } }
 
 /* Cross-fade: the old clip's last frame sits under the new one until it is playing */
 .film.prev { position: absolute; inset: 0; z-index: 0; }
