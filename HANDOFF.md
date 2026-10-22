@@ -21,11 +21,13 @@ A private gift: an interactive video novel for the author's wife, Charmaine, who
 
 ## The app (`app/`)
 
-- `src/content/books/sandman/book.json` — the scene graph. Each scene: clips, narration, optional `narrationIf`, `hook`, `episodeTitle`, a `conversation`, and `choices`.
+- `src/content/books/sandman/book.json` — the scene graph. Each scene: `beats` (the film), `episodeTitle`, `music`, a `conversation`, and `choices` (each with its own `aftermath` beats).
+- **Beats** are the film, one moment each: `{ text, clip | still, card, style: "hook", if: [flags], unless: [flags] }`. A beat's `text` is ONE short narrated sentence, shown as a subtitle only while it is spoken. `clip` plays a video and holds its last frame; `still` shows an image from `stills/` with a slow push-in; `card` is a silent time/place card ("1988"). `if`/`unless` make a line appear only after earlier deeds, which is how choices visibly change later scenes. Keep every scene connected: if time passes or something important happens off screen, add a card and a line that says so.
 - `src/content/characters/sandman.json` — character cards (voice, wants, knows, secrets, red lines, TTS voice and direction).
 - `src/app/api/dialogue/route.ts` — live dialogue. The model plays the character and returns JSON: `dialogue`, `narration`, `inner_thought`, `mood`, `decision`, `consequences`, `trust_delta`, `fear_delta`, `memory_note`. The server validates every id against what is allowed right now.
 - `src/app/api/tts/route.ts` — voice, via `gpt-audio-1.5` directed as a voice actor.
-- `src/components/Player.tsx` — the player: clips, hand-held sway, reaction loops per mood, conversation UI, consequences, ripples.
+- `src/components/Player.tsx` — the player: a beat timeline (picture, subtitle and voice together; a tap skips; scene changes silence every voice), hand-held sway, reaction loops per mood, conversation UI, consequences, ripples, end-of-episode recap.
+- `src/lib/story/lines.ts` — `lineId(text)`: the narrator file for a line is `audio/lines/<lineId>.mp3`. `tools/gen_narration.py` uses the same hash, so editing a line's words automatically needs a new recording and stale audio can never play.
 - `src/lib/state/profile.ts` — save state: traits (mercy, loyalty, courage, faith), flags, relations (trust and fear per character), echoes, memory.
 
 ### How consequences work (the gameplay core)
@@ -34,9 +36,9 @@ Every conversation has:
 - `canon`: facts the character may never contradict.
 - `possibilities`: the likely approaches and how the scene bends to each, so improvisation stays on-story.
 - `consequences`: a menu of tagged outcomes. The model fires a tag only when the player's latest words or actions earn it. Each fires once, applies effects, changes the speaker's trust and fear, can show a `ripple` line on screen, and can leave an `echo`: a story fact that later characters (listed in `knownBy`) remember and mention.
-- `exits`: where the scene may end. Choices can carry `requires` (hidden until earned) and `effectsIf` (extra cost or reward from earlier deeds).
+- `exits`: where the scene may end. The model sets `decision` as soon as her own typed words match an exit, so typing alone moves the story; the suggested lines (the Ideas button) are said to the character with that exit as `intent`. Choices can carry `requires` (hidden until earned) and `effectsIf` (extra cost or reward from earlier deeds).
 
-To add depth to a scene, add to its `possibilities` and `consequences`, and add `narrationIf` lines or `knownBy` echoes that pay them off later. Keep consequences tied to the actual books.
+To add depth to a scene, add to its `possibilities` and `consequences`, and add beats with `if` flags or `knownBy` echoes that pay them off later. Keep consequences tied to the actual books.
 
 ## Production tools (run from `app/`)
 
@@ -72,7 +74,7 @@ npm run clips -- spend                        # real spend against the cap
 ## Sound
 
 - **Music beds**: `tools/venv/Scripts/python tools/gen_music.py [track ...]` renders loop-ready 30 s MP3s with Meta MusicGen (small model, CPU, free, no account) into `app/public/clips/sandman/audio/music/<track>.mp3`. Track ids and prompts live in that script; scenes name their track with `music` in `book.json` (a scene without one keeps the previous track; `"none"` stops it). The player cross-fades between tracks and ducks the bed under any voice. Free alternative the owner mentioned: make tracks in Suno and drop them in the same folder under the same names.
-- **Narration and hooks**: `python -I tools/gen_narration.py --engine gateway --voice ash` renders every scene narration and hook line through the gateway's `gpt-audio-1.5` under a fixed audiobook-narrator direction into `audio/narration/<scene>.mp3` and `audio/hooks/<scene>.mp3`. `--engine kokoro --voice bm_george` renders with the free local Kokoro model instead (same output paths). The player plays narration at scene start and holds the hook card until its audio ends.
+- **Narration**: after editing any beat text, run `python -I tools/gen_narration.py --engine gateway --voice ash` (renders only lines without a recording into `assets/audio/lines-raw/`), then `tools/venv/Scripts/python tools/pace_lines.py` (trims dead air and lifts slow lines to about 2.5 words a second, writing `app/public/clips/sandman/audio/lines/`). `--engine kokoro` or `--engine chatterbox` (in `tools/venv-tts`) are free local alternatives.
 - After rendering anything: `npm run upload` in `app/` (the uploader includes audio).
 - The local Python environment for these tools is `tools/venv` (not committed): torch CPU, transformers, kokoro, soundfile, imageio-ffmpeg. Windows note: both scripts force UTF-8 console output.
 
@@ -101,8 +103,10 @@ The repo holds code and story only. Clips, voices and music are NOT in git, but 
 What ChatGPT cannot do from its sandbox: generate images, clips, voices or music (needs the owner's PC: tools/venv, models, photos, key) and deploy (needs the owner's Vercel login). Good jobs for it: story/branching in book.json, character cards, dialogue prompt in api/dialogue, UI in Player.tsx/globals.css. Push a branch; the owner deploys.
 
 ## Status 2026-10-22 (latest)
-- Production (library-of-doors.vercel.app) verified: dialogue renders cleanly (no raw JSON, no overlapping text), music bed `cellar-dread` plays.
-- Music: `tools/gen_music.py` (MusicGen small, local, free) rendered all six beds and they are uploaded to Blob. Suno alternative: drop mp3s under the same ids.
-- Narrator: new "cinematic" DIRECTION in `tools/gen_narration.py` (faster, fewer dead pauses). Samples in `assets/audio/samples/narrator-1.1-OLD-ash.mp3` vs `narrator-1.1-NEW-ash-cinematic.mp3`. NEW is now LIVE for all 15 lines (old files backed up in `assets/audio/backup-old-ash/`). To re-render: `python -I tools/gen_narration.py --engine gateway --voice ash --force` then upload.
-- Chatterbox (MIT, emotion dial) engine added to gen_narration.py; installed in `tools/venv-tts` (gitignored; recreate with `pip install chatterbox-tts imageio-ffmpeg "setuptools<81"`; the old setuptools is required on Windows or the watermark module fails to import). Try: `tools/venv-tts/Scripts/python tools/gen_narration.py --engine chatterbox --voice assets/audio/samples/narrator-gptaudio-ash.mp3 --exaggeration 0.7 --cfg 0.3 1.1` with `NARRATION_OUT=assets/audio/samples/cb` to sample first (CPU, ~1.5 min/line). Sample for 1.1 is word-perfect: `assets/audio/samples/narrator-1.1-CHATTERBOX-free-local.mp3`. Owner to choose gateway NEW vs Chatterbox. Note: Blob files are cached 1 year in browsers; a phone that already played the old audio may need site data cleared.
+- Episode 1 rebuilt (owner feedback: scenes jumped too far, typing changed nothing, narration lagged and read words not on screen). Now: 66 short narrated beats grounded in canon (the summoning, Randall, the stolen tools, sleeping sickness and Unity, Ethel Cripps 1926, Burgess dies 1947, Alex inherits, the 1988 escape through a sleeper's dream, home to Lucienne), time cards and stills bridging every jump, an aftermath for every choice, `if` lines that pay off earlier deeds, and an end recap of what the world remembers with Play again.
+- Verified on production: subtitle and voice start together (within 0.2 s) and end together; no voice outlives its scene; tap to skip; typed lines end scenes (AI test: 7 of 7 lines reached the right outcome, off-topic lines kept the scene going); character text appears when the voice starts; replies about 30 words.
+- Narration pacing: total 507 s -> 357 s after `pace_lines.py`; transcription checks show no clipped words.
+- Music: six MusicGen beds live. Suno alternative: drop mp3s under the same ids.
+- Narrator voice: gateway "ash" with the cinematic direction is live. Chatterbox (free, local, `tools/venv-tts`, needs `setuptools<81` on Windows) is available as an engine; owner may still pick it.
+- Housekeeping: a stray Vercel project named `app` was created by deploying from `app/` by mistake (no env vars, not linked any more). Always deploy from the repo root. The owner can delete `app` in the Vercel dashboard.
 - Still parked: Aurie shots 1.1b and 1.2b-A face drift.
