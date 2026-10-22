@@ -126,7 +126,7 @@ export async function POST(req: Request) {
       if (voice || body.mode !== "talk") return;
       const m = soFar.match(/"dialogue"\s*:\s*"((?:[^"\\]|\\.)*)"/);
       if (!m) return;
-      try { earlyLine = JSON.parse(`"${m[1]}"`) as string; } catch { return; }
+      try { earlyLine = spokenOnly(JSON.parse(`"${m[1]}"`) as string); } catch { return; }
       const line = earlyLine; marks.push(`line@${Date.now() - T0}`);
       voice = Promise.all(splitParts(line, !!card.speakers).map(async (p) => {
         const audio = await synthLine(book.id, charKey, p.text, p.speaker); marks.push(`voice@${Date.now() - T0}`);
@@ -157,6 +157,10 @@ export async function POST(req: Request) {
     if (content === undefined) throw lastErr;
     marks.push(`reply@${Date.now() - T0}`);
     const parsed: DialogueReply = safeParse(content);
+    // Stage directions in *asterisks* are not spoken: they move to the narration line.
+    const actions = [...parsed.dialogue.matchAll(/\*([^*]+)\*/g)].map((a) => a[1].trim()).filter(Boolean);
+    parsed.dialogue = spokenOnly(parsed.dialogue);
+    if (actions.length && !parsed.narration) parsed.narration = actions.join(" ");
     if (voice && earlyLine === parsed.dialogue) {
       const v = voice as Promise<{ speaker?: string; audio: string | null }[]>;
       parsed.voice = await Promise.race([v, new Promise<null>((r) => setTimeout(() => r(null), 20_000))]) ?? undefined;
@@ -243,6 +247,11 @@ function buildSystem(args: {
     `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (AURIE's own private thought about this moment, first person, as the Queen of Dreams: calm, ancient, proud; one short line, or null. It must NEVER be in your character's voice, words or slang, and never repeat your dialogue), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
   ].join("\n\n");
+}
+
+/** Only the words a character says aloud: no *stage directions*. */
+function spokenOnly(line: string) {
+  return line.replace(/\*[^*]*\*/g, " ").replace(/\s{2,}/g, " ").replace(/\s+([,.!?;:])/g, "$1").trim();
 }
 
 const clampInt = (n: unknown, lo: number, hi: number) => Math.max(lo, Math.min(hi, Math.round(Number(n) || 0)));
