@@ -101,7 +101,7 @@ character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
 // Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
-for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"]]) {
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"]]) {
   jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs: [] });
 }
 
@@ -198,6 +198,9 @@ const plates = [
   ["park", "**4.16 "],
   ["destiny-garden", "**4.17 "],
   ["convocation", "**4.18 "],
+  ["hell-empty", "**4.19 "],
+  ["suitors-hall", "**4.20 "],
+  ["white-room", "**4.21 "],
 ];
 for (const [id, label, extra] of plates) {
   jobs.push({ id, group: "plates", dir: join(P(id), "candidates"), approved: join(P(id), "plate.png"), prompt: () => assemble(block("## 4. Location plates", label), extra), refs: [] });

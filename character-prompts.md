@@ -353,6 +353,51 @@ SURREAL DETAIL: three small brightly coloured fish swim through the air around h
 
 ---
 
+### 3.19 The Norse delegation: Odin, Thor and Loki (Episode 4)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: three men standing side by side, full length, equal spacing, the same soft octabox key light at 45 degrees upper left. LEFT, ODIN: about seventy, tall and lean, a long grey beard braided with iron rings, one eye covered by a leather patch, the other ice-blue and hard; a wide-brimmed grey traveller's hat, a long grey wool cloak over mail, a tall ash-wood spear; two black ravens perched on his shoulders. CENTRE, THOR: huge and broad, about forty, a thick red beard and wild red hair, ruddy cheerful face, bare muscled arms with bronze armbands, a leather jerkin, a short-handled iron war hammer hanging from his belt. RIGHT, LOKI: slender, about thirty-five, an original face that resembles no real actor: narrow and fox-like, a long thin nose, heavy freckles, amber eyes, long copper hair in two loose braids, thin lips crossed by faint old white stitch scars from the myth where his mouth was sewn shut; a weathered rust-brown leather coat over a cream shirt, many small silver rings, hands loosely clasped. Expressions: Odin grave and calculating, Thor amiable and loud, Loki amused and watchful.
+SURREAL DETAIL: Loki's shadow on the backdrop is that of a different, larger man.
+[Style Bible]
+```
+
+---
+
+### 3.20 Azazel, Lord of Hell (Episode 4)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Azazel, one of the three lords of Hell. Not a man: a tall standing shape of living darkness, about 2.4 m, like a column of black smoke given a rough human outline and a cloak. Inside the darkness, scattered at different depths, dozens of eyes that blink independently and several thin-lipped mouths that open and close. A tarnished iron crown floats where a head would be. One long grey hand with too many joints emerges from the dark, holding a small glass jar in which a tiny bright point of light (a captured soul) flickers. Posture: looming, still. Expression: hungry, patient, polite.
+SURREAL DETAIL: the shadow cast on the backdrop is lighter than the figure that casts it.
+[Style Bible]
+```
+
+---
+
+### 3.21 The Faerie envoys: Cluracan and Nuala (Episode 4)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: two figures side by side, full length, the same soft octabox key light at 45 degrees upper left. LEFT, CLURACAN of Faerie: a slender, beautiful young man of indeterminate age, pointed ears, a cascade of golden curls, sly green eyes, a flushed wine-happy smile; a flamboyant coat of shimmering peacock-blue silk embroidered with gold leaves, lace at the cuffs, a goblet in one hand. RIGHT, NUALA, his younger sister: small and slight but clearly an adult woman of about twenty-five, an original face resembling no real actress: round and freckled, a small upturned nose, large shy hazel eyes, pointed ears, short choppy ash-brown hair with tiny white flowers tucked in it, a simple pale grey-green gown, hands clasped in front of her, a faint shimmer around her like a heat haze (her glamour). Expressions: Cluracan delighted with himself, Nuala nervous and hopeful.
+SURREAL DETAIL: small pale moths circle Nuala's head and never come near Cluracan.
+[Style Bible]
+```
+
+---
+
+### 3.22 The angels: Remiel and Duma (Episode 4)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: two angels side by side, full length, the same soft octabox key light. LEFT, REMIEL: tall, androgynous, about thirty in appearance, a calm perfect face, close-cropped golden hair, pale gold eyes, a simple floor-length white robe, great white wings folded behind, a faint gold light along the edges of the feathers. RIGHT, DUMA, the angel of silence: equally tall, dark-skinned, close-cropped black hair, a grave gentle face, lips closed, in an identical white robe, great grey-white wings folded. Expressions: Remiel serene and certain, Duma silent and sorrowful.
+SURREAL DETAIL: there is no shadow beneath either of them.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -565,6 +610,29 @@ SURREAL DETAIL: the paths behind the walking figure quietly rearrange themselves
 ```
 A vast hall with no walls, only darkness and drifting stars at the edges. In the centre, a long table of black stone with eight tall chairs, each chair lit by its own different light from above: grey, warm white, deep red, dull grey-green, shifting rainbow, cold blue-black, pale gold, and one chair in total darkness, empty, with dust on its seat. On the table, a single candle in a brass holder and eight empty goblets. The floor is polished black, reflecting the lights.
 SURREAL DETAIL: on the wall of darkness behind each chair hangs a glowing sigil: a book, an ankh, a helm, a heart, a hooked ring, a swirl of colour, and a sword, faint and floating.
+[Style Bible]
+```
+
+---
+
+**4.19 Hell, emptied (Episode 4)**
+```
+The corridors of Hell after everyone has gone: a long hall of black basalt cells, every iron door hanging open, chains lying slack on the stone floor, cold ash drifting, the red glow beneath the floor faded to a dull ember. Absolute silence. In the distance, the colossal gates stand open onto grey nothing. No people at all.
+SURREAL DETAIL: on the floor, footprints in the ash lead out toward the gates, thousands of them, all going one way.
+[Style Bible]
+```
+
+**4.20 The great hall of the Dreaming, prepared for guests (Episode 4)**
+```
+The great hall of Aurie's restored palace in the Dreaming, prepared for a banquet: a vast hall of pale stone and dark glass with a ceiling open to a night sky full of slow stars; long tables laid with silver, candles and strange fruit; banners of many realms hung along the walls (a raven, a horned crown, a golden leaf, a white feather, a black flame). Torchlight warm, starlight cold. Empty, waiting for guests.
+SURREAL DETAIL: the candle flames lean all one way, toward the empty high seat at the head of the hall.
+[Style Bible]
+```
+
+**4.21 The white room (Episode 4)**
+```
+A bare, perfectly white room in the Dreaming, with no visible walls, floor or ceiling edges, only soft white light in every direction, like the inside of a cloud. In the centre, a single plain wooden chair. Peaceful, empty, a little sad.
+SURREAL DETAIL: a few grains of golden sand drift slowly downward through the air, falling forever.
 [Style Bible]
 ```
 

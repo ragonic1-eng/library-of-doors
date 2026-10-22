@@ -2473,6 +2473,446 @@
           "text": "End of Part Three.",
           "style": "hook"
         }
+      ],
+      "next": "4.1"
+    },
+    "4.1": {
+      "id": "4.1",
+      "title": "Hell, Empty",
+      "pov": "POV",
+      "episodeTitle": "Part Four · Chapter 14 · Hell, Empty",
+      "music": "cellar-dread",
+      "fx": "ash",
+      "recap": "Aurie went back to Hell and found it empty. Lucifer had quit, and gave her the key.",
+      "beats": [
+        {
+          "card": "Hell",
+          "still": "hell-gates"
+        },
+        {
+          "text": "Aurie returns to Hell to free Nada, as she told her family she would.",
+          "if": [
+            "NADA_QUEST"
+          ]
+        },
+        {
+          "text": "Aurie returns to Hell. Lucifer has sent for her, and she wants to know why.",
+          "unless": [
+            "NADA_QUEST"
+          ]
+        },
+        {
+          "text": "But Hell is empty.",
+          "still": "hell-empty"
+        },
+        {
+          "text": "Every cell stands open. Every chain lies slack. The damned, and the demons, are gone."
+        },
+        {
+          "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
+          "still": "hell-arena"
+        }
+      ],
+      "conversation": {
+        "character": "lucifer",
+        "maxTurns": 3,
+        "canon": [
+          "Lucifer has resigned. He has evicted the damned and the demons, and Hell is empty and closing.",
+          "He is giving Aurie the key to Hell. If she bested him in his own house before (flag LUCIFER_GRUDGE), he does it to spite her: let her deal with every power that will want it.",
+          "He asks one last favour: that she cut off his wings, so he can walk in the mortal world as a man. If she will not, he will do it himself.",
+          "Afterwards he will leave for the waking world, free."
+        ],
+        "opening": "Lady Dream. You came. I have resigned. Hell is closed, the damned are evicted, and I have one last gift for you. And one last favour to ask.",
+        "possibilities": [
+          "She asks why: he says he is tired of being blamed for every sin in creation.",
+          "She asks about the favour: he asks her to cut off his wings.",
+          "She refuses the key: he drops it at her feet anyway; it is hers now."
+        ],
+        "suggestions": [
+          "Why are you giving it to me?",
+          "What is the favour?",
+          "What will you do now?"
+        ],
+        "exits": {
+          "4.1.KEY": "Aurie takes the key, without helping with his wings.",
+          "4.1.WINGS": "Aurie takes the key and agrees to cut off Lucifer's wings for him."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "4.1.KEY",
+          "text": "Give me the key.",
+          "effects": {
+            "flags": {
+              "HAS_HELL_KEY": true
+            }
+          },
+          "next": "4.2",
+          "aftermath": [
+            {
+              "text": "Lucifer takes the knife to his own wings. He does not ask twice.",
+              "clip": "4.1a"
+            },
+            {
+              "text": "He walks out into the waking world, a free man, and leaves her holding the key to Hell."
+            },
+            {
+              "text": "Every power in creation will want it.",
+              "style": "hook"
+            }
+          ]
+        },
+        {
+          "id": "4.1.WINGS",
+          "text": "Give me the key. And the knife. I will help you.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "HAS_HELL_KEY": true,
+              "LUCIFER_FREED": true
+            }
+          },
+          "next": "4.2",
+          "aftermath": [
+            {
+              "text": "Aurie cuts. The wings fall away into a storm of feathers.",
+              "clip": "4.1a"
+            },
+            {
+              "text": "Lucifer thanks her, which he has never done before, and walks out into the waking world."
+            },
+            {
+              "text": "Every power in creation will want that key.",
+              "style": "hook"
+            }
+          ]
+        }
+      ]
+    },
+    "4.2": {
+      "id": "4.2",
+      "title": "The Suitors",
+      "pov": "POV",
+      "episodeTitle": "Chapter 15 · The Suitors",
+      "music": "throne",
+      "fx": "dust",
+      "recap": "Gods, demons, Faerie and Heaven came to the Dreaming to bid for the key to Hell. Azazel held Nada's soul in a jar.",
+      "beats": [
+        {
+          "text": "Word travels fast. Within a night, every power in creation wants the key to Hell.",
+          "still": "suitors-hall"
+        },
+        {
+          "text": "They come to the Dreaming as guests, with gifts, and with threats.",
+          "clip": "4.2a"
+        },
+        {
+          "text": "Odin All-Father, with Thor and Loki, wanting somewhere to wait out the end of the world.",
+          "still": "still-norse"
+        },
+        {
+          "text": "Azazel, a lord of Hell, who wants his home back. In a jar at his elbow, a captured soul.",
+          "still": "still-azazel"
+        },
+        {
+          "text": "It is Nada's soul."
+        },
+        {
+          "text": "The envoys of Faerie: Cluracan, and his sister Nuala, sent along as a gift.",
+          "still": "still-faerie"
+        },
+        {
+          "text": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
+          "still": "still-angels"
+        }
+      ],
+      "conversation": {
+        "character": "suitors",
+        "name": "The Suitors",
+        "maxTurns": 5,
+        "speakerNames": {
+          "ODIN": "Odin",
+          "THOR": "Thor",
+          "LOKI": "Loki",
+          "AZAZEL": "Azazel",
+          "CLURACAN": "Cluracan",
+          "REMIEL": "Remiel"
+        },
+        "canon": [
+          "Aurie holds the key to Hell and must decide who receives it: the Norse (Odin), Azazel's demons, Faerie (Cluracan), or the angels (Remiel and Duma).",
+          "Azazel holds Nada's soul in a jar and threatens to destroy it if Hell is given to anyone else; he offers it in trade for the key.",
+          "If the angels receive Hell it becomes a place of redemption, not punishment; the angels never bargain.",
+          "Odin wants Hell as a refuge from Ragnarok; Loki whispers clever, dangerous suggestions.",
+          "Faerie offers friendship and has brought Nuala as a gift either way.",
+          "Every reply is two or three short lines from different suitors, each starting with the speaker's label, like 'ODIN: ... AZAZEL: ...'."
+        ],
+        "opening": "ODIN: Lady Dream. We have come a long way, and winter is coming for the gods. AZAZEL: Hell is ours by right. Give it back, and I will give you what is in my jar. CLURACAN: Faerie asks only to be your friend, and has brought you a present. REMIEL: We will abide by your decision.",
+        "possibilities": [
+          "She demands Nada's soul from Azazel: he refuses unless he gets the key; the other suitors watch closely.",
+          "She asks each what they would do with Hell: they answer in character.",
+          "She threatens Azazel: the darkness ripples and the jar's light flickers.",
+          "She asks the angels: Remiel says Heaven would make Hell a place where suffering heals."
+        ],
+        "suggestions": [
+          "Azazel, give me the soul in that jar.",
+          "Odin, why do the gods want Hell?",
+          "Remiel, what would Heaven do with it?"
+        ],
+        "exits": {
+          "4.2.A": "Aurie gives the key to the angels.",
+          "4.2.B": "Aurie gives the key to Odin and the Norse.",
+          "4.2.C": "Aurie gives the key to Azazel, in exchange for Nada's soul.",
+          "4.2.D": "Aurie gives the key to Faerie."
+        },
+        "consequences": {
+          "DEMANDED_NADA": {
+            "when": "She demands that Azazel release Nada's soul.",
+            "effects": {
+              "flags": {
+                "DEMANDED_NADA": true
+              }
+            },
+            "ripple": "The light in the jar flares, as if it heard its name."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "4.2.A",
+          "text": "The key goes to the angels.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "HELL_KEY_ANGELS": true,
+              "NADA_FREED": true
+            }
+          },
+          "next": "4.3",
+          "aftermath": [
+            {
+              "text": "Remiel takes the key. Hell will become a place where suffering heals.",
+              "still": "still-angels"
+            },
+            {
+              "text": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
+              "still": "still-azazel"
+            }
+          ]
+        },
+        {
+          "id": "4.2.B",
+          "text": "The key goes to Odin.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "HELL_KEY_NORSE": true,
+              "LOKI_DEBT": true,
+              "NADA_FREED": true
+            }
+          },
+          "next": "4.3",
+          "aftermath": [
+            {
+              "text": "Odin takes the key, and Loki smiles far too widely.",
+              "still": "still-norse"
+            },
+            {
+              "text": "Nada's soul Aurie must buy from Azazel herself. It costs her a dream she loved.",
+              "still": "still-azazel"
+            }
+          ]
+        },
+        {
+          "id": "4.2.C",
+          "text": "Azazel, give me Nada, and the key is yours.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "HELL_KEY_DEMONS": true,
+              "NADA_FREED": true
+            }
+          },
+          "next": "4.3",
+          "aftermath": [
+            {
+              "text": "Azazel opens the jar. Nada is free.",
+              "still": "still-azazel"
+            },
+            {
+              "text": "Hell will be worse than it ever was. That is on Aurie now."
+            }
+          ]
+        },
+        {
+          "id": "4.2.D",
+          "text": "The key goes to Faerie.",
+          "effects": {
+            "flags": {
+              "HELL_KEY_FAERIE": true,
+              "FAERIE_FRIEND": true,
+              "NADA_FREED": true
+            }
+          },
+          "next": "4.3",
+          "aftermath": [
+            {
+              "text": "Cluracan bows extravagantly. Hell will become a wild and strange court.",
+              "still": "still-faerie"
+            },
+            {
+              "text": "Nada's soul Aurie takes from Azazel by force, and Faerie stands beside her.",
+              "still": "still-azazel"
+            }
+          ]
+        }
+      ]
+    },
+    "4.3": {
+      "id": "4.3",
+      "title": "Nada",
+      "pov": "POV",
+      "episodeTitle": "Chapter 16 · Nada",
+      "music": "the-years",
+      "fx": "glitter",
+      "recap": "Free at last, Nada faced the queen who condemned her.",
+      "beats": [
+        {
+          "text": "In a white room in the Dreaming, Nada stands free for the first time in ten thousand years.",
+          "still": "still-nada-free"
+        },
+        {
+          "text": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people."
+        },
+        {
+          "text": "Aurie condemned her to Hell for it."
+        }
+      ],
+      "conversation": {
+        "character": "nada",
+        "maxTurns": 4,
+        "canon": [
+          "Nada is free of Hell and stands before Aurie in a white room in the Dreaming.",
+          "Ten thousand years ago she refused Aurie's love to save her city, and Aurie condemned her to Hell for it.",
+          "If Aurie truly apologises, Nada forgives her and chooses to be reborn into a new mortal life far away.",
+          "Nada will not return to Aurie as her lover or queen; she will not be bought."
+        ],
+        "opening": "So. You freed me. Is this where I thank you, Dream? For ten thousand years in the ice?",
+        "possibilities": [
+          "She apologises sincerely: Nada weeps, and forgives.",
+          "She demands Nada come back to her: Nada strikes her.",
+          "She offers gifts instead of an apology: Nada refuses them all, coldly.",
+          "She asks why Nada refused her: Nada tells her about her city, and the fire."
+        ],
+        "suggestions": [
+          "Why did you refuse me?",
+          "What do you want now?"
+        ],
+        "exits": {
+          "4.3.A": "Aurie sincerely apologises to Nada and admits she was wrong.",
+          "4.3.B": "Aurie demands that Nada return to her.",
+          "4.3.C": "Aurie offers Nada any reward, realm or crown, but no apology."
+        },
+        "consequences": {
+          "HEARD_THE_CITY": {
+            "when": "She asks why Nada refused her, and listens.",
+            "effects": {
+              "flags": {
+                "HEARD_THE_CITY": true
+              }
+            },
+            "ripple": "For a moment the white room smells of desert smoke."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "4.3.A",
+          "text": "I was wrong. I am sorry, Nada.",
+          "effects": {
+            "traits": {
+              "mercy": 3
+            },
+            "flags": {
+              "NADA_FORGIVEN": true,
+              "PRIDE_LOCK": false
+            }
+          },
+          "next": "end-ep4",
+          "aftermath": [
+            {
+              "text": "Nada weeps, and forgives her.",
+              "clip": "4.3a"
+            },
+            {
+              "text": "She chooses to be born again, far away, into a brand new life."
+            },
+            {
+              "text": "And Aurie, for the first time in ten thousand years, feels lighter."
+            }
+          ]
+        },
+        {
+          "id": "4.3.B",
+          "text": "You are free. Now come back to me.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            }
+          },
+          "next": "end-ep4",
+          "aftermath": [
+            {
+              "text": "Nada strikes her across the face, and walks into the light alone.",
+              "still": "white-room"
+            }
+          ]
+        },
+        {
+          "id": "4.3.C",
+          "text": "Ask for anything. A realm, a crown. Anything but that.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "end-ep4",
+          "aftermath": [
+            {
+              "text": "Nada refuses every gift, and leaves without a word.",
+              "still": "white-room"
+            }
+          ]
+        }
+      ]
+    },
+    "end-ep4": {
+      "id": "end-ep4",
+      "title": "The key and the queen",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "fx": "dust",
+      "beats": [
+        {
+          "text": "Hell has new masters. Nada is gone.",
+          "still": "library-hub"
+        },
+        {
+          "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called."
+        },
+        {
+          "text": "End of Part Four.",
+          "style": "hook"
+        }
       ]
     }
   }

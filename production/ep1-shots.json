@@ -673,6 +673,99 @@
         "prompt": "Tight close-up at the black table of the convocation hall: Desire, the person from the character sheet, leaning forward toward the camera under deep red light, chin resting on laced fingers, a slow, knowing, cruel smile, tawny gold eyes. Red rose petals hang in the air."
       },
       "motion": "Desire leans in a little closer and its smile widens slowly; it tilts its head; red rose petals drift past and turn in the air; the red light pulses faintly. Slow push-in."
+    },
+    {
+      "id": "4.1a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-gates/plate.png"
+        ],
+        "prompt": "At the open, colossal gates of an empty Hell from the location plate, grey ash falling: Lucifer, the man from the character sheet, stands alone in his black robe with his great white wings spread wide behind him, eyes closed, face calm and tired, a huge old iron key hanging from one hand."
+      },
+      "motion": "Lucifer's great wings loosen and come apart into a slow storm of white and black feathers that rise into the dark sky; he lowers his head, lighter, and a faint smile crosses his face; ash and feathers drift past the camera. Slow push-in."
+    },
+    {
+      "id": "4.2a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/suitors-hall/plate.png",
+          "characters/norse/sheet.png",
+          "characters/faerie/sheet.png",
+          "characters/angels/sheet.png",
+          "characters/azazel/sheet.png"
+        ],
+        "prompt": "The great hall from the location plate, the banquet laid, seen from the high seat at the head of the hall looking down its length. The guests have arrived and stand by the long tables: on the left the Norse delegation (one-eyed Odin with ravens, red-bearded Thor, braided copper-haired Loki in a rust leather coat); in the centre the two Faerie envoys (golden-curled Cluracan in peacock silk, small silver-haired Nuala); on the right the two white-robed winged angels; and at the far end a tall column of living darkness full of eyes wearing an iron crown (Azazel). Every figure matches their character sheet."
+      },
+      "motion": "The guests turn one by one toward the camera and bow or raise a goblet; Odin's ravens shift their wings; candle flames lean toward the camera; the angels' wings stir; the darkness of Azazel ripples. Slow push-in down the hall."
+    },
+    {
+      "id": "still-norse",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/norse/sheet.png",
+          "assets/plates/suitors-hall/plate.png"
+        ],
+        "prompt": "Medium shot at the banquet table in the great hall: Odin, Thor and Loki from the character sheet, Odin seated in the centre with his spear and ravens, looking at the camera with his one hard eye; Thor laughing with a goblet; Loki leaning in, smiling slyly. Torchlight."
+      }
+    },
+    {
+      "id": "still-azazel",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/azazel/sheet.png",
+          "assets/plates/suitors-hall/plate.png"
+        ],
+        "prompt": "Medium shot at the banquet table in the great hall: Azazel from the character sheet, a tall column of living darkness full of eyes and mouths beneath an iron crown, one long grey hand resting a small glass jar on the table; inside the jar a tiny bright point of light flickers. Candles gutter away from it."
+      }
+    },
+    {
+      "id": "still-faerie",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/suitors-hall/plate.png"
+        ],
+        "prompt": "Medium shot at the banquet table in the great hall: Cluracan from the character sheet raising his goblet toward the camera with a dazzling smile; beside him his sister Nuala, small and shy, looking up at the camera with hope. Pale moths circle Nuala. Warm candlelight."
+      }
+    },
+    {
+      "id": "still-angels",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/angels/sheet.png",
+          "assets/plates/suitors-hall/plate.png"
+        ],
+        "prompt": "Medium shot in the great hall: the two angels from the character sheet, Remiel and Duma, standing apart from the feast, white wings folded, hands clasped, looking at the camera with calm, grave patience. Starlight from the open ceiling falls on them."
+      }
+    },
+    {
+      "id": "still-nada-free",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-nada/keyframe.png",
+          "assets/plates/white-room/plate.png"
+        ],
+        "prompt": "The same woman as in the first image, Nada, a young African queen of an ancient city, now free of the ice: she stands in the bare white room from the second image, in her white linen gown and gold collar, braided hair threaded with gold, facing the camera, dignified, wary, her eyes wet. Soft white light all around her; a few grains of golden sand falling."
+      }
+    },
+    {
+      "id": "4.3a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-nada-free/keyframe.png"
+      },
+      "motion": "Nada closes her eyes and smiles through tears; her body slowly turns to warm golden light that drifts upward like rising sand until only light remains in the white room. Very slow push-in."
     }
   ],
   "react": {
