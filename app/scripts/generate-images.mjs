@@ -101,8 +101,39 @@ character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
 // Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
-for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"]]) {
-  jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs: [] });
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"], ["calliope", "### 3.23"], ["madoc", "### 3.24"], ["corinthian", "### 3.25"], ["rose", "### 3.26"], ["hob", "### 3.27"], ["unity", "### 3.28"]]) {
+  const refs = id === "unity" ? [join(ROOT, "assets", "keyframes", "sandman", "1.3d", "keyframe.png")] : [];
+  jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs });
+}
+
+// Angle sheets (character-prompts.md §3c): every side of the face and body, so stills and video never have to invent one.
+const TURN_FRAME = block("## 3c.", "Turnaround frame");
+const HEAD_FRAME = block("## 3c.", "Head-angle frame");
+const ANGLE_LOCK = {
+  aurie: "Her face is an exact likeness of the real woman in the first four photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, narrow or beautify her. Styling (pale skin, black hair, black gown) as in the reference sheet.",
+  "alex-young": "His face is an exact likeness of the real man in the first two photographs: a very broad, round, full face, heavy cheeks and a wide soft jaw; narrow single-lidded eyes behind rectangular matte-black glasses; a broad nose with a rounded tip; full lips; prominent ears. Do not slim or reshape him. Costume as in the reference sheet.",
+};
+const ANGLE_FACES = { aurie: AURIE_FACES, "alex-young": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")] };
+for (const id of ["aurie", "alex-young", "lucienne", "death", "calliope", "madoc", "corinthian", "rose", "hob", "unity"]) {
+  for (const [kind, frame] of [["turnaround", TURN_FRAME], ["heads", HEAD_FRAME]]) {
+    jobs.push({
+      id: `${id}-${kind}`, group: "angles", dir: join(C(id), "candidates"), approved: join(C(id), `${kind}.png`),
+      prompt: () => `${frame}
+${ANGLE_LOCK[id] ?? ""}
+${STYLE}`.trim(),
+      refs: [...(ANGLE_FACES[id] ?? []), join(C(id), "sheet.png")],
+    });
+  }
+}
+/** A character sheet among the refs pulls in that character's angle sheets, when they exist. */
+function withAngles(refs) {
+  const out = [];
+  for (const r of refs) {
+    out.push(r);
+    const m = r.replace(/\\/g, "/").match(/characters\/([^/]+)\/sheet\.png$/);
+    if (m) for (const k of ["heads", "turnaround"]) { const f = join(C(m[1]), `${k}.png`); if (existsSync(f)) out.push(f); }
+  }
+  return [...new Set(out)].slice(0, 14);
 }
 
 // Movement library (character-prompts.md §3b): expression and pose sheets, built from the approved reference sheet.
@@ -131,15 +162,15 @@ if (existsSync(SHOTS_FILE)) {
   const ids = shots.identities ?? {};
   const lockRefs = (names) => [...new Set(names.flatMap((n) => ids[n]?.refs ?? []))];
   const lockText = (names) => names.map((n) => ids[n]?.lock).filter(Boolean).join("\n");
-  const withLock = (names, refs) => [...new Set([...lockRefs(names), ...refs])].map((r) => join(ROOT, r));
+  const withLock = (names, refs) => withAngles([...new Set([...lockRefs(names), ...refs])].map((r) => join(ROOT, r)));
   // Say what each reference image is, so the model never mixes two people up.
   const describe = (p) => {
     const f = p.replace(/\\/g, "/");
-    const who = { dream: "Aurie", aurie: "Aurie", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
+    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
     const m = f.match(/characters\/([^/]+)\/([^/.]+)/);
     if (m) {
       const name = who[m[1]] ?? m[1];
-      const kind = { face: "close-up photograph of the real face of", photo: "real photograph of", "photo-2": "second real photograph of", sheet: "costume and styling sheet for", portrait: "approved still of", poses: "pose reference for", expressions: "expression reference for" }[m[2]] ?? "reference for";
+      const kind = { face: "close-up photograph of the real face of", photo: "real photograph of", "photo-2": "second real photograph of", sheet: "costume and styling sheet for", portrait: "approved still of", poses: "pose reference for", expressions: "expression reference for", heads: "head angles (same face from six camera angles) of", turnaround: "turnaround (front, side and back) of" }[m[2]] ?? "reference for";
       return `${kind} ${name}`;
     }
     const plate = f.match(/plates\/([^/]+)/);
@@ -201,6 +232,12 @@ const plates = [
   ["hell-empty", "**4.19 "],
   ["suitors-hall", "**4.20 "],
   ["white-room", "**4.21 "],
+  ["madoc-room", "**4.22 "],
+  ["convention", "**4.23 "],
+  ["boarding-house", "**4.24 "],
+  ["vortex", "**4.25 "],
+  ["tavern-1389", "**4.26 "],
+  ["tavern-1989", "**4.27 "],
 ];
 for (const [id, label, extra] of plates) {
   jobs.push({ id, group: "plates", dir: join(P(id), "candidates"), approved: join(P(id), "plate.png"), prompt: () => assemble(block("## 4. Location plates", label), extra), refs: [] });

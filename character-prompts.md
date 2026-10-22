@@ -398,6 +398,78 @@ SURREAL DETAIL: there is no shadow beneath either of them.
 
 ---
 
+### 3.23 Calliope, eldest of the Muses (Episode 5)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Calliope, the Muse of epic poetry, appearing as a woman of about thirty-five. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.72 m, long-limbed, strong shoulders. Face: a long oval with a high forehead, a straight Greek nose with a slight bump, heavy-lidded grey-green eyes, thick dark brows that almost meet, a wide mouth with a deep cupid's bow, a small scar through the left eyebrow. Skin olive, sun-warmed, a few freckles across the nose. Hair: very long, heavy, dark chestnut, loosely braided and coming undone. Clothing: a simple undyed linen shift, sleeveless, belted with a plain cord, bare feet. Posture: tall, guarded, arms folded. Expression: proud and exhausted, a deep weariness held behind dignity.
+SURREAL DETAIL: faint lines of ancient Greek verse appear and fade on her forearms like breath on glass.
+[Style Bible]
+```
+
+---
+
+### 3.24 Richard Madoc, novelist (Episode 5)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Richard Madoc, an English novelist of about forty, 1990. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.75 m. Heavy-set, thick neck. Face: broad and fleshy with a heavy jaw, a large hooked nose, small dark eyes behind heavy tortoiseshell glasses, a neat short dark beard with grey in it, a fleshy lower lip. Hair: dark, tightly curled, cropped short, greying at the temples. Clothing: a rumpled oatmeal linen jacket over a black polo-neck, dark trousers, expensive loafers, a chunky gold watch. Posture: hands in pockets, shoulders hunched. Expression: charming smile that does not reach the eyes; underneath, panic.
+SURREAL DETAIL: ink stains on his fingertips spread very slowly, like ink on wet paper.
+[Style Bible]
+```
+
+---
+
+### 3.25 The Corinthian, a nightmare (Episode 5)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The Corinthian, a nightmare made by the Lady of Dreams, passing as a man of about thirty-five. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.85 m, lean and graceful. Face: angular, hollow-cheeked, a long straight nose, a narrow mouth set in a faint amused smile, a long jaw. Skin pale. Hair: white-blond, cut very short. He always wears small round black sunglasses that hide his eyes completely. Clothing: a fitted charcoal suit, a white shirt open at the collar, no tie, black leather gloves, a long dark overcoat. Posture: relaxed, one hand in a pocket, perfectly at ease. Expression: courteous, curious, predatory.
+SURREAL DETAIL: in the dark lenses of his glasses, instead of reflections, there is a faint glimpse of small teeth.
+[Style Bible]
+```
+
+---
+
+### 3.26 Rose Walker (Episode 5)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Rose Walker, a young American woman of about twenty, 1990. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.63 m, slight. Face: heart-shaped, wide-set warm hazel eyes, a short straight nose, a soft wide mouth, a dimple on the right cheek, a light dusting of freckles. Hair: chin-length, bleached a candy pink with dark brown roots showing, slightly messy. Clothing: a black band T-shirt, a faded denim jacket covered in enamel pins, a short black skirt over black tights, scuffed Doc Martens boots, many thin silver bracelets. Posture: shoulders hunched, hands in jacket pockets. Expression: wary, kind, frightened and trying not to show it.
+SURREAL DETAIL: a faint ripple, like heat haze, surrounds her, and the air near her bends as if toward a drain.
+[Style Bible]
+```
+
+---
+
+### 3.27 Hob Gadling, the man who will not die (Episode 5)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Robert "Hob" Gadling, an Englishman who looks about forty and has looked it for six hundred years. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.76 m, stocky, broad-chested, strong working hands. Face: square and weathered, a broken nose healed a little crooked, bright brown eyes with deep laughter lines, bushy brown eyebrows, a wide grinning mouth with one chipped front tooth, a short trimmed brown beard with a streak of grey at the chin. Hair: thick brown, collar length. Clothing for this sheet: a 1389 peasant's undyed wool tunic, a leather belt with a knife, a rough brown hood down on his shoulders, a pewter tankard in one hand. Posture: feet planted, chest out. Expression: cocky, cheerful, alive to everything.
+SURREAL DETAIL: none of the dust in the air ever settles on him.
+[Style Bible]
+```
+
+---
+
+### 3.28 Unity Kincaid (Episodes 1 and 5)
+
+**Reference sheet** (attach `assets/keyframes/sandman/1.3d/keyframe.png`: keep her face exactly):
+```
+[Reference sheet frame]
+Unity Kincaid, the woman in the attached image, now as she is in 1990: about eighty-five, very small and frail, white hair in a soft bun, the same face as the attached image, aged, gentle wrinkles, clear pale blue eyes. Clothing: a long pale blue quilted dressing gown over a white cotton nightgown, soft slippers, a thin gold wedding ring she never had reason to wear. Posture: upright despite her age, hands folded. Expression: serene, kind, quietly certain.
+SURREAL DETAIL: a single pale butterfly rests on her shoulder, its wings opening and closing slowly.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -471,6 +543,22 @@ Pose sheet: a three-by-two grid of six full-length photographs of the identical 
 ```
 1 sitting on a wooden chair holding a steaming tin cup. 2 pushing an empty wheelchair. 3 stepping forward to catch someone's arm. 4 standing in a doorway, keys in hand. 5 leaning back against a stone wall, arms folded. 6 kneeling beside a wheelchair, hand on its armrest.
 ```
+
+## 3c. Angle sheets (turnaround and head angles)
+
+The video model invents any side of a face it has not seen, and that is where faces drift. Every character who appears on video gets two more sheets, built from the approved reference sheet (and, for real people, their real face photographs). These are attached to every later keyframe, and to video jobs that take reference images.
+
+Turnaround frame, used by all:
+```
+Character turnaround sheet: five full-length photographs of the identical person, side by side in one row, equal spacing, same height, on a seamless matte charcoal studio backdrop, the same soft even key light in every view. Left to right: (1) facing the camera; (2) three-quarter view turned to their left; (3) full profile facing left; (4) three-quarter view from behind, turned to their right; (5) directly from behind. Same face, hair, costume, accessories, build and proportions in every view, as in the attached reference sheet. Neutral standing pose, arms relaxed. No text, no labels, no borders.
+```
+
+Head-angle frame, used by all:
+```
+Head-angle sheet: a three-by-two grid of six head-and-shoulders photographs of the identical person, evenly spaced, on a seamless matte charcoal studio backdrop, the same soft key light, no text, no labels, no borders. Top row: (1) straight on, eyes to the lens; (2) three-quarter view turned to their left; (3) full left profile. Bottom row: (4) three-quarter view turned to their right; (5) camera low, looking up at the face, chin raised; (6) camera high, looking down at the face, eyes lifted toward the lens. Same face in every frame, the same bone structure, eyes, nose, mouth, ears, hairline, skin and hair as in the attached images; only the camera angle changes. Neutral calm expression.
+```
+
+---
 
 ## 4. Location plates
 
@@ -633,6 +721,50 @@ SURREAL DETAIL: the candle flames lean all one way, toward the empty high seat a
 ```
 A bare, perfectly white room in the Dreaming, with no visible walls, floor or ceiling edges, only soft white light in every direction, like the inside of a cloud. In the centre, a single plain wooden chair. Peaceful, empty, a little sad.
 SURREAL DETAIL: a few grains of golden sand drift slowly downward through the air, falling forever.
+[Style Bible]
+```
+
+---
+
+**4.22 Madoc's house, the locked room (Episode 5)**
+```
+An attic room at the top of a writer's tall Georgian townhouse in London, 1990, night. Bare floorboards, a single bare bulb, a narrow iron bed with grey sheets, a heavy wooden chair, the window boarded up from the inside, a heavy padlock on the inside of the door. Downstairs light leaks under the door. Cold, cruel, tidy. No people.
+SURREAL DETAIL: on the faded wallpaper, lines of handwritten verse have appeared and faded, layer on layer, as if the room itself has been trying to write.
+[Style Bible]
+```
+
+**4.23 The convention ballroom (Episode 5)**
+```
+A large shabby 1990 American hotel ballroom in Georgia: rows of folding chairs facing a low stage with a lectern, a hand-painted banner above it with no readable words, fluorescent and chandelier light mixed, a buffet table with coffee urns and breakfast cereal boxes, name badges on a table. Empty, chairs waiting. A pleasant, ordinary room that feels wrong.
+SURREAL DETAIL: every chair casts a shadow slightly longer than it should, all pointing at the stage.
+[Style Bible]
+```
+
+**4.24 The boarding house (Episode 5)**
+```
+A run-down two-storey wooden boarding house in Florida, 1990, at night, seen from the front lawn: peeling white paint, a sagging porch with a swing, warm yellow light in four upstairs windows, Spanish moss on a live oak, a heavy humid night with moths around the porch light. No people.
+SURREAL DETAIL: the walls of the house are faintly transparent, like frosted glass, and the four lit rooms can almost be seen through them.
+[Style Bible]
+```
+
+**4.25 The vortex (Episode 5)**
+```
+Inside the Dreaming as it tears: the endless library of the Dreaming seen down a long aisle, but the far end of the aisle has become a slow spiralling whirlpool of light, and pages, books, lanterns and fragments of dreams (a door, a staircase, a carousel horse) are drifting from the shelves toward it and spiralling inward. Warm lantern light pulled into a cold white centre. No people.
+SURREAL DETAIL: the pages being drawn in are still being written as they go.
+[Style Bible]
+```
+
+**4.26 The White Horse tavern, 1389 (Episode 5)**
+```
+A crowded low-beamed English tavern in 1389: smoke from an open hearth, rushes on the floor, long rough tables, tallow candles, pewter tankards, a barrel of ale, a small window onto a muddy street. Warm firelight, deep smoky shadows. Empty of people for this plate.
+SURREAL DETAIL: the hearth smoke curls down instead of up, toward one empty bench in the corner.
+[Style Bible]
+```
+
+**4.27 The White Horse, 1989 (Episode 5)**
+```
+The same English tavern site in 1989, now an ordinary London pub: dark wooden booths, brass taps, a dartboard, a jukebox glowing, a pint glass on a corner table, rain on the window. Low warm light, a quiet afternoon. Empty of people for this plate.
+SURREAL DETAIL: a single old beam in the ceiling is the same blackened beam from six hundred years before, with a carved horse on it.
 [Style Bible]
 ```
 

@@ -789,6 +789,219 @@
         ],
         "prompt": "The 1988 cellar from the location plate at grey dawn, the glass sphere shattered behind. Paul McGuire, the man from the first character sheet, now in his late seventies, kneels in the dust beside an old wheelchair, one hand on the arm of the chair where Alex Burgess, the old man from the second character sheet, sits rigid with open, staring, sleepless eyes. Paul looks up at the camera, pleading, tears on his face. Cold dawn light through the high window, dust in the air."
       }
+    },
+    {
+      "id": "still-madoc-desk",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/madoc/sheet.png"
+        ],
+        "prompt": "Richard Madoc, the man from the character sheet, in his book-lined London study at night, 1990, seated at a big desk with a typewriter and a stack of his own hardback novels, a literary prize statuette on the shelf behind him, lit by a green banker's lamp. He smiles to himself, pleased, a glass of whisky in hand. Warm lamp light, deep shadows."
+      }
+    },
+    {
+      "id": "still-calliope",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/calliope/sheet.png",
+          "assets/plates/madoc-room/plate.png"
+        ],
+        "prompt": "The locked attic room from the location plate under the single bare bulb. Calliope, the woman from the character sheet, in her plain linen shift, sits on the edge of the narrow iron bed, her wrists bound in front of her with a rough cord tied to the bed frame, her long dark braid over one shoulder. Her head is bowed, eyes on the floorboards, proud and exhausted. She is fully clothed. Seen from the doorway at her eye level."
+      }
+    },
+    {
+      "id": "still-madoc",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/madoc/sheet.png"
+        ],
+        "prompt": "Medium close-up of Richard Madoc, the man from the character sheet, in his study at night, half risen from his desk chair, a whisky glass in his hand, staring straight at the camera in sudden fear, trying to smile. The green desk lamp lights him from below; behind him shelves of books and a prize statuette."
+      }
+    },
+    {
+      "id": "still-madoc-ideas",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/madoc/sheet.png"
+        ],
+        "prompt": "Richard Madoc, the man from the character sheet, in his study, glasses askew, jacket gone, kneeling against a wall that is covered from floor to ceiling in frantic handwriting; loose pages everywhere, pages floating in the air around him; he writes on the wallpaper with his bare fingertips, eyes wide and wet, mouth open. Lamp knocked over, hard raking light. Horror without gore."
+      }
+    },
+    {
+      "id": "still-calliope-free",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/calliope/sheet.png"
+        ],
+        "prompt": "Calliope, the woman from the character sheet, in her linen shift, standing barefoot on the front steps of a tall London townhouse in the first grey light of morning, free, her face turned up to the sky, eyes closed, wrists unbound and marked. Wet street, mist. Medium shot."
+      }
+    },
+    {
+      "id": "still-convention",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/corinthian/sheet.png",
+          "assets/plates/convention/plate.png"
+        ],
+        "prompt": "The hotel ballroom from the location plate, full now: an audience of ordinary-looking men and a few women in cheap suits and casual clothes in the folding chairs, seen from behind, name badges on their lapels. On the low stage at the lectern stands the Corinthian, the man from the character sheet, pale, white-blond, in round black sunglasses and a charcoal suit, smiling, one hand raised mid-speech. Cold fluorescent light, warm chandelier glow."
+      }
+    },
+    {
+      "id": "still-corinthian",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/corinthian/sheet.png",
+          "assets/plates/convention/plate.png"
+        ],
+        "prompt": "Medium close-up of the Corinthian, the man from the character sheet, standing in the aisle of the hotel ballroom from the plate, facing the camera, head slightly tilted, a courteous predatory smile, round black sunglasses reflecting a chandelier. Folding chairs blurred behind him."
+      }
+    },
+    {
+      "id": "still-rose-vortex",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/vortex/plate.png"
+        ],
+        "prompt": "Rose Walker, the young woman from the character sheet, pink hair and denim jacket, standing in the aisle of the tearing library from the location plate; pages, books and lanterns spiral past her toward the white whirlpool of light behind her, her hair whipped by the pull; she looks straight at the camera, terrified and brave, tears on her cheeks."
+      }
+    },
+    {
+      "id": "still-unity",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/unity/sheet.png",
+          "characters/rose/sheet.png",
+          "assets/plates/vortex/plate.png"
+        ],
+        "prompt": "In the tearing library from the location plate, the whirlpool of light behind them: Unity Kincaid, the old woman from the first character sheet, in her pale blue dressing gown, holding both hands of Rose Walker, the pink-haired young woman from the second character sheet. Unity is smiling gently at the camera; Rose is crying, looking at Unity. Pages drift around them, slowing."
+      }
+    },
+    {
+      "id": "still-hob-1389",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The smoky 1389 tavern from the location plate, now crowded with rough medieval drinkers. Hob Gadling, the man from the character sheet, in his wool tunic and hood, stands on a bench with his pewter tankard raised, laughing, boasting to his friends; ale slopping. Firelight."
+      }
+    },
+    {
+      "id": "still-hob-1489",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The same tavern in 1489, a little smarter: Hob Gadling, the man from the character sheet, the same face, now in a rich merchant's fur-trimmed gown and a velvet cap, seated at a corner table, raising a silver cup toward the camera with a delighted grin. Candlelight and hearth."
+      }
+    },
+    {
+      "id": "still-hob-1789",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The same tavern in 1789, panelled and lit by candles: Hob Gadling, the man from the character sheet, the same face, clean-shaven now, in a white powdered wig, an embroidered silk coat and lace cravat, seated with a decanter of wine, smiling expansively at the camera; on the table, a ship's ledger. Rich, comfortable, a little smug."
+      }
+    },
+    {
+      "id": "still-hob-1889",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The same tavern in 1889, gaslit, with a long polished bar: Hob Gadling, the man from the character sheet, the same face with his short beard again, in a good Victorian frock coat and waistcoat with a watch chain, leaning across a small table toward the camera, a little drunk, earnest, kind, as if about to say something important. Fog against the window."
+      }
+    },
+    {
+      "id": "still-hob-1989",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1989/plate.png"
+        ],
+        "prompt": "The 1989 London pub from the location plate, a quiet rainy afternoon. Hob Gadling, the man from the character sheet, the same face and short greying beard, in a worn brown leather jacket over a jumper, sits at the corner table with two pints of bitter, one untouched in front of the empty chair facing the camera. He raises his own glass toward the camera with a warm, crooked grin."
+      }
+    },
+    {
+      "id": "5.3a",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/death/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The smoky 1389 tavern from the location plate, crowded with rough medieval drinkers. In the dark corner at the back, seated side by side on a bench and watching the room: Aurie, the pale woman in the long black high-collared gown from the first character sheet, her face clearly visible in the firelight, calm and curious; and beside her, her sister Death from the second character sheet, in a plain black medieval dress with her silver ankh, black fringe, smiling. Seen across the room at their eye level, medium-wide. Firelight on both faces."
+      },
+      "motion": "Aurie and Death watch the room; Death leans toward Aurie and says something with a smile, nodding toward the drinkers; Aurie's eyes follow, a faint curiosity on her face. Drinkers move across the foreground, smoke drifts. Slow push-in."
+    },
+    {
+      "id": "5.1a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-calliope/keyframe.png"
+      },
+      "motion": "The cord around Calliope's wrists loosens and pours away as fine grey sand onto the floorboards; she slowly lifts her head and looks straight at the camera, unsmiling, eyes wet. Dust in the bulb light. Very slow push-in."
+    },
+    {
+      "id": "5.2aa",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-corinthian/keyframe.png"
+      },
+      "motion": "The Corinthian keeps smiling as his body comes apart into fine dark sand from the edges inward, drifting away; his round black sunglasses fall and land on the carpet. The chandelier light flickers. Slow push-in."
+    },
+    {
+      "id": "5.2ba",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/plates/vortex/plate.png"
+      },
+      "motion": "Pages, books and lanterns slide from the shelves and spiral faster and faster into the white whirlpool at the end of the aisle; a lantern swings and goes out; the light pulses. Slow push-in toward the whirlpool."
+    },
+    {
+      "id": "5.2ca",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-unity/keyframe.png"
+      },
+      "motion": "A soft white light flows out of Rose's hands into Unity's; Unity closes her eyes and smiles, and slowly dissolves into drifting motes of golden light; Rose's hands are left holding nothing; the swirling pages slow and settle. Slow push-in."
+    },
+    {
+      "id": "5.3ca",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-hob-1989/keyframe.png"
+      },
+      "motion": "Hob raises his glass toward the camera, grins, says a few words warmly, and takes a sip; rain runs down the window behind him; the jukebox light glows. Slow push-in."
     }
   ],
   "react": {
@@ -873,6 +1086,27 @@
         "setting": "Medium close-up of Johanna Constantine in a dim doorway at night, rain-wet trench coat, an unlit cigarette between her fingers, warm gold light on one side of her face, looking straight at the camera.",
         "moods": [
           "neutral",
+          "talking"
+        ]
+      },
+      "hob": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1989/plate.png"
+        ],
+        "setting": "Medium close-up in the 1989 London pub from the plate: Hob Gadling, the man from the character sheet, in a worn brown leather jacket, sitting across a small table from the camera with a pint, looking straight at the camera.",
+        "moods": [
+          "neutral",
+          "talking"
+        ]
+      },
+      "calliope": {
+        "refs": [
+          "characters/calliope/sheet.png",
+          "assets/plates/madoc-room/plate.png"
+        ],
+        "setting": "Medium close-up in the attic room from the plate under the bare bulb: Calliope, the woman from the character sheet, in her linen shift, seated on the iron bed, looking straight at the camera.",
+        "moods": [
           "talking"
         ]
       }

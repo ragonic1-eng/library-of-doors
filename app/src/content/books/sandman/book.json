@@ -3012,7 +3012,8 @@
           "text": "End of Part Four.",
           "style": "hook"
         }
-      ]
+      ],
+      "next": "5.0"
     },
     "3.0": {
       "id": "3.0",
@@ -3276,6 +3277,1188 @@
               "still": "london-rain"
             }
           ]
+        }
+      ]
+    },
+    "5.0": {
+      "id": "5.0",
+      "title": "A Prayer, Kept",
+      "pov": "POV",
+      "episodeTitle": "Part Five · Chapter 17 · The Muse",
+      "music": "library",
+      "fx": "dust",
+      "recap": "Lucienne found a prayer that reached the Dreaming while Aurie was imprisoned: Calliope, held captive by a writer.",
+      "beats": [
+        {
+          "card": "The Dreaming",
+          "still": "library-hub"
+        },
+        {
+          "text": "The realm is mended. But some prayers arrived while Aurie was in the glass, and no one was there to hear them."
+        },
+        {
+          "text": "Lucienne has kept every one. Tonight she brings the oldest still unanswered."
+        },
+        {
+          "text": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover."
+        },
+        {
+          "text": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+          "still": "still-madoc-desk"
+        },
+        {
+          "text": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius."
+        },
+        {
+          "text": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her."
+        }
+      ],
+      "choices": [
+        {
+          "id": "5.0.GO",
+          "text": "Take me to her.",
+          "effects": {},
+          "next": "5.1",
+          "aftermath": [
+            {
+              "card": "London",
+              "still": "madoc-room"
+            },
+            {
+              "text": "A tall house in London. At the top of the stairs, a door with the lock on the outside."
+            }
+          ]
+        }
+      ]
+    },
+    "5.1": {
+      "id": "5.1",
+      "title": "Calliope",
+      "pov": "POV",
+      "music": "cellar-wait",
+      "fx": "dust",
+      "recap": "Aurie found Calliope locked in Richard Madoc's attic.",
+      "beats": [
+        {
+          "text": "The lock turns to sand in Aurie's hand. The door swings open.",
+          "still": "still-calliope"
+        },
+        {
+          "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up."
+        },
+        {
+          "text": "She knows who has come. She has known that voice for three thousand years."
+        }
+      ],
+      "conversation": {
+        "character": "calliope",
+        "maxTurns": 4,
+        "canon": [
+          "Calliope is the eldest of the nine Muses, immortal. She was trapped by the writer Erasmus Fry in 1927 and given to Richard Madoc in 1987 when Fry died. Madoc keeps her locked in this attic and forces her, and steals her inspiration for his books.",
+          "Long ago Calliope and Aurie were lovers, and married. They had a son, Orpheus. When Orpheus lost his wife and came to Aurie for help, Aurie was cold to him. Calliope has never forgiven that.",
+          "Aurie herself was imprisoned for seventy-two years in a glass sphere, so she did not hear Calliope's prayers; Calliope does not know this unless Aurie tells her.",
+          "Calliope is proud, exhausted, and does not want to need Aurie. She will accept help, but she will not beg."
+        ],
+        "opening": "You came. I asked the Three to send you, and I hated asking. Sixty years, Dream. Where were you?",
+        "possibilities": [
+          "She explains she was imprisoned too: Calliope is stunned into silence, then something softens. Two prisoners.",
+          "She apologises: Calliope says sorry is a small word for sixty years, but she hears it.",
+          "She mentions Orpheus: Calliope goes very still; old grief and anger.",
+          "She is cold or businesslike: Calliope answers coldly, as she was answered once.",
+          "She promises to free her: Calliope asks whether she means now, or after she has had her revenge on Madoc."
+        ],
+        "suggestions": [
+          "I was a prisoner too. I couldn't hear you.",
+          "Do you hate me for Orpheus?",
+          "Do you want me to punish him?"
+        ],
+        "exits": {
+          "5.1.FREE": "Aurie frees Calliope at once, before dealing with Madoc.",
+          "5.1.MADOC": "Aurie goes to deal with Madoc first, leaving Calliope for a moment."
+        },
+        "triggers": [
+          {
+            "exit": "5.1.FREE",
+            "player": "you.re free|i.ll free you|i free you|i release you|let me free you|untie|break (the|your) (cords|bonds|chains)"
+          },
+          {
+            "exit": "5.1.MADOC",
+            "player": "(deal with|go to|find|see) (him|madoc)( first)?|where is he|madoc first"
+          }
+        ],
+        "consequences": {
+          "TOLD_CALLIOPE_GLASS": {
+            "when": "Aurie tells Calliope she was imprisoned too, in the glass, and could not hear her.",
+            "effects": {
+              "flags": {
+                "TOLD_CALLIOPE_GLASS": true
+              }
+            },
+            "ripple": "For the first time, Calliope looks up at her.",
+            "echo": {
+              "text": "Dream told Calliope that she too had been a prisoner, and could not hear her prayers.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          },
+          "NAMED_ORPHEUS": {
+            "when": "Aurie speaks of their son Orpheus with sorrow or regret.",
+            "effects": {
+              "flags": {
+                "NAMED_ORPHEUS": true
+              }
+            },
+            "ripple": "Calliope closes her eyes. Something three thousand years old shifts between them."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.1.FREE",
+          "text": "First, you. You're free.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "CALLIOPE_FIRST": true
+            }
+          },
+          "next": "5.1b",
+          "aftermath": [
+            {
+              "text": "Aurie touches the cords at her wrists. They pour away as sand.",
+              "clip": "5.1a"
+            },
+            {
+              "text": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to."
+            },
+            {
+              "text": "Then Aurie goes downstairs to find Richard Madoc.",
+              "still": "still-madoc"
+            }
+          ]
+        },
+        {
+          "id": "5.1.MADOC",
+          "text": "Wait here. First, the man who did this.",
+          "effects": {
+            "traits": {
+              "mercy": 0
+            }
+          },
+          "next": "5.1b",
+          "aftermath": [
+            {
+              "text": "Calliope stays bound on the bed while Aurie goes down the stairs.",
+              "still": "still-madoc"
+            },
+            {
+              "text": "She says nothing. She has had a great deal of practice at waiting."
+            }
+          ]
+        }
+      ]
+    },
+    "5.1b": {
+      "id": "5.1b",
+      "title": "Richard Madoc",
+      "pov": "POV",
+      "music": "cellar-wait",
+      "fx": "flicker",
+      "recap": "Aurie confronted Richard Madoc, the writer who held Calliope captive.",
+      "beats": [
+        {
+          "text": "Madoc is at his desk with a glass of whisky, his latest prize on the shelf behind him.",
+          "still": "still-madoc"
+        },
+        {
+          "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for."
+        }
+      ],
+      "conversation": {
+        "character": "madoc",
+        "maxTurns": 4,
+        "canon": [
+          "Richard Madoc, about forty, a celebrated English novelist. Three years ago he had writer's block; the old writer Erasmus Fry gave him Calliope, a Muse, in exchange for a hairball (a trichinobezoar). Since then he has kept her locked in his attic and forced himself on her, and his books are praised as genius.",
+          "He is charming, self-pitying and frightened. He says she is his, he paid for her, she is not really human, he has done nothing wrong. He will not release her of his own free will.",
+          "Aurie can punish him: flood him with ideas until he is mad with them (what happened in the book), strip him of every idea he has, or ask Calliope what she wants (she would ask for his public confession and release)."
+        ],
+        "opening": "Look, whoever you are, she's mine. I paid for her. She isn't even human, you know. It's not as if I hurt anyone real.",
+        "possibilities": [
+          "She threatens him: he blusters, then begs.",
+          "She asks if he knows what he has done: he makes excuses, shows a flicker of shame.",
+          "She mentions Calliope's prayers: he laughs nervously and says nobody answers prayers.",
+          "She asks what he wants most: he says ideas, stories, never to be empty again. A dangerous answer."
+        ],
+        "suggestions": [
+          "Do you know what you've done to her?",
+          "You wanted ideas. Is that right?",
+          "Calliope will decide what happens to you."
+        ],
+        "exits": {
+          "5.1b.FLOOD": "Aurie gives him ideas: a flood of them, more than any mind can hold.",
+          "5.1b.CONFESS": "Aurie lets Calliope decide his fate.",
+          "5.1b.EMPTY": "Aurie takes every idea he ever had and leaves him empty."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "5.1b.FLOOD",
+          "text": "You wanted ideas. Have them all.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "MADOC_FLOOD": true,
+              "CALLIOPE_FREED": true
+            }
+          },
+          "next": "5.2a",
+          "aftermath": [
+            {
+              "text": "Ideas pour into Richard Madoc, faster than he can catch them. He writes until the paper runs out.",
+              "still": "still-madoc-ideas"
+            },
+            {
+              "text": "Then he writes on the walls, with his own fingers, until they bleed."
+            },
+            {
+              "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+              "clip": "5.1a",
+              "unless": [
+                "CALLIOPE_FIRST"
+              ]
+            },
+            {
+              "text": "Days later, Calliope asks Aurie to let him go. Aurie does. Not one idea remains to him, ever again."
+            }
+          ]
+        },
+        {
+          "id": "5.1b.CONFESS",
+          "text": "She decides.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "MADOC_CONFESS": true,
+              "CALLIOPE_FREED": true
+            }
+          },
+          "next": "5.2a",
+          "aftermath": [
+            {
+              "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+              "clip": "5.1a",
+              "unless": [
+                "CALLIOPE_FIRST"
+              ]
+            },
+            {
+              "text": "Calliope wants only one thing: for him to say aloud what he did.",
+              "still": "still-calliope-free"
+            },
+            {
+              "text": "Madoc confesses to the world. Then Aurie leaves him to whatever the world decides."
+            },
+            {
+              "text": "Calliope looks at Aurie for a long moment. You have changed, she says."
+            }
+          ]
+        },
+        {
+          "id": "5.1b.EMPTY",
+          "text": "Then you'll have nothing.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "MADOC_EMPTY": true,
+              "CALLIOPE_FREED": true
+            }
+          },
+          "next": "5.2a",
+          "aftermath": [
+            {
+              "text": "Aurie takes every idea he ever had. Madoc sits at his desk and cannot remember what a story is.",
+              "still": "still-madoc-ideas"
+            },
+            {
+              "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+              "clip": "5.1a",
+              "unless": [
+                "CALLIOPE_FIRST"
+              ]
+            },
+            {
+              "text": "Calliope watches it done, and does not look away. But she does not thank Aurie, either."
+            }
+          ]
+        }
+      ]
+    },
+    "5.2a": {
+      "id": "5.2a",
+      "title": "The Corinthian",
+      "pov": "POV",
+      "episodeTitle": "Chapter 18 · The Corinthian",
+      "music": "cellar-dread",
+      "fx": "flicker",
+      "recap": "Aurie hunted the Corinthian, her runaway nightmare, to a gathering of killers in Georgia.",
+      "beats": [
+        {
+          "card": "The Dreaming",
+          "still": "library-hub"
+        },
+        {
+          "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home."
+        },
+        {
+          "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be."
+        },
+        {
+          "text": "For seventy years he has been loose in the waking world, killing, and taking eyes."
+        },
+        {
+          "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her."
+        },
+        {
+          "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth."
+        },
+        {
+          "card": "A hotel in Georgia",
+          "still": "convention"
+        },
+        {
+          "text": "He has come here to speak at a convention, which the guests call a cereal convention. Every guest is a killer.",
+          "still": "still-convention"
+        },
+        {
+          "text": "He is their hero. And Aurie is standing at the back of the hall."
+        }
+      ],
+      "conversation": {
+        "character": "corinthian",
+        "maxTurns": 4,
+        "canon": [
+          "The Corinthian is a nightmare that Aurie created. He looks like a pale, elegant man in dark glasses; behind the glasses, in place of eyes, he has two small mouths full of teeth.",
+          "He escaped the Dreaming during Aurie's captivity and has been a serial killer in the waking world, eating his victims' eyes. Tonight he is the guest of honour at a convention of serial killers.",
+          "He is courteous, curious, unafraid on the surface. He says she made him what he is, and asks whether she is proud of her work.",
+          "Aurie can unmake him (turn him back to sand, what happened in the book), order him home to be remade better, or let him go."
+        ],
+        "opening": "My lady. You came all this way to hear me speak? I'm touched. Truly. You made me, after all. Are you proud?",
+        "possibilities": [
+          "She asks why he did it: he says because it is what he was made for, and asks why she made him so.",
+          "She tells him to take off his glasses: he does, slowly, smiling, and the small mouths smile too.",
+          "She threatens him: he is polite and sad about it, like a son disappointed in a parent.",
+          "She asks about Rose: he grows interested and dangerous; he knows the girl is special."
+        ],
+        "suggestions": [
+          "Why did you do it?",
+          "Take off your glasses.",
+          "What do you want with Rose?"
+        ],
+        "exits": {
+          "5.2a.UNMAKE": "Aurie unmakes him, back into sand.",
+          "5.2a.REMAKE": "Aurie orders him home to the Dreaming, to be remade better.",
+          "5.2a.FREE": "Aurie lets him go."
+        },
+        "consequences": {
+          "GLASSES": {
+            "when": "She makes him take off his glasses.",
+            "effects": {
+              "flags": {
+                "SAW_CORINTHIAN": true
+              }
+            },
+            "ripple": "Behind the dark lenses, two small mouths smile at her."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.2a.UNMAKE",
+          "text": "You were a mistake. I unmake you.",
+          "effects": {
+            "traits": {
+              "mercy": 0
+            },
+            "flags": {
+              "CORINTHIAN_UNMADE": true
+            }
+          },
+          "next": "5.2b",
+          "aftermath": [
+            {
+              "text": "Aurie raises her hand. The Corinthian comes apart into sand, and is gone.",
+              "clip": "5.2aa"
+            },
+            {
+              "text": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth."
+            },
+            {
+              "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are."
+            }
+          ]
+        },
+        {
+          "id": "5.2a.REMAKE",
+          "text": "Come home. I'll make you better.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "CORINTHIAN_REMADE": true
+            }
+          },
+          "next": "5.2b",
+          "aftermath": [
+            {
+              "text": "The Corinthian bows. His shape loosens into sand, and drifts away toward the Dreaming.",
+              "clip": "5.2aa"
+            },
+            {
+              "text": "Lucienne will lock that sand away until Aurie is ready to shape him again."
+            },
+            {
+              "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are."
+            }
+          ]
+        },
+        {
+          "id": "5.2a.FREE",
+          "text": "Go, then. You're not my concern.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "CORINTHIAN_FREE": true
+            }
+          },
+          "next": "5.2b",
+          "aftermath": [
+            {
+              "text": "The Corinthian smiles, puts his glasses back on, and walks out into the night.",
+              "still": "still-corinthian"
+            },
+            {
+              "text": "Somewhere in the Dreaming, a door that should be shut swings quietly open."
+            }
+          ]
+        }
+      ]
+    },
+    "5.2b": {
+      "id": "5.2b",
+      "title": "The Vortex",
+      "pov": "POV",
+      "episodeTitle": "Chapter 19 · The Vortex",
+      "music": "escape",
+      "fx": "mist",
+      "recap": "Rose Walker turned out to be a dream vortex, tearing the Dreaming apart.",
+      "beats": [
+        {
+          "card": "Florida",
+          "still": "boarding-house"
+        },
+        {
+          "text": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida."
+        },
+        {
+          "text": "She dreams. And the walls between the dreams of everyone in the house come down."
+        },
+        {
+          "text": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the Dreaming.",
+          "clip": "5.2ba"
+        },
+        {
+          "text": "Lucienne's library is coming apart, page by page. Rose Walker is a vortex."
+        },
+        {
+          "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart."
+        },
+        {
+          "text": "Aurie finds her at the centre of it, small and terrified.",
+          "still": "still-rose-vortex"
+        }
+      ],
+      "conversation": {
+        "character": "rose",
+        "maxTurns": 4,
+        "canon": [
+          "Rose Walker is a twenty-year-old American woman. She did not ask to be a vortex and does not understand what is happening. She thought she was only dreaming.",
+          "A dream vortex breaks the walls between dreams. If it is not stopped, the Dreaming collapses and with it every dreaming mind in the world. The only known way to stop a vortex is for Dream to take her life.",
+          "Rose has just found her little brother Jed after months of searching. She is kind, brave, and frightened, and she understands faster than Aurie expects.",
+          "Rose's grandmother is Unity Kincaid, the girl who slept through Aurie's captivity; Rose does not know that Unity is her grandmother."
+        ],
+        "opening": "You're the lady from my dreams, aren't you? Please. Tell me what's happening. Everything's falling apart, and I think it's because of me.",
+        "possibilities": [
+          "She tells Rose the truth: Rose takes it in, cries, then asks if there is any other way.",
+          "She comforts her: Rose holds on to that, and asks her to be honest anyway.",
+          "She asks about Jed: Rose's face lights up, and that makes it worse.",
+          "She says nothing: Rose begs her to say something, anything."
+        ],
+        "suggestions": [
+          "It isn't your fault, Rose.",
+          "Tell me about your brother.",
+          "Is there another way?"
+        ],
+        "exits": {
+          "5.2b.KILL": "Aurie decides she must take Rose's life to save the Dreaming.",
+          "5.2b.WAIT": "Aurie refuses to kill Rose yet, and searches for another way while the Dreaming tears."
+        },
+        "consequences": {
+          "ROSE_COMFORTED": {
+            "when": "She comforts Rose honestly, or tells her it is not her fault.",
+            "effects": {
+              "flags": {
+                "ROSE_COMFORTED": true
+              }
+            },
+            "ripple": "Rose stops shaking, a little."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.2b.KILL",
+          "text": "I'm sorry, Rose. It has to be me who ends this.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "ROSE_THREATENED": true
+            }
+          },
+          "next": "5.2c",
+          "aftermath": [
+            {
+              "text": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
+              "still": "still-rose-vortex"
+            },
+            {
+              "text": "And a voice behind them says: wait."
+            }
+          ]
+        },
+        {
+          "id": "5.2b.WAIT",
+          "text": "No. Not you. There has to be another way.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "ROSE_WAITED": true
+            }
+          },
+          "next": "5.2c",
+          "aftermath": [
+            {
+              "text": "Aurie lowers her hand. Around them, the library tears, shelf by shelf.",
+              "clip": "5.2ba"
+            },
+            {
+              "text": "And a voice behind them says: there is."
+            }
+          ]
+        }
+      ]
+    },
+    "5.2c": {
+      "id": "5.2c",
+      "title": "Unity",
+      "pov": "POV",
+      "music": "library",
+      "fx": "glitter",
+      "recap": "Unity Kincaid, Rose's grandmother, took the vortex into herself and died in Rose's place.",
+      "beats": [
+        {
+          "text": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling.",
+          "still": "still-unity"
+        },
+        {
+          "text": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years."
+        },
+        {
+          "text": "Aurie spoke with her once, in her dream, when she was ten.",
+          "unless": [
+            "UNITY_PROMISE"
+          ]
+        },
+        {
+          "text": "Long ago, in that dream, Aurie promised the girl she would not be forgotten. Unity remembers.",
+          "if": [
+            "UNITY_PROMISE"
+          ]
+        }
+      ],
+      "conversation": {
+        "character": "unity-old",
+        "maxTurns": 3,
+        "canon": [
+          "Unity Kincaid is about eighty-five and dying in a nursing home; she is here in the dream. She caught the sleeping sickness in 1916 while Aurie was imprisoned, and slept for seventy years.",
+          "While she slept, someone visited her dreams and she became pregnant. Her daughter's child is Rose. Unity has only just understood all of this.",
+          "Unity was meant to be the vortex, not Rose. Because Aurie was imprisoned, it passed to Rose. Unity can take it back into herself, and she will die, gently, in Rose's place. She is at peace with it.",
+          "The one who visited her dreams and planned all this was Desire, Aurie's own sibling, who hoped Aurie would kill her own family's blood. Unity says it was 'someone golden, perfumed, smiling'."
+        ],
+        "opening": "It should have been me, dear. I was meant to be the vortex. I've had a long life, mostly asleep. Let me give Rose the rest of hers.",
+        "possibilities": [
+          "She thanks Unity: Unity says there's nothing to thank, it's only putting things back where they belong.",
+          "She asks who the father of Unity's child was: Unity describes someone golden and perfumed who smiled in her dreams; Aurie knows exactly who that is.",
+          "She tries to stop her: Unity is gently firm, and asks Aurie to let an old woman be brave.",
+          "She remembers their talk in 1916: Unity laughs; she remembers the lady in the glass, and any promise Aurie made her (flag UNITY_PROMISE)."
+        ],
+        "suggestions": [
+          "Who visited your dreams?",
+          "You were the girl who couldn't wake.",
+          "Are you afraid?"
+        ],
+        "exits": {
+          "5.2c.LET": "Aurie accepts Unity's gift and lets her take the vortex."
+        },
+        "triggers": [
+          {
+            "exit": "5.2c.LET",
+            "player": "thank you|go on|do it|let her|i understand|goodbye|very well|be at peace"
+          }
+        ],
+        "consequences": {
+          "NAMED_DESIRE": {
+            "when": "Aurie realises, or Unity's description shows, that Desire was behind it all.",
+            "effects": {
+              "flags": {
+                "KNOWS_DESIRE_PLOT": true
+              }
+            },
+            "ripple": "Somewhere very far away, Desire stops smiling.",
+            "echo": {
+              "text": "Dream learned that Desire planted the vortex in her own family's blood, to make her kill it.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.2c.LET",
+          "text": "Thank you, Unity.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "ROSE_SPARED": true,
+              "UNITY_PEACE": true
+            }
+          },
+          "next": "5.2d",
+          "aftermath": [
+            {
+              "text": "Unity takes Rose's hand. The light of the vortex flows out of the girl and into the old woman.",
+              "clip": "5.2ca"
+            },
+            {
+              "text": "Unity smiles, and closes her eyes, and is gone. Death is waiting for her, kindly."
+            },
+            {
+              "text": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room."
+            },
+            {
+              "text": "Rose will never forget that the lady from her dreams raised a hand to kill her.",
+              "if": [
+                "ROSE_THREATENED"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "5.2d": {
+      "id": "5.2d",
+      "title": "Desire's Threshold",
+      "pov": "POV",
+      "music": "cellar-dread",
+      "fx": "glitter",
+      "recap": "Aurie confronted Desire, who had planned the vortex to make her kill her own kin.",
+      "beats": [
+        {
+          "text": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
+          "still": "still-desire"
+        },
+        {
+          "text": "Desire made the vortex happen. It hoped Aurie would kill a child of her own family, and be destroyed for it."
+        },
+        {
+          "text": "Desire is lounging on a velvet couch, and does not pretend to be surprised."
+        }
+      ],
+      "conversation": {
+        "character": "desire",
+        "maxTurns": 3,
+        "canon": [
+          "Desire, Aurie's sibling, visited Unity Kincaid's dreams in 1916 and fathered her child, so that the vortex would pass to Unity's family. Desire hoped Aurie would kill Rose, her own kin, and bring the Kindly Ones down on herself.",
+          "Desire denies nothing directly and enjoys the conversation. It never apologises.",
+          "Aurie can threaten Desire, or warn it once and leave. Either way, the plan has failed and Desire knows it."
+        ],
+        "opening": "Sister. You look so serious. Did something happen? You didn't kill the girl. How very unlike you.",
+        "possibilities": [
+          "She accuses Desire: Desire smiles and says it only wanted to see what she would do.",
+          "She asks why: Desire says because she is always so sure of herself, and someone ought to test that.",
+          "She is calm: that unsettles Desire more than anger."
+        ],
+        "suggestions": [
+          "You wanted me to kill her.",
+          "Why do you hate me?"
+        ],
+        "exits": {
+          "5.2d.THREATEN": "Aurie threatens Desire.",
+          "5.2d.WARN": "Aurie warns Desire, once, and leaves."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "5.2d.THREATEN",
+          "text": "Touch my family again and I will end you.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "DESIRE_THREATENED": true
+            }
+          },
+          "next": "5.3",
+          "aftermath": [
+            {
+              "text": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before.",
+              "still": "still-desire"
+            }
+          ]
+        },
+        {
+          "id": "5.2d.WARN",
+          "text": "This is your only warning.",
+          "effects": {
+            "traits": {
+              "mercy": 0
+            },
+            "flags": {
+              "DESIRE_WARNED": true
+            }
+          },
+          "next": "5.3",
+          "aftermath": [
+            {
+              "text": "Aurie leaves. Behind her, Desire laughs, and the laugh goes on a little too long.",
+              "still": "still-desire"
+            }
+          ]
+        }
+      ]
+    },
+    "5.3": {
+      "id": "5.3",
+      "title": "Men of Good Fortune",
+      "pov": "3P",
+      "episodeTitle": "Chapter 20 · Men of Good Fortune",
+      "music": "library",
+      "fx": "embers",
+      "recap": "In 1389 Death granted Hob Gadling his wish never to die, and Aurie agreed to meet him once every hundred years.",
+      "beats": [
+        {
+          "text": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries."
+        },
+        {
+          "card": "The White Horse tavern · 1389",
+          "still": "tavern-1389"
+        },
+        {
+          "text": "Aurie and her sister Death sit in the corner of a smoky London tavern, watching the living.",
+          "clip": "5.3a"
+        },
+        {
+          "text": "A loud young man named Hob Gadling is telling his friends that dying is a mug's game. He doesn't intend to do it.",
+          "still": "still-hob-1389"
+        },
+        {
+          "text": "Death laughs. She grants it, for her sister's sake, to see what happens."
+        },
+        {
+          "text": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so."
+        },
+        {
+          "card": "1489",
+          "still": "still-hob-1489"
+        },
+        {
+          "text": "Hob is waiting. He is rich now, and he still loves every day of it."
+        },
+        {
+          "card": "1589"
+        },
+        {
+          "text": "A young writer in the corner, Will Shaxberd, begs Aurie for the gift of telling stories. She makes him a bargain."
+        },
+        {
+          "card": "1689"
+        },
+        {
+          "text": "Hob has lost everything, his money, his wife, his son. He still does not want to die."
+        },
+        {
+          "card": "1789",
+          "still": "still-hob-1789"
+        },
+        {
+          "text": "Hob is rich again, in a powdered wig. He has made his money from ships that carry slaves."
+        }
+      ],
+      "choices": [
+        {
+          "id": "5.3.SAY",
+          "text": "It is a poor thing, Hob, to be a slaver.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "HOB_TOLD_SLAVES": true
+            }
+          },
+          "next": "5.3b",
+          "aftermath": [
+            {
+              "text": "Hob goes red, and blusters, and does not forget it. He sells the ships before the next century comes."
+            }
+          ]
+        },
+        {
+          "id": "5.3.SILENT",
+          "text": "(Say nothing.)",
+          "effects": {
+            "traits": {
+              "mercy": 0
+            }
+          },
+          "next": "5.3b",
+          "aftermath": [
+            {
+              "text": "Aurie says nothing. Hob laughs and pours the wine, and the ships keep sailing."
+            }
+          ]
+        }
+      ]
+    },
+    "5.3b": {
+      "id": "5.3b",
+      "title": "1889",
+      "pov": "POV",
+      "music": "cellar-wait",
+      "fx": "embers",
+      "recap": "In 1889 Hob told Aurie she kept coming back because she was lonely, and that he was her friend.",
+      "beats": [
+        {
+          "card": "1889",
+          "still": "still-hob-1889"
+        },
+        {
+          "text": "Five hundred years. Hob is waiting, in a good Victorian coat, and he has had a few drinks."
+        },
+        {
+          "text": "He has worked something out. He has decided to say it, whatever it costs him."
+        }
+      ],
+      "conversation": {
+        "character": "hob-1889",
+        "maxTurns": 4,
+        "canon": [
+          "It is 1889, in the White Horse tavern in London. Hob Gadling has been immortal since 1389 and has met Aurie here every hundred years.",
+          "Hob has realised that Aurie does not come to see whether he wants to die. She comes because she is lonely, and he is her friend. He says so, and he means it kindly.",
+          "In the book, Dream was offended and walked out. Aurie may walk out, or stay and admit it, even just 'perhaps'.",
+          "Hob tells her he will be here in 1989 anyway, and he will wait for her."
+        ],
+        "opening": "Five hundred years. And you still come. You don't come to see if I want to die. You come because you're lonely. I'm your friend, you daft thing. Sit down.",
+        "possibilities": [
+          "She denies it: Hob says she can deny it all she likes; he'll be here in a hundred years.",
+          "She is offended: Hob is hurt but not sorry, and says so.",
+          "She admits it a little: Hob grins, delighted, and orders another round.",
+          "She asks what it is like to live forever: Hob says every day is new, and that the trick is to keep caring."
+        ],
+        "suggestions": [
+          "I am not lonely.",
+          "What is it like, Hob, to live this long?",
+          "Why do you think I come?"
+        ],
+        "exits": {
+          "5.3b.WALK": "Aurie is offended and walks out.",
+          "5.3b.PERHAPS": "Aurie admits it, even a little: perhaps she is his friend."
+        },
+        "triggers": [
+          {
+            "exit": "5.3b.PERHAPS",
+            "player": "\\bperhaps\\b|maybe you.re right|you are my friend|i.m your friend"
+          }
+        ],
+        "consequences": {
+          "ASKED_HOB_LIFE": {
+            "when": "She asks Hob what it is like to live so long, and listens.",
+            "effects": {
+              "flags": {
+                "ASKED_HOB_LIFE": true
+              }
+            },
+            "ripple": "Hob talks until the candle burns down, and Aurie does not stop him."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.3b.WALK",
+          "text": "You presume too much.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "HOB_WALKED": true
+            }
+          },
+          "next": "5.3c",
+          "aftermath": [
+            {
+              "text": "Aurie stands, and walks out into the London fog."
+            },
+            {
+              "text": "Behind her, Hob calls out: I'll be here in a hundred years. I'll wait for you."
+            }
+          ]
+        },
+        {
+          "id": "5.3b.PERHAPS",
+          "text": "Perhaps.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "HOB_FRIEND": true
+            }
+          },
+          "next": "5.3c",
+          "aftermath": [
+            {
+              "text": "Hob grins like a boy, and orders another round, and Aurie lets him."
+            }
+          ]
+        }
+      ]
+    },
+    "5.3c": {
+      "id": "5.3c",
+      "title": "1989",
+      "pov": "POV",
+      "music": "library",
+      "fx": "dust",
+      "recap": "In 1989, a year late in her own life, Aurie kept the appointment with Hob Gadling.",
+      "beats": [
+        {
+          "card": "The White Horse · 1989",
+          "still": "tavern-1989"
+        },
+        {
+          "text": "The tavern is a pub now. Hob sits at the corner table with two pints, one of them untouched.",
+          "clip": "5.3ca"
+        },
+        {
+          "text": "He did not know where she had been. He only knew she had never once been late."
+        },
+        {
+          "text": "A hundred years ago she walked out on him. He has bought her a drink anyway.",
+          "if": [
+            "HOB_WALKED"
+          ]
+        }
+      ],
+      "conversation": {
+        "character": "hob",
+        "maxTurns": 4,
+        "canon": [
+          "It is 1989 in the same pub, the White Horse. Hob Gadling, immortal since 1389, has waited for Aurie. He did not know she was imprisoned for seventy-two years.",
+          "If Aurie walked out in 1889 (flag HOB_WALKED), Hob greets her with 'I knew you would come'. If she said 'perhaps' (flag HOB_FRIEND), he greets her as an old friend.",
+          "This is the moment in the book when Dream finally admits Hob is her friend. Aurie may say so, or not.",
+          "Hob is warm, funny, a little drunk, and very glad to see her."
+        ],
+        "opening": "There you are. I knew you would come. I got you a pint. It's gone a bit flat, mind, I've been here since opening.",
+        "possibilities": [
+          "She tells him where she has been: Hob is horrified, then furious on her behalf, then very gentle.",
+          "She calls him her friend: Hob goes quiet, then raises his glass.",
+          "She asks how the century was: Hob tells her about wars and wonders and a woman he loved.",
+          "She is cold: Hob says that's all right, she can be cold, she came; that's what counts."
+        ],
+        "suggestions": [
+          "I was a prisoner, Hob. That's why I almost didn't come.",
+          "How was your century?",
+          "Did you think I wouldn't come?"
+        ],
+        "exits": {
+          "5.3c.FRIEND": "Aurie tells Hob he is her friend.",
+          "5.3c.NOD": "Aurie drinks with him, and says nothing of friendship."
+        },
+        "triggers": [
+          {
+            "exit": "5.3c.FRIEND",
+            "player": "(you are|you're|you.re) my friend|my friend, hob|we are friends|we.re friends"
+          }
+        ],
+        "consequences": {
+          "TOLD_HOB_GLASS": {
+            "when": "Aurie tells Hob she was imprisoned for seventy years.",
+            "effects": {
+              "flags": {
+                "TOLD_HOB_GLASS": true
+              }
+            },
+            "ripple": "Hob puts down his glass, and for once has nothing to say.",
+            "echo": {
+              "text": "Dream told Hob Gadling about her seventy years in the glass.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "5.3c.FRIEND",
+          "text": "You are my friend, Hob.",
+          "effects": {
+            "traits": {
+              "mercy": 1,
+              "loyalty": 2
+            },
+            "flags": {
+              "HOB_FRIEND": true,
+              "HOB_AT_WAKE": true
+            }
+          },
+          "next": "end-ep5",
+          "aftermath": [
+            {
+              "text": "Hob raises his glass. To friends, he says. Aurie raises hers.",
+              "still": "still-hob-1989"
+            }
+          ]
+        },
+        {
+          "id": "5.3c.NOD",
+          "text": "(Raise the glass, and say nothing.)",
+          "effects": {
+            "traits": {
+              "mercy": 0
+            }
+          },
+          "next": "end-ep5",
+          "aftermath": [
+            {
+              "text": "They drink. Hob talks, and Aurie listens, and the afternoon goes by.",
+              "still": "still-hob-1989"
+            },
+            {
+              "text": "He doesn't need her to say it. But he would have liked to hear it."
+            }
+          ]
+        }
+      ]
+    },
+    "end-ep5": {
+      "id": "end-ep5",
+      "title": "Reflections",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "fx": "dust",
+      "beats": [
+        {
+          "text": "The Muse is free.",
+          "still": "library-hub"
+        },
+        {
+          "text": "Richard Madoc never writes again.",
+          "if": [
+            "MADOC_FLOOD"
+          ]
+        },
+        {
+          "text": "Richard Madoc never writes again.",
+          "if": [
+            "MADOC_EMPTY"
+          ]
+        },
+        {
+          "text": "Richard Madoc told the world what he did.",
+          "if": [
+            "MADOC_CONFESS"
+          ]
+        },
+        {
+          "text": "The Corinthian's skull sits on a shelf in Lucienne's library.",
+          "if": [
+            "CORINTHIAN_UNMADE"
+          ]
+        },
+        {
+          "text": "A heap of dark sand waits in a locked box for Aurie to shape it again.",
+          "if": [
+            "CORINTHIAN_REMADE"
+          ]
+        },
+        {
+          "text": "And the Corinthian is still out there, smiling.",
+          "if": [
+            "CORINTHIAN_FREE"
+          ]
+        },
+        {
+          "text": "Rose Walker is alive. Unity Kincaid sleeps at last, for good."
+        },
+        {
+          "text": "Desire has made a dangerous enemy.",
+          "if": [
+            "DESIRE_THREATENED"
+          ]
+        },
+        {
+          "text": "And in a London pub, a man who will not die has a friend.",
+          "if": [
+            "HOB_FRIEND"
+          ]
+        },
+        {
+          "text": "And in a London pub, a man who will not die is still waiting to hear the word.",
+          "unless": [
+            "HOB_FRIEND"
+          ]
+        },
+        {
+          "text": "End of Part Five.",
+          "style": "hook"
         }
       ]
     }
