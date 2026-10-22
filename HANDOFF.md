@@ -126,4 +126,7 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
   - Model safety net: gateway.ts circuit breaker benches a failing model for 3 minutes, uses MODEL_DIALOGUE_FALLBACK (gpt-5.4-mini, gemini-3-flash), then tries the main model again. `GET /api/dialogue?probe=0` shows what is benched.
   - Story check: `npm run check` (also runs before every build) fails on duplicate Ideas lines, broken links, choices that are not exits, unknown characters, missing pictures or narration.
 - PRODUCTION RULE for new scenes (cost): default to a still image with `fx` (rain, embers, ash, dust, glitter, snow, mist, flicker) and the hand-held still camera; use video only for key moments (a transformation, a face that must move, an action beat). One still is about Y0.46; a 10 s clip about Y6.
-- Still parked: Aurie shots 1.1b and 1.2b-A face drift.
+- Aurie's face fixed in 1.1b and 1.2b-A (published as clips 1.1b-v2 / 1.2b-A-v2 to beat phone caches). Lesson: when a fresh generation keeps drifting, EDIT an approved high-likeness image instead (`node scripts/edit-image.mjs <src> <out> "<change>" --score aurie`).
+- Part Three live: 3.1 Destiny's garden, 3.2 the family of the Endless (labelled speakers DESTINY/DEATH/DESIRE/DESPAIR/DELIRIUM via card `speakers` + conversation `speakerNames`), end-ep3. Flags set: NADA_QUEST, STORMED_OUT, PRIDE_LOCK, ACCUSED_DESIRE.
+- Spend: Y523.60 total (face fix about Y20, Episode Three about Y26).
+- Next in the source (story-map.md Episode 4, "Realms Beyond the Dreaming"): Hell emptied, Lucifer gives Aurie the key to Hell, the suitors' banquet, freeing Nada. Needs a new budget.
