@@ -1130,7 +1130,12 @@
             "player": "start with the sand|begin with the sand|go to london|i will go|i.ll go|goodbye|farewell"
           }
         ],
-        "name": "The Three"
+        "name": "The Three",
+        "speakerNames": {
+          "MAIDEN": "The Maiden",
+          "MOTHER": "The Mother",
+          "CRONE": "The Crone"
+        }
       },
       "choices": [
         {
@@ -2167,7 +2172,308 @@
           "style": "hook"
         }
       ],
-      "fx": "dust"
+      "fx": "dust",
+      "next": "3.1"
+    },
+    "3.1": {
+      "id": "3.1",
+      "title": "Destiny's Garden",
+      "pov": "3P",
+      "episodeTitle": "Part Three · Chapter 12 · The Garden",
+      "music": "throne",
+      "fx": "mist",
+      "recap": "Destiny, eldest of the Endless, called the family together for the first time in centuries.",
+      "beats": [
+        {
+          "card": "Some weeks later",
+          "still": "library-hub"
+        },
+        {
+          "text": "The Dreaming is mending. Then a letter arrives, in a hand that never makes a mistake."
+        },
+        {
+          "text": "Destiny, eldest of the Endless, is calling the family together. It has not happened in centuries."
+        },
+        {
+          "text": "Aurie walks his garden, where every path is a choice someone once made.",
+          "clip": "3.1a"
+        },
+        {
+          "text": "Destiny is blind. He is chained to a book that holds everything that was, and everything that will be.",
+          "still": "still-destiny"
+        }
+      ],
+      "conversation": {
+        "character": "destiny",
+        "maxTurns": 2,
+        "canon": [
+          "Destiny has summoned the Endless to his hall tonight. He will not say why; what happens there is already written in his book.",
+          "Everyone will come except Destruction, who abandoned his realm three hundred years ago."
+        ],
+        "opening": "Sister. You are expected. Everything that happens tonight is already written here. Come in.",
+        "possibilities": [
+          "She asks why he called them: he says only that the book required it.",
+          "She asks what the book says about her: he reads one short, grave line and closes the subject.",
+          "She is impatient: he is not."
+        ],
+        "suggestions": [
+          "Why have you called us together?",
+          "What does your book say about me?"
+        ],
+        "exits": {
+          "3.1.IN": "Aurie goes in to the family gathering."
+        },
+        "triggers": [
+          {
+            "exit": "3.1.IN",
+            "player": "go in|let.s go|lead the way|take me in|keep them waiting|i.m coming|i will come"
+          }
+        ],
+        "consequences": {
+          "READ_HER_PAGE": {
+            "when": "She asks what his book says about her, and he reads it.",
+            "effects": {
+              "flags": {
+                "READ_HER_PAGE": true
+              }
+            },
+            "ripple": "For a moment every path in the garden points the same way."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "3.1.IN",
+          "text": "Then let's not keep them waiting.",
+          "effects": {},
+          "next": "3.2",
+          "aftermath": [
+            {
+              "text": "Destiny turns a page, and the garden becomes a hall.",
+              "still": "convocation"
+            }
+          ]
+        }
+      ]
+    },
+    "3.2": {
+      "id": "3.2",
+      "title": "The Family",
+      "pov": "POV",
+      "episodeTitle": "Chapter 13 · The Family",
+      "music": "library",
+      "fx": "dust",
+      "recap": "At the family table, Desire taunted Aurie about Nada, the queen she left in Hell.",
+      "beats": [
+        {
+          "text": "The Endless. Older than the gods, each the shape of something every living thing must face.",
+          "clip": "3.2a"
+        },
+        {
+          "text": "Death, her elder sister.",
+          "still": "still-death-table"
+        },
+        {
+          "text": "Desire, beautiful and cruel, who smells of roses.",
+          "still": "still-desire"
+        },
+        {
+          "text": "You have smelled those roses before, in a sleeping girl's dream.",
+          "if": [
+            "SENSED_DESIRE"
+          ]
+        },
+        {
+          "text": "Despair, Desire's twin, quiet and grey.",
+          "still": "still-despair"
+        },
+        {
+          "text": "Delirium, the youngest, who was once Delight.",
+          "still": "still-delirium"
+        },
+        {
+          "text": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it.",
+          "still": "convocation"
+        },
+        {
+          "text": "Desire leans forward, smiling. It has been waiting for this.",
+          "clip": "3.2b"
+        }
+      ],
+      "conversation": {
+        "character": "endless",
+        "name": "The Endless",
+        "maxTurns": 5,
+        "speakerNames": {
+          "DESTINY": "Destiny",
+          "DEATH": "Death",
+          "DESIRE": "Desire",
+          "DESPAIR": "Despair",
+          "DELIRIUM": "Delirium"
+        },
+        "canon": [
+          "The Endless are gathered at Destiny's table: Destiny presiding, Death, Desire, Despair and Delirium. Destruction's chair is empty; he left three hundred years ago.",
+          "Ten thousand years ago Nada, a mortal queen, refused Aurie's love, and Aurie condemned her to Hell for it. Aurie passed her, frozen in black ice, on the way to her helm.",
+          "Desire came tonight to bait Aurie about Nada and enjoys every moment. Death says, gently and firmly, that what Aurie did to Nada was wrong.",
+          "If Aurie promised Nada she would come back for her (flag NADA_PROMISE), Desire knows and throws it at her.",
+          "If Aurie asks whether Desire was in Unity Kincaid's dream, Desire neither confirms nor denies, and enjoys the question.",
+          "Every reply is two or three short lines from different siblings, each starting with the speaker's label, like 'DESIRE: ... DEATH: ...'. Destiny speaks rarely."
+        ],
+        "opening": "DESTINY: The family is gathered. DELIRIUM: You came! You came, and you're all made of night! DESIRE: And still wearing that wounded face. Tell me, sister. How is the woman you left in Hell?",
+        "possibilities": [
+          "She asks Desire what it wants: Desire says it only wants her to be honest, for once.",
+          "She asks Death's opinion: Death says Nada did not deserve it, and that Aurie knows it.",
+          "She defends herself: Desire is delighted; Despair is sad; Delirium says something strange and true.",
+          "She admits fault: the table goes quiet; Death is proud of her."
+        ],
+        "suggestions": [
+          "What do you want from me, Desire?",
+          "Death, do you think I was wrong?",
+          "Were you in Unity Kincaid's dream, Desire?"
+        ],
+        "exits": {
+          "3.2.A": "Aurie admits she was wrong about Nada and decides to go to Hell to set her free.",
+          "3.2.B": "Aurie loses her temper, insults Desire, and leaves the gathering.",
+          "3.2.C": "Aurie insists that Nada's punishment was just."
+        },
+        "consequences": {
+          "ASKED_DEATH": {
+            "when": "She asks Death what she thinks, and listens.",
+            "effects": {
+              "flags": {
+                "ASKED_DEATH": true
+              }
+            },
+            "ripple": "Death reaches across the table and touches her hand."
+          },
+          "ACCUSED_DESIRE": {
+            "when": "She accuses Desire of meddling in Unity Kincaid's dream, or of plotting against her.",
+            "effects": {
+              "flags": {
+                "ACCUSED_DESIRE": true
+              }
+            },
+            "ripple": "For a heartbeat, Desire stops smiling.",
+            "echo": {
+              "text": "At the family table, Dream accused Desire of meddling in a sleeping girl's dream.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "3.2.A",
+          "text": "You're right. I was wrong. I'll go to Hell and set her free.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "NADA_QUEST": true
+            }
+          },
+          "next": "end-ep3",
+          "aftermath": [
+            {
+              "text": "The table goes quiet. Death squeezes her hand.",
+              "still": "still-death-table"
+            },
+            {
+              "text": "This time, she means to keep a promise.",
+              "if": [
+                "NADA_PROMISE"
+              ]
+            },
+            {
+              "text": "Desire smiles, as if this were exactly what it wanted.",
+              "still": "still-desire"
+            },
+            {
+              "text": "Hell, again.",
+              "style": "hook"
+            }
+          ]
+        },
+        {
+          "id": "3.2.B",
+          "text": "I don't have to listen to this. Goodbye, Desire.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "STORMED_OUT": true
+            }
+          },
+          "next": "end-ep3",
+          "aftermath": [
+            {
+              "text": "Aurie leaves the table. Behind her, Desire laughs softly.",
+              "still": "convocation"
+            },
+            {
+              "text": "Death watches her go, and says nothing."
+            },
+            {
+              "text": "But the woman in the ice is still there. The question will not go away.",
+              "style": "hook"
+            }
+          ]
+        },
+        {
+          "id": "3.2.C",
+          "text": "She refused me. Her punishment was just.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "PRIDE_LOCK": true
+            }
+          },
+          "next": "end-ep3",
+          "aftermath": [
+            {
+              "text": "Death looks away. Despair begins, very quietly, to cry.",
+              "still": "still-despair"
+            },
+            {
+              "text": "Desire smiles. It has learned exactly what it came to learn.",
+              "still": "still-desire"
+            },
+            {
+              "text": "Pride is a door that locks from the inside.",
+              "style": "hook"
+            }
+          ]
+        }
+      ]
+    },
+    "end-ep3": {
+      "id": "end-ep3",
+      "title": "The family",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "fx": "dust",
+      "beats": [
+        {
+          "text": "The family scatters, each to their own realm.",
+          "still": "convocation"
+        },
+        {
+          "text": "Destiny closes his book. He already knows how this ends.",
+          "still": "still-destiny"
+        },
+        {
+          "text": "End of Part Three.",
+          "style": "hook"
+        }
+      ]
     }
   }
 }

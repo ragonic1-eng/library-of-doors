@@ -57,6 +57,7 @@ export interface Consequence {
 export interface Conversation {
   character: string; // key into the book's character cards
   name?: string; // on-screen name when it differs from the character key ("The Three")
+  speakerNames?: Record<string, string>; // on-screen names for labelled speakers ("DESIRE" -> "Desire")
   maxTurns: number; // 0 = open-ended (hub)
   canon: string[]; // facts the character may never contradict
   exits: Record<string, string>; // choice id -> what reaching it looks like

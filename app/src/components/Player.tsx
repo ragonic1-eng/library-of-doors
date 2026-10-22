@@ -62,14 +62,14 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const titleCase = (s: string) => `The ${cap(s.toLowerCase())}`;
 
 /** "MAIDEN: Hello. CRONE: Hush." -> one segment per speaker. Plain lines stay one segment. */
-function splitSpeakers(text: string): Segment[] {
+function splitSpeakers(text: string, names?: Record<string, string>): Segment[] {
   const parts = text.split(/\b([A-Z]{3,}):\s*/);
   if (parts.length < 3) return [{ text }];
   const out: Segment[] = [];
   if (parts[0].trim()) out.push({ text: parts[0].trim() });
   for (let i = 1; i < parts.length; i += 2) {
     const line = (parts[i + 1] ?? "").trim();
-    if (line) out.push({ speaker: parts[i], name: titleCase(parts[i]), text: line });
+    if (line) out.push({ speaker: parts[i], name: names?.[parts[i]] ?? titleCase(parts[i]), text: line });
   }
   return out;
 }
@@ -461,7 +461,7 @@ export default function Player({ book }: { book: Book }) {
         const res = await fetch("/api/dialogue", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ bookId: book.id, sceneId: sid, mode, history: hist.filter((t) => t.role !== "narration").map((t) => ({ role: t.role, text: t.who ? `${t.who.replace(/^The /, "").toUpperCase()}: ${t.text}` : t.text })), playerLine, intent, profile: p }),
+          body: JSON.stringify({ bookId: book.id, sceneId: sid, mode, history: hist.filter((t) => t.role !== "narration").map((t) => ({ role: t.role, text: t.who ? `${(Object.entries(book.scenes[sid]?.conversation?.speakerNames ?? {}).find(([, n]) => n === t.who)?.[0]) ?? t.who.replace(/^The /, "").toUpperCase()}: ${t.text}` : t.text })), playerLine, intent, profile: p }),
           signal: AbortSignal.timeout(45_000),
         });
         if (!res.ok) return { error: "server" };
@@ -476,7 +476,7 @@ export default function Player({ book }: { book: Book }) {
 
   /** Show a character's reply: their voice starts, and the words appear with it (one line per speaker). */
   const deliver = async (text: string, character: string, token: number, before: Turn[] = [], extra: Turn[] = []) => {
-    const segs = splitSpeakers(text);
+    const segs = splitSpeakers(text, book.scenes[sceneId]?.conversation?.speakerNames);
     const v = speakAll(segs, character);
     await Promise.race([v.started, sleep(NPC_TEXT_WAIT_MS)]);
     if (token !== runRef.current) return v;

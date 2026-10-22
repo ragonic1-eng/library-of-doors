@@ -574,6 +574,105 @@
         "prompt": "A small, dim, tidy apartment at dusk: an old man in a cardigan sits in a worn armchair beside a window, a violin resting on the table next to him. Death, the young woman from the character sheet, kneels beside the chair holding his hand, smiling up at him with great tenderness. Warm lamplight."
       },
       "motion": "The old man smiles back at her; a translucent, younger version of him rises out of his body and stands, holding her hand, while his body stays peaceful in the chair; together they turn toward the window light. Static camera, slight sway."
+    },
+    {
+      "id": "3.1a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/destiny-garden/plate.png",
+          "characters/destiny/sheet.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The garden of forking paths from the location plate at grey twilight. In the foreground, a tall woman with very long straight black hair in a long black gown, seen only from behind, her face never visible, walks along a misty gravel path between tall clipped hedges. Far ahead, small at the end of the path, Destiny from the character sheet stands waiting in his hooded robe, his great chained book open in his arms."
+      },
+      "motion": "The woman walks slowly forward along the path; behind her, the hedges and paths silently slide and rearrange themselves into new forks; mist drifts; far ahead, the hooded figure turns a page. Slow follow from behind."
+    },
+    {
+      "id": "still-destiny",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/destiny/sheet.png",
+          "assets/plates/destiny-garden/plate.png"
+        ],
+        "prompt": "Medium close-up of Destiny, the man from the character sheet, standing in his misty garden of forking paths, hood up, blind pale eyes looking just past the camera, his great chained book open in his arms, one long finger resting on a line of writing. Grey twilight, soft and solemn."
+      }
+    },
+    {
+      "id": "3.2a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/convocation/plate.png",
+          "characters/destiny/sheet.png",
+          "characters/death/sheet.png",
+          "characters/desire/sheet.png",
+          "characters/despair/sheet.png",
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "The convocation hall from the location plate, seen from the empty chair at the near end of the long black table, as if the viewer has just sat down. Around the table, each in their own light from above: at the far end Destiny (hooded, book open); along the left Death (young woman in black with an ankh) and Desire (androgynous, cream suit, red rose); along the right Despair (short grey woman) and Delirium (teenage girl with multicoloured hair, small fish in the air). One chair at the table stands empty and dark. Each person matches their character sheet exactly. A single candle on the table."
+      },
+      "motion": "One by one the family turn their heads to look at the camera: Death smiles warmly, Desire smirks, Despair lowers her eyes, Delirium waves with both hands while her little fish swim around her head; Destiny turns a page. Candle flickers. Static camera, slight sway."
+    },
+    {
+      "id": "still-desire",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/desire/sheet.png",
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "Close-up at the black table of the convocation hall: Desire, the person from the character sheet, lounges back in its chair under a deep red light, one arm over the chair back, smiling straight at the camera with tawny gold eyes. A rose petal hangs in the air."
+      }
+    },
+    {
+      "id": "still-despair",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/despair/sheet.png",
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "Close-up at the black table of the convocation hall: Despair, the woman from the character sheet, sits hunched in her chair under a dull grey-green light, looking up at the camera through her lashes, sad and gentle, her ringed hand on the table."
+      }
+    },
+    {
+      "id": "still-delirium",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "Close-up at the black table of the convocation hall: Delirium, the girl from the character sheet, kneels up on her chair under a shifting rainbow light, leaning toward the camera with a delighted, wandering smile, three small bright fish swimming in the air around her head. Photoreal, a real actress."
+      }
+    },
+    {
+      "id": "still-death-table",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png",
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "Close-up at the black table of the convocation hall: Death, the young woman from the character sheet, sits under a warm white light, chin on her hand, smiling warmly at the camera like a big sister at a dull family dinner."
+      }
+    },
+    {
+      "id": "3.2b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/desire/sheet.png",
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "Tight close-up at the black table of the convocation hall: Desire, the person from the character sheet, leaning forward toward the camera under deep red light, chin resting on laced fingers, a slow, knowing, cruel smile, tawny gold eyes. Red rose petals hang in the air."
+      },
+      "motion": "Desire leans in a little closer and its smile widens slowly; it tilts its head; red rose petals drift past and turn in the air; the red light pulses faintly. Slow push-in."
     }
   ],
   "react": {

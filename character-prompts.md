@@ -305,6 +305,54 @@ SURREAL DETAIL: a single black-and-white pigeon feather drifts down beside her a
 
 ---
 
+### 3.15 Destiny of the Endless (eldest brother; Episode 3)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Destiny of the Endless, the eldest. A very tall, gaunt man of no age, around 1.98 m, wrapped in a heavy hooded robe of undyed grey-brown wool that falls to the floor; the hood is up and casts his face half in shadow. Face: long, pale, smooth, solemn, a strong straight nose, a thin closed mouth. His eyes are blind: pale, milky and unfocused, looking at nothing. In his arms he holds an enormous ancient book bound in dark leather, open, and a heavy iron chain runs from a cuff on his left wrist to the book's spine. Bare pale feet. Posture: perfectly upright, unhurried, head slightly bowed toward the book. Expression: grave, patient, without warmth or cruelty.
+SURREAL DETAIL: the pages of the book turn by themselves, and the words on them are still being written.
+[Style Bible]
+```
+
+---
+
+### 3.16 Desire of the Endless (Aurie's sibling; Episode 3)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Desire of the Endless, neither man nor woman and both. Appears as a slender androgynous person of about twenty-eight, impossibly beautiful. Height around 1.78 m. Face: fine and sharp, high cheekbones, a small straight nose, a full curving mouth with a knowing half-smile. Skin smooth and pale with a faint gold sheen. Eyes tawny gold, like a cat's, heavy-lidded and amused. Hair short, soft, pale ash blond, swept back. Clothing: an immaculate pale cream three-piece suit, the jacket open, no tie, a deep red rose in the buttonhole; bare feet. A thin gold ring on one finger. Posture: one hip cocked, weight back, hands in pockets, utterly at ease. Expression: amused, intimate, cruel, as if it knows exactly what you want.
+SURREAL DETAIL: red rose petals drift in the air around it and never land.
+[Style Bible]
+```
+
+---
+
+### 3.17 Despair of the Endless (Desire's twin; Episode 3)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Despair of the Endless, Desire's twin. A short, heavy-set woman of indeterminate age, around 1.55 m, broad and soft. Skin pale grey, cool and dull like wet clay. Face: round and heavy, a wide flat nose, a small sad mouth, small pale grey eyes that look up through her lashes. Hair dark, lank and thin, falling to her shoulders. Clothing: a simple loose shift of grey linen to the knee, bare grey feet. On one finger an old iron ring with a small hook. Posture: shoulders rounded, head lowered, arms close to her body. Expression: quiet, mournful, gentle, endlessly tired.
+SURREAL DETAIL: behind her the backdrop has become a wall of small dim grey mirrors, each one showing a different sad face.
+[Style Bible]
+```
+
+---
+
+### 3.18 Delirium of the Endless (the youngest; Episode 3)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Delirium of the Endless, the youngest, who was once Delight. Appears as a slight teenage girl of about sixteen, around 1.55 m. Face: small and heart-shaped, a pointed chin, freckles, a wide wandering smile. Eyes mismatched: one bright green, one pale blue flecked with silver, never quite looking at the same thing. Hair a messy, choppy crop that shifts through several colours, pink, green, violet, at the tips. Clothing: a torn fishnet top over a too-big striped jumper, a short tutu skirt over ripped tights, one red boot and one yellow boot, mismatched gloves. Posture: tilted, restless, one foot hooked behind the other. Expression: distracted, delighted, a little frightened, about to say something nobody expects.
+SURREAL DETAIL: three small brightly coloured fish swim through the air around her head.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -501,6 +549,22 @@ SURREAL DETAIL: the clock above the counter has no hands, and the coffee in ever
 ```
 A city park in early autumn, just after sunrise: a wide paved square with a large round stone fountain, a white marble memorial arch in the distance, plane trees with yellowing leaves, old iron lamp posts, green-painted wooden benches. Low golden light across the paving, long shadows, a light mist lifting. Hundreds of grey pigeons on the paving near one bench. A few early city people far in the background.
 SURREAL DETAIL: one pigeon among the hundreds is perfectly white, and its shadow is a raven.
+[Style Bible]
+```
+
+---
+
+**4.17 Destiny's garden of forking paths (Episode 3)**
+```
+An endless formal garden at twilight, grey and green, laid out as paths that fork and fork again, each path lined with tall clipped hedges and old stone. At every fork a small stone statue faces one way. Grey mist lies along the ground. The sky is a pale, sourceless grey with no sun. In the middle distance, a hooded figure walks slowly with a great book in his arms. Silent, orderly, melancholy.
+SURREAL DETAIL: the paths behind the walking figure quietly rearrange themselves after he has passed.
+[Style Bible]
+```
+
+**4.18 The convocation hall of the Endless (Episode 3)**
+```
+A vast hall with no walls, only darkness and drifting stars at the edges. In the centre, a long table of black stone with eight tall chairs, each chair lit by its own different light from above: grey, warm white, deep red, dull grey-green, shifting rainbow, cold blue-black, pale gold, and one chair in total darkness, empty, with dust on its seat. On the table, a single candle in a brass holder and eight empty goblets. The floor is polished black, reflecting the lights.
+SURREAL DETAIL: on the wall of darkness behind each chair hangs a glowing sigil: a book, an ankh, a helm, a heart, a hooked ring, a swirl of colour, and a sword, faint and floating.
 [Style Bible]
 ```
 
