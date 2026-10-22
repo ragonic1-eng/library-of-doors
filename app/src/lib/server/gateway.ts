@@ -13,6 +13,27 @@ export const models = {
 
 export const mockMode = !KEY || process.env.MOCK_AI === "1";
 
+// ---------- circuit breaker ----------
+// When a model's upstream channel fails, it is benched for a while so players never wait on a dead channel;
+// after the bench time it gets one live try again, and goes straight back to first place if it answers.
+const BENCH_MS = 3 * 60_000;
+const benchedUntil = new Map<string, number>();
+export function modelOrder(primary: string, fallbacks: string[]): string[] {
+  const now = Date.now();
+  const all = [primary, ...fallbacks.filter((m) => m !== primary)];
+  const healthy = all.filter((m) => (benchedUntil.get(m) ?? 0) <= now);
+  const benched = all.filter((m) => (benchedUntil.get(m) ?? 0) > now);
+  return [...healthy, ...benched]; // benched models stay last, as a final resort
+}
+export function reportModel(model: string, ok: boolean) {
+  if (ok) benchedUntil.delete(model);
+  else benchedUntil.set(model, Date.now() + BENCH_MS);
+}
+export function modelHealth() {
+  const now = Date.now();
+  return Object.fromEntries([...benchedUntil].filter(([, t]) => t > now).map(([m, t]) => [m, `benched ${Math.round((t - now) / 1000)}s`]));
+}
+
 export async function gatewayJson<T>(path: string, body: unknown, timeoutMs = 60_000): Promise<T> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);

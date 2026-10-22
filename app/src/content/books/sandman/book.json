@@ -10,7 +10,7 @@
       "id": "0.0",
       "title": "The Queen of Dreams",
       "pov": "3P",
-      "episodeTitle": "Episode 0 · The Queen of Dreams",
+      "episodeTitle": "Prologue · The Queen of Dreams",
       "music": "throne",
       "beats": [
         {
@@ -32,13 +32,15 @@
           "text": "A circle of chalk reaches up through her floor, and pulls her down."
         }
       ],
-      "next": "1.1"
+      "next": "1.1",
+      "recap": "Aurie, Queen of Dreams, ruled the Dreaming, until a spell pulled her out of it.",
+      "fx": "glitter"
     },
     "1.1": {
       "id": "1.1",
       "title": "The ritual at Fawney Rig",
       "pov": "3P",
-      "episodeTitle": "Episode 1 · The Wrong Sister",
+      "episodeTitle": "Chapter 1 · The Wrong Sister",
       "music": "cellar-dread",
       "beats": [
         {
@@ -67,7 +69,9 @@
           "style": "hook"
         }
       ],
-      "next": "1.2"
+      "next": "1.2",
+      "recap": "1916. Roderick Burgess meant to catch Death and caught Aurie instead. He took her helm, her sand and her ruby.",
+      "fx": "dust"
     },
     "1.2": {
       "id": "1.2",
@@ -255,13 +259,15 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Burgess demanded immortality, power, and his dead son back.",
+      "fx": "dust"
     },
     "1.3": {
       "id": "1.3",
       "title": "The world without dreams",
       "pov": "3P",
-      "episodeTitle": "Episode 2 · Seventy Years",
+      "episodeTitle": "Chapter 2 · Seventy Years",
       "music": "the-years",
       "beats": [
         {
@@ -446,13 +452,14 @@
           ]
         }
       ],
-      "innerVoice": false
+      "innerVoice": false,
+      "recap": "Without her the Dreaming crumbled, and sleep went wrong in the world. She reached one sleeping girl, Unity."
     },
     "1.4": {
       "id": "1.4",
       "title": "Alex Burgess",
       "pov": "POV",
-      "episodeTitle": "Episode 3 · The Son",
+      "episodeTitle": "Chapter 3 · The Son",
       "music": "cellar-wait",
       "beats": [
         {
@@ -460,7 +467,7 @@
           "still": "cellar-1916"
         },
         {
-          "text": "Burgess's mistress, Ethel Cripps, runs away in the night.",
+          "text": "Burgess had a mistress, Ethel Cripps. One night in 1926, she runs away.",
           "still": "still-ethel-1926"
         },
         {
@@ -661,13 +668,15 @@
           ]
         }
       ],
-      "innerVoice": true
+      "innerVoice": true,
+      "recap": "Ethel Cripps stole the three treasures in 1926. Burgess died in 1947, and his son Alex took over the cellar.",
+      "fx": "dust"
     },
     "1.5": {
       "id": "1.5",
       "title": "Escape",
       "pov": "3P",
-      "episodeTitle": "Episode 4 · Breath on Glass",
+      "episodeTitle": "Chapter 4 · Breath on Glass",
       "music": "escape",
       "beats": [
         {
@@ -864,14 +873,16 @@
           ]
         }
       ],
-      "innerVoice": false
+      "innerVoice": false,
+      "recap": "1988. Aurie escaped through a sleeping guard's dream, and faced old Alex.",
+      "fx": "dust"
     },
     "2.1": {
       "id": "2.1",
       "title": "The library between",
       "type": "hub",
       "pov": "3P",
-      "episodeTitle": "The Library Between",
+      "episodeTitle": "Chapter 5 · The Library Between",
       "music": "library",
       "beats": [
         {
@@ -991,7 +1002,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "She came home to a ruined realm. Only Lucienne and the library were left.",
+      "fx": "dust"
     },
     "end-ep1": {
       "id": "end-ep1",
@@ -1008,23 +1021,21 @@
           "text": "Your helm, your sand and your ruby are out there, scattered across the waking world."
         },
         {
-          "text": "Only three women know where every lost thing goes."
-        },
-        {
-          "text": "Behind the three doors, other stories are waiting for you."
+          "text": "Lucienne knows where to begin: with three women who know where every lost thing goes."
         },
         {
           "text": "End of Part One.",
           "style": "hook"
         }
       ],
-      "next": "2.2"
+      "next": "2.2",
+      "fx": "dust"
     },
     "2.2": {
       "id": "2.2",
       "title": "The Three Who Are One",
       "pov": "3P",
-      "episodeTitle": "Episode 5 · The Three",
+      "episodeTitle": "Part Two · Chapter 6 · The Three",
       "music": "the-years",
       "beats": [
         {
@@ -1032,13 +1043,16 @@
           "still": "crossroads"
         },
         {
-          "text": "Lost things leave a trail, and only three women can read it."
+          "text": "Where three roads meet, at the edge of the Dreaming, live the Three Who Are One."
         },
         {
-          "text": "Mortals call them the Fates. They are three, and they are one."
+          "text": "A Maiden, a Mother and a Crone. Mortals call them the Fates."
         },
         {
-          "text": "Aurie walks to the crossroads at the edge of her realm, and calls them.",
+          "text": "They will answer three questions, for anyone who asks politely."
+        },
+        {
+          "text": "Aurie calls them, and they come.",
           "clip": "2.2a"
         }
       ],
@@ -1052,7 +1066,7 @@
           "The helm was traded to a demon and is in Hell.",
           "The ruby went from Ethel Cripps to her son John Dee, who is locked in a madhouse in America and still dreams of it."
         ],
-        "opening": "MAIDEN: Look who's come back! MOTHER: Thin as a rake, poor thing. CRONE: Three questions, dearie. Ask them nicely.",
+        "opening": "MAIDEN: Look who's come home at last! MOTHER: Thin as a rake, poor love. CRONE: Three questions, dearie. Ask them nicely, and ask them well.",
         "possibilities": [
           "She asks where her sand, helm or ruby is: they answer plainly, one each, in turn.",
           "She asks which to seek first: the sand, because someone is dying of it.",
@@ -1064,10 +1078,10 @@
           "Where is my pouch of sand?",
           "Where is my helm?",
           "Where is my ruby?",
-          "Tell me what becomes of me."
+          "What becomes of me?"
         ],
         "exits": {
-          "2.2.GO": "Aurie has her answers (or the three questions are spent) and sets off to find the sand in London."
+          "2.2.GO": "Aurie says she will go and find her sand (or says goodbye, or thanks them and leaves). Asking questions alone never ends the scene."
         },
         "consequences": {
           "ASKED_FATE": {
@@ -1109,18 +1123,28 @@
             },
             "ripple": "The crone cackles, pleased, and the moon grows brighter."
           }
-        }
+        },
+        "triggers": [
+          {
+            "exit": "2.2.GO",
+            "player": "start with the sand|begin with the sand|go to london|i will go|i.ll go|goodbye|farewell"
+          }
+        ],
+        "name": "The Three"
       },
       "choices": [
         {
           "id": "2.2.GO",
-          "text": "Thank you, sisters. I will start with the sand.",
+          "text": "Thank you, sisters. I'll begin with the sand.",
           "effects": {},
           "next": "2.3",
           "aftermath": [
             {
-              "text": "The sand is in London. The helm is in Hell. The ruby is with the son of Ethel Cripps.",
+              "text": "Three answers, in three places.",
               "still": "crossroads"
+            },
+            {
+              "text": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son."
             },
             {
               "text": "And one answer she did not want.",
@@ -1129,18 +1153,23 @@
               ]
             },
             {
-              "text": "The sand comes first. Someone is dying of it.",
+              "text": "Hell and a madman can wait. Someone in London is dying of her sand."
+            },
+            {
+              "text": "She will start with the sand.",
               "style": "hook"
             }
           ]
         }
-      ]
+      ],
+      "recap": "The Fates told her where her treasures went: the sand to London, the helm to Hell, the ruby to Ethel's son.",
+      "fx": "mist"
     },
     "2.3": {
       "id": "2.3",
       "title": "The Sand",
       "pov": "3P",
-      "episodeTitle": "Episode 6 · The Sand",
+      "episodeTitle": "Chapter 7 · The Sand",
       "music": "cellar-wait",
       "beats": [
         {
@@ -1148,14 +1177,20 @@
           "still": "london-rain"
         },
         {
-          "text": "The sand leads her to a rainy street in north London."
+          "text": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand."
         },
         {
-          "text": "Someone is waiting there, as if she has been expecting trouble for years.",
+          "text": "It leads her to a rainy street in north London."
+        },
+        {
+          "text": "A woman is waiting under a porch, as if she has been expecting trouble.",
           "still": "still-johanna"
         },
         {
-          "text": "Johanna Constantine. Exorcist, chain-smoker, and the last person who held the pouch."
+          "text": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name."
+        },
+        {
+          "text": "Years ago, the pouch was hers. Then the woman she loved took it."
         }
       ],
       "conversation": {
@@ -1176,8 +1211,7 @@
         ],
         "suggestions": [
           "Who is Rachel to you?",
-          "What has my sand done to her?",
-          "Take me to her."
+          "What has my sand done to her?"
         ],
         "exits": {
           "2.3.IN": "Aurie goes into the house, with Johanna leading the way."
@@ -1224,7 +1258,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "In London she met Johanna Constantine, the last person to hold the pouch of sand.",
+      "fx": "rain"
     },
     "2.4": {
       "id": "2.4",
@@ -1335,7 +1371,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Rachel had breathed the sand for years. Aurie decided how her suffering ended, and took the pouch back.",
+      "fx": "glitter"
     },
     "end-2a": {
       "id": "end-2a",
@@ -1352,17 +1390,18 @@
           "text": "She feels the Dreaming stir, a little stronger."
         },
         {
-          "text": "Next, the helm. In Hell.",
+          "text": "Next, the helm. A demon has it, in Hell.",
           "style": "hook"
         }
       ],
-      "next": "2.5"
+      "next": "2.5",
+      "fx": "dust"
     },
     "2.5": {
       "id": "2.5",
       "title": "The Gates of Hell",
       "pov": "3P",
-      "episodeTitle": "Episode 7 · Hell",
+      "episodeTitle": "Chapter 8 · Hell",
       "music": "cellar-dread",
       "beats": [
         {
@@ -1370,7 +1409,7 @@
           "still": "hell-gates"
         },
         {
-          "text": "Her helm was traded to a demon. So Aurie goes where no dreamer is welcome."
+          "text": "The Fates said a demon holds her helm. So Aurie goes where no dreamer is welcome."
         },
         {
           "text": "The gates of Hell open for her. Even here, they know her name.",
@@ -1461,7 +1500,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "In Hell she passed Nada, a queen she once condemned.",
+      "fx": "ash"
     },
     "2.6": {
       "id": "2.6",
@@ -1474,7 +1515,10 @@
           "clip": "2.5c"
         },
         {
-          "text": "Lucifer Morningstar, first of the fallen, rules here. He has been expecting her."
+          "text": "Only Lucifer, who rules here, can make a demon give back what it holds."
+        },
+        {
+          "text": "Lucifer Morningstar, first of the fallen. He has been expecting her."
         }
       ],
       "conversation": {
@@ -1524,24 +1568,26 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Lucifer told her a demon, Choronzon, held her helm.",
+      "fx": "embers"
     },
     "2.7": {
       "id": "2.7",
       "title": "The Oldest Game",
       "pov": "POV",
       "music": "escape",
-      "episodeTitle": "Episode 8 · The Oldest Game",
+      "episodeTitle": "Chapter 9 · The Oldest Game",
       "beats": [
         {
           "text": "Choronzon steps into the ring, with her helm in his hand.",
           "clip": "2.6a"
         },
         {
-          "text": "The rules are simple. Each names a form that defeats the other's last. The first who cannot answer, loses."
+          "text": "The Oldest Game. Each names a form that defeats the other's last. The first who cannot answer, loses."
         },
         {
-          "text": "Type your answer. Every form must beat his."
+          "text": "Lucifer will judge. Type your answer: every form must beat his."
         }
       ],
       "conversation": {
@@ -1632,7 +1678,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "She played the Oldest Game against Choronzon for her helm.",
+      "fx": "embers"
     },
     "2.8": {
       "id": "2.8",
@@ -1720,7 +1768,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Lucifer's legions blocked her way out of Hell.",
+      "fx": "embers"
     },
     "end-2b": {
       "id": "end-2b",
@@ -1741,13 +1791,14 @@
           "text": "Next, the ruby.",
           "style": "hook"
         }
-      ]
+      ],
+      "fx": "dust"
     },
     "2.9": {
       "id": "2.9",
       "title": "Twenty-Four Hours",
       "pov": "3P",
-      "episodeTitle": "Episode 9 · The Ruby",
+      "episodeTitle": "Chapter 10 · The Ruby",
       "music": "escape",
       "innerVoice": true,
       "beats": [
@@ -1756,7 +1807,10 @@
           "still": "still-arkham"
         },
         {
-          "text": "John Dee, the son of Ethel Cripps, has spent forty years in a madhouse, dreaming of a stone."
+          "text": "The Fates said the ruby went to Ethel Cripps's son."
+        },
+        {
+          "text": "John Dee has spent forty years in a madhouse, dreaming of that stone."
         },
         {
           "text": "Tonight he walks out, and takes his mother's ruby back."
@@ -1811,7 +1865,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "John Dee, Ethel's son, was tormenting a diner full of people with the ruby.",
+      "fx": "flicker"
     },
     "2.10": {
       "id": "2.10",
@@ -1877,7 +1933,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Dee smashed the ruby, and all her power came home to her.",
+      "fx": "flicker"
     },
     "2.11": {
       "id": "2.11",
@@ -1965,13 +2023,15 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "She decided what became of John Dee.",
+      "fx": "flicker"
     },
     "2.12": {
       "id": "2.12",
       "title": "The Sound of Her Wings",
       "pov": "3P",
-      "episodeTitle": "Episode 10 · Her Sister",
+      "episodeTitle": "Chapter 11 · Her Sister",
       "music": "library",
       "beats": [
         {
@@ -2072,7 +2132,9 @@
             }
           ]
         }
-      ]
+      ],
+      "recap": "Her sister Death found her on a park bench.",
+      "fx": "dust"
     },
     "end-ep2": {
       "id": "end-ep2",
@@ -2101,10 +2163,11 @@
           ]
         },
         {
-          "text": "End of Episode Two.",
+          "text": "End of Part Two.",
           "style": "hook"
         }
-      ]
+      ],
+      "fx": "dust"
     }
   }
 }

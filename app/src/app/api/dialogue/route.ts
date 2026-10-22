@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getBook, getCharacter } from "@/lib/story/load";
-import { gatewayJson, mockMode, models } from "@/lib/server/gateway";
+import { gatewayJson, mockMode, modelHealth, modelOrder, models, reportModel } from "@/lib/server/gateway";
 import { consequenceFlag, meets, relationOf } from "@/lib/state/profile";
 import type { Consequence, DialogueReply, Profile, Scene } from "@/lib/story/types";
 
@@ -59,13 +59,16 @@ export async function GET(req: Request) {
   if (url.searchParams.get("warm") === "1" && !mockMode) {
     const t0 = Date.now();
     try {
-      await gatewayJson("/chat/completions", { model: models.dialogue, max_tokens: 3, messages: [{ role: "user", content: "Say: ready" }] }, 20_000);
+      await gatewayJson("/chat/completions", { model: models.dialogue, max_tokens: 16, messages: [{ role: "user", content: "Say: ready" }] }, 15_000);
+      reportModel(models.dialogue, true);
       return NextResponse.json({ ok: true, warmed: true, ms: Date.now() - t0 });
     } catch {
+      // The main model is down right now: bench it, so her first line goes straight to a fallback.
+      reportModel(models.dialogue, false);
       return NextResponse.json({ ok: true, warmed: false, ms: Date.now() - t0 });
     }
   }
-  if (url.searchParams.get("probe") !== "1" || mockMode) return NextResponse.json({ ok: true, model: models.dialogue, mock: mockMode });
+  if (url.searchParams.get("probe") !== "1" || mockMode) return NextResponse.json({ ok: true, model: models.dialogue, fallbacks: models.dialogueFallbacks, benched: modelHealth(), mock: mockMode });
   const hosts = ["https://infistar.ai/v1", "https://infistar.cc/v1"];
   const key = process.env.INFISTAR_API_KEY ?? "";
   const results: Record<string, string> = {};
@@ -102,7 +105,7 @@ export async function POST(req: Request) {
   const intent = body.intent && body.intent in exits ? body.intent : undefined;
   const mustDecide = !intent && maxTurns > 0 && turnsSoFar + 1 >= maxTurns;
 
-  const system = buildSystem({ body, card, charKey, scene, exits, consequences, mustDecide, intent });
+  const system = buildSystem({ body, card, charKey, scene, exits, consequences, mustDecide, intent, turnsSoFar, maxTurns });
 
   if (mockMode) return NextResponse.json(mockReply(body, card.name, exits, consequences, mustDecide, intent));
 
@@ -119,17 +122,19 @@ export async function POST(req: Request) {
       temperature: 0.9,
       max_tokens: 1200,
       response_format: { type: "json_schema", json_schema: { name: "reply", strict: true, schema: replySchema } },
-    });
+    }, 25_000);
     // If the main model's upstream channel fails, answer from a fallback rather than break the scene.
     let data: Awaited<ReturnType<typeof call>> | undefined;
     let lastErr: unknown;
-    for (const model of [models.dialogue, ...models.dialogueFallbacks]) {
+    for (const model of modelOrder(models.dialogue, models.dialogueFallbacks)) {
       try {
         data = await call(model);
+        reportModel(model, true);
         break;
       } catch (e) {
         lastErr = e;
-        console.error(`dialogue: ${model} failed:`, (e as Error).message.slice(0, 160));
+        reportModel(model, false);
+        console.error(`dialogue: ${model} failed, benched for 3 min:`, (e as Error).message.slice(0, 160));
       }
     }
     if (!data) throw lastErr;
@@ -167,14 +172,21 @@ function buildSystem(args: {
   consequences: Record<string, Consequence>;
   mustDecide: boolean;
   intent?: string;
+  turnsSoFar: number;
+  maxTurns: number;
 }) {
-  const { body, card, charKey, scene, exits, consequences, mustDecide, intent } = args;
+  const { body, card, charKey, scene, exits, consequences, mustDecide, intent, turnsSoFar, maxTurns } = args;
+  // How hard to steer: gently at first, plainly near the end of the scene.
+  const left = maxTurns > 0 ? maxTurns - (turnsSoFar + 1) : 99;
+  const steering = left >= 2
+    ? "Let the scene breathe, but keep it moving toward one of the exits below: answer her, then end on something that invites her to decide (a question, a challenge, an offer, a plea), the way your character would."
+    : "The scene is nearly over. In character, put the decision squarely in front of her: name what she must choose between, the way your character would (a demand, a dare, a heartfelt ask).";
   const summary = scene.summary ?? scene.beats.filter((b) => b.text && !b.if).map((b) => b.text).join(" ");
   const ending = intent
     ? `She has made her decision: ${exits[intent]} React to it in character as the closing moment of the scene, and set "decision" to "${intent}".`
     : mustDecide
       ? "This is the final exchange. End the scene in character, and you MUST set decision to the exit closest to what she has said and done so far."
-      : `When her latest input does what one exit describes (in her own words, not necessarily the same ones), set "decision" to that exit id NOW, even if your character hesitates or refuses: the outcome is hers to decide, and your reaction (hesitation included) is the closing moment of the scene. Only when she does something that matches no exit, react to it fully and keep the scene alive with decision null.`;
+      : `Asking a question, or talking about something, never ends the scene by itself. When her latest input does what one exit describes (in her own words, not necessarily the same ones), set "decision" to that exit id NOW, even if your character hesitates or refuses: the outcome is hers to decide, and your reaction (hesitation included) is the closing moment of the scene. Only when she does something that matches no exit, react to it fully and keep the scene alive with decision null.`;
   const p = body.profile;
   const bookFlags = Object.entries(p.flags[body.bookId] ?? {}).filter(([, v]) => v).map(([k]) => k);
   const exitList = Object.entries(exits).map(([id, desc]) => `- ${id}: ${desc}`).join("\n");
@@ -203,6 +215,7 @@ function buildSystem(args: {
     `CONSEQUENCES. Her words and actions have consequences in this story. When her LATEST input clearly earns one of these, include its tag in "consequences" (at most two; only ones she has truly earned; never fire one just because it is listed):\n${menu || "- (none remaining)"}`,
     `RELATIONSHIP. Set trust_delta and fear_delta (integers -2 to 2) for how her latest input changes YOUR trust in her and fear of her. Usually 0 or 1; 2 only for something remarkable.`,
     `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
+    `STEERING (invisible; never mention options, ideas, buttons, menus or the game): ${steering}`,
     `HOW THE SCENE ENDS. Her words decide the story; she must never have to repeat herself or pick from a menu. ${ending}\n${exitList || "- none"}`,
     `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,

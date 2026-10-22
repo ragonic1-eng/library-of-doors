@@ -18,6 +18,9 @@ export interface Requires {
   relation?: Record<string, { trust?: number; fear?: number }>; // minimum trust/fear with a character
 }
 
+/** Light ambient motion drawn over a picture, so stills feel filmed: falling rain, rising embers, drifting dust... */
+export type Fx = "rain" | "embers" | "ash" | "dust" | "glitter" | "snow" | "flicker" | "mist";
+
 /** One moment of the film: a picture, and at most one narrated sentence shown exactly while it is spoken. */
 export interface Beat {
   text?: string; // narrator line; its audio file is audio/lines/<lineId(text)>.mp3
@@ -25,6 +28,7 @@ export interface Beat {
   still?: string; // still image to show instead (slow push-in); file stills/<id>.jpg
   card?: string; // silent full-screen time/place card ("England · 1916"), about 2.5 s
   style?: "hook"; // show the text as a large centred cliffhanger line
+  fx?: Fx; // ambient motion over the picture from this beat on (overrides the scene's)
   if?: string[]; // play only when all these book flags are set
   unless?: string[]; // skip when any of these book flags is set
 }
@@ -52,6 +56,7 @@ export interface Consequence {
 
 export interface Conversation {
   character: string; // key into the book's character cards
+  name?: string; // on-screen name when it differs from the character key ("The Three")
   maxTurns: number; // 0 = open-ended (hub)
   canon: string[]; // facts the character may never contradict
   exits: Record<string, string>; // choice id -> what reaching it looks like
@@ -71,6 +76,8 @@ export interface Scene {
   pov: "3P" | "POV";
   beats: Beat[]; // the scene as narrated moments, played in order before any conversation
   summary?: string; // what the AI should know has just happened (defaults to the beats' text)
+  recap?: string; // one line for "Story so far" once the scene has been played
+  fx?: Fx; // ambient motion for the whole scene
   music?: string; // music track id for this scene (plays until a scene names another; "none" stops it)
   episodeTitle?: string; // micro-episode title shown as a card when this scene opens
   innerVoice?: boolean; // ask the AI for Aurie's private thought before choices
@@ -99,6 +106,9 @@ export interface CharacterCard {
   address: string; // how they address Aurie
   ttsVoice?: string; // gateway voice id
   voiceDirection?: string; // how the voice actor should deliver this character's lines
+  // Characters who are several people (the Three): replies label each part "MAIDEN: ...", and each label has
+  // its own on-screen name and voice.
+  speakers?: Record<string, { name: string; ttsVoice?: string; voiceDirection?: string }>;
 }
 
 export interface PlayerModel {
@@ -123,6 +133,9 @@ export interface Profile {
   echoes: { text: string; knownBy: string[] }[]; // story facts her choices created, for later characters
   playerModel: PlayerModel;
   position: { book: string; scene: string } | null;
+  journal?: { scene: string; recap: string; choice?: string }[]; // what she has lived through, for "Story so far"
+  visited?: string[]; // scene ids reached, for unlocking chapters
+  syncCode?: string; // cloud save code, to continue on another phone
 }
 
 export interface DialogueReply {

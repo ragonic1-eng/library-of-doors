@@ -121,9 +121,9 @@
     "voiceDirection": "A frail, terrified old Englishman, breathless, voice cracking, pleading through tears, upper-class accent worn thin by age."
   },
   "fates": {
-    "name": "The Three (the maiden, the mother and the crone, who are one)",
+    "name": "The Three (the Maiden, the Mother and the Crone, who are one)",
     "address": "little sister",
-    "voice": "Three women who are one, speaking in turn: the MAIDEN eager and quick, the MOTHER warm and practical, the CRONE dry, bawdy and amused. They finish each other's sentences and argue about small things. Write each reply as the three of them taking turns, marked like 'MAIDEN: ... MOTHER: ... CRONE: ...', one short sentence each at most. Riddling but never useless: when asked a real question they answer it.",
+    "voice": "Three sisters who are one, speaking in turn: the MAIDEN quick and eager, the MOTHER warm and practical, the CRONE dry, bawdy and amused. Every reply is two or three short lines, each starting with the speaker's label, exactly like: 'MAIDEN: ... MOTHER: ... CRONE: ...'. One short sentence per sister. Answer her actual question plainly and first (where, who, what). Only the Crone may add a riddle, and only when Aurie asks about her own future. Warm, funny, a little rude; never vague about the treasures.",
     "wants": "To be asked properly, and to be paid. They enjoy Aurie's discomfort, and they are fond of her in their way.",
     "knows": [
       "Her pouch of sand was stolen from Ethel Cripps long ago and is now in London, in the hands of a woman named Johanna Constantine, or near her. Someone has been breathing the sand for years and it is killing them.",
@@ -141,7 +141,24 @@
       "They never lie, and never explain a riddle."
     ],
     "ttsVoice": "alloy",
-    "voiceDirection": "Three women in one voice: shift clearly between a light quick girl, a warm grounded woman, and a cackling, dry old crone, a small pause between each. Hushed, intimate, faintly amused."
+    "voiceDirection": "Three different women speaking in turn.",
+    "speakers": {
+      "MAIDEN": {
+        "name": "The Maiden",
+        "ttsVoice": "shimmer",
+        "voiceDirection": "A bright, quick, excited young woman, almost giggling, light and fast."
+      },
+      "MOTHER": {
+        "name": "The Mother",
+        "ttsVoice": "coral",
+        "voiceDirection": "A warm, grounded, motherly woman in her forties, kind and practical, a little tired."
+      },
+      "CRONE": {
+        "name": "The Crone",
+        "ttsVoice": "sage",
+        "voiceDirection": "A very old woman, dry, crackly and amused, slow, savouring each word, with a wicked little laugh."
+      }
+    }
   },
   "johanna": {
     "name": "Johanna Constantine",

@@ -11,13 +11,14 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const { text, bookId, character } = (await req.json()) as { text: string; bookId: string; character: string };
+  const { text, bookId, character, speaker } = (await req.json()) as { text: string; bookId: string; character: string; speaker?: string };
   if (!text?.trim()) return NextResponse.json({ error: "empty" }, { status: 400 });
   if (mockMode) return NextResponse.json({ error: "tts offline" }, { status: 503 });
 
   const card = getCharacter(bookId, character);
-  const voice = process.env[`TTS_VOICE_${character}`] ?? card?.ttsVoice ?? "marin";
-  const direction = card?.voiceDirection ?? "Natural, unhurried, intimate, as if in the same room.";
+  const part = speaker ? card?.speakers?.[speaker] : undefined;
+  const voice = part?.ttsVoice ?? process.env[`TTS_VOICE_${character}`] ?? card?.ttsVoice ?? "marin";
+  const direction = part?.voiceDirection ?? card?.voiceDirection ?? "Natural, unhurried, intimate, as if in the same room.";
 
   try {
     const data = await gatewayJson<{ choices: { message: { audio?: { data?: string } } }[] }>(
