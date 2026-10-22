@@ -199,3 +199,15 @@ test('a beat sound effect plays once, can be switched off, and fades out when th
   playSfx('thunder');
   assert.equal(made.length, 2, 'switched off: nothing plays');
 });
+
+test('every scene has an ambience bed, Hell burns, Nada\'s cell is ice, and the player loops it under the music', () => {
+  const book = JSON.parse(readFileSync(new URL('../src/content/books/sandman/book.json', import.meta.url), 'utf8'));
+  for (const [id, s] of Object.entries(book.scenes)) assert.ok(s.ambience || s.beats.some((b) => b.ambience), `${id} has no ambience`);
+  for (const id of ['2.5', '2.6', '2.7', '2.8', '4.1']) assert.equal(book.scenes[id].ambience, 'hell', id);
+  assert.equal(book.scenes['2.5'].beats.find((b) => b.text?.startsWith('In a cell of black ice')).ambience, 'ice');
+  assert.ok(player.includes('audio/ambience/') && /a\.loop = true;[\s\S]*ambTarget/.test(player), 'player loops the bed');
+  const dir = new URL('../public/clips/sandman/audio/ambience/', import.meta.url);
+  if (!existsSync(dir)) return; // media is local-only; the deployed copies live on Blob
+  const beds = new Set(Object.values(book.scenes).flatMap((s) => [s.ambience, ...s.beats.map((b) => b.ambience)]).filter(Boolean));
+  for (const bed of beds) assert.ok(existsSync(new URL(`${bed}.mp3`, dir)), `${bed}.mp3`);
+});

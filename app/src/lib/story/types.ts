@@ -28,6 +28,7 @@ export interface Beat {
   still?: string; // still image to show instead (slow push-in); file stills/<id>.jpg
   card?: string; // silent full-screen time/place card ("England · 1916"), about 2.5 s
   sfx?: string; // one-shot sound effect played as this beat starts; file audio/sfx/<id>.mp3
+  ambience?: string; // looping background bed from this beat on (overrides the scene's); file audio/ambience/<id>.mp3
   style?: "hook"; // show the text as a large centred cliffhanger line
   fx?: Fx; // ambient motion over the picture from this beat on (overrides the scene's)
   if?: string[]; // play only when all these book flags are set
@@ -81,6 +82,7 @@ export interface Scene {
   recap?: string; // one line for "Story so far" once the scene has been played
   fx?: Fx; // ambient motion for the whole scene
   music?: string; // music track id for this scene (plays until a scene names another; "none" stops it)
+  ambience?: string; // looping background bed for this scene only (rain, fire, crowd); file audio/ambience/<id>.mp3
   episodeTitle?: string; // micro-episode title shown as a card when this scene opens
   innerVoice?: boolean; // ask the AI for Aurie's private thought before choices
   conversation?: Conversation;

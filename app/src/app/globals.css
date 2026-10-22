@@ -82,6 +82,7 @@ body {
 }
 .placeholder-title { font-size: clamp(1.4rem, 3.5vw, 2.6rem); letter-spacing: 0.08em; }
 .placeholder-sub { font-size: 0.85rem; color: var(--dim); font-style: italic; }
+.title-plate { justify-content: flex-start; padding-top: 13dvh; } /* the title sits high, so the doors below never cover it */
 .title-plate h1 { font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: 0.12em; margin: 0; }
 .title-plate .sub { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.8rem; }
 
@@ -261,6 +262,9 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .gate-sub { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; }
 .gate-cta { margin-top: 1.5rem; padding: 0.9rem 1.6rem; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); letter-spacing: 0.08em; animation: breathe 2.6s ease-in-out infinite; }
 .gate-hint { color: var(--dim); font-size: 0.8rem; margin-top: 0.4rem; }
+/* The dedication on both start screens: quiet, personal, fading in after the title. */
+.dedication { font-style: italic; color: var(--accent); opacity: 0; font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 0.04em; margin-top: 0.6rem; text-align: center; animation: fade-in 1.6s ease 0.8s forwards; }
+@media (prefers-reduced-motion: reduce) { .dedication { animation: none; opacity: 0.9; } }
 @keyframes breathe { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
 
 /* Rotate prompt: only for a phone held upright */

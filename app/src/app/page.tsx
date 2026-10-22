@@ -13,6 +13,7 @@ export default function Home() {
         <div className="film placeholder title-plate">
           <h1>The Library of Doors</h1>
           <p className="sub">for Aurie</p>
+          <p className="dedication">Specially prepared and programmed for Charmaine Lim</p>
         </div>
         <div className="vignette" />
       </div>

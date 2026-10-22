@@ -43,6 +43,8 @@ const HOLD_MS = 2000; // longest a clip keeps playing after its line before the 
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
 const CHOICE_MS = 2600; // the "Your choice" moment
 const SFX_VOLUME = 0.7; // one-shot sound effects (levelled to about -20 dBFS when made)
+const AMB_VOLUME = 0.55; // looping ambience bed (made at about -26 dBFS, so it sits under the music)
+const AMB_DUCK = 0.25; // ambience while someone speaks
 const CURTAIN_MS = 700; // dip to black between scenes; the music starts to cross-fade with it
 const RECAP_MS = 7000; // the "Previously" card when she comes back
 const HOLD_SKIP_MS = 900; // holding Skip this long skips the whole narrated stretch
@@ -167,6 +169,7 @@ export default function Player({ book }: { book: Book }) {
   const [subtitle, setSubtitle] = useState<{ text: string; hook: boolean } | null>(null);
   const [upcoming, setUpcoming] = useState<string | null>(null);
   const [beatFx, setBeatFx] = useState<Fx | undefined>(undefined);
+  const [beatAmb, setBeatAmb] = useState<string | undefined>(undefined);
   // The moment a decision is made, shown plainly so she always knows what she chose.
   const [chosen, setChosen] = useState<string | null>(null);
   const [curtain, setCurtain] = useState(false); // black between scenes
@@ -194,6 +197,7 @@ export default function Player({ book }: { book: Book }) {
   const [sfxOn, setSfxOn] = useState(true);
   const sfxOnRef = useRef(true);
   const sfxPlaying = useRef(new Set<HTMLAudioElement>()); // one-shot sound effects still sounding
+  const ambRef = useRef<{ a: HTMLAudioElement | null; id: string | null }>({ a: null, id: null }); // the looping ambience bed
   // Everything said recently (narrator and characters), to reread in the menu.
   const backlog = useRef<{ who: string; text: string }[]>([]);
   const logLine = (who: string, text: string) => {
@@ -252,13 +256,16 @@ export default function Player({ book }: { book: Book }) {
   // ---------- audio: music bed, narrator lines, character voices ----------
   const musicRef = useRef<{ a: HTMLAudioElement | null; track: string | null; voices: number }>({ a: null, track: null, voices: 0 });
   const bedTarget = () => (!musicOnRef.current ? 0 : musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
+  const ambTarget = () => (!sfxOnRef.current ? 0 : musicRef.current.voices > 0 ? AMB_DUCK : AMB_VOLUME);
   const duck = () => {
     musicRef.current.voices += 1;
     if (musicRef.current.a) void fadeTo(musicRef.current.a, Math.min(DUCK_VOLUME, bedTarget()), 400);
+    if (ambRef.current.a) void fadeTo(ambRef.current.a, ambTarget(), 400);
   };
   const unduck = () => {
     musicRef.current.voices = Math.max(0, musicRef.current.voices - 1);
     if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900);
+    if (ambRef.current.a) void fadeTo(ambRef.current.a, ambTarget(), 900);
   };
   /** A one-shot sound for the moment a beat starts (a door, glass, wings). Never blocks the story. */
   const playSfx = (id: string) => {
@@ -488,6 +495,7 @@ export default function Player({ book }: { book: Book }) {
   const topLayer = useRef<Layer | null>(null);
   const show = (b: Beat) => {
     if (b.fx) setBeatFx(b.fx);
+    if (b.ambience) setBeatAmb(b.ambience);
     const url = b.clip ? clipUrl(b.clip) : b.still ? stillUrl(b.still) : null;
     if (!url || topLayer.current?.url === url) return; // nothing new, or already on screen: keep holding it
     const layer = { url, key: `${url}#${++layerSeq.current}`, still: !!b.still };
@@ -689,6 +697,8 @@ export default function Player({ book }: { book: Book }) {
     const m = musicRef.current;
     const nextTrack = book.scenes[next]?.music;
     if (m.a && nextTrack && nextTrack !== m.track) void fadeTo(m.a, 0, CURTAIN_MS + 600);
+    const amb = ambRef.current;
+    if (amb.a && (book.scenes[next]?.ambience ?? null) !== amb.id) void fadeTo(amb.a, 0, CURTAIN_MS + 600);
     void sleep(CURTAIN_MS).then(() => {
       if (token !== runRef.current) return;
       setSceneId(next);
@@ -699,6 +709,7 @@ export default function Player({ book }: { book: Book }) {
       setCard(null);
       setNetError(null);
       setBeatFx(undefined);
+      setBeatAmb(undefined);
       const p = profileRef.current;
       if (p) commit({ ...p, position: { book: book.id, scene: next } });
       void playScene(next, token);
@@ -819,6 +830,7 @@ export default function Player({ book }: { book: Book }) {
       pausedRef.current = true;
       const media: HTMLMediaElement[] = [...playing.current, ...sfxPlaying.current];
       if (musicRef.current.a && !musicRef.current.a.paused) media.push(musicRef.current.a);
+      if (ambRef.current.a && !ambRef.current.a.paused) media.push(ambRef.current.a);
       document.querySelectorAll("video").forEach((v) => { if (!v.paused) media.push(v); });
       media.forEach((m) => m.pause());
       pausedMedia.current = media;
@@ -973,6 +985,26 @@ export default function Player({ book }: { book: Book }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wantedTrack, started]);
 
+  // Ambience belongs to a place: it plays only where the scene (or a beat) names it, and cross-fades between places.
+  const wantedAmb = beatAmb ?? scene.ambience ?? null;
+  useEffect(() => {
+    if (!started) return;
+    const m = ambRef.current;
+    const next = wantedAmb === "none" ? null : wantedAmb;
+    if (next === m.id) return;
+    const old = m.a;
+    if (old) void fadeTo(old, 0, 1500).then(() => { old.pause(); old.src = ""; });
+    m.id = next;
+    m.a = null;
+    if (!next) return;
+    const a = new Audio(`${CLIP_BASE}/${book.id}/audio/ambience/${next}.mp3`);
+    a.loop = true;
+    a.volume = 0;
+    a.play().then(() => void fadeTo(a, ambTarget(), 2000)).catch(() => { /* missing bed or blocked: silence */ });
+    m.a = a;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [wantedAmb, started]);
+
   // Keep the screen awake while the story plays: long clips and narration go by with no touches,
   // and a phone that dims mid-scene breaks the spell. The phone drops the lock whenever the page is
   // hidden, so it is asked for again each time the game comes back into view.
@@ -995,7 +1027,7 @@ export default function Player({ book }: { book: Book }) {
   }, [started]);
 
   // Stop the bed when leaving the page.
-  useEffect(() => () => { musicRef.current.a?.pause(); }, []);
+  useEffect(() => () => { musicRef.current.a?.pause(); ambRef.current.a?.pause(); }, []);
 
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
   const reactFor = (m: string) => (talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined);
@@ -1058,6 +1090,7 @@ export default function Player({ book }: { book: Book }) {
     setSfxOn(on);
     setPref("sfx", on ? "on" : "off");
     if (!on) fadeOutSfx();
+    if (ambRef.current.a) void fadeTo(ambRef.current.a, ambTarget(), 600);
   };
   const changeText = (v: number) => { setTextScale(v); setPref("textScale", String(v)); };
 
@@ -1085,6 +1118,7 @@ export default function Player({ book }: { book: Book }) {
         <div className="gate">
           <div className="gate-title">{book.title}</div>
           <div className="gate-sub">for Aurie</div>
+          <div className="dedication">Specially prepared and programmed for Charmaine Lim</div>
           {resuming ? (
             <>
               <button className="gate-cta" onClick={() => begin()}>Continue · {chapterTitle}</button>
@@ -1362,7 +1396,7 @@ export default function Player({ book }: { book: Book }) {
                 </div>
                 <p className="sample">The Dreaming remembers everything.</p>
                 <button onClick={toggleMusic}>Background music: {musicOn ? "On" : "Off"}</button>
-                <button onClick={toggleSfx}>Sound effects: {sfxOn ? "On" : "Off"}</button>
+                <button onClick={toggleSfx}>Sound effects and ambience: {sfxOn ? "On" : "Off"}</button>
                 <button onClick={() => setMenu("main")}>Back</button>
               </>
             )}

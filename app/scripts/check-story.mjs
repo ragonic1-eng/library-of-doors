@@ -44,12 +44,15 @@ for (const dir of readdirSync(BOOKS)) {
     if (!Array.isArray(sc.beats)) err(`${at}: no beats`);
     if (sc.next && !S[sc.next]) err(`${at}: next "${sc.next}" does not exist`);
     if (sc.fx && !FX.has(sc.fx)) err(`${at}: unknown fx "${sc.fx}"`);
+    const bed = (id) => haveMedia && id && id !== "none" && !existsSync(join(media, "audio", "ambience", `${id}.mp3`));
+    if (bed(sc.ambience)) err(`${at}: ambience ${sc.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
 
     const allBeats = [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])];
     for (const b of allBeats) {
       if (b.fx && !FX.has(b.fx)) err(`${at}: unknown fx "${b.fx}"`);
       if (haveMedia && b.clip && !existsSync(join(media, `${b.clip}.mp4`))) err(`${at}: clip ${b.clip}.mp4 is missing`);
       if (haveMedia && b.still && !existsSync(join(media, "stills", `${b.still}.jpg`))) err(`${at}: still ${b.still}.jpg is missing`);
+      if (bed(b.ambience)) err(`${at}: ambience ${b.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
       if (haveMedia && b.sfx && !existsSync(join(media, "audio", "sfx", `${b.sfx}.mp3`))) err(`${at}: sound effect ${b.sfx}.mp3 is missing (run tools/gen_sfx.py)`);
       if (haveMedia && b.text && !existsSync(join(media, "audio", "lines", `${lineId(b.text)}.mp3`))) err(`${at}: no narration recording for "${b.text.slice(0, 50)}" (run tools/gen_narration.py, then tools/pace_lines.py)`);
     }

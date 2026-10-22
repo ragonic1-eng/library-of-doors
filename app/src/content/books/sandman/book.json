@@ -35,7 +35,8 @@
       ],
       "next": "1.1",
       "recap": "Aurie, Queen of Dreams, ruled the Dreaming, until a spell pulled her out of it.",
-      "fx": "glitter"
+      "fx": "glitter",
+      "ambience": "dreaming"
     },
     "1.1": {
       "id": "1.1",
@@ -72,7 +73,8 @@
       ],
       "next": "1.2",
       "recap": "1916. Roderick Burgess meant to catch Death and caught Aurie instead. He took her helm, her sand and her ruby.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "cellar"
     },
     "1.2": {
       "id": "1.2",
@@ -262,7 +264,8 @@
         }
       ],
       "recap": "Burgess demanded immortality, power, and his dead son back.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "cellar"
     },
     "1.3": {
       "id": "1.3",
@@ -459,7 +462,8 @@
       ],
       "innerVoice": false,
       "recap": "Without her the Dreaming crumbled, and sleep went wrong in the world. She reached one sleeping girl, Unity.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "cellar"
     },
     "1.4": {
       "id": "1.4",
@@ -682,7 +686,8 @@
       ],
       "innerVoice": true,
       "recap": "Ethel Cripps stole the three treasures in 1926. Burgess died in 1947, and his son Alex took over the cellar.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "cellar"
     },
     "1.5": {
       "id": "1.5",
@@ -888,7 +893,8 @@
       ],
       "innerVoice": false,
       "recap": "1988. Aurie escaped through a sleeping guard's dream, and faced old Alex.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "cellar"
     },
     "2.1": {
       "id": "2.1",
@@ -1021,7 +1027,8 @@
         }
       ],
       "recap": "She came home to a ruined realm. Only Lucienne and the library were left.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "dreaming"
     },
     "end-ep1": {
       "id": "end-ep1",
@@ -1046,7 +1053,8 @@
         }
       ],
       "next": "2.2",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "dreaming"
     },
     "2.2": {
       "id": "2.2",
@@ -1185,7 +1193,8 @@
         }
       ],
       "recap": "The Fates told her where her treasures went: the sand to London, the helm to Hell, the ruby to Ethel's son.",
-      "fx": "mist"
+      "fx": "mist",
+      "ambience": "night-forest"
     },
     "2.3": {
       "id": "2.3",
@@ -1283,7 +1292,8 @@
         }
       ],
       "recap": "In London she met Johanna Constantine, the last person to hold the pouch of sand.",
-      "fx": "rain"
+      "fx": "rain",
+      "ambience": "rain"
     },
     "2.4": {
       "id": "2.4",
@@ -1393,7 +1403,8 @@
         }
       ],
       "recap": "Rachel had breathed the sand for years. Aurie decided how her suffering ended, and took the pouch back.",
-      "fx": "glitter"
+      "fx": "glitter",
+      "ambience": "night-room"
     },
     "end-2a": {
       "id": "end-2a",
@@ -1415,7 +1426,8 @@
         }
       ],
       "next": "2.5",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "dreaming"
     },
     "2.5": {
       "id": "2.5",
@@ -1446,7 +1458,8 @@
           "text": "In a cell of black ice, someone calls to her.",
           "still": "still-nada",
           "fx": "frost",
-          "sfx": "ice-creak"
+          "sfx": "ice-creak",
+          "ambience": "ice"
         },
         {
           "text": "Nada. A queen Aurie loved ten thousand years ago, and sent here when Nada refused her."
@@ -1501,7 +1514,8 @@
             {
               "text": "Aurie walks on. Behind her, Nada does not call out again.",
               "still": "hell-arena",
-              "fx": "sparks"
+              "fx": "sparks",
+              "ambience": "hell"
             }
           ]
         },
@@ -1529,7 +1543,8 @@
         }
       ],
       "recap": "In Hell she passed Nada, a queen she once condemned.",
-      "fx": "sparks"
+      "fx": "sparks",
+      "ambience": "hell"
     },
     "2.6": {
       "id": "2.6",
@@ -1598,7 +1613,8 @@
         }
       ],
       "recap": "Lucifer told her a demon, Choronzon, held her helm.",
-      "fx": "sparks"
+      "fx": "sparks",
+      "ambience": "hell"
     },
     "2.7": {
       "id": "2.7",
@@ -1713,7 +1729,8 @@
         }
       ],
       "recap": "She played the Oldest Game against Choronzon for her helm.",
-      "fx": "sparks"
+      "fx": "sparks",
+      "ambience": "hell"
     },
     "2.8": {
       "id": "2.8",
@@ -1803,7 +1820,8 @@
         }
       ],
       "recap": "Lucifer's legions blocked her way out of Hell.",
-      "fx": "sparks"
+      "fx": "sparks",
+      "ambience": "hell"
     },
     "end-2b": {
       "id": "end-2b",
@@ -1825,7 +1843,8 @@
           "style": "hook"
         }
       ],
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "dreaming"
     },
     "2.9": {
       "id": "2.9",
@@ -1908,7 +1927,8 @@
         }
       ],
       "recap": "John Dee, Ethel's son, was tormenting a diner full of people with the ruby.",
-      "fx": "flicker"
+      "fx": "flicker",
+      "ambience": "diner"
     },
     "2.10": {
       "id": "2.10",
@@ -1977,7 +1997,8 @@
         }
       ],
       "recap": "Dee smashed the ruby, and all her power came home to her.",
-      "fx": "flicker"
+      "fx": "flicker",
+      "ambience": "diner"
     },
     "2.11": {
       "id": "2.11",
@@ -2067,7 +2088,8 @@
         }
       ],
       "recap": "She decided what became of John Dee.",
-      "fx": "flicker"
+      "fx": "flicker",
+      "ambience": "diner"
     },
     "2.12": {
       "id": "2.12",
@@ -2181,7 +2203,8 @@
         }
       ],
       "recap": "Her sister Death found her on a park bench.",
-      "fx": "dust"
+      "fx": "dust",
+      "ambience": "park"
     },
     "end-ep2": {
       "id": "end-ep2",
@@ -2215,7 +2238,8 @@
         }
       ],
       "fx": "dust",
-      "next": "3.0"
+      "next": "3.0",
+      "ambience": "dreaming"
     },
     "3.1": {
       "id": "3.1",
@@ -2292,7 +2316,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "stream"
     },
     "3.2": {
       "id": "3.2",
@@ -2502,7 +2527,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "end-ep3": {
       "id": "end-ep3",
@@ -2543,7 +2569,8 @@
           "style": "hook"
         }
       ],
-      "next": "4.1"
+      "next": "4.1",
+      "ambience": "dreaming"
     },
     "4.1": {
       "id": "4.1",
@@ -2670,7 +2697,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "hell"
     },
     "4.2": {
       "id": "4.2",
@@ -2863,7 +2891,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "4.3": {
       "id": "4.3",
@@ -2876,7 +2905,8 @@
       "beats": [
         {
           "text": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
-          "still": "still-nada-free"
+          "still": "still-nada-free",
+          "ambience": "dreaming"
         },
         {
           "text": "Nada stands free for the first time in ten thousand years."
@@ -3052,7 +3082,8 @@
           "style": "hook"
         }
       ],
-      "next": "5.0"
+      "next": "5.0",
+      "ambience": "dreaming"
     },
     "3.0": {
       "id": "3.0",
@@ -3133,7 +3164,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "1.6": {
       "id": "1.6",
@@ -3233,7 +3265,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "2.4b": {
       "id": "2.4b",
@@ -3319,7 +3352,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "rain"
     },
     "5.0": {
       "id": "5.0",
@@ -3370,7 +3404,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "5.1": {
       "id": "5.1",
@@ -3383,7 +3418,8 @@
         {
           "text": "The lock turns to sand in Aurie's hand. The door swings open.",
           "still": "still-calliope",
-          "sfx": "door-creak"
+          "sfx": "door-creak",
+          "ambience": "night-room"
         },
         {
           "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up."
@@ -3515,7 +3551,8 @@
       "beats": [
         {
           "text": "Madoc is at his desk with a glass of whisky, his latest prize on the shelf behind him.",
-          "still": "still-madoc"
+          "still": "still-madoc",
+          "ambience": "night-room"
         },
         {
           "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for."
@@ -3804,7 +3841,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "crowd"
     },
     "5.2b": {
       "id": "5.2b",
@@ -3817,7 +3855,8 @@
       "beats": [
         {
           "card": "Florida",
-          "still": "boarding-house"
+          "still": "boarding-house",
+          "ambience": "night-room"
         },
         {
           "text": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida."
@@ -3934,7 +3973,8 @@
       "beats": [
         {
           "text": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling.",
-          "still": "still-unity"
+          "still": "still-unity",
+          "ambience": "dreaming"
         },
         {
           "text": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years."
@@ -4046,7 +4086,8 @@
       "beats": [
         {
           "text": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
-          "still": "still-desire"
+          "still": "still-desire",
+          "ambience": "dreaming"
         },
         {
           "text": "Desire made the vortex happen. It hoped Aurie would kill a child of her own family, and be destroyed for it."
@@ -4219,7 +4260,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "tavern"
     },
     "5.3b": {
       "id": "5.3b",
@@ -4324,7 +4366,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "tavern"
     },
     "5.3c": {
       "id": "5.3c",
@@ -4447,7 +4490,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "tavern"
     },
     "end-ep5": {
       "id": "end-ep5",
@@ -4523,7 +4567,8 @@
           "style": "hook"
         }
       ],
-      "next": "6.0"
+      "next": "6.0",
+      "ambience": "dreaming"
     },
     "6.0": {
       "id": "6.0",
@@ -4620,7 +4665,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "6.1": {
       "id": "6.1",
@@ -4633,7 +4679,8 @@
       "beats": [
         {
           "text": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
-          "still": "false-house"
+          "still": "false-house",
+          "ambience": "dreaming"
         },
         {
           "text": "Deep in the Dreaming, they built a little house, and inside it they kept a dead man's ghost and his living wife."
@@ -4771,7 +4818,8 @@
       "beats": [
         {
           "text": "Delirium, the youngest of the Endless, comes to the palace, trailing small coloured fish through the air.",
-          "still": "still-delirium"
+          "still": "still-delirium",
+          "ambience": "dreaming"
         },
         {
           "text": "She wants to find their brother Destruction, who walked away three hundred years ago. She has asked everyone else. They all said no."
@@ -4790,7 +4838,8 @@
         },
         {
           "card": "The waking world",
-          "still": "desert-road"
+          "still": "desert-road",
+          "ambience": "rain"
         },
         {
           "text": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colours of their names.",
@@ -4923,7 +4972,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "sea"
     },
     "6.4": {
       "id": "6.4",
@@ -5033,7 +5083,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "sea"
     },
     "6.5": {
       "id": "6.5",
@@ -5156,7 +5207,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "sea"
     },
     "6.6": {
       "id": "6.6",
@@ -5222,7 +5274,8 @@
           "next": "end-ep6",
           "aftermath": []
         }
-      ]
+      ],
+      "ambience": "stream"
     },
     "end-ep6": {
       "id": "end-ep6",
@@ -5283,7 +5336,8 @@
           "style": "hook"
         }
       ],
-      "next": "7.0"
+      "next": "7.0",
+      "ambience": "dreaming"
     },
     "7.0": {
       "id": "7.0",
@@ -5332,7 +5386,8 @@
         },
         {
           "text": "In the Dreaming, Lucienne brings Aurie the news. Aurie rises from her throne.",
-          "clip": "aurie-news"
+          "clip": "aurie-news",
+          "ambience": "dreaming"
         }
       ],
       "choices": [
@@ -5392,7 +5447,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "night-room"
     },
     "7.1a": {
       "id": "7.1a",
@@ -5409,19 +5465,22 @@
             "MATTHEW_RAVEN"
           ],
           "sfx": "raven",
-          "still": "still-matthew"
+          "still": "still-matthew",
+          "ambience": "dreaming"
         },
         {
           "text": "Lucienne walks a thousand sleeping minds, lantern raised, listening.",
           "unless": [
             "MATTHEW_RAVEN"
           ],
-          "still": "library-hub"
+          "still": "library-hub",
+          "ambience": "dreaming"
         },
         {
           "text": "In a cold house by the sea, Loki holds the boy above a strange silver fire, to burn away everything mortal in him.",
           "still": "still-loki-fire",
-          "fx": "frost"
+          "fx": "frost",
+          "ambience": "sea"
         },
         {
           "text": "The fire would make him a god, and empty him of everything that is Lyta's."
@@ -5445,7 +5504,8 @@
         {
           "text": "But it is too late. Lyta has already gone looking for the ones who punish crimes against kin.",
           "still": "still-lyta-walks",
-          "fx": "mist"
+          "fx": "mist",
+          "ambience": "night-forest"
         }
       ],
       "choices": [
@@ -5482,7 +5542,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "sea"
     },
     "7.1b": {
       "id": "7.1b",
@@ -5568,7 +5629,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "rain"
     },
     "7.1c": {
       "id": "7.1c",
@@ -5581,7 +5643,8 @@
         {
           "text": "They find Loki in a cold house by the sea, holding the boy above a strange silver fire.",
           "still": "still-loki-fire",
-          "fx": "frost"
+          "fx": "frost",
+          "ambience": "sea"
         },
         {
           "text": "Lyta does not wait for Aurie. She walks straight into the fire's light, and takes her son out of a god's hands."
@@ -5636,7 +5699,8 @@
           "next": "end-R",
           "aftermath": []
         }
-      ]
+      ],
+      "ambience": "night-room"
     },
     "7.2": {
       "id": "7.2",
@@ -5649,7 +5713,8 @@
       "beats": [
         {
           "text": "Lyta walks barefoot out of her city and into older places, where the streets turn into roads and the roads into stories.",
-          "still": "still-lyta-walks"
+          "still": "still-lyta-walks",
+          "ambience": "night-forest"
         },
         {
           "card": "A crossroads, under a low moon",
@@ -5808,7 +5873,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "night-forest"
     },
     "7.3": {
       "id": "7.3",
@@ -5908,7 +5974,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "hell"
     },
     "7.4": {
       "id": "7.4",
@@ -6032,7 +6099,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "night-forest"
     },
     "7.5": {
       "id": "7.5",
@@ -6159,7 +6227,8 @@
             }
           ]
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "end-A": {
       "id": "end-A",
@@ -6172,7 +6241,8 @@
         {
           "card": "Litharge, the city of the dead",
           "still": "litharge",
-          "sfx": "church-bell"
+          "sfx": "church-bell",
+          "ambience": "crowd"
         },
         {
           "text": "The Dreaming has a new lord. Daniel, grown in a night, robed in white where Aurie wore black.",
@@ -6263,7 +6333,8 @@
           "text": "Three more doors are waiting in the Library.",
           "still": "library-hub"
         }
-      ]
+      ],
+      "ambience": "dreaming"
     },
     "end-B": {
       "id": "end-B",
@@ -6299,7 +6370,8 @@
           "text": "Three more doors are waiting in the Library.",
           "still": "library-hub"
         }
-      ]
+      ],
+      "ambience": "hell"
     },
     "end-C": {
       "id": "end-C",
@@ -6339,7 +6411,8 @@
           "text": "Three more doors are waiting in the Library.",
           "still": "library-hub"
         }
-      ]
+      ],
+      "ambience": "night-forest"
     },
     "end-R": {
       "id": "end-R",
@@ -6384,7 +6457,8 @@
           "text": "Three more doors are waiting in the Library.",
           "still": "library-hub"
         }
-      ]
+      ],
+      "ambience": "sea"
     },
     "5.2f": {
       "id": "5.2f",
@@ -6411,7 +6485,8 @@
           "text": "Aurie feels every dream he walks through. She chose this."
         }
       ],
-      "next": "5.2b"
+      "next": "5.2b",
+      "ambience": "rain"
     },
     "6.1b": {
       "id": "6.1b",
@@ -6435,7 +6510,8 @@
           "text": "And every night she says the same words to her sleeping belly: no one will take you. No one."
         }
       ],
-      "next": "6.2"
+      "next": "6.2",
+      "ambience": "rain"
     },
     "6.4b": {
       "id": "6.4b",
@@ -6463,7 +6539,8 @@
           "still": "destruction-island"
         }
       ],
-      "next": "6.5"
+      "next": "6.5",
+      "ambience": "sea"
     },
     "6.6b": {
       "id": "6.6b",
@@ -6497,7 +6574,8 @@
           "text": "She tells herself she kept the law. The law does not answer."
         }
       ],
-      "next": "end-ep6"
+      "next": "end-ep6",
+      "ambience": "dreaming"
     }
   }
 }
