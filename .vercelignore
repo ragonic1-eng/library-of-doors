@@ -1,9 +1,9 @@
 # Only the app is deployed; media comes from Vercel Blob and generators stay local.
-tools/
-assets/
-characters/
-source-text/
-production/
+/tools/
+/assets/
+/characters/
+/source-text/
+/production/
 *.pdf
 *.md
 app/public/clips/
