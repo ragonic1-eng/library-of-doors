@@ -201,7 +201,7 @@ export default function Player({ book }: { book: Book }) {
   const [holding, setHolding] = useState(false);
   // Undo for a choice made by mistake, while its card is showing.
   const undoRef = useRef<(() => void) | null>(null);
-  // First conversation: one short tip on how talking works.
+  // First conversation: a hint in the input and a glowing Ideas button (never a box over the talk).
   const [tip, setTip] = useState(false);
   const optionsOpenedAt = useRef(0);
   const [slow, setSlow] = useState(false);
@@ -545,8 +545,8 @@ export default function Player({ book }: { book: Book }) {
       setPhase("talk");
       if (pref("tipSeen", "") !== "1") {
         setPref("tipSeen", "1");
-        setTip(true);
-        setTimeout(() => setTip(false), 14000);
+        setTip(true); // first conversation: the hint lives in the input and on the Ideas button, never over the talk
+        setTimeout(() => setTip(false), 25000);
       }
       const opening = sc.conversation.opening;
       if (opening) {
@@ -708,6 +708,7 @@ export default function Player({ book }: { book: Book }) {
     if (!line || busy || !scene.conversation) return;
     setInput("");
     setShowOptions(false);
+    setTip(false);
     inputRef.current?.blur(); // drop the phone keyboard so the reaction loop is visible
     stopAllVoices();
     const hist: Turn[] = [...history, { role: "player", text: line }];
@@ -1074,13 +1075,6 @@ export default function Player({ book }: { book: Book }) {
         </div>
       )}
 
-      {tip && phase === "talk" && (
-        <div className="tip" role="note">
-          <span>Type anything Aurie says or does. Not sure what to say? Tap <b>Ideas</b>.</span>
-          <button onClick={() => setTip(false)}>Got it</button>
-        </div>
-      )}
-
       {ripple && <div key={ripple} className="ripple">{ripple}</div>}
 
       {inner && (phase === "talk" || phase === "choose") && <div className="inner"><span className="inner-who">{profile.name}, thinking</span>{inner}</div>}
@@ -1135,7 +1129,7 @@ export default function Player({ book }: { book: Book }) {
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={`Say or do anything, as ${profile.name}…`}
+              placeholder={tip ? `Type what ${profile.name} says or does… or tap Ideas` : `Say or do anything, as ${profile.name}…`}
               autoFocus={!vp.touch}
               disabled={busy}
               enterKeyHint="send"
@@ -1144,7 +1138,7 @@ export default function Player({ book }: { book: Book }) {
             />
             <button type="submit" disabled={busy || !input.trim()}>Say</button>
             {ideas.length > 0 && (
-              <button type="button" className="ghost" onClick={() => { optionsOpenedAt.current = performance.now(); setShowOptions((v) => !v); }}>
+              <button type="button" className={`ghost ${tip && !showOptions ? "glow" : ""}`} onClick={() => { optionsOpenedAt.current = performance.now(); setTip(false); setShowOptions((v) => !v); }}>
                 {showOptions ? "Hide" : "Ideas"}
               </button>
             )}

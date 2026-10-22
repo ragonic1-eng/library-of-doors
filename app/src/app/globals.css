@@ -621,16 +621,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .hud-btn.skip.holding::before { animation: hold-fill 0.9s linear forwards; }
 @keyframes hold-fill { to { transform: scaleX(1); } }
 .chosen .undo { pointer-events: auto; margin-top: 0.8rem; border-color: rgba(255, 255, 255, 0.45); min-height: 44px; padding: 0.4rem 1.2rem; }
-.tip {
-  position: absolute; left: 50%; transform: translateX(-50%);
-  bottom: calc(7.5rem + env(safe-area-inset-bottom)); z-index: 14;
-  display: flex; align-items: center; gap: 0.8rem;
-  max-width: min(36rem, 88vw); padding: 0.6rem 0.6rem 0.6rem 1rem; border-radius: 8px;
-  background: rgba(13, 11, 9, 0.92); border: 1px solid rgba(201, 162, 74, 0.5);
-  font-size: 0.92rem; line-height: 1.4; animation: fade-in 0.4s ease both;
-}
-.tip b { color: var(--accent); font-weight: 400; }
-.tip button { flex: none; }
 .backlog { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; font-size: 0.92rem; line-height: 1.45; }
 .backlog .who { color: var(--accent); font-variant: small-caps; margin-right: 0.4em; }
 .seg { display: flex; gap: 0.4rem; }
@@ -644,8 +634,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .hud-btn.skip { width: auto; }
   .subtitle { font-size: calc(1rem * var(--ts, 1)); }
   .transcript p { font-size: calc(0.92rem * var(--ts, 1)); }
-  .tip { bottom: calc(5.5rem + env(safe-area-inset-bottom)); font-size: 0.85rem; }
-}
+  }
 
 /* ===================== Waiting and updates ===================== */
 .transcript .typing { font-size: 1em; padding: 0.4rem 0.9rem; gap: 0.45em; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(201, 162, 74, 0.35); }
@@ -660,3 +649,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
 }
 .updatebar button { border-color: var(--accent); color: var(--accent); flex: none; }
 
+/* First conversation: the Ideas button glows instead of a hint box covering the talk */
+.say .ghost.glow { color: var(--accent); border-color: var(--accent); animation: glow 1.6s ease-in-out infinite; }
+@keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 74, 0); } 50% { box-shadow: 0 0 14px 2px rgba(201, 162, 74, 0.55); } }
+@media (prefers-reduced-motion: reduce) { .say .ghost.glow { animation: none; } }
