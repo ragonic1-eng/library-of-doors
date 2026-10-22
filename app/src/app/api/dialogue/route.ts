@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getBook, getCharacter } from "@/lib/story/load";
-import { gatewayJson, mockMode, modelHealth, modelOrder, models, reportModel } from "@/lib/server/gateway";
+import { gatewayJson, gatewayStream, mockMode, modelHealth, modelOrder, models, reportModel } from "@/lib/server/gateway";
+import { splitParts, synthLine } from "@/lib/server/voice";
 import { consequenceFlag, meets, relationOf } from "@/lib/state/profile";
 import type { Consequence, DialogueReply, Profile, Scene } from "@/lib/story/types";
 
@@ -116,19 +117,35 @@ export async function POST(req: Request) {
   ];
 
   try {
-    const call = (model: string) => gatewayJson<{ choices: { message: { content: string } }[] }>("/chat/completions", {
+    // The reply streams in; the moment its spoken line is complete, the character's voice starts being made,
+    // while the model is still writing the rest. Words and voice then come back together in one response.
+    const T0 = Date.now(); const marks: string[] = [];
+    let earlyLine: string | null = null;
+    let voice: Promise<{ speaker?: string; audio: string | null }[]> | null = null;
+    const watch = (soFar: string) => {
+      if (voice || body.mode !== "talk") return;
+      const m = soFar.match(/"dialogue"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+      if (!m) return;
+      try { earlyLine = JSON.parse(`"${m[1]}"`) as string; } catch { return; }
+      const line = earlyLine; marks.push(`line@${Date.now() - T0}`);
+      voice = Promise.all(splitParts(line, !!card.speakers).map(async (p) => {
+        const audio = await synthLine(book.id, charKey, p.text, p.speaker); marks.push(`voice@${Date.now() - T0}`);
+        return { speaker: p.speaker, audio: audio ? audio.toString("base64") : null };
+      }));
+    };
+    const call = (model: string) => gatewayStream("/chat/completions", {
       model,
       messages,
       temperature: 0.9,
       max_tokens: 1200,
       response_format: { type: "json_schema", json_schema: { name: "reply", strict: true, schema: replySchema } },
-    }, 25_000);
-    // If the main model's upstream channel fails, answer from a fallback rather than break the scene.
-    let data: Awaited<ReturnType<typeof call>> | undefined;
+    }, 15_000, watch);
+    // If the main model's upstream channel fails or stalls, answer from a fallback rather than break the scene.
+    let content: string | undefined;
     let lastErr: unknown;
     for (const model of modelOrder(models.dialogue, models.dialogueFallbacks)) {
       try {
-        data = await call(model);
+        content = await call(model);
         reportModel(model, true);
         break;
       } catch (e) {
@@ -137,8 +154,13 @@ export async function POST(req: Request) {
         console.error(`dialogue: ${model} failed, benched for 3 min:`, (e as Error).message.slice(0, 160));
       }
     }
-    if (!data) throw lastErr;
-    const parsed = safeParse(data.choices?.[0]?.message?.content ?? "");
+    if (content === undefined) throw lastErr;
+    marks.push(`reply@${Date.now() - T0}`);
+    const parsed: DialogueReply = safeParse(content);
+    if (voice && earlyLine === parsed.dialogue) {
+      const v = voice as Promise<{ speaker?: string; audio: string | null }[]>;
+      parsed.voice = await Promise.race([v, new Promise<null>((r) => setTimeout(() => r(null), 20_000))]) ?? undefined;
+    }
     // Never trust the model's ids: keep only exits and consequences that exist and are allowed right now.
     if (parsed.decision && !(parsed.decision in exits)) parsed.decision = null;
     if (intent) parsed.decision = intent;
@@ -152,6 +174,7 @@ export async function POST(req: Request) {
         break;
       }
     }
+    console.log(`dialogue timing: ${marks.join(" ")} sent@${Date.now() - T0}`);
     parsed.consequences = [...new Set(parsed.consequences)].filter((t) => t in consequences).slice(0, 2);
     parsed.trust_delta = clampInt(parsed.trust_delta, -2, 2);
     parsed.fear_delta = clampInt(parsed.fear_delta, -2, 2);
@@ -217,7 +240,7 @@ function buildSystem(args: {
     `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
     `STEERING (invisible; never mention options, ideas, buttons, menus or the game): ${steering}`,
     `HOW THE SCENE ENDS. Her words decide the story; she must never have to repeat herself or pick from a menu. ${ending}\n${exitList || "- none"}`,
-    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
+    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (AURIE's own private thought about this moment, first person, as the Queen of Dreams: calm, ancient, proud; one short line, or null. It must NEVER be in your character's voice, words or slang, and never repeat your dialogue), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
   ].join("\n\n");
 }

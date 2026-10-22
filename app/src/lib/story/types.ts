@@ -149,4 +149,5 @@ export interface DialogueReply {
   trust_delta: number; // -2..2, the speaker's change in trust
   fear_delta: number; // -2..2, the speaker's change in fear
   memory_note: string | null;
+  voice?: { speaker?: string; audio: string | null }[]; // the spoken line, already voiced (base64 mp3 per speaker)
 }

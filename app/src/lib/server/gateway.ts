@@ -51,6 +51,48 @@ export async function gatewayJson<T>(path: string, body: unknown, timeoutMs = 60
   }
 }
 
+/** A streamed chat completion: calls onText with the text so far as it arrives; resolves with the whole text. */
+export async function gatewayStream(path: string, body: Record<string, unknown>, timeoutMs: number, onText: (soFar: string) => void): Promise<string> {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+  try {
+    const res = await fetch(`${BASE}${path}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, stream: true }),
+      signal: ctrl.signal,
+    });
+    if (!res.ok || !res.body) throw new Error(`gateway ${path} ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "", text = "";
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let nl: number;
+      while ((nl = buf.indexOf("\n")) >= 0) {
+        const line = buf.slice(0, nl).trim();
+        buf = buf.slice(nl + 1);
+        if (!line.startsWith("data:")) continue;
+        const payload = line.slice(5).trim();
+        if (payload === "[DONE]") continue;
+        try {
+          const delta = JSON.parse(payload)?.choices?.[0]?.delta?.content;
+          if (typeof delta === "string" && delta) {
+            text += delta;
+            onText(text);
+          }
+        } catch { /* keep-alive or partial line */ }
+      }
+    }
+    if (!text) throw new Error(`gateway ${path}: empty stream`);
+    return text;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function gatewayBinary(path: string, body: unknown, timeoutMs = 60_000): Promise<Response> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);

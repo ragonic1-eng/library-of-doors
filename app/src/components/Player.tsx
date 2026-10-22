@@ -27,7 +27,7 @@ interface Segment {
   text: string;
 }
 
-type MenuView = "main" | "journal" | "chapters" | "sync" | "confirm-restart";
+type MenuView = "main" | "journal" | "lines" | "chapters" | "settings" | "sync" | "confirm-restart";
 
 // Clips are served from Vercel Blob in production and from /public locally.
 const CLIP_BASE = (process.env.NEXT_PUBLIC_CLIP_BASE ?? "/clips").replace(/\/$/, "");
@@ -40,6 +40,10 @@ const HOLD_MS = 2000; // longest a clip keeps playing after its line before the 
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
 const CHOICE_MS = 2600; // the "Your choice" moment
 const RECAP_MS = 7000; // the "Previously" card when she comes back
+const HOLD_SKIP_MS = 900; // holding Skip this long skips the whole narrated stretch
+const OPTION_GUARD_MS = 400; // taps on freshly shown Ideas are ignored (no accidental double-tap choices)
+const pref = (k: string, d: string) => { try { return localStorage.getItem(`lod.${k}`) ?? d; } catch { return d; } };
+const setPref = (k: string, v: string) => { try { localStorage.setItem(`lod.${k}`, v); } catch { /* private mode */ } };
 
 /** Fade an audio element's volume to a target over ms; resolves when done. */
 function fadeTo(a: HTMLAudioElement, target: number, ms = FADE_MS): Promise<void> {
@@ -59,6 +63,15 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 const readingMs = (text: string) => Math.max(2200, text.split(/\s+/).length * 380 + 800);
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+/** A voice that arrived inside a dialogue reply (base64 mp3) as a playable blob. */
+const b64Blob = (b64: string) => {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new Blob([bytes], { type: "audio/mpeg" });
+};
+const BUILD_ID = process.env.NEXT_PUBLIC_BUILD_ID ?? "dev";
+const SLOW_MS = 7000; // after this, the typing bubble reassures her that the reply is still coming
 const titleCase = (s: string) => `The ${cap(s.toLowerCase())}`;
 
 /** "MAIDEN: Hello. CRONE: Hush." -> one segment per speaker. Plain lines stay one segment. */
@@ -168,6 +181,31 @@ export default function Player({ book }: { book: Book }) {
   const [offline, setOffline] = useState(false);
   // The pause menu.
   const [menu, setMenu] = useState<MenuView | null>(null);
+  // Comfort settings, remembered on this phone.
+  const [textScale, setTextScale] = useState(1);
+  const [musicOn, setMusicOn] = useState(true);
+  const musicOnRef = useRef(true);
+  // Everything said recently (narrator and characters), to reread in the menu.
+  const backlog = useRef<{ who: string; text: string }[]>([]);
+  const logLine = (who: string, text: string) => {
+    const b = backlog.current;
+    if (b[b.length - 1]?.text === text) return;
+    b.push({ who, text });
+    if (b.length > 80) b.splice(0, b.length - 80);
+  };
+  // Skip: tap for one line, hold for the whole stretch.
+  const skipAllRef = useRef(false);
+  const holdTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pressing = useRef(false);
+  const holdFired = useRef(false);
+  const [holding, setHolding] = useState(false);
+  // Undo for a choice made by mistake, while its card is showing.
+  const undoRef = useRef<(() => void) | null>(null);
+  // First conversation: one short tip on how talking works.
+  const [tip, setTip] = useState(false);
+  const optionsOpenedAt = useRef(0);
+  const [slow, setSlow] = useState(false);
+  const [updateReady, setUpdateReady] = useState(false);
   const [codeInput, setCodeInput] = useState("");
   const [syncNote, setSyncNote] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -203,10 +241,10 @@ export default function Player({ book }: { book: Book }) {
 
   // ---------- audio: music bed, narrator lines, character voices ----------
   const musicRef = useRef<{ a: HTMLAudioElement | null; track: string | null; voices: number }>({ a: null, track: null, voices: 0 });
-  const bedTarget = () => (musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
+  const bedTarget = () => (!musicOnRef.current ? 0 : musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
   const duck = () => {
     musicRef.current.voices += 1;
-    if (musicRef.current.a) void fadeTo(musicRef.current.a, DUCK_VOLUME, 400);
+    if (musicRef.current.a) void fadeTo(musicRef.current.a, Math.min(DUCK_VOLUME, bedTarget()), 400);
   };
   const unduck = () => {
     musicRef.current.voices = Math.max(0, musicRef.current.voices - 1);
@@ -334,12 +372,12 @@ export default function Player({ book }: { book: Book }) {
   }, []);
 
   /** A whole reply, one speaker after another, each in their own voice. All voices are fetched at once. */
-  const speakAll = useCallback((segments: Segment[], character: string) => {
+  const speakAll = useCallback((segments: Segment[], character: string, given?: (Promise<Blob | null> | undefined)[]) => {
     let startRes!: () => void, endRes!: () => void;
     const started = new Promise<void>((r) => (startRes = r));
     const ended = new Promise<void>((r) => (endRes = r));
     const chain = ++voiceChain.current;
-    const blobs = segments.map((s) => fetchVoice(s.text, character, s.speaker));
+    const blobs = segments.map((s, i) => given?.[i] ?? fetchVoice(s.text, character, s.speaker));
     void (async () => {
       for (let i = 0; i < segments.length; i++) {
         if (chain !== voiceChain.current) break;
@@ -404,6 +442,12 @@ export default function Player({ book }: { book: Book }) {
         if (token !== runRef.current) return false;
         const b = list[i];
         const next = list[i + 1];
+        // Held Skip: run straight through to the end of this stretch, keeping the last picture.
+        if (skipAllRef.current) {
+          show(b);
+          if (b.text) logLine("Narrator", b.text);
+          continue;
+        }
         setUpcoming(list.slice(i + 1).find((x) => x.clip)?.clip ?? null);
         show(b);
         // A tap skips the rest of this beat.
@@ -416,7 +460,7 @@ export default function Player({ book }: { book: Book }) {
           setCard(null);
         }
         if (b.text && token === runRef.current) {
-          await Promise.race([playLine(b.text, () => { if (token === runRef.current) setSubtitle({ text: b.text!, hook: b.style === "hook" }); }), skipped]);
+          await Promise.race([playLine(b.text, () => { if (token === runRef.current) { setSubtitle({ text: b.text!, hook: b.style === "hook" }); logLine("Narrator", b.text!); } }), skipped]);
           setSubtitle(null);
         }
         if (token !== runRef.current) return false;
@@ -429,6 +473,7 @@ export default function Player({ book }: { book: Book }) {
       }
       return token === runRef.current;
     } finally {
+      skipAllRef.current = false;
       if (token === runRef.current) { setSkippable(false); skipRef.current = null; }
     }
   };
@@ -475,13 +520,19 @@ export default function Player({ book }: { book: Book }) {
   );
 
   /** Show a character's reply: their voice starts, and the words appear with it (one line per speaker). */
-  const deliver = async (text: string, character: string, token: number, before: Turn[] = [], extra: Turn[] = []) => {
+  const deliver = async (text: string, character: string, token: number, before: Turn[] = [], extra: Turn[] = [], voiced?: DialogueReply["voice"], pre?: Promise<Blob | null>[]) => {
     const segs = splitSpeakers(text, book.scenes[sceneId]?.conversation?.speakerNames);
-    const v = speakAll(segs, character);
+    // Voices already made on the server (with the reply) or fetched ahead (openings) play at once.
+    const given = voiced && voiced.length === segs.length
+      ? voiced.map((v) => (v.audio ? Promise.resolve(b64Blob(v.audio)) : undefined))
+      : pre && pre.length === segs.length ? pre : undefined;
+    const v = speakAll(segs, character, given);
     await Promise.race([v.started, sleep(NPC_TEXT_WAIT_MS)]);
     if (token !== runRef.current) return v;
     setBusy(false);
     setHistory([...before, ...extra, ...segs.map((s) => ({ role: "character" as const, text: s.text, who: s.name }))]);
+    const fallback = book.scenes[sceneId]?.conversation?.name ?? cap(character.split("-")[0]);
+    for (const sg of segs) logLine(sg.name ?? fallback, sg.text);
     return v;
   };
 
@@ -492,10 +543,16 @@ export default function Player({ book }: { book: Book }) {
     if (sc.type === "end") return setPhase("end");
     if (sc.conversation) {
       setPhase("talk");
+      if (pref("tipSeen", "") !== "1") {
+        setPref("tipSeen", "1");
+        setTip(true);
+        setTimeout(() => setTip(false), 14000);
+      }
       const opening = sc.conversation.opening;
       if (opening) {
         setBusy(true);
-        await deliver(opening, sc.conversation.character, token);
+        const pre = openingVoice.current?.scene === sc.id ? openingVoice.current.blobs : undefined;
+        await deliver(opening, sc.conversation.character, token, [], [], undefined, pre);
       }
       return;
     }
@@ -515,8 +572,14 @@ export default function Player({ book }: { book: Book }) {
     if (sc.next) goTo(sc.next);
   }
 
+  const openingVoice = useRef<{ scene: string; blobs: Promise<Blob | null>[] } | null>(null);
   async function playScene(id: string, token: number) {
     const sc = book.scenes[id];
+    // The opening line of the coming conversation is voiced while she watches, so it plays the instant the talk begins.
+    if (sc.conversation?.opening && openingVoice.current?.scene !== id) {
+      const segs = splitSpeakers(sc.conversation.opening, sc.conversation.speakerNames);
+      openingVoice.current = { scene: id, blobs: segs.map((sg) => fetchVoice(sg.text, sc.conversation!.character, sg.speaker)) };
+    }
     setPhase("film");
     const p = profileRef.current;
     if (p) commit({ ...p, position: { book: book.id, scene: id }, visited: (p.visited ?? []).includes(id) ? p.visited : [...(p.visited ?? []), id] });
@@ -551,6 +614,7 @@ export default function Player({ book }: { book: Book }) {
   }
 
   async function choose(choice: Choice) {
+    const sc0 = scene;
     const current = profileRef.current;
     if (!current) return;
     let p = applyEffect(current, book.id, choice.effects);
@@ -568,13 +632,24 @@ export default function Player({ book }: { book: Book }) {
     setShowOptions(false);
     setInner(null);
     setPhase("film");
-    // Say plainly what she chose, so a decision never passes unnoticed.
+    // Say plainly what she chose, so a decision never passes unnoticed, and let a mistaken tap be undone.
+    const backTo: Phase = sc0.conversation ? "talk" : "choose";
     setChosen(choice.text);
     let skipRes!: () => void;
     const skipped = new Promise<void>((r) => (skipRes = r));
     skipRef.current = skipRes;
     setSkippable(true);
-    await Promise.race([sleep(CHOICE_MS), skipped]);
+    undoRef.current = () => {
+      undoRef.current = null;
+      runRef.current++;
+      commit(current);
+      setChosen(null);
+      setSkippable(false);
+      skipRef.current = null;
+      setPhase(backTo);
+    };
+    await Promise.race([sleep(CHOICE_MS + 1400), skipped]);
+    undoRef.current = null;
     setChosen(null);
     if (token !== runRef.current) return;
     if (await runTimeline(choice.aftermath ?? [], token)) goTo(choice.next);
@@ -599,7 +674,7 @@ export default function Player({ book }: { book: Book }) {
     }
     const reply = r.reply;
     const extra: Turn[] = reply.narration ? [{ role: "narration", text: reply.narration }] : [];
-    const v = await deliver(reply.dialogue, who, token, hist, extra);
+    const v = await deliver(reply.dialogue, who, token, hist, extra, reply.voice);
     if (token !== runRef.current) return;
     if (reply.mood) setMood(reply.mood);
     if (reply.inner_thought) {
@@ -637,6 +712,7 @@ export default function Player({ book }: { book: Book }) {
     stopAllVoices();
     const hist: Turn[] = [...history, { role: "player", text: line }];
     setHistory(hist);
+    logLine(profileRef.current?.name ?? "Aurie", line);
     void respond(hist, line, intent);
   }
 
@@ -712,6 +788,36 @@ export default function Player({ book }: { book: Book }) {
     profileRef.current = p;
     setProfile(p);
   }, [book]);
+
+  // A reply that takes a while gets a reassuring word, so a wait never looks like a freeze.
+  useEffect(() => {
+    if (!busy) { setSlow(false); return; }
+    const t = setTimeout(() => setSlow(true), SLOW_MS);
+    return () => clearTimeout(t);
+  }, [busy]);
+
+  // A tab left open keeps running the old game; when a newer version is live, say so and offer to update.
+  useEffect(() => {
+    if (BUILD_ID === "dev") return;
+    const check = () => {
+      void fetch("/api/version", { cache: "no-store" }).then((r) => r.json()).then((j: { id?: string }) => {
+        if (j.id && j.id !== "dev" && j.id !== BUILD_ID) setUpdateReady(true);
+      }).catch(() => undefined);
+    };
+    check();
+    const every = setInterval(check, 5 * 60_000);
+    const onShow = () => { if (document.visibilityState === "visible") check(); };
+    document.addEventListener("visibilitychange", onShow);
+    return () => { clearInterval(every); document.removeEventListener("visibilitychange", onShow); };
+  }, []);
+
+  // Comfort settings from this phone.
+  useEffect(() => {
+    setTextScale(Number(pref("textScale", "1")) || 1);
+    const on = pref("music", "on") !== "off";
+    setMusicOn(on);
+    musicOnRef.current = on;
+  }, []);
 
   // Online and offline are shown as they happen.
   useEffect(() => {
@@ -793,6 +899,40 @@ export default function Player({ book }: { book: Book }) {
   const fx = beatFx ?? scene.fx;
   const chapters = useMemo(() => order.filter((id) => book.scenes[id].episodeTitle), [order, book]);
 
+  const skipDown = () => {
+    if (!skipRef.current) return;
+    pressing.current = true;
+    holdFired.current = false;
+    setHolding(true);
+    holdTimer.current = setTimeout(() => {
+      holdFired.current = true;
+      setHolding(false);
+      skipAllRef.current = true;
+      skipRef.current?.();
+    }, HOLD_SKIP_MS);
+  };
+  const skipUp = () => {
+    if (!pressing.current) return;
+    pressing.current = false;
+    if (holdTimer.current) clearTimeout(holdTimer.current);
+    setHolding(false);
+    if (!holdFired.current) skipRef.current?.();
+  };
+  const skipCancel = () => {
+    if (!pressing.current) return;
+    pressing.current = false;
+    if (holdTimer.current) clearTimeout(holdTimer.current);
+    setHolding(false);
+  };
+  const toggleMusic = () => {
+    const on = !musicOnRef.current;
+    musicOnRef.current = on;
+    setMusicOn(on);
+    setPref("music", on ? "on" : "off");
+    if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 600);
+  };
+  const changeText = (v: number) => { setTextScale(v); setPref("textScale", String(v)); };
+
   if (!profile) return <main className="stage" />;
 
   // Before the first tap: a still gate. The tap is what lets a phone browser play sound and go fullscreen.
@@ -840,14 +980,7 @@ export default function Player({ book }: { book: Book }) {
   const top = layers[layers.length - 1];
   const code = profile.syncCode ? `${profile.syncCode.slice(0, 5)}-${profile.syncCode.slice(5)}` : null;
   return (
-    <main
-      className={`stage ${vp.touch ? "touch" : ""}`}
-      onClick={(e) => {
-        // A tap on the picture during narration skips to the next moment.
-        if (menu) return;
-        if ((phase === "film" || recap) && skippable && !(e.target as HTMLElement).closest("button, input, a, .menu, .hud")) skipRef.current?.();
-      }}
-    >
+    <main className={`stage ${vp.touch ? "touch" : ""}`} style={{ ["--ts" as string]: textScale }}>
       {vp.phonePortrait && (
         <div className="rotate">
           <div className="rotate-icon" aria-hidden="true">⟳</div>
@@ -897,6 +1030,20 @@ export default function Player({ book }: { book: Book }) {
 
       {/* Top-right controls: fullscreen and the pause menu */}
       <div className="hud">
+        {skippable && !menu && (
+          <button
+            className={`hud-btn skip ${holding ? "holding" : ""}`}
+            aria-label="Skip. Hold to skip this whole part."
+            title="Tap: next line. Hold: skip this part."
+            onPointerDown={skipDown}
+            onPointerUp={skipUp}
+            onPointerLeave={skipCancel}
+            onPointerCancel={skipCancel}
+            onContextMenu={(e) => e.preventDefault()}
+          >
+            <span>Skip</span>
+          </button>
+        )}
         {fs.can && (
           <button className="hud-btn" aria-label={fs.on ? "Exit full screen" : "Full screen"} title={fs.on ? "Exit full screen" : "Full screen"} onClick={() => void (fs.on ? leaveFullscreen() : enterImmersive())}>
             {fs.on ? "⤡" : "⤢"}
@@ -916,6 +1063,7 @@ export default function Player({ book }: { book: Book }) {
         <div className="chosen" key={chosen}>
           <div className="chosen-label">Your choice</div>
           <div className="chosen-text">{chosen}</div>
+          {undoRef.current && <button className="undo" onClick={() => undoRef.current?.()}>Undo</button>}
         </div>
       )}
 
@@ -926,11 +1074,23 @@ export default function Player({ book }: { book: Book }) {
         </div>
       )}
 
-      {phase === "film" && skippable && !recap && !chosen && <div className="skiphint">{vp.touch ? "Tap to skip" : "Click to skip"}</div>}
+      {tip && phase === "talk" && (
+        <div className="tip" role="note">
+          <span>Type anything Aurie says or does. Not sure what to say? Tap <b>Ideas</b>.</span>
+          <button onClick={() => setTip(false)}>Got it</button>
+        </div>
+      )}
 
       {ripple && <div key={ripple} className="ripple">{ripple}</div>}
 
-      {inner && (phase === "talk" || phase === "choose") && <div className="inner">{inner}</div>}
+      {inner && (phase === "talk" || phase === "choose") && <div className="inner"><span className="inner-who">{profile.name}, thinking</span>{inner}</div>}
+
+      {updateReady && (
+        <div className="updatebar" role="status">
+          <span>A new version of the game is ready. Your progress is saved.</span>
+          <button onClick={() => location.reload()}>Update now</button>
+        </div>
+      )}
 
       {(netError || offline) && (
         <div className="netbar" role="alert">
@@ -950,7 +1110,8 @@ export default function Player({ book }: { book: Book }) {
             ))}
             {busy && (
               <p className="typing" aria-live="polite">
-                <span className="who">{speakerName}</span> {speakerName.startsWith("The ") ? "are" : "is"} typing<span className="dots" aria-hidden="true"><i /><i /><i /></span>
+                <span className="who">{speakerName}</span> {speakerName.startsWith("The ") ? "are" : "is"} thinking<span className="dots" aria-hidden="true"><i /><i /><i /></span>
+                {slow && <span className="slow">still coming, one moment…</span>}
               </p>
             )}
           </div>
@@ -958,7 +1119,7 @@ export default function Player({ book }: { book: Book }) {
             <ul className="options">
               {ideas.map((o) => (
                 <li key={o.intent ?? o.text}>
-                  <button onClick={() => send(o.text, o.intent)} disabled={busy}>{o.text}</button>
+                  <button onClick={() => { if (performance.now() - optionsOpenedAt.current > OPTION_GUARD_MS) send(o.text, o.intent); }} disabled={busy}>{o.text}</button>
                 </li>
               ))}
             </ul>
@@ -983,7 +1144,7 @@ export default function Player({ book }: { book: Book }) {
             />
             <button type="submit" disabled={busy || !input.trim()}>Say</button>
             {ideas.length > 0 && (
-              <button type="button" className="ghost" onClick={() => setShowOptions((s) => !s)}>
+              <button type="button" className="ghost" onClick={() => { optionsOpenedAt.current = performance.now(); setShowOptions((v) => !v); }}>
                 {showOptions ? "Hide" : "Ideas"}
               </button>
             )}
@@ -1030,8 +1191,10 @@ export default function Player({ book }: { book: Book }) {
                 <p className="menu-where">{book.scenes[chapterOf(sceneId)]?.episodeTitle}</p>
                 <button className="primary" onClick={closeMenu}>Resume</button>
                 <button onClick={() => setMenu("journal")}>Story so far</button>
+                <button onClick={() => setMenu("lines")}>Recent lines</button>
                 <button onClick={() => setMenu("chapters")}>Chapters</button>
                 <button onClick={() => jump(chapterOf(sceneId))}>Restart this chapter</button>
+                <button onClick={() => setMenu("settings")}>Text size and music</button>
                 <button onClick={() => setMenu("sync")}>Play on another phone</button>
                 <button className="ghost" onClick={() => setMenu("confirm-restart")}>Start over from the beginning</button>
               </>
@@ -1049,6 +1212,31 @@ export default function Player({ book }: { book: Book }) {
                       ))
                     : <li>Nothing yet. The story has only just begun.</li>}
                 </ol>
+                <button onClick={() => setMenu("main")}>Back</button>
+              </>
+            )}
+            {menu === "lines" && (
+              <>
+                <h2>Recent lines</h2>
+                <ul className="backlog">
+                  {backlog.current.length
+                    ? backlog.current.slice(-40).map((l, i) => <li key={i}><span className="who">{l.who}</span> {l.text}</li>)
+                    : <li>Nothing has been said yet.</li>}
+                </ul>
+                <button onClick={() => setMenu("main")}>Back</button>
+              </>
+            )}
+            {menu === "settings" && (
+              <>
+                <h2>Text size and music</h2>
+                <p className="menu-note">Text size</p>
+                <div className="seg">
+                  {([[1, "Normal"], [1.15, "Large"], [1.3, "Larger"]] as const).map(([v, label]) => (
+                    <button key={label} className={textScale === v ? "primary" : ""} onClick={() => changeText(v)}>{label}</button>
+                  ))}
+                </div>
+                <p className="sample">The Dreaming remembers everything.</p>
+                <button onClick={toggleMusic}>Background music: {musicOn ? "On" : "Off"}</button>
                 <button onClick={() => setMenu("main")}>Back</button>
               </>
             )}
