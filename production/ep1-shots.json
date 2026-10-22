@@ -1747,6 +1747,24 @@
         ],
         "prompt": "The same London tavern from the plate in 1689, cold and half empty, grey winter light: Hob Gadling from the character sheet sits alone in the corner in threadbare rags, unshaven and thin, an empty tankard in front of him, but his eyes are stubborn and alive, and he looks straight at the camera with a defiant half-smile."
       }
+    },
+    {
+      "id": "still-death-rounds",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png"
+        ],
+        "prompt": "A small sunlit bedroom in an old London flat: an old man with white hair sits up in bed holding a violin under his chin, playing, eyes closed and smiling. Death, the young woman from the character sheet (pale skin, black hair, black top, silver ankh), sits on the edge of the bed listening with a gentle smile, waiting. In the doorway, seen from behind so her face is not visible, stands a woman in a long black high-collared gown with long straight black hair. Warm, kind afternoon light."
+      }
+    },
+    {
+      "id": "fiddlers-green",
+      "still": true,
+      "keyframe": {
+        "refs": [],
+        "prompt": "Fiddler's Green, a green country in the Dreaming: soft rolling hills of deep green grass, a slow silver stream, old oak trees, wildflowers of every colour, warm late-afternoon light and a few small white clouds. Two small figures walk along the stream in the middle distance, seen from behind: a woman in a long black gown and a slim older woman in a dark coat. Peaceful, enchanted, gently alive."
+      }
     }
   ],
   "react": {

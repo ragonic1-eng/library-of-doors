@@ -251,14 +251,11 @@
               "DREAM_REVEALED": true
             }
           },
-          "next": "1.3",
+          "next": "1.2d",
           "aftermath": [
             {
               "text": "Burgess goes pale. Then, slowly, he smiles.",
               "clip": "1.2a"
-            },
-            {
-              "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life."
             }
           ]
         }
@@ -509,6 +506,12 @@
         },
         {
           "text": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs."
+        },
+        {
+          "text": "Alex remembers the night his father came up from the cellar white as chalk, and took down every mirror in the house.",
+          "if": [
+            "DREAM_REVEALED"
+          ]
         },
         {
           "text": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk."
@@ -1810,13 +1813,8 @@
               "LUCIFER_FAVOUR": true
             }
           },
-          "next": "end-2b",
-          "aftermath": [
-            {
-              "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
-              "still": "hell-gates"
-            }
-          ]
+          "next": "2.8c",
+          "aftermath": []
         }
       ],
       "recap": "Lucifer's legions blocked her way out of Hell.",
@@ -1911,19 +1909,13 @@
           "effects": {
             "traits": {
               "mercy": 1
+            },
+            "flags": {
+              "BETTE_HIDDEN": true
             }
           },
-          "next": "2.10",
-          "aftermath": [
-            {
-              "text": "She slips through the dreams of the waitress and the trucker, unseen.",
-              "still": "still-diner-dreams"
-            },
-            {
-              "text": "And she steps inside the ruby itself, where he cannot see her coming.",
-              "still": "still-ruby-inside"
-            }
-          ]
+          "next": "2.9d",
+          "aftermath": []
         }
       ],
       "recap": "John Dee, Ethel's son, was tormenting a diner full of people with the ruby.",
@@ -2009,6 +2001,12 @@
         {
           "text": "On the diner floor lies a small, broken old man.",
           "still": "still-dee-floor"
+        },
+        {
+          "text": "Behind the counter, Bette the waitress is still asleep, smiling. Dee walked past her a hundred times, and never once saw her.",
+          "if": [
+            "BETTE_HIDDEN"
+          ]
         }
       ],
       "conversation": {
@@ -2171,19 +2169,8 @@
               "DEATH_ROUNDS": true
             }
           },
-          "next": "end-ep2",
-          "aftermath": [
-            {
-              "text": "Aurie walks her sister's rounds: an old violinist, a young mother, a stranger on a bridge.",
-              "clip": "2.10b"
-            },
-            {
-              "text": "Everyone meets Death in the end. And everyone is met kindly."
-            },
-            {
-              "text": "Aurie goes home with something she did not have before."
-            }
-          ]
+          "next": "2.12b",
+          "aftermath": []
         },
         {
           "id": "2.12.B",
@@ -2618,6 +2605,12 @@
           "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
           "still": "hell-arena",
           "fx": "sparks"
+        },
+        {
+          "text": "He has not forgotten the favour she owes him. Tonight, he says, he will collect it.",
+          "if": [
+            "LUCIFER_FAVOUR"
+          ]
         }
       ],
       "conversation": {
@@ -3141,7 +3134,8 @@
           "Do I have to go?"
         ],
         "exits": {
-          "3.0.GO": "Aurie decides to answer Destiny's summons and go."
+          "3.0.GO": "Aurie decides to answer Destiny's summons and go.",
+          "3.0.GREEN": "Aurie asks Lucienne to walk with her in Fiddler's Green before she goes."
         },
         "triggers": [
           {
@@ -3161,6 +3155,32 @@
             {
               "text": "Lucienne bows. Behind her spectacles, she looks worried.",
               "still": "library-hub"
+            }
+          ]
+        },
+        {
+          "id": "3.0.GREEN",
+          "text": "First, walk with me in the green country.",
+          "requires": {
+            "flags": [
+              "LUCIENNE_LOYAL"
+            ],
+            "traits": {
+              "mercy": 2
+            }
+          },
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "GREEN_FRIEND": true
+            }
+          },
+          "next": "3.0g",
+          "aftermath": [
+            {
+              "text": "Lucienne blinks. Then, very slightly, she smiles, and takes off her spectacles."
             }
           ]
         }
@@ -6310,6 +6330,12 @@
           ]
         },
         {
+          "text": "And from Fiddler's Green, a whole meadow of wildflowers, which walked there by itself.",
+          "if": [
+            "GREEN_FRIEND"
+          ]
+        },
+        {
           "text": "The ghost of Alex Burgess, young again, who finally gets to say thank you.",
           "if": [
             "ALEX_RELENTED"
@@ -6576,6 +6602,144 @@
       ],
       "next": "end-ep6",
       "ambience": "dreaming"
+    },
+    "1.2d": {
+      "id": "1.2d",
+      "title": "The Magus Afraid",
+      "pov": "3P",
+      "music": "cellar-dread",
+      "fx": "dust",
+      "ambience": "dreaming",
+      "recap": "Aurie told Burgess what she was. He went upstairs white as chalk, and never came down alone again.",
+      "beats": [
+        {
+          "text": "Burgess climbs the cellar stairs very slowly, and locks the door behind him, twice.",
+          "still": "cellar-1916"
+        },
+        {
+          "text": "Upstairs, his small son Alex is sitting on the top step in his pyjamas. He has heard everything."
+        },
+        {
+          "text": "Burgess sends him to bed. Then he takes down every mirror in the house."
+        },
+        {
+          "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life."
+        }
+      ],
+      "next": "1.3"
+    },
+    "2.8c": {
+      "id": "2.8c",
+      "title": "A Name in Black Ink",
+      "pov": "3P",
+      "music": "hell-v1",
+      "fx": "sparks",
+      "ambience": "hell",
+      "recap": "Aurie promised Lucifer a favour. He wrote her name in his book.",
+      "beats": [
+        {
+          "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
+          "still": "hell-gates"
+        },
+        {
+          "text": "Lucifer opens a book bound in something that is not leather, and writes her name in it, in black ink that smokes.",
+          "still": "hell-arena"
+        },
+        {
+          "text": "One favour, he says. Of my choosing. At a time of my choosing."
+        },
+        {
+          "text": "Every demon in Hell watches the Queen of Dreams walk out owing their master."
+        }
+      ],
+      "next": "end-2b"
+    },
+    "2.9d": {
+      "id": "2.9d",
+      "title": "Through the Dreams",
+      "pov": "3P",
+      "music": "ruby",
+      "fx": "glitter",
+      "ambience": "diner",
+      "recap": "Aurie came in through the diner's dreams, and hid Bette the waitress inside her own dream where Dee could not find her.",
+      "beats": [
+        {
+          "text": "Aurie does not come in through the door. She comes in through the dreams.",
+          "still": "still-diner-dreams"
+        },
+        {
+          "text": "The trucker dreams of an empty road. The cook dreams of his mother's kitchen. They are already half lost to the ruby."
+        },
+        {
+          "text": "Bette the waitress dreams she is writing stories, and every one of them has a happy ending."
+        },
+        {
+          "text": "Aurie folds Bette's dream around her like a blanket, and hides her inside it, where no waking eye can find her.",
+          "fx": "glitter"
+        },
+        {
+          "text": "And she steps inside the ruby itself, where he cannot see her coming.",
+          "still": "still-ruby-inside"
+        }
+      ],
+      "next": "2.10"
+    },
+    "2.12b": {
+      "id": "2.12b",
+      "title": "Her Sister's Rounds",
+      "pov": "3P",
+      "music": "wings",
+      "fx": "dust",
+      "ambience": "park",
+      "recap": "Aurie spent a day on her sister's rounds, and came home changed.",
+      "beats": [
+        {
+          "text": "Aurie spends the day at her sister's side, and nobody but the dying can see them.",
+          "still": "still-death-rounds"
+        },
+        {
+          "text": "An old violinist, who asks if he can finish the piece first. Death lets him. It is a very good piece."
+        },
+        {
+          "text": "A young man on a bridge, who did not mean to fall. Death holds his hand all the way down, and he is not afraid."
+        },
+        {
+          "text": "Everyone meets Death in the end. And everyone is met kindly.",
+          "still": "park"
+        },
+        {
+          "text": "Aurie goes home with something she did not have before."
+        }
+      ],
+      "next": "end-ep2"
+    },
+    "3.0g": {
+      "id": "3.0g",
+      "title": "Fiddler's Green",
+      "pov": "3P",
+      "music": "library",
+      "fx": "glitter",
+      "ambience": "park",
+      "recap": "Before facing her family, Aurie walked with Lucienne in Fiddler's Green, a place in the Dreaming that is also a friend.",
+      "beats": [
+        {
+          "card": "Fiddler's Green",
+          "still": "fiddlers-green"
+        },
+        {
+          "text": "Fiddler's Green is a place in the Dreaming: a green country of soft hills and slow streams, where sailors dream of going when they die."
+        },
+        {
+          "text": "It is also, sometimes, a person, and it has missed her very much."
+        },
+        {
+          "text": "The grass leans toward Aurie as she walks. The wildflowers turn their faces to her, the way a cat turns toward a warm hand."
+        },
+        {
+          "text": "For an afternoon, nobody asks the Queen of Dreams for anything. Lucienne laughs at something, and does not apologise for it."
+        }
+      ],
+      "next": "3.1"
     }
   }
 }
