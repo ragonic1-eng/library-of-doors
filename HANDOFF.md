@@ -112,5 +112,9 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Episode 1 gaps closed with 4 new pictures: the ritual on video (1.1a), Unity's dream on video (1.3d, the conversation now happens there), Ethel Cripps fleeing with the tools (still, 1926), Burgess dead before the sphere (still, 1947).
 - Part Two live (source chapter 2, the sand): end of Part One -> Continue -> 2.2 the Three at the crossroads (live talk, three questions) -> 2.3 Johanna Constantine in London -> 2.4 Rachel's room (gentle or cruel ending; sets CONSTANTINE_ALLY or CONSTANTINE_CURSE and relic sand) -> end-2a. New cast/places: character-prompts.md 3.8-3.10 and 4.10-4.12; shots in production/ep1-shots.json (`"still": true` = image only). AI test: 8 of 8 lines reached the right outcome.
 - Spend: Y364.29 of Y400 after this round (6 clips, about 20 images, 25 narrator lines). One image costs about Y0.46.
-- Next in the source: the helm in Hell (Lucifer, Choronzon, the Oldest Game), the ruby with John Dee, then Death. Needs a new budget.
+- Episode Two complete and live (owner approved Y120-150 more): 2.5 Hell gates and Nada, 2.6 Lucifer, 2.7 the Oldest Game (typed forms vs Choronzon; lose = replay; a `triggers` rule makes "hope" after anti-life always win), 2.8 Lucifer's threat, 2.9-2.11 John Dee and the ruby, 2.12 Death and her rounds, end-ep2. Part end cards have Continue.
+- Owner feedback handled: characters now have "talking" loops (react/<who>-talking.mp4) that play only while their voice is audible; finished clips keep a slow push-in; "<Name> is typing" bubble while a reply loads.
+- Dialogue resilience: the gateway's Claude channel failed intermittently ("OAuth refresh failed"). The route now falls back to MODEL_DIALOGUE_FALLBACK (default gpt-5.4-mini, then gemini-3-flash).
+- Spend: Y475.28 total (this round Y111 of the approved Y150). One 5 s loop about Y3, one 10 s clip about Y6, one image about Y0.46.
+- Next in the source: Episode 3, the Endless family (Destiny's garden, the convocation, Desire's bait). Needs a new budget.
 - Still parked: Aurie shots 1.1b and 1.2b-A face drift.
