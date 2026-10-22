@@ -109,4 +109,8 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Music: six MusicGen beds live. Suno alternative: drop mp3s under the same ids.
 - Narrator voice: gateway "ash" with the cinematic direction is live. Chatterbox (free, local, `tools/venv-tts`, needs `setuptools<81` on Windows) is available as an engine; owner may still pick it.
 - Housekeeping: a stray Vercel project named `app` was created by deploying from `app/` by mistake (no env vars, not linked any more). Always deploy from the repo root. The owner can delete `app` in the Vercel dashboard.
+- Episode 1 gaps closed with 4 new pictures: the ritual on video (1.1a), Unity's dream on video (1.3d, the conversation now happens there), Ethel Cripps fleeing with the tools (still, 1926), Burgess dead before the sphere (still, 1947).
+- Part Two live (source chapter 2, the sand): end of Part One -> Continue -> 2.2 the Three at the crossroads (live talk, three questions) -> 2.3 Johanna Constantine in London -> 2.4 Rachel's room (gentle or cruel ending; sets CONSTANTINE_ALLY or CONSTANTINE_CURSE and relic sand) -> end-2a. New cast/places: character-prompts.md 3.8-3.10 and 4.10-4.12; shots in production/ep1-shots.json (`"still": true` = image only). AI test: 8 of 8 lines reached the right outcome.
+- Spend: Y364.29 of Y400 after this round (6 clips, about 20 images, 25 narrator lines). One image costs about Y0.46.
+- Next in the source: the helm in Hell (Lucifer, Choronzon, the Oldest Game), the ruby with John Dee, then Death. Needs a new budget.
 - Still parked: Aurie shots 1.1b and 1.2b-A face drift.
