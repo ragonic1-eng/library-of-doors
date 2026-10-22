@@ -50,16 +50,16 @@
     },
     {
       "id": "1.1b",
-      "model": "hero",
-      "seconds": 10,
+      "model": "video",
+      "seconds": 5,
       "keyframe": {
         "refs": [
-          "characters/burgess/sheet.png",
-          "assets/plates/cellar-1916/plate.png"
+          "assets/keyframes/sandman/1.5b/keyframe.png",
+          "characters/aurie/sheet.png"
         ],
-        "prompt": "Tight close-up inside the great glass sphere in the 1916 candle-lit cellar, the camera INSIDE the glass with her so there is no glass between the lens and her face: Aurie lies on her side on the curved glass floor in her long black gown, dazed, her face filling the upper half of the frame, eyes half open, one palm pressed flat against the glass beside her cheek, her black hair spread across the glass. Beyond the far wall of the sphere, soft and out of focus: candle flames and the dark shape of Roderick Burgess watching. FRAMING RULE: close-up, her head at least half the frame height, face sharp and fully visible, no distortion of her features by glass. The location reference is only for background colours, softly out of focus. Other people only as soft shapes at the edges."
+        "prompt": "Tight close-up of Aurie, the woman in the reference images, at the moment she wakes: her long black hair tangled around her face, eyes heavy and just opening, looking straight into the camera, lips parted as she draws a first breath. Warm candlelight on one cheek, cold blue light from above, a dark stone cellar behind her with soft candle bokeh. No glass anywhere in front of her face. FRAMING RULE: a true close-up, her face at least half the frame height, sharp, evenly lit and fully visible, looking toward the camera; nothing between the lens and her face. Background dark and softly out of focus."
       },
-      "motion": "Aurie stirs and slowly lifts her head, her palm pressing against the glass. The gloved hands carry the helm, pouch and ruby out of frame. Burgess steps closer to the sphere, triumphant. Candle flames shiver. Slow push-in toward the sphere.",
+      "motion": "Locked-off static close-up, the camera does not move and does not zoom. She only lifts her heavy eyelids slowly and breathes; her head stays still and her face does not change. Far behind her, out of focus, a dark figure passes carrying something. Candle flames flicker.",
       "identity": [
         "aurie"
       ]
@@ -83,13 +83,12 @@
       "seconds": 5,
       "keyframe": {
         "refs": [
-          "characters/burgess/expressions.png",
-          "characters/aurie/sheet.png",
-          "assets/plates/cellar-1916/plate.png"
+          "assets/keyframes/sandman/1.5b/keyframe.png",
+          "characters/aurie/sheet.png"
         ],
-        "prompt": "Tight close-up of Aurie's face through a single flat, clear pane of the sphere's glass, so close that the glass only shows as a faint reflection of a candle flame on one cheek: she sits utterly still and silent inside the sphere, eyes level and unblinking, staring back at Burgess, whose blurred burgundy shoulder fills the left edge of the frame. Candlelight warm on her face, cold blue fill from above. FRAMING RULE: close-up, her head at least half the frame height, face sharp and fully visible, no distortion of her features by glass. The location reference is only for background colours, softly out of focus. Other people only as soft shapes at the edges."
+        "prompt": "Tight close-up of Aurie, the woman in the reference images, sitting utterly still inside the sphere, eyes level and unblinking, looking straight into the camera with cold, silent contempt. Warm candlelight on one cheek, cold blue light from above, a dark cellar behind her with soft candle bokeh. FRAMING RULE: a true close-up, her face at least half the frame height, sharp, evenly lit and fully visible, looking toward the camera; nothing between the lens and her face; no glass over her features. Background dark and softly out of focus."
       },
-      "motion": "A long silent stare. Burgess waits, then his jaw tightens; he stands slowly, straightens his robe and turns away. Aurie does not move or blink. Slow lateral drift.",
+      "motion": "A long silent stare: she does not blink or move; only a strand of her hair stirs and the candle light flickers across her face. Static framing, faint hand-held sway.",
       "identity": [
         "aurie"
       ]

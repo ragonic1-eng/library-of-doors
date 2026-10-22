@@ -59,7 +59,7 @@
         },
         {
           "text": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
-          "clip": "1.1b"
+          "clip": "1.1b-v2"
         },
         {
           "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby."
@@ -189,7 +189,7 @@
           "aftermath": [
             {
               "text": "You give him nothing. Not a word, not a flicker.",
-              "clip": "1.2b-A"
+              "clip": "1.2b-A-v2"
             },
             {
               "text": "He leaves. He will come back every night for thirty years, and you will never answer him."
