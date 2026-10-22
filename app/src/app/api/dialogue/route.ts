@@ -113,17 +113,40 @@ export async function POST(req: Request) {
   ];
 
   try {
-    const data = await gatewayJson<{ choices: { message: { content: string } }[] }>("/chat/completions", {
-      model: models.dialogue,
+    const call = (model: string) => gatewayJson<{ choices: { message: { content: string } }[] }>("/chat/completions", {
+      model,
       messages,
       temperature: 0.9,
       max_tokens: 1200,
       response_format: { type: "json_schema", json_schema: { name: "reply", strict: true, schema: replySchema } },
     });
+    // If the main model's upstream channel fails, answer from a fallback rather than break the scene.
+    let data: Awaited<ReturnType<typeof call>> | undefined;
+    let lastErr: unknown;
+    for (const model of [models.dialogue, ...models.dialogueFallbacks]) {
+      try {
+        data = await call(model);
+        break;
+      } catch (e) {
+        lastErr = e;
+        console.error(`dialogue: ${model} failed:`, (e as Error).message.slice(0, 160));
+      }
+    }
+    if (!data) throw lastErr;
     const parsed = safeParse(data.choices?.[0]?.message?.content ?? "");
     // Never trust the model's ids: keep only exits and consequences that exist and are allowed right now.
     if (parsed.decision && !(parsed.decision in exits)) parsed.decision = null;
     if (intent) parsed.decision = intent;
+    else {
+      const lastCharacterLine = [...body.history].reverse().find((t) => t.role === "character")?.text ?? "";
+      for (const t of scene.conversation?.triggers ?? []) {
+        if (!(t.exit in exits)) continue;
+        if (!new RegExp(t.player, "i").test(body.playerLine ?? "")) continue;
+        if (t.afterCharacter && !new RegExp(t.afterCharacter, "i").test(lastCharacterLine)) continue;
+        parsed.decision = t.exit;
+        break;
+      }
+    }
     parsed.consequences = [...new Set(parsed.consequences)].filter((t) => t in consequences).slice(0, 2);
     parsed.trust_delta = clampInt(parsed.trust_delta, -2, 2);
     parsed.fear_delta = clampInt(parsed.fear_delta, -2, 2);

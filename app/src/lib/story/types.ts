@@ -58,6 +58,9 @@ export interface Conversation {
   opening?: string; // the character's first line if the player stays silent
   possibilities?: string[]; // likely approaches and how the scene bends to each (keeps improvisation on-story)
   suggestions?: string[]; // extra lines offered under Ideas that keep the talk going (questions, not exits)
+  // Sure-fire exits checked by the server after the model answers: when her line matches `player` (and the
+  // character's previous line matches `afterCharacter`, if given), the scene ends on `exit` whatever the model said.
+  triggers?: { exit: string; player: string; afterCharacter?: string }[];
   consequences?: Record<string, Consequence>; // tag -> consequence; each fires at most once per playthrough
 }
 

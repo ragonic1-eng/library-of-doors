@@ -101,7 +101,7 @@ character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
 // Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
-for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"]]) {
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"]]) {
   jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs: [] });
 }
 
@@ -162,7 +162,7 @@ if (existsSync(SHOTS_FILE)) {
     // so all seven loops share one framing and the player can cross-fade between them invisibly.
     const base = join(ROOT, "assets", "keyframes", "sandman", `react-${who}-base.png`);
     const expr = c.refs.find((r) => r.includes("expressions"));
-    for (const [mood, feel] of Object.entries(shots.react.moods)) {
+    for (const [mood, feel] of Object.entries(shots.react.moods).filter(([m]) => !c.moods || c.moods.includes(m))) {
       const id = `react-${who}-${mood}`;
       const hasBase = existsSync(base);
       const lock = c.identity ? [c.identity] : [];
@@ -192,6 +192,10 @@ const plates = [
   ["crossroads", "**4.10 "],
   ["london-rain", "**4.11 "],
   ["rachel-room", "**4.12 "],
+  ["hell-gates", "**4.13 "],
+  ["hell-arena", "**4.14 "],
+  ["diner", "**4.15 "],
+  ["park", "**4.16 "],
 ];
 for (const [id, label, extra] of plates) {
   jobs.push({ id, group: "plates", dir: join(P(id), "candidates"), approved: join(P(id), "plate.png"), prompt: () => assemble(block("## 4. Location plates", label), extra), refs: [] });

@@ -63,8 +63,8 @@ for (const s of spec.shots) {
     out: join(OUT, `${s.id}.mp4`),
   });
 }
-for (const who of Object.keys(spec.react.characters)) {
-  for (const [mood, feel] of Object.entries(spec.react.moods)) {
+for (const [who, rc] of Object.entries(spec.react.characters)) {
+  for (const [mood, feel] of Object.entries(spec.react.moods).filter(([m]) => !rc.moods || rc.moods.includes(m))) {
     const id = `react-${who}-${mood}`;
     clips.push({
       id, kind: "react", model: "video", seconds: spec.react.seconds, keyframe: KF(id),

@@ -5,6 +5,9 @@ const KEY = process.env.INFISTAR_API_KEY ?? "";
 
 export const models = {
   dialogue: process.env.MODEL_DIALOGUE ?? "grok-4.7",
+  // Tried in order when the main dialogue model fails upstream (a gateway channel can drop out for a while).
+  // Different providers on purpose, so one provider's outage cannot silence the characters.
+  dialogueFallbacks: (process.env.MODEL_DIALOGUE_FALLBACK ?? "gpt-5.4-mini,gemini-3-flash").split(",").map((m) => m.trim()).filter(Boolean),
   tts: process.env.MODEL_TTS ?? "gpt-audio-1.5",
 };
 

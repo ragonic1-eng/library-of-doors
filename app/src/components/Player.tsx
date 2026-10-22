@@ -99,6 +99,10 @@ export default function Player({ book }: { book: Book }) {
   // Reaction loops: while talking, the speaking character's loop for their current mood plays over the scene.
   const [mood, setMood] = useState("neutral");
   const [reactMissing, setReactMissing] = useState<Record<string, boolean>>({});
+  // True while a character's voice is audible: their "talking" loop plays instead of the listening mood.
+  const [talking, setTalking] = useState(false);
+  // The clip that has played out and is holding its last frame (it keeps a slow push-in so it never looks frozen).
+  const [held, setHeld] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Always-current profile: async flows (timelines, replies) must never use a stale copy.
@@ -190,6 +194,7 @@ export default function Player({ book }: { book: Book }) {
     let a: HTMLAudioElement | null = null;
     const stop = () => {
       stopped = true;
+      setTalking(false);
       a?.pause();
       stoppers.current.delete(stop);
       startRes();
@@ -204,8 +209,8 @@ export default function Player({ book }: { book: Book }) {
         if (stopped) return;
         a = new Audio(URL.createObjectURL(blob));
         duck();
-        a.onplaying = () => startRes();
-        const done = () => { unduck(); stoppers.current.delete(stop); endRes(); };
+        a.onplaying = () => { setTalking(true); startRes(); };
+        const done = () => { setTalking(false); unduck(); stoppers.current.delete(stop); endRes(); };
         a.onended = done;
         a.onerror = () => { startRes(); done(); };
         await a.play();
@@ -214,8 +219,8 @@ export default function Player({ book }: { book: Book }) {
         if (typeof window !== "undefined" && "speechSynthesis" in window) {
           const u = new SpeechSynthesisUtterance(text);
           u.rate = 0.92;
-          u.onstart = () => startRes();
-          u.onend = () => endRes();
+          u.onstart = () => { setTalking(true); startRes(); };
+          u.onend = () => { setTalking(false); endRes(); };
           u.onerror = () => { startRes(); endRes(); };
           window.speechSynthesis.cancel();
           window.speechSynthesis.speak(u);
@@ -515,7 +520,7 @@ export default function Player({ book }: { book: Book }) {
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
   const reactFor = (m: string) => (talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined);
   // Prefer the exact mood, then neutral; if neither exists, the scene's last frame stays on screen.
-  const reactSrc = [reactFor(mood), reactFor("neutral")].find((u) => u && !reactMissing[u]);
+  const reactSrc = [talking ? reactFor("talking") : undefined, reactFor(mood), reactFor("neutral")].find((u) => u && !reactMissing[u]);
   // Choices closed off by earlier events are hidden (and the AI cannot steer to them either).
   const options = useMemo(() => (scene.choices ?? []).filter((c) => !profile || meets(profile, book.id, c.requires)), [scene, profile, book.id]);
   const speakerName = scene.conversation ? cap(scene.conversation.character.split("-")[0]) : "";
@@ -574,14 +579,14 @@ export default function Player({ book }: { book: Book }) {
           return (
             <video
               key={l.key}
-              className={`film ${isTop ? "" : "prev"}`}
+              className={`film ${isTop ? "" : "prev"} ${held === l.key ? "held" : ""}`}
               src={l.url}
               autoPlay={isTop}
               playsInline
               muted
               preload="auto"
               onPlaying={() => isTop && layerReady(l.key)}
-              onEnded={() => markClipDone(l.key)}
+              onEnded={() => { markClipDone(l.key); setHeld(l.key); }}
               onError={() => { markClipDone(l.key); if (isTop) setMissing(l.key); }}
             />
           );
@@ -625,7 +630,11 @@ export default function Player({ book }: { book: Book }) {
                 {t.text}
               </p>
             ))}
-            {busy && <p className="character thinking">…</p>}
+            {busy && (
+              <p className="typing" aria-live="polite">
+                <span className="who">{speakerName}</span> is typing<span className="dots" aria-hidden="true"><i /><i /><i /></span>
+              </p>
+            )}
           </div>
           {showOptions && (
             <ul className="options">

@@ -109,7 +109,6 @@ body {
 .transcript p { margin: 0.35rem 0; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.45; text-shadow: 0 1px 4px #000; }
 .transcript .who { color: var(--accent); margin-right: 0.6em; font-variant: small-caps; letter-spacing: 0.05em; }
 .transcript .player { color: var(--dim); }
-.transcript .thinking { color: var(--dim); }
 .say { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
 .say input {
   flex: 1;
@@ -434,3 +433,36 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .endcard .echoes { max-height: 40dvh; font-size: 0.9rem; gap: 0.35rem; }
 }
 .endactions .primary { border-color: var(--accent); color: var(--accent); }
+
+/* A clip that has played out keeps drifting toward the viewer while the narration finishes */
+.sway > .film.held:not(.react) { animation: push-in 14s ease-out both; }
+
+/* "Burgess is typing": shown the instant she sends, so a slow reply never feels like a freeze */
+.transcript .typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0.35rem 0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--dim);
+  font-size: 0.9em;
+  font-style: italic;
+  animation: fade-in 0.25s ease both;
+}
+.typing .who { font-style: normal; }
+.typing .dots { display: inline-flex; gap: 3px; margin-left: 2px; }
+.typing .dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: typing-dot 1.2s ease-in-out infinite;
+}
+.typing .dots i:nth-child(2) { animation-delay: 0.15s; }
+.typing .dots i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}

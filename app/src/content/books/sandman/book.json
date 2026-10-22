@@ -1355,6 +1355,755 @@
           "text": "Next, the helm. In Hell.",
           "style": "hook"
         }
+      ],
+      "next": "2.5"
+    },
+    "2.5": {
+      "id": "2.5",
+      "title": "The Gates of Hell",
+      "pov": "3P",
+      "episodeTitle": "Episode 7 · Hell",
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "card": "Hell",
+          "still": "hell-gates"
+        },
+        {
+          "text": "Her helm was traded to a demon. So Aurie goes where no dreamer is welcome."
+        },
+        {
+          "text": "The gates of Hell open for her. Even here, they know her name.",
+          "clip": "2.5a"
+        },
+        {
+          "text": "The damned reach out as she passes, begging for a single dream."
+        },
+        {
+          "text": "In a cell of black ice, someone calls to her.",
+          "still": "still-nada"
+        },
+        {
+          "text": "Nada. A queen Aurie loved ten thousand years ago, and sent here when Nada refused her."
+        }
+      ],
+      "conversation": {
+        "character": "nada",
+        "maxTurns": 2,
+        "canon": [
+          "Nada is imprisoned in Hell, inside a column of black ice, because Aurie condemned her ten thousand years ago for refusing her love.",
+          "Aurie cannot free her today: she has no power in Hell without her helm, and Lucifer would not allow it."
+        ],
+        "opening": "You came. After ten thousand years, you came. Have you forgiven me? Will you let me go?",
+        "possibilities": [
+          "She refuses or stays cold: Nada falls silent, and the ice thickens.",
+          "She promises to return for her: Nada weeps and holds her to it.",
+          "She apologises: Nada is stunned; it is the first kindness in ten thousand years."
+        ],
+        "exits": {
+          "2.5.ON": "Aurie walks on without promising anything.",
+          "2.5.PROMISE": "Aurie promises Nada she will come back for her, or apologises to her."
+        },
+        "consequences": {
+          "NADA_APOLOGY": {
+            "when": "She says she is sorry, or admits she was wrong to condemn Nada.",
+            "effects": {
+              "traits": {
+                "mercy": 2
+              },
+              "flags": {
+                "NADA_APOLOGY": true
+              }
+            },
+            "ripple": "A crack runs through the ice, the length of a hand.",
+            "echo": {
+              "text": "In Hell, Dream told Nada she was sorry, after ten thousand years.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.5.ON",
+          "text": "Walk on. Not yet.",
+          "effects": {},
+          "next": "2.6",
+          "aftermath": [
+            {
+              "text": "Aurie walks on. Behind her, Nada does not call out again.",
+              "still": "hell-arena"
+            }
+          ]
+        },
+        {
+          "id": "2.5.PROMISE",
+          "text": "I will come back for you. I swear it.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "NADA_PROMISE": true
+            }
+          },
+          "next": "2.6",
+          "aftermath": [
+            {
+              "text": "Nada presses her hand to the ice. Aurie presses hers to the other side.",
+              "still": "still-nada"
+            },
+            {
+              "text": "A promise, made in Hell. Hell will remember it."
+            }
+          ]
+        }
+      ]
+    },
+    "2.6": {
+      "id": "2.6",
+      "title": "Lucifer",
+      "pov": "POV",
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "text": "At the heart of Hell is an arena, and above it a throne.",
+          "clip": "2.5c"
+        },
+        {
+          "text": "Lucifer Morningstar, first of the fallen, rules here. He has been expecting her."
+        }
+      ],
+      "conversation": {
+        "character": "lucifer",
+        "maxTurns": 4,
+        "canon": [
+          "Aurie has no power in Hell. Lucifer is its master.",
+          "Her helm is held by Choronzon, a duke of Hell. Lucifer will not give it to her.",
+          "A guest may challenge a demon to the Oldest Game for what the demon holds; Lucifer will judge."
+        ],
+        "opening": "Lady Dream. Seventy-two years in a bottle, and you come to my house to ask for favours. How refreshing. What do you want?",
+        "possibilities": [
+          "She asks for her helm: he tells her a demon holds it, and smiles.",
+          "She threatens him: he laughs; she has no power here.",
+          "She asks how to win it: he mentions the Oldest Game, and that he will judge.",
+          "She is courteous: he is courteous back, and watches her more carefully."
+        ],
+        "suggestions": [
+          "Who holds my helm?",
+          "How do I win it back?"
+        ],
+        "exits": {
+          "2.6.GAME": "Aurie challenges the demon who holds her helm to the Oldest Game."
+        },
+        "consequences": {
+          "THREATENED_LUCIFER": {
+            "when": "She threatens Lucifer or Hell.",
+            "effects": {
+              "flags": {
+                "LUCIFER_AMUSED": true
+              }
+            },
+            "ripple": "Ten thousand demons laugh at once."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.6.GAME",
+          "text": "Then I challenge your demon to the Oldest Game.",
+          "effects": {},
+          "next": "2.7",
+          "aftermath": [
+            {
+              "text": "The arena roars. The Oldest Game has not been played in Hell for a thousand years.",
+              "still": "hell-arena"
+            }
+          ]
+        }
+      ]
+    },
+    "2.7": {
+      "id": "2.7",
+      "title": "The Oldest Game",
+      "pov": "POV",
+      "music": "escape",
+      "episodeTitle": "Episode 8 · The Oldest Game",
+      "beats": [
+        {
+          "text": "Choronzon steps into the ring, with her helm in his hand.",
+          "clip": "2.6a"
+        },
+        {
+          "text": "The rules are simple. Each names a form that defeats the other's last. The first who cannot answer, loses."
+        },
+        {
+          "text": "Type your answer. Every form must beat his."
+        }
+      ],
+      "conversation": {
+        "character": "choronzon",
+        "maxTurns": 7,
+        "canon": [
+          "This is the Oldest Game, judged by Lucifer. Each player in turn names a form that defeats the other's last form.",
+          "Be a fair judge and a generous one: ACCEPT any form that could reasonably defeat your last form, even if you sneer at it. Always valid, from the original game: a hunter beats a wolf; a spider beats a horsefly; an ox beats a snake; a world beats anthrax (the world survives the plague); a universe beats a nova (a nova is one star inside it); hope beats anti-life.",
+          "After accepting her form, answer with ONE new form that defeats hers, escalating quickly: dire wolf, horsefly, snake, anthrax, nova, then anti-life, the end of all things. Decision null.",
+          "She loses (decision 2.7.LOSE) ONLY if her form is plainly absurd against yours (a rabbit against a wolf), or she gives no form at all.",
+          "Naming anti-life yourself NEVER ends the game: it is your move, decision null, and she must answer it.",
+          "Set decision to 2.7.WIN only when your last form was anti-life AND her latest message answers it with hope (or something truly equal to hope, never mere power, light or a bigger thing). Then you despair.",
+          "Each reply: a short sneer, then exactly ONE new form in the first person, e.g. 'I am a horsefly, and I sting the hunter's horse.'"
+        ],
+        "opening": "I am a dire wolf, lady. A beast of prey, a stalker, a slayer. Your move.",
+        "possibilities": [
+          "She names a good counter: he grudgingly accepts and names a bigger form.",
+          "She names a weak counter: he mocks it and claims the round.",
+          "She stalls or talks instead of playing: he demands an answer."
+        ],
+        "suggestions": [
+          "I am a hunter on horseback, and I kill the wolf."
+        ],
+        "exits": {
+          "2.7.WIN": "Aurie answers his final form, anti-life, with hope (or an answer truly equal to it), and wins the helm.",
+          "2.7.LOSE": "Aurie's form fails to defeat his last form, or she cannot answer."
+        },
+        "consequences": {
+          "CLEVER_FORM": {
+            "when": "She answers with an especially clever or surprising form that clearly defeats his.",
+            "effects": {
+              "flags": {
+                "CLEVER_IN_HELL": true
+              }
+            },
+            "ripple": "Somewhere in the tiers, a demon cannot help applauding."
+          }
+        },
+        "triggers": [
+          {
+            "exit": "2.7.WIN",
+            "player": "\bhope\b",
+            "afterCharacter": "anti-life|end of all|the end|ending|unmake all"
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "2.7.WIN",
+          "text": "I am hope.",
+          "effects": {
+            "relic": "helm",
+            "flags": {
+              "HELM_WON": true
+            }
+          },
+          "next": "2.8",
+          "aftermath": [
+            {
+              "text": "Anti-life. The end of all things. There is only one answer to that.",
+              "clip": "2.6b"
+            },
+            {
+              "text": "I am hope. And the dark has nothing left to say."
+            },
+            {
+              "text": "Choronzon drops the helm at her feet. Two of three."
+            }
+          ]
+        },
+        {
+          "id": "2.7.LOSE",
+          "text": "I have no answer.",
+          "effects": {
+            "vars": {
+              "dreaming": -5
+            }
+          },
+          "next": "2.7",
+          "aftermath": [
+            {
+              "text": "Choronzon's form swallows hers. The arena howls with delight.",
+              "still": "hell-arena"
+            },
+            {
+              "text": "Lucifer, amused, allows one more game.",
+              "style": "hook"
+            }
+          ]
+        }
+      ]
+    },
+    "2.8": {
+      "id": "2.8",
+      "title": "Lucifer's Threat",
+      "pov": "POV",
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "text": "The helm is hers. But the legions of Hell now block the only way out.",
+          "still": "still-legions"
+        },
+        {
+          "text": "Lucifer smiles. Here, he says, she has no power at all."
+        }
+      ],
+      "conversation": {
+        "character": "lucifer",
+        "maxTurns": 3,
+        "canon": [
+          "Aurie has won her helm. Lucifer has blocked the exit with his legions and asks why he should let her leave.",
+          "In Hell, Aurie has only the power of dreams; she has no army."
+        ],
+        "opening": "Well played. And yet you have no power here, Lady Dream. Tell me. Why should I let you leave?",
+        "possibilities": [
+          "She asks what power Hell would have if the damned could not dream of Heaven: he has no answer, and must let her go, and hates her for it.",
+          "She is humble or silent: he finds her dull and lets her pass.",
+          "She offers a favour: he accepts, and will collect one day."
+        ],
+        "exits": {
+          "2.8.A": "Aurie asks what power Hell would have if those imprisoned here could not dream of Heaven.",
+          "2.8.B": "Aurie bows, or answers humbly, and walks away in silence.",
+          "2.8.C": "Aurie offers Lucifer a favour in exchange for her passage."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "2.8.A",
+          "text": "What power would Hell have, if those imprisoned here could not dream of Heaven?",
+          "effects": {
+            "flags": {
+              "LUCIFER_GRUDGE": true
+            }
+          },
+          "next": "end-2b",
+          "aftermath": [
+            {
+              "text": "Hell has no answer. The legions part like a curtain.",
+              "still": "hell-gates"
+            },
+            {
+              "text": "Lucifer lets her go. He will never forget being bested in his own house."
+            }
+          ]
+        },
+        {
+          "id": "2.8.B",
+          "text": "Bow to him, and walk away in silence.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            }
+          },
+          "next": "end-2b",
+          "aftermath": [
+            {
+              "text": "Lucifer finds her dull, and waves her away.",
+              "still": "hell-gates"
+            }
+          ]
+        },
+        {
+          "id": "2.8.C",
+          "text": "Let me pass, and I will owe you a favour.",
+          "effects": {
+            "flags": {
+              "LUCIFER_FAVOUR": true
+            }
+          },
+          "next": "end-2b",
+          "aftermath": [
+            {
+              "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
+              "still": "hell-gates"
+            }
+          ]
+        }
+      ]
+    },
+    "end-2b": {
+      "id": "end-2b",
+      "title": "The second of three",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "next": "2.9",
+      "beats": [
+        {
+          "text": "The helm is hers again. Two of three.",
+          "still": "library-hub"
+        },
+        {
+          "text": "Only the ruby remains, in the hands of a madman."
+        },
+        {
+          "text": "Next, the ruby.",
+          "style": "hook"
+        }
+      ]
+    },
+    "2.9": {
+      "id": "2.9",
+      "title": "Twenty-Four Hours",
+      "pov": "3P",
+      "episodeTitle": "Episode 9 · The Ruby",
+      "music": "escape",
+      "innerVoice": true,
+      "beats": [
+        {
+          "card": "America · 1988",
+          "still": "still-arkham"
+        },
+        {
+          "text": "John Dee, the son of Ethel Cripps, has spent forty years in a madhouse, dreaming of a stone."
+        },
+        {
+          "text": "Tonight he walks out, and takes his mother's ruby back."
+        },
+        {
+          "text": "He sits down in an all-night diner, and begins to play with the people inside.",
+          "clip": "2.8a"
+        },
+        {
+          "text": "Every hour he twists their dreams a little further, and the whole world's dreams go wrong with them."
+        }
+      ],
+      "choices": [
+        {
+          "id": "2.9.A",
+          "text": "Walk into the diner and face him.",
+          "effects": {
+            "vars": {
+              "dreaming": -15
+            },
+            "flags": {
+              "RUBY_HURT": true
+            }
+          },
+          "next": "2.10",
+          "aftermath": [
+            {
+              "text": "Dee sees her coming. The ruby turns on her, and she is nearly unmade.",
+              "still": "diner"
+            },
+            {
+              "text": "She crawls into the stone itself, wounded, to finish it there."
+            }
+          ]
+        },
+        {
+          "id": "2.9.B",
+          "text": "Go in through the dreams of the people inside.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            }
+          },
+          "next": "2.10",
+          "aftermath": [
+            {
+              "text": "She slips through the dreams of the waitress and the trucker, unseen.",
+              "still": "diner"
+            },
+            {
+              "text": "And she steps inside the ruby itself, where he cannot see her coming."
+            }
+          ]
+        }
+      ]
+    },
+    "2.10": {
+      "id": "2.10",
+      "title": "Inside the Ruby",
+      "pov": "POV",
+      "music": "escape",
+      "beats": [
+        {
+          "text": "Dee feels her inside his stone. He laughs, and stands, and lifts it high.",
+          "still": "diner"
+        }
+      ],
+      "conversation": {
+        "character": "dee",
+        "maxTurns": 3,
+        "canon": [
+          "Dee holds the ruby high, about to smash it, believing it will kill Dream. In truth the power Dream poured into it will return to her.",
+          "Whatever Aurie says, the scene ends with Dee smashing the ruby, in rage, terror or triumph."
+        ],
+        "opening": "There you are. My mother's stone, and you inside it like a fly in amber. If I break it, I break you. Shall I?",
+        "possibilities": [
+          "She taunts him: he smashes it in rage.",
+          "She pities him or speaks of his mother: he weeps, then smashes it anyway.",
+          "She threatens him: he panics and smashes it."
+        ],
+        "exits": {
+          "2.10.X": "Dee smashes the ruby."
+        },
+        "consequences": {
+          "PITIED_DEE": {
+            "when": "She pities him, or speaks gently of his mother leaving him.",
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "PITIED_DEE": true
+              }
+            },
+            "ripple": "For a moment, he looks like a frightened boy."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.10.X",
+          "text": "Go on, John. Break it.",
+          "effects": {
+            "relic": "ruby"
+          },
+          "next": "2.11",
+          "aftermath": [
+            {
+              "text": "He smashes the ruby. He thinks it will kill her.",
+              "clip": "2.9a"
+            },
+            {
+              "text": "It does not. Everything she ever poured into that stone comes home to her."
+            },
+            {
+              "text": "Three of three.",
+              "style": "hook"
+            }
+          ]
+        }
+      ]
+    },
+    "2.11": {
+      "id": "2.11",
+      "title": "Dee's Fate",
+      "pov": "POV",
+      "music": "the-years",
+      "beats": [
+        {
+          "text": "On the diner floor lies a small, broken old man.",
+          "still": "diner"
+        }
+      ],
+      "conversation": {
+        "character": "dee",
+        "maxTurns": 3,
+        "canon": [
+          "The ruby is destroyed; Aurie is whole and powerful again. Dee is broken, powerless and terrified.",
+          "Aurie may return him to his asylum asleep with a kind dream, unmake him entirely, or leave him awake and sane remembering everything he did."
+        ],
+        "opening": "Please. Please don't. I only wanted... I only wanted to be somebody. Mother never came back for me.",
+        "possibilities": [
+          "She is merciful: he cries with relief.",
+          "She is cruel: he begs, then goes silent.",
+          "She asks about the people in the diner: he giggles, then sobs."
+        ],
+        "exits": {
+          "2.11.A": "Aurie returns him to his asylum, asleep, with a kind dream.",
+          "2.11.B": "Aurie unmakes him completely.",
+          "2.11.C": "Aurie leaves him awake and sane, remembering everything he did."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "2.11.A",
+          "text": "Sleep, John. Go home, and dream kindly.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "DEE_SPARED": true
+            }
+          },
+          "next": "2.12",
+          "aftermath": [
+            {
+              "text": "He sleeps in his old cell, dreaming kindly, for the first time in forty years.",
+              "still": "still-arkham"
+            }
+          ]
+        },
+        {
+          "id": "2.11.B",
+          "text": "Unmake him.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "DEE_UNMADE": true
+            }
+          },
+          "next": "2.12",
+          "aftermath": [
+            {
+              "text": "There is no John Dee any more. Not even a memory of him.",
+              "still": "diner"
+            }
+          ]
+        },
+        {
+          "id": "2.11.C",
+          "text": "Leave him awake, sane, and remembering every hour of it.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "2.12",
+          "aftermath": [
+            {
+              "text": "She leaves him on the diner floor, awake and sane, remembering everything.",
+              "still": "diner"
+            }
+          ]
+        }
+      ]
+    },
+    "2.12": {
+      "id": "2.12",
+      "title": "The Sound of Her Wings",
+      "pov": "3P",
+      "episodeTitle": "Episode 10 · Her Sister",
+      "music": "library",
+      "beats": [
+        {
+          "card": "The next morning",
+          "still": "park"
+        },
+        {
+          "text": "Helm, sand and ruby. All three are hers again. She should feel whole. She feels nothing at all."
+        },
+        {
+          "text": "On a park bench, someone is feeding the pigeons, and waiting for her.",
+          "clip": "2.10a"
+        },
+        {
+          "text": "Her older sister. Death."
+        }
+      ],
+      "conversation": {
+        "character": "death",
+        "maxTurns": 4,
+        "canon": [
+          "Death is Aurie's older sister. She has come to cheer her up and to take her along on her rounds today.",
+          "Aurie has just recovered all three tools and feels empty.",
+          "If Aurie cursed Alex Burgess with eternal waking or unmade John Dee, Death knows and gently scolds her for it."
+        ],
+        "opening": "You got your tools back, and you're sitting here feeling sorry for yourself. Honestly, you're the most self-pitying being I know. Want some bread?",
+        "possibilities": [
+          "She admits she feels empty: Death takes her hand and asks her to come along on her rounds.",
+          "She insists she is fine: Death teases her, then gives up kindly and goes alone.",
+          "She asks Death about the seventy-two years: Death admits she was worried.",
+          "She asks about her own fate: Death changes the subject, gently."
+        ],
+        "suggestions": [
+          "I feel empty.",
+          "Were you worried about me?"
+        ],
+        "exits": {
+          "2.12.A": "Aurie asks to come along with Death, or admits she feels empty or lost, and walks with Death on her rounds.",
+          "2.12.B": "Aurie insists she is fine and refuses to go with her."
+        },
+        "consequences": {
+          "DEATH_WORRIED": {
+            "when": "She asks Death about the seventy-two years, or whether Death missed her.",
+            "effects": {
+              "flags": {
+                "DEATH_WORRIED": true
+              }
+            },
+            "ripple": "Death looks away at the pigeons for a long moment."
+          }
+        },
+        "triggers": [
+          {
+            "exit": "2.12.A",
+            "player": "come with you|your rounds|walk with you|go with you|take me with you"
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "2.12.A",
+          "text": "Can I come with you today?",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "DEATH_ROUNDS": true
+            }
+          },
+          "next": "end-ep2",
+          "aftermath": [
+            {
+              "text": "Aurie walks her sister's rounds: an old violinist, a young mother, a stranger on a bridge.",
+              "clip": "2.10b"
+            },
+            {
+              "text": "Everyone meets Death in the end. And everyone is met kindly."
+            },
+            {
+              "text": "Aurie goes home with something she did not have before."
+            }
+          ]
+        },
+        {
+          "id": "2.12.B",
+          "text": "I'm fine. Go on without me.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "end-ep2",
+          "aftermath": [
+            {
+              "text": "Death shrugs, kisses her cheek, and goes about her work alone.",
+              "still": "park"
+            }
+          ]
+        }
+      ]
+    },
+    "end-ep2": {
+      "id": "end-ep2",
+      "title": "The Queen of Dreams, restored",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "beats": [
+        {
+          "text": "Helm, sand and ruby. The Queen of Dreams is whole again.",
+          "still": "library-hub"
+        },
+        {
+          "text": "But the Dreaming remembers everything she did to get them."
+        },
+        {
+          "text": "Somewhere, an old man is still waking up, again and again.",
+          "if": [
+            "ALEX_CURSED"
+          ]
+        },
+        {
+          "text": "And in Hell, a queen in the ice is waiting for a promise to be kept.",
+          "if": [
+            "NADA_PROMISE"
+          ]
+        },
+        {
+          "text": "End of Episode Two.",
+          "style": "hook"
+        }
       ]
     }
   }

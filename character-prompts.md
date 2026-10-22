@@ -257,6 +257,54 @@ SURREAL DETAIL: the sand on her face drifts slowly upward instead of falling.
 
 ---
 
+### 3.11 Lucifer Morningstar (ruler of Hell; Episode 2)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The first of the fallen angels, ruler of Hell. Appears as a tall, slender, androgynous man of perhaps thirty-five, impossibly beautiful and impossibly tired. Height around 1.93 m. Face: long and fine-boned, high sharp cheekbones, a straight narrow nose, a wide calm mouth that almost smiles, a smooth jaw. Skin luminous pale gold, flawless, faintly glowing as if lit from inside. Eyes large, pale grey-gold, unblinking, ancient. Hair platinum blond, short and swept back. Clothing: a long high-collared robe of black silk, severe and unadorned, open at the throat; bare feet. Across both shoulder blades, visible through slits in the robe, two great white-feathered wings folded close, their tips scorched black. A thin band of dull iron around one wrist. Posture: perfectly still, one hand resting on the other. Expression: courteous, amused, cold, with a terrible patience.
+SURREAL DETAIL: his shadow on the backdrop is that of a burning angel with wings spread.
+[Style Bible]
+```
+
+---
+
+### 3.12 Choronzon (a duke of Hell; Episode 2)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+A demon, a duke of Hell, built like a nightmare given a body. Height around 2.3 m, gaunt and too long in every limb, with an extra joint in each arm. Skin grey-green and leathery, cracked like dry riverbed, oozing a faint amber light in the cracks. Head: hairless, elongated, crowned with a ring of short twisted horns; the face is a mask of pale cracked bone with deep-set yellow eyes and a lipless grin full of thin needle teeth. Hands with four very long fingers ending in black nails. Wears only scraps of rotted crimson velvet and a chain belt hung with small bones. Holding, in one hand, a dark helm shaped like an old gas mask with a long ridged breathing tube, carved from black bone and a single huge jewel-like eye lens. Posture: hunched, head cocked, savouring. Expression: greedy, gleeful, cunning.
+SURREAL DETAIL: the helm in his hand breathes, its tube slowly inflating and deflating.
+[Style Bible]
+```
+
+---
+
+### 3.13 John Dee, "Doctor Destiny" (Ethel Cripps's son; Episode 2)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+A man of about fifty-five who has spent decades in an asylum dreaming of a stone. Height around 1.80 m, skeletal, stooped. Face: a skull with skin on it, hollow temples, sunken cheeks, a thin lipless mouth, a long chin. Skin yellow-white and papery, blue veins at the temples. Eyes pale and watery, red-rimmed, pupils pinpricks, fixed and unblinking behind small round steel spectacles. Completely bald, with a few long wisps behind the ears. Clothing: an ill-fitting grey suit two sizes too big, a shirt buttoned to the throat with no tie, scuffed brown shoes; over it a stolen tan raincoat. Around his neck on a leather cord, a large red ruby the size of an egg, glowing faintly from inside. Hands long, thin, trembling slightly. Posture: polite, hunched, head forward like a bird. Expression: mild, courteous, empty, with something terrible looking out from behind the eyes.
+SURREAL DETAIL: the ruby on his chest reflects a different room from the one he stands in.
+[Style Bible]
+```
+
+---
+
+### 3.14 Death of the Endless (Aurie's older sister; Episode 2)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Death of the Endless, appearing as a young woman of about twenty-five. Height around 1.68 m, slim. Face: oval, delicate, a small straight nose, a wide warm mouth with a ready smile, a soft chin. Skin very pale, almost white, smooth, with a faint flush of life at the cheeks. Eyes large, dark brown, kind and amused, with heavy black eyeliner; beneath her right eye an ink-black spiral drawn like the Egyptian eye of Horus. Hair black, straight, shoulder length with a heavy fringe, slightly messy. Clothing: a black sleeveless top, black skinny jeans, black ankle boots, a black leather jacket over one arm; on a silver chain at her chest a silver ankh. Several silver rings. Posture: relaxed, weight on one leg, hands in pockets. Expression: warm, wry, gently teasing, as if she knows you better than you know yourself.
+SURREAL DETAIL: a single black-and-white pigeon feather drifts down beside her and never reaches the floor.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -423,6 +471,36 @@ SURREAL DETAIL: the rain falling past the gold window falls upward.
 ```
 A small upstairs bedroom in a London terraced house that has become a dream. The walls, ceiling and furniture are overgrown with soft living growth: pale flesh-pink and gold coral, fungus like folded silk, vines of braided hair with tiny glowing flowers, all of it gently breathing. Fine golden sand lies in drifts across the floor and on every surface like snow. A narrow iron bed against the far wall, its blankets half absorbed into the growth. On the bedside table, a small worn leather pouch, its drawstring open, spilling glowing sand. A single window, curtains rotted, rain outside. Light: the sand itself glows warm gold from below; deep shadows above.
 SURREAL DETAIL: the shadows of the growth on the ceiling move a moment later than the growth itself.
+[Style Bible]
+```
+
+---
+
+**4.13 The gates of Hell (Episode 2)**
+```
+The gates of Hell, seen from the barren road that leads to them. Two colossal doors of black iron, a hundred feet high, set into a cliff that rises out of sight; the cliff face is made of human figures pressed into the rock, faces, hands and backs, some of them moving. The doors are carved with a single line of old letters, eroded beyond reading. Ash falls steadily like grey snow; a dull red glow comes from cracks in the ground. On the battlements high above, tiny horned figures watch. A dead tree at the roadside hung with rusted keys.
+SURREAL DETAIL: the ash falling near the gates falls upward, as if the place is breathing in.
+[Style Bible]
+```
+
+**4.14 Lucifer's arena, the Oldest Game (Episode 2)**
+```
+A vast round amphitheatre in Hell, carved from black basalt. Tier on tier of stone benches rise into red darkness, packed with thousands of demons of every shape, horned, winged, scaled, leaning forward. At the centre, a circular floor of polished obsidian ringed with a band of dull bronze, empty and waiting. At the far side, high on a stair of black stone, a narrow throne of the same black stone, and beside it two lesser thrones. Light from below: molten red seeping through cracks in the obsidian; the upper air full of drifting ash and smoke.
+SURREAL DETAIL: the polished floor reflects not the arena but a clear blue summer sky.
+[Style Bible]
+```
+
+**4.15 The diner, twenty-four hours (Episode 2)**
+```
+An American roadside diner at night in 1988. A long chrome counter with red vinyl stools, red booths along the window, a black-and-white checkered floor, a pie cabinet, coffee pots on warmers, a jukebox. Harsh flickering fluorescent tubes; outside the big windows, rain and a dark empty highway and a red neon sign reading 24 HOURS reflected backwards in the glass. A television mounted high in the corner showing static. Six or seven ordinary customers and a waitress, all slightly too still. In a corner booth, a red glow from something on the table.
+SURREAL DETAIL: the clock above the counter has no hands, and the coffee in every cup is ever so slightly steaming backwards.
+[Style Bible]
+```
+
+**4.16 The park, morning (Episode 2)**
+```
+A city park in early autumn, just after sunrise: a wide paved square with a large round stone fountain, a white marble memorial arch in the distance, plane trees with yellowing leaves, old iron lamp posts, green-painted wooden benches. Low golden light across the paving, long shadows, a light mist lifting. Hundreds of grey pigeons on the paving near one bench. A few early city people far in the background.
+SURREAL DETAIL: one pigeon among the hundreds is perfectly white, and its shadow is a raven.
 [Style Bible]
 ```
 

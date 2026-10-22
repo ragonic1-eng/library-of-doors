@@ -442,6 +442,139 @@
         "prompt": "Close on Rachel, the woman from the character sheet, lying on the iron bed in the overgrown room from the location plate, her face beginning to soften into peace; a long pale woman's hand rests gently on her forehead from the edge of the frame. The small leather pouch lies open on the blanket beside her."
       },
       "motion": "Rachel's face softens, her eyes close, she smiles; the growth on the walls withers into golden dust and the dust streams in a slow spiral into the open leather pouch until the room is bare and quiet; grey dawn light grows in the window. Very slow push-in."
+    },
+    {
+      "id": "2.5a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/hell-gates/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The colossal gates of Hell from the location plate, low camera on the cracked road. In the foreground, a tall woman with very long straight black hair in a long black gown, seen only from behind, her face never visible, stands small before the towering black iron doors, which have just begun to open a crack, red light spilling through. Ash falling."
+      },
+      "motion": "The colossal doors grind slowly open, red light and smoke pouring out; the woman walks forward into the light without hesitating; ash swirls around her; the bodies in the cliff face turn their heads to watch her pass. Slow follow from behind."
+    },
+    {
+      "id": "still-nada",
+      "still": true,
+      "keyframe": {
+        "refs": [],
+        "prompt": "A narrow corridor deep in Hell, lit by dull red light. Set into the black rock wall, a column of clear black ice, and frozen inside it, alive, a young African queen of an ancient city: dark skin, high cheekbones, intricate braided hair threaded with gold, a gold collar, a white linen gown. One hand pressed flat against the inside of the ice, her eyes open and pleading, looking straight at the camera. Frost and ash on the ice. Heartbreaking, regal, never sexualised."
+      }
+    },
+    {
+      "id": "2.5c",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The arena of Hell from the location plate, the camera low on the obsidian floor looking up the black stone stair. On the high narrow throne sits Lucifer, the man from the character sheet, in his black robe, white wings folded, looking down at the camera. On two lesser thrones beside him, huge shadowy demon lords, one with the head of a great fly. The tiers of demons blurred in red darkness."
+      },
+      "motion": "Lucifer rises slowly from the throne, his white scorched wings opening halfway; the demons in the tiers lean forward and fall silent; ash drifts across the red light. Slow push-in up the stair toward him."
+    },
+    {
+      "id": "2.6a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/choronzon/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The obsidian floor at the centre of the arena from the location plate, the reflective floor showing blue sky. Choronzon, the demon from the character sheet, stands in the ring holding up the dark gas-mask helm in one long hand, grinning at the camera. Thousands of demons in the tiers behind him, blurred."
+      },
+      "motion": "Choronzon lifts the helm high and the crowd of demons roars; then his body dissolves into black smoke that pours down and reshapes into a huge snarling wolf made of smoke and embers, which lunges toward the camera. Hand-held, the camera stumbles back."
+    },
+    {
+      "id": "2.6b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/choronzon/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The arena of Hell swallowed by a vast black nothing: a wall of absolute darkness eating the tiers and the light. In the centre of the frame, held in a long pale woman's hand reaching in from the camera, a single small warm golden light. Choronzon, the demon from the character sheet, small and recoiling at the edge of the darkness, the helm in his hand."
+      },
+      "motion": "The golden light in the hand grows brighter and brighter; the darkness peels back like burning paper; Choronzon shrieks and drops the helm, which rolls across the obsidian toward the camera and stops at the hand. Slow push-in."
+    },
+    {
+      "id": "still-legions",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The exit of the arena of Hell, a great arch of black basalt, completely blocked by thousands of demons packed shoulder to shoulder, horned, winged, armoured, weapons raised. In front of them, calm and alone, Lucifer from the character sheet, wings folded, looking at the camera with a faint, cold smile. Red light and ash."
+      }
+    },
+    {
+      "id": "still-arkham",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png"
+        ],
+        "prompt": "A bare padded cell in an old American asylum at night, 1988. John Dee, the man from the character sheet, in a grey institutional gown, sits on a narrow cot, staring at his own empty cupped hands as if something precious were in them. His eyes reflect a red glow that has no source. Moonlight through a barred window, a cracked green wall."
+      }
+    },
+    {
+      "id": "2.8a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/diner/plate.png",
+          "characters/dee/sheet.png"
+        ],
+        "prompt": "Inside the diner from the location plate, late at night. In the corner booth sits John Dee, the man from the character sheet, in his tan raincoat, the glowing red ruby on the table before him, hands folded, smiling politely at the camera. At the counter the customers and the waitress sit unnaturally still."
+      },
+      "motion": "The ruby pulses red; the fluorescent lights flicker; one by one the customers at the counter slowly turn their heads toward the camera with blank fixed smiles; Dee tilts his head and smiles wider. Slow push-in toward the booth."
+    },
+    {
+      "id": "2.9a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/dee/sheet.png",
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "Close on John Dee, the man from the character sheet, standing at the diner table, the red ruby raised high in both hands above his head, face twisted in triumph, about to smash it down on the table. Red light from the stone fills the frame."
+      },
+      "motion": "Dee smashes the ruby down on the table; it shatters in a blinding burst of red light; the light turns silver and streams in a spiral toward the camera; Dee staggers back and collapses to the floor, small and broken. Hand-held shake on the impact."
+    },
+    {
+      "id": "2.10a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/park/plate.png",
+          "characters/death/sheet.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The park in the morning from the location plate. Death, the young woman from the character sheet, sits on the green bench throwing breadcrumbs to the pigeons. Beside her on the bench, at the edge of the frame, a tall woman with very long straight black hair in a long black gown, seen only from behind, her face never visible, sitting with her head bowed. Low golden sunlight, mist lifting."
+      },
+      "motion": "Death tosses a handful of breadcrumbs and the pigeons flutter up around her; she laughs, then turns to the woman beside her with a warm teasing smile and nudges her with her shoulder. Gentle hand-held drift."
+    },
+    {
+      "id": "2.10b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png"
+        ],
+        "prompt": "A small, dim, tidy apartment at dusk: an old man in a cardigan sits in a worn armchair beside a window, a violin resting on the table next to him. Death, the young woman from the character sheet, kneels beside the chair holding his hand, smiling up at him with great tenderness. Warm lamplight."
+      },
+      "motion": "The old man smiles back at her; a translucent, younger version of him rises out of his body and stands, holding her hand, while his body stays peaceful in the chair; together they turn toward the window light. Static camera, slight sway."
     }
   ],
   "react": {
@@ -453,7 +586,8 @@
       "hostile": "angry, jaw set, leaning in",
       "amused": "a dry, faint smile, eyebrows lifted",
       "afraid": "frightened, eyes wide, drawing back slightly",
-      "grieving": "sorrowful, eyes wet, looking down"
+      "grieving": "sorrowful, eyes wet, looking down",
+      "talking": "speaking aloud mid-sentence to someone just in front of the camera, mouth forming words, eyes and brows alive with what they are saying"
     },
     "characters": {
       "burgess": {
@@ -481,6 +615,52 @@
           "assets/plates/library-hub/plate.png"
         ],
         "setting": "Medium close-up in the endless library: Lucienne holding her lantern low, looking straight into the camera."
+      },
+      "death": {
+        "refs": [
+          "characters/death/sheet.png",
+          "assets/plates/park/plate.png"
+        ],
+        "setting": "Medium close-up in the morning park from the plate: Death sits on a green bench, half turned toward the camera as if to the person beside her, a paper bag of breadcrumbs in her lap, pigeons blurred at her feet, low golden sunlight on her face.",
+        "moods": [
+          "neutral",
+          "warm",
+          "amused",
+          "talking"
+        ]
+      },
+      "lucifer": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "setting": "Medium close-up of Lucifer seated on his black stone throne high above the arena, leaning slightly forward, looking straight into the camera, red light from below, ash drifting.",
+        "moods": [
+          "neutral",
+          "amused",
+          "talking"
+        ]
+      },
+      "choronzon": {
+        "refs": [
+          "characters/choronzon/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "setting": "Medium close-up of the demon Choronzon on the obsidian floor of the arena, crouched forward toward the camera, grinning, the gas-mask helm in one hand, demons blurred in the tiers behind.",
+        "moods": [
+          "neutral",
+          "talking"
+        ]
+      },
+      "johanna": {
+        "refs": [
+          "characters/johanna/sheet.png"
+        ],
+        "setting": "Medium close-up of Johanna Constantine in a dim doorway at night, rain-wet trench coat, an unlit cigarette between her fingers, warm gold light on one side of her face, looking straight at the camera.",
+        "moods": [
+          "neutral",
+          "talking"
+        ]
       }
     },
     "motion": "A seamless loop: the character holds the mood, breathing, blinking, tiny natural shifts of the head and hands, then settles back into exactly the starting pose by the last frame. Static framing apart from the hand-held sway."
