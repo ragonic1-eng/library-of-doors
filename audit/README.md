@@ -113,7 +113,7 @@ A transcript check alone cannot catch any of the first three, because the transc
 1. The prompt requires every word to be clearly audible and forbids whispering, fading out or long silences.
 2. Each take is decoded on the server (`mpg123-decoder`, MIT, 11 ms per take) and rejected for a quiet tail over 1.5 s, a silence over 3.5 s mid-line, a length over 0.65 s a word plus 8 s, or an impossible speaking rate. Calibrated on labelled takes: every large failure caught, no false alarms on 33 good takes, dramatic pauses and the Crone's whisper and laugh kept.
 3. ChatGPT's strict ordered transcript match stays, but ignores sound notes (`*chuckles*`, `[sighs]`): the Crone's laugh was failing every take.
-4. Two takes are recorded at once and the first good one wins; a second pair only if both fail and under 14 s have passed. Lines with no words ("…") are not voiced at all.
+4. One take is recorded first; only if it fails are two more recorded at once (and only while under 14 s have passed). Recording two every time was tried and dropped: it doubled the cost of every spoken line for a failure rate of about 1 in 15 once `cedar` was retired. Lines with no words ("…") are not voiced at all.
 5. The `cedar` voice is retired: Burgess and Paul now use `echo`, Destruction `ballad`; the suitors were reassigned so each still has a distinct voice (Odin echo, Thor ash, Loki verse, Azazel ballad, Cluracan alloy, Remiel sage).
 6. Player backstop: a voice still playing at words/1.1 + 8 s of its own playback time is ended (pause-safe), so no single take can hang a scene.
 

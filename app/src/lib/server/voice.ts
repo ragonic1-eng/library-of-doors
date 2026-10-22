@@ -19,7 +19,7 @@ const DELIVERY: Record<string, string> = {
  * The key has no plain text-to-speech model, so an audio chat model (gpt-audio-1.5) reads the line.
  * Such a model can ANSWER a line instead of reading it ("Who is Rachel?" -> "I don't know Rachel"),
  * so it is told it is a text-to-speech engine, the line is fenced, and the transcript it returns is
- * checked against the script; the audio itself is measured for dead air. Up to four takes, two at a time;
+ * checked against the script; the audio itself is measured for dead air. Up to three takes (one, then two at once);
  * null when none is usable (the player then falls back to the phone's own voice).
  */
 export async function synthLine(bookId: string, character: string, text: string, speaker?: string, mood?: string): Promise<Buffer | null> {
@@ -71,11 +71,12 @@ export async function synthLine(bookId: string, character: string, text: string,
       return null;
     }
   };
-  // About one take in four is unusable, so two are recorded at once and the first good one wins;
-  // a second pair is tried only if both fail and there is still time.
+  // One take first (each costs about 0.17 yuan, and most are good); if it fails, two at once so the
+  // player is not kept waiting through a string of retries.
   const began = Date.now();
-  for (let round = 0; round < 2 && (round === 0 || Date.now() - began < 14_000); round++) {
-    const takes = [oneTake(round * 2 + 1), oneTake(round * 2 + 2)];
+  const rounds = [[1], [2, 3]];
+  for (let round = 0; round < rounds.length && (round === 0 || Date.now() - began < 14_000); round++) {
+    const takes = rounds[round].map((n) => oneTake(n));
     const good = await new Promise<Buffer | null>((resolve) => {
       let left = takes.length;
       for (const t of takes) void t.then((b) => (b ? resolve(b) : --left === 0 && resolve(null)));
