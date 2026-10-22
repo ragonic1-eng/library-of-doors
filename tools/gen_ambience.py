@@ -18,12 +18,11 @@ SECONDS, XFADE = 10, 1.5
 
 # id: prompt. Concrete, steady sources; no events that would repeat noticeably in a loop.
 BEDS = {
-    "cellar": "Water dripping slowly in a stone cave, echo",
     "dreaming": "Soft wind moving through a vast empty stone hall at night, very quiet, distant and calm",
     "rain": "Steady rain falling on a city street at night, rain on pavement and in gutters, distant traffic",
     "hell": "A huge fire roaring and crackling in a vast cave, a deep low rumble",
     "ice": "Cold wind howling through an icy cave, faint creaking ice",
-    "night-forest": "A quiet forest at night, gentle wind in bare trees, crickets",
+    "night-forest": "Crickets chirping at night in a field, a light wind blowing",
     "stream": "A gentle stream flowing over stones in the evening, crickets, a light breeze",
     "tavern": "A busy old tavern, a crowd murmuring and talking, a fire crackling, mugs clinking",
     "crowd": "A large indoor crowd murmuring in a big hall, people talking quietly",
