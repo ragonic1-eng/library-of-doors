@@ -225,6 +225,12 @@ button.ghost { border-color: transparent; color: var(--dim); }
   z-index: 2; /* above the scene picture (z 1) */
   animation: fade-in 0.7s ease both;
 }
+/* A new mood swaps in over the old loop (no fade: both are edits of one frame); the talking loop cross-fades. */
+.film.react.swap, .film.react.talk { animation: none; }
+.film.react.under { z-index: 2; }
+.film.react.talk { opacity: 0; transition: opacity 0.35s ease; }
+.film.react.talk.on { opacity: 1; }
+
 
 /* Consequence ripple: the world reacting to what she said */
 .ripple {

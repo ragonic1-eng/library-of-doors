@@ -7,6 +7,7 @@ import { lineFile } from "@/lib/story/lines";
 import { watchPlayback, speechChunks } from "@/lib/story/audio";
 import { levelVoice } from "@/lib/story/level";
 import Ambience from "@/components/Ambience";
+import ReactLoop from "@/components/ReactLoop";
 import RotatePrompt from "@/components/RotatePrompt";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
@@ -1032,7 +1033,12 @@ export default function Player({ book }: { book: Book }) {
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
   const reactFor = (m: string) => (talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined);
   // Prefer the exact mood, then neutral; if neither exists, the scene's last frame stays on screen.
-  const reactSrc = [talking ? reactFor("talking") : undefined, reactFor(mood), reactFor("neutral")].find((u) => u && !reactMissing[u]);
+  // Two layers: the listening loop (mood, else neutral) and the talking loop, which cross-fades in while the voice is
+  // audible. A character with only a talking loop keeps it on screen, held still, between lines.
+  const okSrc = (u?: string) => (u && !reactMissing[u] ? u : undefined);
+  const restSrc = okSrc(reactFor(mood)) ?? okSrc(reactFor("neutral"));
+  const talkSrc = okSrc(reactFor("talking"));
+  const missReact = (u: string) => setReactMissing((m) => ({ ...m, [u]: true }));
   // Choices closed off by earlier events are hidden (and the AI cannot steer to them either).
   const options = useMemo(() => (scene.choices ?? []).filter((c) => !profile || meets(profile, book.id, c.requires)), [scene, profile, book.id]);
   // Ideas: questions first, then the lines that decide the scene; never the same words twice.
@@ -1172,18 +1178,8 @@ export default function Player({ book }: { book: Book }) {
           );
         })}
         {top && missing === top.key && <div className="film placeholder"><div className="placeholder-title">{scene.title}</div></div>}
-        {reactSrc && (
-          <video
-            key={reactSrc}
-            className="film react"
-            src={reactSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onError={() => setReactMissing((m) => ({ ...m, [reactSrc]: true }))}
-          />
-        )}
+        {restSrc && <ReactLoop src={restSrc} onMissing={missReact} />}
+        {talkSrc && <ReactLoop src={talkSrc} className={`talk ${talking || !restSrc ? "on" : ""}`} paused={!talking && !restSrc} onMissing={missReact} />}
         <Ambience fx={fx} />
         <div className="vignette" />
       </div>
