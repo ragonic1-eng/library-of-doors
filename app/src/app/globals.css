@@ -84,8 +84,7 @@ body {
 .title-plate h1 { font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: 0.12em; margin: 0; }
 .title-plate .sub { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.8rem; }
 
-/* Narration and inner voice */
-.narration,
+/* Inner voice */
 .inner {
   position: absolute;
   left: 50%;
@@ -97,7 +96,6 @@ body {
   line-height: 1.5;
   animation: fade-in 1.4s ease both;
 }
-.narration { top: 8%; color: var(--ink); }
 .inner { top: 10%; color: var(--accent); font-style: italic; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
@@ -248,7 +246,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
   100% { opacity: 0; }
 }
 .transcript .aside { color: #c9b98f; font-style: italic; font-size: 0.92em; margin-bottom: 0.1rem; }
-.narration-echo { color: var(--accent); font-style: italic; }
 
 /* ===================== Mobile layer: phones and foldables ===================== */
 
@@ -302,7 +299,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
   button { padding: 0.45rem 0.8rem; }
   .options { gap: 0.3rem; max-height: 34dvh; }
   .options button { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-  .narration { top: 5%; font-size: 0.95rem; max-width: 85vw; }
   .inner { top: 6%; font-size: 0.95rem; }
   .epcard { font-size: 1rem; letter-spacing: 0.2em; }
   .hook { font-size: 1.1rem; }
@@ -336,4 +332,104 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .inner { top: 3%; font-size: 0.9rem; max-width: 60vw; }
   .transcript p { font-size: 0.92rem; }
   .transcript .aside { font-size: 0.85rem; }
+}
+
+/* ===================== Narrated film: one line on screen exactly while it is spoken ===================== */
+.subtitle {
+  position: absolute;
+  left: 50%;
+  bottom: calc(9% + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(46ch, 86vw);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.4;
+  color: var(--ink);
+  text-shadow: 0 1px 4px #000;
+  pointer-events: none;
+  animation: fade-in 0.35s ease both;
+}
+.timecard {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.62);
+  font-size: clamp(1.6rem, 4.5vw, 3.2rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: 0 2px 12px #000;
+  pointer-events: none;
+  animation: timecard 2.6s ease both;
+}
+@keyframes timecard {
+  0% { opacity: 0; letter-spacing: 0.1em; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; letter-spacing: 0.24em; }
+}
+.eptag {
+  position: absolute;
+  top: calc(4% + env(safe-area-inset-top));
+  left: max(4%, env(safe-area-inset-left));
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-shadow: 0 1px 6px #000;
+  pointer-events: none;
+  animation: eptag 5s ease both;
+}
+@keyframes eptag {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+.skiphint {
+  position: absolute;
+  right: max(3%, env(safe-area-inset-right));
+  bottom: calc(3% + env(safe-area-inset-bottom));
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+  opacity: 0.55;
+  pointer-events: none;
+}
+/* Stills drift slowly toward the viewer so they never feel frozen */
+.film.still:not(.prev):not(.react), .film.still {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  animation: fade-in 0.6s ease both, push-in 16s ease-out both;
+}
+@keyframes push-in { from { transform: scale(1); } to { transform: scale(1.09); } }
+.hook { pointer-events: none; }
+
+/* End of episode recap */
+.endcard .echoes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: min(60ch, 86vw);
+  max-height: 46dvh;
+  overflow-y: auto;
+  display: grid;
+  gap: 0.55rem;
+  font-style: italic;
+  color: #d9c8a0;
+  line-height: 1.45;
+}
+.endactions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; justify-content: center; margin-top: 0.5rem; }
+@media (max-height: 520px) {
+  .subtitle { bottom: calc(6% + env(safe-area-inset-bottom)); font-size: 1rem; padding: 0.3rem 0.8rem; }
+  .timecard { font-size: 1.5rem; }
+  .endcard { gap: 0.4rem; padding: 1rem; }
+  .endcard .echoes { max-height: 40dvh; font-size: 0.9rem; gap: 0.35rem; }
 }

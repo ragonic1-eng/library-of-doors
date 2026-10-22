@@ -25,7 +25,7 @@ const LOCAL = join(ROOT, "app", "public", "clips");
 const force = process.argv.includes("--force");
 
 function walk(dir) {
-  return readdirSync(dir, { withFileTypes: true }).flatMap((d) => (d.isDirectory() ? walk(join(dir, d.name)) : /\.(mp4|mp3|ogg|wav)$/i.test(d.name) ? [join(dir, d.name)] : []));
+  return readdirSync(dir, { withFileTypes: true }).flatMap((d) => (d.isDirectory() ? walk(join(dir, d.name)) : /\.(mp4|mp3|ogg|wav|jpg)$/i.test(d.name) ? [join(dir, d.name)] : []));
 }
 
 async function remote() {
@@ -56,7 +56,7 @@ for (const f of files) {
   try {
     const r = await put(pathname, createReadStream(f), {
       access: "public", token, addRandomSuffix: false, allowOverwrite: true,
-      contentType: f.endsWith(".mp4") ? "video/mp4" : f.endsWith(".ogg") ? "audio/ogg" : f.endsWith(".wav") ? "audio/wav" : "audio/mpeg", cacheControlMaxAge: 31536000,
+      contentType: f.endsWith(".mp4") ? "video/mp4" : f.endsWith(".jpg") ? "image/jpeg" : f.endsWith(".ogg") ? "audio/ogg" : f.endsWith(".wav") ? "audio/wav" : "audio/mpeg", cacheControlMaxAge: 31536000,
     });
     up++;
     console.log(`↑ ${pathname} -> ${r.url}`);

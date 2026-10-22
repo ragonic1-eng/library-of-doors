@@ -9,42 +9,82 @@
     "0.0": {
       "id": "0.0",
       "title": "The Queen of Dreams",
-      "episodeTitle": "Episode 0 · The Queen of Dreams",
       "pov": "3P",
-      "clips": [
-        "0.0a",
-        "0.0b",
-        "0.0c"
+      "episodeTitle": "Episode 0 · The Queen of Dreams",
+      "music": "throne",
+      "beats": [
+        {
+          "text": "This is the Dreaming, where every dream begins. Aurie is its queen.",
+          "clip": "0.0a"
+        },
+        {
+          "text": "Her librarian, Lucienne, reads her the day's report. A nightmare has misbehaved."
+        },
+        {
+          "text": "Aurie closes her hand, and the nightmare is unmade.",
+          "clip": "0.0b"
+        },
+        {
+          "text": "Then, far away in the waking world, a man reads her name from a stolen book.",
+          "clip": "0.0c"
+        },
+        {
+          "text": "A circle of chalk reaches up through her floor, and pulls her down."
+        }
       ],
-      "narration": "The Dreaming, before. A throne of stars. A nightmare on its knees. Lucienne with the day's report. Nothing in any world can touch her here.",
-      "hook": "“My lady?”",
-      "next": "1.1",
-      "music": "throne"
+      "next": "1.1"
     },
     "1.1": {
       "id": "1.1",
       "title": "The ritual at Fawney Rig",
       "pov": "3P",
-      "clips": [
-        "1.1b"
-      ],
-      "narration": "England, 1916. In a cellar beneath Fawney Rig, Roderick Burgess reads from a stolen book and reaches for Death. He catches her sister instead.",
-      "next": "1.2",
       "episodeTitle": "Episode 1 · The Wrong Sister",
-      "hook": "Burgess, through the glass: “Death. At last.”",
-      "music": "cellar-dread"
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "card": "England · 1916",
+          "still": "cellar-1916"
+        },
+        {
+          "text": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician."
+        },
+        {
+          "text": "His son Randall died in the war. Burgess wanted Death herself, to make her give him back."
+        },
+        {
+          "text": "But Death has a sister. Tonight his spell caught the wrong one."
+        },
+        {
+          "text": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
+          "clip": "1.1b"
+        },
+        {
+          "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby."
+        },
+        {
+          "text": "Without them, she is only a prisoner.",
+          "style": "hook"
+        }
+      ],
+      "next": "1.2"
     },
     "1.2": {
       "id": "1.2",
       "title": "Burgess's bargain",
       "pov": "POV",
-      "clips": [
-        "1.2a"
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "text": "Hours later, his followers have gone home. Burgess comes back down, alone.",
+          "clip": "1.2a"
+        },
+        {
+          "text": "He still believes he has caught Death. Speak to him, or stay silent. He will remember either way."
+        }
       ],
-      "narration": "Hours later. The cultists are gone. Burgess crouches at the glass, alone with what he has caught.",
       "conversation": {
         "character": "burgess",
-        "maxTurns": 6,
+        "maxTurns": 4,
         "canon": [
           "The year is 1916. Burgess believes he has summoned Death and does not yet know this is Dream.",
           "Aurie's helm, pouch of sand and ruby have already been taken from the circle and locked away.",
@@ -53,9 +93,10 @@
           "Aurie cannot be killed and cannot lie about what she is for long; the Endless are poor liars."
         ],
         "exits": {
-          "1.2.A": "Aurie says nothing at all and lets the silence answer him.",
+          "1.2.A": "Aurie refuses to speak at all and lets the silence answer him.",
           "1.2.B": "Aurie threatens Burgess with what she will do to him when she is free.",
-          "1.2.C": "Aurie pretends to accept the bargain, offering him what he asks."
+          "1.2.C": "Aurie pretends to accept his bargain, promising him what he asks in exchange for freedom.",
+          "1.2.D": "Aurie tells him the truth: she is Dream of the Endless, not Death."
         },
         "opening": "You are awake. Good. I am Roderick Burgess, and you, creature, are mine. Give me what I want, and you will see daylight again. Immortality. Power. My son. Well?",
         "possibilities": [
@@ -137,15 +178,22 @@
       "choices": [
         {
           "id": "1.2.A",
-          "text": "Say nothing.",
-          "clip": "1.2b-A",
+          "text": "Say nothing. Just stare at him.",
           "effects": {},
-          "next": "1.3"
+          "next": "1.3",
+          "aftermath": [
+            {
+              "text": "You give him nothing. Not a word, not a flicker.",
+              "clip": "1.2b-A"
+            },
+            {
+              "text": "He leaves. He will come back every night for thirty years, and you will never answer him."
+            }
+          ]
         },
         {
           "id": "1.2.B",
-          "text": "Threaten him.",
-          "clip": "1.2b-B",
+          "text": "When I am free, you will beg me for sleep.",
           "effects": {
             "traits": {
               "mercy": -1
@@ -154,12 +202,20 @@
               "dreaming": -10
             }
           },
-          "next": "1.3"
+          "next": "1.3",
+          "aftermath": [
+            {
+              "text": "The candles lean away from the glass. Burgess stumbles back.",
+              "clip": "1.2b-B"
+            },
+            {
+              "text": "That night he doubles the wards. The circle burns colder, and you grow weaker."
+            }
+          ]
         },
         {
           "id": "1.2.C",
-          "text": "Offer a false bargain.",
-          "clip": "1.2b-C",
+          "text": "Free me, and you shall have everything you ask.",
           "effects": {
             "traits": {
               "mercy": -2
@@ -168,40 +224,88 @@
               "DECEIT": true
             }
           },
-          "next": "1.3"
+          "next": "1.3",
+          "aftermath": [
+            {
+              "text": "He laughs, then stops. He knows a lie when he hears one.",
+              "clip": "1.2b-C"
+            },
+            {
+              "text": "From now on, he believes nothing you say."
+            }
+          ]
+        },
+        {
+          "id": "1.2.D",
+          "text": "You fool. I am not Death. I am Dream, her sister.",
+          "effects": {
+            "flags": {
+              "DREAM_REVEALED": true
+            }
+          },
+          "next": "1.3",
+          "aftermath": [
+            {
+              "text": "Burgess goes pale. Then, slowly, he smiles.",
+              "clip": "1.2a"
+            },
+            {
+              "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life."
+            }
+          ]
         }
-      ],
-      "hook": "He has no idea what he has caught. You do.",
-      "music": "cellar-dread"
+      ]
     },
     "1.3": {
       "id": "1.3",
       "title": "The world without dreams",
       "pov": "3P",
-      "clips": [
-        "1.3a",
-        "1.3c",
-        "1.3b"
-      ],
-      "narration": "The years pass. A soldier who cannot sleep. A palace shedding its stone like sand. And in a sunlit room in Kent, a girl who cannot wake, whose dream lies just within your reach.",
       "episodeTitle": "Episode 2 · Seventy Years",
-      "hook": "Burgess died old, and poor, and got nothing he asked for. His son inherited the glass.",
-      "narrationIf": [
+      "music": "the-years",
+      "beats": [
         {
-          "flag": "C_NAMED_RANDALL",
-          "text": "Upstairs, Burgess never says his son's name again."
+          "card": "The years that followed",
+          "still": "sphere-pov"
         },
         {
-          "flag": "C_REVEALED_DREAM",
-          "text": "Burgess spends his last years bargaining for dreams he never receives."
+          "text": "Upstairs, Burgess never speaks his son's name again.",
+          "if": [
+            "C_NAMED_RANDALL"
+          ]
+        },
+        {
+          "text": "Every night he comes down to beg you for dreams. You give him none.",
+          "if": [
+            "DREAM_REVEALED"
+          ]
+        },
+        {
+          "text": "Once, early on, you pitied him. He never forgave you for it.",
+          "if": [
+            "C_PITIED_HIM"
+          ]
+        },
+        {
+          "text": "Without its queen, the Dreaming begins to fall apart. Her palace crumbles into sand.",
+          "clip": "1.3c"
+        },
+        {
+          "text": "In the waking world, sleep goes wrong. Some people can never sleep again.",
+          "clip": "1.3a"
+        },
+        {
+          "text": "Others fall asleep, and cannot wake. The doctors call it the sleeping sickness.",
+          "clip": "1.3b"
+        },
+        {
+          "text": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Aurie can still reach."
         }
       ],
-      "innerVoice": false,
       "conversation": {
         "character": "unity",
-        "maxTurns": 4,
+        "maxTurns": 3,
         "canon": [
-          "It is 1916. Unity Kincaid, about ten, has fallen into the sleeping sickness and will not wake for sixty years.",
+          "Unity Kincaid fell into the sleeping sickness in 1916 at about ten years old. Her body has grown older in bed, but in her dream she is still a child.",
           "Aurie is imprisoned in the glass sphere far away; her power only just reaches into one sleeping mind, this girl's.",
           "Unity answers only as a dreaming child: drowsy, curious, unafraid, in dream logic.",
           "Aurie cannot wake her and cannot escape through her.",
@@ -216,7 +320,7 @@
           "She tries to use the girl to escape, or commands her coldly: the dream turns grey and Unity is frightened."
         ],
         "exits": {
-          "1.3.W": "Aurie has given her something to keep in the long sleep (a promise, a gift, a warning), or has withdrawn from the dream."
+          "1.3.W": "Aurie has given her something to keep in the long sleep (a promise, a gift, a warning), or says goodbye and withdraws from the dream."
         },
         "consequences": {
           "UNITY_PROMISE": {
@@ -299,23 +403,93 @@
       "choices": [
         {
           "id": "1.3.W",
-          "text": "Leave the girl's dream.",
-          "next": "1.4"
+          "text": "Say goodbye, and leave her dream.",
+          "next": "1.4",
+          "aftermath": [
+            {
+              "text": "Unity will carry your promise through sixty years of sleep.",
+              "if": [
+                "UNITY_PROMISE"
+              ]
+            },
+            {
+              "text": "She sleeps on, inside the seaside dream you gave her.",
+              "if": [
+                "UNITY_GIFT"
+              ]
+            },
+            {
+              "text": "Her dream stays grey for a long, long time.",
+              "if": [
+                "UNITY_USED"
+              ]
+            },
+            {
+              "text": "And you cannot forget that smell of roses. Someone else was in that dream.",
+              "if": [
+                "SENSED_DESIRE"
+              ]
+            },
+            {
+              "text": "You let go of the girl. The glass closes around you again.",
+              "unless": [
+                "UNITY_PROMISE",
+                "UNITY_GIFT",
+                "UNITY_USED"
+              ]
+            }
+          ]
         }
       ],
-      "music": "the-years"
+      "innerVoice": false
     },
     "1.4": {
       "id": "1.4",
       "title": "Alex Burgess",
       "pov": "POV",
-      "clips": [
-        "1.4a"
+      "episodeTitle": "Episode 3 · The Son",
+      "music": "cellar-wait",
+      "beats": [
+        {
+          "card": "1926",
+          "still": "cellar-1916"
+        },
+        {
+          "text": "Burgess's mistress, Ethel Cripps, runs away in the night."
+        },
+        {
+          "text": "She takes his money, and she takes your helm, your sand and your ruby."
+        },
+        {
+          "card": "1947"
+        },
+        {
+          "text": "Roderick Burgess dies an old man, still waiting for a wish you never granted."
+        },
+        {
+          "text": "His son Alex inherits the house, the order, and the prisoner in the cellar.",
+          "still": "cellar-1970s"
+        },
+        {
+          "text": "The wards are still doubled, as they have been since your first week.",
+          "if": [
+            "C_SHOWED_POWER"
+          ]
+        },
+        {
+          "card": "Fawney Rig · 1970s"
+        },
+        {
+          "text": "Alex is grey now. He has never once been cruel to you. Tonight, for the first time, he has come down to talk.",
+          "clip": "1.4a"
+        },
+        {
+          "text": "Behind him, Paul, the man who loves him, pretends not to listen."
+        }
       ],
-      "narration": "Roderick is dead. His son Alex, grey now, sits where his father sat. Behind him the guard, Paul, pretends not to listen.",
       "conversation": {
         "character": "alex",
-        "maxTurns": 6,
+        "maxTurns": 4,
         "canon": [
           "It is the 1970s. Roderick Burgess died years ago; Alex inherited the house, the order and the prisoner.",
           "Alex is frightened of Aurie and ashamed of his father. He has never once been cruel to her himself.",
@@ -324,9 +498,10 @@
           "Aurie can show Alex a dream through the glass if she chooses; she cannot leave."
         ],
         "exits": {
-          "1.4.A": "Aurie shows Alex a dream of his father's cruelty to him as a child, so he knows she sees him.",
+          "1.4.A": "Aurie shows Alex a dream of his father's cruelty to him as a boy, so he knows she sees him.",
           "1.4.B": "Aurie stares through Alex and gives him nothing.",
-          "1.4.C": "Aurie shows Alex a vision of his own death."
+          "1.4.C": "Aurie shows Alex a vision of his own death.",
+          "1.4.D": "Aurie asks Alex to free her and swears he will come to no harm."
         },
         "opening": "I know you can hear me. I have always known. If I let you go... will you hurt me?",
         "possibilities": [
@@ -408,12 +583,10 @@
           }
         }
       },
-      "innerVoice": true,
       "choices": [
         {
           "id": "1.4.A",
-          "text": "Show him you see him.",
-          "clip": "1.4b-A",
+          "text": "Show him the boy his father hurt, so he knows I see him.",
           "effects": {
             "traits": {
               "mercy": 2
@@ -422,126 +595,112 @@
               "ALEX_SEEN": true
             }
           },
-          "next": "1.5"
+          "next": "1.5",
+          "aftermath": [
+            {
+              "text": "He weeps for the little boy his father hurt. No one has ever seen that boy but you.",
+              "clip": "1.4b-A"
+            }
+          ]
         },
         {
           "id": "1.4.B",
-          "text": "Give him nothing.",
-          "clip": "1.4b-B",
+          "text": "Give him nothing. Look straight through him.",
           "effects": {},
-          "next": "1.5"
+          "next": "1.5",
+          "aftermath": [
+            {
+              "text": "Nothing comes from the glass. He goes upstairs, and does not come down again for years.",
+              "clip": "1.4b-B"
+            }
+          ]
         },
         {
           "id": "1.4.C",
-          "text": "Show him his death.",
-          "clip": "1.4b-C",
+          "text": "Show him his own death.",
           "effects": {
             "traits": {
               "mercy": -2
+            },
+            "flags": {
+              "ALEX_SAW_DEATH": true
             }
           },
-          "next": "1.5"
-        }
-      ],
-      "episodeTitle": "Episode 3 · The Son",
-      "hook": "Years later, a guard yawns and slides down the glass. His breath fogs it.",
-      "narrationIf": [
-        {
-          "flag": "C_SHOWED_POWER",
-          "text": "The wards have been doubled since your first week."
+          "next": "1.5",
+          "aftermath": [
+            {
+              "text": "He sees himself old and broken, in a wheelchair. He runs from the cellar, screaming.",
+              "clip": "1.4b-C"
+            }
+          ]
         },
         {
-          "flag": "C_PITIED_HIM",
-          "text": "His father never forgave you for pitying him."
+          "id": "1.4.D",
+          "text": "Free me, Alex, and I swear you will come to no harm.",
+          "effects": {
+            "flags": {
+              "ALEX_PROMISE": true
+            }
+          },
+          "next": "1.5",
+          "aftermath": [
+            {
+              "text": "He almost does it. Then he loses his nerve, and walks away.",
+              "clip": "1.4b-B"
+            },
+            {
+              "text": "But he writes your promise down, and keeps it in his breast pocket for the rest of his life."
+            }
+          ]
         }
       ],
-      "music": "cellar-wait"
+      "innerVoice": true
     },
     "1.5": {
       "id": "1.5",
       "title": "Escape",
       "pov": "3P",
-      "clips": [
-        "1.5a",
-        "1.5b",
-        "1.5c"
-      ],
-      "narration": "1988. A guard falls asleep against the glass. His breath fogs it. His dream is a door.",
-      "innerVoice": false,
-      "choices": [
-        {
-          "id": "1.5.A",
-          "text": "Eternal waking. Let him dream of waking forever, each time into something worse.",
-          "clip": "1.5d-A",
-          "effects": {
-            "traits": {
-              "mercy": -3
-            },
-            "flags": {
-              "ALEX_CURSED": true
-            }
-          },
-          "next": "2.1",
-          "effectsIf": [
-            {
-              "flag": "ALEX_PROMISE",
-              "effects": {
-                "traits": {
-                  "mercy": -2
-                },
-                "flags": {
-                  "BROKE_PROMISE": true
-                }
-              },
-              "ripple": "You promised him. The Dreaming remembers."
-            }
-          ]
-        },
-        {
-          "id": "1.5.B",
-          "text": "One night of nightmares, then nothing.",
-          "clip": "1.5d-B",
-          "effects": {},
-          "next": "2.1"
-        },
-        {
-          "id": "1.5.C",
-          "text": "Walk away. He is old and already afraid.",
-          "clip": "1.5d-C",
-          "effects": {
-            "traits": {
-              "mercy": 2
-            }
-          },
-          "next": "2.1",
-          "effectsIf": [
-            {
-              "flag": "ALEX_CONFESSED",
-              "effects": {
-                "traits": {
-                  "mercy": 1
-                }
-              },
-              "ripple": "You remember the wet cloth, and the circle he could not wipe away."
-            }
-          ]
-        }
-      ],
       "episodeTitle": "Episode 4 · Breath on Glass",
-      "hook": "Somewhere a lantern has been burning for seventy-two years.",
-      "narrationIf": [
+      "music": "escape",
+      "beats": [
         {
-          "flag": "ALEX_TERRIFIED",
-          "text": "Alex has not come down to the cellar in years. Tonight he has no choice."
+          "card": "1988",
+          "still": "cellar-1988"
         },
         {
-          "flag": "ALEX_PROMISE",
-          "text": "In his breast pocket there is a folded paper with your promise on it."
+          "text": "Seventy-two years in the glass. Alex is an old man now."
+        },
+        {
+          "text": "Since the vision of his death, he has not come down to the cellar once.",
+          "if": [
+            "ALEX_SAW_DEATH"
+          ]
+        },
+        {
+          "text": "Tonight, the young guard falls asleep against the glass. His breath fogs it.",
+          "clip": "1.5a"
+        },
+        {
+          "text": "A sleeping mind is a door. And Aurie is the queen of dreams."
+        },
+        {
+          "text": "She steps through his dream, and out of the glass. The circle crumbles to dust.",
+          "clip": "1.5b"
+        },
+        {
+          "text": "Alex hears the glass break. Paul wheels him down, and there she is.",
+          "clip": "1.5c"
+        },
+        {
+          "text": "In his breast pocket is a folded paper with your promise on it.",
+          "if": [
+            "ALEX_PROMISE"
+          ]
         }
       ],
       "conversation": {
         "character": "alex-old",
-        "maxTurns": 6,
+        "maxTurns": 4,
         "canon": [
           "It is 1988. Aurie has just escaped the sphere. She is free and fully able to punish him; he knows it.",
           "Alex Burgess is seventy-two, in a wheelchair. Paul McGuire pushed him in and stands behind him.",
@@ -624,22 +783,117 @@
           }
         }
       },
-      "music": "escape"
+      "choices": [
+        {
+          "id": "1.5.A",
+          "text": "Wake, Alex. Wake forever, each time into something worse.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "ALEX_CURSED": true
+            }
+          },
+          "next": "2.1",
+          "effectsIf": [
+            {
+              "flag": "ALEX_PROMISE",
+              "effects": {
+                "traits": {
+                  "mercy": -2
+                },
+                "flags": {
+                  "BROKE_PROMISE": true
+                }
+              },
+              "ripple": "You promised him. The Dreaming remembers."
+            }
+          ],
+          "aftermath": [
+            {
+              "text": "He wakes, and wakes, and wakes, each time into something worse. He will never sleep again.",
+              "clip": "1.5d-A"
+            }
+          ]
+        },
+        {
+          "id": "1.5.B",
+          "text": "One night of nightmares. Then it ends.",
+          "effects": {},
+          "next": "2.1",
+          "aftermath": [
+            {
+              "text": "One night of nightmares, and then it is over. By morning he sleeps like a child.",
+              "clip": "1.5d-B"
+            }
+          ]
+        },
+        {
+          "id": "1.5.C",
+          "text": "Turn and walk away. He is old, and already afraid.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            }
+          },
+          "next": "2.1",
+          "effectsIf": [
+            {
+              "flag": "ALEX_CONFESSED",
+              "effects": {
+                "traits": {
+                  "mercy": 1
+                }
+              },
+              "ripple": "You remember the wet cloth, and the circle he could not wipe away."
+            }
+          ],
+          "aftermath": [
+            {
+              "text": "You walk out without a word. Behind you, an old man weeps with relief.",
+              "clip": "1.5d-C"
+            }
+          ]
+        }
+      ],
+      "innerVoice": false
     },
     "2.1": {
       "id": "2.1",
       "title": "The library between",
       "type": "hub",
       "pov": "3P",
-      "clips": [
-        "2.1a",
-        "2.1b",
-        "2.1c"
+      "episodeTitle": "The Library Between",
+      "music": "library",
+      "beats": [
+        {
+          "text": "Free, but weak. No helm, no sand, no ruby. Aurie goes home.",
+          "clip": "2.1a"
+        },
+        {
+          "text": "The great gates of her realm are cracked. One lantern still burns."
+        },
+        {
+          "text": "Most of the Dreaming is gone. Only the library still stands.",
+          "clip": "2.1b"
+        },
+        {
+          "text": "On its far wall are three doors she has never seen before."
+        },
+        {
+          "text": "And you have a name to start your search: Ethel Cripps.",
+          "if": [
+            "KNOWS_ETHEL"
+          ]
+        },
+        {
+          "clip": "2.1c"
+        }
       ],
-      "narration": "The gates of Horn and Ivory, cracked. Beyond them, the library. Lucienne has kept a lantern lit for seventy years.",
       "conversation": {
         "character": "lucienne",
-        "maxTurns": 0,
+        "maxTurns": 4,
         "canon": [
           "Aurie has been gone seventy-two years. The Dreaming decayed without her; many dreams and nightmares fled or faded.",
           "Lucienne is the librarian of the Dreaming and keeps every book ever dreamed, including those never written.",
@@ -649,7 +903,7 @@
         ],
         "exits": {
           "2.1.A": "Aurie answers her coldly, as a queen to a servant, and demands a report.",
-          "2.1.B": "Aurie tells Lucienne she is sorry to have been gone so long."
+          "2.1.B": "Aurie tells Lucienne she is sorry, thanks her for waiting, or confides in her."
         },
         "opening": "My lady. Seventy-two years. We thought... forgive me. We thought you were dead. The realm is not as you left it.",
         "possibilities": [
@@ -697,17 +951,23 @@
       "choices": [
         {
           "id": "2.1.A",
-          "text": "\"Then you thought wrong. Report.\"",
+          "text": "You thought wrong. Report.",
           "effects": {
             "traits": {
               "mercy": -1
             }
           },
-          "next": "end-ep1"
+          "next": "end-ep1",
+          "aftermath": [
+            {
+              "text": "Lucienne bows, and begins: the dead, the fled, and the faithful.",
+              "still": "library-hub"
+            }
+          ]
         },
         {
           "id": "2.1.B",
-          "text": "\"I am sorry I was gone so long.\"",
+          "text": "I am sorry I was gone so long.",
           "effects": {
             "traits": {
               "mercy": 1
@@ -716,21 +976,38 @@
               "LUCIENNE_LOYAL": true
             }
           },
-          "next": "end-ep1"
+          "next": "end-ep1",
+          "aftermath": [
+            {
+              "text": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles.",
+              "still": "library-hub"
+            }
+          ]
         }
-      ],
-      "episodeTitle": "The Library Between",
-      "hook": "Three doors. Four empty places at the table. And a librarian who will not say why.",
-      "music": "library"
+      ]
     },
     "end-ep1": {
       "id": "end-ep1",
       "title": "End of the first night",
       "type": "end",
       "pov": "3P",
-      "clips": [],
-      "narration": "Three doors stand locked on the far wall. The helm, the sand and the ruby are out there somewhere. The story continues.",
-      "music": "library"
+      "music": "library",
+      "beats": [
+        {
+          "text": "You are home. But you are not whole.",
+          "still": "library-hub"
+        },
+        {
+          "text": "Your helm, your sand and your ruby are out there, scattered across the waking world."
+        },
+        {
+          "text": "Behind the three doors, other stories are waiting for you."
+        },
+        {
+          "text": "End of Episode One.",
+          "style": "hook"
+        }
+      ]
     }
   }
 }

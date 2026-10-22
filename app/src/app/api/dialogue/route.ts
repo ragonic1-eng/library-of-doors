@@ -15,6 +15,7 @@ interface Body {
   mode: "talk" | "inner";
   history: Turn[];
   playerLine?: string;
+  intent?: string; // set when she tapped a suggested line: that exit is her decision
   profile: Profile;
 }
 
@@ -98,11 +99,12 @@ export async function POST(req: Request) {
   const { exits, consequences } = available(scene, body.profile, book.id);
   const turnsSoFar = body.history.filter((t) => t.role === "player").length;
   const maxTurns = scene.conversation?.maxTurns ?? 0;
-  const mustDecide = maxTurns > 0 && turnsSoFar + 1 >= maxTurns;
+  const intent = body.intent && body.intent in exits ? body.intent : undefined;
+  const mustDecide = !intent && maxTurns > 0 && turnsSoFar + 1 >= maxTurns;
 
-  const system = buildSystem({ body, card, charKey, scene, exits, consequences, mustDecide });
+  const system = buildSystem({ body, card, charKey, scene, exits, consequences, mustDecide, intent });
 
-  if (mockMode) return NextResponse.json(mockReply(body, card.name, exits, consequences, mustDecide));
+  if (mockMode) return NextResponse.json(mockReply(body, card.name, exits, consequences, mustDecide, intent));
 
   const messages = [
     { role: "system", content: system },
@@ -121,6 +123,7 @@ export async function POST(req: Request) {
     const parsed = safeParse(data.choices?.[0]?.message?.content ?? "");
     // Never trust the model's ids: keep only exits and consequences that exist and are allowed right now.
     if (parsed.decision && !(parsed.decision in exits)) parsed.decision = null;
+    if (intent) parsed.decision = intent;
     parsed.consequences = [...new Set(parsed.consequences)].filter((t) => t in consequences).slice(0, 2);
     parsed.trust_delta = clampInt(parsed.trust_delta, -2, 2);
     parsed.fear_delta = clampInt(parsed.fear_delta, -2, 2);
@@ -140,8 +143,15 @@ function buildSystem(args: {
   exits: Record<string, string>;
   consequences: Record<string, Consequence>;
   mustDecide: boolean;
+  intent?: string;
 }) {
-  const { body, card, charKey, scene, exits, consequences, mustDecide } = args;
+  const { body, card, charKey, scene, exits, consequences, mustDecide, intent } = args;
+  const summary = scene.summary ?? scene.beats.filter((b) => b.text && !b.if).map((b) => b.text).join(" ");
+  const ending = intent
+    ? `She has made her decision: ${exits[intent]} React to it in character as the closing moment of the scene, and set "decision" to "${intent}".`
+    : mustDecide
+      ? "This is the final exchange. End the scene in character, and you MUST set decision to the exit closest to what she has said and done so far."
+      : `When her latest input does what one exit describes (in her own words, not necessarily the same ones), set "decision" to that exit id NOW, even if your character hesitates or refuses: the outcome is hers to decide, and your reaction (hesitation included) is the closing moment of the scene. Only when she does something that matches no exit, react to it fully and keep the scene alive with decision null.`;
   const p = body.profile;
   const bookFlags = Object.entries(p.flags[body.bookId] ?? {}).filter(([, v]) => v).map(([k]) => k);
   const exitList = Object.entries(exits).map(([id, desc]) => `- ${id}: ${desc}`).join("\n");
@@ -156,7 +166,7 @@ function buildSystem(args: {
 
   return [
     role,
-    `SCENE: ${scene.title}. ${scene.narration ?? ""}`,
+    `SCENE: ${scene.title}. What the audience has just seen: ${summary}`,
     `CANON (never contradict):\n${(scene.conversation?.canon ?? []).map((c) => `- ${c}`).join("\n")}`,
     `CHARACTER VOICE: ${card.voice}`,
     `WANTS: ${card.wants}`,
@@ -170,8 +180,8 @@ function buildSystem(args: {
     `CONSEQUENCES. Her words and actions have consequences in this story. When her LATEST input clearly earns one of these, include its tag in "consequences" (at most two; only ones she has truly earned; never fire one just because it is listed):\n${menu || "- (none remaining)"}`,
     `RELATIONSHIP. Set trust_delta and fear_delta (integers -2 to 2) for how her latest input changes YOUR trust in her and fear of her. Usually 0 or 1; 2 only for something remarkable.`,
     `AURIE SO FAR: mercy ${p.traits.mercy}, flags ${bookFlags.join(", ") || "none"}.\nMEMORY OF HER WORDS AND DEEDS:\n${memory}`,
-    `AUTHORED EXITS for this scene. When the conversation has clearly arrived at one of them, set "decision" to its id; otherwise null. ${mustDecide ? "This is the final exchange: end the scene in character and you MUST set decision to the closest exit." : "Do not rush to an exit; let her lead."}\n${exitList || "- none"}`,
-    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 to 3 sentences, spoken aloud), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
+    `HOW THE SCENE ENDS. Her words decide the story; she must never have to repeat herself or pick from a menu. ${ending}\n${exitList || "- none"}`,
+    `FORMAT: Reply with ONLY a JSON object, no code fences, no text before or after. Keys: dialogue (1 or 2 short sentences, at most 30 words, spoken aloud; like a line in a film, never a speech), narration (one sentence or null), inner_thought (what AURIE, the player's character, privately thinks about your words, in her voice, one line, or null; never your own thoughts), mood (${MOODS.join(", ")}), decision (exit id or null), consequences (array of tags), trust_delta, fear_delta, memory_note (one short line worth remembering about her, or null).`,
     `TONE: adult, literary, Gaiman register; horror and menace allowed; no modern slang.`,
   ].join("\n\n");
 }
@@ -205,7 +215,7 @@ function safeParse(raw: string): DialogueReply {
   }
 }
 
-function mockReply(body: Body, name: string, exits: Record<string, string>, consequences: Record<string, Consequence>, mustDecide: boolean): DialogueReply {
+function mockReply(body: Body, name: string, exits: Record<string, string>, consequences: Record<string, Consequence>, mustDecide: boolean, intent?: string): DialogueReply {
   const ids = Object.keys(exits);
   const base = { narration: null, inner_thought: null, consequences: [] as string[], trust_delta: 0, fear_delta: 0, memory_note: null };
   if (body.mode === "inner") return { ...base, dialogue: "Seventy years is nothing. And yet.", mood: "neutral", decision: null };
@@ -217,7 +227,7 @@ function mockReply(body: Body, name: string, exits: Record<string, string>, cons
     dialogue: line ? `${name} (offline voice): "${line}"... You say that as if it changes anything.` : `${name} waits, watching you.`,
     narration: line.startsWith("*") ? "The candle flames lean away from the glass." : null,
     mood: "wary",
-    decision: mustDecide ? ids[0] ?? null : null,
+    decision: intent ?? (mustDecide ? ids[0] ?? null : null),
     consequences: hit ? [hit] : [],
     fear_delta: hit ? 1 : 0,
     memory_note: line ? `Said to ${name}: "${line.slice(0, 80)}"` : null,

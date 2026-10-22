@@ -18,10 +18,21 @@ export interface Requires {
   relation?: Record<string, { trust?: number; fear?: number }>; // minimum trust/fear with a character
 }
 
+/** One moment of the film: a picture, and at most one narrated sentence shown exactly while it is spoken. */
+export interface Beat {
+  text?: string; // narrator line; its audio file is audio/lines/<lineId(text)>.mp3
+  clip?: string; // video to show; it holds on its last frame until another picture is named
+  still?: string; // still image to show instead (slow push-in); file stills/<id>.jpg
+  card?: string; // silent full-screen time/place card ("England · 1916"), about 2.5 s
+  style?: "hook"; // show the text as a large centred cliffhanger line
+  if?: string[]; // play only when all these book flags are set
+  unless?: string[]; // skip when any of these book flags is set
+}
+
 export interface Choice {
   id: string; // e.g. "1.2.A" — also the conversation exit id
-  text: string; // what Aurie does, in prose (shown only if the player asks for options)
-  clip?: string; // consequence clip played after choosing
+  text: string; // what Aurie says or does, first person; tapping it says it to the character
+  aftermath?: Beat[]; // what happens next because of this choice, narrated
   effects?: Effect;
   effectsIf?: { flag: string; effects: Effect; ripple?: string }[]; // extra effects when an earlier flag is set
   requires?: Requires; // hidden when not met; the AI cannot steer to it either
@@ -54,11 +65,9 @@ export interface Scene {
   title: string;
   type?: "scene" | "hub" | "end";
   pov: "3P" | "POV";
-  clips: string[]; // played in order; files live at /clips/<bookId>/<clip>.mp4
-  narration?: string; // fallback bridging text (the director may rewrite it)
-  narrationIf?: { flag: string; text: string }[]; // extra sentences appended when earlier flags are set
+  beats: Beat[]; // the scene as narrated moments, played in order before any conversation
+  summary?: string; // what the AI should know has just happened (defaults to the beats' text)
   music?: string; // music track id for this scene (plays until a scene names another; "none" stops it)
-  hook?: string; // one-line cliffhanger shown for a few seconds as the scene ends (engagement-design.md §6)
   episodeTitle?: string; // micro-episode title shown as a card when this scene opens
   innerVoice?: boolean; // ask the AI for Aurie's private thought before choices
   conversation?: Conversation;

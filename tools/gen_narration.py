@@ -3,7 +3,9 @@
     python -I tools/gen_narration.py --engine gateway [--voice ash] [--force] [scene-id ...]
     tools/venv/Scripts/python tools/gen_narration.py --engine kokoro [--voice bm_george] [--force]
 
-Output: app/public/clips/sandman/audio/narration/<scene>.mp3 and audio/hooks/<scene>.mp3 (then `npm run upload` in app/).
+Output: assets/audio/lines-raw/<line id>.mp3, then run tools/pace_lines.py, which writes app/public/clips/sandman/audio/lines/<line id>.mp3 for every narrated beat and aftermath line
+(then `npm run upload` in app/). The line id is FNV-1a of the text, the same as app/src/lib/story/lines.ts,
+so an edited line gets a new file and the game can never play a recording that does not match the words.
 Engines:
   gateway  gpt-audio-1.5 through the Infistar gateway, directed as an audiobook narrator (a fraction of a fen per line).
   kokoro   Kokoro-82M, open source, runs on CPU, no account.
@@ -16,7 +18,8 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BOOK = os.path.join(ROOT, "app", "src", "content", "books", "sandman", "book.json")
-OUT = os.environ.get("NARRATION_OUT") or os.path.join(ROOT, "app", "public", "clips", "sandman", "audio")
+# Untouched renders; tools/pace_lines.py tightens them into app/public/clips/sandman/audio/lines/.
+RAW = os.environ.get("NARRATION_OUT") or os.path.join(ROOT, "assets", "audio", "lines-raw")
 
 DIRECTION = ("You are the narrator of a prestige dark-fantasy series: think the opening narration of a Netflix thriller, "
              "or a film trailer voice with real acting behind it. Deep male voice, close to the microphone, intimate. "
@@ -34,14 +37,26 @@ def load_env():
                     k, v = line.rstrip("\n").split("=", 1)
                     os.environ.setdefault(k.strip(), v.strip())
 
+def line_id(text):
+    """FNV-1a 32-bit over the UTF-8 text, 8 hex digits (mirrors lineId in the app)."""
+    h = 0x811C9DC5
+    for b in text.strip().encode("utf-8"):
+        h ^= b
+        h = (h * 0x01000193) & 0xFFFFFFFF
+    return f"{h:08x}"
+
 def lines(book):
-    """(kind, scene id, text) for every scene narration and hook."""
-    out = []
+    """(scene id, text) for every narrated beat and choice aftermath, without duplicates."""
+    out, seen = [], set()
     for sid, sc in book["scenes"].items():
-        if sc.get("narration"):
-            out.append(("narration", sid, sc["narration"]))
-        if sc.get("hook"):
-            out.append(("hooks", sid, sc["hook"]))
+        beats = list(sc.get("beats", []))
+        for c in sc.get("choices", []):
+            beats += c.get("aftermath", [])
+        for b in beats:
+            t = (b.get("text") or "").strip()
+            if t and t not in seen:
+                seen.add(t)
+                out.append((sid, t))
     return out
 
 def gateway_tts(text, voice):
@@ -126,10 +141,10 @@ def main():
     only = {a for a in args if not a.startswith("--") and a not in flagged}
     load_env()
     book = json.load(open(BOOK, encoding="utf-8"))
-    todo = [(k, s, t) for k, s, t in lines(book) if not only or s in only]
+    todo = [(s, t) for s, t in lines(book) if not only or s in only]
     done = skipped = failed = 0
-    for kind, sid, text in todo:
-        path = os.path.join(OUT, kind, f"{sid}.mp3")
+    for sid, text in todo:
+        path = os.path.join(RAW, f"{line_id(text)}.mp3")
         if os.path.exists(path) and not force:
             skipped += 1; continue
         os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -138,10 +153,10 @@ def main():
                     chatterbox_tts(text, voice, exag, cfg) if engine == "chatterbox" else kokoro_tts(text, voice))
             open(path, "wb").write(data)
             done += 1
-            print(f"✓ {kind}/{sid}  ({len(data)//1024} KB)", flush=True)
+            print(f"✓ {sid} {line_id(text)}  {text[:60]}", flush=True)
         except Exception as e:
             failed += 1
-            print(f"✗ {kind}/{sid}: {e}", flush=True)
+            print(f"✗ {sid} {text[:40]}: {e}", flush=True)
     print(f"rendered {done}, kept {skipped}, failed {failed}")
 
 if __name__ == "__main__":
