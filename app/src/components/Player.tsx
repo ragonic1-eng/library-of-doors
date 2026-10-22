@@ -177,7 +177,7 @@ export default function Player({ book }: { book: Book }) {
     a.onerror = silent;
     a.currentTime = 0;
     a.play().catch(silent);
-    setTimeout(show, 1200); // a slow network must not hide the words
+    setTimeout(show, 2500); // a slow network must not hide the words for long
     setTimeout(finish, readingMs(text) * 2 + 4000); // never hang the story on one line
   });
 
@@ -363,8 +363,14 @@ export default function Player({ book }: { book: Book }) {
   async function playScene(id: string, token: number) {
     const sc = book.scenes[id];
     setPhase("film");
-    // Lines the player may hear next (this scene and every possible aftermath) load while she watches.
-    preloadLines((sc.choices ?? []).flatMap((c) => c.aftermath ?? []).filter((b) => b.text).map((b) => b.text!));
+    // Lines the player may hear next (every possible aftermath, and the opening of every scene that can follow)
+    // load while she watches, so no line ever waits on the network.
+    const following = [sc.next, ...(sc.choices ?? []).map((c) => c.next)].filter((x): x is string => !!x && !!book.scenes[x]);
+    const ahead = [
+      ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? []),
+      ...[...new Set(following)].flatMap((id) => book.scenes[id].beats.slice(0, 4)),
+    ];
+    setTimeout(() => preloadLines(ahead.filter((b) => b.text).map((b) => b.text!)), 1500);
     if (await runTimeline(sc.beats, token)) await afterFilm(sc, token);
   }
 
