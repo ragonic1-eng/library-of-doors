@@ -3667,7 +3667,8 @@
           "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home."
         },
         {
-          "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be."
+          "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be.",
+          "still": "still-corinthian"
         },
         {
           "text": "For seventy years he has been loose in the waking world, killing, and taking eyes."
@@ -3676,7 +3677,8 @@
           "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her."
         },
         {
-          "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth."
+          "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth.",
+          "still": "desert-road"
         },
         {
           "card": "A hotel in Georgia",
@@ -3791,7 +3793,7 @@
               "CORINTHIAN_FREE": true
             }
           },
-          "next": "5.2b",
+          "next": "5.2f",
           "aftermath": [
             {
               "text": "The Corinthian smiles, puts his glasses back on, and walks out into the night.",
@@ -4128,7 +4130,8 @@
       "recap": "In 1389 Death granted Hob Gadling his wish never to die, and Aurie agreed to meet him once every hundred years.",
       "beats": [
         {
-          "text": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries."
+          "text": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries.",
+          "still": "tavern-1989"
         },
         {
           "card": "The White Horse tavern · 1389",
@@ -4159,14 +4162,16 @@
         },
         {
           "card": "1589",
-          "sfx": "church-bell"
+          "sfx": "church-bell",
+          "still": "still-hob-1589"
         },
         {
           "text": "A young writer in the corner, Will Shaxberd, begs Aurie for the gift of telling stories. She makes him a bargain."
         },
         {
           "card": "1689",
-          "sfx": "church-bell"
+          "sfx": "church-bell",
+          "still": "still-hob-1689"
         },
         {
           "text": "Hob has lost everything, his money, his wife, his son. He still does not want to die."
@@ -4698,7 +4703,7 @@
               "LYTA_THREATENED": true
             }
           },
-          "next": "6.2",
+          "next": "6.1b",
           "aftermath": [
             {
               "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
@@ -5003,13 +5008,10 @@
               "ENDING_C_OPEN": true
             }
           },
-          "next": "6.5",
+          "next": "6.4b",
           "aftermath": [
             {
               "text": "They eat his stew on the terrace while the sun goes down. Destruction reads one poem. It is dreadful. Aurie laughs."
-            },
-            {
-              "text": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next."
             }
           ]
         },
@@ -5143,7 +5145,7 @@
               "ORPHEUS_REFUSED": true
             }
           },
-          "next": "6.6",
+          "next": "6.6b",
           "aftermath": [
             {
               "text": "Aurie turns away. Behind her, Orpheus begins to sing, very softly, the same song he has sung for three thousand years.",
@@ -5241,34 +5243,40 @@
           "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and checks the shadows twice.",
           "if": [
             "LYTA_THREATENED"
-          ]
+          ],
+          "still": "still-lyta-rocking"
         },
         {
           "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep. She remembers a word: choose.",
           "if": [
             "LYTA_WARNED"
-          ]
+          ],
+          "still": "still-lyta-rocking"
         },
         {
           "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and cries for his father.",
           "if": [
             "LYTA_GRIEVES"
-          ]
+          ],
+          "still": "still-lyta-rocking"
         },
         {
-          "text": "Somewhere, a very large man and a talking dog are starting again."
+          "text": "Somewhere, a very large man and a talking dog are starting again.",
+          "still": "destruction-island"
         },
         {
           "text": "Orpheus is at peace. And three old women have begun to whisper Aurie's name.",
           "if": [
             "ORPHEUS_RELEASED"
-          ]
+          ],
+          "still": "orpheus-shrine"
         },
         {
           "text": "On a Greek island, a head that cannot die is still singing.",
           "if": [
             "ORPHEUS_REFUSED"
-          ]
+          ],
+          "still": "still-orpheus"
         },
         {
           "text": "End of Part Six.",
@@ -5400,13 +5408,15 @@
           "if": [
             "MATTHEW_RAVEN"
           ],
-          "sfx": "raven"
+          "sfx": "raven",
+          "still": "still-matthew"
         },
         {
           "text": "Lucienne walks a thousand sleeping minds, lantern raised, listening.",
           "unless": [
             "MATTHEW_RAVEN"
-          ]
+          ],
+          "still": "library-hub"
         },
         {
           "text": "In a cold house by the sea, Loki holds the boy above a strange silver fire, to burn away everything mortal in him.",
@@ -5492,7 +5502,7 @@
         }
       ],
       "conversation": {
-        "character": "lyta",
+        "character": "lyta-door",
         "maxTurns": 4,
         "canon": [
           "It is two years after the false house. Lyta Hall's son Daniel was taken three days ago and a burnt changeling left in his crib. Lyta believes Aurie took him; she remembers Aurie in the false house.",
@@ -6307,16 +6317,19 @@
           "text": "Without her, the Dreaming fades, slowly, like a dream does after waking."
         },
         {
-          "text": "Delirium comes looking for her, years later, and finds only ruins and a door that will not open."
+          "text": "Delirium comes looking for her, years later, and finds only ruins and a door that will not open.",
+          "still": "still-delirium"
         },
         {
-          "text": "In Destiny's book, her chapter stops in the middle of a sentence."
+          "text": "In Destiny's book, her chapter stops in the middle of a sentence.",
+          "still": "still-destiny"
         },
         {
           "text": "Somewhere far away, in a small house by a painted sea, two sisters laugh at a very bad poem.",
           "if": [
             "LISTENED_DESTRUCTION"
-          ]
+          ],
+          "still": "destruction-island"
         },
         {
           "text": "The End of The Sandman.",
@@ -6372,6 +6385,119 @@
           "still": "library-hub"
         }
       ]
+    },
+    "5.2f": {
+      "id": "5.2f",
+      "title": "Loose",
+      "pov": "3P",
+      "music": "escape",
+      "fx": "dust",
+      "recap": "Aurie let the Corinthian go. He took the long road south, and came within one night of Rose's brother.",
+      "beats": [
+        {
+          "card": "Somewhere in America",
+          "still": "still-corinthian-free"
+        },
+        {
+          "text": "The Corinthian takes the long road south, and stops wherever he likes."
+        },
+        {
+          "text": "In a locked house in Florida, a little boy named Jed is dreaming of his sister. The Corinthian has heard him."
+        },
+        {
+          "text": "Rose finds her brother first. By one night. She will never know how close it was."
+        },
+        {
+          "text": "Aurie feels every dream he walks through. She chose this."
+        }
+      ],
+      "next": "5.2b"
+    },
+    "6.1b": {
+      "id": "6.1b",
+      "title": "The Oath",
+      "pov": "3P",
+      "music": "cellar-wait",
+      "fx": "rain",
+      "recap": "Lyta swore that no one would ever take her son. She meant Aurie.",
+      "beats": [
+        {
+          "text": "Lyta does not sleep that night, or the next.",
+          "still": "still-lyta-oath"
+        },
+        {
+          "text": "She tells no one about the pale woman, because no one would believe her."
+        },
+        {
+          "text": "But she buys a lock for the nursery door, and then another one."
+        },
+        {
+          "text": "And every night she says the same words to her sleeping belly: no one will take you. No one."
+        }
+      ],
+      "next": "6.2"
+    },
+    "6.4b": {
+      "id": "6.4b",
+      "title": "The Painted Sea",
+      "pov": "3P",
+      "music": "the-years",
+      "fx": "glitter",
+      "recap": "Aurie stayed one more night with Destruction and Delirium, and for an evening nobody needed her to be anything.",
+      "beats": [
+        {
+          "text": "Aurie stays one more night. Destruction says she needs it, and for once she does not argue.",
+          "still": "still-painted-sea"
+        },
+        {
+          "text": "He paints her portrait. It is a very bad painting. She keeps it."
+        },
+        {
+          "text": "Delirium teaches Barnabas a song with no words. Barnabas has opinions about that, too."
+        },
+        {
+          "text": "For one evening, nobody needs Aurie to be anything at all. She had forgotten what that was like."
+        },
+        {
+          "text": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next.",
+          "still": "destruction-island"
+        }
+      ],
+      "next": "6.5"
+    },
+    "6.6b": {
+      "id": "6.6b",
+      "title": "The Song",
+      "pov": "3P",
+      "music": "the-years",
+      "fx": "dust",
+      "recap": "Aurie refused her son and went home. Under every dream, she could hear him singing.",
+      "beats": [
+        {
+          "card": "The Dreaming · night",
+          "still": "throne-room"
+        },
+        {
+          "text": "Aurie goes home and sits on her throne. She does not go down to the stream. There is nothing on her hands to wash away."
+        },
+        {
+          "text": "Lucienne brings her the day's dreams. Aurie listens to none of them."
+        },
+        {
+          "text": "Because under every dream, very faintly, she can hear her son singing.",
+          "still": "still-orpheus"
+        },
+        {
+          "text": "Matthew sits on the back of the throne all night, and for once he does not say a word.",
+          "if": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "She tells herself she kept the law. The law does not answer."
+        }
+      ],
+      "next": "end-ep6"
     }
   }
 }

@@ -1682,6 +1682,71 @@
         "prompt": "The burning courtyard of the Dreaming from the plate, red bruised sky: the three hooded women in rough black wool robes from the Kindly Ones sheet (the Maiden with her spindle, the Mother with a red thread, the Crone with iron shears), walk slowly side by side toward the camera through the drifting ash, faces shadowed in their hoods, red ember glints in their eyes. Where their hems pass, the paving stones crumble into grey sand. Wide shot, low angle."
       },
       "motion": "The three hooded women walk slowly and steadily toward the camera; behind them a carved stone pillar crumbles into pouring grey sand; ash swirls around their robes. Slow push-in."
+    },
+    {
+      "id": "still-corinthian-free",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/corinthian/sheet.png"
+        ],
+        "prompt": "Night, the upstairs walkway of a cheap roadside motel in the American South, a buzzing pink neon VACANCY sign, moths around a bare bulb: the Corinthian from the character sheet, in his suit and dark round sunglasses, leans on the rail lighting a cigarette, smiling at nothing. An empty highway runs away into the dark beyond the parking lot."
+      }
+    },
+    {
+      "id": "still-lyta-oath",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "Night in a small, modest 1990s American apartment kitchen lit by one lamp: Lyta Hall, the Korean-American pregnant woman from the Lyta character sheet (her exact face), stands at the dark window, one hand on her belly, the other gripping the counter, jaw set, eyes hard and sleepless. Behind her the front door has two new shiny chain locks."
+      }
+    },
+    {
+      "id": "still-lyta-rocking",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "A small lamp-lit nursery at night in a 1990s American apartment, paper star mobile over a wooden crib, a dark window: Lyta Hall, the Korean-American woman from the Lyta character sheet (her exact face), no longer pregnant, in a soft grey cardigan, sits in a wooden rocking chair holding her sleeping newborn son wrapped in a white blanket, looking down at him with tired, fierce love."
+      }
+    },
+    {
+      "id": "still-painted-sea",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/destruction/sheet.png",
+          "characters/delirium/sheet.png",
+          "characters/barnabas/sheet.png",
+          "assets/plates/destruction-island/plate.png"
+        ],
+        "prompt": "Sunset on the stone terrace of the little island cottage from the plate, above a sea so blue and still it looks painted: Destruction, the huge red-bearded man from his character sheet, stands at an easel with a brush, frowning happily at a canvas; Delirium from her sheet dances barefoot on the terrace, her hair streaming colours; Barnabas the dog sits watching, unimpressed. On the low stone wall in the foreground, seen from behind so her face is not visible, sits a woman in a long black high-collared gown with long straight black hair, looking out at the sea. Warm gold light."
+      }
+    },
+    {
+      "id": "still-hob-1589",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The same smoky London tavern from the plate a century later, 1589, candlelit and crowded: in the corner a thin young writer with a wispy beard, a small earring and ink-stained fingers leans across the table, pleading, toward a woman in a long black gown seen from behind (her face not visible). Behind them, Hob Gadling from the character sheet, prosperous in an Elizabethan doublet, raises a tankard and laughs."
+      }
+    },
+    {
+      "id": "still-hob-1689",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "The same London tavern from the plate in 1689, cold and half empty, grey winter light: Hob Gadling from the character sheet sits alone in the corner in threadbare rags, unshaven and thin, an empty tankard in front of him, but his eyes are stubborn and alive, and he looks straight at the camera with a defiant half-smile."
+      }
     }
   ],
   "react": {
