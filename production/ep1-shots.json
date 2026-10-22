@@ -1036,6 +1036,18 @@
         "prompt": "The 1916 candle-lit cellar, the night of the ritual, seen at eye level close to the great glass sphere, which fills most of the frame. Inside the clean, clear glass, Aurie, the woman from the identity photographs, kneels on the glass floor in a swirl of pale mist, pale and bare-shouldered, long black hair spreading around her, head lifting toward the camera, eyes just opening, her face large, sharp and clearly visible through the clear glass with no reflection or distortion over it. Outside the sphere, softly out of focus: Roderick Burgess in his burgundy robe with one hand raised, hooded figures holding candles, the chalk circle glowing white on the floor. Her face must be the exact face of the real woman: full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, broad soft nose, small mouth. Tasteful: her hair and the mist cover her body."
       },
       "motion": "Mist swirls slowly inside the sphere around her; the chalk circle flares brighter; candle flames lean toward the glass; Aurie slowly opens her eyes fully and looks straight at the camera, breathing. Her head stays nearly still. Very slow push-in. The glass stays clear over her face."
+    },
+    {
+      "id": "1.1a-v3",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "use": "assets/keyframes/sandman/1.1a-v3/keyframe.png"
+      },
+      "motion": "Aurie stays kneeling exactly where she is, perfectly still, in her white dress; her face, expression and head position do not change and her mouth stays closed; she only breathes and blinks once, slowly. Pale mist drifts slowly around her inside the clear sphere; the chalk circle on the floor glows brighter; candle flames lean toward the glass; Burgess keeps his hand raised. The camera holds still with the gentlest push-in. The glass stays clear over her face."
     }
   ],
   "react": {
