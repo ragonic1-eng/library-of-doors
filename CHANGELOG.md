@@ -1,0 +1,96 @@
+# CHANGELOG — the shared directory for every AI working on The Library of Doors
+
+Read this before touching anything. Claude, ChatGPT/Codex and the owner all write here. It answers three questions: **what exists, who changed it last, and what is in flight.** `git log` is the raw record; this file is the readable index of it.
+
+## Rules
+
+1. Every change to the game (code, story, characters, prompts, media, hosting) gets one line under **Log**, newest first, in the same commit. Format: `date · who · area · what changed · files/dirs touched · live? `
+2. **Who** is `Claude`, `ChatGPT` or `Owner`. Say which tool made the change so the other one can tell.
+3. If you generate media (images, clips, voices, music), say where it landed (local folder and whether it was uploaded to Blob) and what it cost.
+4. If you start work on a branch, add it under **In flight** with its purpose. Remove it when merged or abandoned.
+5. Do not rewrite old entries. Correct them with a new line.
+6. Keep `HANDOFF.md` for *how things work*; keep this file for *what changed*.
+
+## Where things live
+
+| What | Where | Notes |
+|---|---|---|
+| Scene graph (every scene, beat, choice) | `app/src/content/books/sandman/book.json` | checked by `app/scripts/check-story.mjs` on every build |
+| Character cards (voice, wants, secrets, TTS voice) | `app/src/content/characters/sandman.json` | |
+| The player (UI, timeline, voices, music, menu) | `app/src/components/Player.tsx`, `app/src/app/globals.css`, `app/src/components/Ambience.tsx` | |
+| Live dialogue API | `app/src/app/api/dialogue/route.ts`, `app/src/lib/server/gateway.ts`, `app/src/lib/server/voice.ts` | model fallbacks and circuit breaker in gateway.ts |
+| Other APIs | `app/src/app/api/{tts,save,version}/route.ts` | |
+| Image prompts (Style Bible, every character, angle sheets, location plates) | `character-prompts.md` | §3 characters, §3b expressions/poses, §3c angle sheets, §4 plates |
+| Shot list (keyframes, motion, stills, reaction loops, identity locks) | `production/ep1-shots.json` | all episodes, despite the name |
+| Generators | `app/scripts/generate-images.mjs`, `generate-clips.mjs`, `edit-image.mjs`, `upload-clips.mjs` | run from `app/` with `npm run gen / clips / upload` |
+| Narration and music tools | `tools/gen_narration.py`, `tools/pace_lines.py`, `tools/gen_music.py`, `tools/face_score.py` | local only |
+| Generated media (local, not in git) | `assets/` (keyframes, plates, clips, audio), `characters/<id>/` (sheet, heads, turnaround, portrait) | |
+| Media the game serves | `app/public/clips/sandman/` → Vercel Blob `clips/sandman/` | clips, `stills/`, `react/`, `audio/{music,lines}` |
+| Story maps and design docs | `story-map*.md`, `series-bible.md`, `ai-dialogue-design.md`, `engagement-design.md` | |
+| How everything works | `HANDOFF.md` | |
+| Hosting | Vercel project `library-of-doors`, Blob store `library-clips-linked`, deploy with `vercel deploy --prod --yes` from the repo root | |
+
+## In flight
+
+| Branch / PR | Who | Purpose | Status |
+|---|---|---|---|
+| `codex/player-experience-audit` (PR #1, draft) | ChatGPT | Pacing and voice-lifecycle fixes, journal, library bookmark, experience audit (`docs/EXPERIENCE-AUDIT.md`) | Opened 2026-10-22 00:01, before the day's rebuilds. Its bugs (early advance, duplicate player line, stale voices) were fixed separately on `main` since. Conflicts heavily with `main` (Player.tsx, book.json). **Contains no sound-effect or ambient-sound work.** Recommend closing; cherry-pick ideas from the audit doc by hand if wanted. |
+
+Requested but not started: sound effects and background ambience beds per scene (owner asked ChatGPT on 2026-10-22; nothing exists on any branch as of 20:40).
+
+## Log
+
+### 2026-10-22
+
+| Time | Who | Area | Change | Touched | Live |
+|---|---|---|---|---|---|
+| 21:10 | Claude | UI | Owner round: (1) "Aurie, thinking" stays until she sends her next line or taps it, instead of vanishing after 7 s; (2) the Undo button is gone from the "Your choice" card (players tapped it by reflex and got bounced back); "Undo my last choice" now lives in the ☰ menu until the next scene begins; (3) scene changes dip to black (0.7 s down, 1.3 s up) with the music starting its cross-fade as the picture goes; dissolves between pictures within a scene lengthened to 0.9 s. | `Player.tsx`, `globals.css` | yes |
+| 20:40 | Claude | docs | Created this change log; HANDOFF points to it | `CHANGELOG.md`, `HANDOFF.md` | n/a |
+| 20:35 | Claude | story, media | **Part Six live**: 6.0 Matthew the raven, 6.1 Lyta and the false house, 6.2 Delirium's road trip, 6.3 Orpheus, 6.4 Destruction, 6.5 the price, 6.6 the stream, end-ep6. New cards matthew, lyta, destruction, orpheus (Lyta, Hector, Destruction cast Asian; Orpheus half Asian). 7 stills, 2 clips (6.1a, 6.5a), talking loops for orpheus, lyta, destruction. Angle sheets for lyta, destruction, orpheus. Spend about ¥30. | `book.json`, `sandman.json`, `character-prompts.md` §3.29–3.34, §4.28–4.32, `ep1-shots.json`, `assets/`, Blob | yes |
+| 20:23 | Claude | media | Aurie dressed in a white tube dress in the sphere ritual clip (1.1a-v3); calm motion. Rule: Aurie is never shown unclothed. | `book.json`, `ep1-shots.json`, Blob | yes |
+| 20:13 | Claude | media | Angle sheets (heads + turnaround) for the remaining cast (alex-old, burgess, paul, guard, johanna, rachel, lucifer, choronzon, dee, destiny, desire, despair, delirium, madoc; turnaround only for azazel, corinthian, unity). Aurie's face rebuilt in 0.0a-v2 (throne close-up) and 1.1a-v2 (sphere). | `generate-images.mjs`, `characters/*/heads.png`, `turnaround.png`, Blob | yes |
+| 19:27 | Claude | story, media, tooling | **Part Five live** (Calliope/Madoc, the Corinthian, Rose and Unity, Desire, Hob 1389–1989). Angle-sheet system added: `characters/<id>/heads.png` and `turnaround.png`, auto-attached to every keyframe that references that character's sheet. Wan 3.0 reference-to-video tested through the gateway: `media` array ignored, not usable (¥4.81). Madoc redesigned (first sheet resembled the TV actor). | `book.json`, `sandman.json`, `character-prompts.md` §3.23–3.28, §3c, §4.22–4.27, `ep1-shots.json`, `generate-images.mjs`, Blob | yes |
+| 17:56 | Claude | story | Parts One/Two audit: branch scenes 1.6 Paul (after cursing Alex) and 2.4b Johanna's Curse (after Rachel's cruel end); bridging lines in 0.0, 1.4, 2.5, 2.9, 2.12. Rule: a cruel choice gets an on-screen answer. | `book.json`, `sandman.json`, `ep1-shots.json` | yes |
+| 17:38 | Claude | story, AI | Parts Three/Four audit: new scene 3.0 The Mending; bridges for Nada, Hell routes, suitors; choice-aware part endings. Dialogue schema now starts with private `subtext` and `mood`; mood directs the voice. Fixed the player's line being sent twice. | `book.json`, `api/dialogue/route.ts`, `lib/server/voice.ts` | yes |
+| 17:19 | Claude | UI | First-conversation hint moved out of a box into the input placeholder plus a glowing Ideas button (it was covering the talk). | `Player.tsx`, `globals.css` | yes |
+| 16:13 | Claude | AI | Stage directions in *asterisks* never spoken; moved to narration. | `api/dialogue/route.ts` | yes |
+| 16:12 | Claude | story, media | **Part Four live**: 4.1 Hell emptied, 4.2 the suitors (multi-speaker card), 4.3 Nada. Loki and Nuala redesigned to resemble no real actor. | `book.json`, `sandman.json`, `character-prompts.md` §3.19–3.22, Blob | yes |
+| 15:36 | Claude | UI, speed, voice | Skip button (tap = line, hold = part), Undo on choice card, Recent lines, text size and music settings, 48 px targets. Dialogue streams with voice bundled; openings pre-voiced. gpt-audio read lines verbatim (fenced script + transcript check, 3 takes). Update-available notice (`/api/version`). | `Player.tsx`, `globals.css`, `api/dialogue`, `lib/server/voice.ts`, `api/version`, `next.config.ts` | yes |
+| 12:54 | Claude | story, media | **Part Three live**: 3.1 Destiny's garden, 3.2 the family of the Endless (labelled speakers with their own voices). | `book.json`, `sandman.json`, `character-prompts.md` §3.15–3.18, Blob | yes |
+| 12:38 | Claude | media | Aurie's face fixed in 1.1b and 1.2b-A by editing an approved image (`edit-image.mjs`), published as `-v2` clips. | `edit-image.mjs`, Blob | yes |
+| 10:55 | Claude | UI, story, infra | Nine-point owner round: where/why/who bridges, Prologue/Chapter naming, recaps; the Three as three speakers; pause menu, fullscreen, Your-choice card, Previously card, Retry banner; in-character steering; cloud save code (`/api/save`); model circuit breaker; `check-story.mjs` as prebuild; ambience canvas (rain, embers, ash, dust, glitter, snow, mist, flicker). | `Player.tsx`, `Ambience.tsx`, `api/save`, `gateway.ts`, `check-story.mjs`, `book.json` | yes |
+| 10:02 | Claude | story, media, UI | **Part Two complete**: 2.5 Hell, 2.6 Lucifer, 2.7 the Oldest Game, 2.8, 2.9–2.11 Dee and the ruby, 2.12 Death. Talking loops while a character's voice plays; typing bubble. Dialogue fallback models. | `book.json`, `sandman.json`, `ep1-shots.json`, `Player.tsx`, `api/dialogue`, Blob | yes |
+| 08:44 | Claude | story, media | Episode 1 gaps closed (ritual 1.1a, Unity's dream 1.3d, Ethel 1926, Burgess 1947); Part Two start: 2.2 the Three, 2.3 Johanna, 2.4 Rachel. | `book.json`, `ep1-shots.json`, Blob | yes |
+| 08:07 | Claude | story, player | Episode 1 rebuilt as 66 narrated beats (text + voice together, per-line audio by hash); typed words decide scenes. | `book.json`, `Player.tsx`, `lib/story/lines.ts`, `tools/gen_narration.py`, `tools/pace_lines.py` | yes |
+| 07:18 | Claude | sound | Narrator re-rendered with cinematic direction (gateway voice "ash"); Chatterbox added as a local engine. | `tools/gen_narration.py`, `assets/audio/`, Blob | yes |
+| 00:01 | ChatGPT | player, story | Draft PR #1 on `codex/player-experience-audit` (see In flight). | branch only | no |
+| 00:00 | Claude | AI, sound | Dialogue JSON parsing hardened; sound pipeline documented. | `api/dialogue`, `HANDOFF.md` | yes |
+
+### 2026-10-21
+
+| Time | Who | Area | Change | Touched | Live |
+|---|---|---|---|---|---|
+| 23:57 | Claude | sound | Music beds (MusicGen, 6 tracks), narration and hook audio in the player; ducking under voices. | `tools/gen_music.py`, `Player.tsx`, Blob `audio/` | yes |
+| 23:13–23:35 | Claude | hosting, speed | Mobile build (start gate, rotate prompt, foldable fit); Vercel functions pinned to Singapore; gateway warm-up from the start gate; Blob uploader; Aurie's glass shots reframed as close-ups. | `Player.tsx`, `vercel.json`, `api/dialogue`, `upload-clips.mjs`, `ep1-shots.json` | yes |
+| 22:12–22:37 | Claude | gameplay, media | Consequence engine (tags, trust/fear, echoes, action narration); face-refine pass; dialogue on Haiku; clip cap ¥400. | `api/dialogue`, `lib/state/profile.ts`, `generate-images.mjs`, `HANDOFF.md` | yes |
+| 21:04–21:46 | Claude | media, tooling | Episode 1 scene clips complete; reaction loops; local face-likeness scorer and identity locks. | `assets/clips/`, `tools/face_score.py`, `ep1-shots.json` | yes |
+| 18:42–20:50 | Claude | tooling, media | Image generator, clip generator with real-spend cap, Episode 1 shot list, cast sheets (author cast as Alex), Episode 0 cold open approved. | `generate-images.mjs`, `generate-clips.mjs`, `character-prompts.md`, `ep1-shots.json` | yes |
+
+### Before 2026-10-21
+
+Design phase: story maps for all four books, series bible, dialogue and engagement design, Episode 1 production sheet. See `git log --before=2026-10-21`.
+
+## Spend (gateway, cumulative)
+
+| Date | Total |
+|---|---|
+| 2026-10-22 20:35 | about ¥660 (Part Six about ¥30 on top of ¥628.66) |
+| 2026-10-22 20:23 | ¥626.50 |
+| 2026-10-22 19:27 | ¥602.22 |
+| 2026-10-22 17:56 | ¥561.37 |
+| 2026-10-22 12:54 | ¥523.60 |
+| 2026-10-22 10:02 | ¥475.28 |
+| 2026-10-22 08:44 | ¥364.29 |
+| 2026-10-21 end | about ¥299 |
+
+Check the live figure with `npm run clips -- spend` from `app/`.

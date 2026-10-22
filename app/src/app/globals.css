@@ -273,7 +273,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
 
 /* Cross-fade: the old clip's last frame sits under the new one until it is playing */
 .film.prev { position: absolute; inset: 0; z-index: 0; }
-.film:not(.prev):not(.react) { position: absolute; inset: 0; z-index: 1; animation: fade-in 0.5s ease both; }
+.film:not(.prev):not(.react) { position: absolute; inset: 0; z-index: 1; animation: fade-in 0.9s ease both; }
 .prefetch { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 
 /* Fit: wide phones crop a little (biased to keep faces); square-ish foldable screens letterbox instead */
@@ -326,7 +326,14 @@ button.ghost { border-color: transparent; color: var(--dim); }
   padding: 0.35rem 0.9rem;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.42);
+  pointer-events: auto;
+  cursor: pointer;
 }
+
+/* Between scenes: a dip to black, slower to lift than to fall */
+.curtain { position: absolute; inset: 0; z-index: 18; background: #000; pointer-events: none; opacity: 0; transition: opacity 1.3s ease; }
+.curtain.on { opacity: 1; transition: opacity 0.7s ease; }
+@media (prefers-reduced-motion: reduce) { .curtain, .curtain.on { transition-duration: 0.3s; } }
 @media (max-height: 520px) {
   .inner { top: 3%; font-size: 0.9rem; max-width: 60vw; }
   .transcript p { font-size: 0.92rem; }
@@ -396,7 +403,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
   position: absolute;
   inset: 0;
   object-fit: cover;
-  animation: fade-in 0.6s ease both, push-in 16s ease-out both;
+  animation: fade-in 0.9s ease both, push-in 16s ease-out both;
 }
 @keyframes push-in { from { transform: scale(1); } to { transform: scale(1.09); } }
 .hook { pointer-events: none; }
@@ -620,7 +627,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .hud-btn.skip::before { content: ""; position: absolute; inset: 0; background: rgba(201, 162, 74, 0.45); transform-origin: left; transform: scaleX(0); }
 .hud-btn.skip.holding::before { animation: hold-fill 0.9s linear forwards; }
 @keyframes hold-fill { to { transform: scaleX(1); } }
-.chosen .undo { pointer-events: auto; margin-top: 0.8rem; border-color: rgba(255, 255, 255, 0.45); min-height: 44px; padding: 0.4rem 1.2rem; }
 .backlog { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; font-size: 0.92rem; line-height: 1.45; }
 .backlog .who { color: var(--accent); font-variant: small-caps; margin-right: 0.4em; }
 .seg { display: flex; gap: 0.4rem; }
@@ -653,3 +659,5 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .say .ghost.glow { color: var(--accent); border-color: var(--accent); animation: glow 1.6s ease-in-out infinite; }
 @keyframes glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 74, 0); } 50% { box-shadow: 0 0 14px 2px rgba(201, 162, 74, 0.55); } }
 @media (prefers-reduced-motion: reduce) { .say .ghost.glow { animation: none; } }
+
+/* transitions: curtain between scenes (2026-10-22) */

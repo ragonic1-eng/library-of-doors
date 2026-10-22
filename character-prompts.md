@@ -470,6 +470,76 @@ SURREAL DETAIL: a single pale butterfly rests on her shoulder, its wings opening
 
 ---
 
+### 3.29 Lyta Hall (Episode 6)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Lyta Hall, a Korean-American woman of about twenty-eight, 1990, heavily pregnant (about eight months). An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.65 m, athletic build softened by pregnancy. Face: oval with high cheekbones, a strong straight jaw, dark brown monolid eyes with thick straight brows, a small straight nose, full lips set firm. Hair: black, thick, cut in a blunt shoulder-length bob with a heavy fringe. Clothing: a loose dusty-rose maternity dress, an oversized faded denim shirt worn open over it, white sneakers, a thin gold wedding band. Posture: one hand on her belly, shoulders squared. Expression: guarded, fierce, exhausted, a mother ready to fight.
+SURREAL DETAIL: faint, slow ripples pass across the fabric over her belly, like light on water.
+[Style Bible]
+```
+
+---
+
+### 3.30 Hector Hall, a ghost (Episode 6)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Hector Hall, Lyta's husband, a Korean-American man of about thirty who died and lingers as a ghost in a dream. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.80 m, lean. Face: kind and open, a square jaw, warm dark monolid eyes, short black hair neatly side-parted, a faint smile. Clothing: a 1970s-style superhero costume he believes in: a bright yellow and red bodysuit with a small hourglass emblem on the chest and a short red cape. His whole figure is faintly translucent, slightly desaturated, edges softened like a fading photograph. Expression: earnest, loving, a little lost.
+SURREAL DETAIL: the backdrop shows faintly through his chest.
+[Style Bible]
+```
+
+---
+
+### 3.31 Destruction of the Endless, the Prodigal (Episode 6)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Destruction of the Endless, Aurie's brother who walked away from his duties three hundred years ago, appearing as a huge East Asian man of about fifty. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 2.0 m, enormously broad and strong, a little heavy now. Face: broad and weathered, a big generous mouth, crinkled laughing dark eyes, a strong nose, a thick black beard streaked with grey, long black hair tied back loosely. Clothing: a paint-spattered loose linen shirt with sleeves rolled up over huge forearms, canvas trousers, bare feet; a paintbrush in one hand, a palette of garish colours in the other. Posture: relaxed, enormous, gentle. Expression: warm, amused, peaceful, with old sadness underneath.
+SURREAL DETAIL: the paint on his palette shifts colour slowly on its own.
+[Style Bible]
+```
+
+---
+
+### 3.32 Barnabas, Destruction's dog (Episode 6)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: three views of the same dog side by side, the same soft octabox key light: LEFT head-and-shoulders, CENTRE three-quarter view standing, RIGHT full side view sitting. Barnabas, a large shaggy grey-and-white mongrel with a long intelligent face, floppy ears, bushy eyebrows, a grizzled muzzle and a worn leather collar; he looks wise, grumpy and patient, as if he is about to say something sarcastic.
+SURREAL DETAIL: his expression is unmistakably human.
+[Style Bible]
+```
+
+---
+
+### 3.33 Matthew, the raven (Episode 6)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: three views of the same large common raven side by side, the same soft octabox key light: LEFT a close-up of the head, CENTRE perched on a plain wooden rail in three-quarter view, RIGHT wings half spread. Glossy blue-black feathers with an oily sheen, a heavy black beak, shaggy throat feathers, bright black curious eyes. Alert, cocky, a little nervous.
+SURREAL DETAIL: his eyes hold a tiny glint of something human.
+[Style Bible]
+```
+
+---
+
+### 3.34 Orpheus, Aurie's son (Episode 6)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Orpheus, son of Aurie (Dream of the Endless) and the Muse Calliope, appearing as a young man of about twenty-four, half East Asian and half Greek. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.78 m, slender. Face: a soft oval with his mother Aurie's full cheeks and soft rounded jaw, almond single-lidded dark eyes, Calliope's straight Greek nose with a slight bump, a wide sad mouth. Skin warm olive. Hair: black, thick, loose curls to the shoulders. Clothing: a simple ancient Greek white linen chiton fastened at one shoulder, a lyre in his hands. Posture: gentle, a musician's hands. Expression: sorrowful, gentle, worn out by grief.
+SURREAL DETAIL: faint notes of light drift from the strings of the lyre.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -765,6 +835,43 @@ SURREAL DETAIL: the hearth smoke curls down instead of up, toward one empty benc
 ```
 The same English tavern site in 1989, now an ordinary London pub: dark wooden booths, brass taps, a dartboard, a jukebox glowing, a pint glass on a corner table, rain on the window. Low warm light, a quiet afternoon. Empty of people for this plate.
 SURREAL DETAIL: a single old beam in the ceiling is the same blackened beam from six hundred years before, with a carved horse on it.
+[Style Bible]
+```
+
+---
+
+**4.28 The false house (Episode 6)**
+```
+A pleasant small American suburban house from the 1950s, white picket fence, neat lawn and a porch light, floating in a vast dark void of the Dreaming: beyond the edges of the lawn there is nothing at all, only black and faint stars. Up close everything is subtly wrong: the paint peels into darkness, the windows show the void behind them, the garden flowers are paper. Night. No people.
+SURREAL DETAIL: the house casts no shadow.
+[Style Bible]
+```
+
+**4.29 Destruction's island (Episode 6)**
+```
+A small rocky Greek island at golden late afternoon: a whitewashed stone cottage with blue shutters among olive trees above a deep blue sea, an easel on the terrace with a garish, badly painted canvas, scattered paint pots, a wooden table with bread and wine. Warm Mediterranean light, long shadows, cicadas almost audible. No people.
+SURREAL DETAIL: the sea at the horizon is painted, brushstrokes visible.
+[Style Bible]
+```
+
+**4.30 Orpheus's shrine (Episode 6)**
+```
+A tiny ancient Greek shrine in a cave above the sea at dusk: rough white marble columns, oil lamps, a low marble altar heaped with fresh flowers, olive branches and offerings, a narrow opening onto the darkening sea. Warm lamplight, cool blue dusk outside. No people, the altar's top hidden by flowers.
+SURREAL DETAIL: the lamp flames sway in time to music no one is playing.
+[Style Bible]
+```
+
+**4.31 The stream at the edge of the Dreaming (Episode 6)**
+```
+A clear, shallow stream running over pale stones through a quiet meadow at the edge of the Dreaming at dusk, the great gates of horn and ivory far off on the horizon, silver grass, the first stars. Calm, grieving light. No people.
+SURREAL DETAIL: the water runs slightly uphill.
+[Style Bible]
+```
+
+**4.32 The desert road (Episode 6)**
+```
+An empty two-lane highway through an American desert at noon, heat shimmer, a battered 1970s convertible parked on the shoulder, a roadside diner sign with no readable words, tumbleweed, endless blue sky. No people.
+SURREAL DETAIL: small brightly coloured fish swim through the air above the car.
 [Style Bible]
 ```
 

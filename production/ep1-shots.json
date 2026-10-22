@@ -1048,6 +1048,103 @@
         "use": "assets/keyframes/sandman/1.1a-v3/keyframe.png"
       },
       "motion": "Aurie stays kneeling exactly where she is, perfectly still, in her white dress; her face, expression and head position do not change and her mouth stays closed; she only breathes and blinks once, slowly. Pale mist drifts slowly around her inside the clear sphere; the chalk circle on the floor glows brighter; candle flames lean toward the glass; Burgess keeps his hand raised. The camera holds still with the gentlest push-in. The glass stays clear over her face."
+    },
+    {
+      "id": "still-matthew",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/matthew/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "In the endless library from the plate, lantern-lit: the large raven from the first character sheet has just landed on Lucienne's reading table, wings half open, papers flying off the table; Lucienne, the woman from the second character sheet, stands behind the table with her lantern raised, startled and stern. The raven looks straight at the camera, head cocked."
+      }
+    },
+    {
+      "id": "still-lyta",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "characters/hector/sheet.png",
+          "assets/plates/false-house/plate.png"
+        ],
+        "prompt": "Inside the little 1950s living room of the false house from the plate, lamplit, the windows showing black void and stars: Lyta Hall, the pregnant woman from the first character sheet, sits on a floral sofa in a dreamy daze, one hand on her belly; beside her stands her husband Hector, the translucent man in the yellow and red costume from the second sheet, one hand on her shoulder, smiling at nothing. The wallpaper is peeling into darkness."
+      }
+    },
+    {
+      "id": "still-lyta-wakes",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "Lyta Hall, the pregnant woman from the character sheet, sitting up in her own bed in a small, plain 1990 apartment bedroom at grey dawn, alone, both hands over her belly, tears on her face, staring at the empty side of the bed. Cold window light, rumpled sheets."
+      }
+    },
+    {
+      "id": "still-roadtrip",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "assets/plates/desert-road/plate.png"
+        ],
+        "prompt": "The desert highway from the plate: in the passenger seat of the battered convertible, Delirium, the girl from the character sheet with her multicoloured hair, leans out happily, one arm up, small bright fish swimming in the air around her; only the pale long-fingered hand of the driver is visible on the steering wheel, in a black sleeve. Noon heat shimmer."
+      }
+    },
+    {
+      "id": "still-orpheus",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png",
+          "assets/plates/orpheus-shrine/plate.png"
+        ],
+        "prompt": "The cave shrine from the plate at dusk, oil lamps glowing: only the living head of Orpheus, the young man from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust: serene, clean, no blood and no wound visible, the flowers hiding where his neck would be, his black curls spread on the petals. His eyes are open and look straight at the camera, sorrowful and gentle. Warm lamplight on his face, blue dusk beyond the cave mouth."
+      }
+    },
+    {
+      "id": "still-destruction",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/destruction/sheet.png",
+          "characters/barnabas/sheet.png",
+          "characters/delirium/sheet.png",
+          "assets/plates/destruction-island/plate.png"
+        ],
+        "prompt": "The sunny terrace of the cottage from the plate: Destruction, the huge bearded man from the first character sheet, paint-spattered, laughing, lifting Delirium, the small girl with multicoloured hair from the third sheet, off her feet in a bear hug; beside the easel with its terrible painting sits Barnabas, the shaggy grey dog from the second sheet, looking unimpressed. Golden afternoon light, the sea behind."
+      }
+    },
+    {
+      "id": "still-stream",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/dream-stream/plate.png"
+        ],
+        "prompt": "Close on the clear stream from the plate at dusk: two pale, long-fingered women's hands in black sleeves rinse in the shallow water over pale stones; faint threads of dark red drift away downstream from the fingers. Only the hands and sleeves are visible, no face. Silver light, the first stars reflected in the water."
+      }
+    },
+    {
+      "id": "6.1a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-lyta/keyframe.png"
+      },
+      "motion": "The walls of the little living room peel away into black void and stars; Hector, smiling, fades into drifting light and is gone; Lyta reaches out for him, her mouth opening in a cry. Slow push-in."
+    },
+    {
+      "id": "6.5a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-orpheus/keyframe.png"
+      },
+      "motion": "Orpheus slowly closes his eyes and smiles peacefully; he gently dissolves into soft golden light and drifting motes like pollen, which rise and float out of the cave toward the sea; only the flowers remain. The lamp flames lean after the light. Very slow push-in."
     }
   ],
   "react": {
@@ -1152,6 +1249,36 @@
           "assets/plates/madoc-room/plate.png"
         ],
         "setting": "Medium close-up in the attic room from the plate under the bare bulb: Calliope, the woman from the character sheet, in her linen shift, seated on the iron bed, looking straight at the camera.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "orpheus": {
+        "refs": [
+          "characters/orpheus/sheet.png",
+          "assets/plates/orpheus-shrine/plate.png"
+        ],
+        "setting": "Close-up in the cave shrine from the plate, oil-lamp light: only the living head of Orpheus, the young man from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust: serene, clean, no blood and no wound visible, the flowers hiding where his neck would be, his black curls spread on the petals, looking straight at the camera.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "lyta": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "assets/plates/false-house/plate.png"
+        ],
+        "setting": "Medium close-up of Lyta Hall, the pregnant woman from the character sheet, standing in the black void where the false house was, a few torn scraps of wallpaper drifting behind her, one hand over her belly, looking straight at the camera.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "destruction": {
+        "refs": [
+          "characters/destruction/sheet.png",
+          "assets/plates/destruction-island/plate.png"
+        ],
+        "setting": "Medium close-up of Destruction, the huge bearded man from the character sheet, sitting at the wooden table on the sunny terrace from the plate with a glass of wine, looking straight at the camera across the table, the sea behind him.",
         "moods": [
           "talking"
         ]

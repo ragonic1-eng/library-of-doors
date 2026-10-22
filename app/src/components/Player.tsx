@@ -39,6 +39,7 @@ const BEAT_GAP_MS = 250; // breath between narrated lines
 const HOLD_MS = 2000; // longest a clip keeps playing after its line before the next picture cuts in
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
 const CHOICE_MS = 2600; // the "Your choice" moment
+const CURTAIN_MS = 700; // dip to black between scenes; the music starts to cross-fade with it
 const RECAP_MS = 7000; // the "Previously" card when she comes back
 const HOLD_SKIP_MS = 900; // holding Skip this long skips the whole narrated stretch
 const OPTION_GUARD_MS = 400; // taps on freshly shown Ideas are ignored (no accidental double-tap choices)
@@ -164,6 +165,7 @@ export default function Player({ book }: { book: Book }) {
   const [beatFx, setBeatFx] = useState<Fx | undefined>(undefined);
   // The moment a decision is made, shown plainly so she always knows what she chose.
   const [chosen, setChosen] = useState<string | null>(null);
+  const [curtain, setCurtain] = useState(false); // black between scenes
   // "Previously..." when she comes back to a saved story.
   const [recap, setRecap] = useState<string[] | null>(null);
   // Diegetic feedback when a consequence fires ("Somewhere above, a man begins to weep.")
@@ -417,7 +419,7 @@ export default function Player({ book }: { book: Book }) {
     setMissing(null);
     setLayers((ls) => [...ls.slice(-1), layer]);
   };
-  const layerReady = (key: string) => setTimeout(() => setLayers((ls) => (ls[ls.length - 1]?.key === key ? ls.slice(-1) : ls)), 600);
+  const layerReady = (key: string) => setTimeout(() => setLayers((ls) => (ls[ls.length - 1]?.key === key ? ls.slice(-1) : ls)), 1000);
 
   // ---------- the timeline: beats played in order, words and voice together ----------
   const runRef = useRef(0); // bumping it cancels whatever timeline is running
@@ -596,21 +598,32 @@ export default function Player({ book }: { book: Book }) {
 
   function goTo(next: string) {
     const token = ++runRef.current;
+    undoRef.current = null; // the last choice can no longer be taken back once the next scene begins
     stopAllVoices();
-    setSceneId(next);
-    setHistory([]);
-    setMood("neutral");
-    setInner(null);
+    setSkippable(false);
+    setChosen(null);
     setShowOptions(false);
     setBusy(false);
-    setSubtitle(null);
-    setCard(null);
-    setChosen(null);
-    setNetError(null);
-    setBeatFx(undefined);
-    const p = profileRef.current;
-    if (p) commit({ ...p, position: { book: book.id, scene: next } });
-    void playScene(next, token);
+    // Dip to black. If the music changes with the scene, it starts to leave with the picture.
+    setCurtain(true);
+    const m = musicRef.current;
+    const nextTrack = book.scenes[next]?.music;
+    if (m.a && nextTrack && nextTrack !== m.track) void fadeTo(m.a, 0, CURTAIN_MS + 600);
+    void sleep(CURTAIN_MS).then(() => {
+      if (token !== runRef.current) return;
+      setSceneId(next);
+      setHistory([]);
+      setMood("neutral");
+      setInner(null);
+      setSubtitle(null);
+      setCard(null);
+      setNetError(null);
+      setBeatFx(undefined);
+      const p = profileRef.current;
+      if (p) commit({ ...p, position: { book: book.id, scene: next } });
+      void playScene(next, token);
+      setTimeout(() => { if (token === runRef.current) setCurtain(false); }, 350);
+    });
   }
 
   async function choose(choice: Choice) {
@@ -642,14 +655,16 @@ export default function Player({ book }: { book: Book }) {
     undoRef.current = () => {
       undoRef.current = null;
       runRef.current++;
+      stopAllVoices();
       commit(current);
       setChosen(null);
+      setSubtitle(null);
+      setCard(null);
       setSkippable(false);
       skipRef.current = null;
       setPhase(backTo);
     };
     await Promise.race([sleep(CHOICE_MS + 1400), skipped]);
-    undoRef.current = null;
     setChosen(null);
     if (token !== runRef.current) return;
     if (await runTimeline(choice.aftermath ?? [], token)) goTo(choice.next);
@@ -678,8 +693,7 @@ export default function Player({ book }: { book: Book }) {
     if (token !== runRef.current) return;
     if (reply.mood) setMood(reply.mood);
     if (reply.inner_thought) {
-      setInner(reply.inner_thought);
-      setTimeout(() => setInner((cur) => (cur === reply.inner_thought ? null : cur)), 7000);
+      setInner(reply.inner_thought); // stays until she answers, or taps it away
     }
     // Consequences: her words change the story. Apply fired consequences, the speaker's feelings and memory together.
     let p = profileRef.current;
@@ -709,6 +723,7 @@ export default function Player({ book }: { book: Book }) {
     setInput("");
     setShowOptions(false);
     setTip(false);
+    setInner(null);
     inputRef.current?.blur(); // drop the phone keyboard so the reaction loop is visible
     stopAllVoices();
     const hist: Turn[] = [...history, { role: "player", text: line }];
@@ -1027,6 +1042,7 @@ export default function Player({ book }: { book: Book }) {
         <Ambience fx={fx} />
         <div className="vignette" />
       </div>
+      <div className={`curtain ${curtain ? "on" : ""}`} aria-hidden="true" />
       {upcoming && <video className="prefetch" src={clipUrl(upcoming)} preload="auto" muted playsInline aria-hidden="true" />}
 
       {/* Top-right controls: fullscreen and the pause menu */}
@@ -1064,7 +1080,6 @@ export default function Player({ book }: { book: Book }) {
         <div className="chosen" key={chosen}>
           <div className="chosen-label">Your choice</div>
           <div className="chosen-text">{chosen}</div>
-          {undoRef.current && <button className="undo" onClick={() => undoRef.current?.()}>Undo</button>}
         </div>
       )}
 
@@ -1077,7 +1092,11 @@ export default function Player({ book }: { book: Book }) {
 
       {ripple && <div key={ripple} className="ripple">{ripple}</div>}
 
-      {inner && (phase === "talk" || phase === "choose") && <div className="inner"><span className="inner-who">{profile.name}, thinking</span>{inner}</div>}
+      {inner && (phase === "talk" || phase === "choose") && (
+        <div className="inner" role="button" tabIndex={0} title="Tap to dismiss" onClick={() => setInner(null)}>
+          <span className="inner-who">{profile.name}, thinking</span>{inner}
+        </div>
+      )}
 
       {updateReady && (
         <div className="updatebar" role="status">
@@ -1184,6 +1203,7 @@ export default function Player({ book }: { book: Book }) {
                 <h2>Paused</h2>
                 <p className="menu-where">{book.scenes[chapterOf(sceneId)]?.episodeTitle}</p>
                 <button className="primary" onClick={closeMenu}>Resume</button>
+                {undoRef.current && <button onClick={() => { const undo = undoRef.current; closeMenu(); undo?.(); }}>Undo my last choice</button>}
                 <button onClick={() => setMenu("journal")}>Story so far</button>
                 <button onClick={() => setMenu("lines")}>Recent lines</button>
                 <button onClick={() => setMenu("chapters")}>Chapters</button>

@@ -4460,6 +4460,757 @@
           "text": "End of Part Five.",
           "style": "hook"
         }
+      ],
+      "next": "6.0"
+    },
+    "6.0": {
+      "id": "6.0",
+      "title": "The Raven",
+      "pov": "POV",
+      "episodeTitle": "Part Six · Chapter 21 · The Raven",
+      "music": "library",
+      "fx": "dust",
+      "recap": "A dead man named Matthew arrived in the Dreaming as a raven, and asked to stay.",
+      "beats": [
+        {
+          "card": "The Dreaming",
+          "still": "library-hub"
+        },
+        {
+          "text": "The Dreaming is whole again. Lucienne has counted every dream that came home, and every one that did not."
+        },
+        {
+          "text": "Aurie walks her realm differently now. She stops. She listens. Lucienne has noticed, and says nothing."
+        },
+        {
+          "text": "Then a raven lands on the reading table, scattering Lucienne's papers.",
+          "still": "still-matthew"
+        },
+        {
+          "text": "Long ago, Aurie always kept a raven: a dreamer who died, and chose to stay and serve. There has not been one since she was taken."
+        },
+        {
+          "text": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on."
+        }
+      ],
+      "conversation": {
+        "character": "matthew",
+        "maxTurns": 3,
+        "canon": [
+          "Matthew was a man who died last night, drunk and alone, in the waking world. In his last dream he asked to stay in the Dreaming, and he woke up as a raven.",
+          "Aurie's ravens are her companions and messengers. The last one was lost while she was imprisoned.",
+          "Matthew is nervous, funny, honest, and a little in awe of her. He wants a second chance at being useful to someone."
+        ],
+        "opening": "Er. Hi. Sorry about the papers. They tell me you're the boss. I'm Matthew. I think I'm a bird now? I'd like to stay, if that's all right.",
+        "possibilities": [
+          "She asks how he died: he tells her, simply, without self-pity, and makes a joke to cover it.",
+          "She asks why he wants to stay: he says nobody ever needed him for anything before.",
+          "She is cold: he is hurt, then stubborn, and asks her to give him one chance."
+        ],
+        "suggestions": [
+          "How did you die, Matthew?",
+          "Why do you want to stay?"
+        ],
+        "exits": {
+          "6.0.ACCEPT": "Aurie accepts Matthew as her raven.",
+          "6.0.REFUSE": "Aurie refuses him; she needs no company."
+        },
+        "triggers": [
+          {
+            "exit": "6.0.ACCEPT",
+            "player": "you can stay|stay with me|welcome|you.re my raven|be my raven|i accept"
+          }
+        ],
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "6.0.ACCEPT",
+          "text": "Stay, Matthew. Be my raven.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "MATTHEW_RAVEN": true
+            }
+          },
+          "next": "6.1",
+          "aftermath": [
+            {
+              "text": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile."
+            }
+          ]
+        },
+        {
+          "id": "6.0.REFUSE",
+          "text": "I need no company. Go on, to wherever the dead go.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "6.1",
+          "aftermath": [
+            {
+              "text": "The raven bows his head and flies out of the window. Lucienne quietly picks up her papers."
+            }
+          ]
+        }
+      ]
+    },
+    "6.1": {
+      "id": "6.1",
+      "title": "The False House",
+      "pov": "POV",
+      "episodeTitle": "Chapter 22 · Lyta",
+      "music": "cellar-wait",
+      "fx": "mist",
+      "recap": "Aurie found a false house hidden in the Dreaming, where Lyta Hall had been kept dreaming for two years with her dead husband's ghost.",
+      "beats": [
+        {
+          "text": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
+          "still": "false-house"
+        },
+        {
+          "text": "Deep in the Dreaming, they built a little house, and inside it they kept a dead man's ghost and his living wife."
+        },
+        {
+          "text": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant."
+        },
+        {
+          "text": "Her husband Hector is a ghost who doesn't know he is dead.",
+          "still": "still-lyta"
+        },
+        {
+          "text": "Aurie unmakes the false house. As it comes apart, so does Hector.",
+          "clip": "6.1a"
+        },
+        {
+          "text": "Lyta screams his name. Then she turns on Aurie."
+        }
+      ],
+      "conversation": {
+        "character": "lyta",
+        "maxTurns": 4,
+        "canon": [
+          "Lyta Hall is about twenty-eight and eight months pregnant. Her husband Hector died; two runaway nightmares, Brute and Glob, hid his ghost in a false house in the Dreaming and kept Lyta asleep there with him for two years.",
+          "Aurie has just unmade the false house, and Hector's ghost with it. Lyta has lost him twice.",
+          "Lyta's unborn child was conceived and carried in the Dreaming, so he belongs, in some way, to the Dreaming. In the book, Dream told her: the child is mine, and one day I will come for him. Lyta never forgave that.",
+          "Lyta is furious, grieving and fiercely protective of her baby. She will fight anyone who threatens him."
+        ],
+        "opening": "You killed him. He was all I had left, and you just... wiped him away. Who ARE you? And don't you dare look at my baby like that.",
+        "possibilities": [
+          "She explains Hector was already dead: Lyta knows, and it doesn't help; she says it was still him.",
+          "She is gentle: Lyta does not soften, but she listens.",
+          "She speaks about the child: Lyta goes cold and puts both hands over her belly.",
+          "She apologises: Lyta says sorry doesn't bring him back."
+        ],
+        "suggestions": [
+          "He was already dead, Lyta.",
+          "I'm sorry for your loss.",
+          "What will you call the child?"
+        ],
+        "exits": {
+          "6.1.CLAIM": "Aurie tells her the child is hers, and she will come for him one day.",
+          "6.1.CHOOSE": "Aurie tells her the child belongs to dreams, and may choose for himself when he is grown.",
+          "6.1.SILENT": "Aurie says nothing about the child and lets her go with her grief."
+        },
+        "consequences": {
+          "NAMED_DANIEL": {
+            "when": "Aurie asks what she will call the child.",
+            "effects": {
+              "flags": {
+                "KNOWS_DANIEL": true
+              }
+            },
+            "ripple": "Daniel, she says, and hates herself for answering."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "6.1.CLAIM",
+          "text": "The child is mine. One day I will come for him.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "LYTA_THREATENED": true
+            }
+          },
+          "next": "6.2",
+          "aftermath": [
+            {
+              "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+              "still": "still-lyta-wakes"
+            },
+            {
+              "text": "She will remember those words every day of her son's life."
+            }
+          ]
+        },
+        {
+          "id": "6.1.CHOOSE",
+          "text": "He belongs to dreams. When he is grown, he may choose.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "LYTA_WARNED": true
+            }
+          },
+          "next": "6.2",
+          "aftermath": [
+            {
+              "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+              "still": "still-lyta-wakes"
+            },
+            {
+              "text": "She is still afraid of the pale woman. But she remembers the word: choose."
+            }
+          ]
+        },
+        {
+          "id": "6.1.SILENT",
+          "text": "(Say nothing. Let her grieve.)",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "LYTA_GRIEVES": true
+            }
+          },
+          "next": "6.2",
+          "aftermath": [
+            {
+              "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+              "still": "still-lyta-wakes"
+            },
+            {
+              "text": "A month later her son is born. She names him Daniel. She grieves; she does not hate."
+            }
+          ]
+        }
+      ]
+    },
+    "6.2": {
+      "id": "6.2",
+      "title": "Delirium",
+      "pov": "POV",
+      "episodeTitle": "Chapter 23 · The Prodigal",
+      "music": "escape",
+      "fx": "glitter",
+      "recap": "Delirium begged Aurie to help find their lost brother Destruction. The search through the waking world failed.",
+      "beats": [
+        {
+          "text": "Delirium, the youngest of the Endless, comes to the palace, trailing small coloured fish through the air.",
+          "still": "still-delirium"
+        },
+        {
+          "text": "She wants to find their brother Destruction, who walked away three hundred years ago. She has asked everyone else. They all said no."
+        },
+        {
+          "text": "Aurie remembers what Death told her at the family table, and says yes.",
+          "if": [
+            "ASKED_DEATH"
+          ]
+        },
+        {
+          "text": "Aurie surprises herself, and says yes.",
+          "unless": [
+            "ASKED_DEATH"
+          ]
+        },
+        {
+          "card": "The waking world",
+          "still": "desert-road"
+        },
+        {
+          "text": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colours of their names.",
+          "still": "still-roadtrip"
+        },
+        {
+          "text": "Everyone who once knew where Destruction went has died, or is dying, as the two of them arrive."
+        },
+        {
+          "text": "There is only one person left who knows. He is on an island in Greece. He is Aurie's son."
+        }
+      ],
+      "choices": [
+        {
+          "id": "6.2.GO",
+          "text": "Then I will go to Orpheus.",
+          "effects": {},
+          "next": "6.3",
+          "aftermath": [
+            {
+              "text": "Delirium goes very quiet. Even she knows what that costs."
+            }
+          ]
+        }
+      ]
+    },
+    "6.3": {
+      "id": "6.3",
+      "title": "The Son",
+      "pov": "POV",
+      "episodeTitle": "Chapter 24 · Orpheus",
+      "music": "the-years",
+      "fx": "flicker",
+      "recap": "Aurie went to her son Orpheus, a living head kept in a shrine, to ask where Destruction was. His price was his own death.",
+      "beats": [
+        {
+          "card": "A Greek island",
+          "still": "orpheus-shrine"
+        },
+        {
+          "text": "Orpheus married Eurydice, and she died on their wedding day. He begged his mother Aurie to help him bring her back. Aurie refused."
+        },
+        {
+          "text": "He went into the underworld without her help, and failed. Then the wild women of the hills tore him to pieces."
+        },
+        {
+          "text": "Only his head survived, and it cannot die. For three thousand years, a family of priests has kept it here, singing.",
+          "still": "still-orpheus"
+        },
+        {
+          "text": "Aurie has not spoken to her son since. She told him he was dead to her."
+        },
+        {
+          "text": "Once, to Calliope, Aurie spoke his name with sorrow. Calliope must have told him.",
+          "if": [
+            "NAMED_ORPHEUS"
+          ]
+        }
+      ],
+      "conversation": {
+        "character": "orpheus",
+        "maxTurns": 4,
+        "canon": [
+          "Orpheus is the son of Aurie (Dream of the Endless) and the Muse Calliope. His wife Eurydice died on their wedding day; Aurie refused to help him; Death gave him a kind of immortality so he could go to the underworld; he failed when he looked back; the Bacchantes tore him apart and only his living head remains, kept by priests on a Greek island.",
+          "Aurie told him three thousand years ago that he was dead to her, and never visited. He still calls her 'Mother'.",
+          "He knows where Destruction is. He will tell her, but his price is that afterwards she grants him the death he has waited three thousand years for. Only she can do it.",
+          "If Aurie spoke of him with sorrow to Calliope (flag NAMED_ORPHEUS), he has heard about it from his mother, and it moves him.",
+          "He is gentle, sorrowful, tired, still a musician; there is love under three thousand years of hurt."
+        ],
+        "opening": "Mother. You came. Three thousand years, and you came because you need something. Of course you did. I know where he is. But I have a price.",
+        "possibilities": [
+          "She apologises for abandoning him: he is silent a long time, then thanks her, and his voice breaks.",
+          "She asks what his price is: he says, when she has found Destruction, come back and give me my death.",
+          "She is cold: he says he expected that, and it still hurts.",
+          "She asks about Eurydice: he says he still dreams of her every night; it is the only dream he has."
+        ],
+        "suggestions": [
+          "I'm sorry, my son. I should have come.",
+          "What is your price?",
+          "Do you still dream of Eurydice?"
+        ],
+        "exits": {
+          "6.3.PROMISE": "Aurie agrees to his price: she will come back and give him his death."
+        },
+        "triggers": [
+          {
+            "exit": "6.3.PROMISE",
+            "player": "i promise|i will come back|i.ll come back|you have my word|i agree|agreed|very well|i swear"
+          }
+        ],
+        "consequences": {
+          "SORRY_ORPHEUS": {
+            "when": "Aurie sincerely apologises to Orpheus for abandoning him.",
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "SORRY_ORPHEUS": true
+              }
+            },
+            "ripple": "For a moment the priests stop singing.",
+            "echo": {
+              "text": "Dream told her son Orpheus she was sorry, after three thousand years.",
+              "knownBy": [
+                "calliope",
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "6.3.PROMISE",
+          "text": "I promise. Tell me where he is.",
+          "effects": {
+            "flags": {
+              "ORPHEUS_PROMISE": true
+            }
+          },
+          "next": "6.4",
+          "aftermath": [
+            {
+              "text": "He tells her: a small island, not far from here. Their brother has been painting."
+            },
+            {
+              "text": "Come back, Mother, he says. You promised."
+            }
+          ]
+        }
+      ]
+    },
+    "6.4": {
+      "id": "6.4",
+      "title": "Destruction",
+      "pov": "POV",
+      "music": "library",
+      "fx": "embers",
+      "recap": "Aurie and Delirium found their brother Destruction, living as a painter on a Greek island with his talking dog.",
+      "beats": [
+        {
+          "card": "Another island",
+          "still": "destruction-island"
+        },
+        {
+          "text": "Their brother is exactly where Orpheus said he would be.",
+          "still": "still-destruction"
+        },
+        {
+          "text": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry."
+        },
+        {
+          "text": "His dog Barnabas can talk. Barnabas has opinions about the poetry."
+        },
+        {
+          "text": "Delirium runs into his arms. He lifts her off her feet like a child."
+        }
+      ],
+      "conversation": {
+        "character": "destruction",
+        "maxTurns": 5,
+        "canon": [
+          "Destruction is one of the seven Endless, Aurie's brother. Three hundred years ago he walked away from his duties because he saw where humanity was going (weapons, the atom) and did not want to be responsible. Things still get destroyed without him; he just no longer has to be the one who does it.",
+          "He is huge, warm, funny, peaceful, a bad painter and a worse poet. He loves his sisters and is glad to see them.",
+          "He tells Aurie the Endless are not bound to their duties; they are only ideas, and ideas can change. He says she should think about quitting too, because she is changing, and change is a kind of death for one of the Endless.",
+          "He knows Aurie paid a price to find him. He will not come back. When they leave, he will go somewhere new, with Barnabas."
+        ],
+        "opening": "Little sister! And Dream! You came all this way? Sit, sit. There's wine, and I've made a stew, and I'm afraid I've been painting again. Be kind.",
+        "possibilities": [
+          "She asks why he left: he explains simply, without guilt: he didn't want to be the one who did it any more.",
+          "She tells him the Endless do not quit: he laughs and says the Endless are whatever they decide to be.",
+          "She asks what it cost Orpheus: he knows, and is very gentle with her.",
+          "She admits she is changing: he says that is the bravest thing he has heard in three hundred years, and the most dangerous."
+        ],
+        "suggestions": [
+          "Why did you leave?",
+          "I am changing. I can feel it.",
+          "Come home, brother."
+        ],
+        "exits": {
+          "6.4.LISTEN": "Aurie listens to him, and accepts that the Endless can change.",
+          "6.4.REFUSE": "Aurie insists the Endless do not quit, and rejects what he says."
+        },
+        "consequences": {
+          "ADMITTED_CHANGE": {
+            "when": "Aurie admits she is changing.",
+            "effects": {
+              "flags": {
+                "ADMITTED_CHANGE": true
+              }
+            },
+            "ripple": "Destruction puts down his brush, and looks at her properly for the first time.",
+            "echo": {
+              "text": "Dream admitted to Destruction that she was changing.",
+              "knownBy": [
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "6.4.LISTEN",
+          "text": "Perhaps you're right, brother.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "LISTENED_DESTRUCTION": true,
+              "ENDING_C_OPEN": true
+            }
+          },
+          "next": "6.5",
+          "aftermath": [
+            {
+              "text": "They eat his stew on the terrace while the sun goes down. Destruction reads one poem. It is dreadful. Aurie laughs."
+            },
+            {
+              "text": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next."
+            }
+          ]
+        },
+        {
+          "id": "6.4.REFUSE",
+          "text": "The Endless do not quit.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "6.5",
+          "aftermath": [
+            {
+              "text": "Destruction only smiles, sadly, and pours more wine."
+            },
+            {
+              "text": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next."
+            }
+          ]
+        }
+      ]
+    },
+    "6.5": {
+      "id": "6.5",
+      "title": "The Price",
+      "pov": "POV",
+      "music": "the-years",
+      "fx": "flicker",
+      "recap": "Aurie returned to Orpheus to pay his price.",
+      "beats": [
+        {
+          "text": "Aurie returns to the shrine, alone, as she promised.",
+          "still": "orpheus-shrine"
+        },
+        {
+          "text": "Orpheus is waiting. The priests have gone outside. They know what is coming.",
+          "still": "still-orpheus"
+        },
+        {
+          "text": "He told her the truth: Destruction was there. Now it is her turn."
+        }
+      ],
+      "conversation": {
+        "character": "orpheus",
+        "maxTurns": 4,
+        "canon": [
+          "Aurie has come back to pay Orpheus's price: to give him the death he has waited three thousand years for. Only she, his parent, can do it.",
+          "If she grants it, she spills the blood of her own family. The ancient law says the Kindly Ones, the Furies, may then come for her. Orpheus knows this and is sorry, but he is so tired.",
+          "If Aurie asks Death to do it instead, Death will not; she says he is Aurie's to release.",
+          "If Aurie apologised to him before (flag SORRY_ORPHEUS), he remembers it and says it was worth three thousand years.",
+          "Orpheus is calm, loving, frightened only a little. He wants to see Eurydice."
+        ],
+        "opening": "You came back. I wasn't sure you would. Please, Mother. I'm so tired. Let me go.",
+        "possibilities": [
+          "She hesitates: he asks her, gently, to keep her promise.",
+          "She asks if he is afraid: he says only a little, and that Eurydice is waiting.",
+          "She tells him she loves him: he weeps, and says he always knew, somewhere.",
+          "She asks Death to do it instead: he says Death will not; it has to be her."
+        ],
+        "suggestions": [
+          "Are you afraid?",
+          "I love you, my son.",
+          "Could Death not do this instead?"
+        ],
+        "exits": {
+          "6.5.RELEASE": "Aurie grants Orpheus his death.",
+          "6.5.REFUSE": "Aurie refuses and breaks her promise."
+        },
+        "triggers": [
+          {
+            "exit": "6.5.RELEASE",
+            "player": "go to her|go to eurydice|be at peace|i release you|rest now|i let you go|goodbye, my son"
+          }
+        ],
+        "consequences": {
+          "SAID_LOVE": {
+            "when": "Aurie tells Orpheus she loves him.",
+            "effects": {
+              "flags": {
+                "SAID_LOVE_ORPHEUS": true
+              }
+            },
+            "ripple": "Orpheus closes his eyes, and smiles.",
+            "echo": {
+              "text": "Before the end, Dream told her son Orpheus that she loved him.",
+              "knownBy": [
+                "calliope",
+                "death",
+                "lucienne"
+              ]
+            }
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "6.5.RELEASE",
+          "text": "Go to her, my son.",
+          "effects": {
+            "traits": {
+              "mercy": 3
+            },
+            "flags": {
+              "ORPHEUS_RELEASED": true,
+              "PRIDE_LOCK": false
+            }
+          },
+          "next": "6.6",
+          "aftermath": [
+            {
+              "text": "Aurie touches her son's face, and gives him what he asked for.",
+              "clip": "6.5a"
+            },
+            {
+              "text": "He smiles, and is gone. Somewhere, very far away, a woman named Eurydice turns, and sees him coming."
+            },
+            {
+              "text": "Aurie has spilled the blood of her own family. Far away, three old women look up from their weaving."
+            }
+          ]
+        },
+        {
+          "id": "6.5.REFUSE",
+          "text": "I will not. I cannot.",
+          "effects": {
+            "traits": {
+              "mercy": -3
+            },
+            "flags": {
+              "ORPHEUS_REFUSED": true
+            }
+          },
+          "next": "6.6",
+          "aftermath": [
+            {
+              "text": "Aurie turns away. Behind her, Orpheus begins to sing, very softly, the same song he has sung for three thousand years.",
+              "still": "still-orpheus"
+            },
+            {
+              "text": "The law has nothing to say about a broken promise. Her son has a great deal to say about it, forever."
+            }
+          ]
+        }
+      ]
+    },
+    "6.6": {
+      "id": "6.6",
+      "title": "The Stream",
+      "pov": "POV",
+      "music": "the-years",
+      "fx": "mist",
+      "recap": "Aurie came home to the Dreaming, changed.",
+      "beats": [
+        {
+          "card": "The Dreaming · dusk",
+          "still": "dream-stream"
+        },
+        {
+          "text": "Aurie kneels by a stream at the edge of her realm and washes her hands. The blood will not come off.",
+          "still": "still-stream",
+          "if": [
+            "ORPHEUS_RELEASED"
+          ]
+        },
+        {
+          "text": "Aurie kneels by a stream at the edge of her realm. Her hands are clean. It does not help.",
+          "still": "still-stream",
+          "unless": [
+            "ORPHEUS_RELEASED"
+          ]
+        },
+        {
+          "text": "A raven lands on a stone beside her. Boss? Matthew asks. Are you all right?",
+          "if": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing.",
+          "unless": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "No, Aurie says. But I think I will be.",
+          "if": [
+            "ORPHEUS_RELEASED"
+          ]
+        },
+        {
+          "text": "I broke my word to my own son, Aurie says. I will hear him singing for the rest of my life.",
+          "unless": [
+            "ORPHEUS_RELEASED"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "6.6.HOME",
+          "text": "Go home.",
+          "effects": {},
+          "next": "end-ep6",
+          "aftermath": []
+        }
+      ]
+    },
+    "end-ep6": {
+      "id": "end-ep6",
+      "title": "Change",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "fx": "dust",
+      "beats": [
+        {
+          "text": "A raven sleeps on the back of Aurie's throne.",
+          "still": "library-hub",
+          "if": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and checks the shadows twice.",
+          "if": [
+            "LYTA_THREATENED"
+          ]
+        },
+        {
+          "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep. She remembers a word: choose.",
+          "if": [
+            "LYTA_WARNED"
+          ]
+        },
+        {
+          "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and cries for his father.",
+          "if": [
+            "LYTA_GRIEVES"
+          ]
+        },
+        {
+          "text": "Somewhere, a very large man and a talking dog are starting again."
+        },
+        {
+          "text": "Orpheus is at peace. And three old women have begun to whisper Aurie's name.",
+          "if": [
+            "ORPHEUS_RELEASED"
+          ]
+        },
+        {
+          "text": "On a Greek island, a head that cannot die is still singing.",
+          "if": [
+            "ORPHEUS_REFUSED"
+          ]
+        },
+        {
+          "text": "End of Part Six.",
+          "style": "hook"
+        }
       ]
     }
   }

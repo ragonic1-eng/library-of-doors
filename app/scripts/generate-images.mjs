@@ -101,7 +101,7 @@ character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
 // Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
-for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"], ["calliope", "### 3.23"], ["madoc", "### 3.24"], ["corinthian", "### 3.25"], ["rose", "### 3.26"], ["hob", "### 3.27"], ["unity", "### 3.28"]]) {
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"], ["calliope", "### 3.23"], ["madoc", "### 3.24"], ["corinthian", "### 3.25"], ["rose", "### 3.26"], ["hob", "### 3.27"], ["unity", "### 3.28"], ["lyta", "### 3.29"], ["hector", "### 3.30"], ["destruction", "### 3.31"], ["barnabas", "### 3.32"], ["matthew", "### 3.33"], ["orpheus", "### 3.34"]]) {
   const refs = id === "unity" ? [join(ROOT, "assets", "keyframes", "sandman", "1.3d", "keyframe.png")] : [];
   jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs });
 }
@@ -117,7 +117,7 @@ const ANGLE_LOCK = {
 const ANGLE_FACES = { aurie: AURIE_FACES, "alex-young": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")], "alex-old": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")] };
 // Group sheets (fates, norse, faerie, angels) hold several people and need splitting first; Azazel has no head to turn.
 const TURNAROUND_ONLY = ["azazel"];
-for (const id of ["aurie", "alex-young", "alex-old", "burgess", "paul", "guard", "lucienne", "death", "johanna", "rachel", "lucifer", "choronzon", "dee", "destiny", "desire", "despair", "delirium", "azazel", "calliope", "madoc", "corinthian", "rose", "hob", "unity"]) {
+for (const id of ["aurie", "alex-young", "alex-old", "burgess", "paul", "guard", "lucienne", "death", "johanna", "rachel", "lucifer", "choronzon", "dee", "destiny", "desire", "despair", "delirium", "azazel", "calliope", "madoc", "corinthian", "rose", "hob", "unity", "lyta", "destruction", "orpheus"]) {
   for (const [kind, frame] of [["turnaround", TURN_FRAME], ["heads", HEAD_FRAME]].filter(([k]) => k === "turnaround" || !TURNAROUND_ONLY.includes(id))) {
     jobs.push({
       id: `${id}-${kind}`, group: "angles", dir: join(C(id), "candidates"), approved: join(C(id), `${kind}.png`),
@@ -169,7 +169,7 @@ if (existsSync(SHOTS_FILE)) {
   // Say what each reference image is, so the model never mixes two people up.
   const describe = (p) => {
     const f = p.replace(/\\/g, "/");
-    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
+    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", lyta: "Lyta Hall", hector: "Hector Hall", destruction: "Destruction", orpheus: "Orpheus", barnabas: "Barnabas the dog", matthew: "Matthew the raven", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
     const m = f.match(/characters\/([^/]+)\/([^/.]+)/);
     if (m) {
       const name = who[m[1]] ?? m[1];
@@ -241,6 +241,11 @@ const plates = [
   ["vortex", "**4.25 "],
   ["tavern-1389", "**4.26 "],
   ["tavern-1989", "**4.27 "],
+  ["false-house", "**4.28 "],
+  ["destruction-island", "**4.29 "],
+  ["orpheus-shrine", "**4.30 "],
+  ["dream-stream", "**4.31 "],
+  ["desert-road", "**4.32 "],
 ];
 for (const [id, label, extra] of plates) {
   jobs.push({ id, group: "plates", dir: join(P(id), "candidates"), approved: join(P(id), "plate.png"), prompt: () => assemble(block("## 4. Location plates", label), extra), refs: [] });
