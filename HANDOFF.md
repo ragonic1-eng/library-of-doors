@@ -148,3 +148,6 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Spend: Y602.22 total (Part Five and angle sheets about Y41, including the Y4.81 Wan 3.0 probe).
 - Owner rule (2026-10-22): new characters should lean Asian where the source does not fix their look; do not change approved characters.
 - Next in the source: Episode 6, "Redemption and Change" (Orpheus, Lyta Hall and Daniel, the Kindly Ones seeded). Needs a new budget.
+- Angle sheets for the remaining cast done (heads + turnaround): alex-old (heads 0.46), burgess, paul, guard, johanna, rachel, lucifer, choronzon, dee, destiny, desire, despair, delirium, madoc; turnaround only for azazel, corinthian, unity. Group sheets (fates, norse, faerie, angels) still need splitting into one sheet per person before angle sheets make sense.
+- Owner feedback: Aurie did not look like herself in the opening throne shot (0.0a) or as the girl forming in the glass sphere (1.1a). Replaced with 0.0a-v2 (close-up on the throne, 0.42-0.44 through the clip) and 1.1a-v2 (Aurie kneeling inside the clear sphere, face large; keyframe 0.46, clip 0.29-0.34 because of the curved glass, clear likeness by eye). New ids beat phone caches. Face refine and edit-from-approved did NOT raise 0.0a's score; a fresh keyframe with the angle sheets did.
+- Spend: Y619.28 total.

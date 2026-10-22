@@ -112,10 +112,13 @@ const HEAD_FRAME = block("## 3c.", "Head-angle frame");
 const ANGLE_LOCK = {
   aurie: "Her face is an exact likeness of the real woman in the first four photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, narrow or beautify her. Styling (pale skin, black hair, black gown) as in the reference sheet.",
   "alex-young": "His face is an exact likeness of the real man in the first two photographs: a very broad, round, full face, heavy cheeks and a wide soft jaw; narrow single-lidded eyes behind rectangular matte-black glasses; a broad nose with a rounded tip; full lips; prominent ears. Do not slim or reshape him. Costume as in the reference sheet.",
+  "alex-old": "His face is the real man in the first two photographs, aged to his early seventies exactly as in the reference sheet: the same very broad, round, full face, heavy cheeks and wide soft jaw, narrow single-lidded eyes, broad nose, full lips and prominent ears, with age added only as wrinkles, grey hair and softer skin. Do not slim or reshape him. Costume as in the reference sheet.",
 };
-const ANGLE_FACES = { aurie: AURIE_FACES, "alex-young": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")] };
-for (const id of ["aurie", "alex-young", "lucienne", "death", "calliope", "madoc", "corinthian", "rose", "hob", "unity"]) {
-  for (const [kind, frame] of [["turnaround", TURN_FRAME], ["heads", HEAD_FRAME]]) {
+const ANGLE_FACES = { aurie: AURIE_FACES, "alex-young": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")], "alex-old": [join(C("alex"), "photo.jpg"), join(C("alex"), "photo-2.jpg")] };
+// Group sheets (fates, norse, faerie, angels) hold several people and need splitting first; Azazel has no head to turn.
+const TURNAROUND_ONLY = ["azazel"];
+for (const id of ["aurie", "alex-young", "alex-old", "burgess", "paul", "guard", "lucienne", "death", "johanna", "rachel", "lucifer", "choronzon", "dee", "destiny", "desire", "despair", "delirium", "azazel", "calliope", "madoc", "corinthian", "rose", "hob", "unity"]) {
+  for (const [kind, frame] of [["turnaround", TURN_FRAME], ["heads", HEAD_FRAME]].filter(([k]) => k === "turnaround" || !TURNAROUND_ONLY.includes(id))) {
     jobs.push({
       id: `${id}-${kind}`, group: "angles", dir: join(C(id), "candidates"), approved: join(C(id), `${kind}.png`),
       prompt: () => `${frame}
@@ -331,7 +334,7 @@ async function viaOpenAI(prompt, refs) {
 
 // ---------- likeness ----------
 // Which real person (if any) a job must look like, from its id.
-const identityOf = (id) => (/(^|-)aurie-|kf-(0\.0a|0\.0c|1\.1b|1\.2b-A|1\.2b-B|1\.5b)$/.test(id) ? "aurie"
+const identityOf = (id) => (/(^|-)aurie-|kf-(0\.0a|0\.0c|1\.1a|1\.1b|1\.2b-A|1\.2b-B|1\.5b|5\.3a)(-v\d+)?$/.test(id) ? "aurie"
   : /(^|-)alex-|kf-(1\.4a|1\.4b-[ABC]|1\.5c|1\.5d-[AB])$/.test(id) ? "alex" : null);
 function scoreFace(identity, file) {
   try {

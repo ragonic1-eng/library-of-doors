@@ -1002,6 +1002,40 @@
         "use": "assets/keyframes/sandman/still-hob-1989/keyframe.png"
       },
       "motion": "Hob raises his glass toward the camera, grins, says a few words warmly, and takes a sip; rain runs down the window behind him; the jukebox light glows. Slow push-in."
+    },
+    {
+      "id": "0.0a-v2",
+      "model": "video",
+      "seconds": 10,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "Medium close-up, camera at her eye level a few steps in front of the throne: Aurie, the woman from the identity photographs, sits upright on the black glass throne of the Dreaming, chest up, her face large in the upper half of the frame, turned three-quarters toward the camera, sharp, softly lit by one candle on the throne arm, utterly still and regal, her long black hair lifting in its own slow wind, the high black collar of her gown at her jaw. Softly out of focus behind her shoulder: Lucienne with her lantern. Starfield walls behind, deep and soft. Her face must be the exact face of the real woman: full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, broad soft nose, small mouth."
+      },
+      "motion": "Aurie sits perfectly still and listens; only her hair drifts slowly upward and a few grains of sand rise past her shoulder; she blinks once, slowly. Behind her, out of focus, Lucienne turns a page. The camera holds on her face with a very slight push-in; her head does not turn."
+    },
+    {
+      "id": "1.1a-v2",
+      "model": "video",
+      "seconds": 10,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "The 1916 candle-lit cellar, the night of the ritual, seen at eye level close to the great glass sphere, which fills most of the frame. Inside the clean, clear glass, Aurie, the woman from the identity photographs, kneels on the glass floor in a swirl of pale mist, pale and bare-shouldered, long black hair spreading around her, head lifting toward the camera, eyes just opening, her face large, sharp and clearly visible through the clear glass with no reflection or distortion over it. Outside the sphere, softly out of focus: Roderick Burgess in his burgundy robe with one hand raised, hooded figures holding candles, the chalk circle glowing white on the floor. Her face must be the exact face of the real woman: full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, broad soft nose, small mouth. Tasteful: her hair and the mist cover her body."
+      },
+      "motion": "Mist swirls slowly inside the sphere around her; the chalk circle flares brighter; candle flames lean toward the glass; Aurie slowly opens her eyes fully and looks straight at the camera, breathing. Her head stays nearly still. Very slow push-in. The glass stays clear over her face."
     }
   ],
   "react": {
