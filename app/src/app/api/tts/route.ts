@@ -31,7 +31,8 @@ export async function POST(req: Request) {
             role: "system",
             content: `You are a voice actor recording one line for a film. Speak the user's text aloud exactly as written, word for word. Add nothing, omit nothing, never answer or comment on it. Performance direction: ${direction}`,
           },
-          { role: "user", content: text },
+          // Speaker labels ("MAIDEN:", "CRONE:") are for the reader's eyes, not the voice.
+          { role: "user", content: text.replace(/\b[A-Z]{3,}:\s*/g, "") },
         ],
       },
       45_000,

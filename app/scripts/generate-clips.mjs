@@ -55,6 +55,7 @@ const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
 /** @type {{id:string, kind:string, model:string, seconds:number, keyframe:string, prompt:string, out:string}[]} */
 const clips = [];
 for (const s of spec.shots) {
+  if (s.still) continue; // a still is shown as an image with a slow push-in, never animated
   clips.push({
     id: s.id, kind: "scenes", model: s.model, seconds: s.seconds,
     keyframe: s.keyframe.use ? join(ROOT, s.keyframe.use) : KF(s.id),

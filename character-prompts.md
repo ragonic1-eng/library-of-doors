@@ -222,6 +222,41 @@ SURREAL DETAIL: a long pale hand is pressing out through the fogged glass from i
 
 ---
 
+### 3.8 The Three Who Are One (the Fates, timeless; Episode 2)
+
+**Reference sheet:**
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: three women standing side by side, full length, equal spacing, all facing the camera, the same soft 1.5-metre octabox key light at 45 degrees upper left. LEFT, the MAIDEN: about seventeen, slight, pale, freckled, red-brown hair loose to the waist, bare feet, a plain undyed linen shift, holding a wooden drop spindle with a single thread running from it. CENTRE, the MOTHER: about forty-five, broad-hipped and strong, olive skin, black hair in a heavy plait over one shoulder, a deep red wool dress and a leather apron, holding the same thread taut between her two hands to measure it. RIGHT, the CRONE: about ninety, tiny and bent, white hair thin as smoke, a face folded into a thousand lines, very dark bright eyes, a black shawl, holding a pair of old iron shears open around the same thread. The one thread passes through all three women's hands without a break. Expressions: the maiden curious, the mother patient, the crone amused.
+SURREAL DETAIL: the three women cast a single shared shadow on the backdrop, the shape of one woman with three heads.
+[Style Bible]
+```
+
+---
+
+### 3.9 Johanna Constantine (exorcist, London, 1988, late 30s)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+A British exorcist of thirty-eight, London, 1988. Height around 1.72 m, lean and wiry. Face: angular, sharp cheekbones, a long straight nose broken once and set slightly crooked, thin mouth with a sardonic downturn, a small scar through the upper lip. Skin pale with faint freckles, tired shadows under the eyes. Eyes narrow, pale blue, sharp and amused and sad. Hair dirty blonde, chin length, carelessly pushed back, wet at the ends from rain. Clothing: a long beige trench coat, rain-darkened at the shoulders and hem, collar up; beneath it a loose white shirt, top two buttons open, a thin black tie pulled loose; black trousers; scuffed black Doc Martens boots. A silver ring on the right thumb, nicotine on the fingers of the left hand, an unlit cigarette behind one ear. Posture: weight on one hip, hands in coat pockets, shoulders slightly hunched against cold. Expression: unimpressed, watchful, someone who has seen worse and expects to again.
+SURREAL DETAIL: her shadow on the backdrop is smoking a cigarette she is not holding.
+[Style Bible]
+```
+
+---
+
+### 3.10 Rachel (Johanna's former lover, wasted by the sand, 1988)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+A woman of thirty-five who has been breathing dream-sand for years and is dying of it. Height around 1.65 m, skeletal, collarbones and wrists like sticks. Face: once beautiful, now gaunt, skin stretched thin and grey-white like paper, cheeks hollow, lips cracked and pale, eyes huge and dark, the whites faintly golden, pupils wide, looking at something far away. Hair long, dark brown, matted and dry, spread around her head. Fine golden sand clings to her lips, eyelashes and the corners of her eyes and trickles from one nostril. Clothing: an oversized faded band T-shirt and a thin cardigan with holes at the cuffs. Posture: lying back, limp, one hand curled loosely. Expression: blissful and empty at once, smiling at a dream.
+SURREAL DETAIL: the sand on her face drifts slowly upward instead of falling.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -369,6 +404,29 @@ The heart of the Dreaming's palace before the fall. A vast circular hall whose w
 SURREAL DETAIL: the kneeling man's shadow is cast upward onto the stars.
 [Style Bible]
 ```
+
+**4.10 The crossroads of the Three, at the edge of the Dreaming (Episode 2)**
+```
+A crossroads at night at the edge of the Dreaming: three pale dirt roads meet in a flat clearing of long silver grass, each road running off into a different weather (one into mist, one into rain, one into dry moonlight). At the centre of the crossing, a low ring of three standing stones, one tall, one middle-sized, one short and broken. Above, an enormous moon in three phases at once: one third new, one third full, one third waning. A single wooden signpost with three blank arms. Wind moves the grass in rings. Cold silver light, deep blue shadows, mist pooling in the low ground.
+SURREAL DETAIL: the long grass is made of fine silver thread, and in places it is being spun upward into the sky.
+[Style Bible]
+```
+
+**4.11 London, night rain, 1988 (Episode 2)**
+```
+A narrow terraced street in north London, 1988, after midnight, in steady rain. Wet brick houses with bay windows, a red telephone box, a parked Austin Metro and a black cab, sodium streetlights turning the rain to orange needles, puddles reflecting everything upside down. One house halfway down the street is different: every window dark except one upstairs, which glows a faint wrong gold, and the front garden has grown wild with pale flowers that should not bloom in the rain. Steam rising from a drain.
+SURREAL DETAIL: the rain falling past the gold window falls upward.
+[Style Bible]
+```
+
+**4.12 Rachel's room, overgrown by dreams (Episode 2)**
+```
+A small upstairs bedroom in a London terraced house that has become a dream. The walls, ceiling and furniture are overgrown with soft living growth: pale flesh-pink and gold coral, fungus like folded silk, vines of braided hair with tiny glowing flowers, all of it gently breathing. Fine golden sand lies in drifts across the floor and on every surface like snow. A narrow iron bed against the far wall, its blankets half absorbed into the growth. On the bedside table, a small worn leather pouch, its drawstring open, spilling glowing sand. A single window, curtains rotted, rain outside. Light: the sand itself glows warm gold from below; deep shadows above.
+SURREAL DETAIL: the shadows of the growth on the ceiling move a moment later than the growth itself.
+[Style Bible]
+```
+
+---
 
 ## 5. Kling clip pattern (video, through the gateway)
 

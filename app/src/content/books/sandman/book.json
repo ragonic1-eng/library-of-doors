@@ -46,7 +46,8 @@
           "still": "cellar-1916"
         },
         {
-          "text": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician."
+          "text": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician.",
+          "clip": "1.1a"
         },
         {
           "text": "His son Randall died in the war. Burgess wanted Death herself, to make her give him back."
@@ -299,6 +300,10 @@
         },
         {
           "text": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Aurie can still reach."
+        },
+        {
+          "text": "Aurie reaches into the girl's sleep, and finds her waiting in a dream of the sea.",
+          "clip": "1.3d"
         }
       ],
       "conversation": {
@@ -455,7 +460,8 @@
           "still": "cellar-1916"
         },
         {
-          "text": "Burgess's mistress, Ethel Cripps, runs away in the night."
+          "text": "Burgess's mistress, Ethel Cripps, runs away in the night.",
+          "still": "still-ethel-1926"
         },
         {
           "text": "She takes his money, and she takes your helm, your sand and your ruby."
@@ -464,7 +470,8 @@
           "card": "1947"
         },
         {
-          "text": "Roderick Burgess dies an old man, still waiting for a wish you never granted."
+          "text": "Roderick Burgess dies an old man, still waiting for a wish you never granted.",
+          "still": "still-burgess-1947"
         },
         {
           "text": "His son Alex inherits the house, the order, and the prisoner in the cellar.",
@@ -1001,10 +1008,351 @@
           "text": "Your helm, your sand and your ruby are out there, scattered across the waking world."
         },
         {
+          "text": "Only three women know where every lost thing goes."
+        },
+        {
           "text": "Behind the three doors, other stories are waiting for you."
         },
         {
-          "text": "End of Episode One.",
+          "text": "End of Part One.",
+          "style": "hook"
+        }
+      ],
+      "next": "2.2"
+    },
+    "2.2": {
+      "id": "2.2",
+      "title": "The Three Who Are One",
+      "pov": "3P",
+      "episodeTitle": "Episode 5 · The Three",
+      "music": "the-years",
+      "beats": [
+        {
+          "card": "The edge of the Dreaming",
+          "still": "crossroads"
+        },
+        {
+          "text": "Lost things leave a trail, and only three women can read it."
+        },
+        {
+          "text": "Mortals call them the Fates. They are three, and they are one."
+        },
+        {
+          "text": "Aurie walks to the crossroads at the edge of her realm, and calls them.",
+          "clip": "2.2a"
+        }
+      ],
+      "conversation": {
+        "character": "fates",
+        "maxTurns": 4,
+        "canon": [
+          "It is 1988, days after Aurie's escape. She is weak and has none of her three tools.",
+          "The Three answer at most three questions in one meeting, and they enjoy being asked politely.",
+          "The pouch of sand is in London, near a woman called Johanna Constantine; someone has been breathing the sand for years and it is killing them.",
+          "The helm was traded to a demon and is in Hell.",
+          "The ruby went from Ethel Cripps to her son John Dee, who is locked in a madhouse in America and still dreams of it."
+        ],
+        "opening": "MAIDEN: Look who's come back! MOTHER: Thin as a rake, poor thing. CRONE: Three questions, dearie. Ask them nicely.",
+        "possibilities": [
+          "She asks where her sand, helm or ruby is: they answer plainly, one each, in turn.",
+          "She asks which to seek first: the sand, because someone is dying of it.",
+          "She asks about her own fate: the crone answers with one short chilling riddle, and the others go quiet.",
+          "She is rude or commands them: they mock her, and the maiden stops smiling.",
+          "She thanks them, or offers something: they are delighted and bless her road."
+        ],
+        "suggestions": [
+          "Where is my pouch of sand?",
+          "Where is my helm?",
+          "Where is my ruby?",
+          "Tell me what becomes of me."
+        ],
+        "exits": {
+          "2.2.GO": "Aurie has her answers (or the three questions are spent) and sets off to find the sand in London."
+        },
+        "consequences": {
+          "ASKED_FATE": {
+            "when": "She asks what will become of her, or about her own future or death.",
+            "effects": {
+              "flags": {
+                "ASKED_OWN_FATE": true
+              }
+            },
+            "ripple": "The crone's shears close on nothing. You feel it in your chest.",
+            "echo": {
+              "text": "Dream asked the Three what would become of her, and the crone's answer chilled her.",
+              "knownBy": [
+                "lucienne"
+              ]
+            }
+          },
+          "RUDE_TO_THREE": {
+            "when": "She orders them about, threatens them, or is contemptuous.",
+            "effects": {
+              "traits": {
+                "mercy": -1
+              },
+              "flags": {
+                "RUDE_TO_THREE": true
+              }
+            },
+            "ripple": "The maiden stops smiling."
+          },
+          "THANKED_THREE": {
+            "when": "She thanks them sincerely, or offers them something in return.",
+            "effects": {
+              "traits": {
+                "mercy": 1
+              },
+              "flags": {
+                "THANKED_THREE": true
+              }
+            },
+            "ripple": "The crone cackles, pleased, and the moon grows brighter."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.2.GO",
+          "text": "Thank you, sisters. I will start with the sand.",
+          "effects": {},
+          "next": "2.3",
+          "aftermath": [
+            {
+              "text": "The sand is in London. The helm is in Hell. The ruby is with the son of Ethel Cripps.",
+              "still": "crossroads"
+            },
+            {
+              "text": "And one answer she did not want.",
+              "if": [
+                "ASKED_OWN_FATE"
+              ]
+            },
+            {
+              "text": "The sand comes first. Someone is dying of it.",
+              "style": "hook"
+            }
+          ]
+        }
+      ]
+    },
+    "2.3": {
+      "id": "2.3",
+      "title": "The Sand",
+      "pov": "3P",
+      "episodeTitle": "Episode 6 · The Sand",
+      "music": "cellar-wait",
+      "beats": [
+        {
+          "card": "London · 1988",
+          "still": "london-rain"
+        },
+        {
+          "text": "The sand leads her to a rainy street in north London."
+        },
+        {
+          "text": "Someone is waiting there, as if she has been expecting trouble for years.",
+          "still": "still-johanna"
+        },
+        {
+          "text": "Johanna Constantine. Exorcist, chain-smoker, and the last person who held the pouch."
+        }
+      ],
+      "conversation": {
+        "character": "johanna",
+        "maxTurns": 4,
+        "canon": [
+          "London, 1988, after midnight, in the rain, outside a terraced house whose one upstairs window glows gold.",
+          "Rachel, Johanna's former lover, lives inside and has been breathing the sand for years; the house has turned into a dream.",
+          "Johanna knows what Aurie is. She will take her inside, but she wants Rachel treated gently."
+        ],
+        "opening": "Well. You're real, then. You're after the sand, aren't you, love? It's up there, and so is Rachel. Whatever you do in that house, you do it gently.",
+        "possibilities": [
+          "She asks about Rachel: Johanna tells her, and her jokes wear thin.",
+          "She is kind to Johanna: Johanna admits she loved Rachel and left her.",
+          "She is cold or threatening: Johanna is unimpressed and says so.",
+          "She asks what the sand does to a mortal: it gives them every dream at once, and eats them.",
+          "She agrees to go in: Johanna flicks away her cigarette and leads the way."
+        ],
+        "suggestions": [
+          "Who is Rachel to you?",
+          "What has my sand done to her?",
+          "Take me to her."
+        ],
+        "exits": {
+          "2.3.IN": "Aurie goes into the house, with Johanna leading the way."
+        },
+        "consequences": {
+          "JOHANNA_CONFIDED": {
+            "when": "She is kind to Johanna or asks gently about Rachel, and Johanna admits she loved her and left.",
+            "trust": 2,
+            "effects": {
+              "flags": {
+                "JOHANNA_CONFIDED": true
+              }
+            },
+            "ripple": "Johanna looks away, up at the gold window.",
+            "echo": {
+              "text": "Johanna Constantine told Dream that she loved Rachel and left her when it got hard.",
+              "knownBy": [
+                "johanna"
+              ]
+            }
+          },
+          "SCARED_JOHANNA": {
+            "when": "She threatens Johanna or shows her power to frighten her.",
+            "fear": 2,
+            "effects": {
+              "traits": {
+                "mercy": -1
+              }
+            },
+            "ripple": "Every streetlight on the road goes out at once, then flickers back."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.3.IN",
+          "text": "Take me to her.",
+          "effects": {},
+          "next": "2.4",
+          "aftermath": [
+            {
+              "text": "Johanna flicks her cigarette into the gutter, and leads the way.",
+              "clip": "2.3a"
+            }
+          ]
+        }
+      ]
+    },
+    "2.4": {
+      "id": "2.4",
+      "title": "Rachel",
+      "pov": "POV",
+      "music": "cellar-dread",
+      "beats": [
+        {
+          "text": "Inside, the house has become a dream. It breathes.",
+          "clip": "2.3b"
+        },
+        {
+          "text": "Rachel has breathed the sand for years. It is the only thing keeping her alive, and it is killing her."
+        },
+        {
+          "text": "Without your ruby you cannot give her life back. Only an ending: a kind one, or a cruel one."
+        }
+      ],
+      "conversation": {
+        "character": "johanna",
+        "maxTurns": 3,
+        "canon": [
+          "They stand in Rachel's overgrown room. Rachel lies on the bed, wasted, dreaming, beyond speech.",
+          "When the pouch is taken back, Rachel will die. Aurie can make it gentle by giving her a last good dream, or simply take the pouch and let her die in pain.",
+          "Aurie does not have the power to save Rachel's life without her ruby, and Johanna knows it.",
+          "The ruby is not here: it is with John Dee in an American madhouse. Aurie holds only what she came with."
+        ],
+        "opening": "Christ. Rach. Look at her. You can't fix this, can you? Then for God's sake, make it kind.",
+        "possibilities": [
+          "She promises to be gentle, or gives Rachel a good dream: Johanna weeps quietly and thanks her, gruffly.",
+          "She takes the pouch coldly: Johanna is horrified and curses her.",
+          "She tries to save Rachel: she cannot; Johanna tells her not to drag it out.",
+          "She asks Johanna what Rachel loved: Johanna tells her about a summer, a garden, the two of them young."
+        ],
+        "suggestions": [
+          "What did she love, when she was well?"
+        ],
+        "exits": {
+          "2.4.A": "Aurie gives Rachel a gentle last dream and lets her die in peace.",
+          "2.4.B": "Aurie takes the pouch and leaves Rachel to die as she will."
+        },
+        "consequences": {
+          "HEARD_RACHEL": {
+            "when": "She asks Johanna what Rachel loved, and listens.",
+            "trust": 1,
+            "effects": {
+              "flags": {
+                "HEARD_RACHEL": true
+              }
+            },
+            "ripple": "For a moment the room smells of cut grass and summer."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "2.4.A",
+          "text": "Give her one last good dream, and let her go in peace.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "CONSTANTINE_ALLY": true
+            },
+            "relic": "sand"
+          },
+          "next": "end-2a",
+          "aftermath": [
+            {
+              "text": "You give Rachel a dream: a summer garden, and Johanna young beside her.",
+              "clip": "2.3c"
+            },
+            {
+              "text": "It is the garden Johanna told you about.",
+              "if": [
+                "HEARD_RACHEL"
+              ]
+            },
+            {
+              "text": "She dies smiling. The sand flows home into the pouch."
+            },
+            {
+              "text": "Johanna does not thank you. But she will remember this."
+            }
+          ]
+        },
+        {
+          "id": "2.4.B",
+          "text": "Take the pouch. Her pain is not my concern.",
+          "effects": {
+            "traits": {
+              "mercy": -2
+            },
+            "flags": {
+              "CONSTANTINE_CURSE": true
+            },
+            "relic": "sand"
+          },
+          "next": "end-2a",
+          "aftermath": [
+            {
+              "text": "You take the pouch. Behind you, Rachel begins to scream.",
+              "still": "rachel-room"
+            },
+            {
+              "text": "Johanna's curse follows you all the way down the stairs."
+            }
+          ]
+        }
+      ]
+    },
+    "end-2a": {
+      "id": "end-2a",
+      "title": "The first of three",
+      "type": "end",
+      "pov": "3P",
+      "music": "library",
+      "beats": [
+        {
+          "text": "The pouch of sand is hers again. One of three.",
+          "still": "library-hub"
+        },
+        {
+          "text": "She feels the Dreaming stir, a little stronger."
+        },
+        {
+          "text": "Next, the helm. In Hell.",
           "style": "hook"
         }
       ]

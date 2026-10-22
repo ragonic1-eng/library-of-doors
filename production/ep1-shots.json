@@ -1,5 +1,5 @@
 {
-  "_about": "Episode 1 shot list. Each shot = a keyframe still (composed from approved plates and character sheets, or an approved image used directly) + a motion prompt for image-to-video. Paths are relative to the project root. model: 'video' = MODEL_VIDEO, 'hero' = MODEL_VIDEO_HERO. Reaction loops are generated from the 'react' block.",
+  "_about": "Episode 1 shot list. Each shot = a keyframe still (composed from approved plates and character sheets, or an approved image used directly) + a motion prompt for image-to-video. Paths are relative to the project root. model: 'video' = MODEL_VIDEO, 'hero' = MODEL_VIDEO_HERO. Reaction loops are generated from the 'react' block. Also holds the Episode 2 shots and stills (\"still\": true shots are images only).",
   "camera": "Hand-held camera with gentle operator sway and micro-shake, as if filmed by someone standing in the room.",
   "keep": "Keep every face, hair, costume and the set exactly as in the reference image. Photoreal, film grain, no text, no morphing, no extra people.",
   "shots": [
@@ -332,6 +332,116 @@
         "use": "characters/lucienne/portrait.png"
       },
       "motion": "Lucienne turns toward the camera with the lantern raised, relief breaking through her composure, and her lips form the words 'My lady'; the book on the shelf writes another line by itself. Slow push-in."
+    },
+    {
+      "id": "1.1a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Wide shot of the 1916 candle-lit cellar from the location plate, the night of the ritual. Roderick Burgess, the man from the character sheet, in his burgundy ceremonial robe, stands at the wooden lectern reading aloud from a huge open grimoire, one hand raised. Around the chalk circle stand seven hooded figures in dark brown robes, faces hidden in shadow, each holding a candle. In the centre the great glass sphere on its iron stand is empty, but a faint pale mist has begun to swirl inside it, and the chalk lines glow faintly white."
+      },
+      "motion": "The hooded figures sway as they chant; every candle flame leans toward the sphere; the chalk circle blazes white; inside the glass the mist thickens and condenses into the pale shape of a woman curled on the glass floor, long black hair spreading. Burgess lowers his hand and stares. Slow push-in toward the sphere."
+    },
+    {
+      "id": "1.3d",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/1.3b/keyframe.png"
+        ],
+        "prompt": "The same girl as in the reference image, about ten years old, Edwardian, dark hair, now inside her own dream: she stands barefoot in a long white nightdress on a sunlit clifftop meadow above a bright blue sea, gulls overhead, wildflowers around her ankles. Behind her, at the meadow's edge, grows a tall hedge of deep red roses, and half hidden among the roses, out of focus, an elegant figure in a pale suit watches, face not visible. She looks toward the camera as if someone invisible has just spoken to her. Warm golden light, a soft dreamy glow at the edges of the frame."
+      },
+      "motion": "The girl tilts her head, listening to someone unseen, then smiles shyly toward the camera; the wind moves her nightdress and the grass; gulls wheel overhead; among the roses the half-hidden figure steps back and is gone, leaving the roses trembling. Gentle hand-held drift toward the girl."
+    },
+    {
+      "id": "still-ethel-1926",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Night, 1926: the narrow stone stairway leading up out of the cellar from the location plate. A young woman of about twenty-five, Ethel Cripps, slim and sharp-faced, red lipstick, a black cloche hat and a camel coat with a fur collar, hurries up the stairs looking back over her shoulder, frightened and exhilarated. She clutches an open leather Gladstone bag to her chest; from its mouth show a red ruby the size of an egg, the curve of a dark helm shaped like an old gas mask with a long ridged breathing tube, and a small leather pouch leaking golden sand. Below and behind her the candle-lit cellar, the glass sphere glowing faintly. A single candle in her other hand lights her face from below."
+      }
+    },
+    {
+      "id": "still-burgess-1947",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "1947, the cellar from the location plate, cold and dim, most candles burned down to stubs. Roderick Burgess, the man from the character sheet, now very old, thin and white-bearded, a tartan blanket over his knees, sits dead in a high-backed leather armchair facing the great glass sphere, eyes open, one hand still lifted toward it. A newspaper has slid from his lap to the stone floor. Inside the sphere a dark motionless shape of a woman sits with her back to him."
+      }
+    },
+    {
+      "id": "2.2a",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "characters/fates/sheet.png",
+          "assets/plates/crossroads/plate.png"
+        ],
+        "prompt": "Wide shot at night of the crossroads from the location plate, seen from the road as someone approaches, so no one else is in frame. At the centre, beside the standing stones, the three women from the character sheet stand together: the red-haired maiden with her spindle, the mother in red with the thread taut between her hands, the tiny crone in black with her iron shears, one unbroken thread running through all three. Mist at their feet, silver grass, the moon above."
+      },
+      "motion": "The mist parts; the three women turn their heads toward the camera one after another, maiden, mother, crone; the thread between their hands glints and runs; the crone slowly opens her shears; the silver grass moves in rings around them. Slow push-in along the road."
+    },
+    {
+      "id": "2.3a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/london-rain/plate.png",
+          "characters/johanna/sheet.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The London terraced street from the location plate, now after midnight in heavy rain, sodium streetlights, puddles. Seen from behind, two women walk side by side toward the house whose one upstairs window glows a wrong gold: on the left Johanna Constantine from her character sheet in her rain-dark trench coat; on the right a tall woman with very long black hair in a long black coat over a black gown (seen only from behind, face never visible)."
+      },
+      "motion": "The two women walk away from the camera toward the house through the rain; the blonde woman glances sideways at her companion; the gold window flickers; water splashes from their steps. Follow from behind."
+    },
+    {
+      "id": "still-johanna",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/johanna/sheet.png",
+          "assets/plates/london-rain/plate.png"
+        ],
+        "prompt": "Close-up at night in heavy rain: Johanna Constantine, the woman from the character sheet, sheltering under a dripping porch on the London street from the location plate, cupping a match to light a cigarette, her pale eyes lifted straight to the camera, wary and tired, as if looking at someone she did not expect and is not sure she wants. Sodium light on one side of her face, the gold glow of an upstairs window on the other, rain streaks behind her."
+      }
+    },
+    {
+      "id": "2.3b",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/rachel-room/plate.png",
+          "characters/rachel/sheet.png"
+        ],
+        "prompt": "Point of view from the doorway of the overgrown bedroom from the location plate. Rachel, the woman from the character sheet, lies on the iron bed half absorbed into the breathing growth, golden sand on her lips and eyelashes, smiling at nothing. On the bedside table the small leather pouch lies open, spilling glowing sand across the floor."
+      },
+      "motion": "The growth on the walls breathes slowly; sand drifts upward from Rachel's lips; her eyes slide toward the doorway without recognition; the camera moves slowly into the room; a long pale woman's hand enters the frame from the camera and reaches toward the pouch."
+    },
+    {
+      "id": "2.3c",
+      "model": "video",
+      "seconds": 10,
+      "keyframe": {
+        "refs": [
+          "assets/plates/rachel-room/plate.png",
+          "characters/rachel/sheet.png"
+        ],
+        "prompt": "Close on Rachel, the woman from the character sheet, lying on the iron bed in the overgrown room from the location plate, her face beginning to soften into peace; a long pale woman's hand rests gently on her forehead from the edge of the frame. The small leather pouch lies open on the blanket beside her."
+      },
+      "motion": "Rachel's face softens, her eyes close, she smiles; the growth on the walls withers into golden dust and the dust streams in a slow spiral into the open leather pouch until the room is bare and quiet; grey dawn light grows in the window. Very slow push-in."
     }
   ],
   "react": {

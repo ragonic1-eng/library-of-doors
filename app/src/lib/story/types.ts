@@ -57,6 +57,7 @@ export interface Conversation {
   exits: Record<string, string>; // choice id -> what reaching it looks like
   opening?: string; // the character's first line if the player stays silent
   possibilities?: string[]; // likely approaches and how the scene bends to each (keeps improvisation on-story)
+  suggestions?: string[]; // extra lines offered under Ideas that keep the talk going (questions, not exits)
   consequences?: Record<string, Consequence>; // tag -> consequence; each fires at most once per playthrough
 }
 

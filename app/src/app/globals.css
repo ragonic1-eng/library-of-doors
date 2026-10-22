@@ -433,3 +433,4 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .endcard { gap: 0.4rem; padding: 1rem; }
   .endcard .echoes { max-height: 40dvh; font-size: 0.9rem; gap: 0.35rem; }
 }
+.endactions .primary { border-color: var(--accent); color: var(--accent); }

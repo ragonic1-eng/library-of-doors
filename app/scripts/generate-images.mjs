@@ -100,6 +100,10 @@ character("alex-old", "### 3.4", "**Reference sheet", "**Hero portrait", [join(C
 character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
+// Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"]]) {
+  jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs: [] });
+}
 
 // Movement library (character-prompts.md §3b): expression and pose sheets, built from the approved reference sheet.
 const EXPR_FRAME = block("## 3b.", "Expression frame");
@@ -185,6 +189,9 @@ const plates = [
   ["guard-dream", "**4.7 "],
   ["library-hub", "**4.8 "],
   ["throne-room", "**4.9 "],
+  ["crossroads", "**4.10 "],
+  ["london-rain", "**4.11 "],
+  ["rachel-room", "**4.12 "],
 ];
 for (const [id, label, extra] of plates) {
   jobs.push({ id, group: "plates", dir: join(P(id), "candidates"), approved: join(P(id), "plate.png"), prompt: () => assemble(block("## 4. Location plates", label), extra), refs: [] });

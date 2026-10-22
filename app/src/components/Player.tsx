@@ -629,6 +629,11 @@ export default function Player({ book }: { book: Book }) {
           </div>
           {showOptions && (
             <ul className="options">
+              {(scene.conversation.suggestions ?? []).map((q) => (
+                <li key={q}>
+                  <button onClick={() => void send(q)} disabled={busy}>{q}</button>
+                </li>
+              ))}
               {options.map((c) => (
                 <li key={c.id}>
                   <button onClick={() => void send(c.text, c.id)} disabled={busy}>{c.text}</button>
@@ -655,7 +660,7 @@ export default function Player({ book }: { book: Book }) {
               autoCapitalize="sentences"
             />
             <button type="submit" disabled={busy || !input.trim()}>Say</button>
-            {options.length > 0 && (
+            {options.length + (scene.conversation.suggestions?.length ?? 0) > 0 && (
               <button type="button" className="ghost" onClick={() => setShowOptions((s) => !s)}>
                 {showOptions ? "Hide" : "Ideas"}
               </button>
@@ -687,6 +692,7 @@ export default function Player({ book }: { book: Book }) {
           </ul>
           <p className="meta">Mercy {profile.traits.mercy > 0 ? `+${profile.traits.mercy}` : profile.traits.mercy}</p>
           <div className="endactions">
+            {scene.next && book.scenes[scene.next] && <button className="primary" onClick={() => goTo(scene.next!)}>Continue the story</button>}
             <button onClick={playAgain}>Play again, choose differently</button>
             <a href="/">Return to the library</a>
           </div>
