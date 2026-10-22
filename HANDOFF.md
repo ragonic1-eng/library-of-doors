@@ -134,5 +134,8 @@ What ChatGPT cannot do from its sandbox: generate images, clips, voices or music
 - Voices: gpt-audio sometimes ANSWERED a line instead of reading it. lib/server/voice.ts synthLine fences the line as a script, checks the returned transcript, retries up to 3 times. Stage directions in *asterisks* are moved out of the spoken line into narration. MiniMax speech-2.8-turbo is on the key but offers only two Mandarin voices (WAV), so it is not used.
 - Update notice: /api/version vs NEXT_PUBLIC_BUILD_ID; an open tab offers "Update now" when a newer deployment is live.
 - Part Four live: 4.1 Hell empty (Lucifer resigns, key, wings), 4.2 the suitors (multi-speaker card `suitors`), 4.3 Nada, end-ep4. Loki and Nuala redesigned to resemble no real actors (always check new faces for celebrity likeness).
-- Spend: Y548.10 total (Episode Four about Y21).
+- Spend: Y558.87 total (Episode Four about Y21; audit, tests and narration about Y10).
+- Parts Three/Four audit: new scene 3.0 The Mending (Lucienne brings Destiny's letter; can explain the Endless); bridges for Nada's history, every route into Hell, the suitors' arrival, Nada's arrival; ends of Parts Three/Four reflect choices.
+- AI replies: schema starts with a private `subtext` (what she really feels/wants) and `mood`, then `dialogue` (<=40 words); prompt sections READ HER FIRST and SOUND LIKE A PERSON; mood also directs the voice (voice.ts DELIVERY).
+- Fixed: the player's newest line was sent twice (history + playerLine). The route now drops the duplicate; this also fixes scenes ending one turn early.
 - Next in the source (story-map.md Episode 5, "Reflections on Humanity"): Calliope, Rose Walker and the Corinthian, Hob Gadling, Lyta Hall. Needs a new budget.
