@@ -1,0 +1,42 @@
+[
+  {
+    "file": "crossroads-v1.mp3",
+    "seconds": 40.0,
+    "bytes": 320684,
+    "peak_dbfs": -15.72,
+    "seam_step": 5e-05,
+    "decoded": true
+  },
+  {
+    "file": "friend-v1.mp3",
+    "seconds": 40.0,
+    "bytes": 320684,
+    "peak_dbfs": -15.8,
+    "seam_step": 6e-05,
+    "decoded": true
+  },
+  {
+    "file": "hell-v1.mp3",
+    "seconds": 40.0,
+    "bytes": 320684,
+    "peak_dbfs": -15.41,
+    "seam_step": 3e-05,
+    "decoded": true
+  },
+  {
+    "file": "ruby-v1.mp3",
+    "seconds": 40.0,
+    "bytes": 320684,
+    "peak_dbfs": -15.08,
+    "seam_step": 1e-05,
+    "decoded": true
+  },
+  {
+    "file": "wings-v1.mp3",
+    "seconds": 40.0,
+    "bytes": 320684,
+    "peak_dbfs": -16.12,
+    "seam_step": 2e-05,
+    "decoded": true
+  }
+]

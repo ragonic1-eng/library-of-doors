@@ -1,17 +1,7 @@
-// Server-only: a character's voice for one line, guaranteed to be the scripted words.
+// Server-only: a character voice with script/transcript validation.
+import { faithful } from "@/lib/server/faithful";
 import { getCharacter } from "@/lib/story/load";
 import { gatewayJson, models } from "@/lib/server/gateway";
-
-const words = (t: string) => t.toLowerCase().replace(/[^a-z0-9' ]+/g, " ").split(/\s+/).filter(Boolean);
-
-/** Did the voice say the script (and not answer it, or add to it)? */
-function faithful(script: string, heard: string) {
-  const a = words(script), h = words(heard);
-  if (!h.length) return false;
-  const want = new Set(a);
-  const hit = h.filter((w) => want.has(w)).length;
-  return h.length <= a.length * 1.25 + 2 && hit / Math.max(a.length, 1) >= 0.8;
-}
 
 /** How each mood should colour the delivery. */
 const DELIVERY: Record<string, string> = {
@@ -41,7 +31,7 @@ export async function synthLine(bookId: string, character: string, text: string,
   if (!script) return null;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const data = await gatewayJson<{ choices: { message: { audio?: { data?: string; transcript?: string } } }[] }>(
+      const data = await gatewayJson<{ choices: { finish_reason?: string; message: { audio?: { data?: string; transcript?: string } } }[] }>(
         "/chat/completions",
         {
           model: models.tts,
@@ -59,9 +49,9 @@ export async function synthLine(bookId: string, character: string, text: string,
         30_000,
       );
       const audio = data.choices?.[0]?.message?.audio;
-      if (!audio?.data) continue;
-      if (audio.transcript && !faithful(script, audio.transcript)) {
-        console.error(`tts: off-script take ${attempt} for "${script.slice(0, 40)}": "${audio.transcript.slice(0, 80)}"`);
+      if (!audio?.data || data.choices?.[0]?.finish_reason === "length") continue;
+      if (!faithful(script, audio.transcript)) {
+        console.error(`tts: off-script take ${attempt} for "${script.slice(0, 40)}": "${(audio.transcript ?? "missing transcript").slice(0, 80)}"`);
         continue;
       }
       return Buffer.from(audio.data, "base64");
@@ -85,3 +75,4 @@ export function splitParts(text: string, labelled: boolean): { speaker?: string;
   }
   return out;
 }
+

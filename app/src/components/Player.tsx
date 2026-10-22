@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
 import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, saveProfile } from "@/lib/state/profile";
 import { lineId } from "@/lib/story/lines";
+import { watchPlayback, speechChunks } from "@/lib/story/audio";
+import { sceneScore, localScoreUrl } from "@/lib/story/score";
 import Ambience from "@/components/Ambience";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
@@ -284,11 +286,18 @@ export default function Player({ book }: { book: Book }) {
     const url = lineUrl(text);
     const a = lineCache.current.get(url) ?? new Audio(url);
     lineCache.current.delete(url);
-    let finished = false, shown = false;
+    let finished = false, shown = false, silentMode = false;
+    let readTimer: ReturnType<typeof setInterval> | undefined;
+    let showTimer: ReturnType<typeof setTimeout> | undefined;
+    let unwatch = () => {};
     const show = () => { if (!shown && !finished) { shown = true; onStart(); } };
     const finish = () => {
       if (finished) return;
       finished = true;
+      unwatch();
+      clearInterval(readTimer);
+      clearTimeout(showTimer);
+      a.onplaying = a.onended = a.onerror = null;
       stoppers.current.delete(stop);
       playing.current.delete(a);
       a.pause();
@@ -298,24 +307,34 @@ export default function Player({ book }: { book: Book }) {
     const stop = () => finish();
     stoppers.current.add(stop);
     duck();
-    a.onplaying = show;
+    a.onplaying = () => { if (silentMode) a.pause(); else show(); };
     a.onended = finish;
     // No audio for this line: show it and give time to read it.
-    const silent = () => { show(); setTimeout(finish, readingMs(text)); };
+    const silent = () => {
+      if (finished || silentMode) return;
+      silentMode = true;
+      unwatch();
+      a.pause();
+      show();
+      let remaining = readingMs(text);
+      readTimer = setInterval(() => {
+        if (!pausedRef.current) remaining -= 250;
+        if (remaining <= 0) finish();
+      }, 250);
+    };
     a.onerror = silent;
     a.currentTime = 0;
     playing.current.add(a);
+    unwatch = watchPlayback(a, () => pausedRef.current, silent);
     a.play().catch(silent);
-    setTimeout(show, 2500); // a slow network must not hide the words for long
-    // Never hang the story on one line (but a paused game is not a hung one).
-    const guard = () => (pausedRef.current ? setTimeout(guard, 2000) : finish());
-    setTimeout(guard, readingMs(text) * 2 + 4000);
+    showTimer = setTimeout(show, 2500); // a slow network must not hide the words for long
+    // Healthy playback finishes only on ended; slow delivery and pauses have no deadline.
   });
 
   /** Fetch a character's voice for one line (or one speaker's part of a line). */
   const fetchVoice = useCallback(async (text: string, character: string, speaker?: string): Promise<Blob | null> => {
     try {
-      const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }) });
+      const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }), signal: AbortSignal.timeout(95_000) });
       return res.ok ? await res.blob() : null;
     } catch {
       return null;
@@ -327,46 +346,76 @@ export default function Player({ book }: { book: Book }) {
     let startRes!: () => void, endRes!: () => void;
     const started = new Promise<void>((r) => (startRes = r));
     const ended = new Promise<void>((r) => (endRes = r));
-    let stopped = false;
+    let stopped = false, ducked = false;
     let a: HTMLAudioElement | null = null;
+    let objectUrl: string | null = null;
+    let utterance: SpeechSynthesisUtterance | null = null;
+    let unwatch = () => {};
     const stop = () => {
+      if (stopped) return;
       stopped = true;
+      unwatch();
       setTalking(false);
-      if (a) { a.pause(); playing.current.delete(a); }
+      if (a) {
+        a.onplaying = a.onended = a.onerror = null;
+        a.pause();
+        playing.current.delete(a);
+      }
+      if (utterance) {
+        utterance.onstart = utterance.onend = utterance.onerror = utterance.onboundary = null;
+        window.speechSynthesis.cancel();
+        utterance = null;
+      }
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+      if (ducked) unduck();
       stoppers.current.delete(stop);
       startRes();
       endRes();
     };
+    const begin = () => {
+      if (stopped) return;
+      if (!ducked) { ducked = true; duck(); }
+      setTalking(true);
+      startRes();
+    };
     stoppers.current.add(stop);
     void (async () => {
-      const b = await blob;
+      const b = await blob.catch(() => null);
+      await waitUnpaused();
       if (stopped) return;
       if (b) {
-        a = new Audio(URL.createObjectURL(b));
+        objectUrl = URL.createObjectURL(b);
+        a = new Audio(objectUrl);
         const el = a;
-        duck();
-        el.onplaying = () => { setTalking(true); startRes(); };
-        const done = () => { setTalking(false); unduck(); playing.current.delete(el); stoppers.current.delete(stop); endRes(); };
-        el.onended = done;
-        el.onerror = () => { startRes(); done(); };
-        await waitUnpaused();
-        if (stopped) return;
+        el.onplaying = begin;
+        el.onended = stop;
+        el.onerror = stop;
         playing.current.add(el);
-        el.play().catch(() => { startRes(); done(); });
+        unwatch = watchPlayback(el, () => pausedRef.current, stop);
+        el.play().catch(stop);
         return;
       }
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        const u = new SpeechSynthesisUtterance(text);
-        u.rate = 0.92;
-        u.onstart = () => { setTalking(true); startRes(); };
-        u.onend = () => { setTalking(false); endRes(); };
-        u.onerror = () => { startRes(); endRes(); };
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(u);
-      } else {
-        startRes();
-        endRes();
-      }
+        const chunks = speechChunks(text);
+        let index = 0;
+        const progress = { currentTime: 0 };
+        unwatch = watchPlayback(progress, () => pausedRef.current, stop);
+        const next = async () => {
+          await waitUnpaused();
+          if (stopped) return;
+          if (index >= chunks.length) { stop(); return; }
+          // Keep a strong reference until end: mobile browsers may otherwise drop it.
+          utterance = new SpeechSynthesisUtterance(chunks[index++]);
+          utterance.lang = "en-GB";
+          utterance.rate = 0.92;
+          utterance.onstart = () => { progress.currentTime++; begin(); };
+          utterance.onboundary = () => { progress.currentTime++; };
+          utterance.onend = () => { progress.currentTime++; void next(); };
+          utterance.onerror = stop;
+          window.speechSynthesis.speak(utterance);
+        };
+        void next();
+      } else stop();
     })();
     return { started, ended };
   }, []);
@@ -697,7 +746,8 @@ export default function Player({ book }: { book: Book }) {
     // Her words decided the scene: let the character finish speaking, then the story moves on.
     const c = reply.decision ? sc.choices?.find((x) => x.id === reply.decision) : undefined;
     if (c) {
-      await Promise.race([v.ended, sleep(25000)]);
+      await v.ended;
+      await waitUnpaused();
       await sleep(700);
       if (token === runRef.current) void choose(c);
     }
@@ -855,7 +905,7 @@ export default function Player({ book }: { book: Book }) {
   }, [started]);
 
   // Music follows the scene; a scene without a track keeps the previous one, "none" stops it.
-  const wantedTrack = scene.music ?? musicRef.current.track;
+  const wantedTrack = sceneScore(book.id, scene.id, scene.music) ?? musicRef.current.track;
   useEffect(() => {
     if (!started) return;
     const m = musicRef.current;
@@ -866,7 +916,7 @@ export default function Player({ book }: { book: Book }) {
     m.track = next;
     m.a = null;
     if (!next) return;
-    const a = new Audio(assetUrl("music", next));
+    const a = new Audio(localScoreUrl(next) ?? assetUrl("music", next));
     a.loop = true;
     a.volume = 0;
     a.play().then(() => void fadeTo(a, bedTarget())).catch(() => { /* missing track or blocked: silence */ });
@@ -1287,3 +1337,4 @@ export default function Player({ book }: { book: Book }) {
     </main>
   );
 }
+

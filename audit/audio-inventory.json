@@ -1,0 +1,4905 @@
+{
+  "network": "<urlopen error [Errno 1] Operation not permitted>",
+  "scene_count": 43,
+  "narration_references": 352,
+  "unique_recordings": 348,
+  "scenes": [
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "title": "The Queen of Dreams",
+      "narrator_references": 5,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "throne",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "title": "The ritual at Fawney Rig",
+      "narrator_references": 6,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "title": "Burgess's bargain",
+      "narrator_references": 10,
+      "character": "burgess",
+      "opening": "You are awake. Good. I am Roderick Burgess, and you, creature, are mine. Give me what I want, and you will see daylight again. Immortality. Power. My son. Well?",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "title": "The world without dreams",
+      "narrator_references": 13,
+      "character": "unity",
+      "opening": "Is somebody there? I can't wake up. It's ever so quiet here... and something keeps visiting me that isn't you. It smells of roses.",
+      "inner_voice": false,
+      "music": "the-years",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "title": "Alex Burgess",
+      "narrator_references": 14,
+      "character": "alex",
+      "opening": "I know you can hear me. I have always known. If I let you go... will you hurt me?",
+      "inner_voice": true,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "title": "Escape",
+      "narrator_references": 10,
+      "character": "alex-old",
+      "opening": "Please. Please, I never... it was my father, it was all my father. I kept you safe down here. I kept them from hurting you. What... what are you going to do to me?",
+      "inner_voice": false,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "title": "The library between",
+      "narrator_references": 7,
+      "character": "lucienne",
+      "opening": "My lady. Seventy-two years. We thought... forgive me. We thought you were dead. The realm is not as you left it.",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep1",
+      "title": "End of the first night",
+      "narrator_references": 4,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "title": "The Three Who Are One",
+      "narrator_references": 9,
+      "character": "fates",
+      "opening": "MAIDEN: Look who's come home at last! MOTHER: Thin as a rake, poor love. CRONE: Three questions, dearie. Ask them nicely, and ask them well.",
+      "inner_voice": null,
+      "music": "the-years",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "title": "The Sand",
+      "narrator_references": 6,
+      "character": "johanna",
+      "opening": "Well. You're real, then. You're after the sand, aren't you, love? It's up there, and so is Rachel. Whatever you do in that house, you do it gently.",
+      "inner_voice": null,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "title": "Rachel",
+      "narrator_references": 8,
+      "character": "johanna",
+      "opening": "Christ. Rach. Look at her. You can't fix this, can you? Then for God's sake, make it kind.",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2a",
+      "title": "The first of three",
+      "narrator_references": 3,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "title": "The Gates of Hell",
+      "narrator_references": 9,
+      "character": "nada",
+      "opening": "You came. After ten thousand years, you came. Have you forgiven me? Will you let me go?",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.6",
+      "title": "Lucifer",
+      "narrator_references": 4,
+      "character": "lucifer",
+      "opening": "Lady Dream. Seventy-two years in a bottle, and you come to my house to ask for favours. How refreshing. What do you want?",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "title": "The Oldest Game",
+      "narrator_references": 8,
+      "character": "choronzon",
+      "opening": "I am a dire wolf, lady. A beast of prey, a stalker, a slayer. Your move.",
+      "inner_voice": null,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "title": "Lucifer's Threat",
+      "narrator_references": 6,
+      "character": "lucifer",
+      "opening": "Well played. And yet you have no power here, Lady Dream. Tell me. Why should I let you leave?",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2b",
+      "title": "The second of three",
+      "narrator_references": 3,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "title": "Twenty-Four Hours",
+      "narrator_references": 10,
+      "character": null,
+      "opening": null,
+      "inner_voice": true,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.10",
+      "title": "Inside the Ruby",
+      "narrator_references": 4,
+      "character": "dee",
+      "opening": "There you are. My mother's stone, and you inside it like a fly in amber. If I break it, I break you. Shall I?",
+      "inner_voice": null,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.11",
+      "title": "Dee's Fate",
+      "narrator_references": 4,
+      "character": "dee",
+      "opening": "Please. Please don't. I only wanted... I only wanted to be somebody. Mother never came back for me.",
+      "inner_voice": null,
+      "music": "the-years",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "title": "The Sound of Her Wings",
+      "narrator_references": 7,
+      "character": "death",
+      "opening": "You got your tools back, and you're sitting here feeling sorry for yourself. Honestly, you're the most self-pitying being I know. Want some bread?",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "title": "The Queen of Dreams, restored",
+      "narrator_references": 5,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.1",
+      "title": "Destiny's Garden",
+      "narrator_references": 4,
+      "character": "destiny",
+      "opening": "Sister. You are expected. Everything that happens tonight is already written here. Come in.",
+      "inner_voice": null,
+      "music": "throne",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "title": "The Family",
+      "narrator_references": 21,
+      "character": "endless",
+      "opening": "DESTINY: The family is gathered. DELIRIUM: You came! You came, and you're all made of night! DESIRE: And still wearing that wounded face. Tell me, sister. How is the woman you left in Hell?",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "title": "The family",
+      "narrator_references": 6,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "title": "Hell, Empty",
+      "narrator_references": 13,
+      "character": "lucifer",
+      "opening": "Lady Dream. You came. I have resigned. Hell is closed, the damned are evicted, and I have one last gift for you. And one last favour to ask.",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "title": "The Suitors",
+      "narrator_references": 18,
+      "character": "suitors",
+      "opening": "ODIN: Lady Dream. We have come a long way, and winter is coming for the gods. AZAZEL: Hell is ours by right. Give it back, and I will give you what is in my jar. CLURACAN: Faerie asks only to be your friend, and has brought you a present. REMIEL: We will abide by your decision.",
+      "inner_voice": null,
+      "music": "throne",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "title": "Nada",
+      "narrator_references": 9,
+      "character": "nada",
+      "opening": "So. You freed me. Is this where I thank you, Dream? For ten thousand years in the ice?",
+      "inner_voice": null,
+      "music": "the-years",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "title": "The key and the queen",
+      "narrator_references": 10,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "title": "The Mending",
+      "narrator_references": 6,
+      "character": "lucienne",
+      "opening": "My lady. This came for you an hour ago. It carries Destiny's seal. The family is gathering tonight, in his garden.",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "title": "Paul",
+      "narrator_references": 6,
+      "character": "paul",
+      "opening": "Please. Please, my lady. He was a frightened boy in a cold house. He never hurt you. Take it off him. Put it on me, if somebody has to pay.",
+      "inner_voice": null,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4b",
+      "title": "Johanna's Curse",
+      "narrator_references": 4,
+      "character": "johanna",
+      "opening": "You could have made it kind. You had it in your hand, and you chose that. I hope you hear her screaming every time you open that pouch.",
+      "inner_voice": null,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "title": "A Prayer, Kept",
+      "narrator_references": 7,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "title": "Calliope",
+      "narrator_references": 8,
+      "character": "calliope",
+      "opening": "You came. I asked the Three to send you, and I hated asking. Sixty years, Dream. Where were you?",
+      "inner_voice": null,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "title": "Richard Madoc",
+      "narrator_references": 13,
+      "character": "madoc",
+      "opening": "Look, whoever you are, she's mine. I paid for her. She isn't even human, you know. It's not as if I hurt anyone real.",
+      "inner_voice": null,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "title": "The Corinthian",
+      "narrator_references": 15,
+      "character": "corinthian",
+      "opening": "My lady. You came all this way to hear me speak? I'm touched. Truly. You made me, after all. Are you proud?",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "title": "The Vortex",
+      "narrator_references": 10,
+      "character": "rose",
+      "opening": "You're the lady from my dreams, aren't you? Please. Tell me what's happening. Everything's falling apart, and I think it's because of me.",
+      "inner_voice": null,
+      "music": "escape",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "title": "Unity",
+      "narrator_references": 8,
+      "character": "unity-old",
+      "opening": "It should have been me, dear. I was meant to be the vortex. I've had a long life, mostly asleep. Let me give Rose the rest of hers.",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "title": "Desire's Threshold",
+      "narrator_references": 5,
+      "character": "desire",
+      "opening": "Sister. You look so serious. Did something happen? You didn't kill the girl. How very unlike you.",
+      "inner_voice": null,
+      "music": "cellar-dread",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "title": "Men of Good Fortune",
+      "narrator_references": 11,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "title": "1889",
+      "narrator_references": 5,
+      "character": "hob-1889",
+      "opening": "Five hundred years. And you still come. You don't come to see if I want to die. You come because you're lonely. I'm your friend, you daft thing. Sit down.",
+      "inner_voice": null,
+      "music": "cellar-wait",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "title": "1989",
+      "narrator_references": 6,
+      "character": "hob",
+      "opening": "There you are. I knew you would come. I got you a pint. It's gone a bit flat, mind, I've been here since opening.",
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "requires-live-playback"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "title": "Reflections",
+      "narrator_references": 12,
+      "character": null,
+      "opening": null,
+      "inner_voice": null,
+      "music": "library",
+      "live_voice": "not-applicable"
+    }
+  ],
+  "recordings": [
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "location": "beat:0",
+      "text": "This is the Dreaming, where every dream begins. Aurie is its queen.",
+      "conditions": {},
+      "id": "29e0b378",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/29e0b378.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "location": "beat:1",
+      "text": "Her librarian, Lucienne, reads her the day's report. A nightmare has tried to slip out into the waking world.",
+      "conditions": {},
+      "id": "06d6a1d9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/06d6a1d9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "location": "beat:2",
+      "text": "Aurie closes her hand, and the nightmare is unmade.",
+      "conditions": {},
+      "id": "38ba225f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/38ba225f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "location": "beat:3",
+      "text": "Then, far away in the waking world, a man reads her name from a stolen book.",
+      "conditions": {},
+      "id": "a640d9f7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a640d9f7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "0.0",
+      "location": "beat:4",
+      "text": "A circle of chalk reaches up through her floor, and pulls her down.",
+      "conditions": {},
+      "id": "23cd559e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/23cd559e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:1",
+      "text": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician.",
+      "conditions": {},
+      "id": "9e0155f9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9e0155f9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:2",
+      "text": "His son Randall died in the war. Burgess wanted Death herself, to make her give him back.",
+      "conditions": {},
+      "id": "1353e78c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1353e78c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:3",
+      "text": "But Death has a sister. Tonight his spell caught the wrong one.",
+      "conditions": {},
+      "id": "2aa0c3d4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2aa0c3d4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:4",
+      "text": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
+      "conditions": {},
+      "id": "9bd701a1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9bd701a1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:5",
+      "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby.",
+      "conditions": {},
+      "id": "377f5a3c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/377f5a3c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.1",
+      "location": "beat:6",
+      "text": "Without them, she is only a prisoner.",
+      "conditions": {},
+      "id": "9abe2718",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9abe2718.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "beat:0",
+      "text": "Hours later, his followers have gone home. Burgess comes back down, alone.",
+      "conditions": {},
+      "id": "33350f9f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/33350f9f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "beat:1",
+      "text": "He still believes he has caught Death. Speak to him, or stay silent. He will remember either way.",
+      "conditions": {},
+      "id": "52891db4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/52891db4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.A:0",
+      "text": "You give him nothing. Not a word, not a flicker.",
+      "conditions": {},
+      "id": "ed4ab12a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ed4ab12a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.A:1",
+      "text": "He leaves. He will come back every night for thirty years, and you will never answer him.",
+      "conditions": {},
+      "id": "958d7864",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/958d7864.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.B:0",
+      "text": "The candles lean away from the glass. Burgess stumbles back.",
+      "conditions": {},
+      "id": "64918690",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/64918690.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.B:1",
+      "text": "That night he doubles the wards. The circle burns colder, and you grow weaker.",
+      "conditions": {},
+      "id": "4a2c1bed",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4a2c1bed.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.C:0",
+      "text": "He laughs, then stops. He knows a lie when he hears one.",
+      "conditions": {},
+      "id": "53ab47b6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/53ab47b6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.C:1",
+      "text": "From now on, he believes nothing you say.",
+      "conditions": {},
+      "id": "8de28f47",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8de28f47.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.D:0",
+      "text": "Burgess goes pale. Then, slowly, he smiles.",
+      "conditions": {},
+      "id": "d2657b2f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d2657b2f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.2",
+      "location": "choice:1.2.D:1",
+      "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life.",
+      "conditions": {},
+      "id": "27813c17",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/27813c17.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:1",
+      "text": "Upstairs, Burgess never speaks his son's name again.",
+      "conditions": {
+        "if": [
+          "C_NAMED_RANDALL"
+        ]
+      },
+      "id": "a50fe52f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a50fe52f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:2",
+      "text": "Every night he comes down to beg you for dreams. You give him none.",
+      "conditions": {
+        "if": [
+          "DREAM_REVEALED"
+        ]
+      },
+      "id": "c77a57b5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c77a57b5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:3",
+      "text": "Once, early on, you pitied him. He never forgave you for it.",
+      "conditions": {
+        "if": [
+          "C_PITIED_HIM"
+        ]
+      },
+      "id": "7b548692",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7b548692.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:4",
+      "text": "Without its queen, the Dreaming begins to fall apart. Her palace crumbles into sand.",
+      "conditions": {},
+      "id": "555e27c1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/555e27c1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:5",
+      "text": "In the waking world, sleep goes wrong. Some people can never sleep again.",
+      "conditions": {},
+      "id": "fa5bbeda",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fa5bbeda.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:6",
+      "text": "Others fall asleep, and cannot wake. The doctors call it the sleeping sickness.",
+      "conditions": {},
+      "id": "775623dc",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/775623dc.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:7",
+      "text": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Aurie can still reach.",
+      "conditions": {},
+      "id": "49a92a34",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/49a92a34.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "beat:8",
+      "text": "Aurie reaches into the girl's sleep, and finds her waiting in a dream of the sea.",
+      "conditions": {},
+      "id": "227b2a8b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/227b2a8b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "choice:1.3.W:0",
+      "text": "Unity will carry your promise through sixty years of sleep.",
+      "conditions": {
+        "if": [
+          "UNITY_PROMISE"
+        ]
+      },
+      "id": "37373c9d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/37373c9d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "choice:1.3.W:1",
+      "text": "She sleeps on, inside the seaside dream you gave her.",
+      "conditions": {
+        "if": [
+          "UNITY_GIFT"
+        ]
+      },
+      "id": "719cad4b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/719cad4b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "choice:1.3.W:2",
+      "text": "Her dream stays grey for a long, long time.",
+      "conditions": {
+        "if": [
+          "UNITY_USED"
+        ]
+      },
+      "id": "94f2cc51",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/94f2cc51.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "choice:1.3.W:3",
+      "text": "And you cannot forget that smell of roses. Someone else was in that dream.",
+      "conditions": {
+        "if": [
+          "SENSED_DESIRE"
+        ]
+      },
+      "id": "36c12513",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/36c12513.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.3",
+      "location": "choice:1.3.W:4",
+      "text": "You let go of the girl. The glass closes around you again.",
+      "conditions": {
+        "unless": [
+          "UNITY_PROMISE",
+          "UNITY_GIFT",
+          "UNITY_USED"
+        ]
+      },
+      "id": "acaa0c77",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/acaa0c77.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:1",
+      "text": "Burgess had a mistress, Ethel Cripps. One night in 1926, she runs away.",
+      "conditions": {},
+      "id": "e5e82062",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e5e82062.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:2",
+      "text": "She takes his money, and she takes your helm, your sand and your ruby.",
+      "conditions": {},
+      "id": "7eb46292",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7eb46292.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:4",
+      "text": "Roderick Burgess dies an old man, still waiting for a wish you never granted.",
+      "conditions": {},
+      "id": "8927d2e6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8927d2e6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:5",
+      "text": "His son Alex inherits the house, the order, and the prisoner in the cellar.",
+      "conditions": {},
+      "id": "f6902c10",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f6902c10.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:6",
+      "text": "The wards are still doubled, as they have been since your first week.",
+      "conditions": {
+        "if": [
+          "C_SHOWED_POWER"
+        ]
+      },
+      "id": "5c2fbef7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5c2fbef7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:8",
+      "text": "Alex is grey now. He was born the year you were caught, and he has grown old listening to you not speak.",
+      "conditions": {},
+      "id": "b3979671",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b3979671.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:9",
+      "text": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs.",
+      "conditions": {},
+      "id": "be43b184",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/be43b184.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:10",
+      "text": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk.",
+      "conditions": {},
+      "id": "47f5d54a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/47f5d54a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "beat:11",
+      "text": "Behind him, Paul, the man who loves him, pretends not to listen.",
+      "conditions": {},
+      "id": "d0ef77f7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d0ef77f7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "choice:1.4.A:0",
+      "text": "He weeps for the little boy his father hurt. No one has ever seen that boy but you.",
+      "conditions": {},
+      "id": "f3d309c4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f3d309c4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "choice:1.4.B:0",
+      "text": "Nothing comes from the glass. He goes upstairs, and does not come down again for years.",
+      "conditions": {},
+      "id": "efa785de",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/efa785de.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "choice:1.4.C:0",
+      "text": "He sees himself old and broken, in a wheelchair. He runs from the cellar, screaming.",
+      "conditions": {},
+      "id": "b1d7028b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b1d7028b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "choice:1.4.D:0",
+      "text": "He almost does it. Then he loses his nerve, and walks away.",
+      "conditions": {},
+      "id": "8f846917",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8f846917.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.4",
+      "location": "choice:1.4.D:1",
+      "text": "But he writes your promise down, and keeps it in his breast pocket for the rest of his life.",
+      "conditions": {},
+      "id": "63cbe7d0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/63cbe7d0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:1",
+      "text": "Seventy-two years in the glass. Alex is an old man now.",
+      "conditions": {},
+      "id": "2a188a8e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2a188a8e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:2",
+      "text": "Since the vision of his death, he has not come down to the cellar once.",
+      "conditions": {
+        "if": [
+          "ALEX_SAW_DEATH"
+        ]
+      },
+      "id": "3f0c8a3f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3f0c8a3f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:3",
+      "text": "Tonight, the young guard falls asleep against the glass. His breath fogs it.",
+      "conditions": {},
+      "id": "c1111198",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c1111198.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:4",
+      "text": "A sleeping mind is a door. And Aurie is the queen of dreams.",
+      "conditions": {},
+      "id": "f1274987",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f1274987.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:5",
+      "text": "She steps through his dream, and out of the glass. The circle crumbles to dust.",
+      "conditions": {},
+      "id": "3443c17a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3443c17a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:6",
+      "text": "Alex hears the glass break. Paul wheels him down, and there she is.",
+      "conditions": {},
+      "id": "4b9bc7b5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4b9bc7b5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "beat:7",
+      "text": "In his breast pocket is a folded paper with your promise on it.",
+      "conditions": {
+        "if": [
+          "ALEX_PROMISE"
+        ]
+      },
+      "id": "4c22b870",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4c22b870.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "choice:1.5.A:0",
+      "text": "He wakes, and wakes, and wakes, each time into something worse. He will never sleep again.",
+      "conditions": {},
+      "id": "a35c6c97",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a35c6c97.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "choice:1.5.B:0",
+      "text": "One night of nightmares, and then it is over. By morning he sleeps like a child.",
+      "conditions": {},
+      "id": "3ab7f0dd",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3ab7f0dd.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.5",
+      "location": "choice:1.5.C:0",
+      "text": "You walk out without a word. Behind you, an old man weeps with relief.",
+      "conditions": {},
+      "id": "4072a2fc",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4072a2fc.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "beat:0",
+      "text": "Free, but weak. No helm, no sand, no ruby. Aurie goes home.",
+      "conditions": {},
+      "id": "3e5ac214",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3e5ac214.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "beat:1",
+      "text": "The great gates of her realm are cracked. One lantern still burns.",
+      "conditions": {},
+      "id": "e77469cb",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e77469cb.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "beat:2",
+      "text": "Most of the Dreaming is gone. Only the library still stands.",
+      "conditions": {},
+      "id": "fc47f0e5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fc47f0e5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "beat:3",
+      "text": "On its far wall are three doors she has never seen before.",
+      "conditions": {},
+      "id": "9e253416",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9e253416.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "beat:4",
+      "text": "And you have a name to start your search: Ethel Cripps.",
+      "conditions": {
+        "if": [
+          "KNOWS_ETHEL"
+        ]
+      },
+      "id": "42ab91e4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/42ab91e4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "choice:2.1.A:0",
+      "text": "Lucienne bows, and begins: the dead, the fled, and the faithful.",
+      "conditions": {},
+      "id": "21963e14",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/21963e14.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.1",
+      "location": "choice:2.1.B:0",
+      "text": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles.",
+      "conditions": {},
+      "id": "b8094c0b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b8094c0b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep1",
+      "location": "beat:0",
+      "text": "You are home. But you are not whole.",
+      "conditions": {},
+      "id": "01c81285",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/01c81285.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep1",
+      "location": "beat:1",
+      "text": "Your helm, your sand and your ruby are out there, scattered across the waking world.",
+      "conditions": {},
+      "id": "897bbfc5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/897bbfc5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep1",
+      "location": "beat:2",
+      "text": "Lucienne knows where to begin: with three women who know where every lost thing goes.",
+      "conditions": {},
+      "id": "00e011aa",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/00e011aa.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep1",
+      "location": "beat:3",
+      "text": "End of Part One.",
+      "conditions": {},
+      "id": "0f76c4d2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0f76c4d2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "beat:1",
+      "text": "Where three roads meet, at the edge of the Dreaming, live the Three Who Are One.",
+      "conditions": {},
+      "id": "ca8c4001",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ca8c4001.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "beat:2",
+      "text": "A Maiden, a Mother and a Crone. Mortals call them the Fates.",
+      "conditions": {},
+      "id": "110e33a9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/110e33a9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "beat:3",
+      "text": "They will answer three questions, for anyone who asks politely.",
+      "conditions": {},
+      "id": "a8b75c5b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a8b75c5b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "beat:4",
+      "text": "Aurie calls them, and they come.",
+      "conditions": {},
+      "id": "202a7a8d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/202a7a8d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "choice:2.2.GO:0",
+      "text": "Three answers, in three places.",
+      "conditions": {},
+      "id": "b216ab21",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b216ab21.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "choice:2.2.GO:1",
+      "text": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son.",
+      "conditions": {},
+      "id": "421d736a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/421d736a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "choice:2.2.GO:2",
+      "text": "And one answer she did not want.",
+      "conditions": {
+        "if": [
+          "ASKED_OWN_FATE"
+        ]
+      },
+      "id": "5f0988ca",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5f0988ca.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "choice:2.2.GO:3",
+      "text": "Hell and a madman can wait. Someone in London is dying of her sand.",
+      "conditions": {},
+      "id": "270e218f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/270e218f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.2",
+      "location": "choice:2.2.GO:4",
+      "text": "She will start with the sand.",
+      "conditions": {},
+      "id": "0952b596",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0952b596.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "beat:1",
+      "text": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand.",
+      "conditions": {},
+      "id": "df03aa18",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/df03aa18.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "beat:2",
+      "text": "It leads her to a rainy street in north London.",
+      "conditions": {},
+      "id": "c0ae2f52",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c0ae2f52.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "beat:3",
+      "text": "A woman is waiting under a porch, as if she has been expecting trouble.",
+      "conditions": {},
+      "id": "10f317db",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/10f317db.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "beat:4",
+      "text": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name.",
+      "conditions": {},
+      "id": "240fac53",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/240fac53.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "beat:5",
+      "text": "Years ago, the pouch was hers. Then the woman she loved took it.",
+      "conditions": {},
+      "id": "ee2a47bd",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ee2a47bd.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.3",
+      "location": "choice:2.3.IN:0",
+      "text": "Johanna flicks her cigarette into the gutter, and leads the way.",
+      "conditions": {},
+      "id": "46d82ca3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/46d82ca3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "beat:0",
+      "text": "Inside, the house has become a dream. It breathes.",
+      "conditions": {},
+      "id": "d1042a4a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d1042a4a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "beat:1",
+      "text": "Rachel has breathed the sand for years. It is the only thing keeping her alive, and it is killing her.",
+      "conditions": {},
+      "id": "b7a99751",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b7a99751.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "beat:2",
+      "text": "Without your ruby you cannot give her life back. Only an ending: a kind one, or a cruel one.",
+      "conditions": {},
+      "id": "6ff3c7d3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6ff3c7d3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "choice:2.4.A:0",
+      "text": "You give Rachel a dream: a summer garden, and Johanna young beside her.",
+      "conditions": {},
+      "id": "30a82666",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/30a82666.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "choice:2.4.A:1",
+      "text": "It is the garden Johanna told you about.",
+      "conditions": {
+        "if": [
+          "HEARD_RACHEL"
+        ]
+      },
+      "id": "60d08450",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/60d08450.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "choice:2.4.A:2",
+      "text": "She dies smiling. The sand flows home into the pouch.",
+      "conditions": {},
+      "id": "e92ae412",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e92ae412.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "choice:2.4.A:3",
+      "text": "Johanna does not thank you. But she will remember this.",
+      "conditions": {},
+      "id": "549cd107",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/549cd107.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4",
+      "location": "choice:2.4.B:0",
+      "text": "You take the pouch. Behind you, Rachel begins to scream.",
+      "conditions": {},
+      "id": "76b8358f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/76b8358f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2a",
+      "location": "beat:0",
+      "text": "The pouch of sand is hers again. One of three.",
+      "conditions": {},
+      "id": "5e30e399",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5e30e399.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2a",
+      "location": "beat:1",
+      "text": "She feels the Dreaming stir, a little stronger.",
+      "conditions": {},
+      "id": "77bf5ce3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/77bf5ce3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2a",
+      "location": "beat:2",
+      "text": "Next, the helm. A demon has it, in Hell.",
+      "conditions": {},
+      "id": "5b270f0e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5b270f0e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:1",
+      "text": "Aurie walks down through the darkest corners of her own realm, to the place where the Dreaming touches Hell.",
+      "conditions": {},
+      "id": "0a03f864",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0a03f864.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:2",
+      "text": "The Fates said a demon holds her helm. So Aurie goes where no dreamer is welcome.",
+      "conditions": {},
+      "id": "61d491d7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/61d491d7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:3",
+      "text": "The gates of Hell open for her. Even here, they know her name.",
+      "conditions": {},
+      "id": "b053d431",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b053d431.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:4",
+      "text": "The damned reach out as she passes, begging for a single dream.",
+      "conditions": {},
+      "id": "e2a7edf9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e2a7edf9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:5",
+      "text": "In a cell of black ice, someone calls to her.",
+      "conditions": {},
+      "id": "0be27ac9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0be27ac9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "beat:6",
+      "text": "Nada. A queen Aurie loved ten thousand years ago, and sent here when Nada refused her.",
+      "conditions": {},
+      "id": "0ec2f766",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0ec2f766.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "choice:2.5.ON:0",
+      "text": "Aurie walks on. Behind her, Nada does not call out again.",
+      "conditions": {},
+      "id": "f960adc3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f960adc3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "choice:2.5.PROMISE:0",
+      "text": "Nada presses her hand to the ice. Aurie presses hers to the other side.",
+      "conditions": {},
+      "id": "760a4f8f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/760a4f8f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.5",
+      "location": "choice:2.5.PROMISE:1",
+      "text": "A promise, made in Hell. Hell will remember it.",
+      "conditions": {},
+      "id": "cf93f285",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/cf93f285.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.6",
+      "location": "beat:0",
+      "text": "At the heart of Hell is an arena, and above it a throne.",
+      "conditions": {},
+      "id": "27098b49",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/27098b49.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.6",
+      "location": "beat:1",
+      "text": "Only Lucifer, who rules here, can make a demon give back what it holds.",
+      "conditions": {},
+      "id": "9310c0b9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9310c0b9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.6",
+      "location": "beat:2",
+      "text": "Lucifer Morningstar, first of the fallen. He has been expecting her.",
+      "conditions": {},
+      "id": "45b954fa",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/45b954fa.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.6",
+      "location": "choice:2.6.GAME:0",
+      "text": "The arena roars. The Oldest Game has not been played in Hell for a thousand years.",
+      "conditions": {},
+      "id": "c9829600",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c9829600.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "beat:0",
+      "text": "Choronzon steps into the ring, with her helm in his hand.",
+      "conditions": {},
+      "id": "125d43e2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/125d43e2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "beat:1",
+      "text": "The Oldest Game. Each names a form that defeats the other's last. The first who cannot answer, loses.",
+      "conditions": {},
+      "id": "7a50f0eb",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7a50f0eb.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "beat:2",
+      "text": "Lucifer will judge. Type your answer: every form must beat his.",
+      "conditions": {},
+      "id": "d394979d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d394979d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "choice:2.7.WIN:0",
+      "text": "Anti-life. The end of all things. There is only one answer to that.",
+      "conditions": {},
+      "id": "d3f567a3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d3f567a3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "choice:2.7.WIN:1",
+      "text": "I am hope. And the dark has nothing left to say.",
+      "conditions": {},
+      "id": "bf5833e6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bf5833e6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "choice:2.7.WIN:2",
+      "text": "Choronzon drops the helm at her feet. Two of three.",
+      "conditions": {},
+      "id": "3c92881b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3c92881b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "choice:2.7.LOSE:0",
+      "text": "Choronzon's form swallows hers. The arena howls with delight.",
+      "conditions": {},
+      "id": "fe176395",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fe176395.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.7",
+      "location": "choice:2.7.LOSE:1",
+      "text": "Lucifer, amused, allows one more game.",
+      "conditions": {},
+      "id": "76437d03",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/76437d03.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "beat:0",
+      "text": "The helm is hers. But the legions of Hell now block the only way out.",
+      "conditions": {},
+      "id": "d154842e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d154842e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "beat:1",
+      "text": "Lucifer smiles. Here, he says, she has no power at all.",
+      "conditions": {},
+      "id": "205fff55",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/205fff55.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "choice:2.8.A:0",
+      "text": "Hell has no answer. The legions part like a curtain.",
+      "conditions": {},
+      "id": "7aac8f32",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7aac8f32.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "choice:2.8.A:1",
+      "text": "Lucifer lets her go. He will never forget being bested in his own house.",
+      "conditions": {},
+      "id": "4339c4f1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4339c4f1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "choice:2.8.B:0",
+      "text": "Lucifer finds her dull, and waves her away.",
+      "conditions": {},
+      "id": "0be7b4a1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0be7b4a1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.8",
+      "location": "choice:2.8.C:0",
+      "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
+      "conditions": {},
+      "id": "74b02f6c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/74b02f6c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2b",
+      "location": "beat:0",
+      "text": "The helm is hers again. Two of three.",
+      "conditions": {},
+      "id": "7cee9d71",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7cee9d71.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2b",
+      "location": "beat:1",
+      "text": "Only the ruby remains, in the hands of a madman.",
+      "conditions": {},
+      "id": "2f66390b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2f66390b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-2b",
+      "location": "beat:2",
+      "text": "Next, the ruby.",
+      "conditions": {},
+      "id": "425cdb29",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/425cdb29.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:1",
+      "text": "The ruby calls to her across an ocean, like her own voice heard from another room.",
+      "conditions": {},
+      "id": "b5c526bb",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b5c526bb.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:2",
+      "text": "The Fates said the ruby went to Ethel Cripps's son.",
+      "conditions": {},
+      "id": "471b751b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/471b751b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:3",
+      "text": "John Dee has spent forty years in a madhouse, dreaming of that stone.",
+      "conditions": {},
+      "id": "720b7cfa",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/720b7cfa.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:4",
+      "text": "Tonight he walks out, and takes his mother's ruby back.",
+      "conditions": {},
+      "id": "6569009c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6569009c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:5",
+      "text": "He sits down in an all-night diner, and begins to play with the people inside.",
+      "conditions": {},
+      "id": "af3375e3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/af3375e3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "beat:6",
+      "text": "Every hour he twists their dreams a little further, and the whole world's dreams go wrong with them.",
+      "conditions": {},
+      "id": "e63940cc",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e63940cc.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "choice:2.9.A:0",
+      "text": "Dee sees her coming. The ruby turns on her, and she is nearly unmade.",
+      "conditions": {},
+      "id": "f537c270",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f537c270.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "choice:2.9.A:1",
+      "text": "She crawls into the stone itself, wounded, to finish it there.",
+      "conditions": {},
+      "id": "95869869",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/95869869.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "choice:2.9.B:0",
+      "text": "She slips through the dreams of the waitress and the trucker, unseen.",
+      "conditions": {},
+      "id": "217019c0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/217019c0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.9",
+      "location": "choice:2.9.B:1",
+      "text": "And she steps inside the ruby itself, where he cannot see her coming.",
+      "conditions": {},
+      "id": "c14b4d6d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c14b4d6d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.10",
+      "location": "beat:0",
+      "text": "Dee feels her inside his stone. He laughs, and stands, and lifts it high.",
+      "conditions": {},
+      "id": "ab7c929d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ab7c929d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.10",
+      "location": "choice:2.10.X:0",
+      "text": "He smashes the ruby. He thinks it will kill her.",
+      "conditions": {},
+      "id": "2cb4d863",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2cb4d863.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.10",
+      "location": "choice:2.10.X:1",
+      "text": "It does not. Everything she ever poured into that stone comes home to her.",
+      "conditions": {},
+      "id": "716217b4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/716217b4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.10",
+      "location": "choice:2.10.X:2",
+      "text": "Three of three.",
+      "conditions": {},
+      "id": "fc1148f6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fc1148f6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.11",
+      "location": "beat:0",
+      "text": "On the diner floor lies a small, broken old man.",
+      "conditions": {},
+      "id": "c22dd43a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c22dd43a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.11",
+      "location": "choice:2.11.A:0",
+      "text": "He sleeps in his old cell, dreaming kindly, for the first time in forty years.",
+      "conditions": {},
+      "id": "a61d8554",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a61d8554.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.11",
+      "location": "choice:2.11.B:0",
+      "text": "There is no John Dee any more. Not even a memory of him.",
+      "conditions": {},
+      "id": "607de646",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/607de646.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.11",
+      "location": "choice:2.11.C:0",
+      "text": "She leaves him on the diner floor, awake and sane, remembering everything.",
+      "conditions": {},
+      "id": "e74a8cbc",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e74a8cbc.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "beat:1",
+      "text": "Helm, sand and ruby. All three are hers again. She should feel whole. She feels nothing at all.",
+      "conditions": {},
+      "id": "8e0dbc85",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8e0dbc85.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "beat:2",
+      "text": "On a park bench, someone is feeding the pigeons, and waiting for her.",
+      "conditions": {},
+      "id": "aa01b41f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/aa01b41f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "beat:3",
+      "text": "Her older sister, Death. She meets every living thing at the end, and she is the one sibling Aurie has always loved.",
+      "conditions": {},
+      "id": "976f7e9c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/976f7e9c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "choice:2.12.A:0",
+      "text": "Aurie walks her sister's rounds: an old violinist, a young mother, a stranger on a bridge.",
+      "conditions": {},
+      "id": "7d144638",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7d144638.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "choice:2.12.A:1",
+      "text": "Everyone meets Death in the end. And everyone is met kindly.",
+      "conditions": {},
+      "id": "ff6a45b2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ff6a45b2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "choice:2.12.A:2",
+      "text": "Aurie goes home with something she did not have before.",
+      "conditions": {},
+      "id": "861ce0c3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/861ce0c3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.12",
+      "location": "choice:2.12.B:0",
+      "text": "Death shrugs, kisses her cheek, and goes about her work alone.",
+      "conditions": {},
+      "id": "711d0d73",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/711d0d73.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "location": "beat:0",
+      "text": "Helm, sand and ruby. The Queen of Dreams is whole again.",
+      "conditions": {},
+      "id": "773ea0ad",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/773ea0ad.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "location": "beat:1",
+      "text": "But the Dreaming remembers everything she did to get them.",
+      "conditions": {},
+      "id": "97a92e4f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/97a92e4f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "location": "beat:2",
+      "text": "Somewhere, an old man is still waking up, again and again.",
+      "conditions": {
+        "if": [
+          "ALEX_CURSED"
+        ]
+      },
+      "id": "5dc22d8d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5dc22d8d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "location": "beat:3",
+      "text": "And in Hell, a queen in the ice is waiting for a promise to be kept.",
+      "conditions": {
+        "if": [
+          "NADA_PROMISE"
+        ]
+      },
+      "id": "272165de",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/272165de.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep2",
+      "location": "beat:4",
+      "text": "End of Part Two.",
+      "conditions": {},
+      "id": "c06286a0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c06286a0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.1",
+      "location": "beat:1",
+      "text": "Destiny's garden lies at the edge of everything. Aurie walks it alone.",
+      "conditions": {},
+      "id": "61151f8c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/61151f8c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.1",
+      "location": "beat:2",
+      "text": "Every path in it is a choice someone once made. The paths behind her rearrange themselves as she passes.",
+      "conditions": {},
+      "id": "5f90cd3f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5f90cd3f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.1",
+      "location": "beat:3",
+      "text": "Destiny is blind. He is chained to a book that holds everything that was, and everything that will be.",
+      "conditions": {},
+      "id": "1936a06c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1936a06c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.1",
+      "location": "choice:3.1.IN:0",
+      "text": "Destiny turns a page, and the garden becomes a hall.",
+      "conditions": {},
+      "id": "fbed0424",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fbed0424.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:0",
+      "text": "The Endless. Older than the gods, each the shape of something every living thing must face.",
+      "conditions": {},
+      "id": "0d73d2b1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0d73d2b1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:1",
+      "text": "Death, her elder sister.",
+      "conditions": {},
+      "id": "cb9c0e7a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/cb9c0e7a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:2",
+      "text": "Desire, beautiful and cruel, who smells of roses.",
+      "conditions": {},
+      "id": "90d1e52b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/90d1e52b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:3",
+      "text": "You have smelled those roses before, in a sleeping girl's dream.",
+      "conditions": {
+        "if": [
+          "SENSED_DESIRE"
+        ]
+      },
+      "id": "f34d56f2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f34d56f2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:4",
+      "text": "Despair, Desire's twin, quiet and grey.",
+      "conditions": {},
+      "id": "f720269f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f720269f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:5",
+      "text": "Delirium, the youngest, who was once Delight.",
+      "conditions": {},
+      "id": "00c174f6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/00c174f6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:6",
+      "text": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it.",
+      "conditions": {},
+      "id": "714f57b2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/714f57b2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:7",
+      "text": "Desire knows exactly where to cut.",
+      "conditions": {},
+      "id": "f549eea1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f549eea1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:8",
+      "text": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it.",
+      "conditions": {},
+      "id": "3acb810d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3acb810d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:9",
+      "text": "Aurie passed her in the ice, on the way to her helm.",
+      "conditions": {
+        "if": [
+          "NADA_PROMISE"
+        ]
+      },
+      "id": "db58817e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/db58817e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "beat:10",
+      "text": "Desire leans forward, smiling. It has been waiting for this.",
+      "conditions": {},
+      "id": "a6d6ff33",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a6d6ff33.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.A:0",
+      "text": "The table goes quiet. Death squeezes her hand.",
+      "conditions": {},
+      "id": "2e64f6e9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2e64f6e9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.A:1",
+      "text": "This time, she means to keep a promise.",
+      "conditions": {
+        "if": [
+          "NADA_PROMISE"
+        ]
+      },
+      "id": "77633bb0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/77633bb0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.A:2",
+      "text": "Desire smiles, as if this were exactly what it wanted.",
+      "conditions": {},
+      "id": "b41131d2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b41131d2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.A:3",
+      "text": "Hell, again.",
+      "conditions": {},
+      "id": "d9b9390c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d9b9390c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.B:0",
+      "text": "Aurie leaves the table. Behind her, Desire laughs softly.",
+      "conditions": {},
+      "id": "0974d208",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0974d208.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.B:1",
+      "text": "Death watches her go, and says nothing.",
+      "conditions": {},
+      "id": "f09ecfeb",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f09ecfeb.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.B:2",
+      "text": "But the woman in the ice is still there. The question will not go away.",
+      "conditions": {},
+      "id": "3cf9f796",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3cf9f796.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.C:0",
+      "text": "Death looks away. Despair begins, very quietly, to cry.",
+      "conditions": {},
+      "id": "5dcffd9f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5dcffd9f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.C:1",
+      "text": "Desire smiles. It has learned exactly what it came to learn.",
+      "conditions": {},
+      "id": "38757044",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/38757044.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.2",
+      "location": "choice:3.2.C:2",
+      "text": "Pride is a door that locks from the inside.",
+      "conditions": {},
+      "id": "927d8f06",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/927d8f06.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:0",
+      "text": "The family scatters, each to their own realm.",
+      "conditions": {},
+      "id": "9316049a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9316049a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:1",
+      "text": "Aurie goes home to prepare. She is going back into Hell, for Nada.",
+      "conditions": {
+        "if": [
+          "NADA_QUEST"
+        ]
+      },
+      "id": "00d2d0ed",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/00d2d0ed.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:2",
+      "text": "Aurie tells herself she does not care what Desire thinks. She is lying.",
+      "conditions": {
+        "if": [
+          "STORMED_OUT"
+        ]
+      },
+      "id": "9d43eba1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9d43eba1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:3",
+      "text": "Aurie goes home certain she was right. Death does not call on her for a long time.",
+      "conditions": {
+        "if": [
+          "PRIDE_LOCK"
+        ]
+      },
+      "id": "1c6c5ba0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1c6c5ba0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:4",
+      "text": "Destiny closes his book. He already knows how this ends.",
+      "conditions": {},
+      "id": "202c3ca4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/202c3ca4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep3",
+      "location": "beat:5",
+      "text": "End of Part Three.",
+      "conditions": {},
+      "id": "67507c66",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/67507c66.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:1",
+      "text": "Aurie returns to Hell to free Nada, as she told her family she would.",
+      "conditions": {
+        "if": [
+          "NADA_QUEST"
+        ]
+      },
+      "id": "68f7ef4e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/68f7ef4e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:2",
+      "text": "Desire's words would not leave her. Within a week she is standing at the gates of Hell anyway.",
+      "conditions": {
+        "if": [
+          "STORMED_OUT"
+        ]
+      },
+      "id": "2c1a460b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2c1a460b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:3",
+      "text": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice.",
+      "conditions": {
+        "if": [
+          "PRIDE_LOCK"
+        ]
+      },
+      "id": "c2e59c32",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c2e59c32.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:4",
+      "text": "The last time she came here, she walked past Nada in the ice.",
+      "conditions": {},
+      "id": "fbe0f10c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fbe0f10c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:5",
+      "text": "But Hell is empty.",
+      "conditions": {},
+      "id": "86b05272",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/86b05272.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:6",
+      "text": "Every cell stands open. Every chain lies slack. The damned, and the demons, are gone.",
+      "conditions": {},
+      "id": "9de7aa9d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9de7aa9d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "beat:7",
+      "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
+      "conditions": {},
+      "id": "7b6e69a7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7b6e69a7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.KEY:0",
+      "text": "Lucifer takes the knife to his own wings. He does not ask twice.",
+      "conditions": {},
+      "id": "f8b01f8e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f8b01f8e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.KEY:1",
+      "text": "He walks out into the waking world, a free man, and leaves her holding the key to Hell.",
+      "conditions": {},
+      "id": "1737a472",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1737a472.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.KEY:2",
+      "text": "Every power in creation will want it.",
+      "conditions": {},
+      "id": "a63885de",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a63885de.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.WINGS:0",
+      "text": "Aurie cuts. The wings fall away into a storm of feathers.",
+      "conditions": {},
+      "id": "e2bc1515",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e2bc1515.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.WINGS:1",
+      "text": "Lucifer thanks her, which he has never done before, and walks out into the waking world.",
+      "conditions": {},
+      "id": "7cf92b19",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7cf92b19.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.1",
+      "location": "choice:4.1.WINGS:2",
+      "text": "Every power in creation will want that key.",
+      "conditions": {},
+      "id": "1e8a21cb",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1e8a21cb.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:0",
+      "text": "By the time Aurie is home, every realm has heard: the Lady of Dreams holds the key to Hell.",
+      "conditions": {},
+      "id": "a127e681",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a127e681.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:1",
+      "text": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy.",
+      "conditions": {},
+      "id": "9d378ccf",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9d378ccf.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:2",
+      "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another.",
+      "conditions": {},
+      "id": "2789e317",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2789e317.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:3",
+      "text": "They come with gifts, and with threats.",
+      "conditions": {},
+      "id": "db87a758",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/db87a758.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:4",
+      "text": "Odin All-Father, with Thor and Loki, wanting somewhere to wait out the end of the world.",
+      "conditions": {},
+      "id": "d86b04d7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d86b04d7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:5",
+      "text": "Azazel, a lord of Hell, who wants his home back. In a jar at his elbow, a captured soul.",
+      "conditions": {},
+      "id": "2252cbd2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2252cbd2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:6",
+      "text": "It is Nada's soul. When the demons left Hell, Azazel took her with him.",
+      "conditions": {},
+      "id": "56486dd1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/56486dd1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:7",
+      "text": "The envoys of Faerie: Cluracan, and his sister Nuala, sent along as a gift.",
+      "conditions": {},
+      "id": "9c5b9c30",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9c5b9c30.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:8",
+      "text": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
+      "conditions": {},
+      "id": "347c3701",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/347c3701.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "beat:9",
+      "text": "Before the night is over, Aurie must choose.",
+      "conditions": {},
+      "id": "69d4f31b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/69d4f31b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.A:0",
+      "text": "Remiel takes the key. Hell will become a place where suffering heals.",
+      "conditions": {},
+      "id": "0e3accb4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0e3accb4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.A:1",
+      "text": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
+      "conditions": {},
+      "id": "c3ca3133",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c3ca3133.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.B:0",
+      "text": "Odin takes the key, and Loki smiles far too widely.",
+      "conditions": {},
+      "id": "53d2cb25",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/53d2cb25.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.B:1",
+      "text": "Nada's soul Aurie must buy from Azazel herself. It costs her a dream she loved.",
+      "conditions": {},
+      "id": "5b210073",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5b210073.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.C:0",
+      "text": "Azazel opens the jar. Nada is free.",
+      "conditions": {},
+      "id": "dbec57d9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/dbec57d9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.C:1",
+      "text": "Hell will be worse than it ever was. That is on Aurie now.",
+      "conditions": {},
+      "id": "8246456a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8246456a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.D:0",
+      "text": "Cluracan bows extravagantly. Hell will become a wild and strange court.",
+      "conditions": {},
+      "id": "b16e3de2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b16e3de2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.2",
+      "location": "choice:4.2.D:1",
+      "text": "Nada's soul Aurie takes from Azazel by force, and Faerie stands beside her.",
+      "conditions": {},
+      "id": "635269a4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/635269a4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "beat:0",
+      "text": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
+      "conditions": {},
+      "id": "b9f69138",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b9f69138.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "beat:1",
+      "text": "Nada stands free for the first time in ten thousand years.",
+      "conditions": {},
+      "id": "b2093d75",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b2093d75.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "beat:2",
+      "text": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people.",
+      "conditions": {},
+      "id": "f2ed6412",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f2ed6412.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "beat:3",
+      "text": "Aurie condemned her to Hell for it.",
+      "conditions": {},
+      "id": "4756fad1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4756fad1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "choice:4.3.A:0",
+      "text": "Nada weeps, and forgives her.",
+      "conditions": {},
+      "id": "bb5d57c8",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bb5d57c8.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "choice:4.3.A:1",
+      "text": "She chooses to be born again, far away, into a brand new life.",
+      "conditions": {},
+      "id": "c1750dbf",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c1750dbf.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "choice:4.3.A:2",
+      "text": "And Aurie, for the first time in ten thousand years, feels lighter.",
+      "conditions": {},
+      "id": "12290ebf",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/12290ebf.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "choice:4.3.B:0",
+      "text": "Nada strikes her across the face, and walks into the light alone.",
+      "conditions": {},
+      "id": "9a53c16b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9a53c16b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "4.3",
+      "location": "choice:4.3.C:0",
+      "text": "Nada refuses every gift, and leaves without a word.",
+      "conditions": {},
+      "id": "729e816f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/729e816f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:0",
+      "text": "Hell has new masters.",
+      "conditions": {},
+      "id": "9b7e2c0b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9b7e2c0b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:1",
+      "text": "Heaven's angels hold the keys. The damned may heal there now.",
+      "conditions": {
+        "if": [
+          "HELL_KEY_ANGELS"
+        ]
+      },
+      "id": "9bcf3cd9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9bcf3cd9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:2",
+      "text": "Odin's Hell waits for the end of the world. Loki is still smiling.",
+      "conditions": {
+        "if": [
+          "HELL_KEY_NORSE"
+        ]
+      },
+      "id": "c8a5e16f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c8a5e16f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:3",
+      "text": "Azazel's Hell is crueler than it ever was.",
+      "conditions": {
+        "if": [
+          "HELL_KEY_DEMONS"
+        ]
+      },
+      "id": "d21e139c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d21e139c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:4",
+      "text": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
+      "conditions": {
+        "if": [
+          "HELL_KEY_FAERIE"
+        ]
+      },
+      "id": "1f560870",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1f560870.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:5",
+      "text": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
+      "conditions": {
+        "if": [
+          "LUCIFER_FREED"
+        ]
+      },
+      "id": "eded19c9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/eded19c9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:6",
+      "text": "Nada is gone, born again into a life of her own.",
+      "conditions": {
+        "if": [
+          "NADA_FORGIVEN"
+        ]
+      },
+      "id": "6d31b1a6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6d31b1a6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:7",
+      "text": "Nada is gone, and she did not forgive.",
+      "conditions": {
+        "unless": [
+          "NADA_FORGIVEN"
+        ]
+      },
+      "id": "2b39520d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2b39520d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:8",
+      "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called.",
+      "conditions": {},
+      "id": "e2a61737",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e2a61737.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep4",
+      "location": "beat:9",
+      "text": "End of Part Four.",
+      "conditions": {},
+      "id": "ec634ef2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ec634ef2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "beat:1",
+      "text": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm.",
+      "conditions": {},
+      "id": "ffb0e9c1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ffb0e9c1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "beat:2",
+      "text": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home.",
+      "conditions": {},
+      "id": "5c39400b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5c39400b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "beat:3",
+      "text": "Aurie walked her sister's rounds. Something of that walk has stayed with her.",
+      "conditions": {
+        "if": [
+          "DEATH_ROUNDS"
+        ]
+      },
+      "id": "82777ec9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/82777ec9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "beat:4",
+      "text": "Then one evening Lucienne comes to her with a letter, sealed with the sign of a book.",
+      "conditions": {},
+      "id": "337d110c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/337d110c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "beat:5",
+      "text": "Only one member of her family seals his letters that way.",
+      "conditions": {},
+      "id": "bda68462",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bda68462.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "3.0",
+      "location": "choice:3.0.GO:0",
+      "text": "Lucienne bows. Behind her spectacles, she looks worried.",
+      "conditions": {},
+      "id": "3c36d277",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3c36d277.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "beat:0",
+      "text": "Aurie turns to leave. Paul McGuire is on his knees in the dust, beside the chair.",
+      "conditions": {},
+      "id": "867dd4ac",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/867dd4ac.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "beat:1",
+      "text": "Fifty years he has loved Alex Burgess. He has never once begged anyone for anything.",
+      "conditions": {},
+      "id": "c588f3e0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c588f3e0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "choice:1.6.LIFT:0",
+      "text": "Aurie opens her hand. Alex falls into the first real sleep he has had in seventy years.",
+      "conditions": {},
+      "id": "22fa646b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/22fa646b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "choice:1.6.LIFT:1",
+      "text": "Paul holds him, and weeps, and does not let go.",
+      "conditions": {},
+      "id": "bb034adc",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bb034adc.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "choice:1.6.KEEP:0",
+      "text": "Aurie walks out into the dawn.",
+      "conditions": {},
+      "id": "6efc2ff4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6efc2ff4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "1.6",
+      "location": "choice:1.6.KEEP:1",
+      "text": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking.",
+      "conditions": {},
+      "id": "5b1b0827",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5b1b0827.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4b",
+      "location": "beat:0",
+      "text": "Out on the street, the rain has not stopped. Johanna is waiting.",
+      "conditions": {},
+      "id": "99d2829d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/99d2829d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4b",
+      "location": "beat:1",
+      "text": "She has buried a lot of people. She has never hated anyone the way she hates Aurie now.",
+      "conditions": {},
+      "id": "a36cb3c7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a36cb3c7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4b",
+      "location": "choice:2.4b.SORRY:0",
+      "text": "Johanna does not forgive her. But she hears it, and for a moment they stand in the rain together.",
+      "conditions": {},
+      "id": "1b710fab",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1b710fab.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "2.4b",
+      "location": "choice:2.4b.COLD:0",
+      "text": "Johanna spits at her feet. Her curse follows Aurie out of London, and into everything.",
+      "conditions": {},
+      "id": "e48ae289",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e48ae289.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:1",
+      "text": "The realm is mended. But some prayers arrived while Aurie was in the glass, and no one was there to hear them.",
+      "conditions": {},
+      "id": "d7cb219e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d7cb219e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:2",
+      "text": "Lucienne has kept every one. Tonight she brings the oldest still unanswered.",
+      "conditions": {},
+      "id": "f0b02bf1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f0b02bf1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:3",
+      "text": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover.",
+      "conditions": {},
+      "id": "b5752d12",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b5752d12.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:4",
+      "text": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+      "conditions": {},
+      "id": "7bf5dbde",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7bf5dbde.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:5",
+      "text": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius.",
+      "conditions": {},
+      "id": "6559b904",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6559b904.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "beat:6",
+      "text": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her.",
+      "conditions": {},
+      "id": "9da6161f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9da6161f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.0",
+      "location": "choice:5.0.GO:1",
+      "text": "A tall house in London. At the top of the stairs, a door with the lock on the outside.",
+      "conditions": {},
+      "id": "b5c151f5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b5c151f5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "beat:0",
+      "text": "The lock turns to sand in Aurie's hand. The door swings open.",
+      "conditions": {},
+      "id": "1ec1b55e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1ec1b55e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "beat:1",
+      "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up.",
+      "conditions": {},
+      "id": "7e4d37d9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7e4d37d9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "beat:2",
+      "text": "She knows who has come. She has known that voice for three thousand years.",
+      "conditions": {},
+      "id": "10d4ebac",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/10d4ebac.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "choice:5.1.FREE:0",
+      "text": "Aurie touches the cords at her wrists. They pour away as sand.",
+      "conditions": {},
+      "id": "c3d160c2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c3d160c2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "choice:5.1.FREE:1",
+      "text": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to.",
+      "conditions": {},
+      "id": "b1db1253",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b1db1253.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "choice:5.1.FREE:2",
+      "text": "Then Aurie goes downstairs to find Richard Madoc.",
+      "conditions": {},
+      "id": "5748b42f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5748b42f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "choice:5.1.MADOC:0",
+      "text": "Calliope stays bound on the bed while Aurie goes down the stairs.",
+      "conditions": {},
+      "id": "d6a79723",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d6a79723.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1",
+      "location": "choice:5.1.MADOC:1",
+      "text": "She says nothing. She has had a great deal of practice at waiting.",
+      "conditions": {},
+      "id": "99e242b7",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/99e242b7.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "beat:0",
+      "text": "Madoc is at his desk with a glass of whisky, his latest prize on the shelf behind him.",
+      "conditions": {},
+      "id": "b43b019d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b43b019d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "beat:1",
+      "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for.",
+      "conditions": {},
+      "id": "4c80f428",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4c80f428.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.FLOOD:0",
+      "text": "Ideas pour into Richard Madoc, faster than he can catch them. He writes until the paper runs out.",
+      "conditions": {},
+      "id": "655ad7c2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/655ad7c2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.FLOOD:1",
+      "text": "Then he writes on the walls, with his own fingers, until they bleed.",
+      "conditions": {},
+      "id": "c16658f8",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c16658f8.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.FLOOD:2",
+      "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+      "conditions": {
+        "unless": [
+          "CALLIOPE_FIRST"
+        ]
+      },
+      "id": "f50e6553",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f50e6553.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.FLOOD:3",
+      "text": "Days later, Calliope asks Aurie to let him go. Aurie does. Not one idea remains to him, ever again.",
+      "conditions": {},
+      "id": "23927f30",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/23927f30.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.CONFESS:0",
+      "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+      "conditions": {
+        "unless": [
+          "CALLIOPE_FIRST"
+        ]
+      },
+      "id": "f50e6553",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f50e6553.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.CONFESS:1",
+      "text": "Calliope wants only one thing: for him to say aloud what he did.",
+      "conditions": {},
+      "id": "8391abe5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/8391abe5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.CONFESS:2",
+      "text": "Madoc confesses to the world. Then Aurie leaves him to whatever the world decides.",
+      "conditions": {},
+      "id": "9e5a2cf4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9e5a2cf4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.CONFESS:3",
+      "text": "Calliope looks at Aurie for a long moment. You have changed, she says.",
+      "conditions": {},
+      "id": "b84ea9d6",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b84ea9d6.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.EMPTY:0",
+      "text": "Aurie takes every idea he ever had. Madoc sits at his desk and cannot remember what a story is.",
+      "conditions": {},
+      "id": "7ff92343",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7ff92343.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.EMPTY:1",
+      "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+      "conditions": {
+        "unless": [
+          "CALLIOPE_FIRST"
+        ]
+      },
+      "id": "f50e6553",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f50e6553.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.1b",
+      "location": "choice:5.1b.EMPTY:2",
+      "text": "Calliope watches it done, and does not look away. But she does not thank Aurie, either.",
+      "conditions": {},
+      "id": "f9a1feea",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/f9a1feea.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:1",
+      "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home.",
+      "conditions": {},
+      "id": "40b16309",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/40b16309.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:2",
+      "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be.",
+      "conditions": {},
+      "id": "221f3345",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/221f3345.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:3",
+      "text": "For seventy years he has been loose in the waking world, killing, and taking eyes.",
+      "conditions": {},
+      "id": "fd8a2129",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fd8a2129.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:4",
+      "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her.",
+      "conditions": {},
+      "id": "9b83346b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9b83346b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:5",
+      "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth.",
+      "conditions": {},
+      "id": "dd222b0e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/dd222b0e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:7",
+      "text": "He has come here to speak at a convention, which the guests call a cereal convention. Every guest is a killer.",
+      "conditions": {},
+      "id": "c610cd3c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c610cd3c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "beat:8",
+      "text": "He is their hero. And Aurie is standing at the back of the hall.",
+      "conditions": {},
+      "id": "115c827b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/115c827b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.UNMAKE:0",
+      "text": "Aurie raises her hand. The Corinthian comes apart into sand, and is gone.",
+      "conditions": {},
+      "id": "181bbfc3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/181bbfc3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.UNMAKE:1",
+      "text": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth.",
+      "conditions": {},
+      "id": "42c9eb5a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/42c9eb5a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.UNMAKE:2",
+      "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+      "conditions": {},
+      "id": "5f718f94",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5f718f94.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.REMAKE:0",
+      "text": "The Corinthian bows. His shape loosens into sand, and drifts away toward the Dreaming.",
+      "conditions": {},
+      "id": "a010bff8",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a010bff8.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.REMAKE:1",
+      "text": "Lucienne will lock that sand away until Aurie is ready to shape him again.",
+      "conditions": {},
+      "id": "d134c32d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d134c32d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.REMAKE:2",
+      "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+      "conditions": {},
+      "id": "5f718f94",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5f718f94.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.FREE:0",
+      "text": "The Corinthian smiles, puts his glasses back on, and walks out into the night.",
+      "conditions": {},
+      "id": "ac7d42e4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ac7d42e4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2a",
+      "location": "choice:5.2a.FREE:1",
+      "text": "Somewhere in the Dreaming, a door that should be shut swings quietly open.",
+      "conditions": {},
+      "id": "a3bb17bd",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a3bb17bd.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:1",
+      "text": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida.",
+      "conditions": {},
+      "id": "ef54f1dd",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ef54f1dd.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:2",
+      "text": "She dreams. And the walls between the dreams of everyone in the house come down.",
+      "conditions": {},
+      "id": "bd91d99d",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bd91d99d.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:3",
+      "text": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the Dreaming.",
+      "conditions": {},
+      "id": "2a322224",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2a322224.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:4",
+      "text": "Lucienne's library is coming apart, page by page. Rose Walker is a vortex.",
+      "conditions": {},
+      "id": "7286b5a5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7286b5a5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:5",
+      "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart.",
+      "conditions": {},
+      "id": "bcc8c84f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/bcc8c84f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "beat:6",
+      "text": "Aurie finds her at the centre of it, small and terrified.",
+      "conditions": {},
+      "id": "beeb253f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/beeb253f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "choice:5.2b.KILL:0",
+      "text": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
+      "conditions": {},
+      "id": "722c90e8",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/722c90e8.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "choice:5.2b.KILL:1",
+      "text": "And a voice behind them says: wait.",
+      "conditions": {},
+      "id": "1fecf19a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1fecf19a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "choice:5.2b.WAIT:0",
+      "text": "Aurie lowers her hand. Around them, the library tears, shelf by shelf.",
+      "conditions": {},
+      "id": "6130f91c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/6130f91c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2b",
+      "location": "choice:5.2b.WAIT:1",
+      "text": "And a voice behind them says: there is.",
+      "conditions": {},
+      "id": "3d186c1f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3d186c1f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "beat:0",
+      "text": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling.",
+      "conditions": {},
+      "id": "c81eda2c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c81eda2c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "beat:1",
+      "text": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years.",
+      "conditions": {},
+      "id": "e73dee91",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e73dee91.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "beat:2",
+      "text": "Aurie spoke with her once, in her dream, when she was ten.",
+      "conditions": {
+        "unless": [
+          "UNITY_PROMISE"
+        ]
+      },
+      "id": "80309918",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/80309918.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "beat:3",
+      "text": "Long ago, in that dream, Aurie promised the girl she would not be forgotten. Unity remembers.",
+      "conditions": {
+        "if": [
+          "UNITY_PROMISE"
+        ]
+      },
+      "id": "de45c60b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/de45c60b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "choice:5.2c.LET:0",
+      "text": "Unity takes Rose's hand. The light of the vortex flows out of the girl and into the old woman.",
+      "conditions": {},
+      "id": "7e3b25cf",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7e3b25cf.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "choice:5.2c.LET:1",
+      "text": "Unity smiles, and closes her eyes, and is gone. Death is waiting for her, kindly.",
+      "conditions": {},
+      "id": "a5d2b166",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a5d2b166.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "choice:5.2c.LET:2",
+      "text": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room.",
+      "conditions": {},
+      "id": "d5160953",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d5160953.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2c",
+      "location": "choice:5.2c.LET:3",
+      "text": "Rose will never forget that the lady from her dreams raised a hand to kill her.",
+      "conditions": {
+        "if": [
+          "ROSE_THREATENED"
+        ]
+      },
+      "id": "51d7fd2c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/51d7fd2c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "location": "beat:0",
+      "text": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
+      "conditions": {},
+      "id": "e01fde78",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e01fde78.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "location": "beat:1",
+      "text": "Desire made the vortex happen. It hoped Aurie would kill a child of her own family, and be destroyed for it.",
+      "conditions": {},
+      "id": "078f6bc3",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/078f6bc3.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "location": "beat:2",
+      "text": "Desire is lounging on a velvet couch, and does not pretend to be surprised.",
+      "conditions": {},
+      "id": "3bac987e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3bac987e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "location": "choice:5.2d.THREATEN:0",
+      "text": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before.",
+      "conditions": {},
+      "id": "1a6d722f",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1a6d722f.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.2d",
+      "location": "choice:5.2d.WARN:0",
+      "text": "Aurie leaves. Behind her, Desire laughs, and the laugh goes on a little too long.",
+      "conditions": {},
+      "id": "3c429219",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/3c429219.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:0",
+      "text": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries.",
+      "conditions": {},
+      "id": "edb85aa2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/edb85aa2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:2",
+      "text": "Aurie and her sister Death sit in the corner of a smoky London tavern, watching the living.",
+      "conditions": {},
+      "id": "9f8bc82a",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9f8bc82a.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:3",
+      "text": "A loud young man named Hob Gadling is telling his friends that dying is a mug's game. He doesn't intend to do it.",
+      "conditions": {},
+      "id": "891d51b4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/891d51b4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:4",
+      "text": "Death laughs. She grants it, for her sister's sake, to see what happens.",
+      "conditions": {},
+      "id": "1e235f12",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/1e235f12.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:5",
+      "text": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so.",
+      "conditions": {},
+      "id": "fd155063",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/fd155063.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:7",
+      "text": "Hob is waiting. He is rich now, and he still loves every day of it.",
+      "conditions": {},
+      "id": "9d9c4114",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9d9c4114.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:9",
+      "text": "A young writer in the corner, Will Shaxberd, begs Aurie for the gift of telling stories. She makes him a bargain.",
+      "conditions": {},
+      "id": "ec801a3b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/ec801a3b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:11",
+      "text": "Hob has lost everything, his money, his wife, his son. He still does not want to die.",
+      "conditions": {},
+      "id": "67d819ec",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/67d819ec.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "beat:13",
+      "text": "Hob is rich again, in a powdered wig. He has made his money from ships that carry slaves.",
+      "conditions": {},
+      "id": "d4a2cfd4",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/d4a2cfd4.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "choice:5.3.SAY:0",
+      "text": "Hob goes red, and blusters, and does not forget it. He sells the ships before the next century comes.",
+      "conditions": {},
+      "id": "101a3317",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/101a3317.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3",
+      "location": "choice:5.3.SILENT:0",
+      "text": "Aurie says nothing. Hob laughs and pours the wine, and the ships keep sailing.",
+      "conditions": {},
+      "id": "7133a4e2",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/7133a4e2.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "location": "beat:1",
+      "text": "Five hundred years. Hob is waiting, in a good Victorian coat, and he has had a few drinks.",
+      "conditions": {},
+      "id": "cf3415b9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/cf3415b9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "location": "beat:2",
+      "text": "He has worked something out. He has decided to say it, whatever it costs him.",
+      "conditions": {},
+      "id": "a921f1bf",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a921f1bf.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "location": "choice:5.3b.WALK:0",
+      "text": "Aurie stands, and walks out into the London fog.",
+      "conditions": {},
+      "id": "10c31ece",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/10c31ece.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "location": "choice:5.3b.WALK:1",
+      "text": "Behind her, Hob calls out: I'll be here in a hundred years. I'll wait for you.",
+      "conditions": {},
+      "id": "9bc3975e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9bc3975e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3b",
+      "location": "choice:5.3b.PERHAPS:0",
+      "text": "Hob grins like a boy, and orders another round, and Aurie lets him.",
+      "conditions": {},
+      "id": "34b5e995",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/34b5e995.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "beat:1",
+      "text": "The tavern is a pub now. Hob sits at the corner table with two pints, one of them untouched.",
+      "conditions": {},
+      "id": "cff9e487",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/cff9e487.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "beat:2",
+      "text": "He did not know where she had been. He only knew she had never once been late.",
+      "conditions": {},
+      "id": "de4856b5",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/de4856b5.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "beat:3",
+      "text": "A hundred years ago she walked out on him. He has bought her a drink anyway.",
+      "conditions": {
+        "if": [
+          "HOB_WALKED"
+        ]
+      },
+      "id": "c9da95a1",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c9da95a1.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "choice:5.3c.FRIEND:0",
+      "text": "Hob raises his glass. To friends, he says. Aurie raises hers.",
+      "conditions": {},
+      "id": "773958e9",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/773958e9.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "choice:5.3c.NOD:0",
+      "text": "They drink. Hob talks, and Aurie listens, and the afternoon goes by.",
+      "conditions": {},
+      "id": "e1e8ff4b",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/e1e8ff4b.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "5.3c",
+      "location": "choice:5.3c.NOD:1",
+      "text": "He doesn't need her to say it. But he would have liked to hear it.",
+      "conditions": {},
+      "id": "318e7a7e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/318e7a7e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:0",
+      "text": "The Muse is free.",
+      "conditions": {},
+      "id": "9f9ec47e",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/9f9ec47e.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:1",
+      "text": "Richard Madoc never writes again.",
+      "conditions": {
+        "if": [
+          "MADOC_FLOOD"
+        ]
+      },
+      "id": "4a4f9d7c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4a4f9d7c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:2",
+      "text": "Richard Madoc never writes again.",
+      "conditions": {
+        "if": [
+          "MADOC_EMPTY"
+        ]
+      },
+      "id": "4a4f9d7c",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/4a4f9d7c.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:3",
+      "text": "Richard Madoc told the world what he did.",
+      "conditions": {
+        "if": [
+          "MADOC_CONFESS"
+        ]
+      },
+      "id": "b27355f0",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/b27355f0.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:4",
+      "text": "The Corinthian's skull sits on a shelf in Lucienne's library.",
+      "conditions": {
+        "if": [
+          "CORINTHIAN_UNMADE"
+        ]
+      },
+      "id": "5effb314",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5effb314.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:5",
+      "text": "A heap of dark sand waits in a locked box for Aurie to shape it again.",
+      "conditions": {
+        "if": [
+          "CORINTHIAN_REMADE"
+        ]
+      },
+      "id": "a1d5f216",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/a1d5f216.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:6",
+      "text": "And the Corinthian is still out there, smiling.",
+      "conditions": {
+        "if": [
+          "CORINTHIAN_FREE"
+        ]
+      },
+      "id": "2bfca295",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/2bfca295.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:7",
+      "text": "Rose Walker is alive. Unity Kincaid sleeps at last, for good.",
+      "conditions": {},
+      "id": "86d03e14",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/86d03e14.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:8",
+      "text": "Desire has made a dangerous enemy.",
+      "conditions": {
+        "if": [
+          "DESIRE_THREATENED"
+        ]
+      },
+      "id": "be58dd77",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/be58dd77.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:9",
+      "text": "And in a London pub, a man who will not die has a friend.",
+      "conditions": {
+        "if": [
+          "HOB_FRIEND"
+        ]
+      },
+      "id": "0416a1b8",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/0416a1b8.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:10",
+      "text": "And in a London pub, a man who will not die is still waiting to hear the word.",
+      "conditions": {
+        "unless": [
+          "HOB_FRIEND"
+        ]
+      },
+      "id": "5ed5c2ac",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/5ed5c2ac.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    },
+    {
+      "book": "sandman",
+      "scene": "end-ep5",
+      "location": "beat:11",
+      "text": "End of Part Five.",
+      "conditions": {},
+      "id": "c5a66326",
+      "url": "https://7zfkb2xtonrtoupx.public.blob.vercel-storage.com/clips/sandman/audio/lines/c5a66326.mp3",
+      "status": "blocked-before-media-audit",
+      "listening": "not-verified",
+      "error": "<urlopen error [Errno 1] Operation not permitted>"
+    }
+  ]
+}
