@@ -18,7 +18,7 @@
           "clip": "0.0a"
         },
         {
-          "text": "Her librarian, Lucienne, reads her the day's report. A nightmare has misbehaved."
+          "text": "Her librarian, Lucienne, reads her the day's report. A nightmare has tried to slip out into the waking world."
         },
         {
           "text": "Aurie closes her hand, and the nightmare is unmade.",
@@ -494,8 +494,14 @@
           "card": "Fawney Rig · 1970s"
         },
         {
-          "text": "Alex is grey now. He has never once been cruel to you. Tonight, for the first time, he has come down to talk.",
+          "text": "Alex is grey now. He was born the year you were caught, and he has grown old listening to you not speak.",
           "clip": "1.4a"
+        },
+        {
+          "text": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs."
+        },
+        {
+          "text": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk."
         },
         {
           "text": "Behind him, Paul, the man who loves him, pretends not to listen."
@@ -811,7 +817,7 @@
               "ALEX_CURSED": true
             }
           },
-          "next": "2.1",
+          "next": "1.6",
           "effectsIf": [
             {
               "flag": "ALEX_PROMISE",
@@ -1365,14 +1371,11 @@
             },
             "relic": "sand"
           },
-          "next": "end-2a",
+          "next": "2.4b",
           "aftermath": [
             {
               "text": "You take the pouch. Behind you, Rachel begins to scream.",
               "still": "rachel-room"
-            },
-            {
-              "text": "Johanna's curse follows you all the way down the stairs."
             }
           ]
         }
@@ -1412,6 +1415,9 @@
         {
           "card": "Hell",
           "still": "hell-gates"
+        },
+        {
+          "text": "Aurie walks down through the darkest corners of her own realm, to the place where the Dreaming touches Hell."
         },
         {
           "text": "The Fates said a demon holds her helm. So Aurie goes where no dreamer is welcome."
@@ -1812,6 +1818,9 @@
           "still": "still-arkham"
         },
         {
+          "text": "The ruby calls to her across an ocean, like her own voice heard from another room."
+        },
+        {
           "text": "The Fates said the ruby went to Ethel Cripps's son."
         },
         {
@@ -2051,7 +2060,7 @@
           "clip": "2.10a"
         },
         {
-          "text": "Her older sister. Death."
+          "text": "Her older sister, Death. She meets every living thing at the end, and she is the one sibling Aurie has always loved."
         }
       ],
       "conversation": {
@@ -3080,6 +3089,180 @@
             {
               "text": "Lucienne bows. Behind her spectacles, she looks worried.",
               "still": "library-hub"
+            }
+          ]
+        }
+      ]
+    },
+    "1.6": {
+      "id": "1.6",
+      "title": "Paul",
+      "pov": "POV",
+      "music": "escape",
+      "fx": "dust",
+      "recap": "Paul McGuire begged Aurie to lift the curse from Alex.",
+      "beats": [
+        {
+          "text": "Aurie turns to leave. Paul McGuire is on his knees in the dust, beside the chair.",
+          "still": "still-paul-1988"
+        },
+        {
+          "text": "Fifty years he has loved Alex Burgess. He has never once begged anyone for anything."
+        }
+      ],
+      "conversation": {
+        "character": "paul",
+        "maxTurns": 3,
+        "canon": [
+          "It is 1988. Aurie has just cursed Alex Burgess with eternal waking: he will wake from every sleep into a worse nightmare, forever.",
+          "Paul McGuire has loved Alex for fifty years. He begs Aurie to lift the curse, and offers to bear it himself.",
+          "Alex never hurt Aurie; his father did. Alex was a frightened boy in a cold house who grew into a frightened old man.",
+          "Aurie can lift the curse with a gesture, or refuse."
+        ],
+        "opening": "Please. Please, my lady. He was a frightened boy in a cold house. He never hurt you. Take it off him. Put it on me, if somebody has to pay.",
+        "possibilities": [
+          "She asks why he loves Alex: Paul tells her one small, true thing about him.",
+          "She is moved: Paul can hardly believe it.",
+          "She is cold: Paul does not stop asking, quietly, until she leaves.",
+          "She offers to put the curse on Paul instead: he says yes at once, without a breath."
+        ],
+        "suggestions": [
+          "Why do you love him?",
+          "Would you really take it for him?"
+        ],
+        "exits": {
+          "1.6.LIFT": "Aurie lifts the curse from Alex.",
+          "1.6.KEEP": "Aurie refuses and leaves the curse in place."
+        },
+        "consequences": {
+          "HEARD_PAUL": {
+            "when": "She asks why he loves Alex, and listens.",
+            "effects": {
+              "flags": {
+                "HEARD_PAUL": true
+              }
+            },
+            "ripple": "In the chair, Alex wakes, and wakes, and says Paul's name."
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "1.6.LIFT",
+          "text": "Enough. I lift it.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "ALEX_CURSED": false,
+              "ALEX_RELENTED": true
+            }
+          },
+          "next": "2.1",
+          "aftermath": [
+            {
+              "text": "Aurie opens her hand. Alex falls into the first real sleep he has had in seventy years.",
+              "still": "cellar-1988"
+            },
+            {
+              "text": "Paul holds him, and weeps, and does not let go."
+            }
+          ]
+        },
+        {
+          "id": "1.6.KEEP",
+          "text": "No. He keeps it.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "PAUL_GRIEF": true
+            }
+          },
+          "next": "2.1",
+          "aftermath": [
+            {
+              "text": "Aurie walks out into the dawn.",
+              "still": "cellar-1988"
+            },
+            {
+              "text": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking."
+            }
+          ]
+        }
+      ]
+    },
+    "2.4b": {
+      "id": "2.4b",
+      "title": "Johanna's Curse",
+      "pov": "POV",
+      "music": "cellar-wait",
+      "fx": "rain",
+      "recap": "Johanna Constantine cursed Aurie for leaving Rachel to die in pain.",
+      "beats": [
+        {
+          "text": "Out on the street, the rain has not stopped. Johanna is waiting.",
+          "still": "still-johanna"
+        },
+        {
+          "text": "She has buried a lot of people. She has never hated anyone the way she hates Aurie now."
+        }
+      ],
+      "conversation": {
+        "character": "johanna",
+        "maxTurns": 2,
+        "canon": [
+          "Aurie has just taken the pouch and let Rachel die screaming, when she could have given her a gentle end.",
+          "Johanna is shaking with grief and rage. She curses Aurie: may she remember the screaming every time she opens the pouch.",
+          "An apology will not undo it, and Johanna will not pretend it does; but she will hear it."
+        ],
+        "opening": "You could have made it kind. You had it in your hand, and you chose that. I hope you hear her screaming every time you open that pouch.",
+        "possibilities": [
+          "She apologises: Johanna does not forgive, but the anger cracks into grief.",
+          "She is cold or threatens: Johanna spits at her feet and walks into the rain.",
+          "She explains herself: Johanna says there is no explaining it."
+        ],
+        "exits": {
+          "2.4b.SORRY": "Aurie admits it was wrong, or says she is sorry.",
+          "2.4b.COLD": "Aurie stays cold and walks away."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "2.4b.SORRY",
+          "text": "You're right. It was wrong. I'm sorry.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "JOHANNA_HEARD_SORRY": true
+            }
+          },
+          "next": "end-2a",
+          "aftermath": [
+            {
+              "text": "Johanna does not forgive her. But she hears it, and for a moment they stand in the rain together.",
+              "still": "london-rain"
+            }
+          ]
+        },
+        {
+          "id": "2.4b.COLD",
+          "text": "Your curse means nothing to me.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "end-2a",
+          "aftermath": [
+            {
+              "text": "Johanna spits at her feet. Her curse follows Aurie out of London, and into everything.",
+              "still": "london-rain"
             }
           ]
         }

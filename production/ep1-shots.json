@@ -777,6 +777,18 @@
         ],
         "prompt": "Medium close-up in the endless library from the location plate: Lucienne, the woman from the character sheet, holds out toward the camera a heavy cream envelope sealed with dark red wax stamped with the sign of an open book. Her lantern beside her on the reading table. Her expression: respectful, worried. Warm lantern light, dust in the air."
       }
+    },
+    {
+      "id": "still-paul-1988",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/paul/sheet.png",
+          "characters/alex-old/sheet.png",
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "The 1988 cellar from the location plate at grey dawn, the glass sphere shattered behind. Paul McGuire, the man from the first character sheet, now in his late seventies, kneels in the dust beside an old wheelchair, one hand on the arm of the chair where Alex Burgess, the old man from the second character sheet, sits rigid with open, staring, sleepless eyes. Paul looks up at the camera, pleading, tears on his face. Cold dawn light through the high window, dust in the air."
+      }
     }
   ],
   "react": {
