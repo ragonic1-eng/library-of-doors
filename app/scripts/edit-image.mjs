@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 // Edit an approved image while keeping everything else, above all the face, identical.
 // Safer than generating anew when likeness matters.
-//   node scripts/edit-image.mjs <source.png> <out.png> "<what to change>" [--score aurie|alex]
+//   node scripts/edit-image.mjs <source.png> <out.png> "<what to change>" [--score aurie|alex] [--ref <image> ...]
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { slowFetch } from "./slow-fetch.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 for (const f of [join(ROOT, ".env"), join(ROOT, "app", ".env.local")]) if (existsSync(f)) try { process.loadEnvFile(f); } catch { /* ignore */ }
@@ -13,14 +14,16 @@ const BASE = (process.env.INFISTAR_BASE_URL ?? "https://infistar.ai/v1").replace
 const MODEL = process.env.MODEL_IMAGE_GEMINI ?? "gemini-3-pro-image";
 const [src, out, change] = process.argv.slice(2);
 const who = process.argv.includes("--score") ? process.argv[process.argv.indexOf("--score") + 1] : null;
+// Extra reference images (a character sheet for someone the edit adds), sent after the photograph.
+const refs = process.argv.flatMap((a, i) => (a === "--ref" ? [process.argv[i + 1]] : []));
 if (!src || !out || !change) { console.error('usage: edit-image.mjs <source> <out> "<change>" [--score aurie]'); process.exit(1); }
 
-const prompt = `Edit the attached photograph. Keep it exactly the same: identical person, identical face shape and features, framing, camera, lens, lighting, background, clothing and colours, pixel for pixel wherever possible. Change ONLY this: ${change}. The face must remain an exact likeness of the person in the photograph; do not slim, reshape, beautify or age it.`;
-const res = await fetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`, {
+const prompt = `Edit the first attached photograph. Keep it exactly the same: identical person, identical face shape and features, framing, camera, lens, lighting, background, clothing and colours, pixel for pixel wherever possible. Change ONLY this: ${change}. The face must remain an exact likeness of the person in the photograph; do not slim, reshape, beautify or age it.${refs.length ? " The other attached images are only references for the look of anyone or anything the change adds." : ""}`;
+const res = await slowFetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`, {
   method: "POST",
   headers: { Authorization: `Bearer ${process.env.INFISTAR_API_KEY}`, "Content-Type": "application/json" },
   body: JSON.stringify({
-    contents: [{ role: "user", parts: [{ inlineData: { mimeType: "image/png", data: readFileSync(resolve(src)).toString("base64") } }, { text: prompt }] }],
+    contents: [{ role: "user", parts: [src, ...refs].map((f) => ({ inlineData: { mimeType: "image/png", data: readFileSync(resolve(f)).toString("base64") } })).concat({ text: prompt }) }],
     generationConfig: { responseModalities: ["TEXT", "IMAGE"], imageConfig: { aspectRatio: "16:9" } },
   }),
 });

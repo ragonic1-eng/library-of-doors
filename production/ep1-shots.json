@@ -1258,6 +1258,430 @@
         "use": "assets/keyframes/sandman/still-ruby-blaze/keyframe.png"
       },
       "motion": "The ruby's red light flares brighter and brighter; the red tendrils lash toward the camera; the edges of the frame crumble into grey sand that is sucked into the light; Dee laughs. Fast push-in, ending in red."
+    },
+    {
+      "id": "aurie-years",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "use": "assets/keyframes/sandman/aurie-years/keyframe.png"
+      },
+      "motion": "Time passing outside the glass: pale daylight from the high window slowly sweeps across the cellar walls and fades and returns, dust drifts and settles, cobwebs stir; the candle stubs stay unlit. Inside the sphere Aurie is completely still, like a statue: her face, expression, head and pose do not change at all, only her eyes move slightly. Locked-off camera, no zoom."
+    },
+    {
+      "id": "aurie-ruins",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/palace-crumbling/plate.png"
+        ],
+        "prompt": "Medium close-up in the ruins of the throne room of the Dreaming from the location plate, grey dusk light. Aurie kneels among fallen stone, holding out one open hand from which grey sand pours to the floor; she looks at it in grief. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Ruined arches soft behind her."
+      },
+      "motion": "Grey sand pours slowly from Aurie's open hand; she closes her eyes for a moment, then opens them and looks up at what is left of her palace. Dust drifts. Slow push-in."
+    },
+    {
+      "id": "aurie-helm",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/choronzon/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "Medium close-up in the obsidian arena of Hell from the location plate, red light rising from below: Aurie holds her helm: a dark helm shaped like an old gas mask with a long ridged breathing tube, carved from black bone, with a single huge jewel-like eye lens in both hands before her chest and looks down at it, then up toward the camera with quiet, terrible calm. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Silver light from above falls on her face; ash drifts; the arena's crowd is a dark blur behind."
+      },
+      "motion": "Aurie raises the helm slowly; a faint silver light runs along its black bone; she lifts her gaze to the camera with a calm, certain look. Ash drifts upward. Slow push-in."
+    },
+    {
+      "id": "aurie-death-bench",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/death/sheet.png",
+          "assets/plates/park/plate.png"
+        ],
+        "prompt": "Tight medium close-up two-shot from the chest up on the green bench in the morning park from the plate, golden low sunlight: Aurie on the left, her face filling the upper left of the frame, turned three-quarters toward the camera with a small, surprised smile. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Her sister Death from the second character sheet (pale skin, black hair, black top, silver ankh) leans her head on Aurie's shoulder at the right of frame, laughing, eyes closed. The park and pigeons soft and blurred behind them."
+      },
+      "motion": "Death laughs and rests her head on Aurie's shoulder; Aurie's small smile grows a little; pigeons flutter up past the bench; leaves drift in the sunlight. Slow push-in."
+    },
+    {
+      "id": "aurie-mending",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "Medium close-up, chest up, at dusk on a high terrace of her palace in the Dreaming: Aurie faces the camera, her face large in the upper half of the frame, calm and fierce, eyes to the lens; her arms are raised out to her sides, her hands just visible at the frame edges. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Behind her, softly out of focus, great spirals of grey sand rise from the ground and are forming towers and arches; the first stars above; cool silver light on her face."
+      },
+      "motion": "The sand spirals behind Aurie rise faster and settle into towers and arches; her hair lifts in the wind of it; she keeps looking at the camera, calm and certain; her face does not change. Slow push-in."
+    },
+    {
+      "id": "aurie-nada",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/keyframes/sandman/still-nada-free/keyframe.png",
+          "assets/plates/white-room/plate.png"
+        ],
+        "prompt": "In the bare white room from the location plate: Aurie and Nada, the queen from the second image (white linen gown, gold collar, braided hair threaded with gold), stand face to face, close. Aurie is on the right, in three-quarter view toward the camera, her eyes wet with regret; Nada, nearer the left edge, in profile, dignified and wary. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Soft white light, a few grains of golden sand falling between them."
+      },
+      "motion": "Neither moves at first; then Aurie lowers her eyes, and Nada's chin lifts slightly; a grain of golden sand drifts between their faces. Very slow push-in."
+    },
+    {
+      "id": "aurie-hob",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1989/plate.png"
+        ],
+        "prompt": "In the 1989 London pub from the plate, a rainy afternoon, seen over the shoulder of Hob Gadling (the back of his head and worn leather jacket soft in the foreground, from the second character sheet): Aurie sits across the small corner table facing the camera, lifting a pint of bitter, a faint, almost-smile on her face. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Rain on the window behind her, warm lamp light."
+      },
+      "motion": "Aurie lifts the pint slightly toward Hob and the corner of her mouth rises into a small smile; Hob's shoulder shakes with a laugh in the foreground; rain runs down the window. Slow push-in."
+    },
+    {
+      "id": "aurie-stream",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/dream-stream/plate.png"
+        ],
+        "prompt": "Tight medium close-up from the chest up, dusk at the clear stream from the location plate at the edge of the Dreaming: Aurie kneels at the water's edge, her face filling the upper half of the frame, turned three-quarters toward the camera and lifted toward the first stars, eyes wet, grief held still; her wet open hands rise into the bottom of the frame, water dripping from her fingers. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Silver light on her face; the stream and the far gates of horn and ivory soft and blurred behind her."
+      },
+      "motion": "Water drips from Aurie's fingers; she slowly closes her hands and holds them to her chest; her wet eyes stay on the first stars. Slow push-in."
+    },
+    {
+      "id": "still-empty-crib",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "assets/plates/lyta-nursery/plate.png"
+        ],
+        "prompt": "The small nursery from the plate at night, lamp-lit: Lyta Hall, the woman from the Lyta character sheet, two years older and no longer pregnant: slim, hair loose and unwashed, an old grey cardigan over a T-shirt and jeans, stands frozen beside the crib, both hands over her mouth, eyes wide with horror, staring down into it. In the crib only a scorched, blackened blanket; nothing else can be seen. The paper star mobile turns above."
+      }
+    },
+    {
+      "id": "still-loki-daniel",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/norse/sheet.png",
+          "characters/daniel/sheet.png",
+          "assets/plates/lyta-nursery/plate.png"
+        ],
+        "prompt": "Night, a rainy city street of 1990s America under orange streetlights: Loki, the slender red-haired man with long braids and a worn brown leather coat from the Norse sheet (the one on the right), walks away from the camera along the wet pavement, glancing back over his shoulder with a sly smile, carrying the sleeping two-year-old Daniel from the Daniel sheet (star pyjamas, plush owl) wrapped in a blanket against his chest. Steam rises from a grate; the street is empty."
+      }
+    },
+    {
+      "id": "still-loki-fire",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/norse/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "Inside a cold, bare old house by the sea at night, salt-stained windows, waves beyond: Loki, the slender red-haired man with long braids and a worn brown leather coat from the Norse sheet (the one on the right), kneels before a ring of strange cold silver flames on the bare floorboards, holding the sleeping toddler Daniel from the Daniel sheet in his arms, untouched by the flames, which give off no heat and light the room silver-white. Loki's face is intent, hungry."
+      }
+    },
+    {
+      "id": "still-lyta-walks",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "Night, an empty two-lane road leaving a small American city, the city lights behind her: Lyta Hall, the woman from the Lyta character sheet, two years older and no longer pregnant: slim, hair loose and unwashed, an old grey cardigan over a T-shirt and jeans, walks barefoot down the middle of the road toward the camera, coat open, face empty and set, eyes fixed on something far away. Mist on the road ahead; the road begins to turn into an old dirt track lined with ancient trees."
+      }
+    },
+    {
+      "id": "still-lyta-door",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "Point of view from the doorstep of a small apartment at night: the door is open and Lyta Hall, the Korean-American woman from the Lyta character sheet (her exact face), two years older and no longer pregnant: slim, hair loose and unwashed, an old grey cardigan over a T-shirt and jeans, stands in the narrow lamplit hallway, dark circles under her eyes, a kitchen knife held low at her side, glaring straight into the camera with grief and fury. Coats and a child's small shoes by the door."
+      }
+    },
+    {
+      "id": "still-lyta-daniel",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "Inside a cold bare old house by the sea, a ring of silver flames guttering out on the floorboards behind them: Lyta Hall, the woman from the Lyta character sheet, two years older and no longer pregnant: slim, hair loose and unwashed, an old grey cardigan over a T-shirt and jeans, kneels on the floor clutching the toddler Daniel from the Daniel sheet to her chest, her eyes shut, tears on her face, rocking him. Grey dawn light through salt-stained windows."
+      }
+    },
+    {
+      "id": "still-thessaly",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/thessaly/sheet.png",
+          "characters/lyta/sheet.png",
+          "assets/plates/witch-crossroads/plate.png"
+        ],
+        "prompt": "The crossroads in the ancient wood from the plate, under the huge low moon: Thessaly, the petite honey-blonde witch from the Thessaly sheet, in her black leather strapless corset, short slit skirt, black tights, laced boots and long black velvet coat slipping off her shoulders, silver moon pendant, stands at the foot of the standing stone with her arms folded, weight on one hip, looking straight at the camera with a flat, unimpressed stare, moonlight on her face. Behind her, small and blurred in the mist, Lyta Hall stands barefoot on the road."
+      }
+    },
+    {
+      "id": "still-kindly-ones",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/kindly/sheet.png",
+          "characters/lyta/sheet.png"
+        ],
+        "prompt": "A vast, dim, cave-like space lit by one low red fire: the three hooded women in rough black wool robes from the Kindly Ones sheet (the Maiden with her spindle, the Mother with a red thread, the Crone with iron shears), sit side by side at an ancient wooden loom, working red thread, looking up calmly and politely toward the camera. In the foreground, seen from behind and to one side, Lyta Hall stands barefoot before them, small, in her grey cardigan. Long shadows on rough stone."
+      }
+    },
+    {
+      "id": "still-lucienne-flee",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "The great library of the Dreaming at night, red firelight flickering through its high windows: Lucienne from the character sheet leads a long line of strange dream folk out through a small door at the back of the library, her lantern raised; behind her follow figures of every kind, a man with a pumpkin head, a winged woman, children, gargoyle-like beings, each carrying a small lantern, a ribbon of lights winding away into the dark. Lucienne looks back over her shoulder, grief on her face."
+      }
+    },
+    {
+      "id": "still-lucienne-stand",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "characters/kindly/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The burning courtyard of the Dreaming from the plate: Lucienne from the character sheet stands at the top of the palace steps with her lantern held high, small and very straight, a handful of dream folk behind her. Below her, climbing the steps out of drifting ash, come the three hooded women in rough black wool robes from the Kindly Ones sheet (the Maiden with her spindle, the Mother with a red thread, the Crone with iron shears), faces shadowed in their hoods. Everything they pass crumbles into grey sand."
+      }
+    },
+    {
+      "id": "still-nuala-glade",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/faerie-glade/plate.png"
+        ],
+        "prompt": "The moonlit glade in Faerie from the plate: Nuala of Faerie, the small woman with short ash-brown hair, pointed ears and a pale green linen dress from the Faerie sheet (the woman on the right, not the man), sits on the mossy bank of the still dark pool among the white flowers, looking up toward the camera with shy, hopeful, frightened eyes, hands clasped in her lap, a few small pale moths drifting around her head. Soft silver-violet light on her face."
+      }
+    },
+    {
+      "id": "still-death-steps",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate, dim and scarred by fire, ash drifting in shafts of grey light: Death, the young woman from the character sheet (black top, jeans, silver ankh, pale skin, black hair), sits alone on the wide stone steps below the empty throne, scattering a few crumbs from a paper bag to one grey pigeon at her feet. She looks up at the camera with a warm, sad, welcoming smile."
+      }
+    },
+    {
+      "id": "still-daniel-dream",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/daniel-dream/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate, whole again and full of soft pale light: Daniel, the new Dream, the white-haired young man in the flowing white high-collared robe with a green stone pendant from the character sheet, stands before the throne, his dark eyes each holding a pinpoint of white starlight, gentle and grave. White sand rises softly from the hem of his robe."
+      }
+    },
+    {
+      "id": "still-wake",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png",
+          "characters/hob/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/litharge/plate.png"
+        ],
+        "prompt": "Litharge, the necropolis from the plate, at dusk: thousands of mourners from every age and world fill the candlelit avenue and the great plaza, seen from behind and above, heads bowed toward the low stone bier, where a single black gown lies folded with a dark helm upon it. In the front row, small but recognisable, Death from her sheet, Hob Gadling from his sheet in a dark coat, and Lucienne from her sheet with her lantern. Banners of black and silver stir; the candle flames all lean toward the bier."
+      }
+    },
+    {
+      "id": "still-dreaming-fading",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/throne-room/plate.png",
+          "assets/plates/palace-crumbling/plate.png"
+        ],
+        "prompt": "The palace of the Dreaming seen from far off across its grey plains at dusk, fading away like a dream after waking: its towers and arches turning translucent and dissolving upward into grey mist and drifting sand, the colours draining out, the first stars visible through the walls. No people. Quiet, sad, beautiful."
+      }
+    },
+    {
+      "id": "aurie-news",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate, night: Aurie is rising from her black throne, face large in three-quarter view, sharp with alarm and resolve. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Lucienne from her sheet stands at the foot of the throne steps, lantern in hand, soft in the foreground, looking up at her."
+      },
+      "motion": "Aurie rises fully from the throne, her gown settling; her face hardens with resolve; Lucienne lowers her lantern and bows her head. Candle flames shiver. Slow push-in."
+    },
+    {
+      "id": "aurie-thessaly",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/witch-crossroads/plate.png"
+        ],
+        "prompt": "The crossroads in the ancient wood from the plate, night, under the huge low moon: Aurie steps out of the ground mist onto the dirt road, face large and fully lit by cold silver moonlight, three-quarter view, eyes fixed ahead, calm and dangerous. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. The standing stone and bare trees soft behind her."
+      },
+      "motion": "Aurie walks slowly forward out of the mist toward the camera, the mist parting around her gown; the moon seems to sink a little lower behind the trees; she stops and lifts her chin. Slow push-in."
+    },
+    {
+      "id": "aurie-siege",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The burning courtyard of the Dreaming from the plate, red sky: Aurie stands at the top of the palace steps, face large in three-quarter view and lit orange by the fires below, watching her realm burn, grief and fury held perfectly still. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Ash and loose burning pages drift across the frame."
+      },
+      "motion": "Ash and burning pages drift past Aurie's face; firelight flickers across it; she closes her eyes for a moment and opens them, unmoving. Slow push-in."
+    },
+    {
+      "id": "aurie-death-hand",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/death/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The dim throne room from the plate, ash in shafts of grey light: Aurie sits on the stone steps of her throne beside her sister Death from the second character sheet (black top, silver ankh, black hair), face large in three-quarter view toward the camera, eyes wet, calm at last, a small brave smile. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Death, nearer the edge of the frame and softer, holds out her open hand; Aurie's hand is just closing around it."
+      },
+      "motion": "Aurie's fingers close around Death's hand; she breathes out and smiles; a soft white light grows around them and the ash in the air turns slowly to drifting white sand. Slow push-in."
+    },
+    {
+      "id": "aurie-door",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room from the plate, dim: Aurie stands at the threshold of a tall open doorway of warm golden light set into the stone wall, the sigil of a wide open door glowing above it; she looks back over her shoulder toward the camera, face large and fully lit by the light from the doorway, one hand on the frame, sorrowful and resolved. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. "
+      },
+      "motion": "Aurie holds the look back for a long moment, then turns her face toward the golden light; her hair and gown lift gently in the warm wind from the doorway. Slow push-in."
+    },
+    {
+      "id": "aurie-alone",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The ruined throne room of the Dreaming, roofless, grey ash covering everything, a cold grey sky: Aurie sits alone on her cracked black throne, face large and lit cold grey, in three-quarter view, empty-eyed and very still. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Dark wisps of shadow, nightmares no longer held, drift up from the floor past her and away through the broken roof."
+      },
+      "motion": "Aurie does not move; dark wisps drift up past her and away through the broken roof; ash falls slowly; only her eyes follow one wisp as it leaves. Slow push-in."
+    },
+    {
+      "id": "aurie-listens",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate, whole and quiet at night: Aurie sits on her black throne, face large in three-quarter view, eyes closed, head tilted as if listening to faraway music, a single tear on her cheek. She wears her long black high-collared gown with a faint shimmer of stars in its folds. Aurie's face is large, sharp and fully lit, an exact likeness of the real woman in the identity photographs: a full round soft face, soft rounded jaw, low straight brows, almond single-lidded eyes, a broad soft nose, a small mouth. Faint threads of warm golden light, like notes of a song, drift through the dark air around her."
+      },
+      "motion": "Aurie keeps her eyes closed and listens; the faint golden threads of light drift slowly past her face; the single tear runs down her cheek. Very slow push-in."
+    },
+    {
+      "id": "7.3a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/kindly/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The burning courtyard of the Dreaming from the plate, red bruised sky: the three hooded women in rough black wool robes from the Kindly Ones sheet (the Maiden with her spindle, the Mother with a red thread, the Crone with iron shears), walk slowly side by side toward the camera through the drifting ash, faces shadowed in their hoods, red ember glints in their eyes. Where their hems pass, the paving stones crumble into grey sand. Wide shot, low angle."
+      },
+      "motion": "The three hooded women walk slowly and steadily toward the camera; behind them a carved stone pillar crumbles into pouring grey sand; ash swirls around their robes. Slow push-in."
     }
   ],
   "react": {
@@ -1401,6 +1825,37 @@
           "characters/dee/sheet.png"
         ],
         "setting": "Point of view from inside a red ruby looking out: the face of John Dee, the bald man in round glasses from the character sheet, seen through angular red crystal facets, looking straight into the camera, red light on his skin.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "thessaly": {
+        "refs": [
+          "characters/thessaly/sheet.png",
+          "assets/plates/witch-crossroads/plate.png"
+        ],
+        "setting": "Medium close-up at the crossroads in the ancient wood under the huge low moon from the plate: Thessaly, the petite honey-blonde witch from the Thessaly sheet, in her black leather strapless corset, short slit skirt, black tights, laced boots and long black velvet coat slipping off her shoulders, silver moon pendant, standing with her arms folded, looking straight into the camera, cold moonlight on her face, mist behind her.",
+        "moods": [
+          "neutral",
+          "talking"
+        ]
+      },
+      "nuala": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/faerie-glade/plate.png"
+        ],
+        "setting": "Medium close-up in the moonlit glade in Faerie from the plate: Nuala of Faerie, the small woman with short ash-brown hair, pointed ears and a pale green linen dress from the Faerie sheet (the woman on the right, not the man), sitting on the mossy bank of the pool, looking straight into the camera, a few pale moths drifting around her head, soft silver-violet light on her face.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "death-end": {
+        "refs": [
+          "characters/death/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "setting": "Medium close-up in the dim, fire-scarred throne room of the Dreaming from the plate: Death from the character sheet sits on the stone steps of the throne, half turned toward the camera as if to the person beside her, a paper bag of crumbs in her lap, ash drifting in grey light behind her.",
         "moods": [
           "talking"
         ]

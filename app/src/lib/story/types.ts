@@ -19,7 +19,7 @@ export interface Requires {
 }
 
 /** Light ambient motion drawn over a picture, so stills feel filmed: falling rain, rising embers, drifting dust... */
-export type Fx = "rain" | "embers" | "ash" | "dust" | "glitter" | "snow" | "flicker" | "mist";
+export type Fx = "rain" | "embers" | "sparks" | "ash" | "dust" | "glitter" | "snow" | "frost" | "flicker" | "mist";
 
 /** One moment of the film: a picture, and at most one narrated sentence shown exactly while it is spoken. */
 export interface Beat {
@@ -27,6 +27,7 @@ export interface Beat {
   clip?: string; // video to show; it holds on its last frame until another picture is named
   still?: string; // still image to show instead (slow push-in); file stills/<id>.jpg
   card?: string; // silent full-screen time/place card ("England · 1916"), about 2.5 s
+  sfx?: string; // one-shot sound effect played as this beat starts; file audio/sfx/<id>.mp3
   style?: "hook"; // show the text as a large centred cliffhanger line
   fx?: Fx; // ambient motion over the picture from this beat on (overrides the scene's)
   if?: string[]; // play only when all these book flags are set

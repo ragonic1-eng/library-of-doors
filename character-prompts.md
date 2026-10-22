@@ -540,6 +540,53 @@ SURREAL DETAIL: faint notes of light drift from the strings of the lyre.
 
 ---
 
+### 3.35 Thessaly, the witch (Part Seven)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Thessaly, a witch of ancient Thessaly who is three thousand years old and looks like a petite woman of about twenty-five. An original, unknown person who resembles no real actor, actress, celebrity or public figure. Height around 1.58 m, slight and athletic, a fighter's poise. Face: heart-shaped with a small pointed chin, wide-set pale green eyes under straight dark-blonde brows, a short straight nose with a few faint freckles, a small firm mouth that rarely smiles. Hair: honey-blonde, shoulder length, sleek and straight, tucked behind one ear. Clothing: a glamorous, fitted witch-fighter look: a black leather corset-style bodice that leaves her shoulders, arms and a strip of midriff bare, a short black skirt slit at the side over sheer black tights and laced knee-high black boots, a long black velvet coat worn open and slipping off her shoulders, thin silver cuffs and rings carved with old Greek letters, a small silver moon pendant. Stylish and attractive, never explicit. Posture: weight on one hip, arms folded, utterly unimpressed. Expression: deadpan, dry, quietly dangerous.
+SURREAL DETAIL: the moon pendant glows faintly, as if lit from far away, and her shadow on the backdrop is slightly taller than she is.
+[Style Bible]
+```
+
+---
+
+### 3.36 Daniel Hall as a child (Part Seven)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Daniel Hall, a Korean-American boy of about two years old, the son of Lyta and Hector Hall from their sheets: round cheeks, dark brown monolid eyes, soft black hair, a serious little face. Clothing: soft white cotton pyjamas with tiny stars. Posture: standing, holding a small worn plush owl. Expression: calm and curious, uncannily still for a toddler.
+SURREAL DETAIL: a few grains of pale silver sand rest in his hair and never fall.
+[Style Bible]
+```
+
+---
+
+### 3.37 Daniel, the new Dream (Part Seven)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Daniel, the new Dream of the Endless: the child Daniel grown into a young man of about twenty-five, Korean-American, his face recognisably the boy's (round cheeks grown lean, the same dark eyes), but pale as moonlight. Height around 1.82 m, slender. Hair: pure white, softly tousled. His eyes are dark with a single pinpoint of white light in each, like a distant star. Clothing: a long flowing high-collared robe of white silk-wool, the opposite of Aurie's black, with a faint shimmer of pale stars in its folds; a pendant of green stone at his throat. Posture: still, gentle, newly come into himself. Expression: kind, grave, a little sad.
+SURREAL DETAIL: a slow drift of white sand rises from the hem of his robe instead of falling.
+[Style Bible]
+```
+
+---
+
+### 3.38 The Kindly Ones (Part Seven)
+
+**Reference sheet** (attach `characters/fates/sheet.png`: the same three women):
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: the same three women as in the attached sheet, the Maiden, the Mother and the Crone, standing side by side, full length, now in their darker aspect as the Kindly Ones, the Furies. Each wears a long hooded robe of rough black wool; their faces are the same as in the attached sheet but drained and grey, eyes in deep shadow with a faint ember-red glint. The Maiden holds a spindle, the Mother a length of red thread pulled taut between her hands, the Crone a pair of old iron shears. Posture: utterly still, patient, inevitable. Expression: cold, polite, merciless.
+SURREAL DETAIL: the red thread runs from the Mother's hands out of the frame, taut, as if tied to someone far away.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
@@ -872,6 +919,43 @@ SURREAL DETAIL: the water runs slightly uphill.
 ```
 An empty two-lane highway through an American desert at noon, heat shimmer, a battered 1970s convertible parked on the shoulder, a roadside diner sign with no readable words, tumbleweed, endless blue sky. No people.
 SURREAL DETAIL: small brightly coloured fish swim through the air above the car.
+[Style Bible]
+```
+
+---
+
+**4.33 Lyta's apartment, the nursery (Part Seven)**
+```
+A small, modest 1990s American apartment nursery at night, lit by a single bedside lamp and the orange glow of a streetlight through thin curtains: a wooden crib with a mobile of paper stars, a rocking chair, toys on the floor, a window ajar with the curtain moving. Inside the crib, a small shape under a scorched blanket, the wood of the crib blackened as if by fire. Quiet, wrong. No people.
+SURREAL DETAIL: the paper stars on the mobile turn slowly in the opposite direction to the breeze.
+[Style Bible]
+```
+
+**4.34 The witch's crossroads (Part Seven)**
+```
+A crossroads of three dirt roads in an ancient wood at night, an old standing stone at the centre, bare twisted trees, ground mist. An enormous full moon hangs unnaturally low over the trees, close enough to see its craters, flooding everything with cold silver light. No people.
+SURREAL DETAIL: the moon's reflection lies in a puddle at the foot of the stone, though the moon is in the wrong place for it.
+[Style Bible]
+```
+
+**4.35 The Dreaming under siege (Part Seven)**
+```
+The great courtyard of the palace of the Dreaming at night, under attack by something unseen: the gates of horn and ivory cracked and hanging open, fires burning in the colonnades, the sky a deep bruised red, ash and loose pages drifting through the air, a carved stone gargoyle broken on the ground. Empty of people.
+SURREAL DETAIL: where the ash settles, the stone underneath turns to grey sand and slowly pours away.
+[Style Bible]
+```
+
+**4.36 A glade in Faerie (Part Seven)**
+```
+A moonlit glade deep in Faerie: tall silver birch trees with pale bark that glows faintly, a carpet of white flowers, a still dark pool, tiny drifting lights like will-o'-the-wisps among the trunks, a soft silver-violet light with no source. Hushed, beautiful, unearthly. No people.
+SURREAL DETAIL: the reflections in the pool show the trees in full summer leaf, though the trees are bare.
+[Style Bible]
+```
+
+**4.37 Litharge, the city of the dead (Part Seven)**
+```
+Litharge, a vast and ancient necropolis at dusk: a city of pale stone tombs, mausoleums and statues stretching to the horizon, a wide processional avenue lined with thousands of small candles leading to a great open plaza with a low stone bier, banners of black and silver, a sky of deep violet with the first stars. Solemn, enormous, quiet. No people.
+SURREAL DETAIL: the candle flames all lean toward the bier, as if the whole city were bowing.
 [Style Bible]
 ```
 

@@ -174,3 +174,28 @@ test('every speaker plays at the same loudness, however quietly the model record
   assert.ok(speechGain(maiden, 24000) < 1, 'the Maiden is brought down a little');
   assert.equal(speechGain(new Float32Array(48000), 24000), 1, 'silence is left alone');
 });
+
+test('a beat sound effect plays once, can be switched off, and fades out when the scene changes', async () => {
+  const made = [], faded = [];
+  class FakeAudio { constructor(src) { this.src = src; this.paused = false; made.push(this); } play() { return Promise.resolve(); } pause() { this.paused = true; } }
+  const snippet = player.slice(player.indexOf('  const playSfx ='), player.indexOf('  const assetUrl ='));
+  const make = new Function('Audio','CLIP_BASE','book','SFX_VOLUME','sfxOnRef','sfxPlaying','fadeTo',
+    stripTypeScriptTypes(snippet) + '\nreturn { playSfx, fadeOutSfx };');
+  const sfxOnRef = { current: true }, sfxPlaying = { current: new Set() };
+  const { playSfx, fadeOutSfx } = make(FakeAudio, '/clips', { id: 'sandman' }, 0.7, sfxOnRef, sfxPlaying,
+    (a, v) => { faded.push([a, v]); return Promise.resolve(); });
+  playSfx('glass-break');
+  assert.equal(made.length, 1);
+  assert.equal(made[0].src, '/clips/sandman/audio/sfx/glass-break.mp3');
+  assert.equal(made[0].volume, 0.7);
+  made[0].onended();
+  assert.equal(sfxPlaying.current.size, 0, 'a finished effect is forgotten');
+  playSfx('raven');
+  fadeOutSfx(); await Promise.resolve(); await Promise.resolve();
+  assert.deepEqual(faded.map(([a, v]) => [a.src.split('/').pop(), v]), [['raven.mp3', 0]]);
+  assert.ok(made[1].paused, 'faded effects stop');
+  assert.equal(sfxPlaying.current.size, 0);
+  sfxOnRef.current = false;
+  playSfx('thunder');
+  assert.equal(made.length, 2, 'switched off: nothing plays');
+});

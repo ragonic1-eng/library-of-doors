@@ -42,6 +42,7 @@ const BEAT_GAP_MS = 250; // breath between narrated lines
 const HOLD_MS = 2000; // longest a clip keeps playing after its line before the next picture cuts in
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
 const CHOICE_MS = 2600; // the "Your choice" moment
+const SFX_VOLUME = 0.7; // one-shot sound effects (levelled to about -20 dBFS when made)
 const CURTAIN_MS = 700; // dip to black between scenes; the music starts to cross-fade with it
 const RECAP_MS = 7000; // the "Previously" card when she comes back
 const HOLD_SKIP_MS = 900; // holding Skip this long skips the whole narrated stretch
@@ -190,6 +191,9 @@ export default function Player({ book }: { book: Book }) {
   const [textScale, setTextScale] = useState(1);
   const [musicOn, setMusicOn] = useState(true);
   const musicOnRef = useRef(true);
+  const [sfxOn, setSfxOn] = useState(true);
+  const sfxOnRef = useRef(true);
+  const sfxPlaying = useRef(new Set<HTMLAudioElement>()); // one-shot sound effects still sounding
   // Everything said recently (narrator and characters), to reread in the menu.
   const backlog = useRef<{ who: string; text: string }[]>([]);
   const logLine = (who: string, text: string) => {
@@ -255,6 +259,22 @@ export default function Player({ book }: { book: Book }) {
   const unduck = () => {
     musicRef.current.voices = Math.max(0, musicRef.current.voices - 1);
     if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 900);
+  };
+  /** A one-shot sound for the moment a beat starts (a door, glass, wings). Never blocks the story. */
+  const playSfx = (id: string) => {
+    if (!sfxOnRef.current) return;
+    const a = new Audio(`${CLIP_BASE}/${book.id}/audio/sfx/${id}.mp3`);
+    a.volume = SFX_VOLUME;
+    const done = () => sfxPlaying.current.delete(a);
+    a.onended = done;
+    a.onerror = done;
+    sfxPlaying.current.add(a);
+    void a.play().catch(done);
+  };
+  /** Sounds from the last scene fade under the curtain instead of carrying into the next one. */
+  const fadeOutSfx = () => {
+    for (const a of sfxPlaying.current) void fadeTo(a, 0, 600).then(() => a.pause());
+    sfxPlaying.current.clear();
   };
   const assetUrl = (kind: "music" | "lines", id: string) => `${CLIP_BASE}/${book.id}/audio/${kind}/${id}.mp3`;
   const lineUrl = (text: string) => `${CLIP_BASE}/${book.id}/audio/lines/${lineFile(text)}`;
@@ -510,6 +530,7 @@ export default function Player({ book }: { book: Book }) {
         }
         setUpcoming(list.slice(i + 1).find((x) => x.clip)?.clip ?? null);
         show(b);
+        if (b.sfx) playSfx(b.sfx);
         // A tap skips the rest of this beat.
         let skipRes!: () => void;
         const skipped = new Promise<void>((r) => (skipRes = r));
@@ -656,6 +677,7 @@ export default function Player({ book }: { book: Book }) {
 
   function goTo(next: string) {
     const token = ++runRef.current;
+    fadeOutSfx();
     undoRef.current = null; // the last choice can no longer be taken back once the next scene begins
     stopAllVoices();
     setSkippable(false);
@@ -795,7 +817,7 @@ export default function Player({ book }: { book: Book }) {
   function openMenu(view: MenuView = "main") {
     if (!pausedRef.current) {
       pausedRef.current = true;
-      const media: HTMLMediaElement[] = [...playing.current];
+      const media: HTMLMediaElement[] = [...playing.current, ...sfxPlaying.current];
       if (musicRef.current.a && !musicRef.current.a.paused) media.push(musicRef.current.a);
       document.querySelectorAll("video").forEach((v) => { if (!v.paused) media.push(v); });
       media.forEach((m) => m.pause());
@@ -892,6 +914,9 @@ export default function Player({ book }: { book: Book }) {
     const on = pref("music", "on") !== "off";
     setMusicOn(on);
     musicOnRef.current = on;
+    const fx = pref("sfx", "on") !== "off";
+    setSfxOn(fx);
+    sfxOnRef.current = fx;
   }, []);
 
   // Online and offline are shown as they happen.
@@ -1026,6 +1051,13 @@ export default function Player({ book }: { book: Book }) {
     setMusicOn(on);
     setPref("music", on ? "on" : "off");
     if (musicRef.current.a) void fadeTo(musicRef.current.a, bedTarget(), 600);
+  };
+  const toggleSfx = () => {
+    const on = !sfxOnRef.current;
+    sfxOnRef.current = on;
+    setSfxOn(on);
+    setPref("sfx", on ? "on" : "off");
+    if (!on) fadeOutSfx();
   };
   const changeText = (v: number) => { setTextScale(v); setPref("textScale", String(v)); };
 
@@ -1330,6 +1362,7 @@ export default function Player({ book }: { book: Book }) {
                 </div>
                 <p className="sample">The Dreaming remembers everything.</p>
                 <button onClick={toggleMusic}>Background music: {musicOn ? "On" : "Off"}</button>
+                <button onClick={toggleSfx}>Sound effects: {sfxOn ? "On" : "Off"}</button>
                 <button onClick={() => setMenu("main")}>Back</button>
               </>
             )}

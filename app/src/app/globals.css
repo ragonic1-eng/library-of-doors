@@ -64,6 +64,7 @@ body {
 }
 .vignette {
   position: absolute;
+  z-index: 4;
   inset: 0;
   pointer-events: none;
   background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55) 100%);
@@ -220,6 +221,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .film.react {
   position: absolute;
   inset: 0;
+  z-index: 2; /* above the scene picture (z 1) */
   animation: fade-in 0.7s ease both;
 }
 
@@ -608,8 +610,8 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .gate-note { color: var(--accent); margin: 0.4rem 0 0; }
 
 /* Ambient motion over the picture */
-.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.fx-flicker { position: absolute; inset: 0; pointer-events: none; background: rgba(0, 0, 0, 0.18); animation: flicker 3.7s steps(1) infinite; }
+.fx { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; pointer-events: none; } /* over the picture and the talking loop */
+.fx-flicker { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: rgba(0, 0, 0, 0.18); animation: flicker 3.7s steps(1) infinite; }
 @keyframes flicker {
   0%, 18%, 22%, 61%, 63%, 100% { opacity: 0; }
   19%, 62% { opacity: 1; }
