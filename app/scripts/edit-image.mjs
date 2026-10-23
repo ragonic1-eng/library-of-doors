@@ -19,15 +19,25 @@ const refs = process.argv.flatMap((a, i) => (a === "--ref" ? [process.argv[i + 1
 if (!src || !out || !change) { console.error('usage: edit-image.mjs <source> <out> "<change>" [--score aurie]'); process.exit(1); }
 
 const prompt = `Edit the first attached photograph. Keep it exactly the same: identical person, identical face shape and features, framing, camera, lens, lighting, background, clothing and colours, pixel for pixel wherever possible. Change ONLY this: ${change}. The face must remain an exact likeness of the person in the photograph; do not slim, reshape, beautify or age it.${refs.length ? " The other attached images are only references for the look of anyone or anything the change adds." : ""}`;
-const res = await slowFetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`, {
-  method: "POST",
-  headers: { Authorization: `Bearer ${process.env.INFISTAR_API_KEY}`, "Content-Type": "application/json" },
-  body: JSON.stringify({
-    contents: [{ role: "user", parts: [src, ...refs].map((f) => ({ inlineData: { mimeType: "image/png", data: readFileSync(resolve(f)).toString("base64") } })).concat({ text: prompt }) }],
-    generationConfig: { responseModalities: ["TEXT", "IMAGE"], imageConfig: { aspectRatio: "16:9" } },
-  }),
-});
-const j = await res.json();
+// Ranked backups, tried in order when a model's gateway channel is down (same request format).
+const MODELS = [...new Set([MODEL, ...(process.env.MODEL_IMAGE_FALLBACK ?? "gemini-3.1-flash-image,gemini-nano-banana-2.1,gemini-3-pro-image").split(",").map((m) => m.trim()).filter(Boolean)])];
+let j;
+for (const model of MODELS) {
+  const res = await slowFetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${process.env.INFISTAR_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ role: "user", parts: [src, ...refs].map((f) => ({ inlineData: { mimeType: "image/png", data: readFileSync(resolve(f)).toString("base64") } })).concat({ text: prompt }) }],
+      generationConfig: { responseModalities: ["TEXT", "IMAGE"], imageConfig: { aspectRatio: "16:9" } },
+    }),
+  });
+  const text = await res.text();
+  if (res.status === 404 || /no available channel|model_not_found|不在当前供应目录/i.test(text)) { console.error(`${model} is down, trying the next model`); continue; }
+  j = JSON.parse(text);
+  if (model !== MODEL) console.error(`(made with backup model ${model})`);
+  break;
+}
+if (!j) { console.error("every image model is down"); process.exit(1); }
 const part = (j.candidates ?? []).flatMap((c) => c.content?.parts ?? []).find((p) => p.inlineData?.data || p.inline_data?.data);
 if (!part) { console.error("no image returned", JSON.stringify(j).slice(0, 300)); process.exit(1); }
 writeFileSync(resolve(out), Buffer.from((part.inlineData ?? part.inline_data).data, "base64"));

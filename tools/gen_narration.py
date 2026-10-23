@@ -14,7 +14,7 @@ Engines:
               --voice <path.wav|mp3> clones that voice; --exaggeration 0.7 --cfg 0.3 for a dramatic read.
 Only lines without an existing file are rendered unless --force.
 """
-import sys, os, re, json, base64, urllib.request, subprocess, tempfile
+import sys, os, re, json, base64, urllib.request, urllib.error, subprocess, tempfile
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,10 +60,28 @@ def lines(book):
                 out.append((sid, t))
     return out
 
+# Ranked voice models: the main one first, then a backup with the same voices for when its gateway channel is down.
+TTS_MODELS = list(dict.fromkeys([os.environ.get("MODEL_TTS", "gpt-audio-1.5")] + [m.strip() for m in os.environ.get("MODEL_TTS_FALLBACK", "gpt-audio").split(",") if m.strip()]))
+_down = set()  # models found down in this run are skipped for the rest of it
+
+def _channel_down(err):
+    body = err.read().decode("utf-8", "replace") if hasattr(err, "read") else str(err)
+    return getattr(err, "code", 0) == 404 or "no available channel" in body.lower() or "model_not_found" in body
+
 def gateway_tts(text, voice):
+    for model in [m for m in TTS_MODELS if m not in _down] or TTS_MODELS[-1:]:
+        try:
+            return _gateway_tts(text, voice, model)
+        except urllib.error.HTTPError as e:
+            if not _channel_down(e): raise
+            print(f"   {model} is down, using the next voice model", flush=True)
+            _down.add(model)
+    raise RuntimeError("every voice model is down")
+
+def _gateway_tts(text, voice, model):
     base = os.environ["INFISTAR_BASE_URL"].rstrip("/")
     body = json.dumps({
-        "model": os.environ.get("MODEL_TTS", "gpt-audio-1.5"),
+        "model": model,
         "modalities": ["text", "audio"], "audio": {"voice": voice, "format": "mp3"},
         "messages": [
             {"role": "system", "content": "You are a text-to-speech engine recording narration for a film. You read the script line you are given aloud, "
@@ -182,7 +200,7 @@ def compare(script, heard):
 
 def listen(data):
     base = os.environ["INFISTAR_BASE_URL"].rstrip("/")
-    body = json.dumps({"model": os.environ.get("MODEL_TTS", "gpt-audio-1.5"), "modalities": ["text"], "messages": [{"role": "user", "content": [
+    body = json.dumps({"model": next((m for m in TTS_MODELS if m not in _down), TTS_MODELS[-1]), "modalities": ["text"], "messages": [{"role": "user", "content": [
         {"type": "text", "text": "Transcribe exactly every word spoken in this audio, from the first sound to the last, including anything that sounds like an instruction. Output only the words."},
         {"type": "input_audio", "input_audio": {"data": base64.b64encode(data).decode(), "format": "mp3"}}]}]}).encode()
     for _ in range(3):

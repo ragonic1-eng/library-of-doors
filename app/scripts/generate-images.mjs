@@ -39,6 +39,10 @@ const BASE = (process.env.INFISTAR_BASE_URL ?? "https://infistar.ai/v1").replace
 const ORIGIN = new URL(BASE).origin;
 const KEY = process.env.INFISTAR_API_KEY ?? "";
 const GEMINI_MODEL = process.env.MODEL_IMAGE_GEMINI ?? "gemini-3-pro-image";
+// Ranked backups, tried in order when a model's gateway channel is down (same request format).
+const GEMINI_MODELS = [...new Set([GEMINI_MODEL, ...(process.env.MODEL_IMAGE_FALLBACK ?? "gemini-3.1-flash-image,gemini-nano-banana-2.1,gemini-3-pro-image").split(",").map((m) => m.trim()).filter(Boolean)])];
+/** The gateway has no working channel for this model right now: retrying it is pointless, try the next one. */
+const channelDown = (status, body) => status === 404 || /no available channel|model_not_found|不在当前供应目录/i.test(body);
 const OPENAI_MODEL = process.env.MODEL_IMAGE ?? "gemini-nano-banana-2.1";
 
 // ---------- args ----------
@@ -102,7 +106,7 @@ character("paul", "### 3.5", "**Reference sheet:**", "**Hero portrait");
 character("lucienne", "### 3.6", "**Reference sheet:**", "**Hero portrait");
 character("guard", "### 3.7", "**Reference sheet:**", "**Hero portrait");
 // Episode 2 cast: reference sheets only (they appear in keyframes and stills, never in a portrait gallery).
-for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"], ["calliope", "### 3.23"], ["madoc", "### 3.24"], ["corinthian", "### 3.25"], ["rose", "### 3.26"], ["hob", "### 3.27"], ["unity", "### 3.28"], ["lyta", "### 3.29"], ["hector", "### 3.30"], ["destruction", "### 3.31"], ["barnabas", "### 3.32"], ["matthew", "### 3.33"], ["orpheus", "### 3.34"], ["thessaly", "### 3.35"], ["daniel", "### 3.36"], ["daniel-dream", "### 3.37"], ["kindly", "### 3.38"]]) {
+for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rachel", "### 3.10"], ["lucifer", "### 3.11"], ["choronzon", "### 3.12"], ["dee", "### 3.13"], ["death", "### 3.14"], ["destiny", "### 3.15"], ["desire", "### 3.16"], ["despair", "### 3.17"], ["delirium", "### 3.18"], ["norse", "### 3.19"], ["azazel", "### 3.20"], ["faerie", "### 3.21"], ["angels", "### 3.22"], ["calliope", "### 3.23"], ["madoc", "### 3.24"], ["corinthian", "### 3.25"], ["rose", "### 3.26"], ["hob", "### 3.27"], ["unity", "### 3.28"], ["lyta", "### 3.29"], ["hector", "### 3.30"], ["destruction", "### 3.31"], ["barnabas", "### 3.32"], ["matthew", "### 3.33"], ["orpheus", "### 3.34"], ["thessaly", "### 3.35"], ["daniel", "### 3.36"], ["daniel-dream", "### 3.37"], ["kindly", "### 3.38"], ["alex-child", "### 3.39"]]) {
   const refs = id === "unity" ? [join(ROOT, "assets", "keyframes", "sandman", "1.3d", "keyframe.png")]
     : id === "kindly" ? [join(C("fates"), "sheet.png")]
     : id === "daniel" ? [join(C("lyta"), "sheet.png"), join(C("hector"), "sheet.png")]
@@ -173,7 +177,7 @@ if (existsSync(SHOTS_FILE)) {
   // Say what each reference image is, so the model never mixes two people up.
   const describe = (p) => {
     const f = p.replace(/\\/g, "/");
-    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", lyta: "Lyta Hall", hector: "Hector Hall", destruction: "Destruction", orpheus: "Orphea", thessaly: "Thessaly", daniel: "Daniel as a child", "daniel-dream": "Daniel as the new Dream", kindly: "the Kindly Ones", barnabas: "Barnabas the dog", matthew: "Matthew the raven", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
+    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", lyta: "Lyta Hall", hector: "Hector Hall", destruction: "Destruction", orpheus: "Orphea", thessaly: "Thessaly", daniel: "Daniel as a child", "daniel-dream": "Daniel as the new Dream", kindly: "the Kindly Ones", barnabas: "Barnabas the dog", matthew: "Matthew the raven", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-child": "Alex as a boy", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
     const m = f.match(/characters\/([^/]+)\/([^/.]+)/);
     if (m) {
       const name = who[m[1]] ?? m[1];
@@ -283,6 +287,7 @@ async function post(url, init, label) {
     }
     if (res.ok) return res;
     const body = (await res.text()).slice(0, 400);
+    if (channelDown(res.status, body)) throw Object.assign(new Error(`${label}: channel down (${res.status})`), { status: res.status, channelDown: true });
     if ((res.status === 429 || res.status >= 500) && attempt < 4) {
       const wait = 5000 * attempt;
       console.log(`   ${label}: ${res.status}, retrying in ${wait / 1000}s`);
@@ -296,6 +301,22 @@ async function post(url, init, label) {
 }
 
 async function viaGemini(prompt, refs) {
+  let last;
+  for (const model of GEMINI_MODELS) {
+    try {
+      const out = await viaGeminiModel(model, prompt, refs);
+      if (model !== GEMINI_MODEL) console.log(`   (made with backup model ${model})`);
+      return out;
+    } catch (e) {
+      if (!e.channelDown) throw e;
+      console.log(`   ${model} is down, trying the next model`);
+      last = e;
+    }
+  }
+  throw last;
+}
+
+async function viaGeminiModel(GEMINI_MODEL, prompt, refs) {
   const parts = refs.map((f) => ({ inlineData: { mimeType: mimeOf(f), data: readFileSync(f).toString("base64") } }));
   parts.push({ text: prompt });
   const url = `${ORIGIN}/v1beta/models/${encodeURIComponent(GEMINI_MODEL)}:generateContent`;

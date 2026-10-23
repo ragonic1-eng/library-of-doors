@@ -115,6 +115,27 @@ async function canAfford(c) {
 }
 const mimeOf = (f) => ({ ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webp": "image/webp" })[extname(f).toLowerCase()] ?? "image/png";
 
+// Ranked backups for each kind of clip, tried in order when a model's gateway channel is down.
+const FALLBACK = (process.env.MODEL_VIDEO_FALLBACK ?? "wan2.7-i2v,kling-v2-6").split(",").map((m) => m.trim()).filter(Boolean);
+const channelDown = (status, text) => status === 404 || /no available channel|model_not_found|不在当前供应目录/i.test(text);
+
+/** Submit to the first model whose channel is up; returns [task id, model used]. */
+async function submitRanked(c, model) {
+  let last;
+  for (const m of [...new Set([model, ...FALLBACK])]) {
+    try {
+      const id = await submit(c, m);
+      if (m !== model) console.log(`   ${c.id}: made with backup model ${m}`);
+      return [id, m];
+    } catch (e) {
+      if (!e.channelDown) throw e;
+      console.log(`   ${c.id}: ${m} is down, trying the next model`);
+      last = e;
+    }
+  }
+  throw last;
+}
+
 async function submit(c, model) {
   const fd = new FormData();
   fd.append("model", model);
@@ -128,6 +149,7 @@ async function submit(c, model) {
     catch (e) { if (attempt < 3) { await sleep(5000 * attempt); continue; } throw e; }
     const text = await res.text();
     if (res.ok) return JSON.parse(text).id;
+    if (channelDown(res.status, text)) throw Object.assign(new Error(`${model}: channel down`), { channelDown: true });
     // 429 = route restricted or busy: worth one or two slow retries. Other errors: report, do not retry.
     if (res.status === 429 && attempt < 3) { console.log(`   ${c.id}: 429 busy/restricted, retrying in ${20 * attempt}s`); await sleep(20000 * attempt); continue; }
     throw new Error(`HTTP ${res.status} ${text.slice(0, 220)}`);
@@ -163,9 +185,10 @@ async function run(c) {
     if (taskId) console.log(`↻ ${c.id} resuming task ${taskId}`);
     else {
       if (!(await canAfford(c))) return;
-      taskId = await submit(c, model);
-      ledger[c.id] = { task: taskId, model, at: new Date().toISOString() }; saveLedger();
-      console.log(`▶ ${c.id} submitted to ${model} (${c.seconds}s)`);
+      let used;
+      [taskId, used] = await submitRanked(c, model);
+      ledger[c.id] = { task: taskId, model: used, at: new Date().toISOString() }; saveLedger();
+      console.log(`▶ ${c.id} submitted to ${used} (${c.seconds}s)`);
     }
     await waitAndSave(c, taskId);
     console.log(`✓ ${c.id} saved ${rel(c.out)}`);
