@@ -4,10 +4,11 @@ const BASE = (process.env.INFISTAR_BASE_URL ?? "https://infistar.ai/v1").replace
 const KEY = process.env.INFISTAR_API_KEY ?? "";
 
 export const models = {
-  dialogue: process.env.MODEL_DIALOGUE ?? "grok-4.7",
+  // Gemini 3 Flash: 2 s to the spoken line on every scene (Haiku 5.5 took 5.7 s), cheapest per reply; see tools/bench_dialogue.mjs.
+  dialogue: process.env.MODEL_DIALOGUE ?? "gemini-3-flash",
   // Tried in order when the main dialogue model fails upstream (a gateway channel can drop out for a while).
   // Different providers on purpose, so one provider's outage cannot silence the characters.
-  dialogueFallbacks: (process.env.MODEL_DIALOGUE_FALLBACK ?? "gpt-5.4-mini,gemini-3-flash").split(",").map((m) => m.trim()).filter(Boolean),
+  dialogueFallbacks: (process.env.MODEL_DIALOGUE_FALLBACK ?? "claude-haiku-5-5,gpt-5.4-mini").split(",").map((m) => m.trim()).filter(Boolean),
   tts: process.env.MODEL_TTS ?? "gpt-audio-1.5",
 };
 
