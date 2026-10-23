@@ -2320,6 +2320,13 @@
           "clip": "3.2a"
         },
         {
+          "text": "Seven of them: Destiny, Death, Dream, Destruction, Desire, Despair and Delirium. Not gods. Older than gods. Aurie is Dream."
+        },
+        {
+          "text": "Aurie takes the chair that has always been hers, at her sister's right hand. They have not all sat at one table in a very long time.",
+          "still": "aurie-family"
+        },
+        {
           "text": "Death, her elder sister.",
           "still": "still-death-table"
         },
@@ -2599,12 +2606,25 @@
           "fx": "ash"
         },
         {
+          "text": "Aurie walks the silent cells alone. Her footsteps are the only sound left in Hell.",
+          "still": "aurie-hell"
+        },
+        {
           "text": "Every cell stands open. Every chain lies slack. The damned, and the demons, are gone."
         },
         {
           "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
           "still": "hell-arena",
           "fx": "sparks"
+        },
+        {
+          "text": "He tells her plainly. For ten billion years he has kept Hell, because someone had to. He is tired of being everyone's excuse. He has resigned."
+        },
+        {
+          "text": "He has sent every demon and every damned soul out into the dark. All that is left is the key, and he is giving it to her."
+        },
+        {
+          "text": "And he wants one last thing from her: his wings cut off, so he can walk the waking world as an ordinary man."
         },
         {
           "text": "He has not forgotten the favour she owes him. Tonight, he says, he will collect it.",
@@ -2713,6 +2733,10 @@
           "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another."
         },
         {
+          "text": "Aurie takes her throne at the head of the long table, and watches them arrive.",
+          "still": "aurie-host"
+        },
+        {
           "text": "They come with gifts, and with threats.",
           "clip": "4.2a"
         },
@@ -2734,6 +2758,12 @@
         {
           "text": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
           "still": "still-angels"
+        },
+        {
+          "text": "Put simply: whoever she gives the key to will rule the place where the wicked are punished. Everyone she refuses may become her enemy."
+        },
+        {
+          "text": "And Nada's soul is in that jar. Whatever else happens tonight, Aurie means to leave with it."
         },
         {
           "text": "Before the night is over, Aurie must choose."
@@ -3071,6 +3101,10 @@
           "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called."
         },
         {
+          "text": "When the last guest has gone, Aurie stands alone at the window of her palace. Ten thousand years, and one woman's face she cannot stop seeing.",
+          "still": "still-aurie-window"
+        },
+        {
           "text": "End of Part Four.",
           "style": "hook"
         }
@@ -3392,10 +3426,14 @@
           "text": "The realm is mended. But some prayers arrived while Aurie was in the glass, and no one was there to hear them."
         },
         {
-          "text": "Lucienne has kept every one. Tonight she brings the oldest still unanswered."
+          "text": "Lucienne has kept every one. Tonight she brings the oldest still unanswered.",
+          "still": "still-aurie-prayers"
         },
         {
           "text": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover."
+        },
+        {
+          "text": "Nada was not the only woman Aurie once loved, and failed."
         },
         {
           "text": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
@@ -3442,7 +3480,12 @@
           "ambience": "night-room"
         },
         {
-          "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up."
+          "text": "Aurie stands in the doorway, and for a moment she cannot speak.",
+          "still": "still-aurie-calliope"
+        },
+        {
+          "text": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up.",
+          "still": "still-calliope"
         },
         {
           "text": "She knows who has come. She has known that voice for three thousand years."
