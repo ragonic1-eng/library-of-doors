@@ -19,6 +19,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, "..", "..");
@@ -53,6 +54,8 @@ const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
 
 // ---------- clip list ----------
 /** @type {{id:string, kind:string, model:string, seconds:number, keyframe:string, prompt:string, out:string}[]} */
+// Real people whose likeness every finished clip is checked for (LIKENESS.md).
+const likenessOf = (ids) => (ids.some((i) => i === "aurie" || i === "dream") ? "aurie" : ids.some((i) => i.startsWith("alex")) ? "alex" : null);
 const clips = [];
 for (const s of spec.shots) {
   if (s.still) continue; // a still is shown as an image with a slow push-in, never animated
@@ -61,6 +64,7 @@ for (const s of spec.shots) {
     keyframe: s.keyframe.use ? join(ROOT, s.keyframe.use) : KF(s.id),
     prompt: `${s.motion} ${spec.camera} ${spec.keep}`,
     out: join(OUT, `${s.id}.mp4`),
+    who: likenessOf(s.identity ?? []),
   });
 }
 for (const [who, rc] of Object.entries(spec.react.characters)) {
@@ -70,6 +74,7 @@ for (const [who, rc] of Object.entries(spec.react.characters)) {
       id, kind: "react", model: "video", seconds: spec.react.seconds, keyframe: KF(id),
       prompt: `The character is ${feel}. ${spec.react.motion} ${spec.camera} ${spec.keep}`,
       out: join(OUT, "react", `${who}-${mood}.mp4`),
+      who: likenessOf([who, ...(rc.identity ? [rc.identity] : [])]),
     });
   }
 }
@@ -192,6 +197,14 @@ async function run(c) {
     }
     await waitAndSave(c, taskId);
     console.log(`✓ ${c.id} saved ${rel(c.out)}`);
+    // Likeness check on every frame sampled through the clip: video models drift faces even from a good first frame.
+    if (c.who) {
+      try {
+        const line = execFileSync("python", ["-I", join(ROOT, "tools", "face_score.py"), c.who, c.out], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim().split("\n").pop();
+        const worst = Number(line.match(/worst\s+(-?[\d.]+)/)?.[1] ?? line.match(/^\S+\s+(-?[\d.]+)/)?.[1]);
+        console.log(`   likeness (${c.who}): ${line.split(/\s{2,}/).slice(0, 3).join("  ")}${worst < 0.3 ? "  ⚠ face drifts: review, or keep the still" : ""}`);
+      } catch { console.log("   likeness check could not run"); }
+    }
   } catch (e) {
     console.log(`✗ ${c.id} FAILED: ${e.message}`);
   }
