@@ -34,12 +34,18 @@ Scores are `tools/face_score.py` cosine similarity against the real photos (0.40
 7. **Check every result automatically.** `generate-clips` now scores the likeness of every finished Aurie or Alex clip
    and warns when its worst frame falls below 0.30; such a clip is re-rendered calmer, or the scene keeps the still.
 
+8. **Restore the face after every video of Aurie or Alex.** Run `tools/venv/Scripts/python tools/face_restore.py aurie|alex <clip>`:
+   FaceFusion (local, free) puts the real face back on every frame, touching only that person, and the result is
+   kept only if the likeness improves. First run over 19 drifting clips: 14 improved (for example Aurie with Death
+   0.18 to 0.44, Aurie with Nada 0.33 to 0.49, Alex 1.5d-A 0.13 to 0.55, Alex 1.5k-a 0.12 to 0.44); it can soften
+   a big expression (a scream becomes a frightened face), so check those by eye.
+
 ## Options not yet used (need the owner's go-ahead)
 
 - **A video model that sees several face references.** The Infistar key offers `kling-video-o1` (its "Elements"
   take several reference angles of one subject) and `doubao-seedance-2-0`. A small test, the same Aurie shot in
   each, about ¥10 to ¥15, would show whether they hold her face better than wan2.7-i2v.
-- **A face-restoring pass after the video** with FaceFusion (open source, runs on this PC, free; needs a download of
+- ~~A face-restoring pass after the video~~ (now rule 8) with FaceFusion (open source, runs on this PC, free; needs a download of
   about 1 to 2 GB to the D drive): it puts the reference face back onto each frame. Strong for identity, but it can
   add flicker at the edges, so it would be tested on two or three clips first.
 
