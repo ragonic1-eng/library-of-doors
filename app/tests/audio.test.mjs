@@ -95,7 +95,7 @@ test('Skip cancels narration timers and restores music exactly once', async t =>
 
 test('book.json alone chooses the music for each scene, and every named track exists', () => {
   const book = JSON.parse(readFileSync(new URL('../src/content/books/sandman/book.json', import.meta.url), 'utf8'));
-  const expect = { '2.5': 'hell-v1', '2.6': 'hell-v1', '4.1': 'hell-v1', '2.12': 'wings', '5.2c': 'wings', '5.3': 'tavern', '5.3c': 'library', '2.9': 'ruby', '2.10': 'ruby' };
+  const expect = { '2.5': 'hell-v1', '2.6': 'lucifer', '4.1': 'lucifer', '2.12': 'death', '5.2c': 'wings', '5.3': 'tavern', '5.3c': 'tavern', '2.9': 'ruby', '2.10': 'ruby', '6.3': 'greek-lyre', '7.4': 'faerie', '3.2': 'endless' };
   for (const [scene, track] of Object.entries(expect)) assert.equal(book.scenes[scene].music, track, scene);
   assert.ok(!player.includes('sceneScore'), 'no second music map in the player');
   const dir = new URL('../public/clips/sandman/audio/music/', import.meta.url);
