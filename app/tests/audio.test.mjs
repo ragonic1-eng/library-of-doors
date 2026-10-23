@@ -7,6 +7,8 @@ import { flaw } from '../src/lib/server/mp3.ts';
 import { watchPlayback, speechChunks } from '../src/lib/story/audio.ts';
 import { speechGain } from '../src/lib/story/level.ts';
 
+// The player's volume levels (the audio panel), at their defaults for the extracted snippets below.
+globalThis.volRef = { current: { voice: 1, music: 1, sfx: 1 } };
 const player = readFileSync(new URL('../src/components/Player.tsx', import.meta.url), 'utf8');
 const burgess = 'Everything I ask, creature? Then you will forgive an old man if he does not take a promise from behind glass on faith. Accept the bargain, and we shall see what the morning brings.';
 

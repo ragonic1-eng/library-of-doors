@@ -24,12 +24,12 @@ export function speechGain(samples: Float32Array, sampleRate: number): number {
 
 /** Route a voice through the mixer at a level matched to the rest of the cast. Returns false when it cannot,
  *  and the element then plays on its own exactly as before. */
-export async function levelVoice(ctx: AudioContext | null, el: HTMLAudioElement, blob: Blob): Promise<boolean> {
+export async function levelVoice(ctx: AudioContext | null, el: HTMLAudioElement, blob: Blob, volume = 1): Promise<boolean> {
   if (!ctx || ctx.state !== "running") return false;
   try {
     const decoded = await ctx.decodeAudioData(await blob.arrayBuffer());
     const gain = ctx.createGain();
-    gain.gain.value = speechGain(decoded.getChannelData(0), decoded.sampleRate);
+    gain.gain.value = speechGain(decoded.getChannelData(0), decoded.sampleRate) * volume; // the player's voice level
     // A boosted whisper must not clip: a fast limiter just under full scale.
     const limiter = ctx.createDynamicsCompressor();
     limiter.threshold.value = -3;

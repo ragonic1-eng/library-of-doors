@@ -203,6 +203,10 @@ export default function Player({ book }: { book: Book }) {
   const musicOnRef = useRef(true);
   const [sfxOn, setSfxOn] = useState(true);
   const sfxOnRef = useRef(true);
+  // Player volume levels (0 to 1), set in the audio panel: voices (narrator and characters), music, effects and ambience.
+  const [vol, setVol] = useState({ voice: 1, music: 1, sfx: 1 });
+  const volRef = useRef({ voice: 1, music: 1, sfx: 1 });
+  const [audioPanel, setAudioPanel] = useState(false);
   const sfxPlaying = useRef(new Set<HTMLAudioElement>()); // one-shot sound effects still sounding
   const ambRef = useRef<{ a: HTMLAudioElement | null; id: string | null }>({ a: null, id: null }); // the looping ambience bed
   // Everything said recently (narrator and characters), to reread in the menu.
@@ -262,11 +266,11 @@ export default function Player({ book }: { book: Book }) {
 
   // ---------- audio: music bed, narrator lines, character voices ----------
   const musicRef = useRef<{ a: HTMLAudioElement | null; track: string | null; voices: number }>({ a: null, track: null, voices: 0 });
-  const bedTarget = () => (!musicOnRef.current ? 0 : musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME);
-  const ambTarget = () => (!sfxOnRef.current ? 0 : musicRef.current.voices > 0 ? AMB_DUCK : AMB_VOLUME);
+  const bedTarget = () => (!musicOnRef.current ? 0 : (musicRef.current.voices > 0 ? DUCK_VOLUME : MUSIC_VOLUME) * volRef.current.music);
+  const ambTarget = () => (!sfxOnRef.current ? 0 : (musicRef.current.voices > 0 ? AMB_DUCK : AMB_VOLUME) * volRef.current.sfx);
   const duck = () => {
     musicRef.current.voices += 1;
-    if (musicRef.current.a) void fadeTo(musicRef.current.a, Math.min(DUCK_VOLUME, bedTarget()), 400);
+    if (musicRef.current.a) void fadeTo(musicRef.current.a, Math.min(DUCK_VOLUME * volRef.current.music, bedTarget()), 400);
     if (ambRef.current.a) void fadeTo(ambRef.current.a, ambTarget(), 400);
   };
   const unduck = () => {
@@ -278,7 +282,7 @@ export default function Player({ book }: { book: Book }) {
   const playSfx = (id: string) => {
     if (!sfxOnRef.current) return;
     const a = new Audio(media(`${book.id}/audio/sfx/${id}.mp3`));
-    a.volume = SFX_VOLUME;
+    a.volume = SFX_VOLUME * volRef.current.sfx;
     const done = () => sfxPlaying.current.delete(a);
     a.onended = done;
     a.onerror = done;
@@ -362,6 +366,7 @@ export default function Player({ book }: { book: Book }) {
     };
     a.onerror = silent;
     a.currentTime = 0;
+    a.volume = volRef.current.voice;
     playing.current.add(a);
     unwatch = watchPlayback(a, () => pausedRef.current, silent);
     a.play().catch(silent);
@@ -423,7 +428,8 @@ export default function Player({ book }: { book: Book }) {
         objectUrl = URL.createObjectURL(b);
         a = new Audio(objectUrl);
         const el = a;
-        await levelVoice(mixer.current, el, b);
+        el.volume = volRef.current.voice;
+        await levelVoice(mixer.current, el, b, volRef.current.voice);
         if (stopped) return;
         el.onplaying = begin;
         el.onended = stop;
@@ -922,6 +928,10 @@ export default function Player({ book }: { book: Book }) {
     const fx = pref("sfx", "on") !== "off";
     setSfxOn(fx);
     sfxOnRef.current = fx;
+    const level = (k: string) => Math.min(1, Math.max(0, Number(pref(k, "1"))));
+    const v = { voice: level("volVoice"), music: level("volMusic"), sfx: level("volSfx") };
+    volRef.current = v;
+    setVol(v);
   }, []);
 
   // Online and offline are shown as they happen.
@@ -1091,6 +1101,19 @@ export default function Player({ book }: { book: Book }) {
     if (ambRef.current.a) void fadeTo(ambRef.current.a, ambTarget(), 600);
   };
   const changeText = (v: number) => { setTextScale(v); setPref("textScale", String(v)); };
+  /** One volume slider moved: remembered, and applied at once to whatever is playing. */
+  const changeVol = (k: "voice" | "music" | "sfx", v: number) => {
+    const next = { ...volRef.current, [k]: v };
+    volRef.current = next;
+    setVol(next);
+    setPref({ voice: "volVoice", music: "volMusic", sfx: "volSfx" }[k], String(v));
+    if (k === "music" && musicRef.current.a) musicRef.current.a.volume = bedTarget();
+    if (k === "sfx") {
+      if (ambRef.current.a) ambRef.current.a.volume = ambTarget();
+      for (const a of sfxPlaying.current) a.volume = SFX_VOLUME * v;
+    }
+    if (k === "voice") for (const a of playing.current) a.volume = v;
+  };
 
   if (!profile) return <main className="stage" />;
 
@@ -1199,8 +1222,22 @@ export default function Player({ book }: { book: Book }) {
             {fs.on ? "⤡" : "⤢"}
           </button>
         )}
+        <button className={`hud-btn ${audioPanel ? "on" : ""}`} aria-label="Sound levels" aria-expanded={audioPanel} title="Sound levels" onClick={() => setAudioPanel((o) => !o)}>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" /><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        </button>
         <button className="hud-btn" aria-label="Menu" title="Menu" onClick={() => openMenu()}>☰</button>
       </div>
+      {audioPanel && (
+        <div className="audio-panel" role="dialog" aria-label="Sound levels">
+          {([["voice", "Narration & voices"], ["music", "Background music"], ["sfx", "Sound effects"]] as const).map(([k, label]) => (
+            <label key={k} className="audio-row">
+              <span className="audio-label">{label}<b>{Math.round(vol[k] * 100)}%</b></span>
+              <input type="range" min={0} max={1} step={0.05} value={vol[k]} onChange={(e) => changeVol(k, Number(e.target.value))} />
+            </label>
+          ))}
+          <button className="audio-done" onClick={() => setAudioPanel(false)}>Done</button>
+        </div>
+      )}
 
       {scene.episodeTitle && <div key={`ep-${scene.id}`} className="eptag">{scene.episodeTitle}</div>}
 
