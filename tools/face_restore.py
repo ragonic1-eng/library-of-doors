@@ -18,8 +18,8 @@ FF_PY = os.path.join(ROOT, "tools", "venv-ff", "Scripts", "python.exe")
 OUT = os.path.join(ROOT, "assets", "clips", "sandman", "_ff")
 PUBLIC = os.path.join(ROOT, "app", "public", "clips", "sandman")
 SOURCES = {
-    "aurie": ["characters/dream/photo.jpg", "characters/dream/photo-4.jpg", "characters/dream/photo-5.jpg", "characters/dream/photo-6.jpg"],
-    "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg", "characters/alex/face.jpg"],
+    "aurie": ["characters/dream/photo-4.jpg", "characters/dream/photo-6.jpg", "characters/dream/photo-9.jpg", "characters/dream/photo-11.jpg", "characters/dream/photo-12.jpg", "characters/dream/photo-13.jpg", "characters/dream/photo-14.jpg", "characters/dream/photo-16.jpg", "characters/dream/photo-18.jpg"],
+    "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg", "characters/alex/face.jpg", "characters/alex/photo-7.jpg", "characters/alex/photo-8.jpg", "characters/alex/photo-9.jpg"],
 }
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import face_score as fs  # noqa: E402  (same detector and recogniser as the likeness checks)

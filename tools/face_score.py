@@ -24,9 +24,12 @@ DET = os.path.join(MODELS, "face_detection_yunet_2023mar.onnx")
 REC = os.path.join(MODELS, "face_recognition_sface_2021dec.onnx")
 
 REFS = {
-    # Charmaine's four most mutually consistent photos (pairwise 0.62 to 0.77); photo-7 is excluded (glare breaks alignment).
-    "aurie": ["characters/dream/photo.jpg", "characters/dream/photo-4.jpg", "characters/dream/photo-5.jpg", "characters/dream/photo-6.jpg"],
-    "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg"],
+    # Charmaine's clear, straight-on photos (2026-10-23 set plus the two best older ones); glasses, an old
+    # years-ago photo, blurred laughs and very close selfies are kept out.
+    "aurie": ["characters/dream/photo-4.jpg", "characters/dream/photo-6.jpg", "characters/dream/photo-9.jpg", "characters/dream/photo-11.jpg", "characters/dream/photo-12.jpg", "characters/dream/photo-13.jpg", "characters/dream/photo-14.jpg", "characters/dream/photo-16.jpg", "characters/dream/photo-18.jpg"],
+    # The owner's straight-on photos at arm's length (2026-10-23 set); very close selfies, low angles and the profile
+    # agree less with the rest (lens distortion) and are kept out.
+    "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg", "characters/alex/face.jpg", "characters/alex/photo-7.jpg", "characters/alex/photo-8.jpg", "characters/alex/photo-9.jpg"],
 }
 # Score = MEAN similarity over all reference photos (stricter than the best single match).
 STRONG, OK = 0.50, 0.40

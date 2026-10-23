@@ -104,7 +104,7 @@
         ],
         "prompt": "Medium close shot: inside the glass sphere Aurie has risen to her knees, close to the glass, her face large and sharp in frame, set in cold fury, her breath fogging the glass in front of her. At the right edge of the frame, Burgess recoils a step back, one arm half raised, partly cut off by the frame. FRAMING RULE (overrides everything above about composition): this is a CLOSE-UP. Aurie's head and shoulders fill the frame; her face is at least one third of the frame height, sharp and fully visible, eyes to camera or near it. The location reference image is ONLY for the background colours and textures behind her, softly out of focus; never reproduce its wide composition. Other people appear only as soft shapes at the frame edges, never as faces."
       },
-      "motion": "Burgess stumbles back another step, catching himself on the lectern; the candles nearest the sphere gutter and lean away from it. Aurie remains kneeling, staring. Quick small hand-held reaction.",
+      "motion": "Burgess stumbles back another step, catching himself on the lectern; the candles nearest the sphere gutter and lean away from it. Aurie remains kneeling, staring. Quick small hand-held reaction. SCALE LOCK: the glass sphere and Aurie inside it keep exactly their size and proportions from the first frame; she stays a full-size adult kneeling on the bottom of the large sphere, small within it, with mist above her head; she never grows, moves toward the camera or leaves the sphere.",
       "identity": [
         "aurie"
       ]
@@ -120,7 +120,7 @@
         ],
         "prompt": "The 1916 cellar: Roderick Burgess beside the glass sphere, head thrown back in contemptuous laughter, one hand on his chest, candlelight on his teeth."
       },
-      "motion": "Burgess laughs, then stops abruptly and leans close to the glass, the smile gone, wagging one finger slowly. Slow push-in on his face."
+      "motion": "Burgess laughs, then stops abruptly and leans close to the glass, the smile gone, wagging one finger slowly. Locked-off camera. SCALE LOCK: the glass sphere and Aurie inside it keep exactly their size and proportions from the first frame; she stays a full-size adult kneeling on the bottom of the large sphere, small within it, with mist above her head; she never grows, moves toward the camera or leaves the sphere."
     },
     {
       "id": "1.3a",
@@ -1047,7 +1047,7 @@
       "keyframe": {
         "use": "assets/keyframes/sandman/1.1a-v3/keyframe.png"
       },
-      "motion": "Aurie stays kneeling exactly where she is, perfectly still, in her white dress; her face, expression and head position do not change and her mouth stays closed; she only breathes and blinks once, slowly. Pale mist drifts slowly around her inside the clear sphere; the chalk circle on the floor glows brighter; candle flames lean toward the glass; Burgess keeps his hand raised. The camera holds still with the gentlest push-in. The glass stays clear over her face."
+      "motion": "Aurie stays kneeling exactly where she is, perfectly still, in her black gown; her face, expression and head position do not change and her mouth stays closed; she only breathes and blinks once, slowly. Pale mist drifts slowly around her inside the clear sphere; the chalk circle on the floor glows brighter; candle flames lean toward the glass; Burgess keeps his hand raised. The camera holds still with the gentlest push-in. The glass stays clear over her face. SCALE LOCK: the glass sphere and Aurie inside it keep exactly their size and proportions from the first frame; she stays a full-size adult kneeling on the bottom of the large sphere, small within it, with mist above her head; she never grows, moves toward the camera or leaves the sphere."
     },
     {
       "id": "still-matthew",
@@ -1249,7 +1249,7 @@
       "keyframe": {
         "use": "assets/keyframes/sandman/aurie-years/keyframe.png"
       },
-      "motion": "Time passing outside the glass: pale daylight from the high window slowly sweeps across the cellar walls and fades and returns, dust drifts and settles, cobwebs stir; the candle stubs stay unlit. Inside the sphere Aurie is completely still, like a statue: her face, expression, head and pose do not change at all, only her eyes move slightly. Locked-off camera, no zoom."
+      "motion": "Time passing outside the glass: pale daylight from the high window slowly sweeps across the cellar walls and fades and returns, dust drifts and settles, cobwebs stir; the candle stubs stay unlit. Inside the sphere Aurie is completely still, like a statue: her face, expression, head and pose do not change at all, only her eyes move slightly. Locked-off camera, no zoom. SCALE LOCK: the glass sphere and Aurie inside it keep exactly their size and proportions from the first frame; she stays a full-size adult kneeling on the bottom of the large sphere, small within it, with mist above her head; she never grows, moves toward the camera or leaves the sphere."
     },
     {
       "id": "aurie-ruins",
@@ -3030,7 +3030,7 @@
       "keyframe": {
         "use": "assets/keyframes/sandman/still-aurie-boy-glass/keyframe.png"
       },
-      "motion": "Locked-off static camera. The boy slowly slumps sideways against the glass, falling asleep, his breath fogging a small patch on the glass; the candle flame flickers. The woman inside the sphere does not move at all."
+      "motion": "Locked-off static camera. The boy slowly slumps sideways against the glass, falling asleep, his breath fogging a small patch on the glass; the candle flame flickers. The woman inside the sphere does not move at all. SCALE LOCK: the glass sphere and Aurie inside it keep exactly their size and proportions from the first frame; she stays a full-size adult kneeling on the bottom of the large sphere, small within it, with mist above her head; she never grows, moves toward the camera or leaves the sphere."
     },
     {
       "id": "still-1988-flash",

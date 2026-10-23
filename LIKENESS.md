@@ -29,7 +29,9 @@ Scores are `tools/face_score.py` cosine similarity against the real photos (0.40
 4. **Back or three-quarter views for anything energetic.** If she must run, fight or turn, show her from behind or in
    silhouette and say so in the prompt and the motion ("she never turns her head; her face is never seen").
 5. **One real face per picture where possible.** With two people with similar hair, name the face to change.
-6. **Scale and costume locks.** The sphere is always about 2 m with Aurie kneeling life-size (`assets/refs/sphere.png`);
+6. **Scale and costume locks.** The sphere is always about 2 m with Aurie kneeling life-size at true adult proportions:
+   sitting back on her heels, knees visible, head about a ninth of the sphere's width, mist above her
+   (`assets/refs/sphere.png`, rebuilt 2026-10-23 because the old one gave her a big head on a small body);
    her black high-collared gown everywhere; Alex always in his black rectangular glasses.
 7. **Check every result automatically.** `generate-clips` now scores the likeness of every finished Aurie or Alex clip
    and warns when its worst frame falls below 0.30; such a clip is re-rendered calmer, or the scene keeps the still.
@@ -39,6 +41,17 @@ Scores are `tools/face_score.py` cosine similarity against the real photos (0.40
    kept only if the likeness improves. First run over 19 drifting clips: 14 improved (for example Aurie with Death
    0.18 to 0.44, Aurie with Nada 0.33 to 0.49, Alex 1.5d-A 0.13 to 0.55, Alex 1.5k-a 0.12 to 0.44); it can soften
    a big expression (a scream becomes a frightened face), so check those by eye.
+
+## Reference photos (updated 2026-10-23)
+
+The owner sent 9 more photos of himself and 15 of Charmaine. They stay local (`characters/`, never in git). Both the
+likeness check and the face-restoring pass use only the clear, straight-on, arm's-length ones:
+
+- **Aurie:** `characters/dream/photo-4, 6, 9, 11, 12, 13, 14, 16, 18`. Left out: glasses (photo-10), a years-old
+  photo (photo-17), blurred laughs (photo-20, 22), very close selfies (photo-15) and the narrow older four. With the
+  wider set her stills score fairer (for example the convention 0.26 to 0.43, Calliope at dawn 0.34 to 0.48).
+- **Alex:** `characters/alex/photo, photo-2, face, photo-7, 8, 9`. Left out: very close selfies (photo-3, 4, lens
+  stretch), head turned (photo-5, 6) and low angles (photo-10, 11).
 
 ## Options not yet used (need the owner's go-ahead)
 
