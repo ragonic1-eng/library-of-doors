@@ -24,8 +24,9 @@ interface Props {
 
 /** Everything a scene can lead to: its choices' targets and its plain next. */
 function targets(sc: Scene) {
-  const out = (sc.choices ?? []).map((c) => ({ to: c.next, label: c.text, id: c.id }));
+  const out = (sc.choices ?? []).flatMap((c) => [{ to: c.next, label: c.text, id: c.id }, ...(c.branch ?? []).map((b) => ({ to: b.next, label: `${c.text} (branch)`, id: `${c.id}~${b.next}` }))]);
   if (sc.next) out.push({ to: sc.next, label: "continue", id: "next" });
+  for (const b of sc.branch ?? []) out.push({ to: b.next, label: "branch", id: `branch~${b.next}` });
   return out;
 }
 
@@ -321,13 +322,13 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay }: {
       )}
       {(sc.choices ?? []).map((c) => (
         <div key={c.id} className="dev-choice">
-          <h3>⑂ {c.id}: “{c.text}” <GoTo to={c.next} book={book} onOpen={onOpen} /></h3>
+          <h3>⑂ {c.id}: “{c.text}” <GoTo to={c.next} book={book} onOpen={onOpen} />{(c.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</h3>
           {c.requires && <p className="dev-req">requires {JSON.stringify(c.requires)}</p>}
           {c.effects && <p className="dev-req">effects {JSON.stringify(c.effects)}</p>}
           {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} /> : null}
         </div>
       ))}
-      {sc.next && <p className="dev-next">Then: <GoTo to={sc.next} book={book} onOpen={onOpen} /></p>}
+      {sc.next && <p className="dev-next">Then: <GoTo to={sc.next} book={book} onOpen={onOpen} />{(sc.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</p>}
     </div>
   );
 }

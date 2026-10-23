@@ -55,7 +55,7 @@ const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
 // ---------- clip list ----------
 /** @type {{id:string, kind:string, model:string, seconds:number, keyframe:string, prompt:string, out:string}[]} */
 // Real people whose likeness every finished clip is checked for (LIKENESS.md).
-const likenessOf = (ids) => (ids.some((i) => i === "aurie" || i === "dream") ? "aurie" : ids.some((i) => i.startsWith("alex")) ? "alex" : null);
+const likenessOf = (ids) => (ids.some((i) => i === "aurie" || i === "dream") ? "aurie" : ids.some((i) => i.startsWith("alex") && i !== "alex-child") ? "alex" : null);
 const clips = [];
 for (const s of spec.shots) {
   if (s.still) continue; // a still is shown as an image with a slow push-in, never animated

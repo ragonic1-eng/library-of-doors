@@ -86,6 +86,12 @@ export function applyConsequence(p: Profile, bookId: string, who: string, tag: s
 }
 
 /** Does the profile meet a gate? */
+/** Where to go next: the first alternate route her earlier deeds qualify for, else the usual next. */
+export function route(p: Profile | null, bookId: string, x: { next?: string; branch?: { requires: Requires; next: string }[] }): string | undefined {
+  const alt = p ? x.branch?.find((b) => meets(p, bookId, b.requires)) : undefined;
+  return alt?.next ?? x.next;
+}
+
 export function meets(p: Profile, bookId: string, r?: Requires): boolean {
   if (!r) return true;
   const flags = p.flags[bookId] ?? {};

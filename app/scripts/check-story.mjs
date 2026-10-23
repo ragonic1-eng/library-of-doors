@@ -43,6 +43,7 @@ for (const dir of readdirSync(BOOKS)) {
     if (sc.id !== sid) err(`${at}: id "${sc.id}" does not match its key`);
     if (!Array.isArray(sc.beats)) err(`${at}: no beats`);
     if (sc.next && !S[sc.next]) err(`${at}: next "${sc.next}" does not exist`);
+    for (const b of [...(sc.branch ?? []), ...(sc.choices ?? []).flatMap((c) => c.branch ?? [])]) if (!S[b.next]) err(`${at}: branch to missing scene "${b.next}"`);
     if (sc.fx && !FX.has(sc.fx)) err(`${at}: unknown fx "${sc.fx}"`);
     const bed = (id) => haveMedia && id && id !== "none" && !existsSync(join(media, "audio", "ambience", `${id}.mp3`));
     if (bed(sc.ambience)) err(`${at}: ambience ${sc.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
@@ -97,7 +98,8 @@ for (const dir of readdirSync(BOOKS)) {
     reach.add(id);
     const sc = S[id];
     if (sc.next) stack.push(sc.next);
-    for (const c of sc.choices ?? []) stack.push(c.next);
+    for (const c of sc.choices ?? []) stack.push(c.next, ...(c.branch ?? []).map((b) => b.next));
+    for (const b of sc.branch ?? []) stack.push(b.next);
   }
   for (const id of Object.keys(S)) if (!reach.has(id)) warn(`${book.id} ${id}: no path from the start reaches this scene`);
   if (!haveMedia) warn(`${book.id}: media folder not present here, picture and narration checks skipped`);

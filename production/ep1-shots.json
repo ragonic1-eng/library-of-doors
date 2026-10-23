@@ -2106,14 +2106,6 @@
       "still": true
     },
     {
-      "id": "still-alex-stairs",
-      "keyframe": {
-        "refs": [],
-        "prompt": "A dim Edwardian upstairs landing at night, floral wallpaper, one oil lamp: a small boy of about seven in striped flannel pyjamas sits hugging his knees on the top step, head turned, listening down the stairs, frightened. 1916."
-      },
-      "still": true
-    },
-    {
       "id": "2.2b",
       "keyframe": {
         "refs": [
@@ -3019,6 +3011,237 @@
         ],
         "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: Delirium from her sheet, wild multicoloured hair, laughing and crying at once, arms flung wide as a storm of bright coloured fish pours out of her and swirls down the steps in spirals."
       }
+    },
+    {
+      "id": "still-alex-boy-cellar",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Night, 1924, the candlelit stone cellar from the plate seen from the bottom of the stairs: Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown) creeps down the last steps holding a candle, staring ahead; in the background, inside the great glass sphere, Aurie, a woman with long straight black hair in a long black high-collared gown, small and still, her face turned toward him. Eerie and tender."
+      }
+    },
+    {
+      "id": "1.3a-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-aurie-boy-glass/keyframe.png"
+      },
+      "motion": "Locked-off static camera. The boy slowly slumps sideways against the glass, falling asleep, his breath fogging a small patch on the glass; the candle flame flickers. The woman inside the sphere does not move at all."
+    },
+    {
+      "id": "still-1988-flash",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "Close-up in the dim 1988 cellar from the plate: an old man's trembling hand in a grey cardigan sleeve holds an ordinary kitchen knife over a chalk binding circle on the stone floor, about to cut it; behind, out of focus, the glass sphere glows. No face visible. Tense, hushed."
+      }
+    },
+    {
+      "id": "still-alex-key",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Night, 1926: at the top of the cellar stairs of a dark Edwardian house, Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown), now ten, holds a heavy iron key in one hand and a candle in the other, looking back over his shoulder, guilty and brave."
+      }
+    },
+    {
+      "id": "1.4x-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Close on a heavy wooden cellar door at night, candlelight: a small child's hand with a striped pyjama cuff turns a big iron key in the lock."
+      },
+      "motion": "The small hand turns the key slowly, the lock clicks, and the door creaks open a few inches into darkness; the candle flame bends in the draught. Slow push-in."
+    },
+    {
+      "id": "1.4x-b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "Morning, an Edwardian study at Fawney Rig: Roderick Burgess from his sheet, in shirtsleeves and a velvet waistcoat, furious, sweeps books and papers off his desk, drawers pulled out everywhere."
+      },
+      "motion": "Burgess tears open drawers and throws papers into the air in a rage, shouting, papers fluttering down around him. Handheld."
+    },
+    {
+      "id": "still-key-print",
+      "still": true,
+      "keyframe": {
+        "refs": [],
+        "prompt": "Extreme close-up of a heavy old iron key lying on a dusty stone step, candlelight: in the fine grey dust on its bow, one small, clear child's fingerprint. Ominous, quiet."
+      }
+    },
+    {
+      "id": "1.4y-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The candlelit cellar from the plate: Roderick Burgess from his sheet grips Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown), ten, by the arm and pulls him toward the glass sphere; inside the great glass sphere, Aurie, a woman with long straight black hair in a long black high-collared gown, small and still, her face turned toward him."
+      },
+      "motion": "Burgess drags the boy across the floor toward the glass, shouting; the boy stumbles but does not cry, looking only at the woman in the sphere. Handheld, tense."
+    },
+    {
+      "id": "still-boy-silent",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The candlelit cellar from the plate: Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown), ten, stands small and silent before the glass sphere, chin up, refusing to speak; looming behind him, Roderick Burgess from his sheet, red with rage; inside the great glass sphere, Aurie, a woman with long straight black hair in a long black high-collared gown, small and still, her face turned toward him, her palm pressed to the glass toward the boy."
+      }
+    },
+    {
+      "id": "still-burgess-nightmare",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "Night, an Edwardian bedroom: Roderick Burgess from his sheet sits bolt upright in bed, mouth open in a silent shriek, sweat on his face; the shadows on the wall behind him have the shapes of reaching hands and black wings. Moonlight, horror."
+      }
+    },
+    {
+      "id": "still-alex-1947-glass",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Night, 1947, the candlelit stone cellar: Alex Burgess from the character sheet, thirty-one, thick black hair, his black rectangular spectacles, a black mourning armband on his tweed jacket, sits alone on a wooden chair close to the great glass sphere, holding a candle, speaking softly; inside the sphere, small and still, a woman in a long black gown with long black hair."
+      },
+      "identity": [
+        "alex-1970s"
+      ]
+    },
+    {
+      "id": "still-alex-paul-1947",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/paul/sheet.png"
+        ],
+        "prompt": "A plain 1940s English country-house kitchen at night, one lamp: Alex Burgess from the character sheet, thirty-one, black hair, black rectangular spectacles, and Paul McGuire from his sheet, young, in a guard's jumper, sit side by side at the scrubbed table; under the table their hands touch; both glance at the dark window, wary. Tender, secret."
+      },
+      "identity": [
+        "alex-1970s"
+      ]
+    },
+    {
+      "id": "1.4o-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1970s/plate.png"
+        ],
+        "prompt": "A 1970s country-house drawing room, dim lamps: five elderly men in long black ceremonial robes with old brass medallions sit stiffly around the room with cups of tea, sneering, cold and contemptuous."
+      },
+      "motion": "The robed old men sneer and murmur to one another; one points a bony finger at the camera and laughs coldly; teacups clink. Slow push-in."
+    },
+    {
+      "id": "still-alex-stands",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1970s/plate.png"
+        ],
+        "prompt": "A 1970s country-house drawing room: Alex Burgess from the character sheet, about sixty, greying hair, black rectangular spectacles, cardigan, stands tall and points at the door, jaw set, angry and unafraid; around him, old men in black ceremonial robes look up, startled."
+      },
+      "identity": [
+        "alex-1970s"
+      ]
+    },
+    {
+      "id": "still-order-flees",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1970s/plate.png"
+        ],
+        "prompt": "A 1970s country-house hallway: elderly men in long black ceremonial robes hurry out through the front door into the rain, one dropping his medallion, all looking back over their shoulders in fear. Teacups left behind on a side table."
+      }
+    },
+    {
+      "id": "still-alex-frees",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/refs/sphere.png",
+          "characters/paul/sheet.png",
+          "assets/plates/cellar-1988/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Night, 1988, the cellar from the plate: Alex Burgess from the character sheet, seventy-two, in a wheelchair, grey hair, black rectangular spectacles, a plaid blanket on his knees, sits close beside the glass sphere, one hand resting on the glass; Paul McGuire from his sheet, old, stands behind the chair; inside the sphere, kneeling at life size, a woman in a long black gown with long black hair, seen from behind, faces him. The glass sphere is large, about two metres across, as tall as a standing man, exactly like the sphere in the sphere reference picture, on a low black wrought-iron cradle inside the chalk circle."
+      },
+      "identity": [
+        "alex-1988"
+      ]
+    },
+    {
+      "id": "1.5k-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/refs/sphere.png",
+          "characters/paul/sheet.png",
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "Night, 1988, the cellar from the plate: Alex Burgess from the character sheet, seventy-two, grey hair, black rectangular spectacles, leans down from his wheelchair and presses an ordinary kitchen knife into the chalk binding circle on the stone floor; Paul McGuire from his sheet steadies the chair. The glass sphere behind them. The glass sphere is large, about two metres across, as tall as a standing man, exactly like the sphere in the sphere reference picture, on a low black wrought-iron cradle inside the chalk circle."
+      },
+      "motion": "Locked-off camera, medium shot. The old man slowly drags the knife through the chalk in one long line, his face calm and steady; the circle flares with pale light and breaks; a crack runs up the glass sphere and light pours out. Paul's hand rests on his shoulder.",
+      "identity": [
+        "alex-1988"
+      ]
+    },
+    {
+      "id": "still-siege-alex",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/paul/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate: two old men in a dream, Alex Burgess from the character sheet, grey hair, black rectangular spectacles, standing again without a wheelchair, and Paul McGuire from his sheet, hand in hand, facing the fire, unafraid."
+      },
+      "identity": [
+        "alex-1988"
+      ]
+    },
+    {
+      "id": "still-alex-stairs",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/alex-child/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "A dim Edwardian upstairs landing at night, 1916, floral wallpaper, one oil lamp: Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown), very small, about six here, sits hugging his knees on the top step, head turned, listening down the stairs, frightened."
+      }
     }
   ],
   "react": {
@@ -3242,6 +3465,15 @@
           "characters/orpheus/sheet.png"
         ],
         "setting": "Medium close-up on the near bank of a black river of the dead in a dream, pale asphodel flowers and mist behind, a tiny warm lamplight far across the water: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot, whole and beautiful, looking straight at the camera, her lyre on her back. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "alex-child": {
+        "refs": [
+          "characters/alex-child/sheet.png"
+        ],
+        "setting": "Medium close-up in a dream: the walled garden of an English country house on a golden summer afternoon, roses and long grass: Alex as a boy, exactly the Singaporean Chinese boy from his character sheet (broad round face, small black-framed spectacles, striped pyjamas, tartan dressing gown), looking straight at the camera, curious and solemn.",
         "moods": [
           "talking"
         ]

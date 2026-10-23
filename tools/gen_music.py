@@ -40,6 +40,8 @@ TRACKS = {
     "death": "gentle warm kind music, soft piano and solo cello, comforting and tender, a quiet smile at the end of a life, bittersweet, slow, no drums",
     "corinthian": "dark noir jazz, slow muted trumpet melody, upright bass, soft brushed snare, film noir menace, smoky and cool, slow",
     "lullaby": "gentle sad lullaby melody on celesta and soft piano, delicate high strings, haunting and fragile, cinematic, very slow, no drums",
+    "keepers-son": "tender bittersweet film score, a simple childlike piano melody with soft solo cello and gentle warm strings, a lonely boy and a kind secret, slow, no drums",
+    "forties": "gentle 1940s English piano ballad, soft romantic piano with muted strings, a quiet secret love in wartime, nostalgic and tender, slow, no drums",
     "lucifer": "dark elegant baroque menace, harpsichord and string quartet, slow minor key, sinister aristocratic grandeur, cinematic, no drums",
 }
 

@@ -552,6 +552,18 @@ SURREAL DETAIL: the moon pendant glows faintly, as if lit from far away, and her
 
 ---
 
+### 3.39 Alex Burgess as a boy (Part One branch, 1924 to 1926)
+
+**Reference sheet** (no photographs: an original child drawn from this description, consistent with the adult Alex):
+```
+[Reference sheet frame]
+Alex Burgess as a boy of eight to ten, Singaporean Chinese, an original child who resembles no real person. Face: a very broad, round, full face with full cheeks and a soft rounded chin; narrow single-lidded dark eyes; a broad nose with a rounded tip; full lips; slightly prominent ears. Small black-framed rectangular spectacles a little too big for him, sliding down his nose (they are his signature at every age). Hair: thick straight black hair, cut short at the sides by a strict barber, a cowlick at the crown. Build: sturdy, a little chubby. Clothing: 1920s English country-house boy's night clothes: striped flannel pyjamas, a too-large tartan dressing gown, bare feet. Posture: shoulders hunched, holding a candle, curious and frightened at once. Expression: wide-eyed, solemn, a lonely child in a cold house.
+SURREAL DETAIL: a few grains of glittering sand cling to his pyjama sleeve, as if he has been somewhere he should not.
+[Style Bible]
+```
+
+---
+
 ### 3.36 Daniel Hall as a child (Part Seven)
 
 **Reference sheet:**

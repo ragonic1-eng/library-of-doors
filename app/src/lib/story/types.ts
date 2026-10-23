@@ -45,6 +45,13 @@ export interface Choice {
   requires?: Requires; // hidden when not met; the AI cannot steer to it either
   next: string; // scene id
   remembered?: string; // shown as the choice is made when it will matter later ("Hob will remember that.")
+  branch?: Branch[]; // go somewhere else instead of next when an earlier deed qualifies (first match wins)
+}
+
+/** An alternate route: taken instead of `next` when the player's earlier deeds meet `requires`. */
+export interface Branch {
+  requires: Requires;
+  next: string;
 }
 
 /** Something the player's words or actions can cause, chosen live by the AI from this authored menu. */
@@ -90,6 +97,7 @@ export interface Scene {
   conversation?: Conversation;
   choices?: Choice[];
   next?: string; // for scenes with no choices
+  branch?: Branch[]; // alternate routes instead of next, for players whose earlier deeds qualify
 }
 
 export interface Book {

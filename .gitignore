@@ -38,3 +38,7 @@ __pycache__/
 .env*
 /tools/venv/
 /tools/venv-tts/
+
+# FaceFusion (local face-restoring pass) and its environment
+/tools/facefusion/
+/tools/venv-ff/

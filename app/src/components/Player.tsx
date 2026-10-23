@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
-import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, saveProfile } from "@/lib/state/profile";
+import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, route, saveProfile } from "@/lib/state/profile";
 import { lineFile } from "@/lib/story/lines";
 import VERSIONS from "@/content/media-versions.json";
 import { watchPlayback } from "@/lib/story/audio";
@@ -658,7 +658,8 @@ export default function Player({ book }: { book: Book }) {
       }
       return;
     }
-    if (sc.next) goTo(sc.next);
+    const to = route(profileRef.current, book.id, sc);
+    if (to) goTo(to);
   }
 
   const openingVoice = useRef<{ scene: string; blobs: Promise<Blob | null>[] } | null>(null);
@@ -674,7 +675,8 @@ export default function Player({ book }: { book: Book }) {
     if (p) commit({ ...p, position: { book: book.id, scene: id }, visited: (p.visited ?? []).includes(id) ? p.visited : [...(p.visited ?? []), id] });
     // Lines the player may hear next (every possible aftermath, and the opening of every scene that can follow)
     // load while she watches, so no line ever waits on the network.
-    const following = [sc.next, ...(sc.choices ?? []).map((c) => c.next)].filter((x): x is string => !!x && !!book.scenes[x]);
+    const p0 = profileRef.current;
+    const following = [route(p0, book.id, sc), ...(sc.choices ?? []).map((c) => route(p0, book.id, c))].filter((x): x is string => !!x && !!book.scenes[x]);
     const ahead = [
       ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? []),
       ...[...new Set(following)].flatMap((nid) => book.scenes[nid].beats.slice(0, 4)),
@@ -759,7 +761,7 @@ export default function Player({ book }: { book: Book }) {
     await Promise.race([sleep(CHOICE_MS + 1400), skipped]);
     setChosen(null);
     if (token !== runRef.current) return;
-    if (await runTimeline(choice.aftermath ?? [], token)) goTo(choice.next);
+    if (await runTimeline(choice.aftermath ?? [], token)) goTo(route(profileRef.current, book.id, choice) ?? choice.next);
   }
 
   /** Ask the character to answer what she just said (also used by Retry, without repeating her line). */
@@ -1360,7 +1362,7 @@ export default function Player({ book }: { book: Book }) {
           </ul>
           <p className="meta">Mercy {profile.traits.mercy > 0 ? `+${profile.traits.mercy}` : profile.traits.mercy}</p>
           <div className="endactions">
-            {scene.next && book.scenes[scene.next] && <button className="primary" onClick={() => goTo(scene.next!)}>Continue the story</button>}
+            {scene.next && book.scenes[scene.next] && <button className="primary" onClick={() => goTo(route(profileRef.current, book.id, scene) ?? scene.next!)}>Continue the story</button>}
             <button onClick={playAgain}>Play again, choose differently</button>
             <a href="/">Return to the library</a>
           </div>
