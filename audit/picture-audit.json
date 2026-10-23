@@ -1,0 +1,6545 @@
+[
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "picture": "clip:0.0a-v2",
+    "line": "This is the Dreaming, where every dream begins. Aurie is its queen.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "picture": "clip:0.0a-v2",
+    "line": "Her librarian, Lucienne, reads her the day's report. A nightmare has tried to slip out into the waking world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "picture": "clip:0.0b",
+    "line": "Aurie closes her hand, and the nightmare is unmade.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "picture": "clip:0.0d",
+    "line": "Then, far away in the waking world, a man reads her name from a stolen book.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "picture": "clip:0.0d",
+    "line": "A circle of chalk reaches up through her floor, and pulls her down.",
+    "cond": "",
+    "score": 2,
+    "issue": "Circle is glowing on the man's own stone floor, not rising through her floor, and no one is being pulled down"
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "still:cellar-1916",
+    "line": "CARD: England · 1916",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1a-v3",
+    "line": "A cellar beneath Fawney Rig, the house of Roderick Burgess, magician.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1a-v3",
+    "line": "His son Randall died in the war. Burgess wanted Death herself, to make her give him back.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1a-v3",
+    "line": "But Death has a sister. Tonight his spell caught the wrong one.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1a-v3",
+    "line": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1c",
+    "line": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "picture": "clip:1.1c",
+    "line": "Without them, she is only a prisoner.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "beats",
+    "picture": "still:still-burgess-alone",
+    "line": "Hours later, his followers have gone home. Burgess comes back down, alone.",
+    "cond": "",
+    "score": 2,
+    "issue": "Three hooded figures still stand in the background, so his followers have not gone home and he is not alone."
+  },
+  {
+    "scene": "1.2",
+    "where": "beats",
+    "picture": "still:still-burgess-alone",
+    "line": "He still believes he has caught Death. Speak to him, or stay silent. He will remember either way.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.A",
+    "picture": "clip:1.2b-A-v2",
+    "line": "You give him nothing. Not a word, not a flicker.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.A",
+    "picture": "still:still-burgess-1947",
+    "line": "He leaves. He will come back every night for thirty years, and you will never answer him.",
+    "cond": "",
+    "score": 2,
+    "issue": "No departure is visible: the old man sits in his chair gesturing at a hooded figure sealed inside a glass sphere in a crypt — the opposite of someone walking out."
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.B",
+    "picture": "clip:1.2b-B",
+    "line": "The candles lean away from the glass. Burgess stumbles back.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.B",
+    "picture": "clip:1.2b-B",
+    "line": "That night he doubles the wards. The circle burns colder, and you grow weaker.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.C",
+    "picture": "clip:1.2b-C",
+    "line": "He laughs, then stops. He knows a lie when he hears one.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.C",
+    "picture": "clip:1.2b-C",
+    "line": "From now on, he believes nothing you say.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2",
+    "where": "after 1.2.D",
+    "picture": "clip:1.2a",
+    "line": "Burgess goes pale. Then, slowly, he smiles.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "still:sphere-pov",
+    "line": "CARD: The years that followed",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:aurie-years",
+    "line": "Season after season, Aurie sits in the glass and does not move. Only her eyes follow the years.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:aurie-years",
+    "line": "Upstairs, Burgess never speaks his son's name again.",
+    "cond": "only if C_NAMED_RANDALL",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.2b-B",
+    "line": "Every night he comes down to beg you for dreams. You give him none.",
+    "cond": "only if DREAM_REVEALED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.2b-B",
+    "line": "Once, early on, you pitied him. He never forgave you for it.",
+    "cond": "only if C_PITIED_HIM",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.3c",
+    "line": "Without its queen, the Dreaming begins to fall apart. Her palace crumbles into sand.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.4b-A",
+    "line": "In the waking world, sleep goes wrong. Some people can never sleep again.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.3b",
+    "line": "Others fall asleep, and cannot wake. The doctors call it the sleeping sickness.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.3b",
+    "line": "One of them is a girl in Kent named Unity Kincaid. Hers is the only dream Aurie can still reach.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "beats",
+    "picture": "clip:1.3d",
+    "line": "Aurie reaches into the girl's sleep, and finds her waiting in a dream of the sea.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "picture": "clip:1.3b",
+    "line": "Unity will carry your promise through sixty years of sleep.",
+    "cond": "only if UNITY_PROMISE",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "picture": "still:still-unity-shore",
+    "line": "She sleeps on, inside the seaside dream you gave her.",
+    "cond": "only if UNITY_GIFT",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "picture": "still:still-unity-grey",
+    "line": "Her dream stays grey for a long, long time.",
+    "cond": "only if UNITY_USED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "picture": "still:still-unity-shore",
+    "line": "And you cannot forget that smell of roses. Someone else was in that dream.",
+    "cond": "only if SENSED_DESIRE",
+    "score": 2,
+    "issue": "Conditional line (SENSED_DESIRE) not confirmed; visible content is a lone sleeping girl on a beach — no roses and no second person, so the line's specifics aren't shown, only a fitting dreamy dusk mood"
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "picture": "clip:aurie-years",
+    "line": "You let go of the girl. The glass closes around you again.",
+    "cond": "unless UNITY_PROMISE,UNITY_GIFT,UNITY_USED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:cellar-1916",
+    "line": "CARD: 1926",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-ethel-1926",
+    "line": "Burgess had a mistress, Ethel Cripps. One night in 1926, she runs away.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-ethel-1926",
+    "line": "She takes his money, and she takes your helm, your sand and your ruby.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-ethel-1926",
+    "line": "CARD: 1947",
+    "cond": "",
+    "score": 2,
+    "issue": "Picture shows the 1920s escape scene (cloche hat, fur-collared coat, candlelit crypt), no indication of 1947"
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-burgess-1947",
+    "line": "Roderick Burgess dies an old man, still waiting for a wish you never granted.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:cellar-1970s",
+    "line": "His son Alex inherits the house, the order, and the prisoner in the cellar.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:cellar-1970s",
+    "line": "The wards are still doubled, as they have been since your first week.",
+    "cond": "only if C_SHOWED_POWER",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:cellar-1970s",
+    "line": "CARD: Fawney Rig · 1970s",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "clip:1.4a",
+    "line": "Alex is grey now. He was born the year you were caught, and he has grown old listening to you not speak.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "clip:1.4a",
+    "line": "His father's followers are long gone. Only Alex and Paul still come down the cellar stairs.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-burgess-mirrors",
+    "line": "Alex remembers the night his father came up from the cellar white as chalk, and took down every mirror in the house.",
+    "cond": "only if DREAM_REVEALED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-burgess-mirrors",
+    "line": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk.",
+    "cond": "",
+    "score": 2,
+    "issue": "Picture shows the mirror being pulled from the wall, not someone arriving to talk; no speaker addressing anyone is visible."
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "picture": "still:still-burgess-mirrors",
+    "line": "Behind him, Paul, the man who loves him, pretends not to listen.",
+    "cond": "",
+    "score": 1,
+    "issue": "The figure behind him is a small child on the stairs, not Paul."
+  },
+  {
+    "scene": "1.4",
+    "where": "after 1.4.A",
+    "picture": "clip:1.4b-A",
+    "line": "He weeps for the little boy his father hurt. No one has ever seen that boy but you.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "after 1.4.B",
+    "picture": "clip:1.4b-B",
+    "line": "Nothing comes from the glass. He goes upstairs, and does not come down again for years.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "after 1.4.C",
+    "picture": "clip:1.4b-C",
+    "line": "He sees himself old and broken, in a wheelchair. He runs from the cellar, screaming.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "after 1.4.D",
+    "picture": "clip:1.4b-B",
+    "line": "He almost does it. Then he loses his nerve, and walks away.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.4",
+    "where": "after 1.4.D",
+    "picture": "clip:1.4b-B",
+    "line": "But he writes your promise down, and keeps it in his breast pocket for the rest of his life.",
+    "cond": "",
+    "score": 2,
+    "issue": "No writing shown: he has no paper, pen or hand-to-pocket gesture; the frame shows him standing/turning inside the glass sphere, not recording a promise."
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "still:cellar-1988",
+    "line": "CARD: 1988",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "still:cellar-1988",
+    "line": "Seventy-two years in the glass. Alex is an old man now.",
+    "cond": "",
+    "score": 2,
+    "issue": "The cracked glass sphere is there, but no Alex and no old man is shown; the line's subject is absent."
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "still:cellar-1988",
+    "line": "Since the vision of his death, he has not come down to the cellar once.",
+    "cond": "only if ALEX_SAW_DEATH",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "clip:1.5a",
+    "line": "Tonight, the young guard falls asleep against the glass. His breath fogs it.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "clip:1.5a",
+    "line": "A sleeping mind is a door. And Aurie is the queen of dreams.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "clip:1.5b",
+    "line": "She steps through his dream, and out of the glass. The circle crumbles to dust.",
+    "cond": "",
+    "score": 2,
+    "issue": "She stands still beside the fallen man; no stepping out of glass or crumbling circle is shown — the ring of light stays intact."
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "clip:1.5c",
+    "line": "Alex hears the glass break. Paul wheels him down, and there she is.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "beats",
+    "picture": "clip:1.5c",
+    "line": "In his breast pocket is a folded paper with your promise on it.",
+    "cond": "only if ALEX_PROMISE",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "1.5",
+    "where": "after 1.5.A",
+    "picture": "clip:1.5d-A",
+    "line": "He wakes, and wakes, and wakes, each time into something worse. He will never sleep again.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "after 1.5.B",
+    "picture": "clip:1.5d-B",
+    "line": "One night of nightmares, and then it is over. By morning he sleeps like a child.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.5",
+    "where": "after 1.5.C",
+    "picture": "clip:1.5d-C",
+    "line": "You walk out without a word. Behind you, an old man weeps with relief.",
+    "cond": "",
+    "score": 2,
+    "issue": "The woman leaving without speaking is shown, but no old man is visible anywhere in either frame — the weeping figure the line describes is missing."
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:2.1a",
+    "line": "Free, but weak. No helm, no sand, no ruby. Aurie goes home.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:2.1a",
+    "line": "The great gates of her realm are cracked. One lantern still burns.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:aurie-ruins",
+    "line": "She kneels in what is left of her throne room, and lets the grey sand run through her fingers.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:2.1b",
+    "line": "Most of the Dreaming is gone. Only the library still stands.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:2.1b",
+    "line": "On its far wall are three doors she has never seen before.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.1",
+    "where": "beats",
+    "picture": "clip:2.1b",
+    "line": "And you have a name to start your search: Ethel Cripps.",
+    "cond": "only if KNOWS_ETHEL",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "2.1",
+    "where": "after 2.1.A",
+    "picture": "still:still-aurie-prayers",
+    "line": "Lucienne bows, and begins: the dead, the fled, and the faithful.",
+    "cond": "",
+    "score": 2,
+    "issue": "Nobody in the picture bows or is speaking; the seated woman reads a letter while the standing woman holds a lantern, so the described action isn't visible."
+  },
+  {
+    "scene": "2.1",
+    "where": "after 2.1.B",
+    "picture": "clip:2.1c",
+    "line": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles.",
+    "cond": "",
+    "score": 2,
+    "issue": "She is visibly still wearing her spectacles in both frames; only the smile is shown, so the removal of the glasses is contradicted"
+  },
+  {
+    "scene": "end-ep1",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "You are home. But you are not whole.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep1",
+    "where": "beats",
+    "picture": "still:still-treasures-lost",
+    "line": "Your helm, your sand and your ruby are out there, scattered across the waking world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep1",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Lucienne knows where to begin: with three women who know where every lost thing goes.",
+    "cond": "",
+    "score": 2,
+    "issue": "Shows an empty library with labelled doors and a shelf copy of the book, but no three women and no Lucienne — the action the line describes is absent."
+  },
+  {
+    "scene": "end-ep1",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "End of Part One.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "picture": "still:crossroads",
+    "line": "CARD: The edge of the Dreaming",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "picture": "still:crossroads",
+    "line": "Where three roads meet, at the edge of the Dreaming, live the Three Who Are One.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "picture": "clip:2.2a",
+    "line": "A Maiden, a Mother and a Crone. Mortals call them the Fates.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "picture": "still:crossroads",
+    "line": "They will answer three questions, for anyone who asks politely.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "picture": "clip:2.2b",
+    "line": "Aurie calls them, and they come.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "after 2.2.GO",
+    "picture": "still:crossroads",
+    "line": "Three answers, in three places.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "after 2.2.GO",
+    "picture": "clip:2.2a",
+    "line": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son.",
+    "cond": "",
+    "score": 2,
+    "issue": "Picture shows the three Fates holding a thread with scissors under two moons; none of the sand, the helm, Hell, London or Ethel Cripps's son is visible, so the line's content isn't depicted."
+  },
+  {
+    "scene": "2.2",
+    "where": "after 2.2.GO",
+    "picture": "still:crossroads",
+    "line": "And one answer she did not want.",
+    "cond": "only if ASKED_OWN_FATE",
+    "score": 2,
+    "issue": "No figure is present to receive an answer; the picture shows only an empty crossroads, stones, and three moons."
+  },
+  {
+    "scene": "2.2",
+    "where": "after 2.2.GO",
+    "picture": "clip:2.3b",
+    "line": "Hell and a madman can wait. Someone in London is dying of her sand.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.2",
+    "where": "after 2.2.GO",
+    "picture": "still:crossroads",
+    "line": "She will start with the sand.",
+    "cond": "",
+    "score": 2,
+    "issue": "No woman and no sand visible — only an empty moonlit crossroads with standing stones and a signpost; the line's action isn't depicted at all"
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:london-rain",
+    "line": "CARD: London · 1988",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:still-aurie-fog",
+    "line": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:london-rain",
+    "line": "It leads her to a rainy street in north London.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:still-johanna-porch",
+    "line": "A woman is waiting under a porch, as if she has been expecting trouble.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "Years ago, the pouch was hers. Then the woman she loved took it.",
+    "cond": "",
+    "score": 2,
+    "issue": "Line is backstory about a pouch and a past lover; picture shows only her lighting a cigarette in the rain, neither the pouch nor the other woman"
+  },
+  {
+    "scene": "2.3",
+    "where": "after 2.3.IN",
+    "picture": "clip:2.3a",
+    "line": "Johanna flicks her cigarette into the gutter, and leads the way.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "beats",
+    "picture": "clip:2.3b",
+    "line": "Inside, the house has become a dream. It breathes.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "beats",
+    "picture": "clip:2.3b",
+    "line": "Rachel has breathed the sand for years. It is the only thing keeping her alive, and it is killing her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "beats",
+    "picture": "clip:2.3b",
+    "line": "Without your ruby you cannot give her life back. Only an ending: a kind one, or a cruel one.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "after 2.4.A",
+    "picture": "clip:2.3c",
+    "line": "You give Rachel a dream: a summer garden, and Johanna young beside her.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "after 2.4.A",
+    "picture": "clip:2.3c",
+    "line": "It is the garden Johanna told you about.",
+    "cond": "only if HEARD_RACHEL",
+    "score": 2,
+    "issue": "No garden shown in either frame; it is Rachel's bedroom, golden-lit at most"
+  },
+  {
+    "scene": "2.4",
+    "where": "after 2.4.A",
+    "picture": "clip:2.3c",
+    "line": "She dies smiling. The sand flows home into the pouch.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.4",
+    "where": "after 2.4.A",
+    "picture": "clip:2.3c",
+    "line": "Johanna does not thank you. But she will remember this.",
+    "cond": "",
+    "score": 2,
+    "issue": "Line is about Johanna's reaction; only Rachel and a hand are visible, no Johanna"
+  },
+  {
+    "scene": "2.4",
+    "where": "after 2.4.B",
+    "picture": "still:rachel-room",
+    "line": "You take the pouch. Behind you, Rachel begins to scream.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-2a",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "The pouch of sand is hers again. One of three.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-2a",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "She feels the Dreaming stir, a little stronger.",
+    "cond": "",
+    "score": 2,
+    "issue": "No character is present and nothing visibly stirs; only a static misty room with a lantern"
+  },
+  {
+    "scene": "end-2a",
+    "where": "beats",
+    "picture": "still:still-helm-demon",
+    "line": "Next, the helm. A demon has it, in Hell.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "CARD: Hell",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "Aurie walks down through the darkest corners of her own realm, to the place where the Dreaming touches Hell.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "The Fates said a demon holds her helm. So Aurie goes where no dreamer is welcome.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "clip:2.5a",
+    "line": "The gates of Hell open for her. Even here, they know her name.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "clip:2.5a",
+    "line": "The damned reach out as she passes, begging for a single dream.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "still:still-nada",
+    "line": "In a cell of black ice, someone calls to her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "beats",
+    "picture": "still:still-nada",
+    "line": "Nada. A queen Aurie loved ten thousand years ago, and sent here when Nada refused her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.5",
+    "where": "after 2.5.ON",
+    "picture": "still:hell-arena",
+    "line": "Aurie walks on. Behind her, Nada does not call out again.",
+    "cond": "",
+    "score": 2,
+    "issue": "No figure walking away and no characters identifiable — static crowd around a mirror-like pool; place and mood fit, but the described action and people aren't visible."
+  },
+  {
+    "scene": "2.5",
+    "where": "after 2.5.PROMISE",
+    "picture": "clip:aurie-nada",
+    "line": "Nada presses her hand to the ice. Aurie presses hers to the other side.",
+    "cond": "",
+    "score": 2,
+    "issue": "Both women stand facing each other with arms lowered and hands out of frame; no hand pressed to the ice or to the other side is visible."
+  },
+  {
+    "scene": "2.5",
+    "where": "after 2.5.PROMISE",
+    "picture": "still:still-nada",
+    "line": "A promise, made in Hell. Hell will remember it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.6",
+    "where": "beats",
+    "picture": "clip:2.5c",
+    "line": "At the heart of Hell is an arena, and above it a throne.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.6",
+    "where": "beats",
+    "picture": "clip:2.5c",
+    "line": "Only Lucifer, who rules here, can make a demon give back what it holds.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.6",
+    "where": "beats",
+    "picture": "clip:2.5c",
+    "line": "Lucifer Morningstar, first of the fallen. He has been expecting her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.6",
+    "where": "after 2.6.GAME",
+    "picture": "still:hell-arena",
+    "line": "The arena roars. The Oldest Game has not been played in Hell for a thousand years.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "beats",
+    "picture": "clip:2.6a",
+    "line": "Choronzon steps into the ring, with her helm in his hand.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "beats",
+    "picture": "clip:2.6a",
+    "line": "The Oldest Game. Each names a form that defeats the other's last. The first who cannot answer, loses.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "beats",
+    "picture": "clip:2.5c",
+    "line": "Lucifer will judge. Type your answer: every form must beat his.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.WIN",
+    "picture": "clip:2.6b",
+    "line": "Anti-life. The end of all things. There is only one answer to that.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.WIN",
+    "picture": "clip:2.6b",
+    "line": "I am hope. And the dark has nothing left to say.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.WIN",
+    "picture": "clip:2.6b",
+    "line": "Choronzon drops the helm at her feet. Two of three.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.WIN",
+    "picture": "clip:aurie-helm",
+    "line": "Aurie lifts her helm from the stone. For the first time in seventy years, she feels like herself.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.LOSE",
+    "picture": "clip:2.7c",
+    "line": "Choronzon's form swallows hers. The arena howls with delight.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.LOSE",
+    "picture": "still:hell-arena",
+    "line": "Lucifer, amused, allows one more game.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.8",
+    "where": "beats",
+    "picture": "still:still-legions",
+    "line": "The helm is hers. But the legions of Hell now block the only way out.",
+    "cond": "",
+    "score": 2,
+    "issue": "Legions of Hell are massed, but no helm or trapped traveler is visible and no blocked exit is shown — the line's subject isn't in frame."
+  },
+  {
+    "scene": "2.8",
+    "where": "beats",
+    "picture": "still:still-legions",
+    "line": "Lucifer smiles. Here, he says, she has no power at all.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.8",
+    "where": "after 2.8.A",
+    "picture": "still:hell-gates",
+    "line": "Hell has no answer. The legions part like a curtain.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.8",
+    "where": "after 2.8.A",
+    "picture": "still:hell-gates",
+    "line": "Lucifer lets her go. He will never forget being bested in his own house.",
+    "cond": "",
+    "score": 2,
+    "issue": "No figures visible; the gate stands shut with no one being released, so the pictured moment doesn't show Lucifer letting her go"
+  },
+  {
+    "scene": "2.8",
+    "where": "after 2.8.B",
+    "picture": "still:hell-gates",
+    "line": "Lucifer finds her dull, and waves her away.",
+    "cond": "",
+    "score": 2,
+    "issue": "No Lucifer or any character in frame — only a static gate with carved souls, snow and hanging keys; the dismissing gesture and the person he waves away are absent."
+  },
+  {
+    "scene": "end-2b",
+    "where": "beats",
+    "picture": "clip:aurie-helm",
+    "line": "The helm is hers again. Two of three.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-2b",
+    "where": "beats",
+    "picture": "still:still-arkham",
+    "line": "Only the ruby remains, in the hands of a madman.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-2b",
+    "where": "beats",
+    "picture": "still:still-ruby-call",
+    "line": "Next, the ruby.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "still:still-ruby-call",
+    "line": "The ruby calls to her across an ocean, like her own voice heard from another room.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "still:still-ethel-1926",
+    "line": "The Fates said the ruby went to Ethel Cripps's son.",
+    "cond": "",
+    "score": 2,
+    "issue": "The ruby is visible, but the picture shows a woman (Ethel) holding it in her bag — nothing shows the ruby passing to her son."
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "still:still-arkham",
+    "line": "John Dee has spent forty years in a madhouse, dreaming of that stone.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "clip:2.9b",
+    "line": "Tonight he walks out, and takes his mother's ruby back.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "clip:2.8a",
+    "line": "He sits down in an all-night diner, and begins to play with the people inside.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "beats",
+    "picture": "clip:2.8a",
+    "line": "Every hour he twists their dreams a little further, and the whole world's dreams go wrong with them.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.9",
+    "where": "after 2.9.A",
+    "picture": "clip:2.9c",
+    "line": "Dee sees her coming. The ruby turns on her, and she is nearly unmade.",
+    "cond": "",
+    "score": 2,
+    "issue": "The ruby is held out by a grinning man in a diner; no woman is shown approaching or being struck, and nothing indicates Dee's viewpoint — the accused attacker is male and the moment is his flourish, not someone seeing 'her' coming."
+  },
+  {
+    "scene": "2.9",
+    "where": "after 2.9.A",
+    "picture": "still:still-ruby-inside",
+    "line": "She crawls into the stone itself, wounded, to finish it there.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.10",
+    "where": "beats",
+    "picture": "still:still-dee-through-ruby",
+    "line": "Dee feels her inside his stone. He laughs, and stands, and lifts it high.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.10",
+    "where": "after 2.10.X",
+    "picture": "clip:2.9a",
+    "line": "He smashes the ruby. He thinks it will kill her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.10",
+    "where": "after 2.10.X",
+    "picture": "still:still-ruby-inside",
+    "line": "It does not. Everything she ever poured into that stone comes home to her.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.10",
+    "where": "after 2.10.X",
+    "picture": "still:still-ruby-inside",
+    "line": "Three of three.",
+    "cond": "",
+    "score": 2,
+    "issue": "Nothing in the frame counts or shows three of anything; she is just kneeling alone in the crystal cavern."
+  },
+  {
+    "scene": "2.11",
+    "where": "beats",
+    "picture": "still:still-dee-floor",
+    "line": "On the diner floor lies a small, broken old man.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.11",
+    "where": "beats",
+    "picture": "still:still-bette-asleep",
+    "line": "Behind the counter, Bette the waitress is still asleep, smiling. Dee walked past her a hundred times, and never once saw her.",
+    "cond": "only if BETTE_HIDDEN",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.11",
+    "where": "after 2.11.A",
+    "picture": "still:still-dee-cell",
+    "line": "He sleeps in his old cell, dreaming kindly, for the first time in forty years.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.11",
+    "where": "after 2.11.B",
+    "picture": "still:still-diner-empty",
+    "line": "There is no John Dee any more. Not even a memory of him.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.11",
+    "where": "after 2.11.C",
+    "picture": "still:still-dee-floor",
+    "line": "She leaves him on the diner floor, awake and sane, remembering everything.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12",
+    "where": "beats",
+    "picture": "still:park",
+    "line": "CARD: The next morning",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12",
+    "where": "beats",
+    "picture": "still:park",
+    "line": "Helm, sand and ruby. All three are hers again. She should feel whole. She feels nothing at all.",
+    "cond": "",
+    "score": 2,
+    "issue": "Park with pigeons and fountain; no character, no helm, sand or ruby shown"
+  },
+  {
+    "scene": "2.12",
+    "where": "beats",
+    "picture": "clip:2.10a",
+    "line": "On a park bench, someone is feeding the pigeons, and waiting for her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12",
+    "where": "beats",
+    "picture": "clip:2.10a",
+    "line": "Her older sister, Death. She meets every living thing at the end, and she is the one sibling Aurie has always loved.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.12",
+    "where": "beats",
+    "picture": "clip:aurie-death-bench",
+    "line": "Aurie sits down beside her. Death leans her head on her sister's shoulder, and laughs.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12",
+    "where": "after 2.12.B",
+    "picture": "clip:aurie-death-bench",
+    "line": "Death shrugs, kisses her cheek, and goes about her work alone.",
+    "cond": "",
+    "score": 2,
+    "issue": "They are posed cheek-to-cheek in a hug; no shrug, no kiss on the cheek, and Death is not leaving to work alone — both frames keep them together."
+  },
+  {
+    "scene": "end-ep2",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Helm, sand and ruby. The Queen of Dreams is whole again.",
+    "cond": "",
+    "score": 2,
+    "issue": "Picture is a restored library room; no helm, no ruby and no Queen of Dreams is visible — only a little spilled sand by the open door."
+  },
+  {
+    "scene": "end-ep2",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "But the Dreaming remembers everything she did to get them.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep2",
+    "where": "beats",
+    "picture": "clip:1.5d-A",
+    "line": "Somewhere, an old man is still waking up, again and again.",
+    "cond": "only if ALEX_CURSED",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep2",
+    "where": "beats",
+    "picture": "still:still-nada",
+    "line": "And in Hell, a queen in the ice is waiting for a promise to be kept.",
+    "cond": "only if NADA_PROMISE",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep2",
+    "where": "beats",
+    "picture": "clip:1.5d-A",
+    "line": "End of Part Two.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.1",
+    "where": "beats",
+    "picture": "still:destiny-garden",
+    "line": "CARD: Destiny's garden",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.1",
+    "where": "beats",
+    "picture": "clip:3.1a",
+    "line": "Destiny's garden lies at the edge of everything. Aurie walks it alone.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.1",
+    "where": "beats",
+    "picture": "clip:3.1a",
+    "line": "Every path in it is a choice someone once made. The paths behind her rearrange themselves as she passes.",
+    "cond": "",
+    "score": 2,
+    "issue": "No rearranging paths visible; frame instead introduces a hooded reader ahead of her, a different subject than the line's description"
+  },
+  {
+    "scene": "3.1",
+    "where": "beats",
+    "picture": "still:still-destiny",
+    "line": "Destiny is blind. He is chained to a book that holds everything that was, and everything that will be.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.1",
+    "where": "after 3.1.IN",
+    "picture": "still:convocation",
+    "line": "Destiny turns a page, and the garden becomes a hall.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "clip:3.2a",
+    "line": "The Endless. Older than the gods, each the shape of something every living thing must face.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "clip:3.2a",
+    "line": "Seven of them: Destiny, Death, Dream, Destruction, Desire, Despair and Delirium. Not gods. Older than gods. Aurie is Dream.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only five figures are seated at the table, not the seven named, and nothing visible identifies Aurie or links her to the hooded Dream figure."
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "clip:aurie-family-close",
+    "line": "Aurie takes the chair that has always been hers, at her sister's right hand. They have not all sat at one table in a very long time.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-death-table",
+    "line": "Death, her elder sister.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire, beautiful and cruel, who smells of roses.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "You have smelled those roses before, in a sleeping girl's dream.",
+    "cond": "only if SENSED_DESIRE",
+    "score": 2,
+    "issue": "no sleeping girl or dream; the picture is the seated figure at the table, only the rose detail carries over"
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-despair",
+    "line": "Despair, Desire's twin, quiet and grey.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-delirium",
+    "line": "Delirium, the youngest, who was once Delight.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:convocation",
+    "line": "And one chair is empty. Destruction walked away three hundred years ago, and nobody speaks of it.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire knows exactly where to cut.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "clip:aurie-nada",
+    "line": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Aurie passed her in the ice, on the way to her helm.",
+    "cond": "only if NADA_PROMISE",
+    "score": 1,
+    "issue": "Picture shows a woman seated at a candlelit indoor table with rose and empty chairs — no ice, no helm, no one passing anyone, so the line's moment is plainly not depicted."
+  },
+  {
+    "scene": "3.2",
+    "where": "beats",
+    "picture": "clip:3.2b",
+    "line": "Desire leans forward, smiling. It has been waiting for this.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.A",
+    "picture": "still:still-death-table",
+    "line": "The table goes quiet. Death squeezes her hand.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only the quiet stone table and her own hands are visible — no Death figure squeezing her hand; her arm rests on the table, chin on her hand"
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.A",
+    "picture": "still:still-death-table",
+    "line": "This time, she means to keep a promise.",
+    "cond": "only if NADA_PROMISE",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.A",
+    "picture": "still:still-desire",
+    "line": "Desire smiles, as if this were exactly what it wanted.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.A",
+    "picture": "still:aurie-hell",
+    "line": "Hell, again.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.B",
+    "picture": "still:convocation",
+    "line": "Aurie leaves the table. Behind her, Desire laughs softly.",
+    "cond": "",
+    "score": 2,
+    "issue": "Table and chairs are empty — no Aurie leaving, no Desire laughing; the picture shows the room after everyone is gone, so the described action never appears."
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.B",
+    "picture": "still:still-death-table",
+    "line": "Death watches her go, and says nothing.",
+    "cond": "",
+    "score": 2,
+    "issue": "Nobody is leaving; the only figure sits motionless at the table facing the camera, so the 'watches her go' action isn't happening. Dark tomb-like setting and ankh give the right death-themed mood, but no departing figure or separate watcher is visible."
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.B",
+    "picture": "still:still-nada",
+    "line": "But the woman in the ice is still there. The question will not go away.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.C",
+    "picture": "still:still-despair",
+    "line": "Death looks away. Despair begins, very quietly, to cry.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.C",
+    "picture": "still:still-desire",
+    "line": "Desire smiles. It has learned exactly what it came to learn.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.C",
+    "picture": "still:still-pride-door",
+    "line": "Pride is a door that locks from the inside.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "still:convocation",
+    "line": "The family scatters, each to their own realm.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "still:convocation",
+    "line": "Aurie goes home to prepare. She is going back into Hell, for Nada.",
+    "cond": "only if NADA_QUEST",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "still:still-aurie-desire",
+    "line": "Aurie tells herself she does not care what Desire thinks. She is lying.",
+    "cond": "only if STORMED_OUT",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "Aurie goes home certain she was right. Death does not call on her for a long time.",
+    "cond": "only if PRIDE_LOCK",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "still:still-destiny",
+    "line": "Destiny closes his book. He already knows how this ends.",
+    "cond": "",
+    "score": 1,
+    "issue": "The book is open and he is reading it with a finger on the page — the closing action the line describes is not happening."
+  },
+  {
+    "scene": "end-ep3",
+    "where": "beats",
+    "picture": "still:still-destiny",
+    "line": "End of Part Three.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "CARD: Hell",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "Aurie returns to Hell to free Nada, as she told her family she would.",
+    "cond": "only if NADA_QUEST",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "Desire's words would not leave her. Within a week she is standing at the gates of Hell anyway.",
+    "cond": "only if STORMED_OUT",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:still-letter",
+    "line": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice.",
+    "cond": "only if PRIDE_LOCK",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-gates",
+    "line": "The last time she came here, she walked past Nada in the ice.",
+    "cond": "",
+    "score": 2,
+    "issue": "Shows an empty hellish gate in snowfall; no Nada figure and no one walking past anyone in ice."
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-empty",
+    "line": "But Hell is empty.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:aurie-hell",
+    "line": "Aurie walks the silent cells alone. Her footsteps are the only sound left in Hell.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:aurie-hell",
+    "line": "Every cell stands open. Every chain lies slack. The damned, and the demons, are gone.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:still-lucifer-alone",
+    "line": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "He tells her plainly. For ten billion years he has kept Hell, because someone had to. He is tired of being everyone's excuse. He has resigned.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:still-lucifer-key",
+    "line": "He has sent every demon and every damned soul out into the dark. All that is left is the key, and he is giving it to her.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "And he wants one last thing from her: his wings cut off, so he can walk the waking world as an ordinary man.",
+    "cond": "",
+    "score": 2,
+    "issue": "Hell throne room crowded with horned figures — no characters in conversation, no wings being cut; only the pool's reflection hints at the waking world."
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "He has not forgotten the favour she owes him. Tonight, he says, he will collect it.",
+    "cond": "only if LUCIFER_FAVOUR",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.KEY",
+    "picture": "clip:4.1a",
+    "line": "Lucifer takes the knife to his own wings. He does not ask twice.",
+    "cond": "",
+    "score": 2,
+    "issue": "Wings are whole and spread; no knife or cutting action — he's just standing with the key."
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.KEY",
+    "picture": "clip:4.1a",
+    "line": "He walks out into the waking world, a free man, and leaves her holding the key to Hell.",
+    "cond": "",
+    "score": 2,
+    "issue": "He himself holds the key; no woman present to be left holding it, though the gate/free-man framing fits."
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.KEY",
+    "picture": "clip:4.1a",
+    "line": "Every power in creation will want it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.WINGS",
+    "picture": "clip:4.1c",
+    "line": "Aurie cuts. The wings fall away into a storm of feathers.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.WINGS",
+    "picture": "clip:4.1c",
+    "line": "Lucifer thanks her, which he has never done before, and walks out into the waking world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.WINGS",
+    "picture": "clip:4.1c",
+    "line": "Every power in creation will want that key.",
+    "cond": "",
+    "score": 2,
+    "issue": "No key or rival powers visible; frame still shows the feather storm and Lucifer, who is not what the line describes"
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:suitors-hall",
+    "line": "By the time Aurie is home, every realm has heard: the Lady of Dreams holds the key to Hell.",
+    "cond": "",
+    "score": 2,
+    "issue": "Empty banquet hall with banners; no Aurie, no Lady of Dreams, and nobody hearing or reacting to news."
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "clip:aurie-news",
+    "line": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:suitors-hall",
+    "line": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:aurie-host",
+    "line": "Aurie takes her throne at the head of the long table, and watches them arrive.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "clip:4.2a",
+    "line": "They come with gifts, and with threats.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-norse",
+    "line": "Odin All-Father, with Thor and Loki, wanting somewhere to wait out the end of the world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-azazel",
+    "line": "Azazel, a lord of Hell, who wants his home back. In a jar at his elbow, a captured soul.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-azazel",
+    "line": "It is Nada's soul. When the demons left Hell, Azazel took her with him.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-faerie",
+    "line": "The envoys of Faerie: Cluracan, and his sister Nuala, sent along as a gift.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-angels",
+    "line": "And two angels, sent by the Creator, who ask for nothing, and only wait.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-angels",
+    "line": "Put simply: whoever she gives the key to will rule the place where the wicked are punished. Everyone she refuses may become her enemy.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-angels",
+    "line": "And Nada's soul is in that jar. Whatever else happens tonight, Aurie means to leave with it.",
+    "cond": "",
+    "score": 2,
+    "issue": "No jar or soul is visible; the table holds only candles, fruit and empty plates."
+  },
+  {
+    "scene": "4.2",
+    "where": "beats",
+    "picture": "still:still-angels",
+    "line": "Before the night is over, Aurie must choose.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.A",
+    "picture": "still:still-angels",
+    "line": "Remiel takes the key. Hell will become a place where suffering heals.",
+    "cond": "",
+    "score": 2,
+    "issue": "No key is visible and neither figure is taking anything — both stand motionless with hands clasped, so the line's main action isn't shown; only the hall/angel setting and somber mood fit."
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.A",
+    "picture": "clip:4.2c",
+    "line": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.B",
+    "picture": "still:still-norse",
+    "line": "Odin takes the key, and Loki smiles far too widely.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.B",
+    "picture": "still:still-azazel",
+    "line": "Aurie must buy Nada's soul from Azazel herself. It costs her a dream she loved.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.C",
+    "picture": "still:still-nada-free",
+    "line": "Azazel opens the jar. Nada is free.",
+    "cond": "",
+    "score": 2,
+    "issue": "No jar or Azazel visible; she is behind a glass barrier looking distressed, not shown being freed"
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.C",
+    "picture": "still:still-azazel",
+    "line": "Hell will be worse than it ever was. That is on Aurie now.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.D",
+    "picture": "still:still-faerie",
+    "line": "Cluracan bows extravagantly. Hell will become a wild and strange court.",
+    "cond": "",
+    "score": 2,
+    "issue": "Cluracan is standing upright holding a goblet, not bowing; the hall fits the 'strange court' idea but the described action isn't happening"
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.D",
+    "picture": "still:still-azazel",
+    "line": "Aurie takes Nada's soul from Azazel by force, and Faerie stands beside her.",
+    "cond": "",
+    "score": 1,
+    "issue": "Shows a single crowned, smoke-faced figure seated at a candlelit banquet table; no Aurie, Nada, Azazel or Faerie, and no soul-taking struggle is happening."
+  },
+  {
+    "scene": "4.3",
+    "where": "beats",
+    "picture": "clip:aurie-ruins",
+    "line": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "beats",
+    "picture": "still:still-nada-free",
+    "line": "Nada stands free for the first time in ten thousand years.",
+    "cond": "",
+    "score": 2,
+    "issue": "She is pressed against a glass pane, weeping — the barrier and tears read as confinement/separation, not freedom."
+  },
+  {
+    "scene": "4.3",
+    "where": "beats",
+    "picture": "still:still-nada-free",
+    "line": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "beats",
+    "picture": "still:still-nada-free",
+    "line": "Aurie condemned her to Hell for it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "beats",
+    "picture": "clip:aurie-nada",
+    "line": "Now they stand face to face, and neither of them looks away.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.A",
+    "picture": "clip:4.3a",
+    "line": "Nada weeps, and forgives her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.A",
+    "picture": "clip:4.3a",
+    "line": "She chooses to be born again, far away, into a brand new life.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.A",
+    "picture": "clip:4.3a",
+    "line": "And Aurie, for the first time in ten thousand years, feels lighter.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.B",
+    "picture": "clip:4.3d",
+    "line": "Nada strikes her across the face, and walks into the light alone.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.C",
+    "picture": "still:still-nada-refuses",
+    "line": "Nada refuses every gift, and leaves without a word.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "Hell has new masters.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-angels",
+    "line": "Heaven's angels hold the keys. The damned may heal there now.",
+    "cond": "only if HELL_KEY_ANGELS",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-norse",
+    "line": "Odin's Hell waits for the end of the world. Loki is still smiling.",
+    "cond": "only if HELL_KEY_NORSE",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-azazel",
+    "line": "Azazel's Hell is crueler than it ever was.",
+    "cond": "only if HELL_KEY_DEMONS",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "clip:end4-faerie",
+    "line": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
+    "cond": "only if HELL_KEY_FAERIE",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "clip:end4-piano",
+    "line": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
+    "cond": "only if LUCIFER_FREED",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-nada-free",
+    "line": "Nada is gone, born again into a life of her own.",
+    "cond": "only if NADA_FORGIVEN",
+    "score": 2,
+    "issue": "Woman is tearful and pressed against glass in distress, which reads as loss or confinement rather than a joyful rebirth into a new life"
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-nada",
+    "line": "Nada is gone, and she did not forgive.",
+    "cond": "unless NADA_FORGIVEN",
+    "score": 2,
+    "issue": "Line says Nada is gone, but the picture shows her plainly still there behind the glass, hand pressed to it — the moment reads as her being sealed in, not departed"
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-nuala-glade",
+    "line": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-aurie-window",
+    "line": "When the last guest has gone, Aurie stands alone at the window of her palace. Ten thousand years, and one woman's face she cannot stop seeing.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "picture": "still:still-aurie-window",
+    "line": "End of Part Four.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "CARD: The Dreaming · weeks later",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "clip:aurie-mending",
+    "line": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "clip:aurie-mending",
+    "line": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home.",
+    "cond": "",
+    "score": 2,
+    "issue": "No palace rising from the sand and no gates closing; the frame stays on the woman's face and the drifting sand."
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "still:still-death-rounds",
+    "line": "Aurie walked her sister's rounds. Something of that walk has stayed with her.",
+    "cond": "only if DEATH_ROUNDS",
+    "score": 2,
+    "issue": "Picture shows an old man playing violin to a seated young woman plus a figure in the doorway; nothing depicts walking a sister's rounds or a remembered walk. (Line is conditional on DEATH_ROUNDS, which was not flagged on.)"
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "still:still-letter",
+    "line": "Then one evening Lucienne comes to her with a letter, sealed with the sign of a book.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "beats",
+    "picture": "still:still-letter",
+    "line": "Only one member of her family seals his letters that way.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "after 3.0.GO",
+    "picture": "clip:aurie-news",
+    "line": "Lucienne bows. Behind her spectacles, she looks worried.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.0",
+    "where": "after 3.0.GREEN",
+    "picture": "still:still-letter",
+    "line": "Lucienne blinks. Then, very slightly, she smiles, and takes off her spectacles.",
+    "cond": "",
+    "score": 2,
+    "issue": "Lucienne is right there, but she stands still holding out a sealed letter; spectacles on, no smile, hands on the envelope rather than removing her glasses — the described moment isn't shown"
+  },
+  {
+    "scene": "1.6",
+    "where": "beats",
+    "picture": "still:still-paul-1988",
+    "line": "Aurie turns to leave. Paul McGuire is on his knees in the dust, beside the chair.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.6",
+    "where": "beats",
+    "picture": "still:still-paul-1988",
+    "line": "Fifty years he has loved Alex Burgess. He has never once begged anyone for anything.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.6",
+    "where": "after 1.6.LIFT",
+    "picture": "still:cellar-1988",
+    "line": "Aurie opens her hand. Alex falls into the first real sleep he has had in seventy years.",
+    "cond": "",
+    "score": 2,
+    "issue": "No people in frame — no Aurie, no open hand, no Alex sleeping; only a cracked glass sphere on a stand."
+  },
+  {
+    "scene": "1.6",
+    "where": "after 1.6.LIFT",
+    "picture": "still:still-paul-1988",
+    "line": "Paul holds him, and weeps, and does not let go.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "1.6",
+    "where": "after 1.6.KEEP",
+    "picture": "still:cellar-1988",
+    "line": "Aurie walks out into the dawn.",
+    "cond": "",
+    "score": 1,
+    "issue": "No person in frame; dark interior room with a ritual circle, not an outdoor dawn — no Aurie walking anywhere."
+  },
+  {
+    "scene": "1.6",
+    "where": "after 1.6.KEEP",
+    "picture": "still:still-paul-sings",
+    "line": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.4b",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "Out on the street, the rain has not stopped. Johanna is waiting.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.4b",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "She has buried a lot of people. She has never hated anyone the way she hates Aurie now.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.4b",
+    "where": "after 2.4b.SORRY",
+    "picture": "clip:2.3a",
+    "line": "Johanna does not forgive her. But she hears it, and for a moment they stand in the rain together.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.4b",
+    "where": "after 2.4b.COLD",
+    "picture": "still:london-rain",
+    "line": "Johanna spits at her feet. Her curse follows Aurie out of London, and into everything.",
+    "cond": "",
+    "score": 2,
+    "issue": "No Johanna or anyone visible, no spitting action; only a generic London street fits the mood"
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: The Dreaming",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "The realm is mended. But some prayers arrived while Aurie was in the glass, and no one was there to hear them.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:still-aurie-prayers",
+    "line": "Lucienne has kept every one. Tonight she brings the oldest still unanswered.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:still-aurie-prayers",
+    "line": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "clip:aurie-nada",
+    "line": "Nada was not the only woman Aurie once loved, and failed.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:still-calliope-1927",
+    "line": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:still-madoc-desk",
+    "line": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "picture": "still:still-calliope-prays",
+    "line": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.0",
+    "where": "after 5.0.GO",
+    "picture": "still:madoc-room",
+    "line": "CARD: London",
+    "cond": "",
+    "score": 2,
+    "issue": "Interior attic only; no city, street or London-specific detail visible"
+  },
+  {
+    "scene": "5.0",
+    "where": "after 5.0.GO",
+    "picture": "still:madoc-room",
+    "line": "A tall house in London. At the top of the stairs, a door with the lock on the outside.",
+    "cond": "",
+    "score": 3,
+    "issue": "Door with an outside lock is shown, but no house exterior or staircase"
+  },
+  {
+    "scene": "5.1",
+    "where": "beats",
+    "picture": "clip:5.1d",
+    "line": "The lock turns to sand in Aurie's hand. The door swings open.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "beats",
+    "picture": "still:still-aurie-calliope",
+    "line": "Aurie stands in the doorway, and for a moment she cannot speak.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "beats",
+    "picture": "still:still-calliope",
+    "line": "Calliope sits on the narrow bed, wrists bound, as she has sat for sixty years. She does not look up.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "beats",
+    "picture": "still:still-calliope",
+    "line": "She knows who has come. She has known that voice for three thousand years.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "after 5.1.FREE",
+    "picture": "clip:5.1a",
+    "line": "Aurie touches the cords at her wrists. They pour away as sand.",
+    "cond": "",
+    "score": 2,
+    "issue": "Cords are still intact rope around her wrists; no sand or dissolving is visible."
+  },
+  {
+    "scene": "5.1",
+    "where": "after 5.1.FREE",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "after 5.1.FREE",
+    "picture": "still:still-madoc",
+    "line": "Then Aurie goes downstairs to find Richard Madoc.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "after 5.1.MADOC",
+    "picture": "still:still-calliope",
+    "line": "Calliope stays bound on the bed while Aurie goes down the stairs.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1",
+    "where": "after 5.1.MADOC",
+    "picture": "clip:5.1a",
+    "line": "She says nothing. She has had a great deal of practice at waiting.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "beats",
+    "picture": "still:still-madoc",
+    "line": "Madoc is at his desk with a glass of whisky, his latest prize on the shelf behind him.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "beats",
+    "picture": "still:still-madoc-sees",
+    "line": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.FLOOD",
+    "picture": "still:still-madoc-ideas",
+    "line": "Ideas pour into Richard Madoc, faster than he can catch them. He writes until the paper runs out.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.FLOOD",
+    "picture": "still:still-madoc-ideas",
+    "line": "Then he writes on the walls, with his own fingers, until they bleed.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.FLOOD",
+    "picture": "still:still-calliope-free",
+    "line": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+    "cond": "unless CALLIOPE_FIRST",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.FLOOD",
+    "picture": "still:still-calliope-free",
+    "line": "Days later, Calliope asks Aurie to let him go. Aurie does. Not one idea remains to him, ever again.",
+    "cond": "",
+    "score": 2,
+    "issue": "Shows Calliope outside on the steps, not the later scene of her asking Aurie to release Madoc"
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.CONFESS",
+    "picture": "still:still-calliope-free",
+    "line": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+    "cond": "unless CALLIOPE_FIRST",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.CONFESS",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope wants only one thing: for him to say aloud what he did.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.CONFESS",
+    "picture": "still:still-calliope-free",
+    "line": "Madoc confesses to the world. Then Aurie leaves him to whatever the world decides.",
+    "cond": "",
+    "score": 2,
+    "issue": "No Madoc or Aurie; no confession happening — just Calliope alone on the steps"
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.CONFESS",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope looks at Aurie for a long moment. You have changed, she says.",
+    "cond": "",
+    "score": 2,
+    "issue": "Calliope is alone and looking upward, not at Aurie; no second person present"
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.EMPTY",
+    "picture": "still:still-madoc-ideas",
+    "line": "Aurie takes every idea he ever had. Madoc sits at his desk and cannot remember what a story is.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.EMPTY",
+    "picture": "still:still-calliope-free",
+    "line": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
+    "cond": "unless CALLIOPE_FIRST",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1b",
+    "where": "after 5.1b.EMPTY",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope watches it done, and does not look away. But she does not thank Aurie, either.",
+    "cond": "",
+    "score": 2,
+    "issue": "She stands alone looking upward with eyes closed; nothing is being done for her to watch, and Aurie is not present."
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: The Dreaming",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "clip:aurie-news",
+    "line": "Aurie goes home to the Dreaming. Calliope is free. But Lucienne's list of what went wrong while Aurie was in the glass is not finished.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-letter",
+    "line": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-corinthian",
+    "line": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be.",
+    "cond": "",
+    "score": 2,
+    "issue": "The figure shown is the Corinthian himself (sunglasses, black suit), while the line says this is not him but Aurie's creation with mouths for eyes; no eye-mouths are visible."
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-corinthian-free",
+    "line": "For seventy years he has been loose in the waking world, killing, and taking eyes.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-rose-vortex",
+    "line": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-rose-road",
+    "line": "Rose is twenty-one, and has no idea that every lost dream in the world is turning toward her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:desert-road",
+    "line": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth.",
+    "cond": "",
+    "score": 2,
+    "issue": "Empty desert highway with a parked car and a diner sign — no Rose, no brother, no Corinthian, none of the searching action is happening."
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:convention",
+    "line": "CARD: A hotel in Georgia",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-convention",
+    "line": "He has come here to speak at a convention, which the guests call a cereal convention. Every guest is a killer.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "beats",
+    "picture": "still:still-aurie-convention",
+    "line": "He is their hero. And Aurie is standing at the back of the hall.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.UNMAKE",
+    "picture": "clip:5.2aa",
+    "line": "Aurie raises her hand. The Corinthian comes apart into sand, and is gone.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.UNMAKE",
+    "picture": "still:still-corinthian-skull",
+    "line": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.UNMAKE",
+    "picture": "still:still-aurie-convention",
+    "line": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.REMAKE",
+    "picture": "clip:5.2aa",
+    "line": "The Corinthian bows. His shape loosens into sand, and drifts away toward the Dreaming.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.REMAKE",
+    "picture": "clip:5.2aa",
+    "line": "Lucienne will lock that sand away until Aurie is ready to shape him again.",
+    "cond": "",
+    "score": 2,
+    "issue": "Lucienne isn't in the frame; picture only shows the leftover sand and sunglasses, not her locking it away."
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.REMAKE",
+    "picture": "clip:5.2aa",
+    "line": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+    "cond": "",
+    "score": 2,
+    "issue": "No Aurie visible and the chairs are empty — nothing of the killers seeing themselves is shown."
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.FREE",
+    "picture": "still:still-corinthian",
+    "line": "The Corinthian smiles, puts his glasses back on, and walks out into the night.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.FREE",
+    "picture": "clip:2.1b",
+    "line": "Somewhere in the Dreaming, a door that should be shut swings quietly open.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "still:boarding-house",
+    "line": "CARD: Florida",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "still:boarding-house",
+    "line": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "clip:5.2bb",
+    "line": "She dreams. And the walls between the dreams of everyone in the house come down.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "clip:5.2ba",
+    "line": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the Dreaming.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "clip:5.2ba",
+    "line": "Lucienne's library is coming apart, page by page. Rose Walker is a vortex.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "still:still-aurie-vortex",
+    "line": "Aurie walks into the heart of the storm, and every torn page in the air turns to look at her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "clip:5.2ba",
+    "line": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "picture": "still:still-rose-vortex",
+    "line": "Aurie finds her at the centre of it, small and terrified.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "after 5.2b.KILL",
+    "picture": "still:still-aurie-raises-hand",
+    "line": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "after 5.2b.KILL",
+    "picture": "still:still-unity",
+    "line": "And a voice behind them says: wait.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "after 5.2b.WAIT",
+    "picture": "clip:5.2ba",
+    "line": "Aurie lowers her hand. Around them, the library tears, shelf by shelf.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2b",
+    "where": "after 5.2b.WAIT",
+    "picture": "clip:5.2ca",
+    "line": "And a voice behind them says: there is.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "beats",
+    "picture": "still:still-unity",
+    "line": "An old woman stands in the dream. She is eighty-five, in a pale blue dressing gown, and she is smiling.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "beats",
+    "picture": "still:still-unity",
+    "line": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "beats",
+    "picture": "still:still-unity",
+    "line": "Unity is Rose's great-grandmother. The vortex was born in Unity, seventy years ago, while she slept. With no Dream to tend it, it passed down her line to Rose.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "beats",
+    "picture": "still:still-unity",
+    "line": "Aurie spoke with her once, in her dream, when she was ten.",
+    "cond": "unless UNITY_PROMISE",
+    "score": 2,
+    "issue": "No ten-year-old child and no Aurie figure; the frame shows two adult women meeting in the dream"
+  },
+  {
+    "scene": "5.2c",
+    "where": "beats",
+    "picture": "still:still-unity",
+    "line": "Long ago, in that dream, Aurie promised the girl she would not be forgotten. Unity remembers.",
+    "cond": "only if UNITY_PROMISE",
+    "score": 2,
+    "issue": "Shows the present-day meeting of Unity and Rose, not Aurie making a promise to a girl long ago"
+  },
+  {
+    "scene": "5.2c",
+    "where": "after 5.2c.LET",
+    "picture": "clip:5.2ca",
+    "line": "Unity takes Rose's hand. The light of the vortex flows out of the girl and into the old woman.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "after 5.2c.LET",
+    "picture": "clip:5.2ca",
+    "line": "Unity smiles, and closes her eyes, and is gone. Death is waiting for her, kindly.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "after 5.2c.LET",
+    "picture": "still:still-rose-morning",
+    "line": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2c",
+    "where": "after 5.2c.LET",
+    "picture": "still:still-rose-morning",
+    "line": "Rose will never forget that the lady from her dreams raised a hand to kill her.",
+    "cond": "only if ROSE_THREATENED",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "5.2d",
+    "where": "beats",
+    "picture": "still:desert-road",
+    "line": "Aurie does not go home. There is one visit she owes first.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2d",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
+    "cond": "",
+    "score": 2,
+    "issue": "Shows Desire already seated at a table with candles and sigils — no vast heart-shaped statue, and no Aurie walking in."
+  },
+  {
+    "scene": "5.2d",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire made the vortex happen. It hoped Aurie would kill a child of her own family, and be destroyed for it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2d",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire is lounging on a velvet couch, and does not pretend to be surprised.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2d",
+    "where": "beats",
+    "picture": "still:still-aurie-desire",
+    "line": "Aurie stands in the doorway of its red room and does not sit.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2d",
+    "where": "after 5.2d.THREATEN",
+    "picture": "still:still-desire",
+    "line": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2d",
+    "where": "after 5.2d.WARN",
+    "picture": "still:still-desire",
+    "line": "Aurie leaves. Behind her, Desire laughs, and the laugh goes on a little too long.",
+    "cond": "",
+    "score": 2,
+    "issue": "Aurie is still seated at the table, not leaving, and Desire is not visible laughing — the picture is a different moment than the line"
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:tavern-1989",
+    "line": "There is one more appointment Aurie keeps. She has kept it every hundred years for six centuries.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:tavern-1389",
+    "line": "CARD: The White Horse tavern · 1389",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "clip:5.3a",
+    "line": "Aurie and her sister Death sit in the corner of a smoky London tavern, watching the living.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1389",
+    "line": "A loud young man named Hob Gadling is telling his friends that dying is a mug's game. He doesn't intend to do it.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "clip:5.3a",
+    "line": "Death laughs. She grants it, for her sister's sake, to see what happens.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1389",
+    "line": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so.",
+    "cond": "",
+    "score": 2,
+    "issue": "No woman (Aurie) is visible and no one is walking to a table; the frame shows a bearded man standing on a bench addressing a crowd, so the described action isn't happening — only the tavern setting fits."
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1489",
+    "line": "CARD: 1489",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1489",
+    "line": "Hob is waiting. He is rich now, and he still loves every day of it.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1589",
+    "line": "CARD: 1589",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1589",
+    "line": "A young writer in the corner, Will Shaxberd, begs Aurie for the gift of telling stories. She makes him a bargain.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1689",
+    "line": "CARD: 1689",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1689",
+    "line": "Hob has lost everything, his money, his wife, his son. He still does not want to die.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1789",
+    "line": "CARD: 1789",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "beats",
+    "picture": "still:still-hob-1789",
+    "line": "Hob is rich again, in a powdered wig. He has made his money from ships that carry slaves.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3",
+    "where": "after 5.3.SAY",
+    "picture": "still:still-hob-1789",
+    "line": "Hob goes red, and blusters, and does not forget it. He sells the ships before the next century comes.",
+    "cond": "",
+    "score": 2,
+    "issue": "He is beaming and relaxed at his ledger; the line's red-faced blustering is not visible, so the mood/action belongs to a different moment."
+  },
+  {
+    "scene": "5.3",
+    "where": "after 5.3.SILENT",
+    "picture": "still:still-hob-1789",
+    "line": "Aurie says nothing. Hob laughs and pours the wine, and the ships keep sailing.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3b",
+    "where": "beats",
+    "picture": "still:still-hob-1889",
+    "line": "CARD: 1889",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3b",
+    "where": "beats",
+    "picture": "still:still-hob-1889",
+    "line": "Five hundred years. Hob is waiting, in a good Victorian coat, and he has had a few drinks.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3b",
+    "where": "beats",
+    "picture": "still:still-hob-1889",
+    "line": "He has worked something out. He has decided to say it, whatever it costs him.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3b",
+    "where": "after 5.3b.WALK",
+    "picture": "still:still-aurie-fog",
+    "line": "Aurie stands, and walks out into the London fog.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3b",
+    "where": "after 5.3b.WALK",
+    "picture": "still:still-aurie-fog",
+    "line": "Behind her, Hob calls out: I'll be here in a hundred years. I'll wait for you.",
+    "cond": "",
+    "score": 2,
+    "issue": "Empty foggy street behind her — no Hob or anyone calling out visible."
+  },
+  {
+    "scene": "5.3b",
+    "where": "after 5.3b.PERHAPS",
+    "picture": "still:still-hob-1889",
+    "line": "Hob grins like a boy, and orders another round, and Aurie lets him.",
+    "cond": "",
+    "score": 2,
+    "issue": "Hob is the right man in the right pub, but he looks grim and downcast rather than grinning; no round being ordered or handed over is visible."
+  },
+  {
+    "scene": "5.3c",
+    "where": "beats",
+    "picture": "still:tavern-1989",
+    "line": "CARD: The White Horse · 1989",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "beats",
+    "picture": "clip:5.3ca",
+    "line": "The tavern is a pub now. Hob sits at the corner table with two pints, one of them untouched.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "beats",
+    "picture": "clip:5.3ca",
+    "line": "He did not know where she had been. He only knew she had never once been late.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "beats",
+    "picture": "clip:aurie-hob",
+    "line": "Aurie sits down across from him, and lifts the flat pint, and almost smiles.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "beats",
+    "picture": "clip:aurie-hob",
+    "line": "A hundred years ago she walked out on him. He has bought her a drink anyway.",
+    "cond": "only if HOB_WALKED",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "5.3c",
+    "where": "after 5.3c.FRIEND",
+    "picture": "still:still-hob-1989",
+    "line": "Hob raises his glass. To friends, he says. Aurie raises hers.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "after 5.3c.NOD",
+    "picture": "still:still-hob-1989",
+    "line": "They drink. Hob talks, and Aurie listens, and the afternoon goes by.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.3c",
+    "where": "after 5.3c.NOD",
+    "picture": "still:still-hob-1989",
+    "line": "He doesn't need her to say it. But he would have liked to hear it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "The Muse is free.",
+    "cond": "",
+    "score": 2,
+    "issue": "No muse or figure appears anywhere; the open lit door and mist hint at something released but the line's subject is never shown."
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:madoc-room",
+    "line": "Richard Madoc never writes again.",
+    "cond": "only if MADOC_FLOOD",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Richard Madoc never writes again.",
+    "cond": "only if MADOC_EMPTY",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Richard Madoc told the world what he did.",
+    "cond": "only if MADOC_CONFESS",
+    "score": 2,
+    "issue": "No person or act of confessing/speaking is visible; the shot is an empty library, so the line describes a different action than what is on screen."
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:still-skull-shelf",
+    "line": "The Corinthian's skull sits on a shelf in Lucienne's library.",
+    "cond": "only if CORINTHIAN_UNMADE",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "A heap of dark sand waits in a locked box for Aurie to shape it again.",
+    "cond": "only if CORINTHIAN_REMADE",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:still-corinthian-free",
+    "line": "And the Corinthian is still out there, smiling.",
+    "cond": "only if CORINTHIAN_FREE",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:still-unity-rose",
+    "line": "Rose Walker is alive. Unity Kincaid sleeps at last, for good.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Desire has made a dangerous enemy.",
+    "cond": "only if DESIRE_THREATENED",
+    "score": 2,
+    "issue": "The image is a still library with a lantern, table, and three labelled doors; nothing visible shows desire, a threat, or anyone making an enemy."
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "clip:aurie-hob",
+    "line": "And in a London pub, a man who will not die has a friend.",
+    "cond": "only if HOB_FRIEND",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "clip:5.3ca",
+    "line": "And in a London pub, a man who will not die is still waiting to hear the word.",
+    "cond": "unless HOB_FRIEND",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "picture": "clip:aurie-hob",
+    "line": "End of Part Five.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: The Dreaming",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "The Dreaming is whole again. Lucienne has counted every dream that came home, and every one that did not.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Aurie walks her realm differently now. She stops. She listens. Lucienne has noticed, and says nothing.",
+    "cond": "",
+    "score": 2,
+    "issue": "Empty room with no figures; no one walking, stopping or listening, and no Lucienne observing."
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "clip:6.0a",
+    "line": "Then a raven lands on the reading table, scattering Lucienne's papers.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "clip:6.0a",
+    "line": "Long ago, Aurie always kept a raven: a dreamer who died, and chose to stay and serve. There has not been one since she was taken.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "beats",
+    "picture": "clip:6.0b",
+    "line": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "after 6.0.ACCEPT",
+    "picture": "still:still-aurie-raven",
+    "line": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.0",
+    "where": "after 6.0.REFUSE",
+    "picture": "clip:6.0b",
+    "line": "The raven bows his head and flies out of the window. Lucienne quietly picks up her papers.",
+    "cond": "",
+    "score": 2,
+    "issue": "Raven is already in open flight over a landscape, not bowing its head or exiting a window; Lucienne and her papers are absent from both frames"
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "clip:6.0a",
+    "line": "There is one last name on Lucienne's list of runaways. Two names, in fact.",
+    "cond": "",
+    "score": 2,
+    "issue": "No list or names are visible; the figure simply stands with a lantern among floating pages, so the reading/checking action the line describes isn't shown."
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "still:false-house",
+    "line": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "still:false-house",
+    "line": "Deep in the Dreaming, they built a little house, and inside it they kept a dead man's ghost and his living wife.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "still:still-lyta",
+    "line": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "still:still-lyta",
+    "line": "Her husband Hector is a ghost who doesn't know he is dead.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "still:still-aurie-false-house",
+    "line": "Aurie walks into the little house as if she owns it. She does.",
+    "cond": "",
+    "score": 2,
+    "issue": "She is standing motionless facing the camera, hand raised, already inside the collapsing house — no walking or entering is shown"
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "clip:6.1a",
+    "line": "Aurie unmakes the false house. As it comes apart, so does Hector.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "beats",
+    "picture": "clip:6.1a",
+    "line": "Lyta screams his name. Then she turns on Aurie.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.CLAIM",
+    "picture": "still:still-lyta-wakes",
+    "line": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.CLAIM",
+    "picture": "still:still-lyta-wakes",
+    "line": "She will remember those words every day of her son's life.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.CHOOSE",
+    "picture": "still:still-lyta-wakes",
+    "line": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.CHOOSE",
+    "picture": "still:still-lyta-wakes",
+    "line": "She is still afraid of the pale woman. But she remembers the word: choose.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.SILENT",
+    "picture": "still:still-lyta-wakes",
+    "line": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.1",
+    "where": "after 6.1.SILENT",
+    "picture": "still:still-lyta-rocking",
+    "line": "A month later her son is born. She names him Daniel. She grieves; she does not hate.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2",
+    "where": "beats",
+    "picture": "still:desert-road",
+    "line": "CARD: The waking world",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2",
+    "where": "beats",
+    "picture": "still:still-aurie-roadtrip",
+    "line": "They set out the next morning, two of the Endless in a borrowed car, as mortals do.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2",
+    "where": "beats",
+    "picture": "still:still-delirium-frog",
+    "line": "Somewhere in the middle of nowhere, Delirium makes Aurie stop the car. She has seen a frog by the road, and she needs to tell it a secret.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2",
+    "where": "after 6.2.WAIT",
+    "picture": "still:still-delirium-frog",
+    "line": "Delirium whispers to the frog for a long time. When she climbs back into the car, her little fish have turned gold, and she holds Aurie's hand all the way to the next town.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2",
+    "where": "after 6.2.SNAP",
+    "picture": "still:still-delirium-frog",
+    "line": "Delirium gets in the car. She is quiet. Then she is very quiet. Then her colours drain away, and she does not answer at all.",
+    "cond": "",
+    "score": 2,
+    "issue": "The colourful girl sits outside crouching by a frog, not getting into the car; her colours are bright rather than drained, and the figure in the car is the black-clad one."
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:orpheus-shrine",
+    "line": "CARD: Lesbos · a sea cave",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-aurie-shrine",
+    "line": "The boat comes into a little cove at dusk. Delirium stays aboard, teaching the fish to do tricks.",
+    "cond": "",
+    "score": 2,
+    "issue": "No boat, fish, or Delirium aboard; image shows Aurie standing in the cave."
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-aurie-shrine",
+    "line": "Aurie climbs the steps to the cave alone, and stops at the door.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-aurie-shrine",
+    "line": "Her mother sent word that Aurie was coming. She has been listening for her footsteps for weeks.",
+    "cond": "only if CALLIOPE_ASKED_ORPHEUS",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Inside, an old priestess has kept her for forty years, as her mother did before her, and hers.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only Orphea is in frame — no old priestess anywhere; the line's subject is absent"
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Orphea rests on a bed of white flowers, only a head now, and still beautiful, and she cannot die.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Across the water, a small island is catching the last of the sun. Orphea keeps glancing toward it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Once, to Calliope, Aurie spoke her name with sorrow. Calliope must have told her.",
+    "cond": "only if NAMED_ORPHEUS",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "6.3",
+    "where": "after 6.3.PROMISE",
+    "picture": "still:still-orpheus",
+    "line": "She tells her: the little island across the water, the one with the sun on it. Their brother has been painting.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.3",
+    "where": "after 6.3.PROMISE",
+    "picture": "still:still-orpheus",
+    "line": "Come back, Mother, Orphea says. You promised.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.4",
+    "where": "beats",
+    "picture": "still:destruction-island",
+    "line": "CARD: The island across the water",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4",
+    "where": "beats",
+    "picture": "still:destruction-island",
+    "line": "In the morning, the fisherman rows them across the strait. Their brother is exactly where Orphea said he would be.",
+    "cond": "",
+    "score": 2,
+    "issue": "No boat, fisherman, rowing or brother visible; only an empty terrace with easel and table"
+  },
+  {
+    "scene": "6.4",
+    "where": "beats",
+    "picture": "still:still-destruction-painting",
+    "line": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4",
+    "where": "beats",
+    "picture": "still:still-destruction-painting",
+    "line": "His dog Barnabas trots down to meet the boat. Barnabas can talk. He would like everyone to know he has opinions about the poetry.",
+    "cond": "",
+    "score": 2,
+    "issue": "Dog is sitting beside the man at the easel, not trotting down to a boat; no boat or shoreline approach is visible."
+  },
+  {
+    "scene": "6.4",
+    "where": "beats",
+    "picture": "clip:6.4a",
+    "line": "Delirium runs up the beach and into her brother's arms. He lifts her off her feet and swings her round like a child.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.4",
+    "where": "after 6.4.LISTEN",
+    "picture": "clip:6.4a",
+    "line": "They eat his stew on the terrace while the sun goes down. Destruction reads one poem. It is dreadful. Aurie laughs.",
+    "cond": "",
+    "score": 2,
+    "issue": "Right terrace-at-sunset setting, but they are embracing/dancing, not eating stew; no bowl, no poem, no reading — interaction is the wrong action."
+  },
+  {
+    "scene": "6.4",
+    "where": "after 6.4.REFUSE",
+    "picture": "clip:6.4a",
+    "line": "Destruction only smiles, sadly, and pours more wine.",
+    "cond": "",
+    "score": 2,
+    "issue": "No wine is being poured; he is embracing/swaying with her, the bottle and glasses just sit on the table"
+  },
+  {
+    "scene": "6.4",
+    "where": "after 6.4.REFUSE",
+    "picture": "clip:6.4a",
+    "line": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next.",
+    "cond": "",
+    "score": 1,
+    "issue": "The line says the cottage is empty and they are gone, but both are right there in frame, mid-embrace"
+  },
+  {
+    "scene": "6.5",
+    "where": "beats",
+    "picture": "clip:6.5r",
+    "line": "At dusk, Aurie rows back across the strait alone, as she promised.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.5",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Orphea is waiting. The old priestess has gone outside. She knows what is coming.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.5",
+    "where": "beats",
+    "picture": "still:still-aurie-son",
+    "line": "Her daughter told her the truth: Destruction was there. Now it is Aurie's turn.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.5",
+    "where": "after 6.5.RELEASE",
+    "picture": "clip:6.5a",
+    "line": "Aurie touches her daughter's face, and gives her what she asked for.",
+    "cond": "",
+    "score": 2,
+    "issue": "The glowing woman appears alone; there is no daughter and no touching of a face shown"
+  },
+  {
+    "scene": "6.5",
+    "where": "after 6.5.RELEASE",
+    "picture": "clip:6.5a",
+    "line": "She smiles, and is gone, like light off the water. Somewhere, very far away, a woman named Eurydice turns, and sees her coming.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.5",
+    "where": "after 6.5.RELEASE",
+    "picture": "clip:6.5a",
+    "line": "Aurie has spilled the blood of her own family. Far away, three old women look up from their weaving.",
+    "cond": "",
+    "score": 2,
+    "issue": "No blood, and no three old women weaving — only an empty candlelit grotto"
+  },
+  {
+    "scene": "6.5",
+    "where": "after 6.5.REFUSE",
+    "picture": "still:still-orpheus",
+    "line": "Aurie turns away. Behind her, Orphea begins to sing, very softly, the same song she has sung for three thousand years.",
+    "cond": "",
+    "score": 2,
+    "issue": "Woman faces the camera rather than turning away, and no second figure is visible singing behind her."
+  },
+  {
+    "scene": "6.5",
+    "where": "after 6.5.REFUSE",
+    "picture": "still:still-orpheus",
+    "line": "The law has nothing to say about a broken promise. Her daughter has a great deal to say about it, forever.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:dream-stream",
+    "line": "CARD: The Dreaming · dusk",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-stream",
+    "line": "Aurie kneels by a stream at the edge of her realm and washes her hands. The blood will not come off.",
+    "cond": "only if ORPHEUS_RELEASED",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-stream",
+    "line": "Aurie kneels by a stream at the edge of her realm. Her hands are clean. It does not help.",
+    "cond": "unless ORPHEUS_RELEASED",
+    "score": 1,
+    "issue": "Visible red blood trails from her hands in the water, so the hands are not clean; contradicts the line's key claim"
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "clip:aurie-stream",
+    "line": "She stays there until the first stars come out.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-raven-stream",
+    "line": "A raven lands on a stone beside her. Boss? Matthew asks. Are you all right?",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-lucienne-stream",
+    "line": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing.",
+    "cond": "unless MATTHEW_RAVEN",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-raven-stream",
+    "line": "No, Aurie says. But I think I will be.",
+    "cond": "only if ORPHEUS_RELEASED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "picture": "still:still-raven-stream",
+    "line": "I broke my word to my own daughter, Aurie says. I will hear her singing for the rest of my life.",
+    "cond": "unless ORPHEUS_RELEASED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-raven-throne",
+    "line": "A raven sleeps on the back of Aurie's throne.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-lyta-rocking",
+    "line": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and checks the shadows twice.",
+    "cond": "only if LYTA_THREATENED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-lyta-rocking",
+    "line": "In the waking world, Lyta Hall rocks her son Daniel to sleep. She remembers a word: choose.",
+    "cond": "only if LYTA_WARNED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-lyta-rocking",
+    "line": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and cries for his father.",
+    "cond": "only if LYTA_GRIEVES",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-destruction-painting",
+    "line": "Somewhere, a very large man and a talking dog are starting again.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Orphea is at peace. And three old women have begun to whisper Aurie's name.",
+    "cond": "only if ORPHEUS_RELEASED",
+    "score": 2,
+    "issue": "Only Orphea appears; no three old women whispering, and no sign of Aurie's name"
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "On a Greek island, a woman who cannot die is still singing.",
+    "cond": "only if ORPHEUS_REFUSED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "End of Part Six.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:lyta-nursery",
+    "line": "CARD: The waking world · two years later",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-empty-crib",
+    "line": "Lyta Hall's son Daniel is two years old. Tonight his crib is empty, but for a small burnt body under the blanket.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-loki-daniel",
+    "line": "It is not Daniel. It is a changeling, left by Loki, who has carried the real child away for a purpose of his own.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-loki-daniel",
+    "line": "Loki owes Odin a favour, and Odin was given Hell's key by Aurie's own hand.",
+    "cond": "only if LOKI_DEBT",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-loki-daniel",
+    "line": "The Corinthian walks beside him, smiling. Aurie let him go, once.",
+    "cond": "only if CORINTHIAN_FREE",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-aurie-false-house",
+    "line": "Lyta does not know any of that. She remembers only the pale woman who looked at her son and said: mine.",
+    "cond": "only if LYTA_THREATENED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "still:still-loki-daniel",
+    "line": "Lyta does not know any of that. She knows only that her son was conceived in the Dreaming, and that its queen has always watched him.",
+    "cond": "unless LYTA_THREATENED",
+    "score": 2,
+    "issue": "Frame shows a blond man carrying a sleeping toddler — not Lyta, and no watching queen; the line is about Lyta's ignorance and the child's origin in the Dreaming, none of which is visible"
+  },
+  {
+    "scene": "7.0",
+    "where": "beats",
+    "picture": "clip:aurie-news",
+    "line": "In the Dreaming, Lucienne brings Aurie the news. Aurie rises from her throne.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "after 7.0.SEARCH",
+    "picture": "clip:aurie-news",
+    "line": "Aurie sends her people out into the waking world, into every dream in every city.",
+    "cond": "",
+    "score": 2,
+    "issue": "Woman stands in a dark throne room with one lantern-bearing servant; no people being sent out, no city or dream imagery"
+  },
+  {
+    "scene": "7.0",
+    "where": "after 7.0.LYTA",
+    "picture": "still:still-aurie-fog",
+    "line": "Aurie steps out of her realm, alone, into the waking world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.0",
+    "where": "after 7.0.IGNORE",
+    "picture": "clip:aurie-news",
+    "line": "Aurie sits down again. Lucienne does not argue. She has learned which silences to keep.",
+    "cond": "",
+    "score": 2,
+    "issue": "No one is sitting down — the central woman stands facing the camera and the older woman only stoops, so the action described isn't shown"
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "clip:6.0b",
+    "line": "A raven flies over a thousand sleeping streets, listening to every dream.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Lucienne walks a thousand sleeping minds, lantern raised, listening.",
+    "cond": "unless MATTHEW_RAVEN",
+    "score": 2,
+    "issue": "No Lucienne or any figure walking; lantern sits unheld on the table — the library setting and mood fit, but the described action isn't shown"
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "still:still-loki-fire",
+    "line": "In a cold house by the sea, Loki holds the boy above a strange silver fire, to burn away everything mortal in him.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "still:still-loki-fire",
+    "line": "The fire would make him a god, and empty him of everything that is Lyta's.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "clip:7.1d",
+    "line": "Matthew dives, screaming, straight at Loki's eyes.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 2,
+    "issue": "No raven diving at anyone's eyes is visible; the frames show a man holding a toddler in a burning room."
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "clip:2.1c",
+    "line": "Lucienne steps out of the dark, and says the one name Loki fears.",
+    "cond": "unless MATTHEW_RAVEN",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "still:still-daniel-safe",
+    "line": "Loki drops the child and is gone. Daniel is safe. Daniel is safe.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "picture": "still:still-lyta-walks",
+    "line": "But it is too late. Lyta has already gone looking for the ones who punish crimes against kin.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "after 7.1a.DREAMING",
+    "picture": "still:still-daniel-library",
+    "line": "Daniel sleeps in the library, among the books, and does not cry once.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.1a",
+    "where": "after 7.1a.HOME",
+    "picture": "still:lyta-nursery",
+    "line": "Daniel sleeps in his own crib again. His mother is not there to see it.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-door",
+    "line": "Aurie knocks on the door of a small apartment. It opens before she has finished.",
+    "cond": "",
+    "score": 2,
+    "issue": "No knocking or opener shown — the shot is already past the door, looking down the hall at Lyta; Aurie isn't visible."
+  },
+  {
+    "scene": "7.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-door",
+    "line": "Lyta has not slept in three days. She is holding a kitchen knife, and she knows exactly who is standing on her step.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.1b",
+    "where": "after 7.1b.TRUST",
+    "picture": "still:still-lyta-door",
+    "line": "Lyta puts the knife down on the table, very carefully, and picks up her coat.",
+    "cond": "",
+    "score": 2,
+    "issue": "Knife is still in her hand and the coat still hangs on the hook; no table, action hasn't happened yet"
+  },
+  {
+    "scene": "7.1b",
+    "where": "after 7.1b.CURSE",
+    "picture": "still:still-lyta-walks",
+    "line": "Lyta slams the door. Behind it, she starts to walk, barefoot, out of the back of the building and into the night.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "still:still-loki-fire",
+    "line": "They find Loki in a cold house by the sea, holding the boy above a strange silver fire.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "clip:7.1e",
+    "line": "Lyta does not wait for Aurie. She walks straight into the fire's light, and takes her son out of a god's hands.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "still:still-loki-leaves",
+    "line": "Loki looks at the two of them, and decides he has somewhere else to be.",
+    "cond": "",
+    "score": 2,
+    "issue": "The figure in the open doorway is a blonde woman in a leather coat, not Loki; the leaving gesture fits, but the person is wrong"
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "still:still-lyta-daniel",
+    "line": "Lyta holds Daniel, and shakes, and does not let go.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "still:still-lyta-daniel",
+    "line": "Lyta never goes looking for the Kindly Ones. But they have not forgotten Orphea. A daughter's blood does not need a mother to speak for it.",
+    "cond": "only if ORPHEUS_RELEASED",
+    "score": 2,
+    "issue": "No Kindly Ones or Orphea reference in frame; only Lyta and the child are shown"
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "picture": "still:still-lyta-daniel",
+    "line": "And the Kindly Ones, who were never called, and have no claim on her, do not come.",
+    "cond": "unless ORPHEUS_RELEASED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.1c",
+    "where": "after 7.1c.HOME",
+    "picture": "still:still-lyta-daniel",
+    "line": "Aurie goes home to wait for them.",
+    "cond": "",
+    "score": 2,
+    "issue": "She's at a house, but the frame shows her sobbing while shielding a child inside a ring of fire — panic, not waiting for someone to arrive"
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "still:still-lyta-walks",
+    "line": "Lyta walks barefoot out of her city and into older places, where the streets turn into roads and the roads into stories.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "still:witch-crossroads",
+    "line": "CARD: A crossroads, under a low moon",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "still:still-thessaly",
+    "line": "Someone is waiting for her. A small blonde woman in black, who looks twenty-five and is three thousand years old.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "still:still-thessaly",
+    "line": "Thessaly. A witch of the old kind. She has pulled the moon down from the sky before, when someone annoyed her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "still:still-thessaly",
+    "line": "She has decided to help Lyta. She does not much care what that costs anyone else.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "beats",
+    "picture": "clip:aurie-thessaly",
+    "line": "Aurie steps out of the mist onto the road.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "after 7.2.ASIDE",
+    "picture": "still:still-kindly-ones",
+    "line": "Aurie steps off the road. Lyta walks past her without looking, toward three old women at a loom.",
+    "cond": "",
+    "score": 2,
+    "issue": "Shows three figures seated at the loom, but no one is walking past — the standing woman is stationary and facing them, and only one of the three is elderly rather than all three 'old women'."
+  },
+  {
+    "scene": "7.2",
+    "where": "after 7.2.FIGHT",
+    "picture": "still:still-thessaly",
+    "line": "Thessaly sighs, and pulls the moon down out of the sky.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "after 7.2.FIGHT",
+    "picture": "still:still-kindly-ones",
+    "line": "By the time Aurie can see again, they are gone, and she has lost a night she did not have.",
+    "cond": "",
+    "score": 2,
+    "issue": "The line says the three Fates are gone once Aurie can see again, but the picture shows all three still seated at the loom facing her."
+  },
+  {
+    "scene": "7.2",
+    "where": "after 7.2.TRUTH",
+    "picture": "still:still-kindly-ones",
+    "line": "Thessaly looks at her for a long moment, and nods once. She keeps her word, in her fashion.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.2",
+    "where": "after 7.2.NOCLAIM",
+    "picture": "still:still-kindly-ones",
+    "line": "Lyta comes to the three old women at the loom, and asks for vengeance. They look at her kindly, and say: we cannot.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "still:dreaming-siege",
+    "line": "CARD: The Dreaming",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:7.3a",
+    "line": "The Kindly Ones come to the Dreaming. Three old women, who were once the Maiden, the Mother and the Crone.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:7.3a",
+    "line": "They do not hurry. They do not need to. Everything they touch turns to sand and is gone.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:7.3a",
+    "line": "Lyta walks behind them. She has stopped feeling anything at all.",
+    "cond": "unless THESSALY_TOLD",
+    "score": 2,
+    "issue": "Lyta is not in the picture; only the three hooded sisters with the thread are shown, no one walking behind them"
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:7.3a",
+    "line": "Lyta walks behind them. Thessaly told her the truth, and she has started, very quietly, to doubt.",
+    "cond": "only if THESSALY_TOLD",
+    "score": 0,
+    "issue": "no score"
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:aurie-thessaly",
+    "line": "Aurie lost a night to Thessaly's moon. The Kindly Ones are already at the library.",
+    "cond": "only if FOUGHT_THESSALY",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:aurie-siege",
+    "line": "Aurie stands on the palace steps and watches her realm burn.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:aurie-siege",
+    "line": "Lucienne is beside her, lantern in hand. Behind them, every dream that lives here is waiting to be told what to do.",
+    "cond": "",
+    "score": 1,
+    "issue": "No one beside her, no lantern, no waiting crowd — only the same lone woman in both frames"
+  },
+  {
+    "scene": "7.3",
+    "where": "beats",
+    "picture": "clip:aurie-siege",
+    "line": "Matthew lands on her shoulder. Boss. Tell us what to do.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 1,
+    "issue": "No raven on her shoulder or anywhere in frame"
+  },
+  {
+    "scene": "7.3",
+    "where": "after 7.3.SEND",
+    "picture": "still:still-lucienne-flee",
+    "line": "Lucienne leads the dreams out through the back of the library, a long line of lanterns into the dark.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "after 7.3.SEND",
+    "picture": "still:still-lucienne-flee",
+    "line": "She looks back once. Aurie does not let her see her face.",
+    "cond": "",
+    "score": 2,
+    "issue": "Lucienne faces forward and no one is turned away hiding a face; the look-back moment isn't shown"
+  },
+  {
+    "scene": "7.3",
+    "where": "after 7.3.STAND",
+    "picture": "still:still-lucienne-stand",
+    "line": "They stand. Lucienne stands at the front, with her lantern, as the three old women come up the steps.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.3",
+    "where": "after 7.3.STAND",
+    "picture": "clip:7.3c",
+    "line": "The lantern goes out.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.4",
+    "where": "beats",
+    "picture": "still:faerie-glade",
+    "line": "In the middle of it all, Aurie hears a voice she owes a favour to. Nuala of Faerie, calling her boon.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.4",
+    "where": "beats",
+    "picture": "still:still-nuala-glade",
+    "line": "And the old laws pull Aurie out of her burning realm, into a quiet glade in Faerie.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.HONOUR",
+    "picture": "still:still-nuala-glade",
+    "line": "Aurie stays. Nuala sits beside her by the pool, and for an hour no one dies in Faerie.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only one figure is sitting by the pool; no one is seated beside her as the line says."
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.HONOUR",
+    "picture": "still:still-nuala-glade",
+    "line": "Then Nuala lets her go, and kisses her cheek, and does not cry until she has gone.",
+    "cond": "",
+    "score": 2,
+    "issue": "Static seated pose, hands folded; no parting, no kiss on the cheek, no departure shown."
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.BREAK",
+    "picture": "clip:7.4b",
+    "line": "Aurie breaks the old law, and every faerie in the glade turns away from her.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.BREAK",
+    "picture": "still:faerie-glade",
+    "line": "Nuala's face is the last thing she sees before the Dreaming.",
+    "cond": "",
+    "score": 2,
+    "issue": "No face or figure visible — only a misty birch pool with glowing lights; the described close-up of Nuala's face is absent"
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.SHELTER",
+    "picture": "still:faerie-glade",
+    "line": "Aurie stays in Faerie. Behind her, very far away, her realm goes dark.",
+    "cond": "",
+    "score": 2,
+    "issue": "Enchanted birch grove and pool fit the mood of Faerie, but no Aurie is visible and nothing shows a distant realm going dark — the frame is empty of the person and action the line describes"
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "Aurie comes home to what is left of her throne room. The Kindly Ones are at the door, patient as winter.",
+    "cond": "unless LYTA_LISTENED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "Aurie comes home to a throne room still whole. The Kindly Ones are already waiting at its door, patient as winter.",
+    "cond": "only if LYTA_LISTENED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "picture": "still:still-family-sigils",
+    "line": "On the walls, the sigils of her family glow like doors. Desire's is laughing. Delirium's is weeping. Destruction's is open.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "picture": "still:still-death-steps",
+    "line": "And on the steps of her throne, someone is sitting, feeding crumbs to a pigeon that should not be there.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "picture": "still:still-death-steps",
+    "line": "Her sister has come to her, at the end, as she comes to everyone.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only one figure is visible; no sister arriving is shown"
+  },
+  {
+    "scene": "7.5",
+    "where": "after 7.5.HAND",
+    "picture": "clip:aurie-death-hand",
+    "line": "Aurie takes her sister's hand.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "after 7.5.HAND",
+    "picture": "clip:7.5b",
+    "line": "And somewhere in the Dreaming, in the library, a small boy opens his eyes, and they are full of stars.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "7.5",
+    "where": "after 7.5.FIGHT",
+    "picture": "still:dreaming-siege",
+    "line": "Aurie stands. Death looks at her for a long time, and then she is gone, and the doors open.",
+    "cond": "",
+    "score": 2,
+    "issue": "No figures visible — nothing shows Aurie standing or Death looking at her; only a shattered, burning hall with the cracked doors"
+  },
+  {
+    "scene": "7.5",
+    "where": "after 7.5.DOOR",
+    "picture": "clip:aurie-door",
+    "line": "Aurie stands, and crosses the room, and steps through the open door her brother left behind.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:litharge",
+    "line": "CARD: Litharge, the city of the dead",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-daniel-dream",
+    "line": "The Dreaming has a new lord. Daniel, grown in a night, robed in white where Aurie wore black.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-daniel-dream",
+    "line": "He is not her. He is kinder, and he will make his own mistakes. But he remembers her, and he always will.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-wake",
+    "line": "Everyone comes to her wake.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-wake",
+    "line": "Hob Gadling, who calls her his friend out loud, to everyone, and dares them to argue.",
+    "cond": "only if HOB_FRIEND",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-wake",
+    "line": "Rose Walker, alive because an old woman loved her.",
+    "cond": "only if ROSE_SPARED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-wake",
+    "line": "She still has the dream Aurie gave her. She has never told anyone.",
+    "cond": "only if ROSE_GIFT",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope, who came to forgive, and did.",
+    "cond": "only if CALLIOPE_FREED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "Johanna Constantine, smoking at the back, who will deny that she came.",
+    "cond": "only if CONSTANTINE_ALLY",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-matthew",
+    "line": "Matthew, who will not stop saying boss.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-johanna",
+    "line": "Lucienne, who kept the library while the Dreaming burned.",
+    "cond": "only if SAVED_PEOPLE",
+    "score": 2,
+    "issue": "Picture shows a person lighting a cigarette on a rainy street at night, not a library or the Dreaming; no library setting or librarian cues visible"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-lantern-chair",
+    "line": "Lucienne is not there. Her lantern is, on an empty chair.",
+    "cond": "only if PEOPLE_STOOD",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-wake",
+    "line": "Lucienne, at the front, with her lantern, who never had to see the Dreaming burn.",
+    "cond": "only if LYTA_LISTENED",
+    "score": 2,
+    "issue": "Three figures approach; the lantern is carried by the older white-haired woman on the right, not by the front-most figure, so the named lantern-bearer at the front isn't shown"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-nuala-glade",
+    "line": "Nuala of Faerie, holding a single white flower.",
+    "cond": "only if HONOURED_NUALA",
+    "score": 2,
+    "issue": "Girl with pointed ears is the right figure, but she clasps her hands empty — no white flower is held; white blossoms only carpet the ground"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "And from Fiddler's Green, a whole meadow of wildflowers, which walked there by itself.",
+    "cond": "only if GREEN_FRIEND",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-nuala-glade",
+    "line": "The ghost of Alex Burgess, young again, who finally gets to say thank you.",
+    "cond": "only if ALEX_RELENTED",
+    "score": 2,
+    "issue": "Pointed-eared child in a misty fairy-tale pond clearing - no wake, no funeral setting, and the figure reads as an elf girl rather than a young Alex, so the ghostly-return beat only loosely applies"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-lyta-daniel",
+    "line": "Lyta Hall stands at the back, holding her son's hand, and does not look away.",
+    "cond": "only if LYTA_LISTENED",
+    "score": 2,
+    "issue": "She is kneeling, front and center, and crying; not standing at the back watching."
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-nuala-glade",
+    "line": "And the Endless come, all of them, which has not happened in a very long time.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only one small figure sits alone by the pond; no arrival or gathering of many Endless is shown."
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-destiny",
+    "line": "Destiny, who closes his book for one hour: the only hour in all of time he has not read.",
+    "cond": "",
+    "score": 2,
+    "issue": "The book is wide open with his finger on the page — he is reading it, not closing it for the hour described."
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-desire",
+    "line": "Desire, who weeps, and is surprised by it.",
+    "cond": "",
+    "score": 2,
+    "issue": "Desire is present and correctly costumed, but is shown calm and smirking at the camera with dry eyes — no weeping, no surprise; it's a different moment of the scene."
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-despair",
+    "line": "Despair, who holds her twin's hand, and lets it.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only her own hand rests on the stone table; no twin's hand is visible, so the hand-holding is not shown"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-delirium-realm",
+    "line": "Delirium, who leaves a little fish made of gold light on the bier, and tells it a secret.",
+    "cond": "only if DELIRIUM_LOVED",
+    "score": 2,
+    "issue": "Delirium is present, but no bier and she is holding a drawing, not leaving a gold-light fish or whispering to it"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-delirium-frog",
+    "line": "Delirium, who remembers that her sister came to find her once, on a desert road, and said sorry.",
+    "cond": "only if DELIRIUM_FORGAVE",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-destruction",
+    "line": "And Destruction, in a coat that does not fit, with a dog who for once has no opinions at all.",
+    "cond": "only if LISTENED_DESTRUCTION",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "picture": "still:still-death-steps",
+    "line": "And Death, who speaks last. She was the best of us, she says. She learned to change. Most of us never do.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-B",
+    "where": "beats",
+    "picture": "clip:aurie-siege",
+    "line": "Aurie fights. And because she is Dream of the Endless, she wins.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-B",
+    "where": "beats",
+    "picture": "still:dreaming-siege",
+    "line": "The Kindly Ones are gone. So is almost everything else.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-B",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "She stands before her cracked throne in a realm of ash, and the nightmares she can no longer hold drift out into the waking world.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-B",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "Once, only once, her sister visits. You won, Death says. Was it worth it?",
+    "cond": "",
+    "score": 2,
+    "issue": "Only Aurie is visible; no sister/visitor present to speak the line, so it reads as a different moment"
+  },
+  {
+    "scene": "end-B",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "Aurie does not answer. She has forever to think about it.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "picture": "clip:aurie-door",
+    "line": "Aurie walks away from the Dreaming, as her brother once walked away from his realm.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "picture": "still:still-dreaming-fading",
+    "line": "Without her, the Dreaming fades, slowly, like a dream does after waking.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "picture": "still:still-delirium-ruins",
+    "line": "Delirium comes looking for her, years later, and finds only ruins and a door that will not open.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "picture": "still:still-destiny",
+    "line": "In Destiny's book, her chapter stops in the middle of a sentence.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "picture": "still:still-painted-sea",
+    "line": "Somewhere far away, in a small house by a painted sea, two sisters laugh at a very bad poem.",
+    "cond": "only if LISTENED_DESTRUCTION",
+    "score": 2,
+    "issue": "No two sisters and no poem visible: one girl dances alone, a man paints at an easel, and the seated woman faces the sea in silence — the described shared laughter isn't happening."
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "still:still-kindly-ones",
+    "line": "The Kindly Ones have no claim on Aurie. She never spilled her daughter's blood. She only broke her word.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "still:still-lyta-thessaly-island",
+    "line": "Lyta's grief has nowhere to go. Thessaly takes her somewhere far away, and teaches her to live with it.",
+    "cond": "unless LYTA_LISTENED",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "still:still-lyta-son-kitchen",
+    "line": "Lyta keeps her son. He grows up ordinary, and loved, and dreams very vividly.",
+    "cond": "only if LYTA_LISTENED",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "clip:aurie-listens",
+    "line": "Aurie keeps her realm. She keeps her throne. She keeps everything.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "And on a Greek island, a head that cannot die is still singing, and on still nights she can hear it from her throne.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "She will be queen of the Dreaming forever. She will never change. That was her choice.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "picture": "still:still-corinthian-free",
+    "line": "CARD: Somewhere in America",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "picture": "still:still-corinthian-free",
+    "line": "The Corinthian takes the long road south, and stops wherever he likes.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "picture": "still:still-jed-sleeps",
+    "line": "In a locked house in Florida, a little boy named Jed is dreaming of his sister. The Corinthian has heard him.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "picture": "still:still-rose-jed",
+    "line": "Rose finds her brother first. By one night. She will never know how close it was.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "picture": "still:still-jed-sleeps",
+    "line": "Aurie feels every dream he walks through. She chose this.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-oath",
+    "line": "Lyta does not sleep that night, or the next.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-oath",
+    "line": "She tells no one about the pale woman, because no one would believe her.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-oath",
+    "line": "But she buys a lock for the nursery door, and then another one.",
+    "cond": "",
+    "score": 2,
+    "issue": "No lock being bought or fitted; the only door in frame is the apartment entry and she is just standing in the kitchen"
+  },
+  {
+    "scene": "6.1b",
+    "where": "beats",
+    "picture": "still:still-lyta-oath",
+    "line": "And every night she says the same words to her sleeping belly: no one will take you. No one.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "picture": "still:still-painted-sea",
+    "line": "Aurie stays one more night. Destruction says she needs it, and for once she does not argue.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "picture": "still:still-bad-portrait",
+    "line": "He paints her portrait. It is a very bad painting. She keeps it.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "picture": "still:still-painted-sea",
+    "line": "Delirium teaches Barnabas a song with no words. Barnabas has opinions about that, too.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "picture": "still:still-painted-sea",
+    "line": "For one evening, nobody needs Aurie to be anything at all. She had forgotten what that was like.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "picture": "still:destruction-island",
+    "line": "In the morning, the cottage is empty. Destruction and Barnabas have gone on, to wherever is next.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "CARD: The Dreaming · night",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "clip:aurie-alone",
+    "line": "Aurie goes home and sits on her throne. She does not go down to the stream. There is nothing on her hands to wash away.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "clip:aurie-news",
+    "line": "Lucienne brings her the day's dreams. Aurie listens to none of them.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Because under every dream, very faintly, she can hear her daughter singing.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "Matthew sits on the back of the throne all night, and for once he does not say a word.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 1,
+    "issue": "No raven and no throne in frame; the woman is half-hidden in a flower-filled stone tomb"
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "picture": "still:still-orpheus",
+    "line": "She tells herself she kept the law. The law does not answer.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "picture": "still:still-burgess-stairs",
+    "line": "Burgess climbs the cellar stairs very slowly, and locks the door behind him, twice.",
+    "cond": "",
+    "score": 2,
+    "issue": "He stands at a door with a key, but no stairs are climbed — the described action (slow ascent) isn't happening"
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "picture": "still:still-alex-stairs",
+    "line": "Upstairs, his small son Alex is sitting on the top step in his pyjamas. He has heard everything.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "picture": "still:still-burgess-mirrors",
+    "line": "Burgess sends him to bed. Then he takes down every mirror in the house.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "picture": "still:cellar-1916",
+    "line": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.8c",
+    "where": "beats",
+    "picture": "still:still-legions",
+    "line": "Lucifer smiles, and the legions step aside. One day, he will collect.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.8c",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "Lucifer opens a book bound in something that is not leather, and writes her name in it, in black ink that smokes.",
+    "cond": "",
+    "score": 1,
+    "issue": "No book, no figure writing, no ink — none of the line's action is on screen"
+  },
+  {
+    "scene": "2.8c",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "One favour, he says. Of my choosing. At a time of my choosing.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.8c",
+    "where": "beats",
+    "picture": "still:hell-arena",
+    "line": "Every demon in Hell watches the Queen of Dreams walk out owing their master.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "picture": "still:still-diner-dreams",
+    "line": "Aurie does not come in through the door. She comes in through the dreams.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "picture": "still:still-diner-dreams",
+    "line": "The trucker dreams of an empty road. The cook dreams of his mother's kitchen. They are already half lost to the ruby.",
+    "cond": "",
+    "score": 2,
+    "issue": "Sleeping man and empty road fit, but no cook and no mother's kitchen — a waitress stands in his place"
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "picture": "still:still-bette-dream",
+    "line": "Bette the waitress dreams she is writing stories, and every one of them has a happy ending.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "picture": "still:still-diner-dreams",
+    "line": "Aurie folds Bette's dream around her like a blanket, and hides her inside it, where no waking eye can find her.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "picture": "still:still-ruby-inside",
+    "line": "And she steps inside the ruby itself, where he cannot see her coming.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "picture": "still:still-death-rounds",
+    "line": "Aurie spends the day at her sister's side, and nobody but the dying can see them.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "picture": "still:still-death-rounds",
+    "line": "An old violinist, who asks if he can finish the piece first. Death lets him. It is a very good piece.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "picture": "clip:2.12c",
+    "line": "A young man on a bridge, who did not mean to fall. Death holds his hand all the way down, and he is not afraid.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "picture": "still:park",
+    "line": "Everyone meets Death in the end. And everyone is met kindly.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "picture": "still:park",
+    "line": "Aurie goes home with something she did not have before.",
+    "cond": "",
+    "score": 2,
+    "issue": "No character is shown going home or carrying anything; only static pigeons on an empty plaza."
+  },
+  {
+    "scene": "3.0g",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "CARD: Fiddler's Green",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.0g",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "Fiddler's Green is a place in the Dreaming: a green country of soft hills and slow streams, where sailors dream of going when they die.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "3.0g",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "It is also, sometimes, a person, and it has missed her very much.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.0g",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "The grass leans toward Aurie as she walks. The wildflowers turn their faces to her, the way a cat turns toward a warm hand.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "3.0g",
+    "where": "beats",
+    "picture": "still:fiddlers-green",
+    "line": "For an afternoon, nobody asks the Queen of Dreams for anything. Lucienne laughs at something, and does not apologise for it.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1c",
+    "where": "beats",
+    "picture": "still:still-aurie-calliope-dawn",
+    "line": "At dawn, Calliope finds Aurie on the roof of the house that was her prison, watching London wake.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.1c",
+    "where": "beats",
+    "picture": "still:still-aurie-calliope-dawn",
+    "line": "Three thousand years ago they loved each other. They had a daughter. Her name was Orphea.",
+    "cond": "",
+    "score": 2,
+    "issue": "Describes a 3000-year-old past with a daughter; picture is the present-day rooftop with two women, no child or flashback"
+  },
+  {
+    "scene": "5.1c",
+    "where": "beats",
+    "picture": "still:still-aurie-calliope-dawn",
+    "line": "Calliope has not said his name to anyone in a very long time. She says it now.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1c",
+    "where": "after 5.1c.GO",
+    "picture": "still:still-aurie-calliope-dawn",
+    "line": "Calliope nods once. Then go soon, she says. He has waited longer than I have.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.1c",
+    "where": "after 5.1c.GO",
+    "picture": "still:still-calliope-free",
+    "line": "She walks down into the waking city, and does not look back. She does not need to.",
+    "cond": "",
+    "score": 2,
+    "issue": "She stands motionless on the doorstep with her face lifted, not walking down into the street — the described action isn't happening"
+  },
+  {
+    "scene": "5.1c",
+    "where": "after 5.1c.NOT",
+    "picture": "still:still-calliope-free",
+    "line": "Calliope says nothing at all. She walks down into the waking city, and Aurie watches her go.",
+    "cond": "",
+    "score": 2,
+    "issue": "She is standing still and looking up on the doorstep, not walking down into the city, and no one is visible watching her go"
+  },
+  {
+    "scene": "5.2e",
+    "where": "beats",
+    "picture": "still:still-rose-morning",
+    "line": "Morning, in a boarding house in Florida. Rose Walker wakes, and the lady from her dreams is sitting in the chair by the window.",
+    "cond": "",
+    "score": 2,
+    "issue": "Rose is in bed in the wooden room, but the chair by the window holds only draped clothes — no lady from her dreams is sitting there"
+  },
+  {
+    "scene": "5.2e",
+    "where": "beats",
+    "picture": "still:still-rose-morning",
+    "line": "Rose remembers everything. She remembers the hand that was raised against her.",
+    "cond": "only if ROSE_THREATENED",
+    "score": 2,
+    "issue": "no raised hand or threatening figure visible; only Rose sitting up in bed looking at camera"
+  },
+  {
+    "scene": "5.2e",
+    "where": "beats",
+    "picture": "still:still-rose-morning",
+    "line": "Rose remembers everything. She remembers the hand that was lowered.",
+    "cond": "only if ROSE_WAITED",
+    "score": 2,
+    "issue": "no lowered hand or other person shown; the framed action of the line is absent from the picture"
+  },
+  {
+    "scene": "5.2e",
+    "where": "beats",
+    "picture": "still:still-unity-window",
+    "line": "And she remembers an old woman in a blue dressing gown, who took her place.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2e",
+    "where": "after 5.2e.GIFT",
+    "picture": "still:still-jed-sun",
+    "line": "Rose does not thank her. But that night, and every night after, she dreams of her brother laughing in the sun.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2e",
+    "where": "after 5.2e.GO",
+    "picture": "still:still-unity-window",
+    "line": "Aurie leaves the way she came. Rose sits in the sunlight for a long time, and then goes to wake her brother.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-despair",
+    "line": "The way home from Desire's heart runs through the realm of its twin.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-despair-mirrors",
+    "line": "Despair's realm is grey, and full of mirrors. In every one, someone is looking at the worst thing they have ever done.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-despair",
+    "line": "Despair is waiting by one of them. She does not look up. She almost never does.",
+    "cond": "",
+    "score": 2,
+    "issue": "She is looking up toward the viewer, not keeping her head down as the line says."
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-despair",
+    "line": "You frightened our sibling, she says. Desire does not forgive being frightened. It will not stop now. It never does.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-aurie-mirror",
+    "line": "Aurie sees her own face in the mirror beside Despair, and for a moment does not know which of them is reflected.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "picture": "still:still-aurie-mirror",
+    "line": "Then she walks on, and the grey closes behind her.",
+    "cond": "",
+    "score": 2,
+    "issue": "Nobody is walking or moving away; the shot is a static frontal portrait, so the line's action is not shown."
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "picture": "still:still-aurie-fog",
+    "line": "The fog of 1889 is thick enough to lose a city in. Aurie walks into it, and lets it close behind her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "picture": "clip:5.3x",
+    "line": "She walks past the sleeping poor on the steps of churches, and gives each of them one warm dream. It costs her nothing. She does it anyway.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "picture": "clip:5.3y",
+    "line": "At the river she stops, and stands until the lamps go out.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "picture": "clip:5.3y",
+    "line": "A man who cannot die has just called her his friend, and she walked away from him, and she does not entirely know why.",
+    "cond": "",
+    "score": 2,
+    "issue": "Only the woman is visible; no man she has just left is shown, so the line's described moment isn't in frame."
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "picture": "still:still-hob-two-glasses",
+    "line": "Behind her, in the fog, a drunk man is still sitting in a tavern with two glasses, refusing to go home.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2y",
+    "where": "beats",
+    "picture": "still:still-delirium-empty",
+    "line": "Delirium has gone somewhere inside herself, and her body sits in the car like an empty coat.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2y",
+    "where": "beats",
+    "picture": "still:still-aurie-delirium-realm",
+    "line": "So Aurie follows her in: into Delirium's realm, where the colours have no names and the ground changes its mind.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2y",
+    "where": "beats",
+    "picture": "still:still-aurie-delirium-realm",
+    "line": "At the very centre, small as a child, Delirium is sitting with her knees pulled up, and she will not look at her sister.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2y",
+    "where": "after 6.2y.SORRY",
+    "picture": "still:still-roadtrip",
+    "line": "Delirium takes her hand. When Aurie opens her eyes in the car, her sister's colours are coming back, slowly, like a sunrise.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-delirium-list",
+    "line": "CARD: The waking world · the search",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-delirium-list",
+    "line": "Delirium has a list, written in purple crayon: everyone who ever knew where their brother went.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-delirium-list",
+    "line": "The first name is an old lawyer in a little desert town, who has kept Destruction's papers for sixty years.",
+    "cond": "",
+    "score": 2,
+    "issue": "No old lawyer or his office is shown; only the list and desert backdrop, the person described never appears"
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "clip:6.2r-a",
+    "line": "As they cross the street toward his office, the whole old building simply falls down, in a roar of brick and dust.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "clip:6.2r-a",
+    "line": "Delirium holds Aurie's sleeve very tightly. It's him, isn't it, she whispers. He doesn't want to be found.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-delirium-list",
+    "line": "Aurie does not answer. There are two more names on the list. By the time they reach them, both are already gone.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-delirium-list",
+    "line": "Delirium crosses them out, very slowly. The crayon breaks.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-seacliff-car",
+    "line": "Aurie drives until the road runs out, at the top of a cliff above a dark blue sea, and stops the car.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-seacliff-car",
+    "line": "There is one person left who knew him, she says. Someone who cannot die, whatever he does.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-seacliff-car",
+    "line": "Who? Delirium asks.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "beats",
+    "picture": "still:still-seacliff-car",
+    "line": "My daughter, says Aurie. She lives in a cave on a Greek island. I have not spoken to her in three thousand years.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2r",
+    "where": "after 6.2.GO",
+    "picture": "still:still-seacliff-car",
+    "line": "Delirium claps her hands. A boat! she says. We have to go in a boat. Please.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-a",
+    "line": "CARD: Thrace · three thousand years ago",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-a",
+    "line": "Once, Aurie and the Muse Calliope had a daughter. Orphea, whose songs could make the stones weep.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-a",
+    "line": "She loved a dancer called Eurydice. On their wedding day, in an olive grove full of music, Aurie came, and even smiled.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "still:still-eurydice-snake",
+    "line": "That same afternoon, Eurydice ran laughing into the long grass, and stepped on a snake, and died.",
+    "cond": "",
+    "score": 2,
+    "issue": "Girl lies in the grass calmly reaching a hand toward the snake; she is not running laughing, not stepping on it, and no death moment is shown."
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "still:still-aurie-refusal",
+    "line": "Orphea came to her mother's throne, and knelt, and begged her to bring her bride back.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "still:still-aurie-refusal",
+    "line": "Aurie told her the dead belong to her sister, and refused. She was not cruel. She was correct. To her, that was the same thing.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-b",
+    "line": "So Orphea went down alone, into the land of the dead, and stood before its king and queen, and sang.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-b",
+    "line": "She sang so well that the rulers of the dead wept, and let Eurydice follow her home, on one condition: she must not look back.",
+    "cond": "",
+    "score": 2,
+    "issue": "Frames show Orphea singing and her own tears; the weeping rulers and Eurydice being sent home are not shown"
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-c",
+    "line": "At the very last step, with the daylight on her face, she looked back. And Eurydice faded like breath on a mirror.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-d",
+    "line": "Later, the wild women of the hills found her alone, and tore her apart. Her lyre floated down the river to the sea, still playing.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "clip:6.2o-d",
+    "line": "Only her head survived, and it cannot die. Aurie told her she was dead to her, and never went to see her again.",
+    "cond": "",
+    "score": 2,
+    "issue": "No severed head and no Aurie anywhere; the frames only show the floating lyre from the previous beat, so the moment described (the head surviving, Aurie's rejection) is not what is pictured."
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "still:still-aurie-boat",
+    "line": "CARD: The Aegean Sea · now",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2o",
+    "where": "beats",
+    "picture": "still:still-aurie-boat",
+    "line": "In the boat, Delirium is quiet for a long time. Then she takes her sister's hand, and does not let go.",
+    "cond": "",
+    "score": 2,
+    "issue": "Both are in the boat, but no hand-holding is visible and the pink-haired girl is laughing and animated rather than quiet — the depicted moment comes before the line's action"
+  },
+  {
+    "scene": "fin-dream",
+    "where": "beats",
+    "picture": "clip:fin-sleep",
+    "line": "That night, everyone at the wake falls asleep at the same moment, and dreams the same dream.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-dream",
+    "where": "beats",
+    "picture": "still:still-aurie-daniel",
+    "line": "In it, the throne room of the Dreaming is full of light. And Aurie is there, one last time, as a memory the Dreaming is not ready to let go of.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-dream",
+    "where": "beats",
+    "picture": "still:still-aurie-daniel",
+    "line": "Daniel, the new Dream, is waiting for her. He has her memories, all of them. He is not her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-dream",
+    "where": "after fin-dream.KIND",
+    "picture": "still:still-aurie-daniel",
+    "line": "Daniel nods, and does not argue. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad.",
+    "cond": "",
+    "score": 2,
+    "issue": "No one is nodding or waking; figures stand still in a dream-space, so the described action and moment (waking at the wake, crying) are not shown"
+  },
+  {
+    "scene": "fin-dream",
+    "where": "after fin-dream.WORD",
+    "picture": "still:still-aurie-daniel",
+    "line": "Daniel promises. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad.",
+    "cond": "",
+    "score": 2,
+    "issue": "No wake or crowd waking in tears — just two calm figures standing in a dreamlike throne room, neither crying, so the described moment (everyone waking at once) isn't shown"
+  },
+  {
+    "scene": "fin-dream",
+    "where": "after fin-dream.LOVE",
+    "picture": "still:still-aurie-daniel",
+    "line": "Daniel smiles, and it is not her smile, but it is close. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad.",
+    "cond": "",
+    "score": 2,
+    "issue": "No smile on the white-robed figure and no waking, weeping mourners — the frame is a still dream throne room, so the line's actual action (smile, dream ending, everyone crying) isn't shown."
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:tavern-1989",
+    "line": "CARD: The White Horse · years later",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "clip:fin-hob-pints",
+    "line": "Hob Gadling comes to the White Horse every year now, on the same day, and buys two pints.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:still-hob-1989",
+    "line": "He raises one to the empty chair. To my friend, he says, to anyone who will listen.",
+    "cond": "only if HOB_FRIEND",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:tavern-1989",
+    "line": "He never did hear her say the word. He buys her a pint anyway.",
+    "cond": "unless HOB_FRIEND",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:still-hob-death",
+    "line": "One year, the chair is not empty. A young woman in black, with a silver ankh at her throat, sits down across from him.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:still-hob-death",
+    "line": "Hello, Hob, says Death. My sister asked me to look in on you. Do you want to come with me?",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:still-hob-death",
+    "line": "Hob thinks about it for a long time. Then he grins like a boy. Not yet, he says. Life's too good. Ask me again in a hundred years.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "picture": "still:still-hob-death",
+    "line": "Death laughs. She would have liked that, she says. She would have liked that very much.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "still:still-tempest",
+    "line": "CARD: Stratford · 1610",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "still:still-tempest",
+    "line": "Long ago, Will Shaxberd made a bargain with the Queen of Dreams: the gift of telling stories, in return for two plays.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "still:still-tempest",
+    "line": "The first was about kings and fairies. The second is the last play he will ever write.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "clip:fin-prospero",
+    "line": "It is about an island, and a magician who rules it, and who at the very end breaks his staff, and drowns his book, and gives his power away.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "still:still-hob-1589",
+    "line": "Why that story? he asked her. Because I will never be able to do it, she said. Someone should.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "picture": "still:still-aurie-daniel",
+    "line": "She was wrong. In the end, she did.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-walk",
+    "where": "beats",
+    "picture": "clip:fin-walk",
+    "line": "And somewhere past the end of every story, two sisters walk together down a long road of light.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "fin-walk",
+    "where": "beats",
+    "picture": "clip:fin-walk",
+    "line": "One of them wears black, and has finally stopped being afraid.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-walk",
+    "where": "beats",
+    "picture": "clip:fin-walk",
+    "line": "Behind them, in the Dreaming, a new lord in white is being kind to a frightened dream.",
+    "cond": "only if GIFT_KIND",
+    "score": 1,
+    "issue": "nothing behind them but road and stars; no figure in white, no frightened dream visible"
+  },
+  {
+    "scene": "fin-walk",
+    "where": "beats",
+    "picture": "clip:fin-walk",
+    "line": "Behind them, in the Dreaming, a new lord in white keeps a promise that costs him something.",
+    "cond": "only if GIFT_WORD",
+    "score": 1,
+    "issue": "no lord in white anywhere in frame, only the two sisters walking away"
+  },
+  {
+    "scene": "fin-walk",
+    "where": "beats",
+    "picture": "clip:fin-walk",
+    "line": "Behind them, in the Dreaming, a new lord in white lets a raven fall asleep on his shoulder.",
+    "cond": "only if GIFT_LOVE",
+    "score": 1,
+    "issue": "no raven or white-clad figure visible behind them"
+  },
+  {
+    "scene": "fin-credits",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: The Sandman",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-credits",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: Aurie · Charmaine Lim",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "fin-credits",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "CARD: Specially prepared and programmed for Charmaine Lim",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-credits",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "The End of The Sandman.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "fin-credits",
+    "where": "beats",
+    "picture": "still:library-hub",
+    "line": "Three more doors are waiting in the Library.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-realm",
+    "line": "CARD: Some weeks later",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-realm",
+    "line": "Far away, in a realm of colours that have no names, the youngest of the Endless is missing someone.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-realm",
+    "line": "Delirium was Delight, once, before something happened that nobody talks about. Her brother Destruction used to hold her hand when the colours got too loud.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-realm",
+    "line": "Three hundred years ago he walked out of his realm and never came back. Today, for no reason she can explain, she has decided to find him.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-desire",
+    "line": "She goes first to Desire, who laughs at her, and tells her their brother is better off lost.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-delirium-despair",
+    "line": "Then to Despair, who does not look up from her mirrors, and says nothing at all.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "clip:6.2a",
+    "line": "So Delirium comes to the Dreaming, skipping through the gates of horn and ivory, trailing little coloured fish through the air.",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "clip:6.2a",
+    "line": "Lucienne opens the palace door, and is very polite to the fish.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "beats",
+    "picture": "still:still-aurie-delirium",
+    "line": "Aurie looks up from her throne, and her youngest sister runs to her across the hall.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2p",
+    "where": "after 6.2p.YES",
+    "picture": "still:still-aurie-delirium",
+    "line": "Delirium throws her arms around her sister. Every fish in the hall turns gold at once.",
+    "cond": "",
+    "score": 2,
+    "issue": "Delirium is running and laughing, not embracing anyone, and the fish are mixed colors (blue, pink, orange), not all gold"
+  },
+  {
+    "scene": "6.2p",
+    "where": "after 6.2p.NO",
+    "picture": "still:still-aurie-delirium",
+    "line": "Delirium does not argue. She goes very small and very quiet, and walks out, and her fish follow her, grey.",
+    "cond": "",
+    "score": 2,
+    "issue": "the girl is laughing and running with bright orange/yellow/blue fish trailing her, not going small, quiet, and grey"
+  },
+  {
+    "scene": "6.2q",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "The hall is very quiet after she has gone. One grey fish is still circling the throne, lost.",
+    "cond": "",
+    "score": 2,
+    "issue": "Hall and throne are right, but no grey fish is anywhere in the frame and a woman is still standing in the hall rather than having gone."
+  },
+  {
+    "scene": "6.2q",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "A raven on the back of the throne clears his throat. Boss. She's your sister, he says.",
+    "cond": "only if MATTHEW_RAVEN",
+    "score": 2,
+    "issue": "No raven on the throne's back (or anywhere); only candles, a sand drift and a shadow figure are there."
+  },
+  {
+    "scene": "6.2q",
+    "where": "beats",
+    "picture": "still:throne-room",
+    "line": "Lucienne picks up a single grey scale from the floor, and puts it on the arm of the throne, and says nothing.",
+    "cond": "unless MATTHEW_RAVEN",
+    "score": 2,
+    "issue": "Nobody picks up a scale: the woman stands holding a lantern and book, no grey scale is visible on floor or throne arm."
+  },
+  {
+    "scene": "6.2q",
+    "where": "beats",
+    "picture": "still:still-aurie-delirium",
+    "line": "Aurie sits with it for a long time. Then she stands, and goes after her sister.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2q",
+    "where": "beats",
+    "picture": "still:still-aurie-delirium",
+    "line": "She finds Delirium on the palace steps, drawing sad faces in the sand. I'm sorry, Aurie says. I'll come.",
+    "cond": "",
+    "score": 2,
+    "issue": "Delirium is running and laughing beside floating fish, not drawing sad faces in sand on palace steps"
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "clip:6.2s-a",
+    "line": "CARD: The Aegean Sea · sunset",
+    "cond": "",
+    "score": 5,
+    "issue": ""
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "clip:6.2s-a",
+    "line": "They leave the car on the cliff and take a fisherman's boat, because Delirium wants to, and because Aurie is in no hurry to arrive.",
+    "cond": "",
+    "score": 3,
+    "issue": ""
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "clip:6.2s-a",
+    "line": "Delirium trails her hand in the water. Little coloured fish follow it, and after a while, some real ones too.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "still:still-aurie-boat",
+    "line": "You have a daughter, Delirium says. You never said.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "still:still-aurie-boat",
+    "line": "No, says Aurie. I didn't.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  },
+  {
+    "scene": "6.2s",
+    "where": "beats",
+    "picture": "still:still-aurie-boat",
+    "line": "And then, because the sea is very wide and her sister is still waiting, she tells her.",
+    "cond": "",
+    "score": 4,
+    "issue": ""
+  }
+]
