@@ -10,6 +10,7 @@ import { levelVoice } from "@/lib/story/level";
 import Ambience from "@/components/Ambience";
 import ReactLoop from "@/components/ReactLoop";
 import RotatePrompt from "@/components/RotatePrompt";
+import DevMenu from "@/components/DevMenu";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
 type Phase = "film" | "talk" | "choose" | "end";
@@ -32,7 +33,7 @@ interface Segment {
   text: string;
 }
 
-type MenuView = "main" | "journal" | "lines" | "chapters" | "settings" | "sync" | "confirm-restart";
+type MenuView = "main" | "journal" | "lines" | "chapters" | "settings" | "sync" | "confirm-restart" | "dev";
 
 // Clips are served from Vercel Blob in production and from /public locally.
 const CLIP_BASE = (process.env.NEXT_PUBLIC_CLIP_BASE ?? "/clips").replace(/\/$/, "");
@@ -1365,7 +1366,10 @@ export default function Player({ book }: { book: Book }) {
         </section>
       )}
 
-      {menu && (
+      {menu === "dev" && (
+        <DevMenu book={book} current={sceneId} clipUrl={clipUrl} stillUrl={stillUrl} onPlay={(id) => jump(id)} onClose={() => setMenu("settings")} />
+      )}
+      {menu && menu !== "dev" && (
         <div className="menu" role="dialog" aria-modal="true" onClick={(e) => { if (e.target === e.currentTarget) closeMenu(); }}>
           <div className="menu-panel">
             {menu === "main" && (
@@ -1423,6 +1427,7 @@ export default function Player({ book }: { book: Book }) {
                 <button onClick={toggleMusic}>Background music: {musicOn ? "On" : "Off"}</button>
                 <button onClick={toggleSfx}>Sound effects and ambience: {sfxOn ? "On" : "Off"}</button>
                 <button onClick={() => setMenu("main")}>Back</button>
+                <button className="ghost dev-entry" onClick={() => setMenu("dev")}>Developer</button>
               </>
             )}
             {menu === "chapters" && (
