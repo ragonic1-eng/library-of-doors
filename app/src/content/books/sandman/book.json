@@ -2324,7 +2324,7 @@
         },
         {
           "text": "Aurie takes the chair that has always been hers, at her sister's right hand. They have not all sat at one table in a very long time.",
-          "still": "aurie-family"
+          "clip": "aurie-family-close"
         },
         {
           "text": "Death, her elder sister.",
@@ -3695,7 +3695,7 @@
               "CALLIOPE_FREED": true
             }
           },
-          "next": "5.2a",
+          "next": "5.1c",
           "aftermath": [
             {
               "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
@@ -3764,6 +3764,9 @@
           "still": "library-hub"
         },
         {
+          "text": "Aurie goes home to the Dreaming. Calliope is free. But Lucienne's list of what went wrong while Aurie was in the glass is not finished."
+        },
+        {
           "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home."
         },
         {
@@ -3775,6 +3778,10 @@
         },
         {
           "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her."
+        },
+        {
+          "text": "Rose is twenty-one, and has no idea that every lost dream in the world is turning toward her.",
+          "still": "still-rose-road"
         },
         {
           "text": "Rose is searching America for her little brother. The Corinthian is drawn to her like a moth.",
@@ -3789,7 +3796,8 @@
           "still": "still-convention"
         },
         {
-          "text": "He is their hero. And Aurie is standing at the back of the hall."
+          "text": "He is their hero. And Aurie is standing at the back of the hall.",
+          "still": "still-aurie-convention"
         }
       ],
       "conversation": {
@@ -3935,6 +3943,10 @@
           "text": "Lucienne's library is coming apart, page by page. Rose Walker is a vortex."
         },
         {
+          "text": "Aurie walks into the heart of the storm, and every torn page in the air turns to look at her.",
+          "still": "still-aurie-vortex"
+        },
+        {
           "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart."
         },
         {
@@ -4043,6 +4055,9 @@
           "text": "Unity Kincaid. The girl who fell asleep in 1916, while Aurie was in the glass, and slept for seventy years."
         },
         {
+          "text": "Unity is Rose's great-grandmother. The vortex was born in Unity, seventy years ago, while she slept. With no Dream to tend it, it passed down her line to Rose."
+        },
+        {
           "text": "Aurie spoke with her once, in her dream, when she was ten.",
           "unless": [
             "UNITY_PROMISE"
@@ -4117,7 +4132,7 @@
               "UNITY_PEACE": true
             }
           },
-          "next": "5.2d",
+          "next": "5.2e",
           "aftermath": [
             {
               "text": "Unity takes Rose's hand. The light of the vortex flows out of the girl and into the old woman.",
@@ -4148,6 +4163,10 @@
       "recap": "Aurie confronted Desire, who had planned the vortex to make her kill her own kin.",
       "beats": [
         {
+          "text": "Aurie does not go home. There is one visit she owes first.",
+          "still": "desert-road"
+        },
+        {
           "text": "Desire lives in a vast statue of itself, shaped like a heart. Aurie walks straight in.",
           "still": "still-desire",
           "ambience": "dreaming"
@@ -4157,6 +4176,10 @@
         },
         {
           "text": "Desire is lounging on a velvet couch, and does not pretend to be surprised."
+        },
+        {
+          "text": "Aurie stands in the doorway of its red room and does not sit.",
+          "still": "still-aurie-desire"
         }
       ],
       "conversation": {
@@ -4195,7 +4218,7 @@
               "DESIRE_THREATENED": true
             }
           },
-          "next": "5.3",
+          "next": "5.2g",
           "aftermath": [
             {
               "text": "For one moment, Desire looks afraid. Then the smile returns, a little thinner than before.",
@@ -4401,7 +4424,7 @@
               "HOB_WALKED": true
             }
           },
-          "next": "5.3c",
+          "next": "5.3w",
           "aftermath": [
             {
               "text": "Aurie stands, and walks out into the London fog."
@@ -4941,6 +4964,12 @@
         {
           "card": "A Greek island",
           "still": "orpheus-shrine"
+        },
+        {
+          "text": "His mother sent word that Aurie was coming. He has been listening for her footsteps for weeks.",
+          "if": [
+            "CALLIOPE_ASKED_ORPHEUS"
+          ]
         },
         {
           "text": "Orpheus married Eurydice, and she died on their wedding day. He begged his mother Aurie to help him bring her back. Aurie refused."
@@ -6331,6 +6360,12 @@
           ]
         },
         {
+          "text": "She still has the dream Aurie gave her. She has never told anyone.",
+          "if": [
+            "ROSE_GIFT"
+          ]
+        },
+        {
           "text": "Calliope, who came to forgive, and did.",
           "if": [
             "CALLIOPE_FREED"
@@ -6783,6 +6818,244 @@
         }
       ],
       "next": "3.1"
+    },
+    "5.1c": {
+      "id": "5.1c",
+      "title": "Dawn",
+      "pov": "POV",
+      "music": "library",
+      "fx": "dust",
+      "ambience": "rain",
+      "recap": "At dawn on Madoc's roof, Calliope spoke to Aurie of their son.",
+      "beats": [
+        {
+          "text": "At dawn, Calliope finds Aurie on the roof of the house that was her prison, watching London wake.",
+          "still": "still-aurie-calliope-dawn"
+        },
+        {
+          "text": "Three thousand years ago they loved each other. They had a son. His name was Orpheus."
+        },
+        {
+          "text": "Calliope has not said his name to anyone in a very long time. She says it now."
+        }
+      ],
+      "conversation": {
+        "character": "calliope",
+        "maxTurns": 4,
+        "canon": [
+          "It is dawn on the roof of Richard Madoc's house. Calliope is free; she chose to make Madoc confess rather than destroy him, and Aurie let her choose.",
+          "Calliope and Aurie were lovers three thousand years ago. Their son Orpheus, the singer, lost his wife Eurydice, was torn apart by the Maenads, and lives on as a severed head on a Greek island, kept by priests, unable to die. Aurie has not visited him in centuries; she cannot bear to.",
+          "Calliope is dignified, tired, and not yet ready to forgive, but she has noticed that Aurie has changed. She wants to know if Aurie will go to their son.",
+          "If Aurie promises to go, Calliope says: then go soon. If Aurie refuses, Calliope says nothing, and that is worse."
+        ],
+        "opening": "I kept hearing him, you know. Sixty years in that room, and some nights I could hear our son singing. Have you been to him, Dream? Even once?",
+        "possibilities": [
+          "She admits she has not: Calliope asks why, quietly, without anger.",
+          "She says she cannot bear it: Calliope says that is not his burden to carry.",
+          "She promises to go: Calliope's face softens for the first time.",
+          "She changes the subject: Calliope lets her, and the silence says everything."
+        ],
+        "suggestions": [
+          "I have not. I could not.",
+          "Does he ask for me?",
+          "What would you have me say to him?"
+        ],
+        "exits": {
+          "5.1c.GO": "Aurie promises Calliope she will go to their son.",
+          "5.1c.NOT": "Aurie says she is not ready."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "5.1c.GO",
+          "text": "I will go to him. I promise you.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "CALLIOPE_ASKED_ORPHEUS": true,
+              "NAMED_ORPHEUS": true
+            }
+          },
+          "next": "5.2a",
+          "aftermath": [
+            {
+              "text": "Calliope nods once. Then go soon, she says. He has waited longer than I have."
+            },
+            {
+              "text": "She walks down into the waking city, and does not look back. She does not need to.",
+              "still": "still-calliope-free"
+            }
+          ]
+        },
+        {
+          "id": "5.1c.NOT",
+          "text": "Not yet. I am not ready.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            }
+          },
+          "next": "5.2a",
+          "aftermath": [
+            {
+              "text": "Calliope says nothing at all. She walks down into the waking city, and Aurie watches her go.",
+              "still": "still-calliope-free"
+            }
+          ]
+        }
+      ]
+    },
+    "5.2e": {
+      "id": "5.2e",
+      "title": "The Morning After",
+      "pov": "POV",
+      "music": "wings",
+      "fx": "dust",
+      "ambience": "night-room",
+      "recap": "Rose woke in Florida and spoke to Aurie one last time.",
+      "beats": [
+        {
+          "text": "Morning, in a boarding house in Florida. Rose Walker wakes, and the lady from her dreams is sitting in the chair by the window.",
+          "still": "still-rose-morning"
+        },
+        {
+          "text": "Rose remembers everything. She remembers the hand that was raised against her.",
+          "if": [
+            "ROSE_THREATENED"
+          ]
+        },
+        {
+          "text": "Rose remembers everything. She remembers the hand that was lowered.",
+          "if": [
+            "ROSE_WAITED"
+          ]
+        },
+        {
+          "text": "And she remembers an old woman in a blue dressing gown, who took her place."
+        }
+      ],
+      "conversation": {
+        "character": "rose",
+        "maxTurns": 4,
+        "canon": [
+          "It is the morning after the vortex. Rose is awake, alive, in her room in the Florida boarding house; her little brother Jed is asleep next door. Unity Kincaid, her great-grandmother, took the vortex into herself and died in the dream so Rose could live.",
+          "If Aurie raised her hand to kill Rose (flag ROSE_THREATENED), Rose is frightened of her and angry, and wants her gone; she can be calmed only by honesty, never by excuses.",
+          "If Aurie lowered her hand (flag ROSE_WAITED), Rose is shaken but grateful, and wants to understand what Unity was to her.",
+          "Rose is twenty-one, brave, sharp, and tired. She asks direct questions."
+        ],
+        "opening": "You're real, then. I thought maybe I'd made you up. I remember all of it. The library. Unity. Your hand. So tell me the truth: were you going to do it?",
+        "possibilities": [
+          "She tells Rose the truth: Rose goes quiet, then thanks her for not lying.",
+          "She makes excuses: Rose tells her to leave.",
+          "She tells Rose about Unity: Rose cries, and asks if Unity was in pain. (No. Death was kind.)",
+          "She promises Rose will never be troubled by dreams again: Rose says she would rather keep her dreams, thank you."
+        ],
+        "suggestions": [
+          "Yes. I was going to. I am sorry.",
+          "Unity loved you. She said so.",
+          "What will you do now?"
+        ],
+        "exits": {
+          "5.2e.GIFT": "Aurie gives Rose a gift before she goes: every night, one good dream of her brother safe.",
+          "5.2e.GO": "Aurie leaves Rose in peace."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "5.2e.GIFT",
+          "text": "Sleep well, Rose. From tonight, one good dream a night. My word on it.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "ROSE_GIFT": true
+            }
+          },
+          "next": "5.2d",
+          "aftermath": [
+            {
+              "text": "Rose does not thank her. But that night, and every night after, she dreams of her brother laughing in the sun."
+            }
+          ]
+        },
+        {
+          "id": "5.2e.GO",
+          "text": "(Stand, and go, and leave her to her life.)",
+          "effects": {},
+          "next": "5.2d",
+          "aftermath": [
+            {
+              "text": "Aurie leaves the way she came. Rose sits in the sunlight for a long time, and then goes to wake her brother."
+            }
+          ]
+        }
+      ]
+    },
+    "5.2g": {
+      "id": "5.2g",
+      "title": "The Grey Sister",
+      "pov": "3P",
+      "music": "cellar-wait",
+      "fx": "mist",
+      "ambience": "dreaming",
+      "recap": "On the way home from Desire, Aurie passed through Despair's grey realm, and her sister warned her.",
+      "beats": [
+        {
+          "text": "The way home from Desire's heart runs through the realm of its twin.",
+          "still": "still-despair"
+        },
+        {
+          "text": "Despair's realm is grey, and full of mirrors. In every one, someone is looking at the worst thing they have ever done."
+        },
+        {
+          "text": "Despair is waiting by one of them. She does not look up. She almost never does."
+        },
+        {
+          "text": "You frightened our sibling, she says. Desire does not forgive being frightened. It will not stop now. It never does."
+        },
+        {
+          "text": "Aurie sees her own face in the mirror beside Despair, and for a moment does not know which of them is reflected.",
+          "still": "still-aurie-mirror"
+        },
+        {
+          "text": "Then she walks on, and the grey closes behind her."
+        }
+      ],
+      "next": "5.3"
+    },
+    "5.3w": {
+      "id": "5.3w",
+      "title": "The Fog",
+      "pov": "3P",
+      "music": "cellar-wait",
+      "fx": "mist",
+      "ambience": "rain",
+      "recap": "Aurie walked out on Hob in 1889, and spent the night alone in the London fog.",
+      "beats": [
+        {
+          "text": "The fog of 1889 is thick enough to lose a city in. Aurie walks into it, and lets it close behind her.",
+          "still": "still-aurie-fog"
+        },
+        {
+          "text": "She walks past the sleeping poor on the steps of churches, and gives each of them one warm dream. It costs her nothing. She does it anyway."
+        },
+        {
+          "text": "At the river she stops, and stands until the lamps go out."
+        },
+        {
+          "text": "A man who cannot die has just called her his friend, and she walked away from him, and she does not entirely know why."
+        },
+        {
+          "text": "Behind her, in the fog, a drunk man is still sitting in a tavern with two glasses, refusing to go home.",
+          "still": "still-hob-1889"
+        }
+      ],
+      "next": "5.3c"
     }
   }
 }

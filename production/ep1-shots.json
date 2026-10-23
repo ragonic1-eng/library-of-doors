@@ -1765,6 +1765,39 @@
         "refs": [],
         "prompt": "Fiddler's Green, a green country in the Dreaming: soft rolling hills of deep green grass, a slow silver stream, old oak trees, wildflowers of every colour, warm late-afternoon light and a few small white clouds. Two small figures walk along the stream in the middle distance, seen from behind: a woman in a long black gown and a slim older woman in a dark coat. Peaceful, enchanted, gently alive."
       }
+    },
+    {
+      "id": "still-rose-road",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png"
+        ],
+        "prompt": "A Greyhound bus station in the American South at dusk, 1988: Rose Walker, the young woman from the character sheet (her exact face and hair), sits on a bench with a backpack, holding a creased photograph of a small boy, looking up and down the empty road with tired determination. Warm sodium light, a neon sign, long shadows."
+      }
+    },
+    {
+      "id": "still-rose-morning",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/boarding-house/plate.png"
+        ],
+        "prompt": "Morning in a small sunlit bedroom of the old Florida boarding house from the plate: Rose Walker, the young woman from the character sheet (her exact face), sits up in bed in a T-shirt, blanket pulled to her chest, looking straight at the camera with wide, wary, exhausted eyes. Sunlight through thin curtains, dust in the air, a chair by the window with nobody in it."
+      }
+    },
+    {
+      "id": "aurie-family-close",
+      "model": "video",
+      "seconds": 5,
+      "identity": [
+        "aurie"
+      ],
+      "keyframe": {
+        "use": "assets/keyframes/sandman/aurie-family-close/keyframe.png"
+      },
+      "motion": "Tight on Aurie at the family table: she lifts her eyes slowly to the siblings around her, guarded and calm; candle flames flicker on her face; the figures behind stay soft. Her face does not change shape. Very slow push-in."
     }
   ],
   "react": {
@@ -1939,6 +1972,16 @@
           "assets/plates/throne-room/plate.png"
         ],
         "setting": "Medium close-up in the dim, fire-scarred throne room of the Dreaming from the plate: Death from the character sheet sits on the stone steps of the throne, half turned toward the camera as if to the person beside her, a paper bag of crumbs in her lap, ash drifting in grey light behind her.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "rose": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/boarding-house/plate.png"
+        ],
+        "setting": "Medium close-up in a small sunlit bedroom of the old Florida boarding house from the plate: Rose Walker, the young woman from the character sheet (her exact face), sitting up in bed in a T-shirt, looking straight into the camera, morning light through thin curtains.",
         "moods": [
           "talking"
         ]
