@@ -1798,6 +1798,68 @@
         "use": "assets/keyframes/sandman/aurie-family-close/keyframe.png"
       },
       "motion": "Tight on Aurie at the family table: she lifts her eyes slowly to the siblings around her, guarded and calm; candle flames flicker on her face; the figures behind stay soft. Her face does not change shape. Very slow push-in."
+    },
+    {
+      "id": "still-orpheus-wedding",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "An ancient Greek wedding feast in a sunlit olive grove in Thrace, three thousand years ago: Orpheus, the young man with black curls from the character sheet, in a white wedding tunic with a lyre on his shoulder, laughs as he holds the hand of his bride Eurydice, a young woman in white with a crown of flowers. Guests dance, garlands, long tables with wine. At the edge of the frame, seen from behind so her face is not visible, a tall woman with long straight black hair in a long black gown watches. Golden afternoon light."
+      }
+    },
+    {
+      "id": "still-hades",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "The vast dark hall of the Greek underworld: two great thrones of black stone, on which sit Hades, a tall bearded king in dark robes, and Persephone, a pale queen with a crown of pomegranates and flowers, both faces partly in shadow, both weeping. Before them, small in the vast hall, Orpheus, the young man with black curls from the character sheet, plays his lyre and sings with his eyes closed. Grey ghosts of the dead crowd the edges, listening. Cold blue light and one warm beam on Orpheus."
+      }
+    },
+    {
+      "id": "still-eurydice-glance",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "A narrow rocky path climbing out of the underworld toward a bright opening of daylight: Orpheus, the young man with black curls from the character sheet, stands at the very last step with sunlight on his face, turning to look back over his shoulder in horror; behind him on the dark path, a young woman in a white dress, Eurydice, is fading into grey smoke and shadow, one hand reaching toward him."
+      }
+    },
+    {
+      "id": "still-hob-death",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "characters/death/sheet.png",
+          "assets/plates/tavern-1989/plate.png"
+        ],
+        "prompt": "The corner table of the 1989 London pub from the plate, warm lamplight, rain on the window: Hob Gadling from his character sheet, in a worn leather jacket, sits with two pints in front of him, grinning; across the table sits Death from her sheet (pale skin, black hair, black top, silver ankh), elbows on the table, smiling back at him."
+      }
+    },
+    {
+      "id": "still-tempest",
+      "still": true,
+      "keyframe": {
+        "refs": [],
+        "prompt": "A small candlelit study in Stratford in 1610: an old playwright with a thin grey beard, a small gold earring and ink-stained fingers sits at a wooden desk covered in manuscript pages, quill in hand, looking up toward the window with tired wonder. At the dark window, seen from behind so her face is not visible, stands a woman with long straight black hair in a long black gown, looking out at the night. One candle, deep shadows, a storm-grey sky outside."
+      }
+    },
+    {
+      "id": "fin-walk",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png"
+        ],
+        "prompt": "Seen from behind, two women walk away from the camera, hand in hand, down a long straight road of soft white light that runs across a dark starry sky toward a bright horizon: on the left a woman with long straight black hair in a long black high-collared gown with a faint shimmer of stars; on the right Death from the character sheet, with short black hair, black top and jeans. Their faces are not visible. Grey sand drifts up from the road around their feet like snow falling upward. Wide, still, beautiful, final."
+      },
+      "motion": "The two women walk slowly away down the road of light, hand in hand; the one in jeans leans her head briefly toward her sister's shoulder; grey sand drifts upward; the camera stays still as they grow smaller toward the bright horizon."
     }
   ],
   "react": {
@@ -1982,6 +2044,16 @@
           "assets/plates/boarding-house/plate.png"
         ],
         "setting": "Medium close-up in a small sunlit bedroom of the old Florida boarding house from the plate: Rose Walker, the young woman from the character sheet (her exact face), sitting up in bed in a T-shirt, looking straight into the camera, morning light through thin curtains.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "daniel-dream": {
+        "refs": [
+          "characters/daniel-dream/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "setting": "Medium close-up in the throne room of the Dreaming from the plate, full of soft pale light: Daniel, the new Dream, the white-haired young man in the flowing white high-collared robe with a green stone pendant from the character sheet, looking straight into the camera, gentle and grave.",
         "moods": [
           "talking"
         ]

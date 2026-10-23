@@ -4732,7 +4732,8 @@
           "next": "6.1",
           "aftermath": [
             {
-              "text": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile."
+              "text": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile.",
+              "still": "still-aurie-raven"
             }
           ]
         },
@@ -4764,6 +4765,10 @@
       "recap": "Aurie found a false house hidden in the Dreaming, where Lyta Hall had been kept dreaming for two years with her dead husband's ghost.",
       "beats": [
         {
+          "text": "There is one last name on Lucienne's list of runaways. Two names, in fact.",
+          "still": "false-house"
+        },
+        {
           "text": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
           "still": "false-house",
           "ambience": "dreaming"
@@ -4777,6 +4782,10 @@
         {
           "text": "Her husband Hector is a ghost who doesn't know he is dead.",
           "still": "still-lyta"
+        },
+        {
+          "text": "Aurie walks into the little house as if she owns it. She does.",
+          "still": "still-aurie-false-house"
         },
         {
           "text": "Aurie unmakes the false house. As it comes apart, so does Hector.",
@@ -4929,24 +4938,46 @@
         },
         {
           "text": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colours of their names.",
-          "still": "still-roadtrip"
+          "still": "still-aurie-roadtrip"
         },
         {
-          "text": "Everyone who once knew where Destruction went has died, or is dying, as the two of them arrive."
-        },
-        {
-          "text": "There is only one person left who knows. He is on an island in Greece. He is Aurie's son."
+          "text": "Somewhere in the middle of nowhere, Delirium makes Aurie stop the car. She has seen a frog by the road, and she needs to tell it a secret."
         }
       ],
       "choices": [
         {
-          "id": "6.2.GO",
-          "text": "Then I will go to Orpheus.",
-          "effects": {},
-          "next": "6.3",
+          "id": "6.2.WAIT",
+          "text": "Go on, then. Tell the frog your secret. I'll wait.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "DELIRIUM_LOVED": true
+            }
+          },
+          "next": "6.2r",
           "aftermath": [
             {
-              "text": "Delirium goes very quiet. Even she knows what that costs."
+              "text": "Delirium whispers to the frog for a long time. When she climbs back into the car, her little fish have turned gold, and she holds Aurie's hand all the way to the next town."
+            }
+          ]
+        },
+        {
+          "id": "6.2.SNAP",
+          "text": "Enough, Delirium. Get in the car and be quiet.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "DELIRIUM_HURT": true
+            }
+          },
+          "next": "6.2y",
+          "aftermath": [
+            {
+              "text": "Delirium gets in the car. She is quiet. Then she is very quiet. Then her colours drain away, and she does not answer at all."
             }
           ]
         }
@@ -4966,16 +4997,14 @@
           "still": "orpheus-shrine"
         },
         {
+          "text": "Aurie climbs the steps to the shrine alone, and stops at the door.",
+          "still": "still-aurie-shrine"
+        },
+        {
           "text": "His mother sent word that Aurie was coming. He has been listening for her footsteps for weeks.",
           "if": [
             "CALLIOPE_ASKED_ORPHEUS"
           ]
-        },
-        {
-          "text": "Orpheus married Eurydice, and she died on their wedding day. He begged his mother Aurie to help him bring her back. Aurie refused."
-        },
-        {
-          "text": "He went into the underworld without her help, and failed. Then the wild women of the hills tore him to pieces."
         },
         {
           "text": "Only his head survived, and it cannot die. For three thousand years, a family of priests has kept it here, singing.",
@@ -5188,7 +5217,7 @@
       "beats": [
         {
           "text": "Aurie returns to the shrine, alone, as she promised.",
-          "still": "orpheus-shrine"
+          "still": "still-aurie-son"
         },
         {
           "text": "Orpheus is waiting. The priests have gone outside. They know what is coming.",
@@ -6325,7 +6354,6 @@
     "end-A": {
       "id": "end-A",
       "title": "The Wake",
-      "type": "end",
       "pov": "3P",
       "music": "wings",
       "fx": "dust",
@@ -6426,24 +6454,52 @@
           ]
         },
         {
+          "text": "And the Endless come, all of them, which has not happened in a very long time."
+        },
+        {
+          "text": "Destiny, who closes his book for one hour: the only hour in all of time he has not read.",
+          "still": "still-destiny"
+        },
+        {
+          "text": "Desire, who weeps, and is surprised by it.",
+          "still": "still-desire"
+        },
+        {
+          "text": "Despair, who holds her twin's hand, and lets it.",
+          "still": "still-despair"
+        },
+        {
+          "text": "Delirium, who leaves a little fish made of gold light on the bier, and tells it a secret.",
+          "still": "still-delirium",
+          "if": [
+            "DELIRIUM_LOVED"
+          ]
+        },
+        {
+          "text": "Delirium, who remembers that her sister came to find her once, on a desert road, and said sorry.",
+          "still": "still-delirium",
+          "if": [
+            "DELIRIUM_FORGAVE"
+          ]
+        },
+        {
+          "text": "And Destruction, in a coat that does not fit, with a dog who for once has no opinions at all.",
+          "still": "still-destruction",
+          "if": [
+            "LISTENED_DESTRUCTION"
+          ]
+        },
+        {
           "text": "And Death, who speaks last. She was the best of us, she says. She learned to change. Most of us never do.",
           "still": "still-death-steps"
-        },
-        {
-          "text": "The End of The Sandman.",
-          "style": "hook"
-        },
-        {
-          "text": "Three more doors are waiting in the Library.",
-          "still": "library-hub"
         }
       ],
-      "ambience": "dreaming"
+      "ambience": "dreaming",
+      "next": "fin-dream"
     },
     "end-B": {
       "id": "end-B",
       "title": "The King Who Would Not Change",
-      "type": "end",
       "pov": "3P",
       "music": "hell-v1",
       "fx": "ash",
@@ -6465,22 +6521,14 @@
         },
         {
           "text": "Aurie does not answer. She has forever to think about it."
-        },
-        {
-          "text": "The End of The Sandman.",
-          "style": "hook"
-        },
-        {
-          "text": "Three more doors are waiting in the Library.",
-          "still": "library-hub"
         }
       ],
-      "ambience": "hell"
+      "ambience": "hell",
+      "next": "fin-credits"
     },
     "end-C": {
       "id": "end-C",
       "title": "The Deserter",
-      "type": "end",
       "pov": "3P",
       "music": "the-years",
       "fx": "mist",
@@ -6506,22 +6554,14 @@
             "LISTENED_DESTRUCTION"
           ],
           "still": "destruction-island"
-        },
-        {
-          "text": "The End of The Sandman.",
-          "style": "hook"
-        },
-        {
-          "text": "Three more doors are waiting in the Library.",
-          "still": "library-hub"
         }
       ],
-      "ambience": "night-forest"
+      "ambience": "night-forest",
+      "next": "fin-credits"
     },
     "end-R": {
       "id": "end-R",
       "title": "The Song That Never Ends",
-      "type": "end",
       "pov": "3P",
       "music": "the-years",
       "fx": "dust",
@@ -6552,17 +6592,10 @@
         },
         {
           "text": "She will be queen of the Dreaming forever. She will never change. That was her choice."
-        },
-        {
-          "text": "The End of The Sandman.",
-          "style": "hook"
-        },
-        {
-          "text": "Three more doors are waiting in the Library.",
-          "still": "library-hub"
         }
       ],
-      "ambience": "sea"
+      "ambience": "sea",
+      "next": "fin-credits"
     },
     "5.2f": {
       "id": "5.2f",
@@ -7056,6 +7089,390 @@
         }
       ],
       "next": "5.3c"
+    },
+    "6.2y": {
+      "id": "6.2y",
+      "title": "The Silent Sister",
+      "pov": "POV",
+      "music": "cellar-wait",
+      "fx": "glitter",
+      "ambience": "dreaming",
+      "recap": "Aurie hurt Delirium on the road, and went into her realm to find her and say sorry.",
+      "beats": [
+        {
+          "text": "Delirium has gone somewhere inside herself, and her body sits in the car like an empty coat.",
+          "still": "still-roadtrip"
+        },
+        {
+          "text": "So Aurie follows her in: into Delirium's realm, where the colours have no names and the ground changes its mind.",
+          "still": "still-aurie-delirium-realm"
+        },
+        {
+          "text": "At the very centre, small as a child, Delirium is sitting with her knees pulled up, and she will not look at her sister."
+        }
+      ],
+      "conversation": {
+        "character": "delirium",
+        "maxTurns": 4,
+        "canon": [
+          "Aurie snapped at Delirium on the road and told her to be quiet. Delirium, the youngest of the Endless, who was once Delight, retreated deep into her own realm and went silent.",
+          "Aurie has followed her into her realm of shifting, nameless colours. Delirium is small, hurt, and frightened; she talks in fragments and odd images, but what she means is clear: you were cruel, and you are always cruel, and I only wanted to be with you.",
+          "Delirium will come back only for a real apology: simple, honest, and kind. Orders, logic or impatience make her retreat further."
+        ],
+        "opening": "Go away. No. Don't. Everyone always goes away. The frog was going to tell me something important and you made me leave it. You're all made of no.",
+        "possibilities": [
+          "She apologises simply: Delirium looks up, and a little colour comes back into the air.",
+          "She explains why she was impatient: Delirium says explanations are just sorry with the sorry taken out.",
+          "She orders Delirium to come back: the colours darken and Delirium curls up smaller.",
+          "She asks what the frog would have said: Delirium almost smiles."
+        ],
+        "suggestions": [
+          "I'm sorry, little sister. I was unkind.",
+          "What was the secret?",
+          "I don't want to go without you."
+        ],
+        "exits": {
+          "6.2y.SORRY": "Aurie apologises properly and Delirium comes back with her."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "6.2y.SORRY",
+          "text": "I'm sorry, Delirium. I was unkind. Come back with me.",
+          "effects": {
+            "traits": {
+              "mercy": 2
+            },
+            "flags": {
+              "DELIRIUM_FORGAVE": true
+            }
+          },
+          "next": "6.2r",
+          "aftermath": [
+            {
+              "text": "Delirium takes her hand. When Aurie opens her eyes in the car, her sister's colours are coming back, slowly, like a sunrise.",
+              "still": "still-roadtrip"
+            }
+          ]
+        }
+      ]
+    },
+    "6.2r": {
+      "id": "6.2r",
+      "title": "The Last One Who Knows",
+      "pov": "3P",
+      "music": "escape",
+      "fx": "dust",
+      "ambience": "night-forest",
+      "recap": "Everyone who knew where Destruction had gone was dying. Only one person was left who knew: Aurie's son.",
+      "beats": [
+        {
+          "text": "Everyone who once knew where Destruction went has died, or is dying, as the two of them arrive.",
+          "still": "desert-road"
+        },
+        {
+          "text": "There is only one person left who knows. He is on an island in Greece. He is Aurie's son."
+        }
+      ],
+      "choices": [
+        {
+          "id": "6.2.GO",
+          "text": "Then I will go to Orpheus.",
+          "effects": {},
+          "next": "6.2o",
+          "aftermath": [
+            {
+              "text": "Delirium goes very quiet. Even she knows what that costs."
+            }
+          ]
+        }
+      ]
+    },
+    "6.2o": {
+      "id": "6.2o",
+      "title": "The Song of Orpheus",
+      "pov": "3P",
+      "music": "the-years",
+      "fx": "dust",
+      "ambience": "sea",
+      "recap": "Three thousand years ago, Aurie refused to help her son Orpheus bring his wife back from the dead.",
+      "beats": [
+        {
+          "card": "Thrace · three thousand years ago",
+          "still": "still-orpheus-wedding"
+        },
+        {
+          "text": "Once, Aurie had a son. Orpheus, whose songs could make the stones weep. On his wedding day, she came, and even smiled."
+        },
+        {
+          "text": "That same afternoon, his bride Eurydice stepped on a snake in the long grass, and died."
+        },
+        {
+          "text": "Orpheus came to his mother's throne, and begged her to bring his wife back.",
+          "still": "still-aurie-refusal"
+        },
+        {
+          "text": "Aurie told him the dead belong to her sister, and refused. She was not cruel. She was correct. To her, that was the same thing."
+        },
+        {
+          "text": "So Orpheus went down alone, into the land of the dead, to Hades and Persephone, and he sang.",
+          "still": "still-hades"
+        },
+        {
+          "text": "He sang so well that the rulers of the dead wept, and let Eurydice follow him home, on one condition: he must not look back."
+        },
+        {
+          "text": "At the very last step, with the light on his face, he looked back.",
+          "still": "still-eurydice-glance"
+        },
+        {
+          "text": "Later, the wild women of the hills tore him to pieces. Only his head survived, and it cannot die."
+        },
+        {
+          "text": "Aurie told him he was dead to her. She has not spoken his name since."
+        }
+      ],
+      "next": "6.3"
+    },
+    "fin-dream": {
+      "id": "fin-dream",
+      "title": "The Last Dream",
+      "pov": "POV",
+      "music": "wings",
+      "fx": "glitter",
+      "ambience": "dreaming",
+      "episodeTitle": "Chapter 31 · The Wake",
+      "recap": "On the night of the wake, everyone who loved Aurie dreamed the same dream, and in it she spoke to the new Dream one last time.",
+      "beats": [
+        {
+          "text": "That night, everyone at the wake falls asleep at the same moment, and dreams the same dream.",
+          "still": "still-wake"
+        },
+        {
+          "text": "In it, the throne room of the Dreaming is full of light. And Aurie is there, one last time, as a memory the Dreaming is not ready to let go of.",
+          "still": "still-aurie-daniel"
+        },
+        {
+          "text": "Daniel, the new Dream, is waiting for her. He has her memories, all of them. He is not her."
+        }
+      ],
+      "conversation": {
+        "character": "daniel-dream",
+        "maxTurns": 5,
+        "canon": [
+          "This is the last scene of Aurie's story. Aurie, Dream of the Endless, has died and been succeeded by Daniel, Lyta Hall's son, who has become the new Dream: white-haired, robed in white, gentle and grave. He carries Aurie's memories but is a different person.",
+          "On the night of her wake, everyone who loved her dreams one shared dream, and in it Aurie's last echo meets Daniel in the throne room. It is a farewell and a passing of the crown.",
+          "Daniel is kind, a little afraid of the task, and moved to meet her. He asks what she wants him to remember, and how to be Dream without becoming as lonely as she was.",
+          "Daniel always speaks warmly of Lucienne, Matthew and the people of the Dreaming, and promises to look after them."
+        ],
+        "opening": "You're here. I wasn't sure the Dreaming would let me see you. I have all your memories, you know. Every one. But I don't know how you carried them. How do I do this?",
+        "possibilities": [
+          "She gives him advice: he listens closely and repeats it back, as if writing it down.",
+          "She apologises for what was done to his mother: he says Lyta forgave her, in the end, or almost.",
+          "She asks him to look after Lucienne and Matthew: he says they are already looking after him.",
+          "She tells him she is afraid: he says the Dreaming is not afraid of her any more, and neither is he."
+        ],
+        "suggestions": [
+          "Look after Lucienne. She will pretend she doesn't need it.",
+          "Were you afraid, when you woke?",
+          "I'm sorry about your mother."
+        ],
+        "exits": {
+          "fin-dream.KIND": "Aurie's last gift to him: be kinder than she was.",
+          "fin-dream.WORD": "Aurie's last gift to him: keep your word, even when it costs you.",
+          "fin-dream.LOVE": "Aurie's last gift to him: let them love you."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "fin-dream.KIND",
+          "text": "Be kinder than I was. It is not weakness. I learned that too late.",
+          "effects": {
+            "flags": {
+              "GIFT_KIND": true
+            }
+          },
+          "next": "fin-hob",
+          "aftermath": [
+            {
+              "text": "Daniel nods, and does not argue. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad."
+            }
+          ]
+        },
+        {
+          "id": "fin-dream.WORD",
+          "text": "Keep your word, even when it costs you everything. Especially then.",
+          "effects": {
+            "flags": {
+              "GIFT_WORD": true
+            }
+          },
+          "next": "fin-hob",
+          "aftermath": [
+            {
+              "text": "Daniel promises. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad."
+            }
+          ]
+        },
+        {
+          "id": "fin-dream.LOVE",
+          "text": "Let them love you. I never let anyone close enough. Don't make my mistake.",
+          "effects": {
+            "flags": {
+              "GIFT_LOVE": true
+            }
+          },
+          "next": "fin-hob",
+          "aftermath": [
+            {
+              "text": "Daniel smiles, and it is not her smile, but it is close. Then the dream ends, and everyone at the wake wakes at once, and every one of them is crying, and none of them is sad."
+            }
+          ]
+        }
+      ]
+    },
+    "fin-hob": {
+      "id": "fin-hob",
+      "title": "Sunday Mourning",
+      "pov": "3P",
+      "music": "tavern",
+      "fx": "dust",
+      "ambience": "tavern",
+      "recap": "Years later, Death sat down at Hob Gadling's table, and asked him if he was ready.",
+      "beats": [
+        {
+          "card": "The White Horse · years later",
+          "still": "tavern-1989"
+        },
+        {
+          "text": "Hob Gadling comes to the White Horse every year now, on the same day, and buys two pints."
+        },
+        {
+          "text": "He raises one to the empty chair. To my friend, he says, to anyone who will listen.",
+          "if": [
+            "HOB_FRIEND"
+          ]
+        },
+        {
+          "text": "He never did hear her say the word. He buys her a pint anyway.",
+          "unless": [
+            "HOB_FRIEND"
+          ]
+        },
+        {
+          "text": "One year, the chair is not empty. A young woman in black, with a silver ankh at her throat, sits down across from him.",
+          "still": "still-hob-death"
+        },
+        {
+          "text": "Hello, Hob, says Death. My sister asked me to look in on you. Do you want to come with me?"
+        },
+        {
+          "text": "Hob thinks about it for a long time. Then he grins like a boy. Not yet, he says. Life's too good. Ask me again in a hundred years."
+        },
+        {
+          "text": "Death laughs. She would have liked that, she says. She would have liked that very much."
+        }
+      ],
+      "next": "fin-tempest"
+    },
+    "fin-tempest": {
+      "id": "fin-tempest",
+      "title": "The Tempest",
+      "pov": "3P",
+      "music": "library",
+      "fx": "dust",
+      "ambience": "night-room",
+      "recap": "Will Shaxberd wrote his last play for the Queen of Dreams: a magician who gives up his power.",
+      "beats": [
+        {
+          "card": "Stratford · 1610",
+          "still": "still-tempest"
+        },
+        {
+          "text": "Long ago, Will Shaxberd made a bargain with the Queen of Dreams: the gift of telling stories, in return for two plays."
+        },
+        {
+          "text": "The first was about kings and fairies. The second is the last play he will ever write."
+        },
+        {
+          "text": "It is about an island, and a magician who rules it, and who at the very end breaks his staff, and drowns his book, and gives his power away."
+        },
+        {
+          "text": "Why that story? he asked her. Because I will never be able to do it, she said. Someone should.",
+          "still": "still-hob-1589"
+        },
+        {
+          "text": "She was wrong. In the end, she did."
+        }
+      ],
+      "next": "fin-walk"
+    },
+    "fin-walk": {
+      "id": "fin-walk",
+      "title": "Hand in Hand",
+      "pov": "3P",
+      "music": "wings",
+      "fx": "glitter",
+      "ambience": "dreaming",
+      "recap": "Somewhere past the end of every story, two sisters walk together down a road of light.",
+      "beats": [
+        {
+          "text": "And somewhere past the end of every story, two sisters walk together down a long road of light.",
+          "clip": "fin-walk"
+        },
+        {
+          "text": "One of them wears black, and has finally stopped being afraid."
+        },
+        {
+          "text": "Behind them, in the Dreaming, a new lord in white is being kind to a frightened dream.",
+          "if": [
+            "GIFT_KIND"
+          ]
+        },
+        {
+          "text": "Behind them, in the Dreaming, a new lord in white keeps a promise that costs him something.",
+          "if": [
+            "GIFT_WORD"
+          ]
+        },
+        {
+          "text": "Behind them, in the Dreaming, a new lord in white lets a raven fall asleep on his shoulder.",
+          "if": [
+            "GIFT_LOVE"
+          ]
+        }
+      ],
+      "next": "fin-credits"
+    },
+    "fin-credits": {
+      "id": "fin-credits",
+      "title": "The End",
+      "type": "end",
+      "pov": "3P",
+      "music": "wings",
+      "fx": "glitter",
+      "ambience": "dreaming",
+      "beats": [
+        {
+          "card": "The Sandman",
+          "still": "library-hub"
+        },
+        {
+          "card": "Aurie · Charmaine Lim"
+        },
+        {
+          "card": "Specially prepared and programmed for Charmaine Lim"
+        },
+        {
+          "text": "The End of The Sandman.",
+          "style": "hook"
+        },
+        {
+          "text": "Three more doors are waiting in the Library."
+        }
+      ]
     }
   }
 }
