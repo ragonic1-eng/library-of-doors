@@ -400,8 +400,8 @@
       },
       "REMIEL": {
         "name": "Remiel",
-        "ttsVoice": "sage",
-        "voiceDirection": "A calm, kind, serene voice, certain and gentle."
+        "ttsVoice": "ash",
+        "voiceDirection": "A calm, kind, serene man's voice, an angel's, certain and gentle."
       }
     }
   },
@@ -777,7 +777,7 @@
       "He is never cold or proud.",
       "He never pretends to be Aurie."
     ],
-    "ttsVoice": "sage",
+    "ttsVoice": "echo",
     "voiceDirection": "A young man's voice, soft, warm and grave, unhurried, close and kind."
   },
   "delirium": {

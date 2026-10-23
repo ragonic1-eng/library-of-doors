@@ -28,6 +28,19 @@ function lineId(text) {
   return h.toString(16).padStart(8, "0");
 }
 
+// The gateway's voices are each a man's or a woman's; a voice direction cannot change that. A man's card on a
+// woman's voice (Daniel on "sage", 2026-10-23) sounds wrong to the player, so a mismatch fails the build.
+const WOMEN_VOICES = new Set(["coral", "nova", "sage", "shimmer", "marin"]);
+const MEN_VOICES = new Set(["ash", "ballad", "echo", "fable", "onyx", "verse", "cedar"]);
+const SAYS_MAN = /\b(man|men|boy|brother|son|husband|king|father|englishman|gentleman|nobleman|warrior)\b/i;
+const SAYS_WOMAN = /\b(woman|women|girl|sister|daughter|queen|mother|lady|wife)\b/i;
+function checkVoice(where, voice, direction) {
+  if (!voice || !direction) return;
+  const man = SAYS_MAN.test(direction), woman = SAYS_WOMAN.test(direction);
+  if (man && !woman && WOMEN_VOICES.has(voice)) err(`${where}: a man's voice direction on the woman's voice "${voice}"`);
+  if (woman && !man && MEN_VOICES.has(voice)) err(`${where}: a woman's voice direction on the man's voice "${voice}"`);
+}
+
 for (const dir of readdirSync(BOOKS)) {
   const bookFile = join(BOOKS, dir, "book.json");
   if (!existsSync(bookFile)) continue;
@@ -36,6 +49,11 @@ for (const dir of readdirSync(BOOKS)) {
   const media = join(APP, "public", "clips", book.id);
   const haveMedia = existsSync(media);
   const S = book.scenes;
+  for (const [id, card] of Object.entries(cards)) {
+    if (!card || typeof card !== "object") continue;
+    checkVoice(`${book.id} card ${id}`, card.ttsVoice, card.voiceDirection);
+    for (const [label, sp] of Object.entries(card.speakers ?? {})) checkVoice(`${book.id} card ${id} ${label}`, sp?.ttsVoice, sp?.voiceDirection);
+  }
   if (!S[book.start]) err(`${book.id}: start scene "${book.start}" does not exist`);
 
   for (const [sid, sc] of Object.entries(S)) {
