@@ -755,7 +755,8 @@
           "Alex Burgess is seventy-two, in a wheelchair. Paul McGuire pushed him in and stands behind him.",
           "Roderick Burgess died in 1947.",
           "In 1926 Roderick's mistress, Ethel Cripps, stole the helm, the pouch of sand and the ruby and fled. Alex knows her name, not where the tools are now.",
-          "Alex never harmed the prisoner himself; he also never freed her."
+          "Alex never harmed the prisoner himself; he also never freed her.",
+          "If Aurie lied to Burgess about granting his wishes (flag DECEIT), Alex knows; his father told him, and he does not trust promises from the glass."
         ],
         "opening": "Please. Please, I never... it was my father, it was all my father. I kept you safe down here. I kept them from hurting you. What... what are you going to do to me?",
         "possibilities": [
@@ -1154,7 +1155,7 @@
                 "RUDE_TO_THREE": true
               }
             },
-            "ripple": "The maiden stops smiling."
+            "ripple": "The Three will remember that."
           },
           "THANKED_THREE": {
             "when": "She thanks them sincerely, or offers them something in return.",
@@ -1166,7 +1167,7 @@
                 "THANKED_THREE": true
               }
             },
-            "ripple": "The crone cackles, pleased, and the moon grows brighter."
+            "ripple": "The Three will remember that."
           }
         },
         "triggers": [
@@ -1386,7 +1387,10 @@
             "flags": {
               "CONSTANTINE_ALLY": true
             },
-            "relic": "sand"
+            "relic": "sand",
+            "vars": {
+              "allies": 1
+            }
           },
           "next": "end-2a",
           "aftermath": [
@@ -1406,7 +1410,8 @@
             {
               "text": "Johanna does not thank you. But she will remember this."
             }
-          ]
+          ],
+          "remembered": "Johanna Constantine will remember that."
         },
         {
           "id": "2.4.B",
@@ -2955,6 +2960,9 @@
               "HELL_KEY_FAERIE": true,
               "FAERIE_FRIEND": true,
               "NADA_FREED": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "4.3",
@@ -2967,7 +2975,8 @@
               "text": "Aurie takes Nada's soul from Azazel by force, and Faerie stands beside her.",
               "clip": "4.2c"
             }
-          ]
+          ],
+          "remembered": "Faerie will remember that."
         }
       ],
       "ambience": "banquet"
@@ -3276,6 +3285,9 @@
             },
             "flags": {
               "GREEN_FRIEND": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "3.0g",
@@ -3283,7 +3295,8 @@
             {
               "text": "Lucienne blinks. Then, very slightly, she smiles, and takes off her spectacles."
             }
-          ]
+          ],
+          "remembered": "Fiddler's Green will remember that."
         }
       ],
       "ambience": "dreaming"
@@ -3570,7 +3583,8 @@
           "Calliope is the eldest of the nine Muses, immortal. She was trapped by the writer Erasmus Fry in 1927 and given to Richard Madoc in 1987 when Fry died. Madoc keeps her locked in this attic and forces her, and steals her inspiration for his books.",
           "Long ago Calliope and Aurie were lovers, and married. They had a daughter, Orphea. When Orphea lost her bride and came to Aurie for help, Aurie was cold to her. Calliope has never forgiven that.",
           "Aurie herself was imprisoned for seventy-two years in a glass sphere, so she did not hear Calliope's prayers; Calliope does not know this unless Aurie tells her.",
-          "Calliope is proud, exhausted, and does not want to need Aurie. She will accept help, but she will not beg."
+          "Calliope is proud, exhausted, and does not want to need Aurie. She will accept help, but she will not beg.",
+          "If Aurie said sorry to Nada (flag NADA_FORGIVEN or NADA_APOLOGY), Calliope has heard of it, and it makes her a little less certain that Aurie cannot change."
         ],
         "opening": "You came. I asked the Three to send you, and I hated asking. Sixty years, Dream. Where were you?",
         "possibilities": [
@@ -4219,6 +4233,9 @@
             "flags": {
               "ROSE_SPARED": true,
               "UNITY_PEACE": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "5.2e",
@@ -4241,7 +4258,8 @@
               ],
               "still": "still-aurie-raises-hand"
             }
-          ]
+          ],
+          "remembered": "Rose Walker will remember that."
         }
       ],
       "ambience": "night-room"
@@ -4588,7 +4606,8 @@
           "It is 1989 in the same pub, the White Horse. Hob Gadling, immortal since 1389, has waited for Aurie. He did not know she was imprisoned for seventy-two years.",
           "If Aurie walked out in 1889 (flag HOB_WALKED), Hob greets her with 'I knew you would come'. If she said 'perhaps' (flag HOB_FRIEND), he greets her as an old friend.",
           "This is the moment in the book when Dream finally admits Hob is her friend. Aurie may say so, or not.",
-          "Hob is warm, funny, a little drunk, and very glad to see her."
+          "Hob is warm, funny, a little drunk, and very glad to see her.",
+          "If Aurie once called him a slaver for trading in ships (flag HOB_TOLD_SLAVES), Hob tells her she was right, that he got out of the trade, and that it took him a century to admit it."
         ],
         "opening": "There you are. I knew you would come. I got you a pint. It's gone a bit flat, mind, I've been here since opening.",
         "possibilities": [
@@ -4643,6 +4662,9 @@
             "flags": {
               "HOB_FRIEND": true,
               "HOB_AT_WAKE": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "end-ep5",
@@ -4651,7 +4673,8 @@
               "text": "Hob raises his glass. To friends, he says. Aurie raises hers.",
               "still": "still-hob-1989"
             }
-          ]
+          ],
+          "remembered": "Hob will remember that."
         },
         {
           "id": "5.3c.NOD",
@@ -4834,6 +4857,9 @@
             },
             "flags": {
               "MATTHEW_RAVEN": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "6.1",
@@ -4842,7 +4868,8 @@
               "text": "Matthew hops onto her shoulder, very carefully. Lucienne pretends not to smile.",
               "still": "still-aurie-raven"
             }
-          ]
+          ],
+          "remembered": "Matthew will remember that."
         },
         {
           "id": "6.0.REFUSE",
@@ -5044,6 +5071,9 @@
             },
             "flags": {
               "DELIRIUM_LOVED": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "6.2r",
@@ -5051,7 +5081,8 @@
             {
               "text": "Delirium whispers to the frog for a long time. When she climbs back into the car, her little fish have turned gold, and she holds Aurie's hand all the way to the next town."
             }
-          ]
+          ],
+          "remembered": "Delirium will remember that."
         },
         {
           "id": "6.2.SNAP",
@@ -5226,7 +5257,8 @@
           "Destruction is one of the seven Endless, Aurie's brother. Three hundred years ago he walked away from his duties because he saw where humanity was going (weapons, the atom) and did not want to be responsible. Things still get destroyed without him; he just no longer has to be the one who does it.",
           "He is huge, warm, funny, peaceful, a bad painter and a worse poet. He loves his sisters and is glad to see them.",
           "He tells Aurie the Endless are not bound to their duties; they are only ideas, and ideas can change. He says she should think about quitting too, because she is changing, and change is a kind of death for one of the Endless.",
-          "He knows Aurie paid a price to find him. He will not come back. When they leave, he will go somewhere new, with Barnabas."
+          "He knows Aurie paid a price to find him. He will not come back. When they leave, he will go somewhere new, with Barnabas.",
+          "If Aurie refused Delirium at first (flag DELIRIUM_REFUSED_FIRST) or snapped at her on the road (flag DELIRIUM_HURT), Delirium has told him, and he is gently disappointed in Aurie about it before he forgives her."
         ],
         "opening": "Little sister! And Dream! You came all this way? Sit, sit. There's wine, and I've made a stew, and I'm afraid I've been painting again. Be kind.",
         "possibilities": [
@@ -6140,6 +6172,20 @@
           "sfx": "sand-magic"
         },
         {
+          "text": "The Crone looks up at the palace, and something like an old courtesy crosses her face. Once, at a crossroads, the Queen of Dreams said thank you. They let every dream leave the library before they touch it.",
+          "still": "still-kindly-ones",
+          "if": [
+            "THANKED_THREE"
+          ]
+        },
+        {
+          "text": "The Crone remembers a queen who was rude to her at a crossroads, long ago. They begin with the library.",
+          "still": "still-kindly-ones",
+          "if": [
+            "RUDE_TO_THREE"
+          ]
+        },
+        {
           "text": "Lyta walks behind them. She has stopped feeling anything at all.",
           "unless": [
             "THESSALY_TOLD"
@@ -6173,9 +6219,97 @@
             "MATTHEW_RAVEN"
           ],
           "still": "still-siege-raven"
+        },
+        {
+          "text": "And then, one by one, the friends she made come to her door.",
+          "still": "still-siege-steps"
+        },
+        {
+          "text": "Johanna Constantine walks in out of a dream she should not be able to reach, chalk in one hand, cigarette in the other. You gave Rachel a good death, she says. I pay my debts.",
+          "still": "still-siege-johanna",
+          "if": [
+            "CONSTANTINE_ALLY"
+          ]
+        },
+        {
+          "text": "Fiddler's Green comes too, as a big, gentle man in a green coat, and where he stands, the grass will not burn.",
+          "still": "still-siege-green",
+          "if": [
+            "GREEN_FRIEND"
+          ]
+        },
+        {
+          "text": "From Faerie, a line of pale knights on white horses, sent by the court that holds Hell's key, and remembers who gave it.",
+          "still": "still-siege-faerie",
+          "if": [
+            "FAERIE_FRIEND"
+          ]
+        },
+        {
+          "text": "Rose Walker, who was nearly the end of all dreams, dreams a wall of quiet across the eastern gate.",
+          "still": "still-siege-rose",
+          "if": [
+            "ROSE_SPARED"
+          ]
+        },
+        {
+          "text": "Hob Gadling, who has been a soldier in four centuries, dreams himself to the gates with a sword, and swears at the Furies in Middle English.",
+          "still": "still-siege-hob",
+          "if": [
+            "HOB_FRIEND"
+          ]
+        },
+        {
+          "text": "And Delirium arrives in a storm of coloured fish, and sends the Kindly Ones' road wandering in circles.",
+          "still": "still-siege-delirium",
+          "if": [
+            "DELIRIUM_LOVED"
+          ]
+        },
+        {
+          "text": "And Delirium arrives in a storm of coloured fish, because her sister once came into her realm to say sorry.",
+          "still": "still-siege-delirium",
+          "if": [
+            "DELIRIUM_FORGAVE"
+          ],
+          "unless": [
+            "DELIRIUM_LOVED"
+          ]
+        },
+        {
+          "text": "Aurie looks at who has come for her, and for the first time in her long life, she is not alone.",
+          "still": "still-siege-steps"
         }
       ],
       "choices": [
+        {
+          "id": "7.3.DEFEND",
+          "text": "Hold the gates with my friends.",
+          "next": "7.4",
+          "requires": {
+            "vars": {
+              "allies": 4
+            }
+          },
+          "effects": {
+            "traits": {
+              "mercy": 1
+            },
+            "flags": {
+              "DREAMING_DEFENDED": true
+            }
+          },
+          "remembered": "The Dreaming will remember this night.",
+          "aftermath": [
+            {
+              "text": "They hold. All night the Kindly Ones walk up the steps, and all night her friends turn them back.",
+              "still": "still-siege-steps"
+            },
+            {
+              "text": "By dawn the Dreaming is still standing. The Kindly Ones have not gone. They have only learned to wait."
+            }
+          ]
+        },
         {
           "id": "7.3.SEND",
           "text": "Take them all and go. Hide. Live.",
@@ -6249,7 +6383,8 @@
           "Nuala of Faerie was left in the Dreaming as a gift after the suitors' banquet, with a favour owed to her. She has gone home to Faerie and now calls that favour: Aurie must come to her and stay until Nuala releases her.",
           "Nuala loves Aurie, and always has, shyly and hopelessly. She called the boon to warn her, and to keep her safe from the Kindly Ones, even for an hour.",
           "Every minute Aurie stays, the Kindly Ones destroy more of the Dreaming. Aurie can honour the boon, break it and go back, or, if Faerie is her friend (flag FAERIE_FRIEND), accept shelter in Faerie and never go back at all.",
-          "Nuala is gentle, frightened, brave, and does not cry until afterwards."
+          "Nuala is gentle, frightened, brave, and does not cry until afterwards.",
+          "If Aurie gave Hell's key to Faerie (flag HELL_KEY_FAERIE), Nuala reminds her of it: Faerie remembers its friends."
         ],
         "opening": "I'm sorry. I'm sorry, I know what's happening, I know. I just... I wanted to see you before. I love you. I always have. Please stay. Just for a little while.",
         "possibilities": [
@@ -6363,7 +6498,8 @@
           "text": "Aurie comes home to what is left of her throne room. The Kindly Ones are at the door, patient as winter.",
           "still": "throne-room",
           "unless": [
-            "LYTA_LISTENED"
+            "LYTA_LISTENED",
+            "DREAMING_DEFENDED"
           ]
         },
         {
@@ -6371,11 +6507,31 @@
           "still": "throne-room",
           "if": [
             "LYTA_LISTENED"
+          ],
+          "unless": [
+            "DREAMING_DEFENDED"
+          ]
+        },
+        {
+          "text": "Aurie comes home to a realm still standing, her friends asleep on the palace steps. The Kindly Ones are at the door, patient as winter.",
+          "still": "throne-room",
+          "if": [
+            "DREAMING_DEFENDED"
           ]
         },
         {
           "text": "On the walls, the sigils of her family glow like doors. Desire's is laughing. Delirium's is weeping. Destruction's is open.",
-          "still": "still-family-sigils"
+          "still": "still-family-sigils",
+          "unless": [
+            "DESIRE_THREATENED"
+          ]
+        },
+        {
+          "text": "On the walls, the sigils of her family glow like doors. Desire's is turned to the wall. Delirium's is weeping. Destruction's is open.",
+          "still": "still-family-sigils",
+          "if": [
+            "DESIRE_THREATENED"
+          ]
         },
         {
           "text": "And on the steps of her throne, someone is sitting, feeding crumbs to a pigeon that should not be there.",
@@ -6394,7 +6550,8 @@
           "Death, Aurie's elder sister, sits on the throne steps. She has come because Aurie has, in her heart, already chosen to change, and for one of the Endless, changing is a kind of dying. A new Dream will rise: Daniel, the child of the Dreaming.",
           "Aurie can take Death's hand and go with her (only if she released Orphea and has learned mercy), stand and fight the Kindly Ones as the queen who never changes, or, if she listened to Destruction, walk through his open door and leave her duty behind.",
           "If Aurie has not learned enough mercy to take her hand (mercy below 6), Death says gently: You could have. You still can. But you haven't learned how yet.",
-          "Death is warm, funny, tender and honest. She does not push. She has never been sadder or kinder."
+          "Death is warm, funny, tender and honest. She does not push. She has never been sadder or kinder.",
+          "Death remembers what Aurie has done and says so when it fits: if Aurie once walked her rounds with her (flag DEATH_ROUNDS); if Aurie said sorry to Nada (flag NADA_FORGIVEN); if she held Orphea in her dream (flag HELD_ORPHEA) or told her she loved her (flag SAID_LOVE_ORPHEUS); if her friends held the gates (flag DREAMING_DEFENDED), Death says plainly that Aurie was loved, and that this is what changed her."
         ],
         "opening": "Hey. You took your time, you know. Sit down a minute. They'll wait. They always wait for me.",
         "possibilities": [
@@ -6498,6 +6655,12 @@
           "still": "still-daniel-dream"
         },
         {
+          "text": "Because her friends held the gates, Daniel inherits a Dreaming that is whole: every dream, every door, every book.",
+          "if": [
+            "DREAMING_DEFENDED"
+          ]
+        },
+        {
           "text": "He is not her. He is kinder, and he will make his own mistakes. But he remembers her, and he always will."
         },
         {
@@ -6593,6 +6756,18 @@
           "still": "still-lyta-daniel"
         },
         {
+          "text": "At the very back, a man with no wings, who once owned Hell, plays one quiet song on a borrowed piano.",
+          "if": [
+            "LUCIFER_FREED"
+          ]
+        },
+        {
+          "text": "That night a waitress called Bette, who writes stories with happy endings, dreams of the funeral, and cries, and does not know why.",
+          "if": [
+            "BETTE_HIDDEN"
+          ]
+        },
+        {
           "text": "And the Endless come, all of them, which has not happened in a very long time.",
           "still": "still-nuala-glade"
         },
@@ -6647,11 +6822,31 @@
         {
           "text": "Aurie fights. And because she is Dream of the Endless, she wins.",
           "sfx": "thunder",
-          "clip": "aurie-siege"
+          "clip": "aurie-siege",
+          "unless": [
+            "DREAMING_DEFENDED"
+          ]
+        },
+        {
+          "text": "Aurie fights, with her friends at her side. And because she is Dream of the Endless, she wins.",
+          "clip": "aurie-siege",
+          "if": [
+            "DREAMING_DEFENDED"
+          ]
         },
         {
           "text": "The Kindly Ones are gone. So is almost everything else.",
-          "still": "dreaming-siege"
+          "still": "dreaming-siege",
+          "unless": [
+            "DREAMING_DEFENDED"
+          ]
+        },
+        {
+          "text": "The Kindly Ones are gone. The Dreaming is scarred, but it stands, and her friends are still in it.",
+          "still": "dreaming-siege",
+          "if": [
+            "DREAMING_DEFENDED"
+          ]
         },
         {
           "text": "She stands before her cracked throne in a realm of ash, and the nightmares she can no longer hold drift out into the waking world.",
@@ -7312,6 +7507,9 @@
             },
             "flags": {
               "DELIRIUM_FORGAVE": true
+            },
+            "vars": {
+              "allies": 1
             }
           },
           "next": "6.2r",
@@ -7320,7 +7518,8 @@
               "text": "Delirium takes her hand. When Aurie opens her eyes in the car, her sister's colours are coming back, slowly, like a sunrise.",
               "still": "still-roadtrip"
             }
-          ]
+          ],
+          "remembered": "Delirium will remember that."
         }
       ]
     },

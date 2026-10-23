@@ -730,6 +730,7 @@ export default function Player({ book }: { book: Book }) {
       }
     }
     commit(p);
+    showRipple(choice.remembered);
     logJournal(sceneId, choice.text);
     const token = ++runRef.current;
     stopAllVoices();

@@ -2954,6 +2954,71 @@
         "prompt": "The same black river of the dead as in the first reference picture, pale asphodel, mist: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot, seen from behind, steps into the shallow dark water toward the far bank, where Eurydice in her saffron-yellow chiton holds up her bronze lamp. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit."
       },
       "motion": "Orphea wades across the dark river, the water turning to light around her steps; Eurydice runs into the shallows to meet her and they embrace, the lamp's glow growing until it fills the whole frame with warm golden light. Slow push-in."
+    },
+    {
+      "id": "still-siege-johanna",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/johanna/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: Johanna Constantine from her sheet, in her overcoat, a stick of chalk in one hand and a cigarette in the other, has drawn a glowing protective sigil across the top step, defiant."
+      }
+    },
+    {
+      "id": "still-siege-green",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: a big, gentle, bearded East Asian man in his fifties in a green tweed coat and hat, an original person who resembles no real actor, stands calmly; around his feet a circle of fresh green grass and wildflowers refuses to burn."
+      }
+    },
+    {
+      "id": "still-siege-faerie",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: a line of pale faerie knights from the sheet on white horses, silver armour and long pale hair, lances raised, ride up through the smoke to guard the gates."
+      }
+    },
+    {
+      "id": "still-siege-rose",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: Rose Walker from her sheet, pink hair, eyes closed, hands raised, dreams a shimmering wall of soft blue light across the eastern gate; the fire stops against it."
+      }
+    },
+    {
+      "id": "still-siege-hob",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: Hob Gadling from his sheet, grey-bearded, in his leather jacket but holding an old soldier's sword, stands on the steps shouting a challenge down at the Furies, grinning."
+      }
+    },
+    {
+      "id": "still-siege-delirium",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "On the burning palace steps of the Dreaming from the plate, fire and drifting sand, the three hooded Kindly Ones far below: Delirium from her sheet, wild multicoloured hair, laughing and crying at once, arms flung wide as a storm of bright coloured fish pours out of her and swirls down the steps in spirals."
+      }
     }
   ],
   "react": {

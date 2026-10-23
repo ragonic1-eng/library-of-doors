@@ -92,6 +92,7 @@ export function meets(p: Profile, bookId: string, r?: Requires): boolean {
   if (r.traits && Object.entries(r.traits).some(([t, v]) => (p.traits[t as keyof Profile["traits"]] ?? 0) < (v ?? 0))) return false;
   if (r.flags?.some((f) => !flags[f])) return false;
   if (r.notFlags?.some((f) => flags[f])) return false;
+  if (r.vars && Object.entries(r.vars).some(([k, min]) => (p.vars[bookId]?.[k] ?? 0) < min)) return false;
   if (r.relation && Object.entries(r.relation).some(([who, m]) => {
     const rel = relationOf(p, who);
     return (m.trust != null && rel.trust < m.trust) || (m.fear != null && rel.fear < m.fear);

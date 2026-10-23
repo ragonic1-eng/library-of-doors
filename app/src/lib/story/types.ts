@@ -15,6 +15,7 @@ export interface Requires {
   traits?: Partial<Record<Trait, number>>; // minimum trait values
   flags?: string[]; // all must be set (book flags)
   notFlags?: string[]; // none may be set
+  vars?: Record<string, number>; // minimum running totals (e.g. allies earned across the story)
   relation?: Record<string, { trust?: number; fear?: number }>; // minimum trust/fear with a character
 }
 
@@ -43,6 +44,7 @@ export interface Choice {
   effectsIf?: { flag: string; effects: Effect; ripple?: string }[]; // extra effects when an earlier flag is set
   requires?: Requires; // hidden when not met; the AI cannot steer to it either
   next: string; // scene id
+  remembered?: string; // shown as the choice is made when it will matter later ("Hob will remember that.")
 }
 
 /** Something the player's words or actions can cause, chosen live by the AI from this authored menu. */
