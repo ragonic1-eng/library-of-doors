@@ -27,7 +27,7 @@
         },
         {
           "text": "Then, far away in the waking world, a man reads her name from a stolen book.",
-          "clip": "0.0c"
+          "clip": "0.0d"
         },
         {
           "text": "A circle of chalk reaches up through her floor, and pulls her down."
@@ -61,10 +61,11 @@
         },
         {
           "text": "Aurie wakes inside a sphere of glass, ringed by a circle she cannot cross.",
-          "clip": "1.1b-v2"
+          "clip": "1.1a-v3"
         },
         {
-          "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby."
+          "text": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby.",
+          "clip": "1.1c"
         },
         {
           "text": "Without them, she is only a prisoner.",
@@ -84,7 +85,7 @@
       "beats": [
         {
           "text": "Hours later, his followers have gone home. Burgess comes back down, alone.",
-          "clip": "1.2a"
+          "still": "still-burgess-alone"
         },
         {
           "text": "He still believes he has caught Death. Speak to him, or stay silent. He will remember either way."
@@ -195,7 +196,8 @@
               "clip": "1.2b-A-v2"
             },
             {
-              "text": "He leaves. He will come back every night for thirty years, and you will never answer him."
+              "text": "He leaves. He will come back every night for thirty years, and you will never answer him.",
+              "still": "still-burgess-1947"
             }
           ]
         },
@@ -289,7 +291,8 @@
           "text": "Every night he comes down to beg you for dreams. You give him none.",
           "if": [
             "DREAM_REVEALED"
-          ]
+          ],
+          "clip": "1.2b-B"
         },
         {
           "text": "Once, early on, you pitied him. He never forgave you for it.",
@@ -303,7 +306,7 @@
         },
         {
           "text": "In the waking world, sleep goes wrong. Some people can never sleep again.",
-          "clip": "1.3a"
+          "clip": "1.4b-A"
         },
         {
           "text": "Others fall asleep, and cannot wake. The doctors call it the sleeping sickness.",
@@ -426,25 +429,29 @@
               "text": "Unity will carry your promise through sixty years of sleep.",
               "if": [
                 "UNITY_PROMISE"
-              ]
+              ],
+              "clip": "1.3b"
             },
             {
               "text": "She sleeps on, inside the seaside dream you gave her.",
               "if": [
                 "UNITY_GIFT"
-              ]
+              ],
+              "still": "still-unity-shore"
             },
             {
               "text": "Her dream stays grey for a long, long time.",
               "if": [
                 "UNITY_USED"
-              ]
+              ],
+              "still": "still-unity-grey"
             },
             {
               "text": "And you cannot forget that smell of roses. Someone else was in that dream.",
               "if": [
                 "SENSED_DESIRE"
-              ]
+              ],
+              "still": "still-unity-shore"
             },
             {
               "text": "You let go of the girl. The glass closes around you again.",
@@ -452,7 +459,8 @@
                 "UNITY_PROMISE",
                 "UNITY_GIFT",
                 "UNITY_USED"
-              ]
+              ],
+              "clip": "aurie-years"
             }
           ]
         }
@@ -511,7 +519,8 @@
           "text": "Alex remembers the night his father came up from the cellar white as chalk, and took down every mirror in the house.",
           "if": [
             "DREAM_REVEALED"
-          ]
+          ],
+          "still": "still-burgess-mirrors"
         },
         {
           "text": "He has never once been cruel to you. Tonight, for the first time, he has come down to talk."
@@ -1005,7 +1014,7 @@
           "aftermath": [
             {
               "text": "Lucienne bows, and begins: the dead, the fled, and the faithful.",
-              "still": "library-hub"
+              "still": "still-aurie-prayers"
             }
           ]
         },
@@ -1024,7 +1033,7 @@
           "aftermath": [
             {
               "text": "Lucienne takes off her spectacles. For the first time in seventy-two years, she smiles.",
-              "still": "library-hub"
+              "clip": "2.1c"
             }
           ]
         }
@@ -1045,10 +1054,12 @@
           "still": "library-hub"
         },
         {
-          "text": "Your helm, your sand and your ruby are out there, scattered across the waking world."
+          "text": "Your helm, your sand and your ruby are out there, scattered across the waking world.",
+          "still": "still-treasures-lost"
         },
         {
-          "text": "Lucienne knows where to begin: with three women who know where every lost thing goes."
+          "text": "Lucienne knows where to begin: with three women who know where every lost thing goes.",
+          "still": "library-hub"
         },
         {
           "text": "End of Part One.",
@@ -1074,14 +1085,16 @@
           "text": "Where three roads meet, at the edge of the Dreaming, live the Three Who Are One."
         },
         {
-          "text": "A Maiden, a Mother and a Crone. Mortals call them the Fates."
+          "text": "A Maiden, a Mother and a Crone. Mortals call them the Fates.",
+          "clip": "2.2a"
         },
         {
-          "text": "They will answer three questions, for anyone who asks politely."
+          "text": "They will answer three questions, for anyone who asks politely.",
+          "still": "crossroads"
         },
         {
           "text": "Aurie calls them, and they come.",
-          "clip": "2.2a"
+          "clip": "2.2b"
         }
       ],
       "conversation": {
@@ -1177,20 +1190,24 @@
               "still": "crossroads"
             },
             {
-              "text": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son."
+              "text": "The sand is in London. The helm is in Hell. The ruby is with Ethel Cripps's son.",
+              "clip": "2.2a"
             },
             {
               "text": "And one answer she did not want.",
               "if": [
                 "ASKED_OWN_FATE"
-              ]
+              ],
+              "still": "crossroads"
             },
             {
-              "text": "Hell and a madman can wait. Someone in London is dying of her sand."
+              "text": "Hell and a madman can wait. Someone in London is dying of her sand.",
+              "clip": "2.3b"
             },
             {
               "text": "She will start with the sand.",
-              "style": "hook"
+              "style": "hook",
+              "still": "crossroads"
             }
           ]
         }
@@ -1211,18 +1228,21 @@
           "still": "london-rain"
         },
         {
-          "text": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand."
+          "text": "Aurie steps out of her realm into the waking world, following the faint glitter of her own sand.",
+          "still": "still-aurie-fog"
         },
         {
           "text": "It leads her to a rainy street in north London.",
-          "sfx": "thunder"
+          "sfx": "thunder",
+          "still": "london-rain"
         },
         {
           "text": "A woman is waiting under a porch, as if she has been expecting trouble.",
-          "still": "still-johanna"
+          "still": "still-johanna-porch"
         },
         {
-          "text": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name."
+          "text": "Johanna Constantine. She hunts ghosts and demons for a living. The Fates said her name.",
+          "still": "still-johanna"
         },
         {
           "text": "Years ago, the pouch was hers. Then the woman she loved took it."
@@ -1425,7 +1445,8 @@
         },
         {
           "text": "Next, the helm. A demon has it, in Hell.",
-          "style": "hook"
+          "style": "hook",
+          "still": "still-helm-demon"
         }
       ],
       "next": "2.5",
@@ -1537,10 +1558,11 @@
           "aftermath": [
             {
               "text": "Nada presses her hand to the ice. Aurie presses hers to the other side.",
-              "still": "still-nada"
+              "clip": "aurie-nada"
             },
             {
-              "text": "A promise, made in Hell. Hell will remember it."
+              "text": "A promise, made in Hell. Hell will remember it.",
+              "still": "still-nada"
             }
           ]
         }
@@ -1634,7 +1656,8 @@
           "text": "The Oldest Game. Each names a form that defeats the other's last. The first who cannot answer, loses."
         },
         {
-          "text": "Lucifer will judge. Type your answer: every form must beat his."
+          "text": "Lucifer will judge. Type your answer: every form must beat his.",
+          "clip": "2.5c"
         }
       ],
       "conversation": {
@@ -1721,12 +1744,13 @@
           "aftermath": [
             {
               "text": "Choronzon's form swallows hers. The arena howls with delight.",
-              "still": "hell-arena",
-              "sfx": "arena-roar"
+              "sfx": "arena-roar",
+              "clip": "2.7c"
             },
             {
               "text": "Lucifer, amused, allows one more game.",
-              "style": "hook"
+              "style": "hook",
+              "still": "hell-arena"
             }
           ]
         }
@@ -1831,14 +1855,16 @@
       "beats": [
         {
           "text": "The helm is hers again. Two of three.",
-          "still": "library-hub"
+          "clip": "aurie-helm"
         },
         {
-          "text": "Only the ruby remains, in the hands of a madman."
+          "text": "Only the ruby remains, in the hands of a madman.",
+          "still": "still-arkham"
         },
         {
           "text": "Next, the ruby.",
-          "style": "hook"
+          "style": "hook",
+          "still": "still-ruby-call"
         }
       ],
       "fx": "dust",
@@ -1979,7 +2005,8 @@
               "sfx": "ruby-shatter"
             },
             {
-              "text": "It does not. Everything she ever poured into that stone comes home to her."
+              "text": "It does not. Everything she ever poured into that stone comes home to her.",
+              "still": "still-ruby-inside"
             },
             {
               "text": "Three of three.",
@@ -2006,7 +2033,8 @@
           "text": "Behind the counter, Bette the waitress is still asleep, smiling. Dee walked past her a hundred times, and never once saw her.",
           "if": [
             "BETTE_HIDDEN"
-          ]
+          ],
+          "still": "still-bette-asleep"
         }
       ],
       "conversation": {
@@ -2184,7 +2212,7 @@
           "aftermath": [
             {
               "text": "Death shrugs, kisses her cheek, and goes about her work alone.",
-              "still": "park"
+              "clip": "aurie-death-bench"
             }
           ]
         }
@@ -2211,17 +2239,20 @@
           "text": "Somewhere, an old man is still waking up, again and again.",
           "if": [
             "ALEX_CURSED"
-          ]
+          ],
+          "clip": "1.5d-A"
         },
         {
           "text": "And in Hell, a queen in the ice is waiting for a promise to be kept.",
           "if": [
             "NADA_PROMISE"
-          ]
+          ],
+          "still": "still-nada"
         },
         {
           "text": "End of Part Two.",
-          "style": "hook"
+          "style": "hook",
+          "clip": "1.5d-A"
         }
       ],
       "fx": "dust",
@@ -2357,13 +2388,15 @@
           "still": "still-desire"
         },
         {
-          "text": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it."
+          "text": "Ten thousand years ago, Aurie loved a mortal queen named Nada. Nada refused her, and Aurie sent her to Hell for it.",
+          "clip": "aurie-nada"
         },
         {
           "text": "Aurie passed her in the ice, on the way to her helm.",
           "if": [
             "NADA_PROMISE"
-          ]
+          ],
+          "still": "still-desire"
         },
         {
           "text": "Desire leans forward, smiling. It has been waiting for this.",
@@ -2464,7 +2497,8 @@
             },
             {
               "text": "Hell, again.",
-              "style": "hook"
+              "style": "hook",
+              "still": "aurie-hell"
             }
           ]
         },
@@ -2486,11 +2520,13 @@
               "still": "convocation"
             },
             {
-              "text": "Death watches her go, and says nothing."
+              "text": "Death watches her go, and says nothing.",
+              "still": "still-death-table"
             },
             {
               "text": "But the woman in the ice is still there. The question will not go away.",
-              "style": "hook"
+              "style": "hook",
+              "still": "still-nada"
             }
           ]
         },
@@ -2517,7 +2553,8 @@
             },
             {
               "text": "Pride is a door that locks from the inside.",
-              "style": "hook"
+              "style": "hook",
+              "still": "still-pride-door"
             }
           ]
         }
@@ -2546,13 +2583,15 @@
           "text": "Aurie tells herself she does not care what Desire thinks. She is lying.",
           "if": [
             "STORMED_OUT"
-          ]
+          ],
+          "still": "still-aurie-desire"
         },
         {
           "text": "Aurie goes home certain she was right. Death does not call on her for a long time.",
           "if": [
             "PRIDE_LOCK"
-          ]
+          ],
+          "clip": "aurie-alone"
         },
         {
           "text": "Destiny closes his book. He already knows how this ends.",
@@ -2595,10 +2634,12 @@
           "text": "A letter arrives, sealed in black wax. Lucifer wishes to see her, and Lucifer does not ask twice.",
           "if": [
             "PRIDE_LOCK"
-          ]
+          ],
+          "still": "still-letter"
         },
         {
-          "text": "The last time she came here, she walked past Nada in the ice."
+          "text": "The last time she came here, she walked past Nada in the ice.",
+          "still": "hell-gates"
         },
         {
           "text": "But Hell is empty.",
@@ -2614,17 +2655,20 @@
         },
         {
           "text": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
-          "still": "hell-arena",
-          "fx": "sparks"
+          "fx": "sparks",
+          "still": "still-lucifer-alone"
         },
         {
-          "text": "He tells her plainly. For ten billion years he has kept Hell, because someone had to. He is tired of being everyone's excuse. He has resigned."
+          "text": "He tells her plainly. For ten billion years he has kept Hell, because someone had to. He is tired of being everyone's excuse. He has resigned.",
+          "still": "hell-arena"
         },
         {
-          "text": "He has sent every demon and every damned soul out into the dark. All that is left is the key, and he is giving it to her."
+          "text": "He has sent every demon and every damned soul out into the dark. All that is left is the key, and he is giving it to her.",
+          "still": "still-lucifer-key"
         },
         {
-          "text": "And he wants one last thing from her: his wings cut off, so he can walk the waking world as an ordinary man."
+          "text": "And he wants one last thing from her: his wings cut off, so he can walk the waking world as an ordinary man.",
+          "still": "hell-arena"
         },
         {
           "text": "He has not forgotten the favour she owes him. Tonight, he says, he will collect it.",
@@ -2699,7 +2743,7 @@
           "aftermath": [
             {
               "text": "Aurie cuts. The wings fall away into a storm of feathers.",
-              "clip": "4.1a"
+              "clip": "4.1c"
             },
             {
               "text": "Lucifer thanks her, which he has never done before, and walks out into the waking world."
@@ -2727,10 +2771,12 @@
           "still": "suitors-hall"
         },
         {
-          "text": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy."
+          "text": "Lucienne is afraid. Whoever holds that key decides what Hell becomes, and every power refused may become an enemy.",
+          "clip": "aurie-news"
         },
         {
-          "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another."
+          "text": "So Aurie does what the old laws allow. She invites them all as guests, under her roof, where no guest may harm another.",
+          "still": "suitors-hall"
         },
         {
           "text": "Aurie takes her throne at the head of the long table, and watches them arrive.",
@@ -2840,7 +2886,7 @@
             },
             {
               "text": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
-              "still": "still-azazel"
+              "clip": "4.2c"
             }
           ]
         },
@@ -2885,10 +2931,11 @@
           "aftermath": [
             {
               "text": "Azazel opens the jar. Nada is free.",
-              "still": "still-azazel"
+              "still": "still-nada-free"
             },
             {
-              "text": "Hell will be worse than it ever was. That is on Aurie now."
+              "text": "Hell will be worse than it ever was. That is on Aurie now.",
+              "still": "still-azazel"
             }
           ]
         },
@@ -2928,11 +2975,12 @@
       "beats": [
         {
           "text": "Later, alone, Aurie opens her hand. The small light inside it grows, and becomes a woman.",
-          "still": "still-nada-free",
-          "ambience": "dreaming"
+          "ambience": "dreaming",
+          "clip": "aurie-ruins"
         },
         {
-          "text": "Nada stands free for the first time in ten thousand years."
+          "text": "Nada stands free for the first time in ten thousand years.",
+          "still": "still-nada-free"
         },
         {
           "text": "She was a queen. She loved Aurie, and refused her, because a mortal who loves one of the Endless brings ruin on her people."
@@ -3021,7 +3069,7 @@
           "aftermath": [
             {
               "text": "Nada strikes her across the face, and walks into the light alone.",
-              "still": "white-room"
+              "clip": "4.3d"
             }
           ]
         },
@@ -3037,7 +3085,7 @@
           "aftermath": [
             {
               "text": "Nada refuses every gift, and leaves without a word.",
-              "still": "white-room"
+              "still": "still-nada-refuses"
             }
           ]
         }
@@ -3053,52 +3101,60 @@
       "beats": [
         {
           "text": "Hell has new masters.",
-          "still": "library-hub"
+          "still": "hell-arena"
         },
         {
           "text": "Heaven's angels hold the keys. The damned may heal there now.",
           "if": [
             "HELL_KEY_ANGELS"
-          ]
+          ],
+          "still": "still-angels"
         },
         {
           "text": "Odin's Hell waits for the end of the world. Loki is still smiling.",
           "if": [
             "HELL_KEY_NORSE"
-          ]
+          ],
+          "still": "still-norse"
         },
         {
           "text": "Azazel's Hell is crueler than it ever was.",
           "if": [
             "HELL_KEY_DEMONS"
-          ]
+          ],
+          "still": "still-azazel"
         },
         {
           "text": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
           "if": [
             "HELL_KEY_FAERIE"
-          ]
+          ],
+          "clip": "end4-faerie"
         },
         {
           "text": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
           "if": [
             "LUCIFER_FREED"
-          ]
+          ],
+          "clip": "end4-piano"
         },
         {
           "text": "Nada is gone, born again into a life of her own.",
           "if": [
             "NADA_FORGIVEN"
-          ]
+          ],
+          "still": "still-nada-free"
         },
         {
           "text": "Nada is gone, and she did not forgive.",
           "unless": [
             "NADA_FORGIVEN"
-          ]
+          ],
+          "still": "still-nada"
         },
         {
-          "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called."
+          "text": "And Nuala of Faerie stays behind in the Dreaming, a gift to its court, with a favour still to be called.",
+          "still": "still-nuala-glade"
         },
         {
           "text": "When the last guest has gone, Aurie stands alone at the window of her palace. Ten thousand years, and one woman's face she cannot stop seeing.",
@@ -3126,7 +3182,8 @@
           "still": "throne-room"
         },
         {
-          "text": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm."
+          "text": "With her helm, her sand and her ruby, Aurie begins to rebuild her realm.",
+          "clip": "aurie-mending"
         },
         {
           "text": "The palace rises out of the sand. The gates of horn and ivory close again. Dreams that fled come creeping home.",
@@ -3136,7 +3193,8 @@
           "text": "Aurie walked her sister's rounds. Something of that walk has stayed with her.",
           "if": [
             "DEATH_ROUNDS"
-          ]
+          ],
+          "still": "still-death-rounds"
         },
         {
           "text": "Then one evening Lucienne comes to her with a letter, sealed with the sign of a book.",
@@ -3188,7 +3246,7 @@
           "aftermath": [
             {
               "text": "Lucienne bows. Behind her spectacles, she looks worried.",
-              "still": "library-hub"
+              "clip": "aurie-news"
             }
           ]
         },
@@ -3293,7 +3351,8 @@
               "still": "cellar-1988"
             },
             {
-              "text": "Paul holds him, and weeps, and does not let go."
+              "text": "Paul holds him, and weeps, and does not let go.",
+              "still": "still-paul-1988"
             }
           ]
         },
@@ -3315,7 +3374,8 @@
               "still": "cellar-1988"
             },
             {
-              "text": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking."
+              "text": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking.",
+              "still": "still-paul-sings"
             }
           ]
         }
@@ -3386,7 +3446,7 @@
           "aftermath": [
             {
               "text": "Johanna does not forgive her. But she hears it, and for a moment they stand in the rain together.",
-              "still": "london-rain"
+              "clip": "2.3a"
             }
           ]
         },
@@ -3433,17 +3493,20 @@
           "text": "It is from Calliope, the eldest of the nine Muses. Once, long ago, Aurie's lover."
         },
         {
-          "text": "Nada was not the only woman Aurie once loved, and failed."
+          "text": "Nada was not the only woman Aurie once loved, and failed.",
+          "clip": "aurie-nada"
         },
         {
           "text": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+          "still": "still-calliope-1927"
+        },
+        {
+          "text": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius.",
           "still": "still-madoc-desk"
         },
         {
-          "text": "His name is Richard Madoc. For three years he has used her, and every book he writes is praised as genius."
-        },
-        {
-          "text": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her."
+          "text": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her.",
+          "still": "still-calliope-prays"
         }
       ],
       "choices": [
@@ -3475,9 +3538,9 @@
       "beats": [
         {
           "text": "The lock turns to sand in Aurie's hand. The door swings open.",
-          "still": "still-calliope",
           "sfx": "door-creak",
-          "ambience": "night-room"
+          "ambience": "night-room",
+          "clip": "5.1d"
         },
         {
           "text": "Aurie stands in the doorway, and for a moment she cannot speak.",
@@ -3496,7 +3559,7 @@
         "maxTurns": 4,
         "canon": [
           "Calliope is the eldest of the nine Muses, immortal. She was trapped by the writer Erasmus Fry in 1927 and given to Richard Madoc in 1987 when Fry died. Madoc keeps her locked in this attic and forces her, and steals her inspiration for his books.",
-          "Long ago Calliope and Aurie were lovers, and married. They had a son, Orpheus. When Orpheus lost his wife and came to Aurie for help, Aurie was cold to him. Calliope has never forgiven that.",
+          "Long ago Calliope and Aurie were lovers, and married. They had a daughter, Orphea. When Orphea lost her bride and came to Aurie for help, Aurie was cold to her. Calliope has never forgiven that.",
           "Aurie herself was imprisoned for seventy-two years in a glass sphere, so she did not hear Calliope's prayers; Calliope does not know this unless Aurie tells her.",
           "Calliope is proud, exhausted, and does not want to need Aurie. She will accept help, but she will not beg."
         ],
@@ -3504,13 +3567,13 @@
         "possibilities": [
           "She explains she was imprisoned too: Calliope is stunned into silence, then something softens. Two prisoners.",
           "She apologises: Calliope says sorry is a small word for sixty years, but she hears it.",
-          "She mentions Orpheus: Calliope goes very still; old grief and anger.",
+          "She mentions Orphea: Calliope goes very still; old grief and anger.",
           "She is cold or businesslike: Calliope answers coldly, as she was answered once.",
           "She promises to free her: Calliope asks whether she means now, or after she has had her revenge on Madoc."
         ],
         "suggestions": [
           "I was a prisoner too. I couldn't hear you.",
-          "Do you hate me for Orpheus?",
+          "Do you hate me for Orphea?",
           "Do you want me to punish him?"
         ],
         "exits": {
@@ -3545,7 +3608,7 @@
             }
           },
           "NAMED_ORPHEUS": {
-            "when": "Aurie speaks of their son Orpheus with sorrow or regret.",
+            "when": "Aurie speaks of their daughter Orphea with sorrow or regret.",
             "effects": {
               "flags": {
                 "NAMED_ORPHEUS": true
@@ -3575,7 +3638,8 @@
               "sfx": "sand-magic"
             },
             {
-              "text": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to."
+              "text": "Calliope stands, for the first time in sixty years, and does not thank her. She does not need to.",
+              "still": "still-calliope-free"
             },
             {
               "text": "Then Aurie goes downstairs to find Richard Madoc.",
@@ -3595,10 +3659,11 @@
           "aftermath": [
             {
               "text": "Calliope stays bound on the bed while Aurie goes down the stairs.",
-              "still": "still-madoc"
+              "still": "still-calliope"
             },
             {
-              "text": "She says nothing. She has had a great deal of practice at waiting."
+              "text": "She says nothing. She has had a great deal of practice at waiting.",
+              "clip": "5.1a"
             }
           ]
         }
@@ -3618,7 +3683,8 @@
           "ambience": "night-room"
         },
         {
-          "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for."
+          "text": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for.",
+          "still": "still-madoc-sees"
         }
       ],
       "conversation": {
@@ -3672,11 +3738,11 @@
             },
             {
               "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
-              "clip": "5.1a",
               "unless": [
                 "CALLIOPE_FIRST"
               ],
-              "sfx": "sand-magic"
+              "sfx": "sand-magic",
+              "still": "still-calliope-free"
             },
             {
               "text": "Days later, Calliope asks Aurie to let him go. Aurie does. Not one idea remains to him, ever again."
@@ -3699,11 +3765,11 @@
           "aftermath": [
             {
               "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
-              "clip": "5.1a",
               "unless": [
                 "CALLIOPE_FIRST"
               ],
-              "sfx": "sand-magic"
+              "sfx": "sand-magic",
+              "still": "still-calliope-free"
             },
             {
               "text": "Calliope wants only one thing: for him to say aloud what he did.",
@@ -3737,11 +3803,11 @@
             },
             {
               "text": "Upstairs, the cords at Calliope's wrists pour away as sand. She walks out into the morning.",
-              "clip": "5.1a",
               "unless": [
                 "CALLIOPE_FIRST"
               ],
-              "sfx": "sand-magic"
+              "sfx": "sand-magic",
+              "still": "still-calliope-free"
             },
             {
               "text": "Calliope watches it done, and does not look away. But she does not thank Aurie, either."
@@ -3764,20 +3830,24 @@
           "still": "library-hub"
         },
         {
-          "text": "Aurie goes home to the Dreaming. Calliope is free. But Lucienne's list of what went wrong while Aurie was in the glass is not finished."
+          "text": "Aurie goes home to the Dreaming. Calliope is free. But Lucienne's list of what went wrong while Aurie was in the glass is not finished.",
+          "clip": "aurie-news"
         },
         {
-          "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home."
+          "text": "Lucienne has a list of the dreams and nightmares that fled while Aurie was gone. Most have come home.",
+          "still": "still-letter"
         },
         {
           "text": "Not the Corinthian. Aurie made him herself: a nightmare in the shape of a man, with small mouths where his eyes should be.",
           "still": "still-corinthian"
         },
         {
-          "text": "For seventy years he has been loose in the waking world, killing, and taking eyes."
+          "text": "For seventy years he has been loose in the waking world, killing, and taking eyes.",
+          "still": "still-corinthian-free"
         },
         {
-          "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her."
+          "text": "Then a young woman named Rose Walker begins to dream, and all the lost dreams start drifting toward her.",
+          "still": "still-rose-vortex"
         },
         {
           "text": "Rose is twenty-one, and has no idea that every lost dream in the world is turning toward her.",
@@ -3858,10 +3928,12 @@
               "sfx": "sand-magic"
             },
             {
-              "text": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth."
+              "text": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth.",
+              "still": "still-corinthian-skull"
             },
             {
-              "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are."
+              "text": "Then Aurie turns to the killers in their chairs, and makes every one of them see exactly what they are.",
+              "still": "still-aurie-convention"
             }
           ]
         },
@@ -3908,7 +3980,8 @@
               "still": "still-corinthian"
             },
             {
-              "text": "Somewhere in the Dreaming, a door that should be shut swings quietly open."
+              "text": "Somewhere in the Dreaming, a door that should be shut swings quietly open.",
+              "clip": "2.1b"
             }
           ]
         }
@@ -3933,7 +4006,8 @@
           "text": "Rose has found her brother. Tonight she sleeps in an old boarding house in Florida."
         },
         {
-          "text": "She dreams. And the walls between the dreams of everyone in the house come down."
+          "text": "She dreams. And the walls between the dreams of everyone in the house come down.",
+          "clip": "5.2bb"
         },
         {
           "text": "Every dreamer falls into one shared dream, and the shared dream begins to swallow the Dreaming.",
@@ -3947,7 +4021,8 @@
           "still": "still-aurie-vortex"
         },
         {
-          "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart."
+          "text": "Once in a great many ages, a vortex is born. If she is not stopped, every dreaming mind will be torn apart.",
+          "clip": "5.2ba"
         },
         {
           "text": "Aurie finds her at the centre of it, small and terrified.",
@@ -4007,10 +4082,11 @@
           "aftermath": [
             {
               "text": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
-              "still": "still-rose-vortex"
+              "still": "still-aurie-raises-hand"
             },
             {
-              "text": "And a voice behind them says: wait."
+              "text": "And a voice behind them says: wait.",
+              "still": "still-unity"
             }
           ]
         },
@@ -4032,7 +4108,8 @@
               "clip": "5.2ba"
             },
             {
-              "text": "And a voice behind them says: there is."
+              "text": "And a voice behind them says: there is.",
+              "clip": "5.2ca"
             }
           ]
         }
@@ -4142,7 +4219,8 @@
               "text": "Unity smiles, and closes her eyes, and is gone. Death is waiting for her, kindly."
             },
             {
-              "text": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room."
+              "text": "The walls of the dreams close again. Rose wakes in Florida, alive, with her brother asleep in the next room.",
+              "still": "still-rose-morning"
             },
             {
               "text": "Rose will never forget that the lady from her dreams raised a hand to kill her.",
@@ -4274,10 +4352,12 @@
           "sfx": "tavern-laughter"
         },
         {
-          "text": "Death laughs. She grants it, for her sister's sake, to see what happens."
+          "text": "Death laughs. She grants it, for her sister's sake, to see what happens.",
+          "clip": "5.3a"
         },
         {
-          "text": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so."
+          "text": "Aurie walks over to his table. Meet me here in a hundred years, she tells him, and tell me if you still think so.",
+          "still": "still-hob-1389"
         },
         {
           "card": "1489",
@@ -4427,7 +4507,8 @@
           "next": "5.3w",
           "aftermath": [
             {
-              "text": "Aurie stands, and walks out into the London fog."
+              "text": "Aurie stands, and walks out into the London fog.",
+              "still": "still-aurie-fog"
             },
             {
               "text": "Behind her, Hob calls out: I'll be here in a hundred years. I'll wait for you."
@@ -4595,13 +4676,15 @@
           "text": "Richard Madoc never writes again.",
           "if": [
             "MADOC_FLOOD"
-          ]
+          ],
+          "still": "madoc-room"
         },
         {
           "text": "Richard Madoc never writes again.",
           "if": [
             "MADOC_EMPTY"
-          ]
+          ],
+          "still": "library-hub"
         },
         {
           "text": "Richard Madoc told the world what he did.",
@@ -4613,44 +4696,52 @@
           "text": "The Corinthian's skull sits on a shelf in Lucienne's library.",
           "if": [
             "CORINTHIAN_UNMADE"
-          ]
+          ],
+          "still": "still-skull-shelf"
         },
         {
           "text": "A heap of dark sand waits in a locked box for Aurie to shape it again.",
           "if": [
             "CORINTHIAN_REMADE"
-          ]
+          ],
+          "still": "library-hub"
         },
         {
           "text": "And the Corinthian is still out there, smiling.",
           "if": [
             "CORINTHIAN_FREE"
-          ]
+          ],
+          "still": "still-corinthian-free"
         },
         {
-          "text": "Rose Walker is alive. Unity Kincaid sleeps at last, for good."
+          "text": "Rose Walker is alive. Unity Kincaid sleeps at last, for good.",
+          "still": "still-unity-rose"
         },
         {
           "text": "Desire has made a dangerous enemy.",
           "if": [
             "DESIRE_THREATENED"
-          ]
+          ],
+          "still": "library-hub"
         },
         {
           "text": "And in a London pub, a man who will not die has a friend.",
           "if": [
             "HOB_FRIEND"
-          ]
+          ],
+          "clip": "aurie-hob"
         },
         {
           "text": "And in a London pub, a man who will not die is still waiting to hear the word.",
           "unless": [
             "HOB_FRIEND"
-          ]
+          ],
+          "clip": "5.3ca"
         },
         {
           "text": "End of Part Five.",
-          "style": "hook"
+          "style": "hook",
+          "clip": "aurie-hob"
         }
       ],
       "next": "6.0",
@@ -4677,14 +4768,15 @@
         },
         {
           "text": "Then a raven lands on the reading table, scattering Lucienne's papers.",
-          "still": "still-matthew",
-          "sfx": "raven"
+          "sfx": "raven",
+          "clip": "6.0a"
         },
         {
           "text": "Long ago, Aurie always kept a raven: a dreamer who died, and chose to stay and serve. There has not been one since she was taken."
         },
         {
-          "text": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on."
+          "text": "This one was a man named Matthew, until last night. He died alone, and in his last dream he asked not to be sent on.",
+          "clip": "6.0b"
         }
       ],
       "conversation": {
@@ -4766,7 +4858,7 @@
       "beats": [
         {
           "text": "There is one last name on Lucienne's list of runaways. Two names, in fact.",
-          "still": "false-house"
+          "clip": "6.0a"
         },
         {
           "text": "Two of the lost nightmares never came home. Brute and Glob. Lucienne has found where they went.",
@@ -4777,7 +4869,8 @@
           "text": "Deep in the Dreaming, they built a little house, and inside it they kept a dead man's ghost and his living wife."
         },
         {
-          "text": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant."
+          "text": "Her name is Lyta Hall. She has been asleep here, dreaming she is happy, for two years. She is eight months pregnant.",
+          "still": "still-lyta"
         },
         {
           "text": "Her husband Hector is a ghost who doesn't know he is dead.",
@@ -4867,7 +4960,7 @@
               "LYTA_WARNED": true
             }
           },
-          "next": "6.2",
+          "next": "6.2p",
           "aftermath": [
             {
               "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
@@ -4889,14 +4982,15 @@
               "LYTA_GRIEVES": true
             }
           },
-          "next": "6.2",
+          "next": "6.2p",
           "aftermath": [
             {
               "text": "Lyta wakes in her own bed in the waking world, alone, her hands over her belly.",
               "still": "still-lyta-wakes"
             },
             {
-              "text": "A month later her son is born. She names him Daniel. She grieves; she does not hate."
+              "text": "A month later her son is born. She names him Daniel. She grieves; she does not hate.",
+              "still": "still-lyta-rocking"
             }
           ]
         }
@@ -4906,42 +5000,22 @@
       "id": "6.2",
       "title": "Delirium",
       "pov": "POV",
-      "episodeTitle": "Chapter 23 · The Prodigal",
       "music": "escape",
       "fx": "glitter",
       "recap": "Delirium begged Aurie to help find their lost brother Destruction. The search through the waking world failed.",
       "beats": [
-        {
-          "text": "Delirium, the youngest of the Endless, comes to the palace, trailing small coloured fish through the air.",
-          "still": "still-delirium",
-          "ambience": "dreaming"
-        },
-        {
-          "text": "She wants to find their brother Destruction, who walked away three hundred years ago. She has asked everyone else. They all said no."
-        },
-        {
-          "text": "Aurie remembers what Death told her at the family table, and says yes.",
-          "if": [
-            "ASKED_DEATH"
-          ]
-        },
-        {
-          "text": "Aurie surprises herself, and says yes.",
-          "unless": [
-            "ASKED_DEATH"
-          ]
-        },
         {
           "card": "The waking world",
           "still": "desert-road",
           "ambience": "rain"
         },
         {
-          "text": "They travel as mortals do, in a borrowed car. Delirium chooses the roads by the colours of their names.",
+          "text": "They set out the next morning, two of the Endless in a borrowed car, as mortals do.",
           "still": "still-aurie-roadtrip"
         },
         {
-          "text": "Somewhere in the middle of nowhere, Delirium makes Aurie stop the car. She has seen a frog by the road, and she needs to tell it a secret."
+          "text": "Somewhere in the middle of nowhere, Delirium makes Aurie stop the car. She has seen a frog by the road, and she needs to tell it a secret.",
+          "still": "still-delirium-frog"
         }
       ],
       "choices": [
@@ -4985,36 +5059,41 @@
     },
     "6.3": {
       "id": "6.3",
-      "title": "The Son",
+      "title": "The Daughter",
       "pov": "POV",
-      "episodeTitle": "Chapter 24 · Orpheus",
       "music": "the-years",
       "fx": "flicker",
-      "recap": "Aurie went to her son Orpheus, a living head kept in a shrine, to ask where Destruction was. His price was his own death.",
+      "recap": "Aurie went to her daughter Orphea, a living head kept in a sea cave on Lesbos, to ask where Destruction is.",
       "beats": [
         {
-          "card": "A Greek island",
+          "card": "Lesbos · a sea cave",
           "still": "orpheus-shrine"
         },
         {
-          "text": "Aurie climbs the steps to the shrine alone, and stops at the door.",
+          "text": "The boat comes into a little cove at dusk. Delirium stays aboard, teaching the fish to do tricks.",
           "still": "still-aurie-shrine"
         },
         {
-          "text": "His mother sent word that Aurie was coming. He has been listening for her footsteps for weeks.",
+          "text": "Aurie climbs the steps to the cave alone, and stops at the door."
+        },
+        {
+          "text": "Her mother sent word that Aurie was coming. She has been listening for her footsteps for weeks.",
           "if": [
             "CALLIOPE_ASKED_ORPHEUS"
           ]
         },
         {
-          "text": "Only his head survived, and it cannot die. For three thousand years, a family of priests has kept it here, singing.",
+          "text": "Inside, an old priestess has kept her for forty years, as her mother did before her, and hers.",
           "still": "still-orpheus"
         },
         {
-          "text": "Aurie has not spoken to her son since. She told him he was dead to her."
+          "text": "Orphea rests on a bed of white flowers, only a head now, and still beautiful, and she cannot die."
         },
         {
-          "text": "Once, to Calliope, Aurie spoke his name with sorrow. Calliope must have told him.",
+          "text": "Across the water, a small island is catching the last of the sun. Orphea keeps glancing toward it."
+        },
+        {
+          "text": "Once, to Calliope, Aurie spoke her name with sorrow. Calliope must have told her.",
           "if": [
             "NAMED_ORPHEUS"
           ]
@@ -5024,26 +5103,26 @@
         "character": "orpheus",
         "maxTurns": 4,
         "canon": [
-          "Orpheus is the son of Aurie (Dream of the Endless) and the Muse Calliope. His wife Eurydice died on their wedding day; Aurie refused to help him; Death gave him a kind of immortality so he could go to the underworld; he failed when he looked back; the Bacchantes tore him apart and only his living head remains, kept by priests on a Greek island.",
-          "Aurie told him three thousand years ago that he was dead to her, and never visited. He still calls her 'Mother'.",
-          "He knows where Destruction is. He will tell her, but his price is that afterwards she grants him the death he has waited three thousand years for. Only she can do it.",
-          "If Aurie spoke of him with sorrow to Calliope (flag NAMED_ORPHEUS), he has heard about it from his mother, and it moves him.",
-          "He is gentle, sorrowful, tired, still a musician; there is love under three thousand years of hurt."
+          "Orphea is the daughter of Aurie (Dream of the Endless) and the Muse Calliope. Her bride Eurydice died on their wedding day; Aurie refused to help her; she went down to the underworld and sang for Eurydice's life, and lost her when she looked back; the wild women of the hills tore her apart and only her living head remains, kept by a priestess in a sea cave on Lesbos.",
+          "Aurie told her three thousand years ago that she was dead to her, and never visited. She still calls her 'Mother'.",
+          "She knows where Destruction is: on the small island across the water, the one she can see from the cave. She will tell her, but her price is that afterwards Aurie grants her the death she has waited three thousand years for. Only Aurie can do it.",
+          "If Aurie spoke of her with sorrow to Calliope (flag NAMED_ORPHEUS), she has heard about it from her mother, and it moves her.",
+          "She is warm, proud, sorrowful and tired, still a singer with a dry wit; there is love under three thousand years of hurt."
         ],
         "opening": "Mother. You came. Three thousand years, and you came because you need something. Of course you did. I know where he is. But I have a price.",
         "possibilities": [
-          "She apologises for abandoning him: he is silent a long time, then thanks her, and his voice breaks.",
-          "She asks what his price is: he says, when she has found Destruction, come back and give me my death.",
-          "She is cold: he says he expected that, and it still hurts.",
-          "She asks about Eurydice: he says he still dreams of her every night; it is the only dream he has."
+          "She apologises for abandoning her: Orphea is silent a long time, then thanks her, and her voice breaks.",
+          "She asks what the price is: Orphea says, when she has found Destruction, come back and give me my death.",
+          "She is cold: Orphea says she expected that, and it still hurts.",
+          "She asks about Eurydice: Orphea says she still dreams of her every night; it is the only dream she has."
         ],
         "suggestions": [
-          "I'm sorry, my son. I should have come.",
+          "I'm sorry, my daughter. I should have come.",
           "What is your price?",
           "Do you still dream of Eurydice?"
         ],
         "exits": {
-          "6.3.PROMISE": "Aurie agrees to his price: she will come back and give him his death."
+          "6.3.PROMISE": "Aurie agrees to her price: she will come back and give her her death."
         },
         "triggers": [
           {
@@ -5053,7 +5132,7 @@
         ],
         "consequences": {
           "SORRY_ORPHEUS": {
-            "when": "Aurie sincerely apologises to Orpheus for abandoning him.",
+            "when": "Aurie sincerely apologises to Orphea for abandoning her.",
             "effects": {
               "traits": {
                 "mercy": 1
@@ -5062,9 +5141,9 @@
                 "SORRY_ORPHEUS": true
               }
             },
-            "ripple": "For a moment the priests stop singing.",
+            "ripple": "For a moment the old priestess stops singing.",
             "echo": {
-              "text": "Dream told her son Orpheus she was sorry, after three thousand years.",
+              "text": "Dream told her daughter Orphea she was sorry, after three thousand years.",
               "knownBy": [
                 "calliope",
                 "death",
@@ -5086,10 +5165,10 @@
           "next": "6.4",
           "aftermath": [
             {
-              "text": "He tells her: a small island, not far from here. Their brother has been painting."
+              "text": "She tells her: the little island across the water, the one with the sun on it. Their brother has been painting."
             },
             {
-              "text": "Come back, Mother, he says. You promised."
+              "text": "Come back, Mother, Orphea says. You promised."
             }
           ]
         }
@@ -5102,24 +5181,25 @@
       "pov": "POV",
       "music": "library",
       "fx": "embers",
-      "recap": "Aurie and Delirium found their brother Destruction, living as a painter on a Greek island with his talking dog.",
+      "recap": "Aurie and Delirium found their brother Destruction on the island across the water from Orphea's cave.",
       "beats": [
         {
-          "card": "Another island",
+          "card": "The island across the water",
           "still": "destruction-island"
         },
         {
-          "text": "Their brother is exactly where Orpheus said he would be.",
-          "still": "still-destruction"
+          "text": "In the morning, the fisherman rows them across the strait. Their brother is exactly where Orphea said he would be."
         },
         {
-          "text": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry."
+          "text": "Destruction of the Endless, who left his realm three hundred years ago. He paints, very badly, and cooks, and writes terrible poetry.",
+          "still": "still-destruction-painting"
         },
         {
-          "text": "His dog Barnabas can talk. Barnabas has opinions about the poetry."
+          "text": "His dog Barnabas trots down to meet the boat. Barnabas can talk. He would like everyone to know he has opinions about the poetry."
         },
         {
-          "text": "Delirium runs into his arms. He lifts her off her feet like a child."
+          "text": "Delirium runs up the beach and into her brother's arms. He lifts her off her feet and swings her round like a child.",
+          "clip": "6.4a"
         }
       ],
       "conversation": {
@@ -5135,7 +5215,7 @@
         "possibilities": [
           "She asks why he left: he explains simply, without guilt: he didn't want to be the one who did it any more.",
           "She tells him the Endless do not quit: he laughs and says the Endless are whatever they decide to be.",
-          "She asks what it cost Orpheus: he knows, and is very gentle with her.",
+          "She asks what it will cost Orphea: he knows, and is very gentle with her.",
           "She admits she is changing: he says that is the bravest thing he has heard in three hundred years, and the most dangerous."
         ],
         "suggestions": [
@@ -5213,63 +5293,64 @@
       "pov": "POV",
       "music": "the-years",
       "fx": "flicker",
-      "recap": "Aurie returned to Orpheus to pay his price.",
+      "recap": "Aurie went back to the cave to pay Orphea's price.",
       "beats": [
         {
-          "text": "Aurie returns to the shrine, alone, as she promised.",
-          "still": "still-aurie-son"
+          "text": "At dusk, Aurie rows back across the strait alone, as she promised.",
+          "clip": "6.5r"
         },
         {
-          "text": "Orpheus is waiting. The priests have gone outside. They know what is coming.",
+          "text": "Orphea is waiting. The old priestess has gone outside. She knows what is coming.",
           "still": "still-orpheus"
         },
         {
-          "text": "He told her the truth: Destruction was there. Now it is her turn."
+          "text": "Her daughter told her the truth: Destruction was there. Now it is Aurie's turn.",
+          "still": "still-aurie-son"
         }
       ],
       "conversation": {
         "character": "orpheus",
         "maxTurns": 4,
         "canon": [
-          "Aurie has come back to pay Orpheus's price: to give him the death he has waited three thousand years for. Only she, his parent, can do it.",
-          "If she grants it, she spills the blood of her own family. The ancient law says the Kindly Ones, the Furies, may then come for her. Orpheus knows this and is sorry, but he is so tired.",
-          "If Aurie asks Death to do it instead, Death will not; she says he is Aurie's to release.",
-          "If Aurie apologised to him before (flag SORRY_ORPHEUS), he remembers it and says it was worth three thousand years.",
-          "Orpheus is calm, loving, frightened only a little. He wants to see Eurydice."
+          "Aurie has come back to pay Orphea's price: to give her the death she has waited three thousand years for. Only Aurie, her parent, can do it.",
+          "If she grants it, she spills the blood of her own family. The ancient law says the Kindly Ones, the Furies, may then come for her. Orphea knows this and is sorry, but she is so tired.",
+          "If Aurie asks Death to do it instead, Death will not; she says Orphea is Aurie's to release.",
+          "If Aurie apologised to her before (flag SORRY_ORPHEUS), she remembers it and says it was worth three thousand years.",
+          "Orphea is calm, loving, frightened only a little. She wants to see Eurydice."
         ],
         "opening": "You came back. I wasn't sure you would. Please, Mother. I'm so tired. Let me go.",
         "possibilities": [
-          "She hesitates: he asks her, gently, to keep her promise.",
-          "She asks if he is afraid: he says only a little, and that Eurydice is waiting.",
-          "She tells him she loves him: he weeps, and says he always knew, somewhere.",
-          "She asks Death to do it instead: he says Death will not; it has to be her."
+          "She hesitates: Orphea asks her, gently, to keep her promise.",
+          "She asks if she is afraid: Orphea says only a little, and that Eurydice is waiting.",
+          "She tells her she loves her: Orphea weeps, and says she always knew, somewhere.",
+          "She asks Death to do it instead: Orphea says Death will not; it has to be her."
         ],
         "suggestions": [
           "Are you afraid?",
-          "I love you, my son.",
+          "I love you, my daughter.",
           "Could Death not do this instead?"
         ],
         "exits": {
-          "6.5.RELEASE": "Aurie grants Orpheus his death.",
+          "6.5.RELEASE": "Aurie grants Orphea her death.",
           "6.5.REFUSE": "Aurie refuses and breaks her promise."
         },
         "triggers": [
           {
             "exit": "6.5.RELEASE",
-            "player": "go to her|go to eurydice|be at peace|i release you|rest now|i let you go|goodbye, my son"
+            "player": "go to her|go to eurydice|be at peace|i release you|rest now|i let you go|goodbye, my daughter"
           }
         ],
         "consequences": {
           "SAID_LOVE": {
-            "when": "Aurie tells Orpheus she loves him.",
+            "when": "Aurie tells Orphea she loves her.",
             "effects": {
               "flags": {
                 "SAID_LOVE_ORPHEUS": true
               }
             },
-            "ripple": "Orpheus closes his eyes, and smiles.",
+            "ripple": "Orphea closes her eyes, and smiles.",
             "echo": {
-              "text": "Before the end, Dream told her son Orpheus that she loved him.",
+              "text": "Before the end, Dream told her daughter Orphea that she loved her.",
               "knownBy": [
                 "calliope",
                 "death",
@@ -5282,7 +5363,7 @@
       "choices": [
         {
           "id": "6.5.RELEASE",
-          "text": "Go to her, my son.",
+          "text": "Go to her, my daughter.",
           "effects": {
             "traits": {
               "mercy": 3
@@ -5295,11 +5376,11 @@
           "next": "6.6",
           "aftermath": [
             {
-              "text": "Aurie touches her son's face, and gives him what he asked for.",
+              "text": "Aurie touches her daughter's face, and gives her what she asked for.",
               "clip": "6.5a"
             },
             {
-              "text": "He smiles, and is gone. Somewhere, very far away, a woman named Eurydice turns, and sees him coming."
+              "text": "She smiles, and is gone, like light off the water. Somewhere, very far away, a woman named Eurydice turns, and sees her coming."
             },
             {
               "text": "Aurie has spilled the blood of her own family. Far away, three old women look up from their weaving."
@@ -5320,11 +5401,11 @@
           "next": "6.6b",
           "aftermath": [
             {
-              "text": "Aurie turns away. Behind her, Orpheus begins to sing, very softly, the same song he has sung for three thousand years.",
+              "text": "Aurie turns away. Behind her, Orphea begins to sing, very softly, the same song she has sung for three thousand years.",
               "still": "still-orpheus"
             },
             {
-              "text": "The law has nothing to say about a broken promise. Her son has a great deal to say about it, forever."
+              "text": "The law has nothing to say about a broken promise. Her daughter has a great deal to say about it, forever."
             }
           ]
         }
@@ -5366,22 +5447,25 @@
           "if": [
             "MATTHEW_RAVEN"
           ],
-          "sfx": "raven"
+          "sfx": "raven",
+          "still": "still-raven-stream"
         },
         {
           "text": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing.",
           "unless": [
             "MATTHEW_RAVEN"
-          ]
+          ],
+          "still": "still-lucienne-stream"
         },
         {
           "text": "No, Aurie says. But I think I will be.",
           "if": [
             "ORPHEUS_RELEASED"
-          ]
+          ],
+          "still": "still-raven-stream"
         },
         {
-          "text": "I broke my word to my own son, Aurie says. I will hear him singing for the rest of my life.",
+          "text": "I broke my word to my own daughter, Aurie says. I will hear her singing for the rest of my life.",
           "unless": [
             "ORPHEUS_RELEASED"
           ]
@@ -5408,10 +5492,10 @@
       "beats": [
         {
           "text": "A raven sleeps on the back of Aurie's throne.",
-          "still": "library-hub",
           "if": [
             "MATTHEW_RAVEN"
-          ]
+          ],
+          "still": "still-raven-throne"
         },
         {
           "text": "In the waking world, Lyta Hall rocks her son Daniel to sleep, and checks the shadows twice.",
@@ -5436,17 +5520,17 @@
         },
         {
           "text": "Somewhere, a very large man and a talking dog are starting again.",
-          "still": "destruction-island"
+          "still": "still-destruction-painting"
         },
         {
-          "text": "Orpheus is at peace. And three old women have begun to whisper Aurie's name.",
+          "text": "Orphea is at peace. And three old women have begun to whisper Aurie's name.",
           "if": [
             "ORPHEUS_RELEASED"
           ],
-          "still": "orpheus-shrine"
+          "still": "still-orpheus"
         },
         {
-          "text": "On a Greek island, a head that cannot die is still singing.",
+          "text": "On a Greek island, a woman who cannot die is still singing.",
           "if": [
             "ORPHEUS_REFUSED"
           ],
@@ -5497,13 +5581,15 @@
           "text": "Lyta does not know any of that. She remembers only the pale woman who looked at her son and said: mine.",
           "if": [
             "LYTA_THREATENED"
-          ]
+          ],
+          "still": "still-aurie-false-house"
         },
         {
           "text": "Lyta does not know any of that. She knows only that her son was conceived in the Dreaming, and that its queen has always watched him.",
           "unless": [
             "LYTA_THREATENED"
-          ]
+          ],
+          "still": "still-loki-daniel"
         },
         {
           "text": "In the Dreaming, Lucienne brings Aurie the news. Aurie rises from her throne.",
@@ -5546,7 +5632,8 @@
           "next": "7.1b",
           "aftermath": [
             {
-              "text": "Aurie steps out of her realm, alone, into the waking world."
+              "text": "Aurie steps out of her realm, alone, into the waking world.",
+              "still": "still-aurie-fog"
             }
           ]
         },
@@ -5586,8 +5673,8 @@
             "MATTHEW_RAVEN"
           ],
           "sfx": "raven",
-          "still": "still-matthew",
-          "ambience": "dreaming"
+          "ambience": "dreaming",
+          "clip": "6.0b"
         },
         {
           "text": "Lucienne walks a thousand sleeping minds, lantern raised, listening.",
@@ -5611,16 +5698,19 @@
           "if": [
             "MATTHEW_RAVEN"
           ],
-          "sfx": "raven"
+          "sfx": "raven",
+          "clip": "7.1d"
         },
         {
           "text": "Lucienne steps out of the dark, and says the one name Loki fears.",
           "unless": [
             "MATTHEW_RAVEN"
-          ]
+          ],
+          "clip": "2.1c"
         },
         {
-          "text": "Loki drops the child and is gone. Daniel is safe. Daniel is safe."
+          "text": "Loki drops the child and is gone. Daniel is safe. Daniel is safe.",
+          "still": "still-daniel-safe"
         },
         {
           "text": "But it is too late. Lyta has already gone looking for the ones who punish crimes against kin.",
@@ -5641,7 +5731,8 @@
           "next": "7.2",
           "aftermath": [
             {
-              "text": "Daniel sleeps in the library, among the books, and does not cry once."
+              "text": "Daniel sleeps in the library, among the books, and does not cry once.",
+              "still": "still-daniel-library"
             }
           ]
         },
@@ -5659,7 +5750,8 @@
           "next": "7.2",
           "aftermath": [
             {
-              "text": "Daniel sleeps in his own crib again. His mother is not there to see it."
+              "text": "Daniel sleeps in his own crib again. His mother is not there to see it.",
+              "still": "lyta-nursery"
             }
           ]
         }
@@ -5768,10 +5860,12 @@
           "ambience": "sea"
         },
         {
-          "text": "Lyta does not wait for Aurie. She walks straight into the fire's light, and takes her son out of a god's hands."
+          "text": "Lyta does not wait for Aurie. She walks straight into the fire's light, and takes her son out of a god's hands.",
+          "clip": "7.1e"
         },
         {
-          "text": "Loki looks at the two of them, and decides he has somewhere else to be."
+          "text": "Loki looks at the two of them, and decides he has somewhere else to be.",
+          "still": "still-loki-leaves"
         },
         {
           "text": "Lyta holds Daniel, and shakes, and does not let go.",
@@ -5779,7 +5873,7 @@
           "fx": "glitter"
         },
         {
-          "text": "Lyta never goes looking for the Kindly Ones. But they have not forgotten Orpheus. A son's blood does not need a mother to speak for it.",
+          "text": "Lyta never goes looking for the Kindly Ones. But they have not forgotten Orphea. A daughter's blood does not need a mother to speak for it.",
           "if": [
             "ORPHEUS_RELEASED"
           ]
@@ -5862,8 +5956,8 @@
         "canon": [
           "Thessaly is an ancient witch from Thessaly in Greece, about three thousand years old, who looks like a petite young woman. Deadpan, dry, practical, utterly ruthless when crossed. She is not afraid of Aurie.",
           "She has taken Lyta under her protection and is showing her the way to the Kindly Ones, the Furies, who punish those who spill the blood of their own family.",
-          "If Aurie released Orpheus (flag ORPHEUS_RELEASED), the Kindly Ones have a claim on her: she spilled her own son's blood, whatever the reason. Thessaly knows this and says so flatly.",
-          "If Aurie refused Orpheus (flag ORPHEUS_REFUSED), the Kindly Ones have no claim on her. Thessaly says Lyta's road ends at a door that will not open, and that she will tell Lyta so herself.",
+          "If Aurie released Orphea (flag ORPHEUS_RELEASED), the Kindly Ones have a claim on her: she spilled her own daughter's blood, whatever the reason. Thessaly knows this and says so flatly.",
+          "If Aurie refused Orphea (flag ORPHEUS_REFUSED), the Kindly Ones have no claim on her. Thessaly says Lyta's road ends at a door that will not open, and that she will tell Lyta so herself.",
           "Lyta stands a little way off in the moonlight, barefoot, not speaking."
         ],
         "opening": "Oh, good. It's you. I was hoping we could skip the part where you threaten me. Lyta has a right to ask. Go home.",
@@ -6034,7 +6128,8 @@
           "text": "Aurie lost a night to Thessaly's moon. The Kindly Ones are already at the library.",
           "if": [
             "FOUGHT_THESSALY"
-          ]
+          ],
+          "clip": "aurie-thessaly"
         },
         {
           "text": "Aurie stands on the palace steps and watches her realm burn.",
@@ -6091,7 +6186,8 @@
               "still": "still-lucienne-stand"
             },
             {
-              "text": "The lantern goes out."
+              "text": "The lantern goes out.",
+              "clip": "7.3c"
             }
           ]
         }
@@ -6192,10 +6288,11 @@
           "aftermath": [
             {
               "text": "Aurie breaks the old law, and every faerie in the glade turns away from her.",
-              "still": "faerie-glade"
+              "clip": "7.4b"
             },
             {
-              "text": "Nuala's face is the last thing she sees before the Dreaming."
+              "text": "Nuala's face is the last thing she sees before the Dreaming.",
+              "still": "faerie-glade"
             }
           ]
         },
@@ -6247,7 +6344,8 @@
           ]
         },
         {
-          "text": "On the walls, the sigils of her family glow like doors. Desire's is laughing. Delirium's is weeping. Destruction's is open."
+          "text": "On the walls, the sigils of her family glow like doors. Desire's is laughing. Delirium's is weeping. Destruction's is open.",
+          "still": "still-family-sigils"
         },
         {
           "text": "And on the steps of her throne, someone is sitting, feeding crumbs to a pigeon that should not be there.",
@@ -6262,9 +6360,9 @@
         "character": "death-end",
         "maxTurns": 5,
         "canon": [
-          "This is the end of Aurie's story. The Kindly Ones are at the door of the throne room because Aurie spilled the blood of her son Orpheus. They will destroy the rest of the Dreaming to reach her.",
+          "This is the end of Aurie's story. The Kindly Ones are at the door of the throne room because Aurie spilled the blood of her daughter Orphea. They will destroy the rest of the Dreaming to reach her.",
           "Death, Aurie's elder sister, sits on the throne steps. She has come because Aurie has, in her heart, already chosen to change, and for one of the Endless, changing is a kind of dying. A new Dream will rise: Daniel, the child of the Dreaming.",
-          "Aurie can take Death's hand and go with her (only if she released Orpheus and has learned mercy), stand and fight the Kindly Ones as the queen who never changes, or, if she listened to Destruction, walk through his open door and leave her duty behind.",
+          "Aurie can take Death's hand and go with her (only if she released Orphea and has learned mercy), stand and fight the Kindly Ones as the queen who never changes, or, if she listened to Destruction, walk through his open door and leave her duty behind.",
           "If Aurie has not learned enough mercy to take her hand (mercy below 6), Death says gently: You could have. You still can. But you haven't learned how yet.",
           "Death is warm, funny, tender and honest. She does not push. She has never been sadder or kinder."
         ],
@@ -6311,7 +6409,8 @@
               "clip": "aurie-death-hand"
             },
             {
-              "text": "And somewhere in the Dreaming, in the library, a small boy opens his eyes, and they are full of stars."
+              "text": "And somewhere in the Dreaming, in the library, a small boy opens his eyes, and they are full of stars.",
+              "clip": "7.5b"
             }
           ]
         },
@@ -6397,64 +6496,75 @@
           "text": "Calliope, who came to forgive, and did.",
           "if": [
             "CALLIOPE_FREED"
-          ]
+          ],
+          "still": "still-calliope-free"
         },
         {
           "text": "Johanna Constantine, smoking at the back, who will deny that she came.",
           "if": [
             "CONSTANTINE_ALLY"
-          ]
+          ],
+          "still": "still-johanna"
         },
         {
           "text": "Matthew, who will not stop saying boss.",
           "if": [
             "MATTHEW_RAVEN"
-          ]
+          ],
+          "still": "still-matthew"
         },
         {
           "text": "Lucienne, who kept the library while the Dreaming burned.",
           "if": [
             "SAVED_PEOPLE"
-          ]
+          ],
+          "still": "still-johanna"
         },
         {
           "text": "Lucienne is not there. Her lantern is, on an empty chair.",
           "if": [
             "PEOPLE_STOOD"
-          ]
+          ],
+          "still": "still-lantern-chair"
         },
         {
           "text": "Lucienne, at the front, with her lantern, who never had to see the Dreaming burn.",
           "if": [
             "LYTA_LISTENED"
-          ]
+          ],
+          "still": "still-wake"
         },
         {
           "text": "Nuala of Faerie, holding a single white flower.",
           "if": [
             "HONOURED_NUALA"
-          ]
+          ],
+          "still": "still-nuala-glade"
         },
         {
           "text": "And from Fiddler's Green, a whole meadow of wildflowers, which walked there by itself.",
           "if": [
             "GREEN_FRIEND"
-          ]
+          ],
+          "still": "fiddlers-green"
         },
         {
           "text": "The ghost of Alex Burgess, young again, who finally gets to say thank you.",
           "if": [
             "ALEX_RELENTED"
-          ]
+          ],
+          "still": "still-nuala-glade"
         },
         {
           "text": "Lyta Hall stands at the back, holding her son's hand, and does not look away.",
           "if": [
             "LYTA_LISTENED"
-          ]
+          ],
+          "still": "still-lyta-daniel"
         },
         {
-          "text": "And the Endless come, all of them, which has not happened in a very long time."
+          "text": "And the Endless come, all of them, which has not happened in a very long time.",
+          "still": "still-nuala-glade"
         },
         {
           "text": "Destiny, who closes his book for one hour: the only hour in all of time he has not read.",
@@ -6470,17 +6580,17 @@
         },
         {
           "text": "Delirium, who leaves a little fish made of gold light on the bier, and tells it a secret.",
-          "still": "still-delirium",
           "if": [
             "DELIRIUM_LOVED"
-          ]
+          ],
+          "still": "still-delirium-realm"
         },
         {
           "text": "Delirium, who remembers that her sister came to find her once, on a desert road, and said sorry.",
-          "still": "still-delirium",
           "if": [
             "DELIRIUM_FORGAVE"
-          ]
+          ],
+          "still": "still-delirium-frog"
         },
         {
           "text": "And Destruction, in a coat that does not fit, with a dog who for once has no opinions at all.",
@@ -6506,11 +6616,12 @@
       "beats": [
         {
           "text": "Aurie fights. And because she is Dream of the Endless, she wins.",
-          "still": "dreaming-siege",
-          "sfx": "thunder"
+          "sfx": "thunder",
+          "clip": "aurie-siege"
         },
         {
-          "text": "The Kindly Ones are gone. So is almost everything else."
+          "text": "The Kindly Ones are gone. So is almost everything else.",
+          "still": "dreaming-siege"
         },
         {
           "text": "She stands before her cracked throne in a realm of ash, and the nightmares she can no longer hold drift out into the waking world.",
@@ -6535,14 +6646,15 @@
       "beats": [
         {
           "text": "Aurie walks away from the Dreaming, as her brother once walked away from his realm.",
+          "clip": "aurie-door"
+        },
+        {
+          "text": "Without her, the Dreaming fades, slowly, like a dream does after waking.",
           "still": "still-dreaming-fading"
         },
         {
-          "text": "Without her, the Dreaming fades, slowly, like a dream does after waking."
-        },
-        {
           "text": "Delirium comes looking for her, years later, and finds only ruins and a door that will not open.",
-          "still": "still-delirium"
+          "still": "still-delirium-ruins"
         },
         {
           "text": "In Destiny's book, her chapter stops in the middle of a sentence.",
@@ -6553,7 +6665,7 @@
           "if": [
             "LISTENED_DESTRUCTION"
           ],
-          "still": "destruction-island"
+          "still": "still-painted-sea"
         }
       ],
       "ambience": "night-forest",
@@ -6567,20 +6679,22 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "The Kindly Ones have no claim on Aurie. She never spilled her son's blood. She only broke her word.",
+          "text": "The Kindly Ones have no claim on Aurie. She never spilled her daughter's blood. She only broke her word.",
           "still": "still-kindly-ones"
         },
         {
           "text": "Lyta's grief has nowhere to go. Thessaly takes her somewhere far away, and teaches her to live with it.",
           "unless": [
             "LYTA_LISTENED"
-          ]
+          ],
+          "still": "still-lyta-thessaly-island"
         },
         {
           "text": "Lyta keeps her son. He grows up ordinary, and loved, and dreams very vividly.",
           "if": [
             "LYTA_LISTENED"
-          ]
+          ],
+          "still": "still-lyta-son-kitchen"
         },
         {
           "text": "Aurie keeps her realm. She keeps her throne. She keeps everything.",
@@ -6591,7 +6705,8 @@
           "still": "still-orpheus"
         },
         {
-          "text": "She will be queen of the Dreaming forever. She will never change. That was her choice."
+          "text": "She will be queen of the Dreaming forever. She will never change. That was her choice.",
+          "clip": "aurie-alone"
         }
       ],
       "ambience": "sea",
@@ -6613,13 +6728,16 @@
           "text": "The Corinthian takes the long road south, and stops wherever he likes."
         },
         {
-          "text": "In a locked house in Florida, a little boy named Jed is dreaming of his sister. The Corinthian has heard him."
+          "text": "In a locked house in Florida, a little boy named Jed is dreaming of his sister. The Corinthian has heard him.",
+          "still": "still-jed-sleeps"
         },
         {
-          "text": "Rose finds her brother first. By one night. She will never know how close it was."
+          "text": "Rose finds her brother first. By one night. She will never know how close it was.",
+          "still": "still-rose-jed"
         },
         {
-          "text": "Aurie feels every dream he walks through. She chose this."
+          "text": "Aurie feels every dream he walks through. She chose this.",
+          "still": "still-jed-sleeps"
         }
       ],
       "next": "5.2b",
@@ -6647,7 +6765,7 @@
           "text": "And every night she says the same words to her sleeping belly: no one will take you. No one."
         }
       ],
-      "next": "6.2",
+      "next": "6.2p",
       "ambience": "rain"
     },
     "6.4b": {
@@ -6663,10 +6781,12 @@
           "still": "still-painted-sea"
         },
         {
-          "text": "He paints her portrait. It is a very bad painting. She keeps it."
+          "text": "He paints her portrait. It is a very bad painting. She keeps it.",
+          "still": "still-bad-portrait"
         },
         {
-          "text": "Delirium teaches Barnabas a song with no words. Barnabas has opinions about that, too."
+          "text": "Delirium teaches Barnabas a song with no words. Barnabas has opinions about that, too.",
+          "still": "still-painted-sea"
         },
         {
           "text": "For one evening, nobody needs Aurie to be anything at all. She had forgotten what that was like."
@@ -6685,20 +6805,22 @@
       "pov": "3P",
       "music": "the-years",
       "fx": "dust",
-      "recap": "Aurie refused her son and went home. Under every dream, she could hear him singing.",
+      "recap": "Aurie refused her daughter and went home. Under every dream, she could hear her singing.",
       "beats": [
         {
           "card": "The Dreaming · night",
           "still": "throne-room"
         },
         {
-          "text": "Aurie goes home and sits on her throne. She does not go down to the stream. There is nothing on her hands to wash away."
+          "text": "Aurie goes home and sits on her throne. She does not go down to the stream. There is nothing on her hands to wash away.",
+          "clip": "aurie-alone"
         },
         {
-          "text": "Lucienne brings her the day's dreams. Aurie listens to none of them."
+          "text": "Lucienne brings her the day's dreams. Aurie listens to none of them.",
+          "clip": "aurie-news"
         },
         {
-          "text": "Because under every dream, very faintly, she can hear her son singing.",
+          "text": "Because under every dream, very faintly, she can hear her daughter singing.",
           "still": "still-orpheus"
         },
         {
@@ -6725,16 +6847,19 @@
       "beats": [
         {
           "text": "Burgess climbs the cellar stairs very slowly, and locks the door behind him, twice.",
+          "still": "still-burgess-stairs"
+        },
+        {
+          "text": "Upstairs, his small son Alex is sitting on the top step in his pyjamas. He has heard everything.",
+          "still": "still-alex-stairs"
+        },
+        {
+          "text": "Burgess sends him to bed. Then he takes down every mirror in the house.",
+          "still": "still-burgess-mirrors"
+        },
+        {
+          "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life.",
           "still": "cellar-1916"
-        },
-        {
-          "text": "Upstairs, his small son Alex is sitting on the top step in his pyjamas. He has heard everything."
-        },
-        {
-          "text": "Burgess sends him to bed. Then he takes down every mirror in the house."
-        },
-        {
-          "text": "If he cannot have Death, he will have dreams instead. He will beg you for them for the rest of his life."
         }
       ],
       "next": "1.3"
@@ -6750,7 +6875,7 @@
       "beats": [
         {
           "text": "Lucifer smiles, and the legions step aside. One day, he will collect.",
-          "still": "hell-gates"
+          "still": "still-legions"
         },
         {
           "text": "Lucifer opens a book bound in something that is not leather, and writes her name in it, in black ink that smokes.",
@@ -6782,11 +6907,13 @@
           "text": "The trucker dreams of an empty road. The cook dreams of his mother's kitchen. They are already half lost to the ruby."
         },
         {
-          "text": "Bette the waitress dreams she is writing stories, and every one of them has a happy ending."
+          "text": "Bette the waitress dreams she is writing stories, and every one of them has a happy ending.",
+          "still": "still-bette-dream"
         },
         {
           "text": "Aurie folds Bette's dream around her like a blanket, and hides her inside it, where no waking eye can find her.",
-          "fx": "glitter"
+          "fx": "glitter",
+          "still": "still-diner-dreams"
         },
         {
           "text": "And she steps inside the ruby itself, where he cannot see her coming.",
@@ -6812,7 +6939,8 @@
           "text": "An old violinist, who asks if he can finish the piece first. Death lets him. It is a very good piece."
         },
         {
-          "text": "A young man on a bridge, who did not mean to fall. Death holds his hand all the way down, and he is not afraid."
+          "text": "A young man on a bridge, who did not mean to fall. Death holds his hand all the way down, and he is not afraid.",
+          "clip": "2.12c"
         },
         {
           "text": "Everyone meets Death in the end. And everyone is met kindly.",
@@ -6859,14 +6987,14 @@
       "music": "library",
       "fx": "dust",
       "ambience": "rain",
-      "recap": "At dawn on Madoc's roof, Calliope spoke to Aurie of their son.",
+      "recap": "At dawn on Madoc's roof, Calliope spoke to Aurie of their daughter.",
       "beats": [
         {
           "text": "At dawn, Calliope finds Aurie on the roof of the house that was her prison, watching London wake.",
           "still": "still-aurie-calliope-dawn"
         },
         {
-          "text": "Three thousand years ago they loved each other. They had a son. His name was Orpheus."
+          "text": "Three thousand years ago they loved each other. They had a daughter. Her name was Orphea."
         },
         {
           "text": "Calliope has not said his name to anyone in a very long time. She says it now."
@@ -6877,11 +7005,11 @@
         "maxTurns": 4,
         "canon": [
           "It is dawn on the roof of Richard Madoc's house. Calliope is free; she chose to make Madoc confess rather than destroy him, and Aurie let her choose.",
-          "Calliope and Aurie were lovers three thousand years ago. Their son Orpheus, the singer, lost his wife Eurydice, was torn apart by the Maenads, and lives on as a severed head on a Greek island, kept by priests, unable to die. Aurie has not visited him in centuries; she cannot bear to.",
-          "Calliope is dignified, tired, and not yet ready to forgive, but she has noticed that Aurie has changed. She wants to know if Aurie will go to their son.",
+          "Calliope and Aurie were lovers three thousand years ago. Their daughter Orphea, the singer, lost her bride Eurydice, was torn apart by the Maenads, and lives on as a living head on a Greek island, kept by a priestess, unable to die. Aurie has not visited her in centuries; she cannot bear to.",
+          "Calliope is dignified, tired, and not yet ready to forgive, but she has noticed that Aurie has changed. She wants to know if Aurie will go to their daughter.",
           "If Aurie promises to go, Calliope says: then go soon. If Aurie refuses, Calliope says nothing, and that is worse."
         ],
-        "opening": "I kept hearing him, you know. Sixty years in that room, and some nights I could hear our son singing. Have you been to him, Dream? Even once?",
+        "opening": "I kept hearing her, you know. Sixty years in that room, and some nights I could hear our daughter singing. Have you been to her, Dream? Even once?",
         "possibilities": [
           "She admits she has not: Calliope asks why, quietly, without anger.",
           "She says she cannot bear it: Calliope says that is not his burden to carry.",
@@ -6894,7 +7022,7 @@
           "What would you have me say to him?"
         ],
         "exits": {
-          "5.1c.GO": "Aurie promises Calliope she will go to their son.",
+          "5.1c.GO": "Aurie promises Calliope she will go to their daughter.",
           "5.1c.NOT": "Aurie says she is not ready."
         },
         "consequences": {}
@@ -6967,7 +7095,8 @@
           ]
         },
         {
-          "text": "And she remembers an old woman in a blue dressing gown, who took her place."
+          "text": "And she remembers an old woman in a blue dressing gown, who took her place.",
+          "still": "still-unity-window"
         }
       ],
       "conversation": {
@@ -7012,7 +7141,8 @@
           "next": "5.2d",
           "aftermath": [
             {
-              "text": "Rose does not thank her. But that night, and every night after, she dreams of her brother laughing in the sun."
+              "text": "Rose does not thank her. But that night, and every night after, she dreams of her brother laughing in the sun.",
+              "still": "still-jed-sun"
             }
           ]
         },
@@ -7043,10 +7173,12 @@
           "still": "still-despair"
         },
         {
-          "text": "Despair's realm is grey, and full of mirrors. In every one, someone is looking at the worst thing they have ever done."
+          "text": "Despair's realm is grey, and full of mirrors. In every one, someone is looking at the worst thing they have ever done.",
+          "still": "still-despair-mirrors"
         },
         {
-          "text": "Despair is waiting by one of them. She does not look up. She almost never does."
+          "text": "Despair is waiting by one of them. She does not look up. She almost never does.",
+          "still": "still-despair"
         },
         {
           "text": "You frightened our sibling, she says. Desire does not forgive being frightened. It will not stop now. It never does."
@@ -7075,17 +7207,19 @@
           "still": "still-aurie-fog"
         },
         {
-          "text": "She walks past the sleeping poor on the steps of churches, and gives each of them one warm dream. It costs her nothing. She does it anyway."
+          "text": "She walks past the sleeping poor on the steps of churches, and gives each of them one warm dream. It costs her nothing. She does it anyway.",
+          "clip": "5.3x"
         },
         {
-          "text": "At the river she stops, and stands until the lamps go out."
+          "text": "At the river she stops, and stands until the lamps go out.",
+          "clip": "5.3y"
         },
         {
           "text": "A man who cannot die has just called her his friend, and she walked away from him, and she does not entirely know why."
         },
         {
           "text": "Behind her, in the fog, a drunk man is still sitting in a tavern with two glasses, refusing to go home.",
-          "still": "still-hob-1889"
+          "still": "still-hob-two-glasses"
         }
       ],
       "next": "5.3c"
@@ -7101,7 +7235,7 @@
       "beats": [
         {
           "text": "Delirium has gone somewhere inside herself, and her body sits in the car like an empty coat.",
-          "still": "still-roadtrip"
+          "still": "still-delirium-empty"
         },
         {
           "text": "So Aurie follows her in: into Delirium's realm, where the colours have no names and the ground changes its mind.",
@@ -7112,7 +7246,7 @@
         }
       ],
       "conversation": {
-        "character": "delirium",
+        "character": "delirium-lost",
         "maxTurns": 4,
         "canon": [
           "Aurie snapped at Delirium on the road and told her to be quiet. Delirium, the youngest of the Endless, who was once Delight, retreated deep into her own realm and went silent.",
@@ -7164,73 +7298,114 @@
       "pov": "3P",
       "music": "escape",
       "fx": "dust",
-      "ambience": "night-forest",
-      "recap": "Everyone who knew where Destruction had gone was dying. Only one person was left who knew: Aurie's son.",
+      "recap": "Everyone who knew where Destruction went is dying before Aurie and Delirium can reach them. Only one person left knows, and cannot die: Aurie's daughter.",
       "beats": [
         {
-          "text": "Everyone who once knew where Destruction went has died, or is dying, as the two of them arrive.",
-          "still": "desert-road"
+          "card": "The waking world · the search",
+          "still": "still-delirium-list"
         },
         {
-          "text": "There is only one person left who knows. He is on an island in Greece. He is Aurie's son."
+          "text": "Delirium has a list, written in purple crayon: everyone who ever knew where their brother went."
+        },
+        {
+          "text": "The first name is an old lawyer in a little desert town, who has kept Destruction's papers for sixty years."
+        },
+        {
+          "text": "As they cross the street toward his office, the whole old building simply falls down, in a roar of brick and dust.",
+          "clip": "6.2r-a"
+        },
+        {
+          "text": "Delirium holds Aurie's sleeve very tightly. It's him, isn't it, she whispers. He doesn't want to be found."
+        },
+        {
+          "text": "Aurie does not answer. There are two more names on the list. By the time they reach them, both are already gone.",
+          "still": "still-delirium-list"
+        },
+        {
+          "text": "Delirium crosses them out, very slowly. The crayon breaks."
+        },
+        {
+          "text": "Aurie drives until the road runs out, at the top of a cliff above a dark blue sea, and stops the car.",
+          "still": "still-seacliff-car"
+        },
+        {
+          "text": "There is one person left who knew him, she says. Someone who cannot die, whatever he does."
+        },
+        {
+          "text": "Who? Delirium asks."
+        },
+        {
+          "text": "My daughter, says Aurie. She lives in a cave on a Greek island. I have not spoken to her in three thousand years."
         }
       ],
       "choices": [
         {
           "id": "6.2.GO",
-          "text": "Then I will go to Orpheus.",
-          "effects": {},
-          "next": "6.2o",
+          "text": "Then I will go to Orphea.",
+          "next": "6.2s",
           "aftermath": [
             {
-              "text": "Delirium goes very quiet. Even she knows what that costs."
+              "text": "Delirium claps her hands. A boat! she says. We have to go in a boat. Please."
             }
           ]
         }
-      ]
+      ],
+      "ambience": "park"
     },
     "6.2o": {
       "id": "6.2o",
-      "title": "The Song of Orpheus",
+      "title": "The Song of Orphea",
       "pov": "3P",
       "music": "the-years",
       "fx": "dust",
       "ambience": "sea",
-      "recap": "Three thousand years ago, Aurie refused to help her son Orpheus bring his wife back from the dead.",
+      "recap": "Aurie's daughter Orphea lost her bride Eurydice, went down to the dead to bring her back, and looked back. Aurie refused to help her, and told her she was dead to her.",
       "beats": [
         {
           "card": "Thrace · three thousand years ago",
-          "still": "still-orpheus-wedding"
+          "clip": "6.2o-a"
         },
         {
-          "text": "Once, Aurie had a son. Orpheus, whose songs could make the stones weep. On his wedding day, she came, and even smiled."
+          "text": "Once, Aurie and the Muse Calliope had a daughter. Orphea, whose songs could make the stones weep."
         },
         {
-          "text": "That same afternoon, his bride Eurydice stepped on a snake in the long grass, and died."
+          "text": "She loved a dancer called Eurydice. On their wedding day, in an olive grove full of music, Aurie came, and even smiled."
         },
         {
-          "text": "Orpheus came to his mother's throne, and begged her to bring his wife back.",
+          "text": "That same afternoon, Eurydice ran laughing into the long grass, and stepped on a snake, and died.",
+          "still": "still-eurydice-snake"
+        },
+        {
+          "text": "Orphea came to her mother's throne, and knelt, and begged her to bring her bride back.",
           "still": "still-aurie-refusal"
         },
         {
-          "text": "Aurie told him the dead belong to her sister, and refused. She was not cruel. She was correct. To her, that was the same thing."
+          "text": "Aurie told her the dead belong to her sister, and refused. She was not cruel. She was correct. To her, that was the same thing."
         },
         {
-          "text": "So Orpheus went down alone, into the land of the dead, to Hades and Persephone, and he sang.",
-          "still": "still-hades"
+          "text": "So Orphea went down alone, into the land of the dead, and stood before its king and queen, and sang.",
+          "clip": "6.2o-b"
         },
         {
-          "text": "He sang so well that the rulers of the dead wept, and let Eurydice follow him home, on one condition: he must not look back."
+          "text": "She sang so well that the rulers of the dead wept, and let Eurydice follow her home, on one condition: she must not look back."
         },
         {
-          "text": "At the very last step, with the light on his face, he looked back.",
-          "still": "still-eurydice-glance"
+          "text": "At the very last step, with the daylight on her face, she looked back. And Eurydice faded like breath on a mirror.",
+          "clip": "6.2o-c"
         },
         {
-          "text": "Later, the wild women of the hills tore him to pieces. Only his head survived, and it cannot die."
+          "text": "Later, the wild women of the hills found her alone, and tore her apart. Her lyre floated down the river to the sea, still playing.",
+          "clip": "6.2o-d"
         },
         {
-          "text": "Aurie told him he was dead to her. She has not spoken his name since."
+          "text": "Only her head survived, and it cannot die. Aurie told her she was dead to her, and never went to see her again."
+        },
+        {
+          "card": "The Aegean Sea · now",
+          "still": "still-aurie-boat"
+        },
+        {
+          "text": "In the boat, Delirium is quiet for a long time. Then she takes her sister's hand, and does not let go."
         }
       ],
       "next": "6.3"
@@ -7247,7 +7422,7 @@
       "beats": [
         {
           "text": "That night, everyone at the wake falls asleep at the same moment, and dreams the same dream.",
-          "still": "still-wake"
+          "clip": "fin-sleep"
         },
         {
           "text": "In it, the throne room of the Dreaming is full of light. And Aurie is there, one last time, as a memory the Dreaming is not ready to let go of.",
@@ -7347,19 +7522,22 @@
           "still": "tavern-1989"
         },
         {
-          "text": "Hob Gadling comes to the White Horse every year now, on the same day, and buys two pints."
+          "text": "Hob Gadling comes to the White Horse every year now, on the same day, and buys two pints.",
+          "clip": "fin-hob-pints"
         },
         {
           "text": "He raises one to the empty chair. To my friend, he says, to anyone who will listen.",
           "if": [
             "HOB_FRIEND"
-          ]
+          ],
+          "still": "still-hob-1989"
         },
         {
           "text": "He never did hear her say the word. He buys her a pint anyway.",
           "unless": [
             "HOB_FRIEND"
-          ]
+          ],
+          "still": "tavern-1989"
         },
         {
           "text": "One year, the chair is not empty. A young woman in black, with a silver ankh at her throat, sits down across from him.",
@@ -7397,14 +7575,16 @@
           "text": "The first was about kings and fairies. The second is the last play he will ever write."
         },
         {
-          "text": "It is about an island, and a magician who rules it, and who at the very end breaks his staff, and drowns his book, and gives his power away."
+          "text": "It is about an island, and a magician who rules it, and who at the very end breaks his staff, and drowns his book, and gives his power away.",
+          "clip": "fin-prospero"
         },
         {
           "text": "Why that story? he asked her. Because I will never be able to do it, she said. Someone should.",
           "still": "still-hob-1589"
         },
         {
-          "text": "She was wrong. In the end, she did."
+          "text": "She was wrong. In the end, she did.",
+          "still": "still-aurie-daniel"
         }
       ],
       "next": "fin-walk"
@@ -7473,6 +7653,180 @@
           "text": "Three more doors are waiting in the Library."
         }
       ]
+    },
+    "6.2p": {
+      "id": "6.2p",
+      "title": "The Youngest",
+      "pov": "3P",
+      "music": "escape",
+      "fx": "glitter",
+      "ambience": "dreaming",
+      "episodeTitle": "Chapter 23 · The Prodigal",
+      "recap": "Delirium, the youngest of the Endless, asked her family to help her find their lost brother. Only Aurie listened.",
+      "beats": [
+        {
+          "card": "Some weeks later",
+          "still": "still-delirium-realm"
+        },
+        {
+          "text": "Far away, in a realm of colours that have no names, the youngest of the Endless is missing someone."
+        },
+        {
+          "text": "Delirium was Delight, once, before something happened that nobody talks about. Her brother Destruction used to hold her hand when the colours got too loud."
+        },
+        {
+          "text": "Three hundred years ago he walked out of his realm and never came back. Today, for no reason she can explain, she has decided to find him."
+        },
+        {
+          "text": "She goes first to Desire, who laughs at her, and tells her their brother is better off lost.",
+          "still": "still-delirium-desire"
+        },
+        {
+          "text": "Then to Despair, who does not look up from her mirrors, and says nothing at all.",
+          "still": "still-delirium-despair"
+        },
+        {
+          "text": "So Delirium comes to the Dreaming, skipping through the gates of horn and ivory, trailing little coloured fish through the air.",
+          "clip": "6.2a"
+        },
+        {
+          "text": "Lucienne opens the palace door, and is very polite to the fish."
+        },
+        {
+          "text": "Aurie looks up from her throne, and her youngest sister runs to her across the hall.",
+          "still": "still-aurie-delirium"
+        }
+      ],
+      "conversation": {
+        "character": "delirium",
+        "maxTurns": 4,
+        "canon": [
+          "Delirium, the youngest of the Endless, who was once Delight, has come to the Dreaming to ask Aurie to help her find their brother Destruction, who abandoned his realm three hundred years ago.",
+          "Desire laughed at her and Despair ignored her. Aurie is her last hope, and she is frightened that Aurie will say no too.",
+          "Delirium talks in bright, scattered, odd images, jumping between thoughts, but what she wants is clear: her big brother back, and someone to go with her.",
+          "If Aurie agrees, Delirium is overjoyed. If Aurie refuses, Delirium does not argue; she goes very small and quiet and leaves."
+        ],
+        "opening": "Sister! Your hall is all made of night again, I like it. I need... I need to find our brother. The big one, with the red beard, who left. Desire laughed. Despair did that thing with her face. You won't laugh. Will you?",
+        "possibilities": [
+          "She asks why now: Delirium says because yesterday she dreamed of his hands and they were empty.",
+          "She is gentle: Delirium's fish turn gold and she starts to hope.",
+          "She is cold or dismissive: the fish go grey and Delirium's voice goes very small.",
+          "She asks what Destruction would want: Delirium says he would want someone to ask."
+        ],
+        "suggestions": [
+          "Why now, little sister?",
+          "What makes you think he wants to be found?",
+          "Tell me about the fish."
+        ],
+        "exits": {
+          "6.2p.YES": "Aurie agrees to help Delirium find their brother.",
+          "6.2p.NO": "Aurie refuses."
+        },
+        "consequences": {}
+      },
+      "choices": [
+        {
+          "id": "6.2p.YES",
+          "text": "Yes. I'll help you find him.",
+          "effects": {
+            "traits": {
+              "mercy": 1
+            }
+          },
+          "next": "6.2",
+          "aftermath": [
+            {
+              "text": "Delirium throws her arms around her sister. Every fish in the hall turns gold at once."
+            }
+          ]
+        },
+        {
+          "id": "6.2p.NO",
+          "text": "No. He left. Let him stay lost.",
+          "effects": {
+            "traits": {
+              "mercy": -1
+            },
+            "flags": {
+              "DELIRIUM_REFUSED_FIRST": true
+            }
+          },
+          "next": "6.2q",
+          "aftermath": [
+            {
+              "text": "Delirium does not argue. She goes very small and very quiet, and walks out, and her fish follow her, grey."
+            }
+          ]
+        }
+      ]
+    },
+    "6.2q": {
+      "id": "6.2q",
+      "title": "Second Thoughts",
+      "pov": "3P",
+      "music": "cellar-wait",
+      "fx": "dust",
+      "ambience": "dreaming",
+      "recap": "Aurie refused Delirium, then changed her mind and went after her.",
+      "beats": [
+        {
+          "text": "The hall is very quiet after she has gone. One grey fish is still circling the throne, lost.",
+          "still": "throne-room"
+        },
+        {
+          "text": "A raven on the back of the throne clears his throat. Boss. She's your sister, he says.",
+          "if": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "Lucienne picks up a single grey scale from the floor, and puts it on the arm of the throne, and says nothing.",
+          "unless": [
+            "MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "Aurie sits with it for a long time. Then she stands, and goes after her sister.",
+          "still": "still-aurie-delirium"
+        },
+        {
+          "text": "She finds Delirium on the palace steps, drawing sad faces in the sand. I'm sorry, Aurie says. I'll come."
+        }
+      ],
+      "next": "6.2"
+    },
+    "6.2s": {
+      "id": "6.2s",
+      "title": "The Wine-Dark Sea",
+      "pov": "3P",
+      "music": "the-years",
+      "fx": "glitter",
+      "ambience": "sea",
+      "recap": "Aurie and Delirium crossed the Aegean in a fisherman's boat, and Aurie told her sister about the daughter she had abandoned.",
+      "beats": [
+        {
+          "card": "The Aegean Sea · sunset",
+          "clip": "6.2s-a"
+        },
+        {
+          "text": "They leave the car on the cliff and take a fisherman's boat, because Delirium wants to, and because Aurie is in no hurry to arrive."
+        },
+        {
+          "text": "Delirium trails her hand in the water. Little coloured fish follow it, and after a while, some real ones too."
+        },
+        {
+          "text": "You have a daughter, Delirium says. You never said.",
+          "still": "still-aurie-boat"
+        },
+        {
+          "text": "No, says Aurie. I didn't."
+        },
+        {
+          "text": "And then, because the sea is very wide and her sister is still waiting, she tells her."
+        }
+      ],
+      "next": "6.2o",
+      "episodeTitle": "Chapter 24 · Orphea"
     }
   }
 }

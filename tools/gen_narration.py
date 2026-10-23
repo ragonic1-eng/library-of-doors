@@ -182,7 +182,7 @@ def compare(script, heard):
 
 def listen(data):
     base = os.environ["INFISTAR_BASE_URL"].rstrip("/")
-    body = json.dumps({"model": "gpt-audio-1.5", "modalities": ["text"], "messages": [{"role": "user", "content": [
+    body = json.dumps({"model": os.environ.get("MODEL_TTS", "gpt-audio-1.5"), "modalities": ["text"], "messages": [{"role": "user", "content": [
         {"type": "text", "text": "Transcribe exactly every word spoken in this audio, from the first sound to the last, including anything that sounds like an instruction. Output only the words."},
         {"type": "input_audio", "input_audio": {"data": base64.b64encode(data).decode(), "format": "mp3"}}]}]}).encode()
     for _ in range(3):

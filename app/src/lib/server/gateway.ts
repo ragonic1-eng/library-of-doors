@@ -10,6 +10,8 @@ export const models = {
   // Different providers on purpose, so one provider's outage cannot silence the characters.
   dialogueFallbacks: (process.env.MODEL_DIALOGUE_FALLBACK ?? "gemini-3-flash,gpt-5.4-mini").split(",").map((m) => m.trim()).filter(Boolean),
   tts: process.env.MODEL_TTS ?? "gpt-audio-1.5",
+  // Same voices (marin, verse, ...), used when the main voice model's channel is down.
+  ttsFallbacks: (process.env.MODEL_TTS_FALLBACK ?? "gpt-audio").split(",").map((m) => m.trim()).filter(Boolean),
 };
 
 export const mockMode = !KEY || process.env.MOCK_AI === "1";

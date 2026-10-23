@@ -528,13 +528,13 @@ SURREAL DETAIL: his eyes hold a tiny glint of something human.
 
 ---
 
-### 3.34 Orpheus, Aurie's son (Episode 6)
+### 3.34 Orphea, Aurie's daughter (Episode 6)
 
 **Reference sheet:**
 ```
 [Reference sheet frame]
-Orpheus, son of Aurie (Dream of the Endless) and the Muse Calliope, appearing as a young man of about twenty-four, half East Asian and half Greek. An original, unknown person who resembles no real actor, celebrity or public figure. Height around 1.78 m, slender. Face: a soft oval with his mother Aurie's full cheeks and soft rounded jaw, almond single-lidded dark eyes, Calliope's straight Greek nose with a slight bump, a wide sad mouth. Skin warm olive. Hair: black, thick, loose curls to the shoulders. Clothing: a simple ancient Greek white linen chiton fastened at one shoulder, a lyre in his hands. Posture: gentle, a musician's hands. Expression: sorrowful, gentle, worn out by grief.
-SURREAL DETAIL: faint notes of light drift from the strings of the lyre.
+Orphea, daughter of Aurie (Dream of the Endless) and the Muse Calliope, the greatest singer of ancient Greece, appearing as a woman of about twenty-four, half East Asian and half Greek. An original, unknown person who resembles no real actor, actress, celebrity or public figure. Height around 1.70 m, slender and graceful, a dancer's shoulders. Face: a soft oval with her mother Aurie's full cheeks and soft rounded jaw, large almond single-lidded dark eyes with long lashes, Calliope's straight Greek nose with a slight bump, full lips. Skin warm golden olive. Hair: black, very long, thick loose waves to the waist, a thin gold laurel circlet. Clothing: in the ancient Greek tradition, a short sheer white linen chiton pinned at one shoulder with a gold brooch, leaving the other shoulder, her arms and her legs bare, belted high under the bust with a gold cord, gold armbands, bare feet, a lyre in her hands. Beautiful, sensual and confident, like a classical goddess statue come to life; glamorous, never explicit. Posture: relaxed, weight on one hip, a musician's elegant hands on the strings. Expression: warm, a little sad, knowing.
+SURREAL DETAIL: faint notes of golden light drift from the strings of the lyre.
 [Style Bible]
 ```
 

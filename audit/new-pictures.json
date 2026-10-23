@@ -1,0 +1,446 @@
+[
+  {
+    "scene": "0.0",
+    "where": "beats",
+    "line": "Then, far away in the waking world, a man reads her name from a stolen book.",
+    "picture": "clip:0.0d"
+  },
+  {
+    "scene": "1.1",
+    "where": "beats",
+    "line": "His men carry off her three treasures: her helm, her pouch of sand, and her ruby.",
+    "picture": "clip:1.1c"
+  },
+  {
+    "scene": "1.2",
+    "where": "beats",
+    "line": "Hours later, his followers have gone home. Burgess comes back down, alone.",
+    "picture": "still:still-burgess-alone"
+  },
+  {
+    "scene": "1.4",
+    "where": "beats",
+    "line": "Alex remembers the night his father came up from the cellar white as chalk, and took down every mirror in the house.",
+    "picture": "still:still-burgess-mirrors"
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "line": "Burgess sends him to bed. Then he takes down every mirror in the house.",
+    "picture": "still:still-burgess-mirrors"
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "line": "Burgess climbs the cellar stairs very slowly, and locks the door behind him, twice.",
+    "picture": "still:still-burgess-stairs"
+  },
+  {
+    "scene": "1.2d",
+    "where": "beats",
+    "line": "Upstairs, his small son Alex is sitting on the top step in his pyjamas. He has heard everything.",
+    "picture": "still:still-alex-stairs"
+  },
+  {
+    "scene": "2.2",
+    "where": "beats",
+    "line": "Aurie calls them, and they come.",
+    "picture": "clip:2.2b"
+  },
+  {
+    "scene": "2.7",
+    "where": "after 2.7.LOSE",
+    "line": "Choronzon's form swallows hers. The arena howls with delight.",
+    "picture": "clip:2.7c"
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "line": "Only Lucifer remains, alone on his throne, as if he has been waiting for her.",
+    "picture": "still:still-lucifer-alone"
+  },
+  {
+    "scene": "4.1",
+    "where": "beats",
+    "line": "He has sent every demon and every damned soul out into the dark. All that is left is the key, and he is giving it to her.",
+    "picture": "still:still-lucifer-key"
+  },
+  {
+    "scene": "4.1",
+    "where": "after 4.1.WINGS",
+    "line": "Aurie cuts. The wings fall away into a storm of feathers.",
+    "picture": "clip:4.1c"
+  },
+  {
+    "scene": "4.2",
+    "where": "after 4.2.A",
+    "line": "Azazel shrieks. The jar cracks, and Nada's soul spills free into Aurie's hands.",
+    "picture": "clip:4.2c"
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.B",
+    "line": "Nada strikes her across the face, and walks into the light alone.",
+    "picture": "clip:4.3d"
+  },
+  {
+    "scene": "4.3",
+    "where": "after 4.3.C",
+    "line": "Nada refuses every gift, and leaves without a word.",
+    "picture": "still:still-nada-refuses"
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "line": "Faerie's Hell is a strange, dancing place. Nobody is sure what it is for.",
+    "picture": "clip:end4-faerie"
+  },
+  {
+    "scene": "end-ep4",
+    "where": "beats",
+    "line": "Somewhere in the waking world, a man with no wings plays piano in a bar, and thinks of her kindly.",
+    "picture": "clip:end4-piano"
+  },
+  {
+    "scene": "5.1",
+    "where": "beats",
+    "line": "The lock turns to sand in Aurie's hand. The door swings open.",
+    "picture": "clip:5.1d"
+  },
+  {
+    "scene": "5.1b",
+    "where": "beats",
+    "line": "He sees a pale woman in black standing in a room he locked. He understands at once who she has come for.",
+    "picture": "still:still-madoc-sees"
+  },
+  {
+    "scene": "5.2a",
+    "where": "after 5.2a.UNMAKE",
+    "line": "Only a small white skull is left on the carpet. Where its eyes should be, two tiny rows of teeth.",
+    "picture": "still:still-corinthian-skull"
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "line": "The Corinthian's skull sits on a shelf in Lucienne's library.",
+    "picture": "still:still-skull-shelf"
+  },
+  {
+    "scene": "5.2b",
+    "where": "beats",
+    "line": "She dreams. And the walls between the dreams of everyone in the house come down.",
+    "picture": "clip:5.2bb"
+  },
+  {
+    "scene": "5.2b",
+    "where": "after 5.2b.KILL",
+    "line": "Aurie raises her hand. Rose does not run. She only closes her eyes.",
+    "picture": "still:still-aurie-raises-hand"
+  },
+  {
+    "scene": "end-ep5",
+    "where": "beats",
+    "line": "Rose Walker is alive. Unity Kincaid sleeps at last, for good.",
+    "picture": "still:still-unity-rose"
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "line": "Matthew dives, screaming, straight at Loki's eyes.",
+    "picture": "clip:7.1d"
+  },
+  {
+    "scene": "7.1a",
+    "where": "beats",
+    "line": "Loki drops the child and is gone. Daniel is safe. Daniel is safe.",
+    "picture": "still:still-daniel-safe"
+  },
+  {
+    "scene": "7.1a",
+    "where": "after 7.1a.DREAMING",
+    "line": "Daniel sleeps in the library, among the books, and does not cry once.",
+    "picture": "still:still-daniel-library"
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "line": "Lyta does not wait for Aurie. She walks straight into the fire's light, and takes her son out of a god's hands.",
+    "picture": "clip:7.1e"
+  },
+  {
+    "scene": "7.1c",
+    "where": "beats",
+    "line": "Loki looks at the two of them, and decides he has somewhere else to be.",
+    "picture": "still:still-loki-leaves"
+  },
+  {
+    "scene": "7.3",
+    "where": "after 7.3.STAND",
+    "line": "The lantern goes out.",
+    "picture": "clip:7.3c"
+  },
+  {
+    "scene": "7.4",
+    "where": "after 7.4.BREAK",
+    "line": "Aurie breaks the old law, and every faerie in the glade turns away from her.",
+    "picture": "clip:7.4b"
+  },
+  {
+    "scene": "7.5",
+    "where": "beats",
+    "line": "On the walls, the sigils of her family glow like doors. Desire's is laughing. Delirium's is weeping. Destruction's is open.",
+    "picture": "still:still-family-sigils"
+  },
+  {
+    "scene": "7.5",
+    "where": "after 7.5.HAND",
+    "line": "And somewhere in the Dreaming, in the library, a small boy opens his eyes, and they are full of stars.",
+    "picture": "clip:7.5b"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Lucienne is not there. Her lantern is, on an empty chair.",
+    "picture": "still:still-lantern-chair"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Calliope, who came to forgive, and did.",
+    "picture": "still:still-calliope-free"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Johanna Constantine, smoking at the back, who will deny that she came.",
+    "picture": "still:still-johanna"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Matthew, who will not stop saying boss.",
+    "picture": "still:still-matthew"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Nuala of Faerie, holding a single white flower.",
+    "picture": "still:still-nuala-glade"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "And from Fiddler's Green, a whole meadow of wildflowers, which walked there by itself.",
+    "picture": "still:fiddlers-green"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Lyta Hall stands at the back, holding her son's hand, and does not look away.",
+    "picture": "still:still-lyta-daniel"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Delirium, who remembers that her sister came to find her once, on a desert road, and said sorry.",
+    "picture": "still:still-delirium-frog"
+  },
+  {
+    "scene": "end-A",
+    "where": "beats",
+    "line": "Delirium, who leaves a little fish made of gold light on the bier, and tells it a secret.",
+    "picture": "still:still-delirium-realm"
+  },
+  {
+    "scene": "end-C",
+    "where": "beats",
+    "line": "Delirium comes looking for her, years later, and finds only ruins and a door that will not open.",
+    "picture": "still:still-delirium-ruins"
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "line": "In a locked house in Florida, a little boy named Jed is dreaming of his sister. The Corinthian has heard him.",
+    "picture": "still:still-jed-sleeps"
+  },
+  {
+    "scene": "5.2f",
+    "where": "beats",
+    "line": "Rose finds her brother first. By one night. She will never know how close it was.",
+    "picture": "still:still-rose-jed"
+  },
+  {
+    "scene": "2.12b",
+    "where": "beats",
+    "line": "A young man on a bridge, who did not mean to fall. Death holds his hand all the way down, and he is not afraid.",
+    "picture": "clip:2.12c"
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "line": "She walks past the sleeping poor on the steps of churches, and gives each of them one warm dream. It costs her nothing. She does it anyway.",
+    "picture": "clip:5.3x"
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "line": "At the river she stops, and stands until the lamps go out.",
+    "picture": "clip:5.3y"
+  },
+  {
+    "scene": "5.3w",
+    "where": "beats",
+    "line": "Behind her, in the fog, a drunk man is still sitting in a tavern with two glasses, refusing to go home.",
+    "picture": "still:still-hob-two-glasses"
+  },
+  {
+    "scene": "fin-dream",
+    "where": "beats",
+    "line": "That night, everyone at the wake falls asleep at the same moment, and dreams the same dream.",
+    "picture": "clip:fin-sleep"
+  },
+  {
+    "scene": "fin-hob",
+    "where": "beats",
+    "line": "Hob Gadling comes to the White Horse every year now, on the same day, and buys two pints.",
+    "picture": "clip:fin-hob-pints"
+  },
+  {
+    "scene": "fin-tempest",
+    "where": "beats",
+    "line": "It is about an island, and a magician who rules it, and who at the very end breaks his staff, and drowns his book, and gives his power away.",
+    "picture": "clip:fin-prospero"
+  },
+  {
+    "scene": "3.2",
+    "where": "after 3.2.C",
+    "line": "Pride is a door that locks from the inside.",
+    "picture": "still:still-pride-door"
+  },
+  {
+    "scene": "6.4b",
+    "where": "beats",
+    "line": "He paints her portrait. It is a very bad painting. She keeps it.",
+    "picture": "still:still-bad-portrait"
+  },
+  {
+    "scene": "end-ep6",
+    "where": "beats",
+    "line": "A raven sleeps on the back of Aurie's throne.",
+    "picture": "still:still-raven-throne"
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "line": "A raven lands on a stone beside her. Boss? Matthew asks. Are you all right?",
+    "picture": "still:still-raven-stream"
+  },
+  {
+    "scene": "6.6",
+    "where": "beats",
+    "line": "Lucienne comes down from the library with a lantern, and waits beside her, saying nothing.",
+    "picture": "still:still-lucienne-stream"
+  },
+  {
+    "scene": "6.2y",
+    "where": "beats",
+    "line": "Delirium has gone somewhere inside herself, and her body sits in the car like an empty coat.",
+    "picture": "still:still-delirium-empty"
+  },
+  {
+    "scene": "1.6",
+    "where": "after 1.6.KEEP",
+    "line": "Behind her, Paul begins to sing, very softly, to keep Alex company in the waking.",
+    "picture": "still:still-paul-sings"
+  },
+  {
+    "scene": "6.6b",
+    "where": "beats",
+    "line": "Lucienne brings her the day's dreams. Aurie listens to none of them.",
+    "picture": "clip:aurie-news"
+  },
+  {
+    "scene": "5.2e",
+    "where": "after 5.2e.GIFT",
+    "line": "Rose does not thank her. But that night, and every night after, she dreams of her brother laughing in the sun.",
+    "picture": "still:still-jed-sun"
+  },
+  {
+    "scene": "5.2e",
+    "where": "beats",
+    "line": "And she remembers an old woman in a blue dressing gown, who took her place.",
+    "picture": "still:still-unity-window"
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "line": "In 1927 an old writer trapped her and kept her in his house. When he died, a young novelist bought her.",
+    "picture": "still:still-calliope-1927"
+  },
+  {
+    "scene": "5.0",
+    "where": "beats",
+    "line": "Calliope prayed to the Three. The Three told her: Dream is free again. Call to her.",
+    "picture": "still:still-calliope-prays"
+  },
+  {
+    "scene": "5.2g",
+    "where": "beats",
+    "line": "Despair's realm is grey, and full of mirrors. In every one, someone is looking at the worst thing they have ever done.",
+    "picture": "still:still-despair-mirrors"
+  },
+  {
+    "scene": "end-ep1",
+    "where": "beats",
+    "line": "Your helm, your sand and your ruby are out there, scattered across the waking world.",
+    "picture": "still:still-treasures-lost"
+  },
+  {
+    "scene": "end-2a",
+    "where": "beats",
+    "line": "Next, the helm. A demon has it, in Hell.",
+    "picture": "still:still-helm-demon"
+  },
+  {
+    "scene": "2.11",
+    "where": "beats",
+    "line": "Behind the counter, Bette the waitress is still asleep, smiling. Dee walked past her a hundred times, and never once saw her.",
+    "picture": "still:still-bette-asleep"
+  },
+  {
+    "scene": "2.9d",
+    "where": "beats",
+    "line": "Bette the waitress dreams she is writing stories, and every one of them has a happy ending.",
+    "picture": "still:still-bette-dream"
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "line": "She sleeps on, inside the seaside dream you gave her.",
+    "picture": "still:still-unity-shore"
+  },
+  {
+    "scene": "1.3",
+    "where": "after 1.3.W",
+    "line": "Her dream stays grey for a long, long time.",
+    "picture": "still:still-unity-grey"
+  },
+  {
+    "scene": "2.3",
+    "where": "beats",
+    "line": "A woman is waiting under a porch, as if she has been expecting trouble.",
+    "picture": "still:still-johanna-porch"
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "line": "Lyta's grief has nowhere to go. Thessaly takes her somewhere far away, and teaches her to live with it.",
+    "picture": "still:still-lyta-thessaly-island"
+  },
+  {
+    "scene": "end-R",
+    "where": "beats",
+    "line": "Lyta keeps her son. He grows up ordinary, and loved, and dreams very vividly.",
+    "picture": "still:still-lyta-son-kitchen"
+  }
+]

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
 import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, saveProfile } from "@/lib/state/profile";
 import { lineFile } from "@/lib/story/lines";
-import { watchPlayback, speechChunks } from "@/lib/story/audio";
+import { watchPlayback } from "@/lib/story/audio";
 import { levelVoice } from "@/lib/story/level";
 import Ambience from "@/components/Ambience";
 import ReactLoop from "@/components/ReactLoop";
@@ -365,12 +365,16 @@ export default function Player({ book }: { book: Book }) {
 
   /** Fetch a character's voice for one line (or one speaker's part of a line). */
   const fetchVoice = useCallback(async (text: string, character: string, speaker?: string): Promise<Blob | null> => {
-    try {
-      const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }), signal: AbortSignal.timeout(95_000) });
-      return res.ok ? await res.blob() : null;
-    } catch {
-      return null;
+    // Two tries: a request can fail on a passing network or gateway hiccup.
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const res = await fetch("/api/tts", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text, bookId: book.id, character, speaker }), signal: AbortSignal.timeout(95_000) });
+        if (res.ok) return await res.blob();
+      } catch {
+        /* try again */
+      }
     }
+    return null;
   }, [book.id]);
 
   /** Play one fetched voice. `started` resolves when it is audible, `ended` when it is over (or stopped). */
@@ -381,7 +385,6 @@ export default function Player({ book }: { book: Book }) {
     let stopped = false, ducked = false;
     let a: HTMLAudioElement | null = null;
     let objectUrl: string | null = null;
-    let utterance: SpeechSynthesisUtterance | null = null;
     let unwatch = () => {};
     const stop = () => {
       if (stopped) return;
@@ -392,11 +395,6 @@ export default function Player({ book }: { book: Book }) {
         a.onplaying = a.onended = a.onerror = null;
         a.pause();
         playing.current.delete(a);
-      }
-      if (utterance) {
-        utterance.onstart = utterance.onend = utterance.onerror = utterance.onboundary = null;
-        window.speechSynthesis.cancel();
-        utterance = null;
       }
       if (objectUrl) URL.revokeObjectURL(objectUrl);
       if (ducked) unduck();
@@ -434,27 +432,15 @@ export default function Player({ book }: { book: Book }) {
         el.play().catch(stop);
         return;
       }
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        const chunks = speechChunks(text);
-        let index = 0;
-        const progress = { currentTime: 0 };
-        unwatch = watchPlayback(progress, () => pausedRef.current, stop);
-        const next = async () => {
-          await waitUnpaused();
-          if (stopped) return;
-          if (index >= chunks.length) { stop(); return; }
-          // Keep a strong reference until end: mobile browsers may otherwise drop it.
-          utterance = new SpeechSynthesisUtterance(chunks[index++]);
-          utterance.lang = "en-GB";
-          utterance.rate = 0.92;
-          utterance.onstart = () => { progress.currentTime++; begin(); };
-          utterance.onboundary = () => { progress.currentTime++; };
-          utterance.onend = () => { progress.currentTime++; void next(); };
-          utterance.onerror = stop;
-          window.speechSynthesis.speak(utterance);
-        };
-        void next();
-      } else stop();
+      // No usable take: never swap in the device's flat robot voice (it breaks the character).
+      // The line stays on screen as text for as long as it would take to say it (no talking mouth).
+      startRes();
+      let left = (text.split(/\s+/).length / 2.6 + 1) * 1000;
+      while (left > 0 && !stopped) {
+        await sleep(250);
+        if (!pausedRef.current) left -= 250;
+      }
+      stop();
     })();
     return { started, ended };
   }, []);

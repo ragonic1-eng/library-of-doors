@@ -173,7 +173,7 @@ if (existsSync(SHOTS_FILE)) {
   // Say what each reference image is, so the model never mixes two people up.
   const describe = (p) => {
     const f = p.replace(/\\/g, "/");
-    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", lyta: "Lyta Hall", hector: "Hector Hall", destruction: "Destruction", orpheus: "Orpheus", thessaly: "Thessaly", daniel: "Daniel as a child", "daniel-dream": "Daniel as the new Dream", kindly: "the Kindly Ones", barnabas: "Barnabas the dog", matthew: "Matthew the raven", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
+    const who = { dream: "Aurie", aurie: "Aurie", hob: "Hob Gadling", rose: "Rose Walker", madoc: "Richard Madoc", unity: "Unity Kincaid", lyta: "Lyta Hall", hector: "Hector Hall", destruction: "Destruction", orpheus: "Orphea", thessaly: "Thessaly", daniel: "Daniel as a child", "daniel-dream": "Daniel as the new Dream", kindly: "the Kindly Ones", barnabas: "Barnabas the dog", matthew: "Matthew the raven", corinthian: "the Corinthian", calliope: "Calliope", "alex-young": "Alex", "alex-old": "Alex (aged)", alex: "Alex", burgess: "Roderick Burgess (a different man)", paul: "Paul McGuire (a different man)", lucienne: "Lucienne", guard: "the sleeping guard" };
     const m = f.match(/characters\/([^/]+)\/([^/.]+)/);
     if (m) {
       const name = who[m[1]] ?? m[1];

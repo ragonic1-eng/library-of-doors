@@ -1095,17 +1095,6 @@
       }
     },
     {
-      "id": "still-orpheus",
-      "still": true,
-      "keyframe": {
-        "refs": [
-          "characters/orpheus/sheet.png",
-          "assets/plates/orpheus-shrine/plate.png"
-        ],
-        "prompt": "The cave shrine from the plate at dusk, oil lamps glowing: only the living head of Orpheus, the young man from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust: serene, clean, no blood and no wound visible, the flowers hiding where his neck would be, his black curls spread on the petals. His eyes are open and look straight at the camera, sorrowful and gentle. Warm lamplight on his face, blue dusk beyond the cave mouth."
-      }
-    },
-    {
       "id": "still-destruction",
       "still": true,
       "keyframe": {
@@ -1136,15 +1125,6 @@
         "use": "assets/keyframes/sandman/still-lyta/keyframe.png"
       },
       "motion": "The walls of the little living room peel away into black void and stars; Hector, smiling, fades into drifting light and is gone; Lyta reaches out for him, her mouth opening in a cry. Slow push-in."
-    },
-    {
-      "id": "6.5a",
-      "model": "video",
-      "seconds": 5,
-      "keyframe": {
-        "use": "assets/keyframes/sandman/still-orpheus/keyframe.png"
-      },
-      "motion": "Orpheus slowly closes his eyes and smiles peacefully; he gently dissolves into soft golden light and drifting motes like pollen, which rise and float out of the cave toward the sea; only the flowers remain. The lamp flames lean after the light. Very slow push-in."
     },
     {
       "id": "still-ruby-call",
@@ -1800,36 +1780,6 @@
       "motion": "Tight on Aurie at the family table: she lifts her eyes slowly to the siblings around her, guarded and calm; candle flames flicker on her face; the figures behind stay soft. Her face does not change shape. Very slow push-in."
     },
     {
-      "id": "still-orpheus-wedding",
-      "still": true,
-      "keyframe": {
-        "refs": [
-          "characters/orpheus/sheet.png"
-        ],
-        "prompt": "An ancient Greek wedding feast in a sunlit olive grove in Thrace, three thousand years ago: Orpheus, the young man with black curls from the character sheet, in a white wedding tunic with a lyre on his shoulder, laughs as he holds the hand of his bride Eurydice, a young woman in white with a crown of flowers. Guests dance, garlands, long tables with wine. At the edge of the frame, seen from behind so her face is not visible, a tall woman with long straight black hair in a long black gown watches. Golden afternoon light."
-      }
-    },
-    {
-      "id": "still-hades",
-      "still": true,
-      "keyframe": {
-        "refs": [
-          "characters/orpheus/sheet.png"
-        ],
-        "prompt": "The vast dark hall of the Greek underworld: two great thrones of black stone, on which sit Hades, a tall bearded king in dark robes, and Persephone, a pale queen with a crown of pomegranates and flowers, both faces partly in shadow, both weeping. Before them, small in the vast hall, Orpheus, the young man with black curls from the character sheet, plays his lyre and sings with his eyes closed. Grey ghosts of the dead crowd the edges, listening. Cold blue light and one warm beam on Orpheus."
-      }
-    },
-    {
-      "id": "still-eurydice-glance",
-      "still": true,
-      "keyframe": {
-        "refs": [
-          "characters/orpheus/sheet.png"
-        ],
-        "prompt": "A narrow rocky path climbing out of the underworld toward a bright opening of daylight: Orpheus, the young man with black curls from the character sheet, stands at the very last step with sunlight on his face, turning to look back over his shoulder in horror; behind him on the dark path, a young woman in a white dress, Eurydice, is fading into grey smoke and shadow, one hand reaching toward him."
-      }
-    },
-    {
       "id": "still-hob-death",
       "still": true,
       "keyframe": {
@@ -1860,6 +1810,964 @@
         "prompt": "Seen from behind, two women walk away from the camera, hand in hand, down a long straight road of soft white light that runs across a dark starry sky toward a bright horizon: on the left a woman with long straight black hair in a long black high-collared gown with a faint shimmer of stars; on the right Death from the character sheet, with short black hair, black top and jeans. Their faces are not visible. Grey sand drifts up from the road around their feet like snow falling upward. Wide, still, beautiful, final."
       },
       "motion": "The two women walk slowly away down the road of light, hand in hand; the one in jeans leans her head briefly toward her sister's shoulder; grey sand drifts upward; the camera stays still as they grow smaller toward the bright horizon."
+    },
+    {
+      "id": "6.0b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/matthew/sheet.png"
+        ],
+        "prompt": "A vast dream sky at dusk over a dark, empty landscape: a tired man in his forties in a hospital gown, seen from behind with his arms slightly open, is coming apart into a whirling storm of black feathers; at the centre of the storm the dark shape of a raven, the raven from the character sheet, is forming. Soft violet and amber light, feathers lit at the edges. Dreamlike, sad, beautiful."
+      },
+      "motion": "The last of the man dissolves into black feathers; the feathers swirl together into the raven, which beats its wings once, twice, and flies up and toward the camera into the dusk sky. Slow, dreamlike."
+    },
+    {
+      "id": "6.0a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-matthew/keyframe.png"
+      },
+      "motion": "The raven beats its great wings and lands on the reading table, scattering loose pages that whirl through the air; behind it Lucienne lowers her lantern, startled, then stares. Slow push-in."
+    },
+    {
+      "id": "still-delirium-realm",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "Delirium's realm: a dreamlike space of swirling, shifting, nameless colours with no horizon, floating shapes, drifting butterflies and small coloured fish in the air. Delirium, the girl from the character sheet with wild multicoloured hair, mismatched eyes, fishnet sleeves and a striped jumper, sits alone on a floating stone, hugging her knees, looking at an old faded drawing of a big red-bearded man holding a small girl's hand. Lonely, strange, tender."
+      }
+    },
+    {
+      "id": "still-delirium-desire",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "characters/desire/sheet.png"
+        ],
+        "prompt": "Inside a vast hall shaped like a beating heart, walls of red velvet and rose petals, deep red light: Desire from its character sheet lounges on a velvet couch, head thrown back, laughing. Standing before it, small, Delirium from her sheet, with wild multicoloured hair, clutches her sleeves, her little coloured fish drooping in the air around her. Cruel, beautiful, sad."
+      }
+    },
+    {
+      "id": "still-delirium-despair",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "characters/despair/sheet.png"
+        ],
+        "prompt": "Despair's realm: a vast grey misty room of tall mirrors. Despair from her character sheet, small and grey, crouches before a mirror, not looking up. Delirium from her sheet stands beside her with wild multicoloured hair, the only colour in the whole grey world, reaching out a hand that Despair does not take."
+      }
+    },
+    {
+      "id": "6.2a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The great gates of horn and ivory of the palace of the Dreaming at dusk, standing open: Delirium, the girl from the character sheet with wild multicoloured hair and mismatched eyes, skips through them toward the camera, laughing, a trail of small bright coloured fish swimming through the air behind her. At the palace door ahead, Lucienne from her character sheet, holding a lantern, watches the fish with polite astonishment. Soft violet light, stars appearing."
+      },
+      "motion": "Delirium skips through the gates toward the camera, her coloured fish swirling around her like a ribbon; one fish swims past Lucienne's lantern and she leans back politely. Slow push-in."
+    },
+    {
+      "id": "still-delirium-frog",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "Golden hour on an empty desert road: an old open-top car parked on the dusty verge with its door open. Delirium, the girl from the character sheet with wild multicoloured hair and mismatched eyes, crouches in the dry grass by the roadside, whispering very seriously to a small green frog sitting on a stone, her little coloured fish hovering patiently above her. Far away, a woman in a long black gown leans against the car, waiting."
+      }
+    },
+    {
+      "id": "still-delirium-list",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "Close-up inside an old convertible car parked on a sunlit desert road: on the cracked leather dashboard lies a crumpled page of a list of names written in purple wax crayon, two names already crossed out, a broken stub of crayon beside it. Delirium's small hand with chipped multicoloured nail polish and a fishnet sleeve rests on the page. A tiny bright coloured fish floats in the air above it. Shallow depth of field, dusty golden light, melancholy."
+      }
+    },
+    {
+      "id": "6.2r-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "A small dusty desert town main street at noon: an old three-storey brick office building with a faded painted sign. In the foreground, seen from behind, Aurie, the woman from the character sheet, seen only from behind: long straight black hair and a long black high-collared gown, holds the arm of Delirium, the girl with wild multicoloured hair from her sheet, as they step off the kerb toward the building."
+      },
+      "motion": "The old brick building suddenly crumbles and collapses straight down in a roaring cloud of brick and dust; Aurie pulls Delirium back against her; dust billows toward the camera. Handheld, slight shake."
+    },
+    {
+      "id": "still-seacliff-car",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/delirium/sheet.png",
+          "assets/keyframes/sandman/still-delirium-frog/keyframe.png"
+        ],
+        "prompt": "Dusk on a high clifftop where a road simply ends above a vast dark-blue sea. The same old dusty black convertible from the reference picture is parked at the very edge, seen from behind. Exactly two people sit in the front seats, both seen from behind: on the left, Aurie, a woman with long straight black hair and a black high-collared gown; on the right, Delirium, the girl with wild multicoloured hair, resting her head on Aurie's shoulder. Nobody else anywhere. Tiny coloured fish drift in the air. Wide shot, last orange light on the horizon, quiet and sad."
+      }
+    },
+    {
+      "id": "6.2s-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "A small old wooden Greek fishing boat with a single sail crossing the glittering wine-dark Aegean Sea at sunset, rocky islands on the horizon. At the prow sits Aurie, the woman from the character sheet, seen only from behind: long straight black hair and a long black high-collared gown; at the stern Delirium, the girl with wild multicoloured hair, trails her hand in the water while a ribbon of small bright coloured fish follows it. Wide cinematic shot, warm gold and violet light."
+      },
+      "motion": "The boat glides slowly across the water; the sail fills; Delirium's fish swirl along the wake and leap like dolphins; sunlight sparkles on the waves. Slow aerial drift alongside."
+    },
+    {
+      "id": "6.2o-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "An ancient Greek wedding in a sunlit olive grove in Thrace, three thousand years ago, flower garlands strung between the trees, guests feasting and dancing. In the centre Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder plays her lyre and sings joyfully, while Eurydice, a petite young East Asian woman with a glossy black bob, a gold headband and a short saffron-yellow chiton, barefoot dances toward her laughing, flowers in her hair. Costumes in the ancient Greek tradition: light draped linen chitons and himations, bare shoulders, arms and legs, gold brooches, armbands and laurel; sensual like classical statues, glamorous but never explicit. Warm golden afternoon light, petals in the air, pure happiness."
+      },
+      "motion": "Orphea plays and sings, swaying; Eurydice spins and dances around her and takes her hand; guests clap; petals drift through the sunbeams. Slow orbiting camera."
+    },
+    {
+      "id": "still-eurydice-snake",
+      "still": true,
+      "keyframe": {
+        "refs": [],
+        "prompt": "The edge of a sunlit olive grove in Thrace, long golden grass: Eurydice, a petite young East Asian woman with a glossy black bob, a gold headband and a short saffron-yellow chiton, barefoot has just fallen in the grass, one hand reaching out, her flower crown fallen beside her, a small dark snake slipping away through the grass. In the far background, blurred, the wedding garlands and dancing guests. Costumes in the ancient Greek tradition: light draped linen chitons and himations, bare shoulders, arms and legs, gold brooches, armbands and laurel; sensual like classical statues, glamorous but never explicit. Afternoon light turning cold, tragic, quiet."
+      }
+    },
+    {
+      "id": "6.2o-b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "The vast dark hall of the Greek underworld, black stone columns, a river of pale souls: on two great thrones of black stone sit Hades, a tall dark-bearded king, bare-chested under a black himation, with a crown of iron; and Persephone, a beautiful pale East Asian queen in a deep red draped peplos leaving her shoulders bare, a crown of pomegranates. Before them, lit by one beam of light, Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder stands and sings with her lyre, golden notes of light drifting from the strings. Costumes in the ancient Greek tradition: light draped linen chitons and himations, bare shoulders, arms and legs, gold brooches, armbands and laurel; sensual like classical statues, glamorous but never explicit. Awe and sorrow."
+      },
+      "motion": "Orphea sings and plays, golden notes of light rising and swirling around the thrones; Persephone lifts a hand to her lips and a tear runs down her cheek; Hades bows his head. Slow push-in toward Orphea."
+    },
+    {
+      "id": "6.2o-c",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "A narrow rocky path climbing out of the underworld toward a blinding opening of daylight: Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, at the very last step, light on her face, has turned to look back over her shoulder. Behind her in the shadows, Eurydice, a petite young East Asian woman with a glossy black bob, a gold headband and a short saffron-yellow chiton, barefoot, pale and translucent, reaches out toward her. Dramatic contrast of daylight and darkness, heartbreak."
+      },
+      "motion": "Eurydice slowly fades into pale mist like breath on a mirror and is drawn back down into the dark; Orphea reaches out and grasps empty air, her face crumpling. Slow motion."
+    },
+    {
+      "id": "6.2o-d",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "Dusk on a wide slow river in ancient Thrace winding toward the sea, reeds and willows on the banks: an ornate golden lyre, the one from the character sheet, floats alone on the dark water, its strings still glowing faintly with drifting notes of golden light. Torn white linen and scattered laurel leaves float beside it. No people. Sorrowful, beautiful, mythic."
+      },
+      "motion": "The golden lyre drifts slowly downstream on the current toward the distant sea; its strings shimmer and little notes of golden light rise from it and fade; ripples spread. Slow tracking shot along the water."
+    },
+    {
+      "id": "still-orpheus",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png",
+          "assets/plates/orpheus-shrine/plate.png"
+        ],
+        "prompt": "The sea cave shrine from the plate at dusk, oil lamps glowing: only the living head of Orphea, the beautiful young woman from the character sheet, the beautiful young woman from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust of a goddess: serene and lovely, clean, no blood and no wound visible, the flowers hiding where her neck would be, her very long black waves spread across the petals, a gold laurel circlet, her dark eyes open and alive, looking toward the cave mouth. Through it, a small island across the water catches the last sun. Tender and eerie."
+      }
+    },
+    {
+      "id": "still-destruction-painting",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/destruction/sheet.png",
+          "characters/barnabas/sheet.png",
+          "assets/plates/destruction-island/plate.png"
+        ],
+        "prompt": "The sunny stone terrace of the cottage from the plate above a blue sea: Destruction, the huge red-bearded man from the first character sheet, in a paint-spattered shirt, stands at his easel cheerfully painting a very bad picture of the sea, a brush in his teeth. Barnabas the dog from the second sheet sits beside him, looking at the canvas with clear disapproval. A pot of stew steams on the table. Warm morning light, gentle comedy."
+      }
+    },
+    {
+      "id": "6.4a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-destruction/keyframe.png"
+      },
+      "motion": "Destruction laughs and swings Delirium round in a circle off her feet like a child; her multicoloured hair flies out and her coloured fish swirl around them; Barnabas bounces and barks happily. Warm and joyful, slow orbit."
+    },
+    {
+      "id": "6.5r",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/orpheus-shrine/plate.png"
+        ],
+        "prompt": "Dusk on a calm violet sea: a small wooden rowing boat crosses toward a rocky Greek island where lamplight glows from the mouth of a sea cave. Rowing alone, seen from behind, Aurie, the woman from the character sheet, seen only from behind: long straight black hair and a long black high-collared gown. The first stars appear. Lonely, quiet, inevitable."
+      },
+      "motion": "Aurie rows slowly and steadily toward the glowing cave; the oars dip and drip; the lamplight in the cave grows nearer; the stars brighten. Slow push behind the boat."
+    },
+    {
+      "id": "6.5a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "use": "assets/keyframes/sandman/still-orpheus/keyframe.png"
+      },
+      "motion": "Orphea slowly closes her eyes and smiles peacefully; she gently dissolves into soft golden light and drifting motes like pollen, which rise and float out of the cave toward the sea; only the flowers remain. The lamp flames lean after the light. Very slow push-in."
+    },
+    {
+      "id": "0.0d",
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "The candlelit stone cellar from the plate, 1916: Roderick Burgess from his sheet, gaunt and bearded in a dark suit, stands at a lectern reading aloud from an ancient leather-bound grimoire, one finger on the page; a chalk circle on the flagstones begins to glow."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "Burgess reads aloud, his lips moving, and the chalk circle flares with pale light that rises like smoke; candle flames bend toward the book. Slow push-in."
+    },
+    {
+      "id": "1.1c",
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The candlelit cellar from the plate: three robed cultists carry away a black snouted helm, a leather pouch of sand and a glowing red ruby toward the stone steps; behind them, out of focus inside a great glass sphere, a small distant figure of Aurie in her long black high-collared gown, her face not visible presses her hands against the glass."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The cultists climb the steps with the treasures, the ruby glowing in a hand; the camera stays low; behind them the trapped figure's hands slide down the glass. Slow pan."
+    },
+    {
+      "id": "still-burgess-alone",
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "Night, the candlelit cellar from the plate, all chairs empty: Roderick Burgess from his sheet, in a red velvet smoking jacket, comes down the worn stone steps alone, one hand on the wall, candle in the other, looking toward the glass sphere below. Brooding, secret."
+      },
+      "still": true
+    },
+    {
+      "id": "still-burgess-mirrors",
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "A dim Edwardian hallway at night, candlelight: Roderick Burgess from his sheet, chalk-white and trembling, lifts a framed mirror down from the wallpapered wall; other mirrors stacked face-down on the floorboards. Up the stairs behind him, a small boy in striped pyjamas watches through the banisters."
+      },
+      "still": true
+    },
+    {
+      "id": "still-burgess-stairs",
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png",
+          "assets/plates/cellar-1916/plate.png"
+        ],
+        "prompt": "A steep dark stone cellar staircase seen from below: Roderick Burgess from his sheet, in a red velvet jacket, climbs slowly toward a heavy wooden door at the top, turning a big iron key in its lock with a candle in his other hand; candle glow rises from the cellar beneath. Eerie, secretive."
+      },
+      "still": true
+    },
+    {
+      "id": "still-alex-stairs",
+      "keyframe": {
+        "refs": [],
+        "prompt": "A dim Edwardian upstairs landing at night, floral wallpaper, one oil lamp: a small boy of about seven in striped flannel pyjamas sits hugging his knees on the top step, head turned, listening down the stairs, frightened. 1916."
+      },
+      "still": true
+    },
+    {
+      "id": "2.2b",
+      "keyframe": {
+        "refs": [
+          "characters/fates/sheet.png",
+          "assets/plates/crossroads/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The misty moonlit crossroads from the plate: in the foreground, Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars), one arm raised; ahead, out of the fog, the three Fates from their sheet (maiden, mother, crone) begin to appear, a glowing thread between their hands."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The three women step slowly out of the swirling fog toward Aurie, the glowing thread brightening between them; the crone lifts her shears; mist parts. Slow push-in."
+    },
+    {
+      "id": "2.7c",
+      "keyframe": {
+        "refs": [
+          "characters/choronzon/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The red-lit lava arena of Hell from the plate, demons crowding the stands: Choronzon from his sheet has become a colossal scaled beast rearing over a small figure in a black gown at the edge of the pool."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The beast's jaws close over the small black figure, who bursts into black sparks; the demon crowd leaps up roaring; embers swirl. Handheld."
+    },
+    {
+      "id": "still-lucifer-alone",
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "The vast red-lit arena of Hell from the plate, completely empty, every bench and step deserted, cell doors hanging open: Lucifer from his sheet, silver-haired, black coat, huge white wings folded, sits alone on the towering stone throne, looking down as if he has been waiting. Desolate grandeur."
+      },
+      "still": true
+    },
+    {
+      "id": "still-lucifer-key",
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "At the foot of the throne in the empty red-lit arena: Lucifer from his sheet holds out a great iron key on his open palm. In the foreground, Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars), faces him. Every cell door behind them hangs open. Grave and quiet."
+      },
+      "still": true
+    },
+    {
+      "id": "4.1c",
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-gates/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Before the great iron gates of Hell from the plate: Lucifer from his sheet kneels with his head bowed, his enormous white wings spread low behind him; standing over him, Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars), raises a dark blade of shadow."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The blade falls; the great white wings shear away and burst into a storm of white feathers swirling up around them both; Lucifer rises, lighter. Slow motion."
+    },
+    {
+      "id": "4.2c",
+      "keyframe": {
+        "refs": [
+          "characters/azazel/sheet.png",
+          "assets/plates/suitors-hall/plate.png"
+        ],
+        "prompt": "Close on a candlelit stone banquet table from the plate: a small glass jar full of pale gold light, and a pair of slender pale hands with black sleeves reaching toward it; beyond, the many-eyed smoky crowned demon Azazel from his sheet recoils."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The jar cracks and bursts; a rush of pale gold light pours out into the cupped pale hands and glows there; Azazel shrieks and shrinks back into smoke. Slow push-in."
+    },
+    {
+      "id": "4.3d",
+      "keyframe": {
+        "refs": [
+          "app/public/clips/sandman/stills/still-nada.jpg",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "A hazy white void with a doorway of blinding light behind: Nada, the woman from the reference picture (gold-flecked braids, pale linen dress, gold collar), faces the camera, eyes blazing; in the foreground, over the shoulder of Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars)."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "Nada strikes Aurie across the face with her open hand; Aurie's head turns aside and her black hair swings; Nada turns and walks into the blinding light alone. Slow motion."
+    },
+    {
+      "id": "still-nada-refuses",
+      "keyframe": {
+        "refs": [
+          "app/public/clips/sandman/stills/still-nada.jpg"
+        ],
+        "prompt": "A hazy white void: Nada, the woman from the reference picture (gold-flecked braids, pale linen dress, gold collar), turns her back on a heap of glowing gifts on the pale floor (a crown, jewels, a little golden house) and walks away toward a soft light without looking back."
+      },
+      "still": true
+    },
+    {
+      "id": "end4-faerie",
+      "keyframe": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/faerie-glade/plate.png"
+        ],
+        "prompt": "The misty birch glade from the plate turned into a strange Hell: pale pointed-eared faeries from the sheet dance in a ring around a still black pool, violet lights floating, an empty mossy throne at the edge. Eerie, whimsical."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The faeries whirl around the pool hand in hand, violet orbs spinning above, their reflections dancing differently in the black water. Slow orbit."
+    },
+    {
+      "id": "end4-piano",
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png"
+        ],
+        "prompt": "A small smoky late-night bar, one amber lamp: Lucifer from his sheet, silver-haired, in a black coat, with no wings at all, sits at an upright piano playing, eyes half closed, a faint smile; empty stools behind him."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "He plays gently, his hands moving over the keys, smoke curling through the lamplight; he glances up and smiles to himself. Slow push-in."
+    },
+    {
+      "id": "5.1d",
+      "keyframe": {
+        "refs": [
+          "assets/plates/madoc-room/plate.png"
+        ],
+        "prompt": "Close-up on a boarded attic door on a dim landing: an iron padlock in a slender pale hand with a black high-collared sleeve, bare bulb light."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The padlock crumbles into falling golden sand through the fingers, and the door swings slowly open onto the dim attic. Slow push-in."
+    },
+    {
+      "id": "still-madoc-sees",
+      "keyframe": {
+        "refs": [
+          "characters/madoc/sheet.png",
+          "assets/plates/madoc-room/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Dim book-lined study under a green lamp: Richard Madoc from his sheet twists round in his desk chair, whisky glass in hand, staring in fear at the doorway, where a small distant figure of Aurie in her long black high-collared gown, her face not visible stands in the dark."
+      },
+      "still": true
+    },
+    {
+      "id": "still-corinthian-skull",
+      "keyframe": {
+        "refs": [
+          "characters/corinthian/sheet.png"
+        ],
+        "prompt": "On a patterned convention-hall carpet between rows of empty folding chairs, NO people anywhere: only a small white skull lying on the carpet beside a pair of dark round sunglasses; where its eye sockets should be, two tiny rows of teeth gleam. Cold overhead light, eerie, empty."
+      },
+      "still": true
+    },
+    {
+      "id": "still-skull-shelf",
+      "keyframe": {
+        "refs": [
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "A shelf in the lantern-lit library of the Dreaming from the plate: between old books rests a small white skull wearing dark round sunglasses, two tiny rows of teeth where its eyes should be. Quiet, eerie."
+      },
+      "still": true
+    },
+    {
+      "id": "5.2bb",
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/boarding-house/plate.png"
+        ],
+        "prompt": "The boarding-house bedroom from the plate at night: Rose from her sheet, pink hair, asleep on the iron bed under a patchwork quilt. The floral wallpaper begins to glow."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The walls of the room dissolve into translucent starlight, revealing the other sleeping lodgers in their rooms all around, their dreams drifting together like coloured smoke. Slow pull-back."
+    },
+    {
+      "id": "still-aurie-raises-hand",
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png",
+          "assets/plates/vortex/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "Inside the swirling blue-white vortex from the plate: in the foreground Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars), one hand raised palm out; facing her, Rose from her sheet stands small, eyes closed, not running, her pink hair whipping in the wind."
+      },
+      "still": true
+    },
+    {
+      "id": "still-unity-rose",
+      "keyframe": {
+        "refs": [
+          "characters/unity/sheet.png",
+          "characters/rose/sheet.png"
+        ],
+        "prompt": "Soft golden morning in a flowered bedroom: Unity Kincaid from her sheet, white-haired, lies peacefully at rest under a quilt, a faint smile; Rose from her sheet sits beside the bed holding her hand. Gentle, bittersweet."
+      },
+      "still": true
+    },
+    {
+      "id": "7.1d",
+      "keyframe": {
+        "refs": [
+          "characters/matthew/sheet.png",
+          "characters/norse/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "A cold wooden house by the sea, frost on the windows: Loki from the Norse sheet kneels inside a ring of strange silver fire, holding the small boy Daniel from his sheet above the flames. Through the window, a black raven, Matthew, is diving."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The raven bursts through the window and dives screaming at Loki's eyes, wings beating; Loki flinches and throws up an arm; silver fire flares. Fast, handheld."
+    },
+    {
+      "id": "still-daniel-safe",
+      "keyframe": {
+        "refs": [
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "A cold wooden room by the sea, frost-rimmed windows, blue light: the small boy Daniel from his sheet sits unhurt on the floorboards inside a dying ring of silver embers, a black feather beside him; a brown leather coat lies dropped where someone vanished. Quiet relief."
+      },
+      "still": true
+    },
+    {
+      "id": "still-daniel-library",
+      "keyframe": {
+        "refs": [
+          "characters/daniel/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "The lantern-lit library of the Dreaming from the plate: the small boy Daniel from his sheet sleeps peacefully curled on a velvet cushion on the reading table among stacked books, a brass lantern glowing beside him."
+      },
+      "still": true
+    },
+    {
+      "id": "7.1e",
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-loki-fire/keyframe.png",
+          "characters/lyta/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "A cold wooden house by the sea, blue light: Loki, exactly the man from the first reference picture (same face, long red hair, beard and brown leather coat, no spear) kneels in a ring of silver fire holding the small boy Daniel; Lyta Hall from her sheet strides barefoot into the fire's light, arms out. Loki looks exactly as in the first reference picture."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "Lyta walks straight through the silver flames and lifts her son out of Loki's hands, pulling him to her chest; Loki leans back, surprised. Slow push-in."
+    },
+    {
+      "id": "still-loki-leaves",
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-loki-fire/keyframe.png",
+          "characters/lyta/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "The same cold wooden room, embers dying: Lyta Hall from her sheet kneels clutching the small boy Daniel to her chest; in the doorway Loki, exactly the man from the first reference picture (same face, long red hair, beard and brown leather coat, no spear) glances back over his shoulder with a sly half-smile, already leaving. Loki looks exactly as in the first reference picture."
+      },
+      "still": true
+    },
+    {
+      "id": "7.3c",
+      "keyframe": {
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "Close on a brass lantern held in Lucienne's hand (from her sheet, dark high-collared coat sleeve) on the burning palace steps of the Dreaming from the plate, sand drifting through the firelight."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The lantern flame gutters and goes out; a thin thread of smoke curls up; the glass darkens and cold blue gloom swallows the hand. Slow."
+    },
+    {
+      "id": "7.4b",
+      "keyframe": {
+        "refs": [
+          "characters/faerie/sheet.png",
+          "assets/plates/faerie-glade/plate.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The misty birch glade by the pond from the plate: Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars) stands alone at the water's edge; all around her a ring of pale pointed-eared faeries from the sheet."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "One by one the faeries turn their backs on her and walk away into the mist; their lights go dim. Slow pull-back."
+    },
+    {
+      "id": "still-family-sigils",
+      "keyframe": {
+        "refs": [
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The dark empty throne room of the Dreaming from the plate, no people at all: on the stone wall hang seven tall glowing sigils like doorways of light; one shows a laughing mouth, one a weeping eye, one an open doorway spilling warm light. Sand drifts through cold starlight."
+      },
+      "still": true
+    },
+    {
+      "id": "7.5b",
+      "keyframe": {
+        "refs": [
+          "characters/daniel/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "prompt": "The lantern-lit library of the Dreaming from the plate at night: the small boy Daniel from his sheet asleep on a cushion among the books."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "The little boy opens his eyes, and they fill with slowly turning stars; a soft white light spreads through his hair; the lantern flame bows. Slow push-in."
+    },
+    {
+      "id": "still-lantern-chair",
+      "keyframe": {
+        "refs": [],
+        "prompt": "At a candlelit graveside wake at night: an empty wooden chair at the front of the mourners, and on it a brass lantern still burning. Grey stone, rows of candles, soft mist."
+      },
+      "still": true
+    },
+    {
+      "id": "still-delirium-ruins",
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png"
+        ],
+        "prompt": "The roofless grey ruins of the Dreaming, years later, fog and fallen stone: Delirium from her sheet, wild multicoloured hair, stands tiny before a cracked door overgrown with vines, one palm flat on the dead wood, her little fish drooping grey."
+      },
+      "still": true
+    },
+    {
+      "id": "still-jed-sleeps",
+      "keyframe": {
+        "refs": [
+          "characters/corinthian/sheet.png"
+        ],
+        "prompt": "A hot still Florida night: a small boy in striped pyjamas sleeps curled in a narrow bed, moonlight striped through venetian blinds, toy cars on the floor; in the dark doorway stands a pale man in a black suit and dark glasses, from the sheet, smiling."
+      },
+      "still": true
+    },
+    {
+      "id": "still-rose-jed",
+      "keyframe": {
+        "refs": [
+          "characters/rose/sheet.png"
+        ],
+        "prompt": "Dawn on the porch of a shabby Florida house: Rose from her sheet, pink hair, kneels and hugs a small dark-haired boy in pyjamas tight, eyes closed, a patchwork quilt dropped beside them. Warm low light, relief."
+      },
+      "still": true
+    },
+    {
+      "id": "2.12c",
+      "keyframe": {
+        "refs": [
+          "characters/death/sheet.png"
+        ],
+        "prompt": "A high old stone bridge over a misty river at dawn: a young man in a rumpled jacket has slipped from the parapet; Death from her sheet, black bob and ankh pendant, holds his hand."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "They fall slowly together into the mist, Death holding his hand, his frightened face growing calm; her hair streams upward; the mist swallows them softly. Slow motion."
+    },
+    {
+      "id": "5.3x",
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/london-rain/plate.png"
+        ],
+        "prompt": "Thick night fog on a London street by an old church: Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars) walks past ragged sleepers huddled on the church steps."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "As she passes each sleeper, a thread of warm golden light drifts from her hand onto them and their faces soften into smiles; she does not stop walking. Slow tracking shot behind her."
+    },
+    {
+      "id": "5.3y",
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "A foggy stone embankment of the Thames at night, iron gas lamps along the wall, dark water: Aurie, the woman from her character sheet, seen only from behind or in silhouette (long straight black hair, long black high-collared gown with a faint shimmer of stars) stands at the parapet looking at the river."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "One by one the gas lamps along the embankment go out into the fog; she does not move; dawn greys the water. Slow."
+    },
+    {
+      "id": "still-hob-two-glasses",
+      "keyframe": {
+        "refs": [
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1389/plate.png"
+        ],
+        "prompt": "A fog-bound tavern in 1889, gas lamps, rain on the windows: Hob Gadling from his sheet, bearded, in a waistcoat, sits slumped alone at a table with two full glasses in front of him and an empty chair opposite, refusing to go home. The landlord stacks chairs behind him."
+      },
+      "still": true
+    },
+    {
+      "id": "fin-sleep",
+      "keyframe": {
+        "refs": [
+          "assets/plates/litharge/plate.png"
+        ],
+        "prompt": "Night on the candle-lit cemetery avenue from the plate: a great crowd of mourners stands among the headstones, lanterns in hand."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "All at once, every mourner closes their eyes and gently sinks down asleep where they stand, against stones and each other; the candles flicker; a silver dream-mist rises from them. Slow pull-back."
+    },
+    {
+      "id": "fin-hob-pints",
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-hob-1989/keyframe.png",
+          "characters/hob/sheet.png",
+          "assets/plates/tavern-1989/plate.png"
+        ],
+        "prompt": "A cosy 1989 London pub, rain on the windows: Hob Gadling, exactly the grey-haired, grey-bearded man in a brown leather jacket from the first reference picture, carries two full pints of dark beer from the bar toward a corner table with an empty chair."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "Hob sets both pints down at a corner table, one in front of the empty chair opposite, and sits, and raises his own glass to it. Slow push-in."
+    },
+    {
+      "id": "fin-prospero",
+      "keyframe": {
+        "refs": [],
+        "prompt": "A rocky island shore at stormy dusk, wild surf: an old grey-bearded magician in a ragged sea-cloak holds a carved wooden staff in both hands; an old leather book lies on the rocks at his feet."
+      },
+      "model": "video",
+      "seconds": 5,
+      "motion": "He breaks the staff across his knee and throws the book into the waves, where it sinks glowing; the storm clouds part and a pale light breaks through. Slow push-in."
+    },
+    {
+      "id": "still-pride-door",
+      "keyframe": {
+        "refs": [
+          "assets/plates/convocation/plate.png"
+        ],
+        "prompt": "At the end of the dark stone hall of the Endless from the plate: a tall black door, shut, a heavy iron bolt thrown on the inside, a thin blade of candlelight beneath it. Cold, quiet."
+      },
+      "still": true
+    },
+    {
+      "id": "still-bad-portrait",
+      "keyframe": {
+        "refs": [
+          "characters/destruction/sheet.png",
+          "assets/plates/destruction-island/plate.png"
+        ],
+        "prompt": "Close on an easel on the sunny island terrace from the plate: an original, cheerfully terrible amateur painting, a lopsided childlike portrait of a pale woman with long straight black hair and a black high-collared gown, wonky eyes, crooked smile, thick clumsy brushstrokes in garish colours. Not any famous painting. Destruction's huge paint-stained hand holds a brush beside it. Warm, funny."
+      },
+      "still": true
+    },
+    {
+      "id": "still-raven-throne",
+      "keyframe": {
+        "refs": [
+          "characters/matthew/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The dark throne of the Dreaming from the plate, empty, at night: a black raven, Matthew from his sheet, sleeps with his head tucked under his wing on the high carved back of the throne. Starlight and drifting sand."
+      },
+      "still": true
+    },
+    {
+      "id": "still-raven-stream",
+      "keyframe": {
+        "refs": [
+          "characters/matthew/sheet.png",
+          "assets/plates/dream-stream/plate.png"
+        ],
+        "prompt": "Dusk at the stream from the plate: a black raven, Matthew from his sheet, perches on a mossy stone by the water, head cocked, looking with concern at someone just out of frame. Cold blue-grey light."
+      },
+      "still": true
+    },
+    {
+      "id": "still-lucienne-stream",
+      "keyframe": {
+        "refs": [
+          "characters/lucienne/sheet.png",
+          "assets/plates/dream-stream/plate.png"
+        ],
+        "prompt": "Dusk at the stream from the plate: Lucienne from her sheet comes down through the pale grass with a lit brass lantern, and stands quietly by the water, waiting. Cold blue light, warm lantern."
+      },
+      "still": true
+    },
+    {
+      "id": "still-delirium-empty",
+      "keyframe": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "assets/keyframes/sandman/still-delirium-frog/keyframe.png"
+        ],
+        "prompt": "The same old dusty black convertible from the reference picture parked on an empty desert highway at noon, seen through the windscreen: Delirium from her sheet sits slumped and vacant in the passenger seat like an empty coat, eyes glassy, her coloured fish lying still and grey on the dashboard."
+      },
+      "still": true
+    },
+    {
+      "id": "still-paul-sings",
+      "keyframe": {
+        "refs": [
+          "characters/paul/sheet.png",
+          "characters/alex-old/sheet.png",
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "Dawn in the cellar from the plate: Paul McGuire from his sheet kneels beside the wheelchair, holding the old man's hand and singing softly, eyes closed; the old man Alex from his sheet sleeps under a plaid blanket. A shaft of dawn light."
+      },
+      "still": true
+    },
+    {
+      "id": "still-jed-sun",
+      "keyframe": {
+        "refs": [],
+        "prompt": "A sunlit dream image: a small dark-haired boy throws his head back laughing on summer grass under a bright blue sky, golden light, soft dreamlike edges."
+      },
+      "still": true
+    },
+    {
+      "id": "still-unity-window",
+      "keyframe": {
+        "refs": [
+          "characters/unity/sheet.png"
+        ],
+        "prompt": "A dreamlike memory: Unity Kincaid from her sheet, white-haired, in a faded blue dressing gown, sits alone in a high-backed chair by a tall window, hands folded, soft grey-blue haze and faint stars around her. Tender."
+      },
+      "still": true
+    },
+    {
+      "id": "still-calliope-1927",
+      "keyframe": {
+        "refs": [
+          "characters/calliope/sheet.png"
+        ],
+        "prompt": "1927, a dim cluttered study, brown gloom: a gaunt old writer in a shabby waistcoat stands by a locked door, key in hand, looking back at Calliope from her sheet, who sits on an iron bed in her linen shift, wrists bound with cord."
+      },
+      "still": true
+    },
+    {
+      "id": "still-calliope-prays",
+      "keyframe": {
+        "refs": [
+          "characters/calliope/sheet.png",
+          "characters/fates/sheet.png",
+          "assets/plates/madoc-room/plate.png"
+        ],
+        "prompt": "The attic from the plate at night: Calliope from her sheet kneels by the iron bed, hands clasped, face lifted in prayer; behind her in the shadows the three Fates from their sheet glimmer faintly, a glowing thread between them."
+      },
+      "still": true
+    },
+    {
+      "id": "still-despair-mirrors",
+      "keyframe": {
+        "refs": [
+          "characters/despair/sheet.png"
+        ],
+        "prompt": "Despair's grey realm: a vast grey misty hall lined with tall tarnished mirrors; in each, a different blurred figure slumps over the worst thing they ever did; small grey Despair from her sheet crouches before one. Desolate."
+      },
+      "still": true
+    },
+    {
+      "id": "still-treasures-lost",
+      "keyframe": {
+        "refs": [],
+        "prompt": "A dark star-flecked void like a map: three lost objects drift far apart on banks of mist, a black snouted helm, a worn leather pouch spilling golden sand, and a glowing red ruby, each lit by its own faint light. Mysterious."
+      },
+      "still": true
+    },
+    {
+      "id": "still-helm-demon",
+      "keyframe": {
+        "refs": [
+          "assets/plates/hell-gates/plate.png"
+        ],
+        "prompt": "A red-lit cavern of Hell: a horned, skull-faced demon in scorched robes sits on a black stone seat holding up a black snouted helm like a gas mask in one claw, gloating. Embers drift."
+      },
+      "still": true
+    },
+    {
+      "id": "still-bette-asleep",
+      "keyframe": {
+        "refs": [
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "Inside the dim all-night diner from the plate: a young waitress in a pale uniform sleeps behind the counter, cheek on her folded arms, a faint smile; cold blue light through the windows, nobody else."
+      },
+      "still": true
+    },
+    {
+      "id": "still-bette-dream",
+      "keyframe": {
+        "refs": [
+          "assets/plates/diner/plate.png"
+        ],
+        "prompt": "A dream version of the diner from the plate, warm golden glow: a young waitress in a pale uniform sits in a booth writing stories, smiling, handwritten pages drifting around her like birds, each trailing a ribbon of light."
+      },
+      "still": true
+    },
+    {
+      "id": "still-unity-shore",
+      "keyframe": {
+        "refs": [
+          "characters/unity/sheet.png"
+        ],
+        "prompt": "A young girl of about ten, Unity from her sheet as a child, with long dark hair, sleeps on pale sand at the edge of a calm summer sea, cheek on her hands, gulls overhead, warm golden light."
+      },
+      "still": true
+    },
+    {
+      "id": "still-unity-grey",
+      "keyframe": {
+        "refs": [
+          "characters/unity/sheet.png"
+        ],
+        "prompt": "The same young girl asleep on a shore where everything is drained to flat grey: grey sea, grey sand, grey sky, thin mist, no colour anywhere."
+      },
+      "still": true
+    },
+    {
+      "id": "still-johanna-porch",
+      "keyframe": {
+        "refs": [
+          "characters/johanna/sheet.png",
+          "assets/plates/london-rain/plate.png"
+        ],
+        "prompt": "A rainy London terrace street at night from the plate: Johanna Constantine from her sheet waits back in the shadow of a brick porch doorway, dry, watching the wet road, an unlit cigarette in her fingers, as if expecting trouble."
+      },
+      "still": true
+    },
+    {
+      "id": "still-lyta-thessaly-island",
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "characters/thessaly/sheet.png"
+        ],
+        "prompt": "Years later, a whitewashed Greek island terrace above a blue sea in late afternoon: Thessaly from her sheet sits beside Lyta Hall from her sheet (slim, not pregnant, simple summer dress, calmer, a little older), both looking out at the water, coffee cups between them, olive trees. Quiet healing."
+      },
+      "still": true
+    },
+    {
+      "id": "still-lyta-son-kitchen",
+      "keyframe": {
+        "refs": [
+          "characters/lyta/sheet.png",
+          "characters/daniel/sheet.png"
+        ],
+        "prompt": "A sunny ordinary kitchen in the morning: Lyta Hall from her sheet, smiling, sets a plate before her son, a bright-eyed boy of about ten who is drawing at the table. Ordinary and loved."
+      },
+      "still": true
     }
   ],
   "react": {
@@ -1973,7 +2881,7 @@
           "characters/orpheus/sheet.png",
           "assets/plates/orpheus-shrine/plate.png"
         ],
-        "setting": "Close-up in the cave shrine from the plate, oil-lamp light: only the living head of Orpheus, the young man from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust: serene, clean, no blood and no wound visible, the flowers hiding where his neck would be, his black curls spread on the petals, looking straight at the camera.",
+        "setting": "Close-up in the sea cave shrine from the plate, oil-lamp light: only the living head of Orphea, the beautiful young woman from the character sheet, rests upright on a bed of fresh white and red flowers on the marble altar, like a living marble bust of a goddess: serene, clean, no blood and no wound visible, the flowers hiding where her neck would be, her very long black waves spread on the petals, a gold laurel circlet, looking straight at the camera.",
         "moods": [
           "talking"
         ]
@@ -2054,6 +2962,26 @@
           "assets/plates/throne-room/plate.png"
         ],
         "setting": "Medium close-up in the throne room of the Dreaming from the plate, full of soft pale light: Daniel, the new Dream, the white-haired young man in the flowing white high-collared robe with a green stone pendant from the character sheet, looking straight into the camera, gentle and grave.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "matthew": {
+        "refs": [
+          "characters/matthew/sheet.png",
+          "assets/plates/library-hub/plate.png"
+        ],
+        "setting": "Medium close-up in the endless library from the plate, warm lamplight: the raven from the character sheet perches on the edge of a wooden reading table among scattered pages, facing the camera, head cocked, bright black eye catching the light.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "delirium": {
+        "refs": [
+          "characters/delirium/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "setting": "Medium close-up in the throne room of the Dreaming from the plate: Delirium from the character sheet, wild multicoloured hair, mismatched eyes, small bright coloured fish drifting in the air around her, looking straight into the camera, hopeful and anxious.",
         "moods": [
           "talking"
         ]
