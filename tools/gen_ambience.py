@@ -30,6 +30,19 @@ BEDS = {
     "sea": "Gentle ocean waves lapping on a rocky shore, a light wind",
     "diner": "A quiet late night diner, fluorescent lights humming, a coffee machine, distant traffic outside",
     "night-room": "A quiet apartment at night, a clock ticking, distant city traffic",
+    # Locations added for Parts One to Seven (2026-10-23)
+    "cellar": "Room tone of a cold stone basement, a low steady hum of still air, candles softly fluttering, very quiet",
+    "greek-grove": "Cicadas buzzing in olive trees on a hot summer afternoon in the Mediterranean, a warm light breeze",
+    "underworld": "A deep dark cavern, a slow underground river flowing, a low hollow wind, cold and eerie",
+    "sea-cave": "Sea waves washing and echoing inside a rocky sea cave, water dripping, a soft hollow roar",
+    "convocation": "A huge cathedral interior, quiet reverberant room tone, soft distant echoes of footsteps, a faint low hum",
+    "banquet": "A great feasting hall, a fire roaring in a hearth, a low murmur of many voices, cups clinking",
+    "wake": "A quiet cemetery at night far from any city, gentle wind in trees, crickets, an owl far away",
+    "desert": "Strong steady wind blowing over sand dunes in an open desert, gusts of wind outdoors",
+    "faerie": "An enchanted forest at night, soft shimmering wind chimes, gentle crickets, a light magical breeze",
+    "siege": "A huge raging fire, roaring flames, loud crackling, wooden beams snapping, a deep rumble",
+    "desire": "A slow deep heartbeat thumping in a warm hushed room, soft velvet silence, low and intimate",
+    "despair": "Soft cold wind blowing outside on a grey winter day, gentle, lonely and steady",
 }
 NEGATIVE = "low quality, music, speech, singing, distortion, noise, clicks"
 TARGET_DB = -26.0  # a bed under the music (about -19) and the voices (-22), never competing with them

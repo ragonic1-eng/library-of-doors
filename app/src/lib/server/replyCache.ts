@@ -5,6 +5,9 @@
 import { createHash } from "node:crypto";
 import { put } from "@vercel/blob";
 import type { DialogueReply, Profile, Scene } from "@/lib/story/types";
+import { faithful } from "@/lib/server/faithful";
+import { gatewayJson, modelOrder, models } from "@/lib/server/gateway";
+import { splitParts } from "@/lib/server/voice";
 
 const TOKEN = process.env.BLOB_READ_WRITE_TOKEN;
 // The Blob store's origin, from the public media base (".../clips"). Unset locally: nothing is cached there.
@@ -32,9 +35,43 @@ export async function savedReply(bookId: string, key: string): Promise<DialogueR
   }
 }
 
-/** Keep a reply only when it is complete: words, and a real voice for every speaker. */
-export async function saveReply(bookId: string, key: string, reply: DialogueReply) {
+/** What is actually said in a take, heard by a separate listening call (not the transcript the voice model claimed). */
+async function hear(audio: string): Promise<string | null> {
+  for (const model of modelOrder(models.tts, models.ttsFallbacks)) {
+    try {
+      const data = await gatewayJson<{ choices: { message: { content?: string } }[] }>("/chat/completions", {
+        model,
+        modalities: ["text"],
+        messages: [{ role: "user", content: [
+          { type: "text", text: "Transcribe exactly every word spoken in this audio, from the first sound to the last. Output only the words." },
+          { type: "input_audio", input_audio: { data: audio, format: "mp3" } },
+        ] }],
+      }, 30_000);
+      const text = data.choices?.[0]?.message?.content?.trim();
+      if (text) return text;
+    } catch {
+      /* next model */
+    }
+  }
+  return null;
+}
+
+/**
+ * Keep a reply only when it is complete and every speaker's voice, listened to again from the start, says
+ * every word of the line. A saved reply replays forever, so it gets this second, independent check on top of
+ * the checks every live take already passes (transcript against the script, dead air, length).
+ */
+export async function saveReply(bookId: string, key: string, reply: DialogueReply, labelled: boolean) {
   if (!reply.dialogue || !reply.voice?.length || reply.voice.some((v) => !v.audio)) return;
+  const parts = splitParts(reply.dialogue, labelled);
+  if (parts.length !== reply.voice.length) return;
+  for (let i = 0; i < parts.length; i++) {
+    const heard = await hear(reply.voice[i].audio!);
+    if (!heard || !faithful(parts[i].text, heard)) {
+      console.error(`reply cache: not saved, take ${i + 1} did not say the whole line: "${(heard ?? "nothing heard").slice(0, 80)}"`);
+      return;
+    }
+  }
   try {
     await put(path(bookId, key), JSON.stringify(reply), { access: "public", token: TOKEN, addRandomSuffix: false, allowOverwrite: true, contentType: "application/json" });
   } catch (e) {

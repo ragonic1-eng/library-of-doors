@@ -2071,7 +2071,7 @@
       },
       "model": "video",
       "seconds": 5,
-      "motion": "The cultists climb the steps with the treasures, the ruby glowing in a hand; the camera stays low; behind them the trapped figure's hands slide down the glass. Slow pan."
+      "motion": "Locked-off static camera, no zoom. The three hooded cultists turn slowly and walk out of frame to the right, each carrying exactly what he holds: the black gas-mask helm, the leather pouch, and the one red ruby. Behind them in the glass sphere the woman in white slowly slides her palms down the glass, head bowed. No new objects appear, nothing duplicates."
     },
     {
       "id": "still-burgess-alone",
@@ -2768,6 +2768,192 @@
         "prompt": "A sunny ordinary kitchen in the morning: Lyta Hall from her sheet, smiling, sets a plate before her son, a bright-eyed boy of about ten who is drawing at the table. Ordinary and loved."
       },
       "still": true
+    },
+    {
+      "id": "still-burgess-parlour",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/burgess/sheet.png"
+        ],
+        "prompt": "A dim 1920s English parlour, cold grey window light: Roderick Burgess from his sheet, in a red velvet smoking jacket, slumps alone in a leather armchair, jaw set, staring at nothing; on the side table beside him a framed photograph of a young soldier lies face-down. Silent grief turned to stone."
+      }
+    },
+    {
+      "id": "still-alex-talks",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/sphere-pov/plate.png",
+          "characters/paul/sheet.png"
+        ],
+        "prompt": "First-person view from inside the glass sphere in the dusty 1970s cellar lit by a bare bulb: outside the curved glass, Alex Burgess from the character sheet (about sixty, hair greying, his black rectangular glasses) sits on a wooden chair close to the sphere, leaning forward, hands clasped, speaking gently for the first time. Behind him in the shadows by the stairs, Paul McGuire from his sheet stands with his back half turned, pretending not to listen."
+      },
+      "identity": [
+        "alex-1970s"
+      ]
+    },
+    {
+      "id": "still-alex-pocket",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "Close-up in the dim 1988 cellar from the plate: an old man's hand in a grey cardigan sleeve draws a small creased folded paper from his breast pocket; his face is out of frame above, only his chin and the edge of his glasses visible; a plaid blanket on his knees, warm candle glow."
+      },
+      "identity": [
+        "alex-1988"
+      ]
+    },
+    {
+      "id": "still-aurie-dawn",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "assets/plates/cellar-1988/plate.png"
+        ],
+        "prompt": "The stone cellar stairs from the plate at dawn, the door at the top thrown open onto pale gold morning light: Aurie, the woman from her character sheet, seen only from behind (long straight black hair, long black high-collared gown with a faint shimmer of stars) climbs the last steps and walks out into the dawn, a long shadow falling back down the stairs into the dark cellar. Hopeful, final."
+      }
+    },
+    {
+      "id": "still-loki-corinthian",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-loki-daniel/keyframe.png",
+          "characters/corinthian/sheet.png"
+        ],
+        "prompt": "Night, the same rainy city street of 1990s America under orange streetlights as in the first reference picture: Loki, exactly the red-haired man with long braids and brown leather coat from the first reference picture, walks toward the camera carrying the sleeping baby wrapped in a blanket; beside him strolls the Corinthian from the second sheet, a pale white-haired man in a black suit and dark round glasses, smiling. Wet reflections, menace."
+      }
+    },
+    {
+      "id": "still-siege-steps",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/lucienne/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The burning palace steps of the Dreaming from the plate: in the foreground Aurie, the woman from her character sheet, seen only from behind (long straight black hair, long black high-collared gown with a faint shimmer of stars) stands at the top of the steps; beside her Lucienne from her sheet holds up a lit brass lantern. Below and behind them a great crowd of dreams waits: strange creatures, a pumpkin-headed man, a winged horse, shadowy figures, a little girl made of moths, all looking up at her. Fire and drifting sand."
+      }
+    },
+    {
+      "id": "still-siege-raven",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/aurie/sheet.png",
+          "characters/matthew/sheet.png",
+          "assets/plates/dreaming-siege/plate.png"
+        ],
+        "prompt": "The burning palace steps of the Dreaming from the plate: Aurie, the woman from her character sheet, seen only from behind (long straight black hair, long black high-collared gown with a faint shimmer of stars) stands looking out over the burning realm; a black raven, Matthew from his sheet, has just landed on her shoulder, wings still half open, beak near her ear. Embers and sand drift."
+      }
+    },
+    {
+      "id": "still-lucifer-book",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/lucifer/sheet.png",
+          "assets/plates/hell-arena/plate.png"
+        ],
+        "prompt": "Close in a red-lit cavern of Hell: Lucifer from his sheet, silver-haired, black coat, white wings folded, sits at a black stone table writing a name with a quill in a great book bound in pale stitched skin; the black ink lifts off the page in thin curls of smoke. Embers drift. Cold, pleased."
+      }
+    },
+    {
+      "id": "still-daniel-kind",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/daniel-dream/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate, soft pale light: Daniel as the new Dream from the sheet, white-haired, robed in white, kneels on the star-scattered floor and gently rests a hand on the head of a small frightened dream creature, a trembling owl-feathered little thing with huge eyes. Tender, calm."
+      }
+    },
+    {
+      "id": "still-daniel-promise",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/daniel-dream/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate: Daniel as the new Dream from the sheet, white-haired, robed in white, stands alone with one hand pressed to his chest as a thin thread of golden light draws out of him and drifts away; his face grave, resolved, a little pained. Solemn starlight."
+      }
+    },
+    {
+      "id": "still-daniel-raven",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/daniel-dream/sheet.png",
+          "characters/matthew/sheet.png",
+          "assets/plates/throne-room/plate.png"
+        ],
+        "prompt": "The throne room of the Dreaming from the plate at night: Daniel as the new Dream from the sheet, white-haired, robed in white, sits on the step below the throne, head tilted, while a black raven, Matthew from his sheet, sleeps tucked against his shoulder. Soft starlight, warm and quiet."
+      }
+    },
+    {
+      "id": "6.5d-a",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "A dream: a wide moonlit beach in ancient Thrace, silver surf, black cliffs: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot, walks along the edge of the waves playing her lyre and singing, golden notes of light drifting from the strings over the water. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit. Dreamlike, luminous, lonely and beautiful."
+      },
+      "motion": "Orphea walks slowly through the shallow surf singing and playing, her hair and chiton moving in the sea wind, golden notes of light spiralling up toward the moon; waves wash around her ankles. Slow tracking shot beside her."
+    },
+    {
+      "id": "6.5d-b",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "The same moonlit Thracian beach in a dream: on the dark hill above the shore, a long line of burning torches comes over the crest, carried by wild women of the hills, Maenads, crowned with ivy, in fawn skins and torn linen, hair loose, wild-eyed. In the foreground, Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot stands facing them from the sand, lyre raised, still singing. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit. No blood, no violence shown. Dread, defiance."
+      },
+      "motion": "The torches pour down the hill toward the shore like a river of fire, the women's hair flying; Orphea does not move, she keeps playing, the golden notes growing brighter; the torchlight swallows the frame. Slow push-in."
+    },
+    {
+      "id": "still-eurydice-river",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "A dream of the land of the dead: a wide black river under a starless sky, pale asphodel flowers on the banks, mist on the water. On the far bank stands Eurydice, a petite young East Asian woman with a glossy black bob, a gold headband and a short saffron-yellow chiton, holding up a small bronze oil lamp, its warm light the only colour in the world, waiting and smiling sadly. Vast, quiet, mythic."
+      }
+    },
+    {
+      "id": "still-orphea-river",
+      "still": true,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png",
+          "characters/aurie/sheet.png"
+        ],
+        "prompt": "The near bank of the black river of the dead in a dream, pale asphodel, mist: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot stands looking across the water at a tiny warm lamplight on the far bank; beside her, seen only from behind, Aurie, the woman from her sheet with long straight black hair and a long black high-collared gown with a faint shimmer of stars. Mother and daughter side by side, small against the vast dark. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit."
+      }
+    },
+    {
+      "id": "6.5e",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "assets/keyframes/sandman/still-eurydice-river/keyframe.png",
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "The same black river of the dead as in the first reference picture, pale asphodel, mist: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot, seen from behind, steps into the shallow dark water toward the far bank, where Eurydice in her saffron-yellow chiton holds up her bronze lamp. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit."
+      },
+      "motion": "Orphea wades across the dark river, the water turning to light around her steps; Eurydice runs into the shallows to meet her and they embrace, the lamp's glow growing until it fills the whole frame with warm golden light. Slow push-in."
     }
   ],
   "react": {
@@ -2982,6 +3168,15 @@
           "assets/plates/throne-room/plate.png"
         ],
         "setting": "Medium close-up in the throne room of the Dreaming from the plate: Delirium from the character sheet, wild multicoloured hair, mismatched eyes, small bright coloured fish drifting in the air around her, looking straight into the camera, hopeful and anxious.",
+        "moods": [
+          "talking"
+        ]
+      },
+      "orphea-dream": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "setting": "Medium close-up on the near bank of a black river of the dead in a dream, pale asphodel flowers and mist behind, a tiny warm lamplight far across the water: Orphea, the beautiful young woman from the character sheet, whole, with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, barefoot, whole and beautiful, looking straight at the camera, her lyre on her back. Costumes in the ancient Greek tradition, draped and revealing like classical statues, glamorous but never explicit.",
         "moods": [
           "talking"
         ]

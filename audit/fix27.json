@@ -1,0 +1,158 @@
+{
+  "place": [
+    [
+      "1.3",
+      "beats",
+      "Upstairs, Burgess never speaks",
+      "still:still-burgess-parlour"
+    ],
+    [
+      "1.4",
+      "beats",
+      "He has never once been cruel",
+      "still:still-alex-talks"
+    ],
+    [
+      "1.5",
+      "beats",
+      "In his breast pocket",
+      "still:still-alex-pocket"
+    ],
+    [
+      "2.1",
+      "beats",
+      "And you have a name to start",
+      "still:still-ethel-1926"
+    ],
+    [
+      "3.2",
+      "beats",
+      "Aurie passed her in the ice",
+      "still:still-nada"
+    ],
+    [
+      "3.2",
+      "after 3.2.A",
+      "This time, she means to keep",
+      "still:aurie-hell"
+    ],
+    [
+      "end-ep3",
+      "beats",
+      "Aurie goes home to prepare",
+      "still:aurie-hell"
+    ],
+    [
+      "end-ep3",
+      "beats",
+      "Destiny closes his book",
+      "still:still-destiny-closed"
+    ],
+    [
+      "4.1",
+      "beats",
+      "He has not forgotten the favour",
+      "still:still-lucifer-alone"
+    ],
+    [
+      "4.2",
+      "after 4.2.D",
+      "Aurie takes Nada's soul",
+      "clip:4.2c"
+    ],
+    [
+      "1.6",
+      "after 1.6.KEEP",
+      "Aurie walks out into the dawn",
+      "still:still-aurie-dawn"
+    ],
+    [
+      "5.2c",
+      "after 5.2c.LET",
+      "Rose will never forget",
+      "still:still-aurie-raises-hand"
+    ],
+    [
+      "6.4",
+      "after 6.4.REFUSE",
+      "In the morning, the cottage is empty",
+      "still:destruction-island"
+    ],
+    [
+      "6.6",
+      "beats",
+      "Aurie kneels by a stream at the edge of her realm. Her hands are clean",
+      "still:still-stream-clean"
+    ],
+    [
+      "7.0",
+      "beats",
+      "Loki owes Odin a favour",
+      "still:still-norse"
+    ],
+    [
+      "7.0",
+      "beats",
+      "The Corinthian walks beside him",
+      "still:still-loki-corinthian"
+    ],
+    [
+      "7.3",
+      "beats",
+      "Lyta walks behind them. Thessaly told her",
+      "still:still-kindly-ones"
+    ],
+    [
+      "7.3",
+      "beats",
+      "Lucienne is beside her, lantern in hand",
+      "still:still-siege-steps"
+    ],
+    [
+      "7.3",
+      "beats",
+      "Matthew lands on her shoulder",
+      "still:still-siege-raven"
+    ],
+    [
+      "6.6b",
+      "beats",
+      "Matthew sits on the back of the throne",
+      "still:still-raven-throne"
+    ],
+    [
+      "2.8c",
+      "beats",
+      "Lucifer opens a book bound",
+      "still:still-lucifer-book"
+    ],
+    [
+      "fin-walk",
+      "beats",
+      "Behind them, in the Dreaming, a new lord in white is being kind",
+      "still:still-daniel-kind"
+    ],
+    [
+      "fin-walk",
+      "beats",
+      "Behind them, in the Dreaming, a new lord in white keeps a promise",
+      "still:still-daniel-promise"
+    ],
+    [
+      "fin-walk",
+      "beats",
+      "Behind them, in the Dreaming, a new lord in white lets a raven",
+      "still:still-daniel-raven"
+    ]
+  ],
+  "edits": {
+    "still-destiny-closed": [
+      "still-destiny",
+      "Close the great book in his arms: it is now shut, his hand resting flat on its cover, the chain still hanging from it. Everything else stays exactly the same."
+    ],
+    "still-stream-clean": [
+      "still-stream",
+      "Remove every thread of red from the water and the hands: the hands and the stream are perfectly clean and clear. Everything else stays exactly the same."
+    ]
+  }
+}

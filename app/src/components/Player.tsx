@@ -41,15 +41,15 @@ const media = (path: string) => {
   const v = (VERSIONS as Record<string, string>)[path];
   return `${CLIP_BASE}/${path}${v ? `?v=${v}` : ""}`;
 };
-const MUSIC_VOLUME = 0.45; // bed level
-const DUCK_VOLUME = 0.16; // bed level while someone speaks
+const MUSIC_VOLUME = 0.38; // bed level (15% softer by the owner's request, 2026-10-23)
+const DUCK_VOLUME = 0.14; // bed level while someone speaks
 const FADE_MS = 2500;
 const CARD_MS = 2600; // a silent time/place card
 const BEAT_GAP_MS = 250; // breath between narrated lines
 const HOLD_MS = 2000; // longest a clip keeps playing after its line before the next picture cuts in
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
 const CHOICE_MS = 2600; // the "Your choice" moment
-const SFX_VOLUME = 0.7; // one-shot sound effects (levelled to about -20 dBFS when made)
+const SFX_VOLUME = 0.6; // one-shot sound effects (levelled to about -20 dBFS when made)
 const AMB_VOLUME = 0.55; // looping ambience bed (made at about -26 dBFS, so it sits under the music)
 const AMB_DUCK = 0.25; // ambience while someone speaks
 const CURTAIN_MS = 700; // dip to black between scenes; the music starts to cross-fade with it

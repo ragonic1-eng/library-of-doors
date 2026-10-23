@@ -200,7 +200,7 @@ export async function POST(req: Request) {
     parsed.trust_delta = clampInt(parsed.trust_delta, -2, 2);
     parsed.fear_delta = clampInt(parsed.fear_delta, -2, 2);
     if (body.mode === "inner") Object.assign(parsed, { decision: null, consequences: [], trust_delta: 0, fear_delta: 0 });
-    if (key) after(() => saveReply(book.id, key, parsed));
+    if (key) after(() => saveReply(book.id, key, parsed, !!card.speakers));
     return NextResponse.json(parsed);
   } catch (err) {
     console.error(err);

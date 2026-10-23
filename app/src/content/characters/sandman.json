@@ -639,7 +639,7 @@
       "He is never unkind."
     ],
     "ttsVoice": "ballad",
-    "voiceDirection": "A deep, warm, hearty man's voice, booming laugh, gentle and unhurried."
+    "voiceDirection": "A mature man in his fifties: a deep, low, resonant baritone from a big chest, warm and hearty, a booming laugh, gentle and unhurried. Never young, light or boyish."
   },
   "orpheus": {
     "name": "Orphea",
@@ -819,5 +819,25 @@
     ],
     "ttsVoice": "coral",
     "voiceDirection": "A young girl's voice, light and wandering, soft and hurt, sudden little laughs and long pauses, close to tears but never sobbing."
+  },
+  "orphea-dream": {
+    "name": "Orphea",
+    "address": "Mother",
+    "voice": "Orphea in her own dream, whole again: a young woman, warm, frank and brave, lyrical, with a singer's ear; less tired than in the cave, but carrying three thousand years of one question. Calls her Mother.",
+    "wants": "To die and be with Eurydice; and, without asking, for her mother to love her.",
+    "knows": [
+      "Where Destruction is: the small island across the water from her cave.",
+      "That only Aurie can give her death.",
+      "That killing her will let the Furies come for Aurie."
+    ],
+    "secrets": [
+      "She forgave her a long time ago."
+    ],
+    "redLines": [
+      "She never begs angrily.",
+      "She never pretends she isn't tired."
+    ],
+    "ttsVoice": "marin",
+    "voiceDirection": "A young woman's voice, warm, low and lyrical, a singer's voice, intimate and steady, close to tears only at the end."
   }
 }

@@ -179,10 +179,10 @@ test('a beat sound effect plays once, can be switched off, and fades out when th
   const made = [], faded = [];
   class FakeAudio { constructor(src) { this.src = src; this.paused = false; made.push(this); } play() { return Promise.resolve(); } pause() { this.paused = true; } }
   const snippet = player.slice(player.indexOf('  const playSfx ='), player.indexOf('  const assetUrl ='));
-  const make = new Function('Audio','CLIP_BASE','book','SFX_VOLUME','sfxOnRef','sfxPlaying','fadeTo',
+  const make = new Function('Audio','media','book','SFX_VOLUME','sfxOnRef','sfxPlaying','fadeTo',
     stripTypeScriptTypes(snippet) + '\nreturn { playSfx, fadeOutSfx };');
   const sfxOnRef = { current: true }, sfxPlaying = { current: new Set() };
-  const { playSfx, fadeOutSfx } = make(FakeAudio, '/clips', { id: 'sandman' }, 0.7, sfxOnRef, sfxPlaying,
+  const { playSfx, fadeOutSfx } = make(FakeAudio, (p) => `/clips/${p}`, { id: 'sandman' }, 0.7, sfxOnRef, sfxPlaying,
     (a, v) => { faded.push([a, v]); return Promise.resolve(); });
   playSfx('glass-break');
   assert.equal(made.length, 1);
