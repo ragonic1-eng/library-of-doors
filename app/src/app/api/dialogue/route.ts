@@ -1,5 +1,6 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { getBook, getCharacter } from "@/lib/story/load";
+import { replyKey, savedReply, saveReply } from "@/lib/server/replyCache";
 import { gatewayJson, gatewayStream, mockMode, modelHealth, modelOrder, models, reportModel } from "@/lib/server/gateway";
 import { splitParts, synthLine } from "@/lib/server/voice";
 import { consequenceFlag, meets, relationOf } from "@/lib/state/profile";
@@ -114,6 +115,17 @@ export async function POST(req: Request) {
 
   if (mockMode) return NextResponse.json(mockReply(body, card.name, exits, consequences, mustDecide, intent));
 
+  // A tapped Idea that has been answered before: replay that reply and its voice at once, no model call.
+  const key = body.mode === "talk" ? replyKey(book.id, scene, card, body.profile, body.playerLine, intent, turnsSoFar) : null;
+  const saved = key ? await savedReply(book.id, key) : null;
+  if (saved) {
+    if (saved.decision && !(saved.decision in exits)) saved.decision = null;
+    if (intent) saved.decision = intent;
+    saved.consequences = (saved.consequences ?? []).filter((t) => t in consequences);
+    console.log(`dialogue: saved reply ${key}`);
+    return NextResponse.json(saved);
+  }
+
   const messages = [
     { role: "system", content: system },
     ...body.history.map((t) => ({ role: t.role === "player" ? "user" : "assistant", content: t.text })),
@@ -188,6 +200,7 @@ export async function POST(req: Request) {
     parsed.trust_delta = clampInt(parsed.trust_delta, -2, 2);
     parsed.fear_delta = clampInt(parsed.fear_delta, -2, 2);
     if (body.mode === "inner") Object.assign(parsed, { decision: null, consequences: [], trust_delta: 0, fear_delta: 0 });
+    if (key) after(() => saveReply(book.id, key, parsed));
     return NextResponse.json(parsed);
   } catch (err) {
     console.error(err);
