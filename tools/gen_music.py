@@ -25,6 +25,22 @@ TRACKS = {
     "wings": "tender bittersweet film score, solo piano with soft warm strings, gentle and kind, a quiet goodbye, consolation and grace, slow, major key with a touch of sadness, cinematic, no drums",
     "tavern": "warm English folk tune, acoustic guitar and lute with a gentle fiddle melody, cosy old tavern by the fire, friendly and nostalgic, slow waltz, no drums",
     "ruby": "unsettling psychological thriller underscore, detuned music box, ticking clock, eerie high violins, a creeping madness in a late-night diner, slow, no drums",
+    # Themes added 2026-10-23: one sound per character or place (leitmotifs), still in the same dark cinematic family.
+    "greek-lyre": "beautiful harp and nylon acoustic guitar duet, gentle melodic folk ballad, Mediterranean, warm and romantic, soft strings underneath, cinematic, slow",
+    "greek-lament": "sad slow solo cello lament with soft harp and gentle sustained strings, mournful and beautiful, a farewell, cinematic, no drums",
+    "faerie": "enchanted faerie forest at night, shimmering harp arpeggios, celesta, high airy strings, a soft tin whistle melody, magical, delicate and otherworldly, slow, no drums",
+    "endless": "solemn ancient gathering of gods, deep pipe organ and low brass chords, wordless male choir, vast cathedral reverb, majestic and cold, very slow, no drums",
+    "wake": "elegiac funeral orchestral music, slow mournful strings and soft wordless choir, a single solemn bell, grief and dignity, cinematic, very slow, no drums",
+    "finale": "hopeful bittersweet orchestral finale, warm full strings and french horns swelling, gentle piano, peace and farewell, cinematic end credits, slow, no drums",
+    "delirium": "quirky whimsical orchestral waltz, playful pizzicato strings, celesta and clarinet melody, magical and slightly mad like a dark fairy tale film score, 3/4 time",
+    "destruction": "warm cheerful acoustic guitar and mandolin, Mediterranean folk melody, relaxed sunny summer afternoon by the sea, cinematic, gentle",
+    "desire": "seductive slow dark tango, sensual cello melody over soft piano and pizzicato bass, dangerous and alluring, cinematic, slow",
+    "despair": "sparse melancholic solo piano in an empty grey room, long pauses, soft cold strings, desolate and hopeless, very slow, no drums",
+    "kindly-ones": "ominous dark orchestral music, low strings ostinato, deep war drums, dissonant brass, an inevitable terrible force approaching, epic and relentless, cinematic, 80 bpm",
+    "death": "gentle warm kind music, soft piano and solo cello, comforting and tender, a quiet smile at the end of a life, bittersweet, slow, no drums",
+    "corinthian": "dark noir jazz, slow muted trumpet melody, upright bass, soft brushed snare, film noir menace, smoky and cool, slow",
+    "lullaby": "gentle sad lullaby melody on celesta and soft piano, delicate high strings, haunting and fragile, cinematic, very slow, no drums",
+    "lucifer": "dark elegant baroque menace, harpsichord and string quartet, slow minor key, sinister aristocratic grandeur, cinematic, no drums",
 }
 
 def parse():

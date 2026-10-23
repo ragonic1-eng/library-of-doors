@@ -1579,7 +1579,7 @@
       "id": "2.6",
       "title": "Lucifer",
       "pov": "POV",
-      "music": "hell-v1",
+      "music": "lucifer",
       "beats": [
         {
           "text": "At the heart of Hell is an arena, and above it a throne.",
@@ -1767,7 +1767,7 @@
       "id": "2.8",
       "title": "Lucifer's Threat",
       "pov": "POV",
-      "music": "hell-v1",
+      "music": "lucifer",
       "beats": [
         {
           "text": "The helm is hers. But the legions of Hell now block the only way out.",
@@ -2126,7 +2126,7 @@
       "title": "The Sound of Her Wings",
       "pov": "3P",
       "episodeTitle": "Chapter 11 · Her Sister",
-      "music": "wings",
+      "music": "death",
       "beats": [
         {
           "card": "The next morning",
@@ -2346,7 +2346,7 @@
       "title": "The Family",
       "pov": "POV",
       "episodeTitle": "Chapter 13 · The Family",
-      "music": "library",
+      "music": "endless",
       "fx": "dust",
       "recap": "At the family table, Desire taunted Aurie about Nada, the queen she left in Hell.",
       "beats": [
@@ -2571,7 +2571,7 @@
       "title": "The family",
       "type": "end",
       "pov": "3P",
-      "music": "library",
+      "music": "endless",
       "fx": "dust",
       "beats": [
         {
@@ -2617,7 +2617,7 @@
       "title": "Hell, Empty",
       "pov": "POV",
       "episodeTitle": "Part Four · Chapter 14 · Hell, Empty",
-      "music": "hell-v1",
+      "music": "lucifer",
       "fx": "sparks",
       "recap": "Aurie went back to Hell and found it empty. Lucifer had quit, and gave her the key.",
       "beats": [
@@ -2770,7 +2770,7 @@
       "title": "The Suitors",
       "pov": "POV",
       "episodeTitle": "Chapter 15 · The Suitors",
-      "music": "throne",
+      "music": "endless",
       "fx": "dust",
       "recap": "Gods, demons, Faerie and Heaven came to the Dreaming to bid for the key to Hell. Azazel held Nada's soul in a jar.",
       "beats": [
@@ -3105,7 +3105,7 @@
       "title": "The key and the queen",
       "type": "end",
       "pov": "3P",
-      "music": "library",
+      "music": "throne",
       "fx": "dust",
       "beats": [
         {
@@ -3832,7 +3832,7 @@
       "title": "The Corinthian",
       "pov": "POV",
       "episodeTitle": "Chapter 18 · The Corinthian",
-      "music": "cellar-dread",
+      "music": "corinthian",
       "fx": "flicker",
       "recap": "Aurie hunted the Corinthian, her runaway nightmare, to a gathering of killers in Georgia.",
       "beats": [
@@ -4250,7 +4250,7 @@
       "id": "5.2d",
       "title": "Desire's Threshold",
       "pov": "POV",
-      "music": "cellar-dread",
+      "music": "desire",
       "fx": "glitter",
       "recap": "Aurie confronted Desire, who had planned the vortex to make her kill her own kin.",
       "beats": [
@@ -4555,7 +4555,7 @@
       "id": "5.3c",
       "title": "1989",
       "pov": "POV",
-      "music": "library",
+      "music": "tavern",
       "fx": "dust",
       "recap": "In 1989, a year late in her own life, Aurie kept the appointment with Hob Gadling.",
       "beats": [
@@ -5016,7 +5016,7 @@
       "id": "6.2",
       "title": "Delirium",
       "pov": "POV",
-      "music": "escape",
+      "music": "delirium",
       "fx": "glitter",
       "recap": "Delirium begged Aurie to help find their lost brother Destruction. The search through the waking world failed.",
       "beats": [
@@ -5078,7 +5078,7 @@
       "id": "6.3",
       "title": "The Daughter",
       "pov": "POV",
-      "music": "the-years",
+      "music": "greek-lyre",
       "fx": "flicker",
       "recap": "Aurie went to her daughter Orphea, a living head kept in a sea cave on Lesbos, to ask where Destruction is.",
       "beats": [
@@ -5196,7 +5196,7 @@
       "id": "6.4",
       "title": "Destruction",
       "pov": "POV",
-      "music": "library",
+      "music": "destruction",
       "fx": "embers",
       "recap": "Aurie and Delirium found their brother Destruction on the island across the water from Orphea's cave.",
       "beats": [
@@ -5309,7 +5309,7 @@
       "id": "6.5",
       "title": "The Price",
       "pov": "POV",
-      "music": "the-years",
+      "music": "greek-lament",
       "fx": "flicker",
       "recap": "Aurie went back to the cave to pay Orphea's price.",
       "beats": [
@@ -5441,7 +5441,7 @@
       "id": "6.6",
       "title": "The Stream",
       "pov": "POV",
-      "music": "the-years",
+      "music": "greek-lament",
       "fx": "mist",
       "recap": "Aurie came home to the Dreaming, changed.",
       "beats": [
@@ -5574,7 +5574,7 @@
       "title": "The Empty Crib",
       "pov": "3P",
       "episodeTitle": "Part Seven · Chapter 25 · The Kindly Ones",
-      "music": "cellar-dread",
+      "music": "lullaby",
       "fx": "dust",
       "recap": "Lyta Hall's son Daniel was stolen, and a burnt changeling left in his crib. Lyta believes Aurie took him.",
       "beats": [
@@ -5790,7 +5790,7 @@
       "title": "Lyta's Door",
       "pov": "POV",
       "episodeTitle": "Chapter 26 · Lyta's Door",
-      "music": "cellar-wait",
+      "music": "lullaby",
       "fx": "rain",
       "recap": "Aurie went to Lyta herself, to tell her she had not taken Daniel.",
       "beats": [
@@ -5876,7 +5876,7 @@
       "id": "7.1c",
       "title": "Together",
       "pov": "3P",
-      "music": "library",
+      "music": "lullaby",
       "fx": "glitter",
       "recap": "Aurie and Lyta found Daniel together, and Lyta never called on the Kindly Ones.",
       "beats": [
@@ -5949,7 +5949,7 @@
       "title": "Thessaly",
       "pov": "3P",
       "episodeTitle": "Chapter 27 · Thessaly",
-      "music": "the-years",
+      "music": "kindly-ones",
       "fx": "mist",
       "recap": "Lyta walked into the night, and the witch Thessaly showed her the way to the Kindly Ones. Aurie met them at the crossroads.",
       "beats": [
@@ -6123,7 +6123,7 @@
       "title": "The Siege",
       "pov": "3P",
       "episodeTitle": "Chapter 28 · The Siege",
-      "music": "hell-v1",
+      "music": "kindly-ones",
       "fx": "sparks",
       "recap": "The Kindly Ones walked through the Dreaming, and everything they touched died.",
       "beats": [
@@ -6229,7 +6229,7 @@
       "title": "Nuala's Boon",
       "pov": "POV",
       "episodeTitle": "Chapter 29 · Nuala's Boon",
-      "music": "wings",
+      "music": "faerie",
       "fx": "glitter",
       "recap": "In the middle of the siege, Nuala of Faerie called in the favour Aurie owed her.",
       "beats": [
@@ -6355,7 +6355,7 @@
       "title": "The Choice",
       "pov": "POV",
       "episodeTitle": "Chapter 30 · The Sound of Her Wings",
-      "music": "wings",
+      "music": "death",
       "fx": "dust",
       "recap": "At the end, with the Kindly Ones at her door, Aurie found her sister waiting on the throne-room steps.",
       "beats": [
@@ -6484,7 +6484,7 @@
       "id": "end-A",
       "title": "The Wake",
       "pov": "3P",
-      "music": "wings",
+      "music": "wake",
       "fx": "dust",
       "beats": [
         {
@@ -6641,7 +6641,7 @@
       "id": "end-B",
       "title": "The King Who Would Not Change",
       "pov": "3P",
-      "music": "hell-v1",
+      "music": "kindly-ones",
       "fx": "ash",
       "beats": [
         {
@@ -6705,7 +6705,7 @@
       "id": "end-R",
       "title": "The Song That Never Ends",
       "pov": "3P",
-      "music": "the-years",
+      "music": "greek-lament",
       "fx": "dust",
       "beats": [
         {
@@ -6746,7 +6746,7 @@
       "id": "5.2f",
       "title": "Loose",
       "pov": "3P",
-      "music": "escape",
+      "music": "corinthian",
       "fx": "dust",
       "recap": "Aurie let the Corinthian go. He took the long road south, and came within one night of Rose's brother.",
       "beats": [
@@ -6777,7 +6777,7 @@
       "id": "6.1b",
       "title": "The Oath",
       "pov": "3P",
-      "music": "cellar-wait",
+      "music": "lullaby",
       "fx": "rain",
       "recap": "Lyta swore that no one would ever take her son. She meant Aurie.",
       "beats": [
@@ -6802,7 +6802,7 @@
       "id": "6.4b",
       "title": "The Painted Sea",
       "pov": "3P",
-      "music": "the-years",
+      "music": "destruction",
       "fx": "glitter",
       "recap": "Aurie stayed one more night with Destruction and Delirium, and for an evening nobody needed her to be anything.",
       "beats": [
@@ -6900,7 +6900,7 @@
       "id": "2.8c",
       "title": "A Name in Black Ink",
       "pov": "3P",
-      "music": "hell-v1",
+      "music": "lucifer",
       "fx": "sparks",
       "ambience": "hell",
       "recap": "Aurie promised Lucifer a favour. He wrote her name in his book.",
@@ -6958,7 +6958,7 @@
       "id": "2.12b",
       "title": "Her Sister's Rounds",
       "pov": "3P",
-      "music": "wings",
+      "music": "death",
       "fx": "dust",
       "ambience": "park",
       "recap": "Aurie spent a day on her sister's rounds, and came home changed.",
@@ -6988,7 +6988,7 @@
       "id": "3.0g",
       "title": "Fiddler's Green",
       "pov": "3P",
-      "music": "library",
+      "music": "faerie",
       "fx": "glitter",
       "ambience": "park",
       "recap": "Before facing her family, Aurie walked with Lucienne in Fiddler's Green, a place in the Dreaming that is also a friend.",
@@ -7016,7 +7016,7 @@
       "id": "5.1c",
       "title": "Dawn",
       "pov": "POV",
-      "music": "library",
+      "music": "greek-lyre",
       "fx": "dust",
       "ambience": "rain",
       "recap": "At dawn on Madoc's roof, Calliope spoke to Aurie of their daughter.",
@@ -7195,7 +7195,7 @@
       "id": "5.2g",
       "title": "The Grey Sister",
       "pov": "3P",
-      "music": "cellar-wait",
+      "music": "despair",
       "fx": "mist",
       "ambience": "despair",
       "recap": "On the way home from Desire, Aurie passed through Despair's grey realm, and her sister warned her.",
@@ -7260,7 +7260,7 @@
       "id": "6.2y",
       "title": "The Silent Sister",
       "pov": "POV",
-      "music": "cellar-wait",
+      "music": "delirium",
       "fx": "glitter",
       "ambience": "dreaming",
       "recap": "Aurie hurt Delirium on the road, and went into her realm to find her and say sorry.",
@@ -7389,7 +7389,7 @@
       "id": "6.2o",
       "title": "The Song of Orphea",
       "pov": "3P",
-      "music": "the-years",
+      "music": "greek-lyre",
       "fx": "dust",
       "ambience": "greek-grove",
       "recap": "Aurie's daughter Orphea lost her bride Eurydice, went down to the dead to bring her back, and looked back. Aurie refused to help her, and told her she was dead to her.",
@@ -7450,7 +7450,7 @@
       "id": "fin-dream",
       "title": "The Last Dream",
       "pov": "POV",
-      "music": "wings",
+      "music": "wake",
       "fx": "glitter",
       "ambience": "wake",
       "episodeTitle": "Chapter 31 · The Wake",
@@ -7595,7 +7595,7 @@
       "id": "fin-tempest",
       "title": "The Tempest",
       "pov": "3P",
-      "music": "library",
+      "music": "finale",
       "fx": "dust",
       "ambience": "night-room",
       "recap": "Will Shaxberd wrote his last play for the Queen of Dreams: a magician who gives up his power.",
@@ -7629,7 +7629,7 @@
       "id": "fin-walk",
       "title": "Hand in Hand",
       "pov": "3P",
-      "music": "wings",
+      "music": "finale",
       "fx": "glitter",
       "ambience": "dreaming",
       "recap": "Somewhere past the end of every story, two sisters walk together down a road of light.",
@@ -7670,7 +7670,7 @@
       "title": "The End",
       "type": "end",
       "pov": "3P",
-      "music": "wings",
+      "music": "finale",
       "fx": "glitter",
       "ambience": "dreaming",
       "beats": [
@@ -7697,7 +7697,7 @@
       "id": "6.2p",
       "title": "The Youngest",
       "pov": "3P",
-      "music": "escape",
+      "music": "delirium",
       "fx": "glitter",
       "ambience": "dreaming",
       "episodeTitle": "Chapter 23 · The Prodigal",
@@ -7803,7 +7803,7 @@
       "id": "6.2q",
       "title": "Second Thoughts",
       "pov": "3P",
-      "music": "cellar-wait",
+      "music": "delirium",
       "fx": "dust",
       "ambience": "dreaming",
       "recap": "Aurie refused Delirium, then changed her mind and went after her.",
@@ -7838,7 +7838,7 @@
       "id": "6.2s",
       "title": "The Wine-Dark Sea",
       "pov": "3P",
-      "music": "the-years",
+      "music": "greek-lyre",
       "fx": "glitter",
       "ambience": "sea",
       "recap": "Aurie and Delirium crossed the Aegean in a fisherman's boat, and Aurie told her sister about the daughter she had abandoned.",
@@ -7871,7 +7871,7 @@
       "id": "6.5d",
       "title": "The Only Dream",
       "pov": "3P",
-      "music": "the-years",
+      "music": "greek-lament",
       "fx": "mist",
       "ambience": "sea",
       "recap": "Before paying her price, Orphea asked her mother to walk into her dream. Aurie saw her daughter whole again, the wild women's torches, and Eurydice waiting across a dark river.",
