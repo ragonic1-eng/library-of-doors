@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
 import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, saveProfile } from "@/lib/state/profile";
 import { lineFile } from "@/lib/story/lines";
+import VERSIONS from "@/content/media-versions.json";
 import { watchPlayback } from "@/lib/story/audio";
 import { levelVoice } from "@/lib/story/level";
 import Ambience from "@/components/Ambience";
@@ -35,6 +36,11 @@ type MenuView = "main" | "journal" | "lines" | "chapters" | "settings" | "sync" 
 
 // Clips are served from Vercel Blob in production and from /public locally.
 const CLIP_BASE = (process.env.NEXT_PUBLIC_CLIP_BASE ?? "/clips").replace(/\/$/, "");
+/** A media file's URL with its content fingerprint (media-versions.json), so a regenerated file is never served stale from a cache. */
+const media = (path: string) => {
+  const v = (VERSIONS as Record<string, string>)[path];
+  return `${CLIP_BASE}/${path}${v ? `?v=${v}` : ""}`;
+};
 const MUSIC_VOLUME = 0.45; // bed level
 const DUCK_VOLUME = 0.16; // bed level while someone speaks
 const FADE_MS = 2500;
@@ -271,7 +277,7 @@ export default function Player({ book }: { book: Book }) {
   /** A one-shot sound for the moment a beat starts (a door, glass, wings). Never blocks the story. */
   const playSfx = (id: string) => {
     if (!sfxOnRef.current) return;
-    const a = new Audio(`${CLIP_BASE}/${book.id}/audio/sfx/${id}.mp3`);
+    const a = new Audio(media(`${book.id}/audio/sfx/${id}.mp3`));
     a.volume = SFX_VOLUME;
     const done = () => sfxPlaying.current.delete(a);
     a.onended = done;
@@ -284,10 +290,10 @@ export default function Player({ book }: { book: Book }) {
     for (const a of sfxPlaying.current) void fadeTo(a, 0, 600).then(() => a.pause());
     sfxPlaying.current.clear();
   };
-  const assetUrl = (kind: "music" | "lines", id: string) => `${CLIP_BASE}/${book.id}/audio/${kind}/${id}.mp3`;
+  const assetUrl = (kind: "music" | "lines", id: string) => media(`${book.id}/audio/${kind}/${id}.mp3`);
   const lineUrl = (text: string) => `${CLIP_BASE}/${book.id}/audio/lines/${lineFile(text)}`;
-  const clipUrl = (clip: string) => `${CLIP_BASE}/${book.id}/${clip}.mp4`;
-  const stillUrl = (still: string) => `${CLIP_BASE}/${book.id}/stills/${still}.jpg`;
+  const clipUrl = (clip: string) => media(`${book.id}/${clip}.mp4`);
+  const stillUrl = (still: string) => media(`${book.id}/stills/${still}.jpg`);
 
   // Preloaded narrator lines, so each starts the instant its subtitle appears.
   const lineCache = useRef(new Map<string, HTMLAudioElement>());
@@ -984,7 +990,7 @@ export default function Player({ book }: { book: Book }) {
     m.id = next;
     m.a = null;
     if (!next) return;
-    const a = new Audio(`${CLIP_BASE}/${book.id}/audio/ambience/${next}.mp3`);
+    const a = new Audio(media(`${book.id}/audio/ambience/${next}.mp3`));
     a.loop = true;
     a.volume = 0;
     a.play().then(() => void fadeTo(a, ambTarget(), 2000)).catch(() => { /* missing bed or blocked: silence */ });
@@ -1017,7 +1023,7 @@ export default function Player({ book }: { book: Book }) {
   useEffect(() => () => { musicRef.current.a?.pause(); ambRef.current.a?.pause(); }, []);
 
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
-  const reactFor = (m: string) => (talker ? `${CLIP_BASE}/${book.id}/react/${talker}-${m}.mp4` : undefined);
+  const reactFor = (m: string) => (talker ? media(`${book.id}/react/${talker}-${m}.mp4`) : undefined);
   // Prefer the exact mood, then neutral; if neither exists, the scene's last frame stays on screen.
   // Two layers: the listening loop (mood, else neutral) and the talking loop, which cross-fades in while the voice is
   // audible. A character with only a talking loop keeps it on screen, held still, between lines.

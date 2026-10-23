@@ -8,7 +8,8 @@
 //
 // Needs BLOB_READ_WRITE_TOKEN: `vercel env pull .env.local` in the project root provides it.
 
-import { readdirSync, statSync, createReadStream, existsSync } from "node:fs";
+import { readdirSync, statSync, createReadStream, existsSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join, relative, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { put, list } from "@vercel/blob";
@@ -47,6 +48,19 @@ if (process.argv.includes("--list")) {
 }
 
 const files = walk(LOCAL);
+
+// Media is cached for a year under its name, so a regenerated clip with the same name would keep showing
+// the old one. Each file's content fingerprint goes into src/content/media-versions.json; the player adds
+// it to the URL (?v=...), so a changed file always gets a fresh address. Narration lines are already named
+// by their text, so they are left out.
+const versions = {};
+for (const f of files) {
+  const rel = relative(LOCAL, f).split("\\").join("/");
+  if (rel.includes("/audio/lines/")) continue;
+  versions[rel] = createHash("sha1").update(readFileSync(f)).digest("hex").slice(0, 8);
+}
+writeFileSync(join(ROOT, "app", "src", "content", "media-versions.json"), JSON.stringify(versions, Object.keys(versions).sort(), 0) + "\n");
+
 let up = 0, skipped = 0, failed = 0;
 for (const f of files) {
   const pathname = "clips/" + relative(LOCAL, f).split("\\").join("/");
