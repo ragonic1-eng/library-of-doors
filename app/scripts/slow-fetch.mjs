@@ -3,7 +3,9 @@
 // reference photos attached the image model can take longer than that when the gateway is busy.
 import { request } from "node:https";
 
-const WAIT_MS = 15 * 60_000;
+// A picture normally takes 1 to 3 minutes. Past this, the model is treated as silent and the caller moves to its
+// next backup model instead of waiting (SLOW_FETCH_MINUTES to change it).
+const WAIT_MS = Number(process.env.SLOW_FETCH_MINUTES ?? 6) * 60_000;
 
 export function slowFetch(url, init) {
   return new Promise((resolve, reject) => {
@@ -21,7 +23,7 @@ export function slowFetch(url, init) {
       });
       res.on("error", reject);
     });
-    req.on("timeout", () => req.destroy(new Error(`no answer in ${WAIT_MS / 60_000} minutes`)));
+    req.on("timeout", () => req.destroy(Object.assign(new Error(`no answer in ${WAIT_MS / 60_000} minutes`), { silent: true })));
     req.on("error", reject);
     req.end(init.body);
   });

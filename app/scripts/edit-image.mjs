@@ -23,7 +23,9 @@ const prompt = `Edit the first attached photograph. Keep it exactly the same: id
 const MODELS = [...new Set([MODEL, ...(process.env.MODEL_IMAGE_FALLBACK ?? "gemini-3.1-flash-image,gemini-nano-banana-2.1,gemini-3-pro-image").split(",").map((m) => m.trim()).filter(Boolean)])];
 let j;
 for (const model of MODELS) {
-  const res = await slowFetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+  let res;
+  try {
+    res = await slowFetch(`${new URL(BASE).origin}/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
     method: "POST",
     headers: { Authorization: `Bearer ${process.env.INFISTAR_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -31,6 +33,10 @@ for (const model of MODELS) {
       generationConfig: { responseModalities: ["TEXT", "IMAGE"], imageConfig: { aspectRatio: "16:9" } },
     }),
   });
+  } catch (e) {
+    if (e.silent) { console.error(`${model} is silent (${e.message}), trying the next model`); continue; }
+    throw e;
+  }
   const text = await res.text();
   if (res.status === 404 || /no available channel|model_not_found|不在当前供应目录/i.test(text)) { console.error(`${model} is down, trying the next model`); continue; }
   j = JSON.parse(text);

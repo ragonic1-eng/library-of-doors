@@ -276,7 +276,9 @@ async function post(url, init, label) {
       // JSON requests (the image model) may legitimately take over 5 minutes; form uploads use plain fetch.
       res = await (typeof init.body === "string" ? slowFetch : fetch)(url, { ...init, headers: { Authorization: `Bearer ${KEY}`, ...(init.headers ?? {}) } });
     } catch (netErr) {
-      // Dropped connection or timeout: retry like a 5xx.
+      // A model that stays silent is treated like one that is down: move to the next backup model, do not wait again.
+      if (netErr.silent) throw Object.assign(new Error(`${label}: ${netErr.message}`), { channelDown: true });
+      // A dropped connection: retry like a 5xx.
       if (attempt < 4) {
         const wait = 5000 * attempt;
         console.log(`   ${label}: network error (${netErr.cause?.code ?? netErr.message}), retrying in ${wait / 1000}s`);
@@ -309,7 +311,7 @@ async function viaGemini(prompt, refs) {
       return out;
     } catch (e) {
       if (!e.channelDown) throw e;
-      console.log(`   ${model} is down, trying the next model`);
+      console.log(`   ${model} is down or silent (${e.message}), trying the next model`);
       last = e;
     }
   }
