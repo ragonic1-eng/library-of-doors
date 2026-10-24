@@ -1,0 +1,1075 @@
+{
+  "id": "neverwhere",
+  "title": "Neverwhere",
+  "hero": "Aurie Mayhew",
+  "trait": "loyalty",
+  "relic": "angel_key",
+  "start": "1.0",
+  "status": "planning",
+  "_plan": [
+    "PHASE 1 SKELETON (2026-10-24): the branch spine from story-map-neverwhere.md, locked before any script, picture or voice. Each beat is a picture slot (still nw-<scene>-<word>, clip nw-<scene>-<word>-v) with a one-line caption and the people in frame (cast), not the final narration.",
+    "Variables: LOYALTY is profile.traits.loyalty. DOOR_BOND, MARQUIS_TRUST, HUNTER_SUSPECT and ANA_ASKED are book vars starting at 0; the map's DOOR_BOND and MARQUIS_TRUST start at 1, so every threshold here is one lower than in the map (map 'DOOR_BOND >= 4' is vars DOOR_BOND >= 3).",
+    "Cutaways (titles 'Cutaway · ...') are the only scenes without Aurie; none runs back to back with another. C4 is folded into c3, C8 into c9, C11 into c12.",
+    "Cross-book echoes (ALEX_CURSED, Lucifer met, MATTHEW_RAVEN, Coraline courage) are text-only and added in Phase 3 when the engine can read another book's flags.",
+    "Endings D and E return the player to the last choice (their next points back)."
+  ],
+  "scenes": {
+    "1.0": {
+      "id": "1.0", "title": "The Neverwhere door", "pov": "POV", "episodeTitle": "Part One · Chapter 1 · Doors", "fx": "dust",
+      "beats": [
+        { "card": "The Library of Doors" },
+        { "text": "A plain London street door among the carved ones: peeling black paint, a brass letterbox, the Underground roundel worn into the wood.", "still": "nw-1.0-door", "cast": ["aurie", "lucienne"] },
+        { "text": "Lucienne: mind the stairs, my lady. They move. The door opens on rain and pub noise.", "clip": "nw-1.0-threshold-v", "cast": ["aurie"] }
+      ],
+      "next": "1.1"
+    },
+    "1.1": {
+      "id": "1.1", "title": "The umbrella", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "card": "A small Scottish town · the night before London" },
+        { "text": "Aurie, sick at her own leaving party, sits on the kerb under a white umbrella printed with the Tube map. An old woman in shawls reads her palm: not any London I know. Beware of doors.", "still": "nw-1.1-kerb", "cast": ["aurie", "oldwoman"] }
+      ],
+      "choices": [
+        { "id": "1.1.A", "text": "Run after her with the umbrella.", "effects": { "traits": { "loyalty": 1 }, "flags": { "UMBRELLA_GIVEN": true } }, "remembered": "She will remember that.", "next": "c1", "aftermath": [{ "text": "A good heart, she says, is sometimes enough. Mostly not.", "still": "nw-1.1-umbrella", "cast": ["aurie", "oldwoman"] }] },
+        { "id": "1.1.B", "text": "Go back inside.", "effects": {}, "next": "c1" }
+      ]
+    },
+    "c1": {
+      "id": "c1", "title": "Cutaway · The canary", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "card": "Three years later · under London" },
+        { "text": "A girl has run four days through the tunnels. Behind her, two gentlemen in black suits walk their canary, Mr Ross.", "still": "nw-c1-tunnels", "cast": ["door", "croup", "vandemar", "ross"] },
+        { "text": "Ross finds her. Her hand goes to his chest, and she opens him. She runs, bleeding.", "still": "nw-c1-ross", "cast": ["door", "ross"] }
+      ],
+      "next": "1.2"
+    },
+    "1.2": {
+      "id": "1.2", "title": "Door on the pavement", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "Friday in the office off the Strand: trolls on the monitor, a Post-it on Jessica's photo. Late for dinner with her boss.", "still": "nw-1.2-office", "cast": ["aurie", "jessica"] },
+        { "text": "A dark street behind a high brick wall. A door opens where there was no door, and a figure falls through it.", "clip": "nw-1.2-fall-v", "cast": ["door"] },
+        { "text": "Jessica steps over her. Aurie kneels; blood on her fingers. The girl's eyes open: not a hospital, they'll find me. Jessica: put her down, or the engagement is over.", "still": "nw-1.2-blood", "cast": ["aurie", "door", "jessica"] }
+      ],
+      "choices": [
+        { "id": "1.2.A", "text": "Carry her home.", "effects": { "traits": { "loyalty": 3 } }, "next": "1.3", "aftermath": [{ "text": "Jessica walks away in tears. At the flat the keys are inside; the girl touches the door and it swings open.", "still": "nw-1.2-flat", "cast": ["aurie", "door"] }] },
+        { "id": "1.2.B", "text": "Dial 999 and go to dinner.", "effects": { "traits": { "loyalty": -1 }, "vars": { "DOOR_BOND": -1 } }, "next": "1.2b" }
+      ]
+    },
+    "1.2b": {
+      "id": "1.2b", "title": "Midnight", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "Walking home alone at midnight, Aurie finds the girl still lying there, seen by no one. She carries her home after all.", "still": "nw-1.2b-midnight", "cast": ["aurie", "door"] }
+      ],
+      "next": "1.3"
+    },
+    "1.3": {
+      "id": "1.3", "title": "Whose barony is this?", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "The first Beast dream: a sewer, a boar the size of an ox, a spear in a hand that is furred and clawed, the charge, face down in bloody water.", "clip": "nw-1.3-beast-dream-v", "cast": [] },
+        { "text": "Morning. The girl, in layers of filthy velvet and lace, stares at the buses: I'm in London Above. They bandage her arm at the sink.", "still": "nw-1.3-flat-morning", "cast": ["aurie", "door"] }
+      ],
+      "conversation": {
+        "character": "door", "maxTurns": 3,
+        "canon": ["Door is hurt, grateful and guarded; she will not go to a hospital or the police.", "Most of the blood was someone else's.", "Nothing here reveals who she is beyond her first name, which she gives only after the two gentlemen have been."],
+        "opening": "I'm in London Above. That's... not where I meant to be.",
+        "exits": { "1.3.A": "Aurie helps without asking who she is.", "1.3.B": "Aurie insists on a doctor and the police.", "1.3.C": "Aurie makes a joke of the whole thing." }
+      },
+      "choices": [
+        { "id": "1.3.A", "text": "Just help. Ask nothing.", "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "1.4" },
+        { "id": "1.3.B", "text": "You need a doctor. And the police.", "effects": { "vars": { "DOOR_BOND": -1 } }, "next": "1.4" },
+        { "id": "1.3.C", "text": "Make a joke of it.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "1.4" }
+      ]
+    },
+    "1.4": {
+      "id": "1.4", "title": "Two gentlemen at the door", "pov": "POV", "fx": "dust",
+      "beats": [
+        { "text": "Mr Croup, small and orange-haired, and Mr Vandemar, huge, in black suits cut two centuries wrong, with posters: HAVE YOU SEEN THIS GIRL? Croup's smile arrives a fraction late.", "still": "nw-1.4-doorway", "cast": ["aurie", "croup", "vandemar"] },
+        { "text": "Vandemar sniffs, walks straight to the bathroom. It is spotlessly empty.", "still": "nw-1.4-bathroom", "cast": ["vandemar"] }
+      ],
+      "conversation": {
+        "character": "croup-vandemar", "maxTurns": 3,
+        "canon": ["They want the girl, alive. They are polite until they are not.", "Croup cuts the phone line whatever Aurie says.", "The girl is hiding and can hear everything."],
+        "opening": "CROUP: Good morning, madam. We are looking for our sister. Doreen. A troubled child.",
+        "exits": { "1.4.A": "Aurie says she has not seen her.", "1.4.B": "Aurie threatens them with the police.", "1.4.C": "Aurie glances at the bathroom and gives the girl away." }
+      },
+      "choices": [
+        { "id": "1.4.A", "text": "I haven't seen her.", "effects": { "traits": { "loyalty": 2 } }, "next": "1.5", "aftermath": [{ "text": "Jessica's message on the machine ends the engagement. The girl is making tea. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] },
+        { "id": "1.4.B", "text": "I'm calling the police.", "effects": { "traits": { "loyalty": 1 } }, "next": "1.5", "aftermath": [{ "text": "Croup cuts the phone line anyway. Later: Jessica's message, and a girl making tea. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] },
+        { "id": "1.4.C", "text": "She was here. In the bathroom.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 }, "flags": { "TOLD_CV": true } }, "remembered": "Door heard that. So did Mr Croup.", "next": "1.5", "aftermath": [{ "text": "They find nothing, and leave. The girl comes out of the wall behind the bath and does not look at Aurie for a long time. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "1.5": {
+      "id": "1.5", "title": "Breadcrumbs", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Door ties a note to a pigeon with Aurie's blue rubber band: find the marquis de Carabas.", "still": "nw-1.5-pigeon", "cast": ["aurie", "door"] },
+        { "text": "A rat runs from the videotapes. Aurie throws the remote at it. It was carrying the reply.", "still": "nw-1.5-rat", "cast": ["aurie", "door", "rat"] }
+      ],
+      "choices": [
+        { "id": "1.5.A", "text": "Apologise to the rat. With dignity.", "effects": { "traits": { "loyalty": 1 }, "flags": { "RAT_RESPECT": true } }, "remembered": "The rats will remember that.", "next": "1.6" },
+        { "id": "1.5.B", "text": "It's a rat.", "effects": { "vars": { "DOOR_BOND": -1 } }, "next": "1.6" }
+      ]
+    },
+    "1.6": {
+      "id": "1.6", "title": "Orme Passage", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "An alley that should not exist under one gas jet. Aurie turns three times widdershins and tosses the note at a bin; a pile of rags stands up and catches it.", "clip": "nw-1.6-rags-v", "cast": ["aurie", "marquis"] },
+        { "text": "The marquis de Carabas, in a coat with more pockets than a coat could hold.", "still": "nw-1.6-marquis", "cast": ["aurie", "marquis"] }
+      ],
+      "conversation": {
+        "character": "marquis", "maxTurns": 3,
+        "canon": ["The marquis trades in favours and never answers a question directly.", "He will help Door for a favour; what Aurie offers shapes how much he trusts her."],
+        "opening": "And what, exactly, is the lady Door offering me?",
+        "exits": { "1.6.A": "A favour. A really big one.", "1.6.B": "She'll owe you. So will I.", "1.6.C": "Aurie bluffs that Door can pay." }
+      },
+      "choices": [
+        { "id": "1.6.A", "text": "A favour. A really big one.", "effects": { "vars": { "MARQUIS_TRUST": 1 } }, "next": "1.6b" },
+        { "id": "1.6.B", "text": "She'll owe you. So will I.", "effects": { "traits": { "loyalty": 1 } }, "next": "1.6b" },
+        { "id": "1.6.C", "text": "She can pay. Whatever you want.", "effects": { "vars": { "MARQUIS_TRUST": -1 } }, "next": "1.6b" }
+      ]
+    },
+    "1.6b": {
+      "id": "1.6b", "title": "The ladder", "pov": "POV", "fx": "mist",
+      "beats": [
+        { "text": "A sewer ladder that comes out on a rooftop in daylight. London tiny below. The marquis lets go with both hands and waggles his fingers.", "still": "nw-1.6b-ladder", "cast": ["marquis"] }
+      ],
+      "choices": [
+        { "id": "1.6b.A", "text": "Climb.", "effects": { "traits": { "courage": 1 } }, "next": "1.7", "aftermath": [{ "text": "On the roof Old Bailey offers starling stew; the marquis forces a silver box on him. A broom cupboard lets them out in Aurie's own stairwell.", "still": "nw-1.6b-roof", "cast": ["aurie", "marquis", "oldbailey"] }] },
+        { "id": "1.6b.B", "text": "Ask him for help.", "effects": {}, "next": "1.7", "aftermath": [{ "text": "He gives none, but he waits. On the roof Old Bailey offers starling stew; the marquis forces a silver box on him.", "still": "nw-1.6b-roof", "cast": ["aurie", "marquis", "oldbailey"] }] }
+      ]
+    },
+    "1.7": {
+      "id": "1.7", "title": "Goodbye", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Door, washed, in a huge leather flying jacket. The marquis kneels: my lady. She kisses Aurie's cheek as friends do and says sorry without saying for what. When Aurie looks up, nobody is there.", "still": "nw-1.7-goodbye", "cast": ["aurie", "door", "marquis"] }
+      ],
+      "next": "2.1"
+    },
+
+    "2.1": {
+      "id": "2.1", "title": "The Monday nobody sees", "pov": "3P", "episodeTitle": "Part Two · Chapter 2 · Fallen through the cracks", "fx": "rain",
+      "beats": [
+        { "text": "A taxi, a ticket machine, the Tube doors, Sylvia, Gary: nobody sees her. In the shop glass her reflection lags half a beat behind.", "clip": "nw-2.1-unseen-v", "cast": ["aurie"] },
+        { "text": "Jessica's office, Angels over England posters. She apologises for her dreadful memory for faces.", "still": "nw-2.1-jessica", "cast": ["aurie", "jessica"] }
+      ],
+      "choices": [
+        { "id": "2.1.A", "text": "It's okay. Forget it.", "effects": {}, "next": "2.2" },
+        { "id": "2.1.B", "text": "I'm sorry I upset you. I'd stop for her again.", "effects": { "traits": { "loyalty": 1 } }, "next": "2.2", "aftermath": [{ "text": "She calls after her: Aurie... Maybury?", "still": "nw-2.1-jessica", "cast": ["aurie", "jessica"] }] }
+      ]
+    },
+    "2.2": {
+      "id": "2.2", "title": "The flat is let", "pov": "POV", "fx": "dust",
+      "beats": [
+        { "text": "An agent shows the flat to a couple while Aurie hides behind a washcloth in the bath. We'll take it.", "still": "nw-2.2-bath", "cast": ["aurie"] },
+        { "text": "The phone. Through static, Mr Croup asks whether she knows what her own liver tastes like.", "still": "nw-2.2-phone", "cast": ["aurie"] }
+      ],
+      "conversation": {
+        "character": "croup", "maxTurns": 3,
+        "canon": ["Croup cannot reach her yet; he wants to know where Door is.", "The operator cannot hear Aurie if she dials the police."],
+        "opening": "Do you know what your own liver tastes like, Mistress Mayhew? Because it's one of the things we could find out together.",
+        "exits": { "2.2.A": "Aurie says she does not know where Door is.", "2.2.B": "Aurie offers to help them find Door.", "2.2.C": "Aurie says she is calling the police." }
+      },
+      "choices": [
+        { "id": "2.2.A", "text": "I don't know where she is.", "effects": { "traits": { "loyalty": 1 } }, "next": "2.3" },
+        { "id": "2.2.B", "text": "If I help you find her, will you leave me alone?", "effects": { "traits": { "loyalty": -3 }, "flags": { "TOLD_CV": true } }, "remembered": "Mr Croup will remember that.", "next": "2.3" },
+        { "id": "2.2.C", "text": "I'm calling the police.", "effects": {}, "next": "2.3" }
+      ]
+    },
+    "2.3": {
+      "id": "2.3", "title": "The cash machine", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "The card is rejected. Aurie gives it to a short old homeless man: fifteen hundred in there, if you can get to it. He hands it back. He can see her.", "still": "nw-2.3-iliaster", "cast": ["aurie", "iliaster"] }
+      ],
+      "choices": [
+        { "id": "2.3.A", "text": "I'm sorry I troubled you.", "effects": { "traits": { "mercy": 1 } }, "next": "c2", "aftermath": [{ "text": "Iliaster hisses her back and leads her down basement steps.", "still": "nw-2.3-steps", "cast": ["aurie", "iliaster"] }] },
+        { "id": "2.3.B", "text": "Grab his sleeve. Where is the Floating Market?", "effects": { "traits": { "loyalty": -1 } }, "next": "2.3b" }
+      ]
+    },
+    "2.3b": {
+      "id": "2.3b", "title": "The bench", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "He flees. Aurie sleeps on a bench.", "still": "nw-2.3b-bench", "cast": ["aurie"] },
+        { "text": "Near dawn a rat leads her to the same basement door.", "if": ["RAT_RESPECT"], "still": "nw-2.3b-rat", "cast": ["aurie", "rat"] },
+        { "text": "Near dawn Iliaster comes back, grumbling, and leads her to the basement door after all.", "unless": ["RAT_RESPECT"], "still": "nw-2.3-steps", "cast": ["aurie", "iliaster"] }
+      ],
+      "next": "c2"
+    },
+    "c2": {
+      "id": "c2", "title": "Cutaway · The closed hospital", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A sub-cellar. Croup throws razor blades between his fingers; Vandemar pins his own hand to the wall with his knife. The Bakelite phone: the employer wants the Door female, alive.", "still": "nw-c2-cellar", "cast": ["croup", "vandemar"] },
+        { "text": "Vandemar spits on the wound, and it closes.", "still": "nw-c2-hand", "cast": ["vandemar"] }
+      ],
+      "next": "2.4"
+    },
+    "2.4": {
+      "id": "2.4", "title": "The Lord Rat-speaker", "pov": "POV", "fx": "embers",
+      "beats": [
+        { "text": "A vaulted hall of small fires and spits. A glass dagger at her throat. Across the hall people fall to the floor as a small black shape approaches: a rat, who seems to wink.", "still": "nw-2.4-hall", "cast": ["aurie", "ratspeaker", "longtail"] }
+      ],
+      "conversation": {
+        "character": "ratspeaker", "maxTurns": 3,
+        "canon": ["The Rat-speaker serves Master Longtail and will do what the rat decides.", "Aurie's bag is taken whatever she does; a girl is ordered to guide her to the market."],
+        "opening": "Upworlder. You are in the hall of the Rat-speakers, and you will explain yourself to Master Longtail, or you will not.",
+        "exits": { "2.4.A": "Aurie greets the rat and asks it about Door.", "2.4.B": "Aurie kneels with everyone and waits.", "2.4.C": "Aurie grabs for the glass dagger." }
+      },
+      "choices": [
+        { "id": "2.4.A", "text": "Hello, Ratty. Do you know where Door is?", "effects": { "flags": { "RAT_RESPECT": true } }, "next": "c3", "aftermath": [{ "text": "Horror in the room, amusement in the rat. The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] },
+        { "id": "2.4.B", "text": "Kneel with everyone and wait.", "effects": {}, "next": "c3", "aftermath": [{ "text": "Without the rat's respect the Rat-speaker gets his nick in.", "unless": ["RAT_RESPECT"], "still": "nw-2.4-nick", "cast": ["aurie", "ratspeaker"] }, { "text": "The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] },
+        { "id": "2.4.C", "text": "Grab for the glass.", "effects": {}, "next": "c3", "aftermath": [{ "text": "A cut on the neck before Longtail stops it. The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] }
+      ]
+    },
+    "c3": {
+      "id": "c3", "title": "Cutaway · The House Without Doors", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "A white hall hung with pictures of rooms. Memories in the walls: her brother in a Victorian pool; her mother and sister watering plants until Croup steps in.", "still": "nw-c3-hall", "cast": ["door", "marquis"] },
+        { "text": "Her father's study. The marquis pockets a small obsidian beast from the desk.", "still": "nw-c3-study", "cast": ["door", "marquis"] },
+        { "text": "The journal machine: Lord Portico, bleeding. Go to Islington. Trust Islington. Avenge us.", "still": "nw-c3-journal", "cast": ["portico"] },
+        { "text": "Elsewhere, Croup and Vandemar hire Varney by pulling his morning-star apart link by link.", "still": "nw-c3-varney", "cast": ["croup", "vandemar", "varney"] }
+      ],
+      "next": "2.5"
+    },
+    "2.5": {
+      "id": "2.5", "title": "Anaesthesia", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "The girl wears a stained badge, I AM 11, and quartz beads. Do you like cat? Thigh or breast?", "still": "nw-2.5-vaults", "cast": ["aurie", "anaesthesia"] },
+        { "text": "A bench on the Embankment; the Albert Bridge in its lights. Nobody ever gets both.", "still": "nw-2.5-embankment", "cast": ["aurie", "anaesthesia"] }
+      ],
+      "conversation": {
+        "character": "anaesthesia", "maxTurns": 3,
+        "canon": ["Anaesthesia tells her own history in her own words, over a still two-shot; nothing is shown.", "She is taking Aurie to the Floating Market by way of Night's Bridge."],
+        "opening": "You don't eat much, do you? I ate your fruit. Was that wrong?",
+        "exits": { "2.5.A": "Aurie asks about her, and listens.", "2.5.B": "Aurie talks about her own job and fiancée.", "2.5.C": "Aurie promises to get her back up here one day." }
+      },
+      "choices": [
+        { "id": "2.5.A", "text": "Tell me about you. I'm listening.", "effects": { "traits": { "loyalty": 2 }, "flags": { "ANA_HEARD": true } }, "remembered": "Anaesthesia will remember that.", "next": "2.6" },
+        { "id": "2.5.B", "text": "Talk about your job and your fiancée.", "effects": {}, "next": "2.6" },
+        { "id": "2.5.C", "text": "I'll get you back up here one day. I promise.", "effects": { "traits": { "loyalty": 1 }, "flags": { "ANA_HEARD": true } }, "remembered": "Anaesthesia will remember that.", "next": "2.6" }
+      ]
+    },
+    "2.6": {
+      "id": "2.6", "title": "Night's Bridge", "pov": "POV", "fx": "mist",
+      "beats": [
+        { "text": "Varney's gang shoves Aurie down; Anaesthesia hisses like a cornered rat and Varney backs off. A tall woman in mottled leather joins them.", "still": "nw-2.6-varney", "cast": ["aurie", "anaesthesia", "varney", "hunter"] },
+        { "text": "A stone bridge over a void. The dark is turned up. Something slithers past; Anaesthesia's hand shakes in hers. An angel falls with burning wings. The candle flares.", "clip": "nw-2.6-dark-v", "cast": [] }
+      ],
+      "choices": [
+        { "id": "2.6.A", "text": "Hold her hand tighter and keep walking.", "effects": { "traits": { "loyalty": 1 } }, "next": "2.6b" },
+        { "id": "2.6.B", "text": "Let go to shield your face.", "effects": { "traits": { "loyalty": -1 }, "flags": { "LET_GO": true } }, "remembered": "You will hear about that.", "next": "2.6b" },
+        { "id": "2.6.C", "text": "Call her name into the dark.", "effects": { "traits": { "loyalty": 1, "courage": 1 } }, "next": "2.6b" }
+      ]
+    },
+    "2.6b": {
+      "id": "2.6b", "title": "The beads", "pov": "POV", "fx": "mist",
+      "beats": [
+        { "text": "Nobody is holding her hand. Beads patter down the bridge. The woman in leather: the bridge takes its toll.", "still": "nw-2.6b-beads", "cast": ["aurie", "hunter"] }
+      ],
+      "choices": [
+        { "id": "2.6b.A", "text": "Keep one bead.", "effects": { "flags": { "BEAD_KEPT": true } }, "remembered": "This will matter.", "next": "3.1" },
+        { "id": "2.6b.B", "text": "Go back onto the bridge for her.", "effects": { "traits": { "loyalty": 2 } }, "next": "3.1", "aftermath": [{ "text": "The woman hauls her back by the collar; the beads roll into the dark.", "still": "nw-2.6b-hauled", "cast": ["aurie", "hunter"] }] },
+        { "id": "2.6b.C", "text": "Walk on without looking.", "effects": { "traits": { "loyalty": -2 } }, "next": "3.1" }
+      ]
+    },
+
+    "3.1": {
+      "id": "3.1", "title": "Harrods after dark", "pov": "3P", "episodeTitle": "Part Three · Chapter 3 · The Floating Market", "fx": "flicker",
+      "beats": [
+        { "text": "Knightsbridge; her watch has gone blank and she bins it. Harrods' Egyptian Room ablaze: dream sellers, a knight selling lost property, a dentist with a hand drill.", "still": "nw-3.1-market", "cast": ["aurie", "crowd"] },
+        { "text": "A pale woman in black velvet smiles at her.", "still": "nw-3.1-lamia", "cast": ["aurie", "lamia"] }
+      ],
+      "choices": [
+        { "id": "3.1.A", "text": "Smile back.", "effects": { "flags": { "LAMIA_NOTICED": true } }, "next": "3.1b" },
+        { "id": "3.1.B", "text": "Look away.", "effects": {}, "next": "3.1b" }
+      ]
+    },
+    "3.1b": {
+      "id": "3.1b", "title": "Old Bailey's birds and information", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A sign: OLD BAILEY'S BIRDS AND INFORMATION. The bodyguard auditions, he says, are in the Food Halls. What'll you give me?", "still": "nw-3.1b-stall", "cast": ["aurie", "oldbailey"] }
+      ],
+      "choices": [
+        { "id": "3.1b.A", "text": "Aunt Maude's handkerchief.", "effects": { "flags": { "OLD_BAILEY_FRIEND": true } }, "remembered": "Old Bailey will remember that.", "next": "3.2", "aftermath": [{ "text": "He waves it like a flag.", "still": "nw-3.1b-flag", "cast": ["aurie", "oldbailey"] }] },
+        { "id": "3.1b.B", "text": "Anaesthesia's bead.", "requires": { "flags": ["BEAD_KEPT"] }, "effects": { "traits": { "loyalty": -2 }, "flags": { "BEAD_KEPT": false } }, "next": "3.2" },
+        { "id": "3.1b.C", "text": "Nothing. I'll find them myself.", "effects": { "flags": { "MARKET_LATE": true } }, "next": "3.2" }
+      ]
+    },
+    "3.2": {
+      "id": "3.2", "title": "The auditions", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "The Fish and Meat Hall, sawdust. Bodyguards fight by knack; a thrown Ruislip lands on Aurie.", "unless": ["MARKET_LATE"], "still": "nw-3.2-hall", "cast": ["aurie", "crowd"] },
+        { "text": "Late, Aurie sees only the end of it.", "if": ["MARKET_LATE"], "still": "nw-3.2-hall", "cast": ["aurie", "crowd"] },
+        { "text": "The leather woman puts Varney down with his own knife. I'm called Hunter. The Hunter? I'm back.", "clip": "nw-3.2-hunter-v", "cast": ["hunter", "varney"] },
+        { "text": "Door, on the smoked-salmon counter, furious: what is she doing here?", "still": "nw-3.2-door", "cast": ["aurie", "door", "marquis"] }
+      ],
+      "conversation": {
+        "character": "door", "maxTurns": 3,
+        "canon": ["Door is angry because Aurie is in danger because of her.", "Hunter has just been hired as bodyguard; the marquis is here."],
+        "opening": "Why did you have to come here? Why couldn't you just stay where you were safe?",
+        "exits": { "3.2.A": "Aurie says she did not have much choice.", "3.2.B": "Aurie says she came to find her.", "3.2.C": "Aurie says Door knew this would happen to her." }
+      },
+      "choices": [
+        { "id": "3.2.A", "text": "I didn't really have much choice.", "effects": {}, "next": "3.3" },
+        { "id": "3.2.B", "text": "I came to find you.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "3.3" },
+        { "id": "3.2.C", "text": "You knew this would happen to me.", "effects": { "vars": { "DOOR_BOND": -1 } }, "next": "3.3" }
+      ]
+    },
+    "3.3": {
+      "id": "3.3", "title": "Left in the sewer", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "The marquis explains the two Londons: Aurie has fallen through the cracks. Good night. She follows down the ladder. Go away. No. They leave her.", "still": "nw-3.3-ladder", "cast": ["aurie", "marquis", "door"] }
+      ],
+      "choices": [
+        { "id": "3.3.A", "text": "Sit down where you are.", "effects": {}, "next": "c5", "aftermath": [{ "text": "She cries, for the first time since her father died.", "still": "nw-3.3-sits", "cast": ["aurie"] }] },
+        { "id": "3.3.B", "text": "Follow them at a distance.", "effects": { "traits": { "loyalty": 1 }, "vars": { "MARQUIS_TRUST": -1 } }, "next": "3.3b" }
+      ]
+    },
+    "3.3b": {
+      "id": "3.3b", "title": "At a distance", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "She keeps their lamp in sight through two tunnels, then loses it at a fork and sits down in the dark.", "still": "nw-3.3b-follow", "cast": ["aurie"] }
+      ],
+      "next": "c5"
+    },
+    "c5": {
+      "id": "c5", "title": "Cutaway · 259 stairs", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "Varney flees down a spiral stair; Vandemar waits at the bottom paring his nails with Varney's machete; Croup falls on him.", "still": "nw-c5-stairs", "cast": ["varney", "vandemar", "croup"] },
+        { "text": "In a tunnel Door stops: we can't leave her. The marquis: of course we can; we did. You are working for me, aren't you?", "still": "nw-c5-tunnel", "cast": ["door", "marquis", "hunter"] }
+      ],
+      "next": "3.4"
+    },
+    "3.4": {
+      "id": "3.4", "title": "Are you coming?", "pov": "POV", "fx": "mist",
+      "beats": [
+        { "text": "A ledge above a storm drain. Her lamp finds Aurie. She says sorry, and means it.", "still": "nw-3.4-lamp", "cast": ["aurie", "door"] }
+      ],
+      "conversation": {
+        "character": "door", "maxTurns": 3,
+        "canon": ["Door came back for her against the marquis's advice.", "They are looking for an angel named Islington.", "Door can promise to try to get Aurie home, not more."],
+        "opening": "I'm sorry. I shouldn't have left you. Are you coming?",
+        "exits": { "3.4.A": "Aurie says she has nowhere else to be.", "3.4.B": "Aurie will come only if Door gets her home.", "3.4.C": "Aurie says no, and Door sits beside her in silence until she asks again." }
+      },
+      "choices": [
+        { "id": "3.4.A", "text": "I don't have anywhere else to be. Why not?", "effects": { "vars": { "DOOR_BOND": 1 }, "flags": { "DOOR_PROMISE": true } }, "next": "c6", "aftermath": [{ "text": "She hugs her and promises to try to get her home. They are looking for an angel. Aurie laughs until it echoes.", "still": "nw-3.4-hug", "cast": ["aurie", "door"] }] },
+        { "id": "3.4.B", "text": "Only if you get me home.", "effects": { "flags": { "DOOR_PROMISE": true } }, "next": "c6", "aftermath": [{ "text": "She promises, carefully. They are looking for an angel. Aurie laughs until it echoes.", "still": "nw-3.4-hug", "cast": ["aurie", "door"] }] },
+        { "id": "3.4.C", "text": "No.", "effects": { "flags": { "DOOR_PROMISE": true } }, "next": "c6", "aftermath": [{ "text": "Door sits beside her in silence. After a while she asks again, and this time Aurie gets up.", "still": "nw-3.4-silence", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "c6": {
+      "id": "c6", "title": "Cutaway · The angel", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A rock hall, iron pillars, a waterfall, a black door of flint and silver. Candles light as a barefoot figure in white passes and go out behind it. No wings. Unmistakably an angel.", "still": "nw-c6-hall", "cast": ["islington"] }
+      ],
+      "next": "4.1"
+    },
+
+    "4.1": {
+      "id": "4.1", "title": "No such things as angels", "pov": "3P", "episodeTitle": "Part Four · Chapter 4 · Earl's Court", "fx": "dust",
+      "beats": [
+        { "text": "Hunter: there are shepherds in Shepherd's Bush; pray you never meet them. In the Bank tunnel the busker Lear can see them. The marquis plays a reel that empties passers-by's pockets onto his coat.", "still": "nw-4.1-lear", "cast": ["aurie", "hunter", "door", "marquis", "lear"] },
+        { "text": "He taps Angel on the Tube map. Islington.", "still": "nw-4.1-map", "cast": ["aurie", "marquis"] }
+      ],
+      "choices": [
+        { "id": "4.1.A", "text": "There are no such things as angels.", "effects": { "traits": { "faith": -1 } }, "next": "4.2" },
+        { "id": "4.1.B", "text": "All right. Show me one.", "effects": { "traits": { "faith": 1 } }, "next": "4.2" }
+      ]
+    },
+    "4.2": {
+      "id": "4.2", "title": "Mind the gap", "pov": "POV", "fx": "mist",
+      "beats": [
+        { "text": "A Central Line platform. Hunter: mind the gap. Black smoke wells over the edge.", "clip": "nw-4.2-gap-v", "cast": ["hunter"] }
+      ],
+      "choices": [
+        { "id": "4.2.A", "text": "Step back when Hunter warns you.", "effects": { "vars": { "DOOR_BOND": 1 }, "flags": { "HEEDED_HUNTER": true } }, "remembered": "Hunter noticed.", "next": "c7", "aftermath": [{ "text": "The smoke snaps at nothing. Door holds her hand while she shakes.", "still": "nw-4.2-hand", "cast": ["aurie", "door"] }] },
+        { "id": "4.2.B", "text": "Look at her, puzzled.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "c7", "aftermath": [{ "text": "It wraps her ankle; Hunter beats it off. Her jeans bleach where it touched; purple welts. Door holds her hand while she shakes.", "still": "nw-4.2-hand", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "c7": {
+      "id": "c7", "title": "Cutaway · Scarecrows", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "The hospital courtyard of junk and frogs. The employer's orders: scare her, not kill her. Crows overhead: a murder.", "still": "nw-c7-courtyard", "cast": ["croup", "vandemar"] }
+      ],
+      "next": "4.3"
+    },
+    "4.3": {
+      "id": "4.3", "title": "The court on the train", "pov": "3P", "fx": "embers",
+      "beats": [
+        { "text": "A dark, empty-looking carriage that inside is a medieval court: straw, chickens, a log fire, a wolfhound, old men-at-arms in knitted chain mail. The one-eyed earl in dressing gown and slippers.", "still": "nw-4.3-court", "cast": ["aurie", "earl", "tooley", "door", "hunter", "marquis"] },
+        { "text": "The earl recognises the marquis, and his eye, and orders him seized.", "still": "nw-4.3-seized", "cast": ["earl", "marquis"] }
+      ],
+      "conversation": {
+        "character": "earl", "maxTurns": 3,
+        "canon": ["The earl holds an old grudge against the marquis (the White City retreat, his eye).", "Door can invoke her house; the marquis leaves at the next station either way."],
+        "opening": "Mooncalf! Who brought the marquis de Carabas into my court? Speak, or Tooley shall be funny at you.",
+        "exits": { "4.3.A": "Aurie lets Door handle it.", "4.3.B": "Aurie speaks up for the marquis.", "4.3.C": "Aurie agrees the marquis seems dodgy." }
+      },
+      "choices": [
+        { "id": "4.3.A", "text": "Say nothing. Let Door handle it.", "effects": {}, "next": "4.4" },
+        { "id": "4.3.B", "text": "He's with us. Leave him be.", "effects": { "traits": { "loyalty": 1 }, "vars": { "MARQUIS_TRUST": 1 } }, "next": "4.4" },
+        { "id": "4.3.C", "text": "He does seem a bit dodgy.", "effects": { "vars": { "MARQUIS_TRUST": -2, "DOOR_BOND": -1 } }, "next": "4.4" }
+      ]
+    },
+    "4.4": {
+      "id": "4.4", "title": "The library of lost things", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Behind the throne, a stone library of lost property: dentures, gnomes, umbrellas, a wooden leg; Tube tunnels rushing past the windows.", "still": "nw-4.4-library", "cast": ["aurie", "door", "earl"] }
+      ],
+      "choices": [
+        { "id": "4.4.A", "text": "Let Door ask again.", "effects": {}, "next": "c9", "aftermath": [{ "text": "She gets the scroll: use the Angelus. They are dropped at BRITISH MUSEUM. There isn't one, says Aurie. Then be very careful getting off, says the delighted earl.", "still": "nw-4.4-scroll", "cast": ["aurie", "door", "earl"] }] },
+        { "id": "4.4.B", "text": "Your Grace. The Angel Islington?", "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "c9", "aftermath": [{ "text": "The scroll: use the Angelus. They are dropped at BRITISH MUSEUM. Be very careful getting off, says the delighted earl.", "still": "nw-4.4-scroll", "cast": ["aurie", "door", "earl"] }] }
+      ]
+    },
+    "c9": {
+      "id": "c9", "title": "Cutaway · The Great Beast of London", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Lear mobbed by blank-eyed people forcing money on him; the marquis plays the counter-charm and calls in a theft.", "still": "nw-c9-lear", "cast": ["lear", "marquis"] },
+        { "text": "Old Bailey's roof facing St Paul's. He names the obsidian figure: the Great Beast of London, a butcher's animal that escaped into the Fleet Ditch and grew. The marquis drops off the roof: keep the box.", "still": "nw-c9-roof", "cast": ["oldbailey", "marquis"] }
+      ],
+      "next": "5.1"
+    },
+
+    "5.1": {
+      "id": "5.1", "title": "British Museum Station", "pov": "3P", "episodeTitle": "Part Five · Chapter 5 · Angels over England", "fx": "dust",
+      "beats": [
+        { "text": "A sealed station, 1930s posters for malted drinks. A rat, Miss Whiskers. Door opens an iron door: we're openers.", "still": "nw-5.1-station", "cast": ["aurie", "door", "hunter", "rat"] }
+      ],
+      "choices": [
+        { "id": "5.1.A", "text": "Ask Miss Whiskers about Anaesthesia.", "effects": { "traits": { "loyalty": 1 }, "vars": { "ANA_ASKED": 1 } }, "next": "5.1b", "aftermath": [{ "text": "Taken as tribute, the rat says. Sometimes they come back.", "still": "nw-5.1-station", "cast": ["aurie", "door", "hunter", "rat"] }] },
+        { "id": "5.1.B", "text": "Say nothing.", "effects": {}, "next": "5.1b" }
+      ]
+    },
+    "5.1b": {
+      "id": "5.1b", "title": "Hunter will not climb", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Hunter will not go Above. She guards Door Below and cannot climb; a curse, she admits, like an embarrassing illness.", "still": "nw-5.1b-hunter", "cast": ["aurie", "hunter", "door"] }
+      ],
+      "choices": [
+        { "id": "5.1b.A", "text": "Don't be silly.", "effects": {}, "next": "5.2" },
+        { "id": "5.1b.B", "text": "Then wait. We'll come back for you.", "effects": { "traits": { "loyalty": 1 } }, "next": "5.2" },
+        { "id": "5.1b.C", "text": "What happens to you up there?", "effects": { "vars": { "HUNTER_SUSPECT": 1 } }, "next": "5.2" }
+      ]
+    },
+    "5.2": {
+      "id": "5.2", "title": "The storeroom", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Croup and Vandemar on plinths among museum junk. To Door: a traitor in your nest, a cuckoo.", "still": "nw-5.2-plinths", "cast": ["aurie", "door", "croup", "vandemar"] },
+        { "text": "Croup thanks Mistress Mayhew for her help, in front of Door.", "if": ["TOLD_CV"], "still": "nw-5.2-thanks", "cast": ["aurie", "door", "croup"] }
+      ],
+      "conversation": {
+        "character": "croup-vandemar", "maxTurns": 2,
+        "canon": ["They are here to frighten Door, not to kill her.", "If TOLD_CV is set, Croup has just thanked Aurie for her earlier help, in front of Door."],
+        "opening": "CROUP: There's a traitor in your nest, my lady. A cuckoo. VANDEMAR: Cuckoo.",
+        "exits": { "5.2.A": "Aurie puts herself between them and Door.", "5.2.B": "Aurie grabs Door's hand and runs." }
+      },
+      "choices": [
+        { "id": "5.2.A", "text": "If you want to hurt her, you'll have to kill me first.", "effects": { "traits": { "loyalty": 2 }, "vars": { "DOOR_BOND": 1 } }, "effectsIf": [{ "flag": "TOLD_CV", "effects": { "vars": { "DOOR_BOND": -2 } }, "ripple": "Door heard what Croup said." }], "next": "5.2b", "aftermath": [{ "text": "Vandemar, pleased: all right. Thanks. They run; behind them, cuckoo calls and a wolf's howl.", "still": "nw-5.2-run", "cast": ["aurie", "door"] }] },
+        { "id": "5.2.B", "text": "Grab her hand and run.", "effects": {}, "effectsIf": [{ "flag": "TOLD_CV", "effects": { "vars": { "DOOR_BOND": -2 } }, "ripple": "Door heard what Croup said." }], "next": "5.2b", "aftermath": [{ "text": "Behind them, cuckoo calls and a wolf's howl.", "still": "nw-5.2-run", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "5.2b": {
+      "id": "5.2b", "title": "A traitor?", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Outside, catching their breath. A traitor?", "still": "nw-5.2b-outside", "cast": ["aurie", "door"] }
+      ],
+      "choices": [
+        { "id": "5.2b.A", "text": "The marquis.", "effects": { "vars": { "MARQUIS_TRUST": -1 } }, "next": "5.3" },
+        { "id": "5.2b.B", "text": "Hunter.", "effects": { "vars": { "HUNTER_SUSPECT": 1 } }, "next": "5.3" },
+        { "id": "5.2b.C", "text": "They're winding us up.", "effects": {}, "next": "5.3" }
+      ]
+    },
+    "5.3": {
+      "id": "5.3", "title": "Angels over England", "pov": "3P", "fx": "glitter",
+      "beats": [
+        { "text": "The exhibition launch: a string quartet, champagne, a room crowded with angels, Jessica in green silk running the night. She half-recognises Aurie.", "still": "nw-5.3-gallery", "cast": ["aurie", "jessica"] }
+      ],
+      "conversation": {
+        "character": "jessica", "maxTurns": 3,
+        "canon": ["Jessica cannot remember Aurie but feels she should.", "Reminding her, gently or cheekily, ends with her sending for security; saying nothing does not."],
+        "opening": "I'm so sorry, I'm dreadful with faces. Are you with the caterers?",
+        "exits": { "5.3.A": "Aurie tells her who she was, gently.", "5.3.B": "Aurie tells her cheekily: her birthday, the song she hums.", "5.3.C": "Aurie says nothing and walks away." }
+      },
+      "choices": [
+        { "id": "5.3.A", "text": "We were engaged, Jess. Until three weeks ago.", "effects": { "flags": { "SECURITY": true } }, "next": "5.4" },
+        { "id": "5.3.B", "text": "Your birthday's the twelfth. You hum when you're nervous. You're humming now.", "effects": { "flags": { "SECURITY": true } }, "next": "5.4" },
+        { "id": "5.3.C", "text": "Say nothing. Walk away.", "effects": {}, "next": "5.4" }
+      ]
+    },
+    "5.4": {
+      "id": "5.4", "title": "The Angelus", "pov": "3P", "fx": "glitter",
+      "beats": [
+        { "text": "Mr Stockton pulls the cord: a cathedral door carved with a staring medieval angel.", "still": "nw-5.4-angelus", "cast": ["aurie", "door", "stockton"] },
+        { "text": "Guards grip Aurie. Door screams into the microphone like a power drill.", "if": ["SECURITY"], "still": "nw-5.4-guards", "cast": ["aurie", "door", "guards"] },
+        { "text": "Nobody stops them. Door's hand on the door; light like fireworks.", "unless": ["SECURITY"], "still": "nw-5.4-light", "cast": ["aurie", "door"] }
+      ],
+      "choices": [
+        { "id": "5.4.A", "text": "Tear free.", "requires": { "flags": ["SECURITY"] }, "effects": {}, "next": "5.5", "aftermath": [{ "text": "Wrong London. Her hand on the door; light like fireworks; they walk into it, and the room agrees it never happened.", "still": "nw-5.4-light", "cast": ["aurie", "door"] }] },
+        { "id": "5.4.B", "text": "Go without me!", "requires": { "flags": ["SECURITY"] }, "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "5.5", "aftermath": [{ "text": "She screams anyway, and will not go without her. Light like fireworks; they walk into it.", "still": "nw-5.4-light", "cast": ["aurie", "door"] }] },
+        { "id": "5.4.C", "text": "Walk into the light with her.", "requires": { "notFlags": ["SECURITY"] }, "effects": {}, "next": "5.5" }
+      ]
+    },
+    "5.5": {
+      "id": "5.5", "title": "The Angel Islington", "pov": "POV", "fx": "flicker",
+      "beats": [
+        { "text": "The rock hall. Islington, neither man nor woman, golden hair, eyes of old grey light, pours wine from Atlantis like a sacrament. To former glories.", "clip": "nw-5.5-wine-v", "cast": ["islington"] },
+        { "text": "It gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep.", "still": "nw-5.5-hall", "cast": ["aurie", "door", "islington"] }
+      ],
+      "conversation": {
+        "character": "islington", "maxTurns": 3,
+        "canon": ["Islington is gentle, patient and gives no hint of what it wants beyond the key.", "It asks Aurie what she wants; the answer is remembered."],
+        "opening": "And you, Aurie Mayhew? What is it that you want?",
+        "exits": { "5.5.A": "Aurie asks for her life back.", "5.5.B": "Aurie asks only that Door be helped.", "5.5.C": "Aurie asks why an angel lives under London." }
+      },
+      "choices": [
+        { "id": "5.5.A", "text": "My life back. My flat. My job.", "effects": { "flags": { "BARGAIN_SELF": true } }, "remembered": "The angel will remember that.", "next": "5.6", "aftermath": [{ "text": "That can happen.", "still": "nw-5.5-hall", "cast": ["aurie", "door", "islington"] }] },
+        { "id": "5.5.B", "text": "Help Door. That's all.", "effects": { "traits": { "loyalty": 2 }, "flags": { "BARGAIN_DOOR": true } }, "remembered": "The angel will remember that.", "next": "5.6" },
+        { "id": "5.5.C", "text": "Why does an angel live under London?", "effects": { "flags": { "BARGAIN_ATLANTIS": true } }, "remembered": "The angel will remember that.", "next": "5.6", "aftermath": [{ "text": "It tells of the waves, and of a first city that sank.", "still": "nw-5.5-atlantis", "cast": ["islington"] }] }
+      ]
+    },
+    "5.6": {
+      "id": "5.6", "title": "The steps", "pov": "3P", "fx": "glitter",
+      "beats": [
+        { "text": "Drunk on Atlantean wine, on the museum steps at dawn. Door giggles.", "still": "nw-5.6-steps", "cast": ["aurie", "door"] }
+      ],
+      "choices": [
+        { "id": "5.6.A", "text": "Dance down the steps.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "c10", "aftermath": [{ "text": "Door joins in, dances better, and they tumble at the bottom laughing. Hunter, at the station: they are very drunk.", "clip": "nw-5.6-dance-v", "cast": ["aurie", "door"] }] },
+        { "id": "5.6.B", "text": "Walk down with dignity.", "effects": {}, "next": "c10", "aftermath": [{ "text": "Dignity lasts eleven steps. Hunter, at the station: they are very drunk.", "still": "nw-5.6-steps", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "c10": {
+      "id": "c10", "title": "Cutaway · Three questions", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "The marquis in the killers' cellar holds a stolen T'ang figurine under a hammer and trades three questions each. Why not kill Door? She's the only one who can open the door. Why protect her? Her father saved his life.", "still": "nw-c10-hammer", "cast": ["marquis", "croup", "vandemar"] },
+        { "text": "Croup eats the figurine with joy. Under Marble Arch, Vandemar is already waiting on the steps. A knife hilt to the temple.", "still": "nw-c10-marble-arch", "cast": ["marquis", "vandemar"] }
+      ],
+      "next": "6.1"
+    },
+
+    "6.1": {
+      "id": "6.1", "title": "Serpentine's house", "pov": "3P", "episodeTitle": "Part Six · Chapter 6 · The Ordeal of the Key", "fx": "mist",
+      "beats": [
+        { "text": "Three dreams: Hunter dancing with the Great Weasel under Bangkok; Door's father teaching her to open a padlock; Aurie's Beast, bigger, weapons bristling from its hide.", "clip": "nw-6.1-dreams-v", "cast": ["hunter", "door", "portico"] },
+        { "text": "A tiny Tube platform laid for breakfast, trains feet away. Serpentine of the Seven Sisters in a white corset and a shredded wedding dress. To Hunter: you'll need the spear, of course. To Door: your hero. He's not my hero. I'm afraid she is.", "still": "nw-6.1-breakfast", "cast": ["aurie", "door", "hunter", "serpentine"] }
+      ],
+      "choices": [
+        { "id": "6.1.A", "text": "Ask Hunter what she meant by the spear.", "effects": { "vars": { "HUNTER_SUSPECT": 1 } }, "next": "6.2", "aftermath": [{ "text": "Eat your breakfast.", "still": "nw-6.1-breakfast", "cast": ["aurie", "door", "hunter", "serpentine"] }] },
+        { "id": "6.1.B", "text": "Take Door's trembling hand under the table.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "6.2" },
+        { "id": "6.1.C", "text": "Eat your breakfast and let it pass.", "effects": {}, "next": "6.2" }
+      ]
+    },
+    "6.2": {
+      "id": "6.2", "title": "The river and the fog", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "A slippery bank, a black lake, then a yellow pea-souper that seems to hold shapes. Hunter speaks of the blind white alligator king under New York, the bear under Berlin, the tiger under Calcutta, and the Beast of London, which she will kill or die trying.", "still": "nw-6.2-fog", "cast": ["aurie", "hunter", "door"] }
+      ],
+      "conversation": {
+        "character": "hunter", "maxTurns": 3,
+        "canon": ["Hunter never lies; she withholds.", "She hunts the Beast of London above everything."],
+        "opening": "The Beast of London. I will kill it, or die in the trying. Those are the only two ways it ends.",
+        "exits": { "6.2.A": "Aurie says nothing.", "6.2.B": "Aurie asks what she would give for her chance at it.", "6.2.C": "Aurie tells her she dreams about the Beast." }
+      },
+      "choices": [
+        { "id": "6.2.A", "text": "Say nothing.", "effects": {}, "next": "6.3" },
+        { "id": "6.2.B", "text": "What would you give for your chance at it?", "effects": { "vars": { "HUNTER_SUSPECT": 1 } }, "next": "6.3", "aftermath": [{ "text": "She stops talking for a mile.", "still": "nw-6.2-fog", "cast": ["aurie", "hunter", "door"] }] },
+        { "id": "6.2.C", "text": "I dream about it.", "effects": { "flags": { "BEAST_SHARED": true } }, "remembered": "Hunter will remember that.", "next": "6.3", "aftermath": [{ "text": "Then perhaps it dreams of you.", "still": "nw-6.2-fog", "cast": ["aurie", "hunter", "door"] }] }
+      ]
+    },
+    "6.3": {
+      "id": "6.3", "title": "The bridge of the Black Friars", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "Friars in black robes with crossbows. Brother Sable pushes Aurie into the mud; Hunter beats Sable at quarterstaff.", "clip": "nw-6.3-quarterstaff-v", "cast": ["hunter", "sable"] },
+        { "text": "Door answers Brother Fuliginous's riddle: a key. The blind abbot: the last test falls to the one who neither fought nor answered.", "still": "nw-6.3-abbot", "cast": ["aurie", "abbot", "door", "hunter"] }
+      ],
+      "conversation": {
+        "character": "abbot", "maxTurns": 3,
+        "canon": ["The Ordeal falls to Aurie and cannot be bargained away.", "The abbot will not say what the Ordeal is."],
+        "opening": "The last test is yours, child. Will you take it?",
+        "exits": { "6.3.A": "Aurie asks how much of an ordeal it is, and goes.", "6.3.B": "Aurie asks if he could just hand the key over, then goes.", "6.3.C": "Aurie asks Door whether she wants her to." }
+      },
+      "choices": [
+        { "id": "6.3.A", "text": "How much of an ordeal is it?", "effects": { "traits": { "courage": 1, "loyalty": 1 } }, "next": "6.4" },
+        { "id": "6.3.B", "text": "It's for an angel. Couldn't you just hand it over?", "effects": { "traits": { "courage": 1 } }, "next": "6.4" },
+        { "id": "6.3.C", "text": "Door. Do you want me to?", "effects": { "traits": { "loyalty": 2 }, "vars": { "DOOR_BOND": 1 } }, "next": "6.4", "aftermath": [{ "text": "No. Then I'll do it for you.", "still": "nw-6.3-abbot", "cast": ["aurie", "abbot", "door", "hunter"] }] }
+      ]
+    },
+    "6.4": {
+      "id": "6.4", "title": "The wall of those who failed", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A Polaroid flash. A wall of faces going back through daguerreotypes to watercolours.", "still": "nw-6.4-wall", "cast": ["aurie", "fuliginous"] },
+        { "text": "The first part of the Ordeal is a nice cup of tea. Lead on, Macduff.", "still": "nw-6.4-tea", "cast": ["aurie", "abbot"] }
+      ],
+      "next": "c12"
+    },
+    "c12": {
+      "id": "c12", "title": "Cutaway · The box pulses red", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "On Old Bailey's roof the silver box pulses red like a heartbeat. He's in trouble.", "still": "nw-c12-box", "cast": ["oldbailey"] },
+        { "text": "On the bridge Door remembers being five in Kew's butterfly house: her father pointing out a man in a big coat, a fraud and possibly a monster; if you're ever in trouble, go to him.", "still": "nw-c12-kew", "cast": ["door", "hunter"] },
+        { "text": "The marquis nailed to an X of pallets in the hospital canteen, spitting blood at Vandemar.", "still": "nw-c12-pallets", "cast": ["marquis", "vandemar", "croup"] }
+      ],
+      "next": "6.5"
+    },
+    "6.5": {
+      "id": "6.5", "title": "The Ordeal", "pov": "POV", "fx": "flicker",
+      "beats": [
+        { "text": "An empty, dim Blackfriars platform that flashes into rush hour. Posters: GIVE UP. YOU WERE NEVER THERE.", "clip": "nw-6.5-platform-v", "cast": [] },
+        { "text": "Gary sits down: I'm not really here. I'm you. His face runs like putty into her own.", "still": "nw-6.5-gary", "cast": ["aurie", "gary"] },
+        { "text": "Her hand finds the bead, and she hears Anaesthesia: Aurie. Hold on.", "if": ["BEAD_KEPT"], "still": "nw-6.5-bead", "cast": ["aurie"] },
+        { "text": "In the dark she hears Anaesthesia's voice, small and clear: you let go.", "if": ["LET_GO"], "unless": ["BEAD_KEPT"], "still": "nw-6.5-dark", "cast": ["aurie"] },
+        { "text": "Hunter's voice, from somewhere: mind the gap.", "if": ["HEEDED_HUNTER"], "unless": ["BEAD_KEPT"], "still": "nw-6.5-dark", "cast": ["aurie"] },
+        { "text": "An old woman's voice: you've a good heart.", "if": ["UMBRELLA_GIVEN"], "unless": ["BEAD_KEPT", "HEEDED_HUNTER"], "still": "nw-6.5-dark", "cast": ["aurie"] }
+      ],
+      "conversation": {
+        "character": "other-aurie", "maxTurns": 3,
+        "canon": ["The other Aurie insists she has had a breakdown and has been wandering; she is persuasive.", "The train that comes carries the lost from the wall of faces.", "Climbing down after the troll is the end."],
+        "opening": "You had a breakdown, love. You've been sleeping rough. Come on. Come home.",
+        "exits": { "6.5.A": "Aurie holds on and steps onto the train when the doors open.", "6.5.B": "Aurie climbs down onto the track after the troll." }
+      },
+      "choices": [
+        { "id": "6.5.A", "text": "Hold on. Step onto the train.", "effects": {}, "next": "6.6" },
+        { "id": "6.5.B", "text": "Climb down for the troll.", "effects": {}, "next": "end-E" }
+      ]
+    },
+    "end-E": {
+      "id": "end-E", "title": "Ending E · The wall of those who failed", "type": "end", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A poor creature lifted from the shrine floor. A new Polaroid on the wall. Door and Hunter led away through the fog.", "still": "nw-endE-polaroid", "cast": ["abbot", "fuliginous"] },
+        { "text": "Return to the last choice.", "style": "hook" }
+      ],
+      "next": "6.5"
+    },
+    "6.6": {
+      "id": "6.6", "title": "The key", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A small shrine, a silver key turning on a thread. The abbot comes for a body. She's not dead. One of those, then, a poor creature. Aurie stands: I am not a poor creature.", "still": "nw-6.6-shrine", "cast": ["aurie", "abbot", "hunter"] }
+      ],
+      "choices": [
+        { "id": "6.6.A", "text": "Toss the key to Door.", "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "7.1" },
+        { "id": "6.6.B", "text": "Keep it. It's my ticket home.", "effects": { "traits": { "loyalty": -2 }, "vars": { "DOOR_BOND": -1 }, "flags": { "KEY_TAKEN": true } }, "remembered": "This will matter.", "next": "7.1" }
+      ]
+    },
+
+    "7.1": {
+      "id": "7.1", "title": "The painted caves", "pov": "3P", "episodeTitle": "Part Seven · Chapter 7 · Down Street", "fx": "embers",
+      "beats": [
+        { "text": "Ochre paintings of mammoths, then lorries and cats. Door ties the key on a string. Hunter lifts a boy painter's switchblade; the next market is Belfast, tonight.", "still": "nw-7.1-caves", "cast": ["aurie", "door", "hunter"] },
+        { "text": "A woman in black velvet asks the same, and looks at Aurie as she says she'll see her there.", "if": ["LAMIA_NOTICED"], "still": "nw-7.1-lamia", "cast": ["aurie", "lamia"] },
+        { "text": "A woman in black velvet asks the same, and looks at Door as she says she'll see them there.", "unless": ["LAMIA_NOTICED"], "still": "nw-7.1-lamia", "cast": ["door", "lamia"] }
+      ],
+      "choices": [
+        { "id": "7.1.A", "text": "The marquis? He'll turn up. Like a bad penny.", "effects": { "vars": { "MARQUIS_TRUST": 1 } }, "next": "c13" },
+        { "id": "7.1.B", "text": "He's probably sold us out.", "effects": { "vars": { "MARQUIS_TRUST": -1 } }, "next": "c13", "aftermath": [{ "text": "Door: he won't let us down.", "still": "nw-7.1-caves", "cast": ["aurie", "door", "hunter"] }] }
+      ]
+    },
+    "c13": {
+      "id": "c13", "title": "Cutaway · Being dead", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "Vandemar wheels the marquis's body through the drains in a squeaking supermarket trolley and tips it into the sewer.", "still": "nw-c13-trolley", "cast": ["vandemar", "marquis"] },
+        { "text": "Old Bailey buys it for a bottle of Chanel No. 5 and drags it to the top of the London Wall. In the silver box, a duck's egg; he smashes it with a toasting fork.", "still": "nw-c13-egg", "cast": ["oldbailey", "marquis"] },
+        { "text": "The marquis coughs up sewer water: I think my throat's been cut. Being dead is very dark and very cold.", "still": "nw-c13-alive", "cast": ["oldbailey", "marquis"] },
+        { "text": "Old Bailey mutters about the lass with the little flag.", "if": ["OLD_BAILEY_FRIEND"], "still": "nw-c13-alive", "cast": ["oldbailey", "marquis"] }
+      ],
+      "next": "7.2"
+    },
+    "7.2": {
+      "id": "7.2", "title": "HMS Belfast", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "A warship deck crowded with stalls. Hammersmith, a bearded mountain, hammers a black rose and lifts Door onto his booth.", "still": "nw-7.2-deck", "cast": ["aurie", "door", "hunter", "hammersmith"] },
+        { "text": "Door: can I have the key? I want a chain for it.", "if": ["KEY_TAKEN"], "still": "nw-7.2-ask", "cast": ["aurie", "door"] }
+      ],
+      "choices": [
+        { "id": "7.2.A", "text": "Give it to her.", "requires": { "flags": ["KEY_TAKEN"] }, "effects": { "traits": { "loyalty": 2 }, "vars": { "DOOR_BOND": 1 } }, "next": "7.3" },
+        { "id": "7.2.B", "text": "I'll keep it, thanks.", "requires": { "flags": ["KEY_TAKEN"] }, "effects": { "traits": { "loyalty": -2 }, "flags": { "NO_COPY": true } }, "remembered": "There will be no copy.", "next": "7.3" },
+        { "id": "7.2.C", "text": "Go and find the curry stall.", "requires": { "notFlags": ["KEY_TAKEN"] }, "effects": {}, "next": "7.3", "aftermath": [{ "text": "Behind them, Door asks Hammersmith for a chain, and his discretion.", "still": "nw-7.2-hammersmith", "cast": ["door", "hammersmith"] }] }
+      ]
+    },
+    "7.3": {
+      "id": "7.3", "title": "Curry and Lamia", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "The pale woman: I do not eat... curry. And laughs. Lamia, a Velvet, a guide. Hunter: she's not yours.", "still": "nw-7.3-curry", "cast": ["aurie", "hunter", "lamia"] },
+        { "text": "Door hugs Aurie. Lamia knows the way: Down Street. Door: we can't afford a guide. Lamia: she'll take payment from her.", "still": "nw-7.3-hug", "cast": ["aurie", "door", "lamia"] }
+      ],
+      "conversation": {
+        "character": "lamia", "maxTurns": 3,
+        "canon": ["Lamia offers to guide them to Down Street for a payment she will take from Aurie.", "Door does not trust her; Hunter does not like her."],
+        "opening": "You need a guide, and I know the way. I'll take my payment from you, not from the child.",
+        "exits": { "7.3.A": "Aurie insists on hiring her.", "7.3.B": "Aurie says it is Door's call." }
+      },
+      "choices": [
+        { "id": "7.3.A", "text": "You just don't like me figuring things out.", "effects": { "traits": { "loyalty": -1 }, "flags": { "LAMIA_GUIDE": true } }, "next": "7.4" },
+        { "id": "7.3.B", "text": "It's Door's call.", "effects": { "vars": { "DOOR_BOND": 1 } }, "next": "7.4", "aftermath": [{ "text": "Lamia follows anyway, for free.", "still": "nw-7.3-hug", "cast": ["aurie", "door", "lamia"] }] }
+      ]
+    },
+    "7.4": {
+      "id": "7.4", "title": "Down Street", "pov": "POV", "fx": "dust",
+      "beats": [
+        { "text": "A brass plate: DOWN STREET. PLEASE KNOCK. A sleepy footman, four flights of ever-shabbier stairs, an OUT OF ORDER lift.", "still": "nw-7.4-footman", "cast": ["aurie", "door", "hunter", "lamia", "footman"] },
+        { "text": "An inside-out Tower of Babel, a spiral road down a bottomless well, a plank to reach it. Someone calls the lift back up and the door slams. Aurie freezes on hands and knees.", "clip": "nw-7.4-plank-v", "cast": [] }
+      ],
+      "choices": [
+        { "id": "7.4.A", "text": "Let Hunter talk you across.", "effects": {}, "next": "7.5", "aftermath": [{ "text": "She strokes the white knuckles, talks her on inch by inch, lifts her onto rock. Aurie thanks her twice and laughs till she cries. Safe.", "still": "nw-7.4-safe", "cast": ["aurie", "hunter"] }] },
+        { "id": "7.4.B", "text": "Shut your eyes and crawl alone.", "effects": { "traits": { "courage": 1 } }, "next": "7.5", "aftermath": [{ "text": "Hunter still lifts her off at the end.", "still": "nw-7.4-safe", "cast": ["aurie", "hunter"] }] }
+      ]
+    },
+    "7.5": {
+      "id": "7.5", "title": "The kiss of the Velvet", "pov": "3P", "fx": "frost",
+      "beats": [
+        { "text": "Lamia: let them go ahead. Aurie's breath steams; hers doesn't. Would she give her some of her heat, as payment?", "still": "nw-7.5-lamia", "cast": ["aurie", "lamia"] },
+        { "text": "You hired me, she says. You did promise.", "if": ["LAMIA_GUIDE"], "still": "nw-7.5-lamia", "cast": ["aurie", "lamia"] }
+      ],
+      "conversation": {
+        "character": "lamia", "maxTurns": 2,
+        "canon": ["Lamia wants Aurie's warmth; she will try to take it whether or not Aurie agrees.", "The marquis, alive again, is about to arrive."],
+        "opening": "You're so warm. Would you give me a little of it? As payment. You did promise.",
+        "exits": { "7.5.A": "Aurie says yes.", "7.5.B": "Aurie says no." }
+      },
+      "choices": [
+        { "id": "7.5.A", "text": "Yes.", "effects": { "vars": { "MARQUIS_TRUST": 2 } }, "next": "7.6", "aftermath": [{ "text": "The cold kiss; frost over her skin, eyes frozen open. A hand closes on Lamia's neck: the marquis, barefoot, in a blanket, a filthy cloth round his throat. Give her back her life. Lamia breathes it back and spits ice in her face.", "still": "nw-7.5-marquis", "cast": ["aurie", "lamia", "marquis"] }] },
+        { "id": "7.5.B", "text": "No.", "effects": { "traits": { "courage": 1 }, "vars": { "MARQUIS_TRUST": 1 } }, "next": "7.6", "aftermath": [{ "text": "She tries anyway; Aurie pulls back; the marquis arrives, barefoot, a cloth round his throat. Why did people think him dead? Because they killed me.", "still": "nw-7.5-marquis", "cast": ["aurie", "lamia", "marquis"] }] }
+      ]
+    },
+    "7.6": {
+      "id": "7.6", "title": "Hunter's choice", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Across the well, two figures in shadow: a trap. A sprint down the spiral. Croup and Vandemar step out and bind Door.", "still": "nw-7.6-bound", "cast": ["door", "croup", "vandemar", "hunter"] },
+        { "text": "Aurie shouts for Hunter. Hunter's kick, balletic, into her stomach. I'm afraid so. No hard feelings.", "clip": "nw-7.6-kick-v", "cast": ["hunter", "aurie"] }
+      ],
+      "conversation": {
+        "character": "croup-vandemar", "maxTurns": 2,
+        "canon": ["Croup asks who has the key.", "Hunter has betrayed them for the spear and her chance at the Beast.", "If HUNTER_SUSPECT is 2 or more, Aurie may have warned Door a moment before."],
+        "opening": "CROUP: Now then. Which of you has the key? VANDEMAR: The key.",
+        "exits": { "7.6.A": "Aurie claims the key herself, offering her old front-door key.", "7.6.B": "Aurie says nothing.", "7.6.C": "Aurie says Door has it.", "7.6.D": "Aurie warns Door that Hunter is with them." }
+      },
+      "choices": [
+        { "id": "7.6.A", "text": "I do. Search me.", "effects": { "traits": { "loyalty": 2 } }, "next": "7.6b", "aftermath": [{ "text": "Her old front-door key. Vandemar crushes it like foil and lectures on where to kick: knee, shoulder, ribs.", "still": "nw-7.6-kicked", "cast": ["aurie", "vandemar"] }] },
+        { "id": "7.6.B", "text": "Say nothing.", "effects": {}, "next": "7.6b", "aftermath": [{ "text": "Door answers for her. Aurie is kicked anyway, less.", "still": "nw-7.6-kicked", "cast": ["aurie", "vandemar"] }] },
+        { "id": "7.6.C", "text": "She has it.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 } }, "next": "7.6b" },
+        { "id": "7.6.D", "text": "Door! Hunter's with them!", "requires": { "vars": { "HUNTER_SUSPECT": 2 } }, "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "7.6b", "aftermath": [{ "text": "Too late to matter, but Door looks at her, and remembers it.", "still": "nw-7.6-bound", "cast": ["door", "croup", "vandemar", "hunter"] }] }
+      ]
+    },
+    "7.6b": {
+      "id": "7.6b", "title": "Islington", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Croup takes the Beast token from Door and tosses Hunter her payment: a bronze spear with faces carved on the haft. She loves it on sight. The marquis with a crossbow: tell her, Hunter. Islington.", "still": "nw-7.6b-spear", "cast": ["aurie", "hunter", "marquis"] }
+      ],
+      "choices": [
+        { "id": "7.6b.A", "text": "Who's behind this?", "effects": {}, "next": "8.1" },
+        { "id": "7.6b.B", "text": "Kill her.", "effects": { "traits": { "mercy": -1 } }, "next": "8.1", "aftermath": [{ "text": "The marquis: death is so final. He brings her.", "still": "nw-7.6b-spear", "cast": ["aurie", "hunter", "marquis"] }] },
+        { "id": "7.6b.C", "text": "Bring her.", "effects": { "traits": { "mercy": 1 } }, "next": "8.1" }
+      ]
+    },
+
+    "8.1": {
+      "id": "8.1", "title": "The giants' gate", "pov": "3P", "episodeTitle": "Part Eight · Chapter 8 · The Beast, the angel and the door", "fx": "mist",
+      "beats": [
+        { "text": "A Cyclopean gate; beyond, a labyrinth of lanes from every century that fell through the cracks. When angels go bad, they go worse than anyone; Lucifer was an angel. A far bellow.", "still": "nw-8.1-gate", "cast": ["aurie", "marquis", "hunter"] }
+      ],
+      "choices": [
+        { "id": "8.1.A", "text": "I'm not turning back. They've got Door.", "effects": { "traits": { "loyalty": 2 } }, "next": "8.1c" },
+        { "id": "8.1.B", "text": "I'll wait here.", "effects": { "traits": { "loyalty": -2 } }, "next": "8.1b" }
+      ]
+    },
+    "8.1b": {
+      "id": "8.1b", "title": "Alone at the gate", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "Alone, she hears Door's distant shout: hey! Beast! Here! She runs after them.", "still": "nw-8.1b-alone", "cast": ["aurie"] }
+      ],
+      "next": "8.1c"
+    },
+    "8.1c": {
+      "id": "8.1c", "title": "The Fleet Marsh", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "Mosquitoes, old corpses. Hunter: and I saved your life. Many times.", "still": "nw-8.1c-marsh", "cast": ["aurie", "hunter", "marquis"] }
+      ],
+      "choices": [
+        { "id": "8.1c.A", "text": "Look away.", "effects": {}, "next": "c14", "aftermath": [{ "text": "The marquis steps on a rib cage; the token flies into the mud, glints, and a bubble of gas swallows it. Too late.", "still": "nw-8.1c-token", "cast": ["aurie", "marquis", "hunter"] }] },
+        { "id": "8.1c.B", "text": "I know. That's why it hurts.", "effects": { "traits": { "mercy": 1 } }, "next": "c14", "aftermath": [{ "text": "The marquis steps on a rib cage; the token flies into the mud, glints, and a bubble of gas swallows it. Too late.", "still": "nw-8.1c-token", "cast": ["aurie", "marquis", "hunter"] }] }
+      ]
+    },
+    "c14": {
+      "id": "c14", "title": "Cutaway · The door with the mirror", "pov": "3P", "fx": "mist",
+      "beats": [
+        { "text": "Door marched through the labyrinth. You're afraid, aren't you? She shouts for the Beast; Vandemar gags her. An oak door with an oval mirror; the angel's face in it: enter.", "still": "nw-c14-mirror-door", "cast": ["door", "croup", "vandemar"] }
+      ],
+      "next": "8.2"
+    },
+    "8.2": {
+      "id": "8.2", "title": "The Beast", "pov": "POV", "fx": "embers",
+      "beats": [
+        { "text": "By flare light it comes so slowly she thinks it sick, until she sees the ground it covers. Broken spears bristle from its hide. Hunter is a fraction late; the tusk opens her side.", "clip": "nw-8.2-beast-v", "cast": ["hunter"] },
+        { "text": "Broken, Hunter asks if she has ever used a spear: hold it at the blunt end. She hauls herself up, hums until the labyrinth rings, and calls it out. The framing of the dream, but the hand on the spear is Aurie's own.", "still": "nw-8.2-spear-pov", "cast": ["hunter"] }
+      ],
+      "choices": [
+        { "id": "8.2.A", "text": "Strike. Under and up.", "effects": { "flags": { "WARRIOR": true } }, "next": "8.3" },
+        { "id": "8.2.B", "text": "Throw the spear, as in the dream.", "requires": { "notFlags": ["BEAST_SHARED"] }, "effects": {}, "next": "8.3", "aftermath": [{ "text": "The throw glances off and the dream nearly comes true. Hunter, dying, drives her knife into its eye. A cracked rib.", "still": "nw-8.2-knife-eye", "cast": ["hunter"] }] },
+        { "id": "8.2.C", "text": "Drop the spear and drag Hunter clear.", "effects": { "traits": { "loyalty": 2, "mercy": 1 }, "flags": { "LATE": true } }, "remembered": "Time is passing in the angel's hall.", "next": "8.3", "aftermath": [{ "text": "The Beast thunders off, wounded.", "still": "nw-8.2-wounded", "cast": ["aurie", "hunter"] }] }
+      ]
+    },
+    "8.3": {
+      "id": "8.3", "title": "Hunter's last words", "pov": "3P", "fx": "embers",
+      "beats": [
+        { "text": "Blind now, she laughs: the greatest hunter in London Below. The Warrior.", "if": ["WARRIOR"], "still": "nw-8.3-hunter", "cast": ["aurie", "hunter", "marquis"] },
+        { "text": "Blind now, she laughs: my last kill. Not bad.", "unless": ["WARRIOR"], "still": "nw-8.3-hunter", "cast": ["aurie", "hunter", "marquis"] },
+        { "text": "Take the knife. She's yours.", "still": "nw-8.3-knife", "cast": ["aurie", "hunter"] }
+      ],
+      "choices": [
+        { "id": "8.3.A", "text": "Take the knife.", "effects": { "flags": { "KNIFE": true } }, "remembered": "The knife will matter.", "next": "8.3b", "aftermath": [{ "text": "Clean her blood off it. A hunter looks after her weapons.", "still": "nw-8.3-knife", "cast": ["aurie", "hunter"] }] },
+        { "id": "8.3.B", "text": "Refuse it. Twice.", "effects": {}, "next": "8.3b" }
+      ]
+    },
+    "8.3b": {
+      "id": "8.3b", "title": "Forgiveness", "pov": "3P", "fx": "embers",
+      "beats": [
+        { "text": "Her hand in Aurie's.", "still": "nw-8.3-hunter", "cast": ["aurie", "hunter", "marquis"] }
+      ],
+      "choices": [
+        { "id": "8.3b.A", "text": "I forgive you.", "effects": { "traits": { "mercy": 1, "loyalty": 1 }, "flags": { "HUNTER_FORGIVEN": true } }, "next": "8.3c" },
+        { "id": "8.3b.B", "text": "Hold her hand in silence.", "effects": {}, "next": "8.3c" }
+      ]
+    },
+    "8.3c": {
+      "id": "8.3c", "title": "The Beast's blood", "pov": "3P", "fx": "embers",
+      "beats": [
+        { "text": "Touch the Beast's blood to your eyes and tongue, she says. The marquis: do it. He closes her eyes; we'll come back for the body later.", "still": "nw-8.3c-blood", "cast": ["aurie", "marquis", "hunter"] }
+      ],
+      "choices": [
+        { "id": "8.3c.A", "text": "Do it.", "effects": {}, "next": "8.4", "aftermath": [{ "text": "It tastes like an ocean. She runs straight through the labyrinth with the old dirge in her head: fire and fleet and candlelight.", "clip": "nw-8.3c-run-v", "cast": ["aurie", "marquis"] }] },
+        { "id": "8.3c.B", "text": "Refuse.", "effects": { "flags": { "LATE": true } }, "remembered": "Time is passing in the angel's hall.", "next": "8.4", "aftermath": [{ "text": "They find the way the slow way.", "still": "nw-8.3c-slow", "cast": ["aurie", "marquis"] }] }
+      ]
+    },
+    "8.4": {
+      "id": "8.4", "title": "Into the hall", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "The iron pillars, the table, the candles, the black flint door.", "still": "nw-8.4-approach", "cast": ["aurie", "marquis"] }
+      ],
+      "next": "8.4a",
+      "branch": [
+        { "requires": { "flags": ["LATE", "NO_COPY"] }, "next": "end-D" },
+        { "requires": { "flags": ["LATE"] }, "next": "8.4L" }
+      ]
+    },
+    "8.4L": {
+      "id": "8.4L", "title": "The empty hall", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "A dark, silent hall. Door alone, one wrist chained, a candle. It is done, without them.", "still": "nw-8.4L-alone", "cast": ["aurie", "door"] }
+      ],
+      "choices": [
+        { "id": "8.4L.A", "text": "Hold her.", "effects": { "vars": { "DOOR_BOND": -1 } }, "next": "8.5" }
+      ]
+    },
+    "8.4a": {
+      "id": "8.4a", "title": "The angel's hall", "pov": "POV", "fx": "flicker",
+      "beats": [
+        { "text": "Door chained spread-eagled, a bruise on her cheek. Come in, Aurie Mayhew. You do look a mess.", "still": "nw-8.4a-chained", "cast": ["aurie", "door", "islington", "croup", "vandemar"] },
+        { "text": "Vandemar breaks her little finger. Croup brings in the marquis. The mask slips.", "still": "nw-8.4a-finger", "cast": ["aurie", "vandemar", "marquis"] },
+        { "text": "Atlantis drowning, four million voices; Islington waking and calling Croup through the rock pool. They deserved it. Then, mildly: just one of those things.", "clip": "nw-8.4a-atlantis-v", "cast": ["islington"] },
+        { "text": "Vandemar recites Portico's real words in his voice: Door, child, fear Islington. A blade under Aurie's ear.", "still": "nw-8.4a-blade", "cast": ["aurie", "vandemar", "door"] },
+        { "text": "You asked nothing for yourself, it says. Then your pain is your gift to her.", "if": ["BARGAIN_DOOR"], "still": "nw-8.4a-blade", "cast": ["aurie", "vandemar", "door"] }
+      ],
+      "conversation": {
+        "character": "islington", "maxTurns": 3,
+        "canon": ["Islington wants Door to open the flint door; it will hurt Aurie to make her.", "If BARGAIN_SELF: it offers Aurie her life back if she tells Door to open it. If BARGAIN_DOOR: it mocks that her pain is her gift to Door. If BARGAIN_ATLANTIS: it knows she knows about the city.", "It never raises its voice until it screams that they deserved it."],
+        "opening": "Tell her to open it, Aurie Mayhew. And I keep my word: your life back. Every bit of it.",
+        "exits": { "8.4a.A": "Aurie tells Door not to open it; they don't matter.", "8.4a.B": "Aurie begs Door to open it.", "8.4a.C": "Aurie accuses it of sinking a city and calling it unfortunate." }
+      },
+      "choices": [
+        { "id": "8.4a.A", "text": "Don't do it, Door. We don't matter.", "effects": { "traits": { "loyalty": 3 } }, "effectsIf": [{ "flag": "BARGAIN_DOOR", "effects": { "traits": { "loyalty": 1 } }, "ripple": "You asked nothing for yourself, and still ask nothing." }], "next": "8.4b" },
+        { "id": "8.4a.B", "text": "Door, please. Do it.", "requires": { "flags": ["BARGAIN_SELF"] }, "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 } }, "next": "8.4b" },
+        { "id": "8.4a.C", "text": "You sank a city and called it unfortunate.", "requires": { "flags": ["BARGAIN_ATLANTIS"] }, "effects": { "traits": { "loyalty": 1 } }, "next": "8.4b" }
+      ]
+    },
+    "8.4b": {
+      "id": "8.4b", "title": "Jam tomorrow", "pov": "POV", "fx": "flicker",
+      "beats": [
+        { "text": "Door: stop them, I'll open it. Her palm on the flint until a keyhole appears. Croup and Vandemar wait to be paid.", "still": "nw-8.4b-keyhole", "cast": ["aurie", "door", "islington", "croup", "vandemar"] }
+      ],
+      "choices": [
+        { "id": "8.4b.A", "text": "To the killers: you don't think you'll ever see him again, do you?", "effects": { "flags": { "GOADED": true } }, "next": "8.4c", "branch": [
+          { "requires": { "flags": ["NO_COPY"], "traits": { "loyalty": 4 }, "vars": { "DOOR_BOND": 2 } }, "next": "8.4d" },
+          { "requires": { "flags": ["NO_COPY"] }, "next": "end-D" }
+        ], "aftermath": [{ "text": "They mean to collect, in full, with interest and meat hooks. Jam tomorrow.", "still": "nw-8.4b-keyhole", "cast": ["door", "islington", "croup", "vandemar"] }] },
+        { "id": "8.4b.B", "text": "Stay silent.", "effects": {}, "next": "8.4c", "branch": [
+          { "requires": { "flags": ["NO_COPY"] }, "next": "end-D" }
+        ] }
+      ]
+    },
+    "8.4c": {
+      "id": "8.4c", "title": "The false door", "pov": "3P", "fx": "sparks",
+      "beats": [
+        { "text": "The door opens on churning orange and purple; candles, then the table, fly into it. Gravity, not wind. That's not Heaven. What have you done?", "clip": "nw-8.4c-door-v", "cast": ["islington", "door"] },
+        { "text": "It was Hammersmith's copy; she opened a door as far and hard away as she could. Islington offers news of her living sister, and falls. Croup, climbing Vandemar's back, boasts he killed her family; the suit tears. Bye-bye. The door slams.", "still": "nw-8.4c-fall", "cast": ["islington", "croup", "vandemar"] },
+        { "text": "Somewhere a long way down, two gentlemen in black suits go to collect, in full, with interest and meat hooks.", "if": ["GOADED"], "still": "nw-8.4c-fall", "cast": ["islington", "croup", "vandemar"] },
+        { "text": "Darkness. Door frees them; Aurie holds her; the marquis, afraid of sleep now, sleeps last.", "still": "nw-8.4c-dark", "cast": ["aurie", "door", "marquis"] }
+      ],
+      "next": "8.5"
+    },
+    "8.4d": {
+      "id": "8.4d", "title": "The true door", "pov": "3P", "fx": "glitter",
+      "beats": [
+        { "text": "The real key opens on quiet gold light. Islington steps forward. The killers seize its robe for their pay.", "still": "nw-8.4d-gold", "cast": ["islington", "croup", "vandemar", "door"] }
+      ],
+      "choices": [
+        { "id": "8.4d.A", "text": "Door, shut it!", "effects": { "flags": { "CV_LOOSE": true } }, "next": "8.5", "aftermath": [{ "text": "She slams the true door on the struggle. Islington stays imprisoned; Croup and Vandemar walk out unpaid.", "still": "nw-8.4d-shut", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "end-D": {
+      "id": "end-D", "title": "Ending D · Jam tomorrow", "type": "end", "pov": "3P", "fx": "glitter",
+      "beats": [
+        { "text": "The angel walks into true light, promising to reward the worthy and cast down the hateful. The abbot: we have lost the key; God help us all.", "still": "nw-endD-light", "cast": ["islington"] },
+        { "text": "In Lucienne's library a locked door shivers. Return to the last choice.", "style": "hook" }
+      ],
+      "next": "8.4"
+    },
+    "8.5": {
+      "id": "8.5", "title": "The friars' table", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Aurie wakes in a grey robe, finger splinted, ear stitched. Door in a robe far too big, reading Mansfield Park; the marquis wheeled in like a swashbuckler. Hunter? There was no body, only the Beast.", "still": "nw-8.5-robe", "cast": ["aurie", "door", "marquis", "abbot"] },
+        { "text": "She slipped the real key into Aurie's pocket at the market. The abbot: you are all very stupid people. The key is the key to all reality; Aurie is its master until she returns it; it will take her home.", "still": "nw-8.5-key", "cast": ["aurie", "abbot"] }
+      ],
+      "conversation": {
+        "character": "abbot", "maxTurns": 3,
+        "canon": ["The key will take Aurie home; whoever turns it, she remains its master until she returns it.", "Door and the marquis are at the table and may speak."],
+        "opening": "You are all very stupid people. And you are the master of the key, until you give it back. Well?",
+        "exits": { "8.5.A": "Aurie asks when they could do this.", "8.5.B": "Aurie asks what happens to London Below first.", "8.5.C": "Aurie gives the key back and says she is staying." }
+      },
+      "choices": [
+        { "id": "8.5.A", "text": "When could we do this?", "effects": {}, "next": "8.6" },
+        { "id": "8.5.B", "text": "Not yet. What happens to London Below?", "effects": { "traits": { "loyalty": 1 } }, "next": "8.6" },
+        { "id": "8.5.C", "text": "Take it back. I'm staying.", "effects": { "traits": { "loyalty": 3 }, "flags": { "KEY_RETURNED": true } }, "remembered": "Door will remember that.", "next": "8.6" }
+      ]
+    },
+    "8.6": {
+      "id": "8.6", "title": "Nightingale Lane", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "A ghost station reached from the friars' bell tower. Old Bailey waves her handkerchief on a stick, me little flag, and gives her a black feather bound with red thread.", "if": ["OLD_BAILEY_FRIEND"], "still": "nw-8.6-flag", "cast": ["aurie", "oldbailey"] },
+        { "text": "A ghost station reached from the friars' bell tower. Old Bailey gives her a black feather bound with red thread.", "unless": ["OLD_BAILEY_FRIEND"], "still": "nw-8.6-feather", "cast": ["aurie", "oldbailey"] },
+        { "text": "The earl's train, a ragged fanfare: thought you'd be taller. Knighted with Hunter's knife: Lady Aurie of Maybury, the freedom of the Underside.", "if": ["KNIFE", "WARRIOR"], "still": "nw-8.6-knighted", "cast": ["aurie", "earl", "tooley"] },
+        { "text": "The earl's train. Tooley: the one who was with the Hunter. Knighted all the same, with Hunter's knife.", "if": ["KNIFE"], "unless": ["WARRIOR"], "still": "nw-8.6-knighted", "cast": ["aurie", "earl", "tooley"] },
+        { "text": "The earl's train. Knighted with Tooley's bauble, which is what there is.", "unless": ["KNIFE"], "still": "nw-8.6-knighted", "cast": ["aurie", "earl", "tooley"] },
+        { "text": "Somewhere below, two gentlemen in black suits walk away unpaid.", "if": ["CV_LOOSE"], "still": "nw-8.6-unpaid", "cast": ["croup", "vandemar"] },
+        { "text": "At a gloaming terminus the Lord Rat-speaker returns the bag: no hard feelings about Anaesthesia; the rats are your friends. In an underpass Lamia blows a kiss.", "still": "nw-8.6-ratspeaker", "cast": ["aurie", "ratspeaker"] }
+      ],
+      "choices": [
+        { "id": "8.6.A", "text": "Walk off without a word.", "effects": {}, "next": "8.7" },
+        { "id": "8.6.B", "text": "Did she ever come back?", "effects": { "traits": { "loyalty": 1 }, "vars": { "ANA_ASKED": 1 } }, "next": "8.7", "aftermath": [{ "text": "Sometimes they do.", "still": "nw-8.6-ratspeaker", "cast": ["aurie", "ratspeaker"] }] },
+        { "id": "8.6.C", "text": "Thank you.", "effects": {}, "next": "8.7" }
+      ]
+    },
+    "8.7": {
+      "id": "8.7", "title": "The island of Westminster", "pov": "3P", "fx": "frost",
+      "beats": [
+        { "text": "A frosted hill between three rivers at dawn: London three thousand years ago. Door in new brocade under the old jacket. There's sorting out to do and only her to do it; her sister may be alive. Please don't go.", "still": "nw-8.7-hill", "cast": ["aurie", "door"] },
+        { "text": "I promised to get you home, she says. I keep my promises.", "if": ["DOOR_PROMISE"], "still": "nw-8.7-hill", "cast": ["aurie", "door"] }
+      ],
+      "conversation": {
+        "character": "door", "maxTurns": 3,
+        "canon": ["Door asks Aurie to stay; she will turn the key for her if she goes.", "If KEY_RETURNED, Aurie has already given the key back and said she is staying."],
+        "opening": "Please don't go. I mean, I know you have to. But please don't.",
+        "exits": { "8.7.A": "Aurie says she has to go home.", "8.7.B": "Aurie stays (earned by loyalty and their bond).", "8.7.B2": "Aurie stays, as she already said at the friars' table.", "8.7.C": "Aurie takes the key and turns it herself." }
+      },
+      "choices": [
+        { "id": "8.7.A", "text": "I have to go home.", "effects": { "relic": "angel_key" }, "next": "8.8", "aftermath": [{ "text": "She turns the key in the air: just walk, don't look back. Aurie looks back; Door's cheeks are wet.", "still": "nw-8.7-walk", "cast": ["aurie", "door"] }] },
+        { "id": "8.7.B", "text": "I'll stay.", "requires": { "traits": { "loyalty": 8 }, "vars": { "DOOR_BOND": 3 } }, "effects": { "relic": "angel_key" }, "next": "end-B" },
+        { "id": "8.7.B2", "text": "I said I'm staying. I meant it.", "requires": { "flags": ["KEY_RETURNED"] }, "effects": { "relic": "angel_key" }, "next": "end-B" },
+        { "id": "8.7.C", "text": "Take the key and turn it yourself.", "requires": { "flags": ["NO_COPY"] }, "effects": { "traits": { "loyalty": -2 }, "vars": { "DOOR_BOND": -2 }, "flags": { "TURNED_SELF": true }, "relic": "angel_key" }, "next": "8.8", "aftermath": [{ "text": "Then go.", "still": "nw-8.7-hill", "cast": ["aurie", "door"] }] }
+      ]
+    },
+    "8.8": {
+      "id": "8.8", "title": "London Above", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "Her reflection in step again. A sticky child says this woman is bothering her: Aurie grins and runs through the pigeons.", "clip": "nw-8.8-pigeons-v", "cast": ["aurie"] },
+        { "text": "The cash machine works; a taxi stops; A. MAYHEW, JUNIOR PARTNER on a door; the penthouse of unpacked cases, Hunter's knife on the mantelpiece. Nights at the dark window.", "still": "nw-8.8-penthouse", "cast": ["aurie"] },
+        { "text": "Jessica, with the ring: perhaps one day she'd give it back.", "still": "nw-8.8-jessica", "cast": ["aurie", "jessica"] }
+      ],
+      "choices": [
+        { "id": "8.8.A", "text": "You keep it. I'm sorry. I've just changed.", "effects": {}, "next": "8.8b" },
+        { "id": "8.8.B", "text": "Take the ring.", "effects": { "flags": { "ABOVE_ANCHOR": true } }, "remembered": "Something up here holds you now.", "next": "8.8b" }
+      ]
+    },
+    "8.8b": {
+      "id": "8.8b", "title": "A rat on the Strand", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "A rat at the kerb, watching her.", "still": "nw-8.8b-rat", "cast": ["aurie", "rat"] }
+      ],
+      "choices": [
+        { "id": "8.8b.A", "text": "Talk to the rat.", "effects": { "traits": { "loyalty": 1 } }, "next": "8.9" },
+        { "id": "8.8b.B", "text": "Walk on.", "effects": {}, "next": "8.9" }
+      ]
+    },
+    "8.9": {
+      "id": "8.9", "title": "Are you coming?", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "A Friday night out with the new girl from Computer Services; the rest of her life laid out: wedding, children, Croydon. Not a bad life. On Windmill Street, the black feather in her pocket.", "still": "nw-8.9-feather", "cast": ["aurie"] }
+      ],
+      "choices": [
+        { "id": "8.9.A", "text": "Drop the feather in the gutter.", "effects": {}, "next": "8.9b" },
+        { "id": "8.9.B", "text": "Keep it.", "effects": { "flags": { "KEPT_FEATHER": true } }, "next": "8.9b" }
+      ]
+    },
+    "8.9b": {
+      "id": "8.9b", "title": "The wall", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "Gary finds her outside; in a greasy spoon Aurie tells him everything. The people who fall through the cracks freeze in doorways on the Strand; get used to it.", "still": "nw-8.9b-cafe", "cast": ["aurie", "gary"] },
+        { "text": "Ten pounds to an old woman asleep in a doorway, a once-white umbrella tied to her wrist; the faded Tube lines still show.", "if": ["UMBRELLA_GIVEN"], "still": "nw-8.9b-doorway", "cast": ["aurie", "oldwoman"] },
+        { "text": "Ten pounds to an old woman asleep in a doorway, a dirty umbrella tied to her wrist.", "unless": ["UMBRELLA_GIVEN"], "still": "nw-8.9b-doorway", "cast": ["aurie", "oldwoman"] },
+        { "text": "If this is all there is, she doesn't want to be sane. A brick wall off Brewer Street.", "still": "nw-8.9b-wall", "cast": ["aurie"] }
+      ],
+      "conversation": {
+        "character": "gary", "maxTurns": 3,
+        "canon": ["Gary believes she has been ill; he is kind about it.", "Nothing he says changes the exits, which are taken alone at the wall."],
+        "opening": "So. London Below. Rat-speakers. An angel. You do know how that sounds, right?",
+        "exits": { "8.9b.A": "Aurie cuts a door in the brick with Hunter's knife and hammers on it.", "8.9b.B": "Aurie takes the next taxi home." }
+      },
+      "choices": [
+        { "id": "8.9b.A", "text": "Cut a door in the brick with Hunter's knife. One across, two down.", "requires": { "flags": ["KNIFE"] }, "effects": {}, "next": "end-C", "branch": [
+          { "requires": { "traits": { "loyalty": 6 }, "vars": { "MARQUIS_TRUST": 1 } }, "next": "end-A" },
+          { "requires": { "traits": { "loyalty": 6 }, "vars": { "DOOR_BOND": 3 }, "notFlags": ["TURNED_SELF"] }, "next": "end-Avar" },
+          { "requires": { "traits": { "loyalty": 4 }, "vars": { "MARQUIS_TRUST": 1 }, "notFlags": ["ABOVE_ANCHOR"] }, "next": "end-A" },
+          { "requires": { "traits": { "loyalty": 4 }, "vars": { "DOOR_BOND": 3 }, "notFlags": ["ABOVE_ANCHOR", "TURNED_SELF"] }, "next": "end-Avar" }
+        ] },
+        { "id": "8.9b.B", "text": "Take the next taxi home.", "effects": {}, "next": "end-C" }
+      ]
+    },
+    "end-A": {
+      "id": "end-A", "title": "Ending A · Are you coming?", "type": "end", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "The outline becomes a hole in the wall. The marquis, arms folded, yawns. Well? Are you coming?", "still": "nw-endA-marquis", "cast": ["aurie", "marquis"] },
+        { "text": "She touches the feather in her pocket, and goes.", "if": ["KEPT_FEATHER"], "still": "nw-endA-marquis", "cast": ["aurie", "marquis"] },
+        { "text": "They walk through, leaving not even the doorway.", "clip": "nw-endA-through-v", "cast": ["aurie", "marquis"] }
+      ],
+      "next": "fin-credits"
+    },
+    "end-Avar": {
+      "id": "end-Avar", "title": "Ending A · The opener", "type": "end", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "The bricks swing open from the other side: Door, chin up, asks the same question. The marquis lurks behind her.", "still": "nw-endAvar-door", "cast": ["aurie", "door", "marquis"] },
+        { "text": "She touches the feather in her pocket, and goes.", "if": ["KEPT_FEATHER"], "still": "nw-endAvar-door", "cast": ["aurie", "door", "marquis"] },
+        { "text": "They walk through, leaving not even the doorway.", "clip": "nw-endA-through-v", "cast": ["aurie", "marquis"] }
+      ],
+      "next": "fin-credits"
+    },
+    "end-B": {
+      "id": "end-B", "title": "Ending B · Lady of the Underside", "type": "end", "pov": "3P", "fx": "flicker",
+      "beats": [
+        { "text": "She never goes up. The next Floating Market: Aurie helping Door broker peace between baronies; Old Bailey waving his little flag.", "still": "nw-endB-market", "cast": ["aurie", "door", "oldbailey"] },
+        { "text": "At the edge of the crowd, a rat-speaker girl who might be Anaesthesia.", "if": ["ANA_HEARD"], "still": "nw-endB-girl", "cast": ["anaesthesia"] },
+        { "text": "Hunter's name, carved on the giants' gate.", "if": ["HUNTER_FORGIVEN"], "still": "nw-endB-gate", "cast": [] }
+      ],
+      "next": "fin-credits"
+    },
+    "end-C": {
+      "id": "end-C", "title": "Ending C · Get used to it", "type": "end", "pov": "3P", "fx": "rain",
+      "beats": [
+        { "text": "Nothing opens. Dawn on the pavement.", "if": ["KNIFE"], "still": "nw-endC-dawn", "cast": ["aurie"] },
+        { "text": "The penthouse; the cases unpacked at last, the girl from Computer Services helping; the knife in a drawer.", "still": "nw-endC-penthouse", "cast": ["aurie"] },
+        { "text": "Lucienne: it is not a bad life. It is just not hers.", "still": "nw-endC-library", "cast": ["lucienne"] }
+      ],
+      "next": "fin-credits"
+    },
+    "fin-credits": {
+      "id": "fin-credits", "title": "Neverwhere · credits", "type": "end", "pov": "3P", "fx": "dust",
+      "beats": [
+        { "text": "Aurie wakes in the reading chair. In her hand, a silver key on a thread.", "still": "nw-fin-library", "cast": ["aurie", "lucienne"] },
+        { "card": "Neverwhere · for Aurie · Charmaine Lim" }
+      ]
+    }
+  }
+}

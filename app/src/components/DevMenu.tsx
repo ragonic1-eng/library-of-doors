@@ -3,6 +3,7 @@
 // with the exact picture or video under every line, so the story can be audited and jumped into by hand.
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Scene } from "@/lib/story/types";
+import { listAllBooks } from "@/lib/story/load";
 
 // SHA-256 of "lod-dev:" + the owner's code. The code itself is never stored in the game.
 const CODE_HASH = "c58a2f5553e69f751f1b3b8253968cac9fe7be06594b90c52962f9b497f7dac4";
@@ -37,7 +38,30 @@ function allBeats(sc: Scene): Beat[] {
 export default function DevMenu(props: Props) {
   // Only ever rendered after a tap in the game, so the browser's session storage is there to read.
   const [unlocked, setUnlocked] = useState(() => { try { return sessionStorage.getItem(UNLOCK_KEY) === "1"; } catch { return false; } });
-  return unlocked ? <DevMap {...props} /> : <Lock onUnlock={() => { try { sessionStorage.setItem(UNLOCK_KEY, "1"); } catch { /* ignore */ } setUnlocked(true); }} onClose={props.onClose} />;
+  return unlocked ? <DevBooks {...props} /> : <Lock onUnlock={() => { try { sessionStorage.setItem(UNLOCK_KEY, "1"); } catch { /* ignore */ } setUnlocked(true); }} onClose={props.onClose} />;
+}
+
+/** The menu can show any book's map, including one still being planned; the one being played is the default. */
+function DevBooks(props: Props) {
+  const books = listAllBooks();
+  const [bookId, setBookId] = useState(props.book.id);
+  const book = books.find((b) => b.id === bookId) ?? props.book;
+  const own = book.id === props.book.id;
+  // Media URLs are built for the book being played; another book's live in its own folder.
+  const swap = (u: string) => (own ? u : u.replace(`/${props.book.id}/`, `/${book.id}/`));
+  return (
+    <DevMap
+      key={book.id}
+      book={book}
+      current={own ? props.current : ""}
+      clipUrl={(id) => swap(props.clipUrl(id))}
+      stillUrl={(id) => swap(props.stillUrl(id))}
+      onPlay={own ? props.onPlay : undefined}
+      onClose={props.onClose}
+      books={books}
+      onSwitch={setBookId}
+    />
+  );
 }
 
 function Lock({ onUnlock, onClose }: { onUnlock: () => void; onClose: () => void }) {
@@ -69,7 +93,9 @@ function Lock({ onUnlock, onClose }: { onUnlock: () => void; onClose: () => void
   );
 }
 
-function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose }: Props) {
+type MapProps = Omit<Props, "onPlay"> & { onPlay?: (sceneId: string) => void; books: Book[]; onSwitch: (id: string) => void };
+
+function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose, books, onSwitch }: MapProps) {
   // Story order: follow the branches from the start (depth first), so a scene sits beside the scenes it follows
   // even when it was added at the end of the book file; anything unreachable comes last.
   // Each scene sits in the chapter of the scene that first leads into it, unless it opens a chapter itself.
@@ -100,7 +126,7 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose }: Props) {
   }, [book]);
   const incoming = useMemo(() => {
     const m: Record<string, string[]> = {};
-    for (const id of order) for (const t of targets(book.scenes[id])) (m[t.to] ??= []).push(id);
+    for (const id of order) for (const t of targets(book.scenes[id])) if (!(m[t.to] ??= []).includes(id)) m[t.to].push(id);
     return m;
   }, [order, book]);
 
@@ -122,6 +148,11 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose }: Props) {
     <div className="dev" role="dialog" aria-label="Developer menu">
       <header className="dev-bar">
         <strong>Developer</strong>
+        {books.length > 1 && (
+          <select className="dev-book" value={book.id} onChange={(e) => onSwitch(e.target.value)} aria-label="Book">
+            {books.map((b) => <option key={b.id} value={b.id}>{b.title}{b.status === "planning" ? " (planning)" : ""}</option>)}
+          </select>
+        )}
         <div className="dev-tabs">
           <button className={view === "map" ? "on" : ""} onClick={() => setView("map")}>Map</button>
           <button className={view === "board" ? "on" : ""} onClick={() => setView("board")}>Storyboard · {sel}</button>
@@ -131,7 +162,7 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose }: Props) {
       </header>
       {view === "map"
         ? <MapView book={book} columns={columns} incoming={incoming} sel={sel} current={current} hits={hits} onSelect={(id) => open(id, false)} onOpen={(id) => open(id)} />
-        : <Board book={book} id={sel} incoming={incoming[sel] ?? []} clipUrl={clipUrl} stillUrl={stillUrl} onOpen={open} onPlay={onPlay} />}
+        : <Board book={book} id={sel} incoming={incoming[sel] ?? []} clipUrl={clipUrl} stillUrl={stillUrl} onOpen={open} onPlay={onPlay} planning={book.status === "planning"} />}
     </div>
   );
 }
@@ -238,19 +269,22 @@ function Cond({ b }: { b: Beat }) {
       {b.sfx && <span className="dev-chip">sfx {b.sfx}</span>}
       {b.ambience && <span className="dev-chip">ambience {b.ambience}</span>}
       {b.fx && <span className="dev-chip">fx {b.fx}</span>}
+      {b.cast && <span className={`dev-chip ${b.cast.includes("aurie") ? "if" : ""}`}>{b.cast.length ? b.cast.join(", ") : "nobody in frame"}</span>}
     </>
   );
 }
 
-/** One beat: the picture or video on screen (inherited when the beat names none) beside its line. */
-function BeatRow({ b, pic, n, clipUrl, stillUrl }: { b: Beat; pic: { kind: "clip" | "still"; id: string } | null; n: number; clipUrl: (id: string) => string; stillUrl: (id: string) => string }) {
+/** One beat: the picture or video on screen (inherited when the beat names none) beside its line.
+ *  In a planning skeleton the pictures do not exist yet, so the slot is shown as a labelled frame instead. */
+function BeatRow({ b, pic, n, clipUrl, stillUrl, planning }: { b: Beat; pic: { kind: "clip" | "still"; id: string } | null; n: number; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean }) {
   const own = !!(b.clip || b.still);
   return (
     <li className={`dev-beat ${own ? "" : "dev-held"}`}>
       <div className="dev-thumb">
+        {planning && pic && <div className={`dev-slot ${pic.kind}`}>{pic.kind === "clip" ? "video" : "still"}</div>}
         {/* eslint-disable-next-line @next/next/no-img-element -- plain thumbnails from the media store */}
-        {pic?.kind === "still" && <img src={stillUrl(pic.id)} alt="" loading="lazy" />}
-        {pic?.kind === "clip" && <video src={`${clipUrl(pic.id)}#t=1`} preload="metadata" muted playsInline onClick={(e) => { const v = e.currentTarget; if (v.paused) { v.currentTime = 0; void v.play(); } else v.pause(); }} />}
+        {!planning && pic?.kind === "still" && <img src={stillUrl(pic.id)} alt="" loading="lazy" />}
+        {!planning && pic?.kind === "clip" && <video src={`${clipUrl(pic.id)}#t=1`} preload="metadata" muted playsInline onClick={(e) => { const v = e.currentTarget; if (v.paused) { v.currentTime = 0; void v.play(); } else v.pause(); }} />}
         {pic && <span className="dev-picid">{pic.kind === "clip" ? "🎬" : "🖼"} {pic.id}{own ? "" : " (held)"}</span>}
       </div>
       <div className="dev-line">
@@ -264,7 +298,7 @@ function BeatRow({ b, pic, n, clipUrl, stillUrl }: { b: Beat; pic: { kind: "clip
   );
 }
 
-function BeatList({ beats, start, clipUrl, stillUrl }: { beats: Beat[]; start: { kind: "clip" | "still"; id: string } | null; clipUrl: (id: string) => string; stillUrl: (id: string) => string }) {
+function BeatList({ beats, start, clipUrl, stillUrl, planning }: { beats: Beat[]; start: { kind: "clip" | "still"; id: string } | null; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean }) {
   // The picture on screen during each beat: its own, or the last one named before it.
   const pics = beats.reduce<({ kind: "clip" | "still"; id: string } | null)[]>((acc, b) => {
     const prev = acc.length ? acc[acc.length - 1] : start;
@@ -273,7 +307,7 @@ function BeatList({ beats, start, clipUrl, stillUrl }: { beats: Beat[]; start: {
   }, []);
   return (
     <ol className="dev-beats">
-      {beats.map((b, i) => <BeatRow key={i} b={b} pic={pics[i]} n={i + 1} clipUrl={clipUrl} stillUrl={stillUrl} />)}
+      {beats.map((b, i) => <BeatRow key={i} b={b} pic={pics[i]} n={i + 1} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} />)}
     </ol>
   );
 }
@@ -288,9 +322,9 @@ function GoTo({ to, book, onOpen }: { to: string; book: Book; onOpen: (id: strin
   return <button key={to} className="dev-goto" onClick={() => onOpen(to)}>{to} · {book.scenes[to]?.title ?? "missing!"}</button>;
 }
 
-function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay }: {
+function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning }: {
   book: Book; id: string; incoming: string[]; clipUrl: (id: string) => string; stillUrl: (id: string) => string;
-  onOpen: (id: string) => void; onPlay: (id: string) => void;
+  onOpen: (id: string) => void; onPlay?: (id: string) => void; planning?: boolean;
 }) {
   const sc = book.scenes[id];
   const top = useRef<HTMLDivElement>(null);
@@ -307,12 +341,13 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay }: {
             {sc.ambience && <span>ambience {sc.ambience}</span>}
             {sc.fx && <span>fx {sc.fx}</span>}
             {sc.type === "end" && <span>END</span>}
+            {planning && <span>planning skeleton: picture slots, not final words</span>}
           </p>
           <p className="dev-from">Comes from: {incoming.length ? incoming.map((f) => <GoTo key={f} to={f} book={book} onOpen={onOpen} />) : <em>nothing (start or orphan)</em>}</p>
         </div>
-        <button className="primary dev-play" onClick={() => onPlay(id)}>▶ Play from here</button>
+        {onPlay ? <button className="primary dev-play" onClick={() => onPlay(id)}>▶ Play from here</button> : planning ? <span className="dev-chip">not playable yet</span> : <a className="primary dev-play" href={`/play/${book.id}`}>Open this book</a>}
       </div>
-      <BeatList beats={sc.beats} start={null} clipUrl={clipUrl} stillUrl={stillUrl} />
+      <BeatList beats={sc.beats} start={null} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} />
       {sc.conversation && (
         <div className="dev-talk">
           <h3>💬 Live talk with {sc.conversation.character} · up to {sc.conversation.maxTurns ?? "?"} turns</h3>
@@ -325,7 +360,7 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay }: {
           <h3>⑂ {c.id}: “{c.text}” <GoTo to={c.next} book={book} onOpen={onOpen} />{(c.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</h3>
           {c.requires && <p className="dev-req">requires {JSON.stringify(c.requires)}</p>}
           {c.effects && <p className="dev-req">effects {JSON.stringify(c.effects)}</p>}
-          {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} /> : null}
+          {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} /> : null}
         </div>
       ))}
       {sc.next && <p className="dev-next">Then: <GoTo to={sc.next} book={book} onOpen={onOpen} />{(sc.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</p>}

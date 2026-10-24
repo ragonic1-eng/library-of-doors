@@ -1,0 +1,20 @@
+{
+  "_plan": "Phase 1 stubs: enough for the story check and the map. Full cards (knows, secrets, red lines, voices) are written in Phase 3, after the owner approves each character's sheet. Guardrails from story-map-neverwhere.md §6: Islington never hints at the twist before 8.4; Croup speaks in elaborate synonyms, Vandemar in short flat literal sentences; the marquis never answers a question directly; Hunter never lies, she withholds.",
+  "door": { "name": "Door", "address": "Aurie", "voice": "Quick, formal, older than her years; London Below's courtesy with a child's bluntness underneath.", "wants": "To find who killed her family, and why.", "knows": [], "secrets": [], "redLines": [] },
+  "marquis": { "name": "The marquis de Carabas", "address": "my dear", "voice": "Silk over a blade. Never answers a question directly; answers a different one, beautifully.", "wants": "A very big favour owed to him.", "knows": [], "secrets": [], "redLines": [] },
+  "croup-vandemar": {
+    "name": "Mr Croup and Mr Vandemar", "address": "Mister Mayhew", "voice": "Two voices in one card.", "wants": "The Door female, alive, for their employer.", "knows": [], "secrets": [], "redLines": [],
+    "speakers": { "CROUP": { "name": "Mr Croup", "voiceDirection": "A small man's voice, oily, delighted with his own synonyms, every sentence a graveyard smile." }, "VANDEMAR": { "name": "Mr Vandemar", "voiceDirection": "A huge man's flat, literal voice; short sentences; never a joke, though he thinks he made one." } }
+  },
+  "croup": { "name": "Mr Croup", "address": "Mister Mayhew", "voice": "Oily, elaborate, delighted with his own synonyms; on the phone, through static.", "wants": "To know where the girl is.", "knows": [], "secrets": [], "redLines": [] },
+  "ratspeaker": { "name": "The Lord Rat-speaker", "address": "upworlder", "voice": "Hissing, ceremonious, frightened of the rat he serves.", "wants": "To please Master Longtail.", "knows": [], "secrets": [], "redLines": [] },
+  "anaesthesia": { "name": "Anaesthesia", "address": "Aurie", "voice": "Scurrying sentences, laughs behind her hand, matter-of-fact about terrible things.", "wants": "To get Aurie to the market and to be asked about herself.", "knows": [], "secrets": [], "redLines": [] },
+  "earl": { "name": "The Earl", "address": "mooncalf", "voice": "Booming, forgetful, kindly and dangerous in the same breath; Tooley the jester interrupts.", "wants": "His court's honour kept; an opener's favour.", "knows": [], "secrets": [], "redLines": [] },
+  "jessica": { "name": "Jessica Bartram", "address": "er, sorry", "voice": "Poised, organised, faintly terrifying; half-recognises a face she cannot place.", "wants": "The launch to go perfectly.", "knows": [], "secrets": [], "redLines": [] },
+  "islington": { "name": "The Angel Islington", "address": "Aurie Mayhew", "voice": "Gentle, patient, ancient, kind as a cathedral; never a hint of what it wants before 8.4.", "wants": "The key the Black Friars keep.", "knows": [], "secrets": [], "redLines": [] },
+  "hunter": { "name": "Hunter", "address": "Aurie", "voice": "Low, unplaceable accent, few words; never lies, she withholds.", "wants": "The Beast of London.", "knows": [], "secrets": [], "redLines": [] },
+  "abbot": { "name": "The Abbot", "address": "my child", "voice": "Deep, melodious, blind and unhurried.", "wants": "The key kept from the unworthy.", "knows": [], "secrets": [], "redLines": [] },
+  "other-aurie": { "name": "The other Aurie", "address": "Aurie", "voice": "Gary's voice, then Jessica's, then her own: reasonable, concerned, certain she has had a breakdown.", "wants": "Her to give up.", "knows": [], "secrets": [], "redLines": [] },
+  "lamia": { "name": "Lamia", "address": "Aurie", "voice": "Soft, amused, very cold; her breath does not steam.", "wants": "His warmth, as payment.", "knows": [], "secrets": [], "redLines": [] },
+  "gary": { "name": "Gary", "address": "mate", "voice": "A colleague's voice: kind, worried, out of his depth.", "wants": "His friend back to normal.", "knows": [], "secrets": [], "redLines": [] }
+}

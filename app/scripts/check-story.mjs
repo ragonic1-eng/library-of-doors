@@ -107,6 +107,37 @@ for (const dir of readdirSync(BOOKS)) {
     }
   }
 
+  // Flags: everything read (requires, if/unless, effectsIf, branches) must be settable; in a planning skeleton
+  // everything set must also be read somewhere, or the choice that sets it changes nothing (56 of the Sandman's
+  // 99 flags were set and never read, which is why Neverwhere locks its branch map first).
+  const setFlags = new Set(), readFlags = new Set();
+  const noteReq = (r) => { for (const f of [...(r?.flags ?? []), ...(r?.notFlags ?? [])]) readFlags.add(f); };
+  for (const sc of Object.values(S)) {
+    for (const b of sc.branch ?? []) noteReq(b.requires);
+    for (const b of [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])]) for (const f of [...(b.if ?? []), ...(b.unless ?? [])]) readFlags.add(f);
+    for (const c of sc.choices ?? []) {
+      noteReq(c.requires);
+      for (const b of c.branch ?? []) noteReq(b.requires);
+      for (const e of c.effectsIf ?? []) { readFlags.add(e.flag); for (const f of Object.keys(e.effects?.flags ?? {})) setFlags.add(f); }
+      for (const f of Object.keys(c.effects?.flags ?? {})) setFlags.add(f);
+    }
+    for (const c of Object.values(sc.conversation?.consequences ?? {})) { noteReq(c.requires); for (const f of Object.keys(c.effects?.flags ?? {})) setFlags.add(f); }
+  }
+  for (const f of readFlags) if (!setFlags.has(f) && !f.startsWith("C_")) err(`${book.id}: flag ${f} is read but nothing ever sets it`);
+  if (book.status === "planning") for (const f of setFlags) if (!readFlags.has(f)) err(`${book.id}: flag ${f} is set but never read (a choice that changes nothing)`);
+
+  // The hero on screen (planning rule 2): where beats say who is in the picture, every scene except the
+  // cutaways and endings must show Aurie at least once, and no cutaway may follow another.
+  const hasCast = Object.values(S).some((sc) => (sc.beats ?? []).some((b) => b.cast));
+  if (hasCast) {
+    const isCut = (sc) => /^Cutaway/.test(sc.title ?? "");
+    for (const [sid, sc] of Object.entries(S)) {
+      const beats = [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])];
+      if (!isCut(sc) && sc.type !== "end" && beats.some((b) => b.cast) && !beats.some((b) => b.cast?.includes("aurie"))) err(`${book.id} ${sid}: no picture of Aurie in this scene`);
+      if (isCut(sc) && sc.next && S[sc.next] && isCut(S[sc.next])) err(`${book.id} ${sid}: two cutaways in a row (${sc.next})`);
+    }
+  }
+
   // Every scene must be reachable from the start.
   const reach = new Set();
   const stack = [book.start];

@@ -34,6 +34,7 @@ export interface Beat {
   fx?: Fx; // ambient motion over the picture from this beat on (overrides the scene's)
   if?: string[]; // play only when all these book flags are set
   unless?: string[]; // skip when any of these book flags is set
+  cast?: string[]; // who is in the picture (planning and identity locks); "aurie" marks the hero on screen
 }
 
 export interface Choice {
@@ -108,6 +109,7 @@ export interface Book {
   relic: string;
   start: string;
   scenes: Record<string, Scene>;
+  status?: "planning"; // a branch skeleton: visible in the Developer menu, its door still locked on the title page
 }
 
 export interface CharacterCard {

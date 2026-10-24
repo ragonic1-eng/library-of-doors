@@ -71,7 +71,7 @@ Each rule names what enforces it. A rule with no check is a wish.
 | 1 | **The branch map is locked before a word of script.** Every choice either opens a variant scene, or sets a flag that is read at a named later scene, or is cut. | 56 unread flags; branches bolted on in five passes | a skeleton `book.json` (ids, choices, flags, conditions, no prose) that passes `check-story` and a play simulator: every scene reachable, every ending reachable, every flag read somewhere. Shown in the Developer menu map for sign-off |
 | 2 | **The hero is on screen in every core scene**, at least one picture of Aurie per scene; cutaways are the only exception and never more than two in a row. | Aurie vanishing for 20 chapters | a count in `check-story` (to add) |
 | 3 | **Script, then picture plan, then audit, then voice.** Narration is recorded once, after the text is frozen. The picture plan carries a one-line caption per slot and is audited against the lines before anything is generated. | 295 weak lines fixed after the fact; re-recorded narration | `audit_pictures` / `match_pictures` run on the plan, not on the finished game |
-| 4 | **The bible comes before the shots.** Every character's gender, age, ethnicity and look is decided and approved on a sheet; every prop that appears with Aurie has a reference picture (the key, Hunter's knife, Door's flying jacket, the Beast, Croup and Vandemar's suits, the Angelus door) made first, the way `sphere.png` and `helm.png` should have been. Aurie's seven looks in this book are edits of one approved base picture. | the sphere's three passes, the helm, the gown, Orphea | the Part 1 storyboard cannot start until the bible is approved |
+| 4 | **The bible comes before the shots, one character at a time: every new character's sheet is generated, shown in chat and approved by the owner before that character appears in any still or clip** (owner's rule, 2026-10-24). Every character's gender, age, ethnicity and look is decided and approved on a sheet; every prop that appears with Aurie has a reference picture (the key, Hunter's knife, Door's flying jacket, the Beast, Croup and Vandemar's suits, the Angelus door) made first, the way `sphere.png` and `helm.png` should have been. Aurie's seven looks in this book are edits of one approved base picture. | the sphere's three passes, the helm, the gown, Orphea | the Part 1 storyboard cannot start until the bible is approved |
 | 5 | **Stills and animated overlays by default; a video quota per Part.** No picture is generated before its scene's beats are final; no "spare" clips. | 39 unused clips | the quota table in §5; `generate-clips` only renders shots listed in the frozen storyboard |
 | 6 | **Faces: first frame from an approved still, medium shots, calm motion, automatic likeness check, free face-restoring pass.** | face re-renders | `LIKENESS.md` rules 1 to 8, already in the tools |
 | 7 | **One render per clip.** If a clip fails its checks, the beat keeps its still plus an overlay; a second render needs a named reason in the changelog. | rerolls | the budget cap per Part |
@@ -168,7 +168,9 @@ wasted. A leaner alternative (25 clips, cutaways all as stills) would land near 
 
 ---
 
-## 6. Decisions needed from the owner before Phase 1
+## 6. Decisions (taken by the owner on 2026-10-24: all four as recommended)
+
+Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before Part 1; **Asian Londoners for the open roles**, the book's fixed looks kept. The original questions follow for the record.
 
 1. **The hero's name.** Aurie Mayhew (recommended) / Rachel Mayhew / Richard.
 2. **Scope and cap.** Full story with the quota above, cap ¥500 (recommended) / lean, cap ¥350.
@@ -186,7 +188,13 @@ wasted. A leaner alternative (25 clips, cutaways all as stills) would land near 
 
 ---
 
-## 7. What happens right after the go
+## 7. Phase 1 status (2026-10-24)
+
+Done the same morning as the go: the skeleton `app/src/content/books/neverwhere/book.json` (87 scenes: 49 core, 11 variants, 12 cutaways, 6 endings and credits; 133 picture slots each with its caption and who is in frame; every flag and condition from the map), stub cards for the 14 talk characters, the book registered in the engine with its door shown as *Being built* on the title page, a book switcher in the Developer menu so Neverwhere's map and storyboards can be walked from inside the Sandman, `check-story` extended (a flag read but never set fails any book; in a planning book a flag set but never read fails too; every non-cutaway scene must show Aurie; no two cutaways in a row), and `scripts/simulate-story.mjs`. Results: the story check passes; 4,000 random plays reach every scene, take every choice and reach every ending; a consistently generous player ends at A, a consistently selfish one at D; the real-key rescue (8.4d) and A-variant are rare under random play by design. The first flags the check caught (DOOR_PROMISE, BARGAIN_DOOR, LAMIA_GUIDE, GOADED set and never read; two scenes without Aurie) were fixed before anything was built on them.
+
+Next: Phase 2 (the way in and out of the book, the LOYALTY trait on the profile) and Phase 3 (script, Part One first), then the character sheets for approval and the ¥15 test.
+
+## 7b. What was promised after the go
 
 Phase 1, the same day: the skeleton `book.json` for Neverwhere, `check-story` and the simulator passing, and the
 map visible in the Developer menu under a second door, so the shape of the whole book can be walked and changed

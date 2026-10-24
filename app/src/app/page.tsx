@@ -1,11 +1,13 @@
 import Link from "next/link";
 import RotatePrompt from "@/components/RotatePrompt";
-import { listBooks } from "@/lib/story/load";
+import { listAllBooks, listBooks } from "@/lib/story/load";
 
 const futureDoors = ["Neverwhere", "Coraline", "The Alchemist"];
 
 export default function Home() {
   const books = listBooks();
+  const planned = listAllBooks().filter((b) => b.status === "planning");
+  const future = futureDoors.filter((t) => !planned.some((b) => b.title === t));
   return (
     <main className="title">
       <RotatePrompt className="by-css" />
@@ -24,7 +26,13 @@ export default function Home() {
             <span className="door-sub">Enter</span>
           </Link>
         ))}
-        {futureDoors.map((t) => (
+        {planned.map((b) => (
+          <div key={b.id} className="door locked">
+            <span className="door-title">{b.title}</span>
+            <span className="door-sub">Being built</span>
+          </div>
+        ))}
+        {future.map((t) => (
           <div key={t} className="door locked">
             <span className="door-title">{t}</span>
             <span className="door-sub">Locked</span>
