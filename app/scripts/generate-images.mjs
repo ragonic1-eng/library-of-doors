@@ -137,6 +137,25 @@ for (const [id, n] of NW_CAST) {
   jobs.push({ id: `${id}-sheet`, group: "nw-sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(`### ${n}`, id === "nw-props" ? "**Prop sheet" : id === "arch-family" ? "**Group sheet" : "**Reference sheet")), refs });
 }
 
+// Neverwhere places (owner's rules 15 and 16): one empty reference plate per environment, built from the cast record's
+// locked look and size anchors, so every still and clip set there shows the same place at the same scale.
+const NW_CAST_FILE = join(ROOT, "production", "neverwhere-cast.json");
+if (existsSync(NW_CAST_FILE)) {
+  const places = JSON.parse(readFileSync(NW_CAST_FILE, "utf8")).places ?? {};
+  for (const [id, pl] of Object.entries(places)) {
+    if (pl.reuse) continue; // a plate from an earlier book, already approved there
+    jobs.push({
+      id: `nw-place-${id}`, group: "nw-places", dir: join(P(`nw-${id}`), "candidates"), approved: join(P(`nw-${id}`), "plate.png"),
+      prompt: () => `Location reference plate for an illustrated film of Neverwhere: ${pl.name}. A wide establishing shot of the empty set, no people and no animals, camera at a standing adult's eye level (about 1.6 m), so the set's true size reads at once.
+${pl.look}
+SCALE (critical): ${pl.scale} Doors, steps, railings and furniture at real-world sizes for adult people.
+One single cinematic photograph in 16:9, never a collage, grid or split screen, no text.
+${STYLE}`,
+      refs: [],
+    });
+  }
+}
+
 // Aurie Mayhew's expressions, with her real smile and laugh as references (needs her approved sheet).
 jobs.push({
   id: "aurie-mayhew-expressions", group: "nw-angles", dir: join(C("aurie-mayhew"), "candidates"), approved: join(C("aurie-mayhew"), "expressions.png"),

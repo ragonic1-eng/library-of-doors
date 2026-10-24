@@ -90,8 +90,7 @@
           "look": "back in London Above: a smart black office suit, her little finger still splinted"
         }
       ],
-      "height": 1.6,
-      "heightNote": "estimate, owner to confirm"
+      "height": 1.65
     },
     "aurie-dream": {
       "name": "Aurie as Dream (the library)",
@@ -100,8 +99,7 @@
       "sheet": "characters/aurie/sheet.png",
       "lock": "Aurie as Dream of the Endless, exactly as in the Sandman: her real face, raven-black hair, the long black high-collared gown with a faint starry shimmer, the pinpoints of starlight in her eyes. Only in Lucienne's library (Neverwhere 0.1, 0.2, the credits).",
       "notes": "Reuses the approved Sandman sheet.",
-      "height": 1.6,
-      "heightNote": "estimate, owner to confirm"
+      "height": 1.65
     },
     "door": {
       "name": "Door",
@@ -483,8 +481,9 @@
       "name": "Lucienne's library (from the Sandman)",
       "look": "Lucienne's library between worlds: endless dark wooden shelves of books that were never written, lamplight, a plain wooden door standing alone in the aisle.",
       "scale": "Shelves about 5 m tall; the lone door is an ordinary 2.1 m door.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/library-hub/plate.png",
+      "approved": true,
+      "reuse": "assets/plates/library-hub/plate.png"
     },
     "scottish-street": {
       "name": "Outside the pub, Scotland",
@@ -523,8 +522,8 @@
     },
     "death-grey": {
       "name": "The grey edge of the dream",
-      "look": "A quiet grey nowhere at the edge of a dream, soft even light, no horizon.",
-      "scale": "No objects; frame her as a person of ordinary height, camera at adult eye level.",
+      "look": "A quiet grey nowhere at the edge of a dream: completely empty, no buildings, ruins, doors or furniture, only soft grey mist over a smooth pale grey floor, fading to white with no horizon, soft even light.",
+      "scale": "No objects at all; the mist begins a few metres away; a person stands at ordinary height, camera at adult eye level.",
       "plate": null,
       "approved": false
     },
@@ -628,8 +627,8 @@
     },
     "down-street": {
       "name": "Down Street's well",
-      "look": "Down Street: an inside-out Tower of Babel, an ornate spiral road carved from rock dropping round a bottomless well, dim lamps in the walls, tiny fires far below.",
-      "scale": "The plank is about 30 cm wide and 6 m long; the ledge by the lift no wider than a plank; the lift cage about 2.2 m high; the spiral road about 3 m wide; the fires far below are pinpricks.",
+      "look": "Down Street: a vast inside-out Tower of Babel, a bottomless well about 40 m across, its rock walls carved with an ornate spiral road winding down for thousands of feet, dim lamps along the road, tiny fires far, far below; an old lift cage hangs at the top beside a narrow wooden ledge, and a single long plank bridges the drop from the ledge to the top of the spiral road.",
+      "scale": "The well is about 40 m across and thousands of feet deep; the plank is about 30 cm wide and 6 m long, a thin line over the drop; the ledge by the lift no wider than a plank; the lift cage about 2.2 m high; the spiral road about 3 m wide; the fires far below are pinpricks.",
       "plate": null,
       "approved": false
     },

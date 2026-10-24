@@ -887,7 +887,7 @@ SURREAL DETAIL: an orange in his hand is slowly turning itself inside out.
 
 **Reference sheet:**
 ```
-Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT head close-up, CENTRE three-quarter view sitting up on its haunches, RIGHT full side view walking. Master Longtail, a large old black rat with a grizzled muzzle, a torn left ear, long whiskers and bright clever black eyes; a lord among rats, dignified and amused.
+Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT head close-up, CENTRE three-quarter view sitting up on its haunches, RIGHT full side view walking. Master Longtail, a large old dark brown rat of the clan Gray (as in the novel), with a long pink tail, a grizzled muzzle, a torn left ear, long whiskers and bright clever black eyes; a lord among rats, dignified and amused.
 SURREAL DETAIL: his expression is unmistakably that of someone about to wink.
 [Style Bible]
 ```
