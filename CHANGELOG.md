@@ -45,6 +45,7 @@ One-shot sound effects exist since 2026-10-23 (`beat.sfx`, `tools/gen_sfx.py`). 
 
 | Time | Who | Area | Change | Touched | Live |
 |---|---|---|---|---|---|
+| 08:30 | Claude | docs | Rule 13 narrowed (owner): the closed-loop rule applies only to talking and listening loops; scene clips (Hell, action, fire, drama) play forward once and are never ping-ponged. The Sandman is not touched. | `plan-neverwhere.md` | n/a |
 | 00:10 | Claude | docs | Plan rule 13 (owner's addition): every loop closes on its own first frame; end-frame rendering tested once in the budgeted video test, ping-pong and end-to-start dissolve as the free fallbacks, seam under 6 before publishing. | `plan-neverwhere.md` | n/a |
 
 ### 2026-10-23
