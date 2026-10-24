@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const APP = join(dirname(fileURLToPath(import.meta.url)), "..");
 const BOOKS = join(APP, "src", "content", "books");
+const ROOT_DIR = join(APP, "..");
 const CARDS = join(APP, "src", "content", "characters");
 const FX = new Set(["rain", "embers", "sparks", "ash", "dust", "glitter", "snow", "frost", "flicker", "mist"]);
 
@@ -203,6 +204,17 @@ for (const dir of readdirSync(BOOKS)) {
   }
   for (const id of Object.keys(S)) if (!reach.has(id)) warn(`${book.id} ${id}: no path from the start reaches this scene`);
   if (!haveMedia) warn(`${book.id}: media folder not present here, picture and narration checks skipped`);
+  // LIKENESS rule 8, enforced: a published clip with Aurie in it must have been through the face restore
+  // (nw-clips writes assets/clips/<book>/_checks.json). A rule with no check is a wish.
+  const shotsFile = join(BOOKS, book.id, "shots.json"), checksFile = join(ROOT_DIR, "assets", "clips", book.id, "_checks.json");
+  if (haveMedia && existsSync(shotsFile) && existsSync(join(ROOT_DIR, "assets", "clips", book.id))) {
+    const shotList = JSON.parse(readFileSync(shotsFile, "utf8")).shots ?? {};
+    const checks = existsSync(checksFile) ? JSON.parse(readFileSync(checksFile, "utf8")) : {};
+    for (const [sid, sh] of Object.entries(shotList)) {
+      if (sh.kind !== "clip" || sh.made || !(sh.cast ?? []).some((c) => c.startsWith("aurie"))) continue;
+      if (existsSync(join(media, `${sid}.mp4`)) && !checks[sid]?.restore) err(`${book.id} ${sid}: published with Aurie in it but never face-restored (LIKENESS rule 8; run nw-clips, which restores automatically)`);
+    }
+  }
   if (notYet) warn(`${book.id}: still being built, ${notYet} pictures, recordings or sounds not made yet`);
 }
 

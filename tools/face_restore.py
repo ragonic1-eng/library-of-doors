@@ -5,7 +5,7 @@
 Video models drift a face even from a perfect first frame (LIKENESS.md). For each clip this finds, in the first
 frame, the face that belongs to the person (so in a shot with Burgess or Paul only Aurie or Alex is touched),
 runs FaceFusion's face swapper with the person's real photos as the source, and scores the clip before and after
-with tools/face_score.py. The restored clip is written to assets/clips/sandman/_ff/; with --apply it also replaces
+with tools/face_score.py. The restored clip is written to assets/clips/<book>/_ff/; with --apply it also replaces
 the published clip in app/public, but only when the person's likeness improved. FaceFusion lives in
 tools/facefusion with its own environment tools/venv-ff (OpenRAIL-AS licence: used only for the owner's and his
 wife's own faces, with consent).
@@ -15,8 +15,10 @@ import os, sys, json, shutil, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FF_DIR = os.path.join(ROOT, "tools", "facefusion")
 FF_PY = os.path.join(ROOT, "tools", "venv-ff", "Scripts", "python.exe")
-OUT = os.path.join(ROOT, "assets", "clips", "sandman", "_ff")
-PUBLIC = os.path.join(ROOT, "app", "public", "clips", "sandman")
+# Each book keeps its own restored clips; the book is read from the clip's path (assets/clips/<book>/...).
+OUT_OF = lambda book: os.path.join(ROOT, "assets", "clips", book, "_ff")
+PUBLIC_OF = lambda book: os.path.join(ROOT, "app", "public", "clips", book)
+book_of = lambda clip: "neverwhere" if os.sep + "neverwhere" + os.sep in os.path.abspath(clip) else "sandman"
 SOURCES = {
     "aurie": ["characters/dream/photo-4.jpg", "characters/dream/photo-6.jpg", "characters/dream/photo-9.jpg", "characters/dream/photo-11.jpg", "characters/dream/photo-12.jpg", "characters/dream/photo-13.jpg", "characters/dream/photo-14.jpg", "characters/dream/photo-16.jpg", "characters/dream/photo-18.jpg"],
     "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg", "characters/alex/face.jpg", "characters/alex/photo-7.jpg", "characters/alex/photo-8.jpg", "characters/alex/photo-9.jpg"],
@@ -51,8 +53,9 @@ def restore(who, clip, apply):
     pos = person_position(who, clip)
     if pos is None:
         print(f"{name}: no {who} face found in the first frame, skipped"); return
-    os.makedirs(OUT, exist_ok=True)
-    out = os.path.join(OUT, name)
+    book = book_of(clip)
+    os.makedirs(OUT_OF(book), exist_ok=True)
+    out = os.path.join(OUT_OF(book), name)
     env = {**os.environ, "PATH": os.path.join(FF_DIR, "bin") + os.pathsep + os.environ["PATH"]}
     cmd = [FF_PY, "facefusion.py", "headless-run", "--processors", "face_swapper",
            "--source-paths", *[os.path.join(ROOT, s) for s in SOURCES[who]],
@@ -63,11 +66,12 @@ def restore(who, clip, apply):
     if not os.path.exists(out):
         print(f"{name}: FaceFusion failed: {(r.stdout + r.stderr)[-200:]}"); return
     (b_avg, b_worst), (a_avg, a_worst) = score(who, clip), score(who, out)
-    better = (a_avg or 0) > (b_avg or 0) + 0.03 and (a_worst or 0) >= (b_worst or 0) - 0.02
+    # A worst frame under 0.1 is a frame with no readable face (a tiny or turned figure): it cannot veto a clear gain.
+    better = (a_avg or 0) > (b_avg or 0) + 0.03 and ((a_worst or 0) >= (b_worst or 0) - 0.02 or (b_worst or 0) < 0.1)
     verdict = "improved" if better else "not better, original kept"
     print(f"{name}: {who} face #{pos + 1}; likeness {b_avg:.2f} (worst {b_worst:.2f}) -> {a_avg:.2f} (worst {a_worst:.2f}): {verdict}", flush=True)
     if better and apply:
-        pub = os.path.join(PUBLIC, *(["react"] if os.sep + "react" + os.sep in os.path.abspath(clip) else []), name)
+        pub = os.path.join(PUBLIC_OF(book), *(["react"] if os.sep + "react" + os.sep in os.path.abspath(clip) else []), name)
         if os.path.exists(pub):
             shutil.copyfile(out, pub); print(f"   published {os.path.relpath(pub, ROOT)}")
 

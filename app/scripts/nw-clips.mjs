@@ -30,6 +30,9 @@ for (const d of [RAW, join(PUB, "react")]) mkdirSync(d, { recursive: true });
 const LEDGER = join(RAW, "_tasks.json");
 const ledger = existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, "utf8")) : {};
 const save = () => writeFileSync(LEDGER, JSON.stringify({ ...(existsSync(LEDGER) ? JSON.parse(readFileSync(LEDGER, "utf8")) : {}), ...ledger }, null, 2));
+// Every clip's checks (restore verdict, likeness, seam), read by check-story: a published Aurie clip with no restore record fails it.
+const CHECKS = join(RAW, "_checks.json");
+const record = (id, k, v) => { const c = existsSync(CHECKS) ? JSON.parse(readFileSync(CHECKS, "utf8")) : {}; (c[id] ??= {})[k] = v; writeFileSync(CHECKS, JSON.stringify(c, null, 2)); };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const batchOf = (s) => "AAAABBBCCCDDEEEFFFGGGHHH"[Math.min(Number(s.split(".")[0]), 23)];
 const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
@@ -89,19 +92,30 @@ async function run(id, sh) {
       await sleep(10000);
     }
   }
+  // LIKENESS rule 8: every clip with Aurie in it goes through the free FaceFusion restore before any check;
+  // the restored copy (assets/clips/neverwhere/_ff/) is used only when her likeness improved.
+  let clip = raw;
+  if ((sh.cast ?? []).some((c) => c.startsWith("aurie"))) {
+    const verdict = py("face_restore.py", "aurie", raw);
+    record(id, "restore", verdict);
+    console.log(`   ${id} restore: ${verdict.replace(/^.*?: /, "")}`);
+    if (/improved/.test(verdict)) clip = join(RAW, "_ff", `${id}.mp4`);
+  }
   // Checks, then publish.
   const aurie = (sh.cast ?? []).some((c) => c.startsWith("aurie")) && !/from behind|back to (the )?camera|seen from behind/i.test(sh.keyframe);
   if (aurie) {
-    const line = py("face_score.py", "aurie", raw), worst = Number(line.match(/worst\s+(-?[\d.]+)/)?.[1]);
+    const line = py("face_score.py", "aurie", clip), worst = Number(line.match(/worst\s+(-?[\d.]+)/)?.[1]);
     console.log(`   ${id} likeness: ${line.split(/\s{2,}/).slice(0, 3).join("  ")}`);
     // Rule 7: a clip that fails its checks is not published; the beat keeps its still. The owner may still pass it by eye.
+    record(id, "likeness", line.split(/\s{2,}/).slice(0, 3).join("  "));
     if (!(worst >= 0.3)) return console.log(`✗ ${id} held back: her face drifts (worst frame ${worst}); kept in ${rel(raw)} for review`);
   }
   if (sh.kind === "loop") {
-    pingpong(raw, pub);
+    pingpong(clip, pub);
     const seam = py("loop_seam.py", pub);
+    record(id, "seam", seam);
     console.log(`   ${id} loop ${seam}${Number(seam.match(/seam ([\d.]+)/)?.[1]) >= 6 ? "  ✗ seam over 6: not for play" : ""}`);
-  } else copyFileSync(raw, pub);
+  } else copyFileSync(clip, pub);
   console.log(`✓ ${id} published ${rel(pub)}`);
 }
 

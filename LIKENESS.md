@@ -41,6 +41,7 @@ Scores are `tools/face_score.py` cosine similarity against the real photos (0.40
    kept only if the likeness improves. First run over 19 drifting clips: 14 improved (for example Aurie with Death
    0.18 to 0.44, Aurie with Nada 0.33 to 0.49, Alex 1.5d-A 0.13 to 0.55, Alex 1.5k-a 0.12 to 0.44); it can soften
    a big expression (a scream becomes a frightened face), so check those by eye.
+   **Enforced (2026-10-24):** `app/scripts/nw-clips.mjs` runs the restore on every clip with Aurie in it before its checks and logs the verdict in `assets/clips/<book>/_checks.json`; `check-story` fails any published Aurie clip with no restore record. Run the restorer with the main `python -I` (tools/venv lacks OpenCV). A worst frame under 0.1 (no readable face, e.g. a tiny figure) no longer vetoes a clear gain.
 
 ## Reference photos (updated 2026-10-23)
 
