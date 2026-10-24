@@ -117,6 +117,10 @@ for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rac
 // Neverwhere cast (character-prompts.md §3n): its own groups (nw-sheets, nw-angles) so a Sandman run never touches it.
 // Tier A: head angles + turnaround; tier B: one of them; tier C: the sheet only.
 const AURIE_NOW = [...AURIE_FACES, ...["photo-18.jpg", "photo-11.jpg", "photo-14.jpg"].map((f) => join(C("dream"), f))];
+// Her real smile and laugh (owner's photos, 2026-10-24): attached whenever a picture of her smiles or laughs, so the
+// model copies her own smile (teeth, cheeks, eyes) instead of inventing one. Likeness 0.57 to 0.72 each.
+const AURIE_SMILE = ["photo-9.jpg", "photo-13.jpg", "photo-21.jpg"].map((f) => join(C("dream"), f));
+const AURIE_LAUGH = ["photo-20.jpg", "photo-22.jpg"].map((f) => join(C("dream"), f));
 const NW_CAST = [
   ["aurie-mayhew", "N01", "A"], ["door", "N02", "A"], ["marquis", "N03", "A"], ["hunter", "N04", "A"], ["croup", "N05", "A"],
   ["vandemar", "N06", "A"], ["islington", "N07", "A"], ["lamia", "N08", "A"], ["anaesthesia", "N09", "A"], ["oldbailey", "N10", "A"],
@@ -129,6 +133,15 @@ for (const [id, n] of NW_CAST) {
   const refs = id === "aurie-mayhew" ? AURIE_NOW : id === "portico" ? [join(C("door"), "sheet.png")] : [];
   jobs.push({ id: `${id}-sheet`, group: "nw-sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(`### ${n}`, id === "nw-props" ? "**Prop sheet" : "**Reference sheet")), refs });
 }
+
+// Aurie Mayhew's expressions, with her real smile and laugh as references (needs her approved sheet).
+jobs.push({
+  id: "aurie-mayhew-expressions", group: "nw-angles", dir: join(C("aurie-mayhew"), "candidates"), approved: join(C("aurie-mayhew"), "expressions.png"),
+  prompt: () => `${block("## 3b.", "Expression frame")}
+Reference images, in order: (1) her approved reference sheet (face, hair, styling); (2 to 4) real photographs of her smiling; (5 and 6) real photographs of her laughing. Her face in every frame is the woman of the sheet, a little slimmer in the face than in the photographs, exactly as in the sheet. 1 calm and open, the faint warmth she always has. 2 her own warm smile exactly as in photographs 2 to 4: the same teeth, the same rounded cheeks lifting, the same crinkle at the eyes. 3 laughing out loud exactly as in photographs 5 and 6, eyes almost closed, head tipped a little back. 4 frightened, eyes wide, lips parted, a hand half raised. 5 sorrow, eyes wet, looking down and away. 6 resolve, jaw set, eyes steady.
+${STYLE}`,
+  refs: [join(C("aurie-mayhew"), "sheet.png"), ...AURIE_SMILE, ...AURIE_LAUGH],
+});
 
 // Angle sheets (character-prompts.md §3c): every side of the face and body, so stills and video never have to invent one.
 const TURN_FRAME = block("## 3c.", "Turnaround frame");

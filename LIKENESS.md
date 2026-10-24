@@ -53,6 +53,10 @@ likeness check and the face-restoring pass use only the clear, straight-on, arm'
 - **Alex:** `characters/alex/photo, photo-2, face, photo-7, 8, 9`. Left out: very close selfies (photo-3, 4, lens
   stretch), head turned (photo-5, 6) and low angles (photo-10, 11).
 
+**Her real smile and laugh** (owner, 2026-10-24): whenever a picture of Aurie smiles or laughs, attach her smiling photographs `characters/dream/photo-9, 13, 21` (or, for a laugh, `photo-20, 22`) with the instruction to copy her own smile exactly; a model left to invent a smile gives her someone else's teeth and cheeks. In code: `AURIE_SMILE` / `AURIE_LAUGH` in `generate-images.mjs`; her Neverwhere expression sheet is built from them.
+
+**The owner's refinement**: Aurie is shown a little slimmer in the face and with slightly long legs, gently, always instantly recognisable (`edit-image.mjs --subtle`).
+
 ## Options not yet used (need the owner's go-ahead)
 
 - **A video model that sees several face references.** The Infistar key offers `kling-video-o1` (its "Elements"
