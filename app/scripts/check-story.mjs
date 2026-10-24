@@ -63,6 +63,18 @@ for (const dir of readdirSync(BOOKS)) {
     if (sc.next && !S[sc.next]) err(`${at}: next "${sc.next}" does not exist`);
     for (const b of [...(sc.branch ?? []), ...(sc.choices ?? []).flatMap((c) => c.branch ?? [])]) if (!S[b.next]) err(`${at}: branch to missing scene "${b.next}"`);
     if (sc.fx && !FX.has(sc.fx)) err(`${at}: unknown fx "${sc.fx}"`);
+    if (sc.retryFrom) {
+      if (sc.type !== "end") err(`${at}: retryFrom is only for dead ends (type "end")`);
+      if (!S[sc.retryFrom]) err(`${at}: retryFrom "${sc.retryFrom}" does not exist`);
+      else {
+        // The scene she goes back to must be able to lead here again, or the dead end can never be undone.
+        const seen = new Set(); const st = [sc.retryFrom];
+        while (st.length) { const x = st.pop(); if (seen.has(x) || !S[x]) continue; seen.add(x); const s = S[x]; if (s.next) st.push(s.next); for (const c of s.choices ?? []) st.push(c.next, ...(c.branch ?? []).map((b) => b.next)); for (const b of s.branch ?? []) st.push(b.next); }
+        if (!seen.has(sid)) err(`${at}: going back to ${sc.retryFrom} cannot lead to this dead end again`);
+      }
+    }
+    // Owner's rule: endings and dead ends play on video.
+    if (sc.type === "end" && book.status === "planning" && !(sc.beats ?? []).some((b) => b.clip) && sc.id !== "fin-credits") err(`${at}: an ending or dead end must have a video, not only stills`);
     const bed = (id) => haveMedia && id && id !== "none" && !existsSync(join(media, "audio", "ambience", `${id}.mp3`));
     if (bed(sc.ambience)) err(`${at}: ambience ${sc.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
 

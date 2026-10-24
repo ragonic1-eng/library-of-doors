@@ -157,6 +157,8 @@ button.ghost { border-color: transparent; color: var(--dim); }
   animation: fade-in 2s ease both;
 }
 .endcard h2 { font-weight: 400; letter-spacing: 0.1em; margin: 0; }
+.endcard.dead h2 { color: #d98b7a; }
+.endcard.dead .why { max-width: 36rem; color: var(--dim); font-style: italic; }
 .endcard .meta { color: var(--dim); font-size: 0.9rem; }
 .endcard a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
 

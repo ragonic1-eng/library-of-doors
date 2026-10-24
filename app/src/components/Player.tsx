@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
 import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, route, saveProfile } from "@/lib/state/profile";
 import { lineFile } from "@/lib/story/lines";
@@ -570,6 +571,8 @@ export default function Player({ book }: { book: Book }) {
   // ---------- story flow ----------
   const scene: Scene = book.scenes[sceneId];
   const order = useMemo(() => Object.keys(book.scenes), [book]);
+  /** Scenes a dead end can send her back to. */
+  const retryTargets = useMemo(() => new Set(Object.values(book.scenes).map((s) => s.retryFrom).filter((x): x is string => !!x)), [book]);
   /** The chapter a scene belongs to: the nearest scene at or before it that opens a chapter. */
   const chapterOf = useCallback((id: string) => {
     for (let i = order.indexOf(id); i >= 0; i--) if (book.scenes[order[i]].episodeTitle) return order[i];
@@ -672,7 +675,14 @@ export default function Player({ book }: { book: Book }) {
     }
     setPhase("film");
     const p = profileRef.current;
-    if (p) commit({ ...p, position: { book: book.id, scene: id }, visited: (p.visited ?? []).includes(id) ? p.visited : [...(p.visited ?? []), id] });
+    if (p) {
+      // A scene a dead end can send her back to keeps a copy of her state on arrival, so going back undoes
+      // everything since (flags, traits, relics, what the world remembers) and not only the last choice.
+      const cp = retryTargets.has(id)
+        ? { ...(p.checkpoints ?? {}), [`${book.id}:${id}`]: { traits: { ...p.traits }, relics: [...p.relics], flags: { ...(p.flags[book.id] ?? {}) }, vars: { ...(p.vars[book.id] ?? {}) }, relations: structuredClone(p.relations ?? {}), echoes: [...(p.echoes ?? [])], journal: [...(p.journal ?? [])] } }
+        : p.checkpoints;
+      commit({ ...p, position: { book: book.id, scene: id }, visited: (p.visited ?? []).includes(id) ? p.visited : [...(p.visited ?? []), id], ...(cp ? { checkpoints: cp } : {}) });
+    }
     // Lines the player may hear next (every possible aftermath, and the opening of every scene that can follow)
     // load while she watches, so no line ever waits on the network.
     const p0 = profileRef.current;
@@ -859,6 +869,13 @@ export default function Player({ book }: { book: Book }) {
     const p = profileRef.current;
     commit({ ...newProfile(p?.name), playerModel: p?.playerModel ?? {}, syncCode: p?.syncCode });
     jump(book.start);
+  }
+  /** A dead end: back to an earlier scene with her state as it was when she first arrived there. */
+  function retryFrom(to: string) {
+    const p = profileRef.current;
+    const cp = p?.checkpoints?.[`${book.id}:${to}`];
+    if (p && cp) commit({ ...p, traits: { ...cp.traits }, relics: [...cp.relics], flags: { ...p.flags, [book.id]: { ...cp.flags } }, vars: { ...p.vars, [book.id]: { ...cp.vars } }, relations: structuredClone(cp.relations), echoes: [...cp.echoes], journal: [...cp.journal] });
+    jump(to);
   }
   async function makeCode() {
     const p = profileRef.current;
@@ -1351,7 +1368,18 @@ export default function Player({ book }: { book: Book }) {
         </section>
       )}
 
-      {phase === "end" && (
+      {phase === "end" && scene.retryFrom && book.scenes[scene.retryFrom] && (
+        <section className="endcard dead">
+          <h2>{scene.title}</h2>
+          <p className="why">{scene.beats.filter((b) => b.text).slice(-1)[0]?.text}</p>
+          <div className="endactions">
+            <button className="primary" onClick={() => retryFrom(scene.retryFrom!)}>Go back to “{book.scenes[scene.retryFrom].title}” and choose again</button>
+            <button onClick={playAgain}>Start the book again</button>
+            <Link href="/">Return to the library</Link>
+          </div>
+        </section>
+      )}
+      {phase === "end" && !(scene.retryFrom && book.scenes[scene.retryFrom]) && (
         <section className="endcard">
           <h2>{scene.title}</h2>
           <p className="meta">What the world remembers about you</p>

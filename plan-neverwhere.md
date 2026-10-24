@@ -79,6 +79,7 @@ Each rule names what enforces it. A rule with no check is a wish.
 | 9 | **Every check is local and free.** Likeness (OpenCV), face restore (FaceFusion), music, ambience and effects (MusicGen, AudioLDM), and now voice transcripts too: add `faster-whisper` locally instead of paying the voice model to listen. | the ¥76 round | `tools/` |
 | 10 | **Real-actor check on every sheet before approval.** | Madoc, Loki, Nuala, Hob, Burgess redesigns | a gate in Phase 4 |
 | 11 | **Ranked backups and a spend cap in every tool** (already built). | stalls and overruns | `MODEL_*_FALLBACK`, `--budget` |
+| 14 | **Dead ends make choices matter** (owner, 2026-10-24). Seven scenes where Aurie dies or causes a death and the story goes back a few scenes, with her state restored to how it was when she first arrived there (flags, traits, relics, what the world remembers), not only the last choice. Each needs two wrong steps or one the story warned about: giving Door away twice (back to the gentlemen at the door), grabbing the Rat-speaker's glass with no rat's respect (back to the cash machine), letting go on Night's Bridge and walking on (back to Anaesthesia), crawling the plank alone without earned courage (back to the curry stall), taking Lamia's kiss after doubting the marquis twice (same), giving Door up to the killers (back to Down Street), throwing the spear as in the dream (back to the Fleet Marsh). The Ordeal (E) and the angel walking free (D) go back the same way, to the friars' bridge and to HMS Belfast where the key could still be lent. The card names what killed her and where the story resumes. **Every dead end and every ending plays on video, never a still alone** (owner's rule). | choices with no weight; a game-over that only replays one tap | `retryFrom` + checkpoints in the engine; `check-story` requires the retry scene to lead back to the dead end and a video on every ending; the simulator plays on from each death |
 | 13 | **Talking loops close on their own first frame; scene clips play once and are never looped.** This rule covers only the loops that play while a character talks or listens to the player. Each must end on the picture it started from, so the join is invisible: (a) render it with the same keyframe as first **and** last frame, if the gateway accepts an end frame (tested once, see §6 decision 3; the motion prompt also says "returns to the starting pose, mouth closed, eyes where they began"); (b) if not, the free ping-pong (forward, then backward), which suits small head and mouth movement. Everything else (Hell and the demons, movement, fire, any dramatic beat) is a one-way scene clip: it plays forward once, is never ping-ponged, and if the beat must hold afterwards the player keeps the last frame with its slow push-in, as it does today. | the loop seam snapping every few seconds; reversed motion on action shots | the seam measure (first-to-last frame difference under 6) on talking loops only, before publishing |
 | 12 | **Each Part is signed off in the Developer menu before its voice is recorded, and the changelog gets a line per Part with its cost.** | late rewrites after money is spent | the owner's sign-off per Part |
 
@@ -146,7 +147,7 @@ what gets media):
 | Per Part (8 Parts) | Quota |
 |---|---|
 | Stills | about 20 (160 in all, plus about 10 for endings and the hub) |
-| Clips | 5 (40 in all): the Part's one big moment, one POV beat, one cutaway where listed, two of Aurie at medium shot |
+| Clips | 5 (40 in all): the Part's one big moment, one POV beat, one cutaway where listed, two of Aurie at medium shot; plus one for each of the 7 dead ends and the 5 endings (rule 14) |
 | Talking loops | 12 for the whole book (Door, the marquis, Hunter, Croup, Vandemar, Islington, Anaesthesia, Old Bailey, Lamia, the abbot, Jessica, the earl), made as ping-pongs |
 | Narration | about 70 lines per Part (about 550 in all), recorded once |
 | Music / ambience / effects | one theme per recurring place and person (about 14 themes, 12 beds), all local and free |
@@ -155,13 +156,13 @@ what gets media):
 |---|---|---|
 | Stills for scenes (1 candidate, 2 where Aurie is in it) | about 220 images | ¥100 |
 | Cast, Aurie's looks, props | about 60 images | ¥35 |
-| Clips: 40 story + 4 hub and threshold + 12 loops, plus a 15% re-render allowance | 56 clips | ¥195 |
+| Clips: 40 story + 12 dead ends and endings + 4 hub and threshold + 12 loops, plus a 15% re-render allowance | 68 clips | ¥235 |
 | Narration, plus 10% retakes | about 550 lines | ¥105 |
 | The multi-reference video test (§6, decision 3) | once | ¥15 |
 | Dialogue and play checks | | ¥10 |
-| **Total** | | **about ¥460** |
+| **Total** | | **about ¥500** |
 
-Proposed cap **¥500**, hard stop ¥550, enforced per Part by the clip tool's budget flag. For comparison The Sandman
+Cap **¥500** (the dead-end and ending videos added about ¥40, so the estimate now meets the cap; if it tightens, the cutaway videos go first), hard stop ¥550, enforced per Part by the clip tool's budget flag. For comparison The Sandman
 cost ¥1,187 for 95 scenes (about ¥12.50 a scene); this plan is about ¥6.50 a scene for a story of similar length,
 and the difference is the thirteen rules, not lower quality: the same video model, the same stills, fewer of them
 wasted. A leaner alternative (25 clips, cutaways all as stills) would land near ¥350.
@@ -190,7 +191,7 @@ Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before 
 
 ## 7. Phase 1 status (2026-10-24)
 
-Done the same morning as the go: the skeleton `app/src/content/books/neverwhere/book.json` (87 scenes: 49 core, 11 variants, 12 cutaways, 6 endings and credits; 133 picture slots each with its caption and who is in frame; every flag and condition from the map), stub cards for the 14 talk characters, the book registered in the engine with its door shown as *Being built* on the title page, a book switcher in the Developer menu so Neverwhere's map and storyboards can be walked from inside the Sandman, `check-story` extended (a flag read but never set fails any book; in a planning book a flag set but never read fails too; every non-cutaway scene must show Aurie; no two cutaways in a row), and `scripts/simulate-story.mjs`. Results: the story check passes; 4,000 random plays reach every scene, take every choice and reach every ending; a consistently generous player ends at A, a consistently selfish one at D; the real-key rescue (8.4d) and A-variant are rare under random play by design. The first flags the check caught (DOOR_PROMISE, BARGAIN_DOOR, LAMIA_GUIDE, GOADED set and never read; two scenes without Aurie) were fixed before anything was built on them.
+Done the same morning as the go: the skeleton `app/src/content/books/neverwhere/book.json` (94 scenes: 49 core, 11 variants, 12 cutaways, 7 dead ends, 6 endings and credits; 133 picture slots each with its caption and who is in frame; every flag and condition from the map), stub cards for the 14 talk characters, the book registered in the engine with its door shown as *Being built* on the title page, a book switcher in the Developer menu so Neverwhere's map and storyboards can be walked from inside the Sandman, `check-story` extended (a flag read but never set fails any book; in a planning book a flag set but never read fails too; every non-cutaway scene must show Aurie; no two cutaways in a row), and `scripts/simulate-story.mjs`. Results: the story check passes; 4,000 random plays reach every scene, take every choice and reach every ending; a consistently generous player ends at A, a consistently selfish one at D; the real-key rescue (8.4d) and A-variant are rare under random play by design. The first flags the check caught (DOOR_PROMISE, BARGAIN_DOOR, LAMIA_GUIDE, GOADED set and never read; two scenes without Aurie) were fixed before anything was built on them.
 
 Next: Phase 2 (the way in and out of the book, the LOYALTY trait on the profile) and Phase 3 (script, Part One first), then the character sheets for approval and the ¥15 test.
 

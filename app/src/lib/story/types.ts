@@ -99,6 +99,7 @@ export interface Scene {
   choices?: Choice[];
   next?: string; // for scenes with no choices
   branch?: Branch[]; // alternate routes instead of next, for players whose earlier deeds qualify
+  retryFrom?: string; // a dead end (type "end"): the story goes back to this earlier scene, undoing everything since
 }
 
 export interface Book {
@@ -151,7 +152,19 @@ export interface Profile {
   position: { book: string; scene: string } | null;
   journal?: { scene: string; recap: string; choice?: string }[]; // what she has lived through, for "Story so far"
   visited?: string[]; // scene ids reached, for unlocking chapters
+  checkpoints?: Record<string, Checkpoint>; // "<book>:<scene>" -> her state on arriving there, for dead ends that send her back
   syncCode?: string; // cloud save code, to continue on another phone
+}
+
+/** Everything a dead end rolls back: what she is, what she has done, and what the world remembers. */
+export interface Checkpoint {
+  traits: Record<Trait, number>;
+  relics: string[];
+  flags: Record<string, boolean>; // this book's flags
+  vars: Record<string, number>; // this book's vars
+  relations: Profile["relations"];
+  echoes: Profile["echoes"];
+  journal: NonNullable<Profile["journal"]>;
 }
 
 export interface DialogueReply {

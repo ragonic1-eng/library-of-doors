@@ -176,6 +176,7 @@ function badges(sc: Scene) {
     talk: !!sc.conversation,
     choices: sc.choices?.length ?? 0,
     end: sc.type === "end",
+    dead: !!sc.retryFrom,
   };
 }
 
@@ -250,7 +251,7 @@ function MapView({ book, columns, incoming, sel, current, hits, onSelect, onOpen
                   {b.stills > 0 && <i>🖼{b.stills}</i>}
                   {b.talk && <i>💬</i>}
                   {b.choices > 1 && <i>⑂{b.choices}</i>}
-                  {b.end && <i>END</i>}
+                  {b.end && <i>{b.dead ? "DEAD END" : "END"}</i>}
                 </span>
               </button>
             );
@@ -363,6 +364,7 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning
           {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} /> : null}
         </div>
       ))}
+      {sc.retryFrom && <p className="dev-next">Dead end. She goes back, with her state restored, to: <GoTo to={sc.retryFrom} book={book} onOpen={onOpen} /></p>}
       {sc.next && <p className="dev-next">Then: <GoTo to={sc.next} book={book} onOpen={onOpen} />{(sc.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</p>}
     </div>
   );

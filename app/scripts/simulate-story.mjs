@@ -20,6 +20,7 @@ const S = book.scenes;
 
 const reached = new Map(); // scene -> plays that reached it
 const endings = new Map();
+const deaths = new Map(); // dead ends hit (the player then goes back and plays on)
 const taken = new Map(); // choice id -> times taken
 const flagsSet = new Set();
 let longest = 0;
@@ -29,11 +30,18 @@ for (let n = 0; n < plays; n++) {
   let p = newProfile();
   let id = book.start;
   const seen = new Set();
-  let steps = 0;
-  while (id && S[id] && steps++ < 400) {
+  const snaps = new Map(); // scene -> her state on arriving, as the player keeps for dead ends
+  let steps = 0, retries = 0;
+  while (id && S[id] && steps++ < 600) {
     const sc = S[id];
     if (!seen.has(id)) { seen.add(id); bump(reached, id); }
-    if (sc.type === "end") { bump(endings, id); if (sc.next && S[sc.next]?.type === "end") { id = sc.next; continue; } break; }
+    snaps.set(id, p);
+    if (sc.type === "end") {
+      bump(endings, id);
+      if (sc.retryFrom && retries++ < 12) { bump(deaths, id); p = snaps.get(sc.retryFrom) ?? p; id = sc.retryFrom; continue; }
+      if (sc.next && S[sc.next]?.type === "end") { id = sc.next; continue; }
+      break;
+    }
     const options = (sc.choices ?? []).filter((c) => meets(p, bookId, c.requires));
     if (options.length) {
       const c = policy === "kind" ? options.reduce((a, b) => (loy(b) > loy(a) ? b : a)) : policy === "cruel" ? options.reduce((a, b) => (loy(b) < loy(a) ? b : a)) : options[Math.floor(Math.random() * options.length)];
@@ -54,7 +62,8 @@ for (let n = 0; n < plays; n++) {
 
 const pct = (k) => `${Math.round(((reached.get(k) ?? 0) / plays) * 100)}%`;
 console.log(`${book.title}: ${plays} ${policy} play(s), ${Object.keys(S).length} scenes, longest play ${longest} scenes`);
-console.log("Endings:", [...Object.keys(S)].filter((k) => S[k].type === "end").map((k) => `${k} ${Math.round(((endings.get(k) ?? 0) / plays) * 100)}%`).join("  "));
+console.log("Dead ends hit (then played on from the retry scene):", [...Object.keys(S)].filter((k) => S[k].retryFrom).map((k) => `${k} ${Math.round(((deaths.get(k) ?? 0) / plays) * 100)}%`).join("  ") || "none");
+console.log("Final endings:", [...Object.keys(S)].filter((k) => S[k].type === "end" && !S[k].retryFrom).map((k) => `${k} ${Math.round(((endings.get(k) ?? 0) / plays) * 100)}%`).join("  "));
 const never = Object.keys(S).filter((k) => !reached.has(k));
 console.log(never.length ? `✗ never reached: ${never.join(" ")}` : "✓ every scene was reached");
 const rare = Object.keys(S).filter((k) => reached.has(k) && (reached.get(k) ?? 0) / plays < 0.02);

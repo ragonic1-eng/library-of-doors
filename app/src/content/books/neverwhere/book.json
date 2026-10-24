@@ -11,7 +11,8 @@
     "Variables: LOYALTY is profile.traits.loyalty. DOOR_BOND, MARQUIS_TRUST, HUNTER_SUSPECT and ANA_ASKED are book vars starting at 0; the map's DOOR_BOND and MARQUIS_TRUST start at 1, so every threshold here is one lower than in the map (map 'DOOR_BOND >= 4' is vars DOOR_BOND >= 3).",
     "Cutaways (titles 'Cutaway · ...') are the only scenes without Aurie; none runs back to back with another. C4 is folded into c3, C8 into c9, C11 into c12.",
     "Cross-book echoes (ALEX_CURSED, Lucifer met, MATTHEW_RAVEN, Coraline courage) are text-only and added in Phase 3 when the engine can read another book's flags.",
-    "Endings D and E return the player to the last choice (their next points back)."
+    "Dead ends (owner's rule, 2026-10-24): seven scenes of type end with retryFrom; the player goes back a few scenes with her state restored to how it was on arriving there. Each needs two wrong steps, or one the story warned about: dead-2.2 (gave Door away twice), dead-2.4 (grabbed the glass with no rat's respect), dead-2.6 (let go and walked on), dead-7.4 (crawled alone with courage under 3), dead-7.5 (took the kiss after doubting the marquis), dead-7.6 (gave Door up to the killers), dead-8.2 (threw the spear as in the dream). Endings E (the Ordeal) and D (the angel walks free) now go back the same way, to 6.3 and 7.2.",
+    "Owner's rule (2026-10-24): every ending and every dead end plays on video, never on a still alone."
   ],
   "scenes": {
     "1.0": {
@@ -95,7 +96,7 @@
       "choices": [
         { "id": "1.4.A", "text": "I haven't seen her.", "effects": { "traits": { "loyalty": 2 } }, "next": "1.5", "aftermath": [{ "text": "Jessica's message on the machine ends the engagement. The girl is making tea. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] },
         { "id": "1.4.B", "text": "I'm calling the police.", "effects": { "traits": { "loyalty": 1 } }, "next": "1.5", "aftermath": [{ "text": "Croup cuts the phone line anyway. Later: Jessica's message, and a girl making tea. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] },
-        { "id": "1.4.C", "text": "She was here. In the bathroom.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 }, "flags": { "TOLD_CV": true } }, "remembered": "Door heard that. So did Mr Croup.", "next": "1.5", "aftermath": [{ "text": "They find nothing, and leave. The girl comes out of the wall behind the bath and does not look at Aurie for a long time. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] }
+        { "id": "1.4.C", "text": "She was here. In the bathroom.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 }, "flags": { "TOLD_CV": true, "GAVE_HER_AWAY": true } }, "remembered": "Door heard that. So did Mr Croup.", "next": "1.5", "aftermath": [{ "text": "They find nothing, and leave. The girl comes out of the wall behind the bath and does not look at Aurie for a long time. I'm Door.", "still": "nw-1.4-tea", "cast": ["aurie", "door"] }] }
       ]
     },
     "1.5": {
@@ -170,8 +171,15 @@
       },
       "choices": [
         { "id": "2.2.A", "text": "I don't know where she is.", "effects": { "traits": { "loyalty": 1 } }, "next": "2.3" },
-        { "id": "2.2.B", "text": "If I help you find her, will you leave me alone?", "effects": { "traits": { "loyalty": -3 }, "flags": { "TOLD_CV": true } }, "remembered": "Mr Croup will remember that.", "next": "2.3" },
+        { "id": "2.2.B", "text": "If I help you find her, will you leave me alone?", "effects": { "traits": { "loyalty": -3 }, "flags": { "TOLD_CV": true } }, "remembered": "Mr Croup will remember that.", "next": "2.3", "branch": [{ "requires": { "flags": ["GAVE_HER_AWAY"] }, "next": "dead-2.2" }] },
         { "id": "2.2.C", "text": "I'm calling the police.", "effects": {}, "next": "2.3" }
+      ]
+    },
+        "dead-2.2": {
+      "id": "dead-2.2", "title": "Dead end · Disposed of", "type": "end", "pov": "POV", "fx": "dust", "retryFrom": "1.4",
+      "beats": [
+        { "text": "Croup, delighted: twice helpful, Mistress Mayhew. Vandemar: we don't need the other one. The line goes dead; the flat door opens on its own.", "clip": "nw-dead-2.2-door-v", "cast": ["aurie", "croup", "vandemar"] },
+        { "text": "Giving her away once was weakness. Twice was a contract, and they collect. The story goes back to the two gentlemen at the door.", "style": "hook" }
       ]
     },
     "2.3": {
@@ -215,7 +223,14 @@
       "choices": [
         { "id": "2.4.A", "text": "Hello, Ratty. Do you know where Door is?", "effects": { "flags": { "RAT_RESPECT": true } }, "next": "c3", "aftermath": [{ "text": "Horror in the room, amusement in the rat. The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] },
         { "id": "2.4.B", "text": "Kneel with everyone and wait.", "effects": {}, "next": "c3", "aftermath": [{ "text": "Without the rat's respect the Rat-speaker gets his nick in.", "unless": ["RAT_RESPECT"], "still": "nw-2.4-nick", "cast": ["aurie", "ratspeaker"] }, { "text": "The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] },
-        { "id": "2.4.C", "text": "Grab for the glass.", "effects": {}, "next": "c3", "aftermath": [{ "text": "A cut on the neck before Longtail stops it. The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] }
+        { "id": "2.4.C", "text": "Grab for the glass.", "effects": {}, "next": "c3", "branch": [{ "requires": { "notFlags": ["RAT_RESPECT"] }, "next": "dead-2.4" }], "aftermath": [{ "text": "A cut on the neck before Longtail stops it. The bag goes; a thin girl is told to guide her to the market.", "still": "nw-2.4-girl", "cast": ["aurie", "anaesthesia"] }] }
+      ]
+    },
+        "dead-2.4": {
+      "id": "dead-2.4", "title": "Dead end · The glass dagger", "type": "end", "pov": "POV", "fx": "embers", "retryFrom": "2.3",
+      "beats": [
+        { "text": "Her hand closes on the glass; the Rat-speaker's closes first. Master Longtail does not stop him, because no one in this hall has ever seen her be polite to a rat.", "clip": "nw-dead-2.4-hall-v", "cast": ["aurie", "ratspeaker", "longtail"] },
+        { "text": "The story goes back to the cash machine.", "style": "hook" }
       ]
     },
     "c3": {
@@ -266,7 +281,15 @@
       "choices": [
         { "id": "2.6b.A", "text": "Keep one bead.", "effects": { "flags": { "BEAD_KEPT": true } }, "remembered": "This will matter.", "next": "3.1" },
         { "id": "2.6b.B", "text": "Go back onto the bridge for her.", "effects": { "traits": { "loyalty": 2 } }, "next": "3.1", "aftermath": [{ "text": "The woman hauls her back by the collar; the beads roll into the dark.", "still": "nw-2.6b-hauled", "cast": ["aurie", "hunter"] }] },
-        { "id": "2.6b.C", "text": "Walk on without looking.", "effects": { "traits": { "loyalty": -2 } }, "next": "3.1" }
+        { "id": "2.6b.C", "text": "Walk on without looking.", "effects": { "traits": { "loyalty": -2 } }, "next": "3.1", "branch": [{ "requires": { "flags": ["LET_GO"] }, "next": "dead-2.6" }] }
+      ]
+    },
+
+        "dead-2.6": {
+      "id": "dead-2.6", "title": "Dead end · The bridge's toll", "type": "end", "pov": "POV", "fx": "mist", "retryFrom": "2.5",
+      "beats": [
+        { "text": "She let go in the dark and would not look back for the beads. The bridge takes its toll, and tonight it takes two. The woman in leather walks on alone.", "clip": "nw-dead-2.6-bridge-v", "cast": ["hunter"] },
+        { "text": "The story goes back to the Embankment, and Anaesthesia.", "style": "hook" }
       ]
     },
 
@@ -631,10 +654,10 @@
     "end-E": {
       "id": "end-E", "title": "Ending E · The wall of those who failed", "type": "end", "pov": "3P", "fx": "flicker",
       "beats": [
-        { "text": "A poor creature lifted from the shrine floor. A new Polaroid on the wall. Door and Hunter led away through the fog.", "still": "nw-endE-polaroid", "cast": ["abbot", "fuliginous"] },
-        { "text": "Return to the last choice.", "style": "hook" }
+        { "text": "A poor creature lifted from the shrine floor. A new Polaroid on the wall. Door and Hunter led away through the fog.", "clip": "nw-endE-polaroid-v", "cast": ["abbot", "fuliginous"] },
+        { "text": "The story goes back to the bridge of the Black Friars.", "style": "hook" }
       ],
-      "next": "6.5"
+      "retryFrom": "6.3"
     },
     "6.6": {
       "id": "6.6", "title": "The key", "pov": "3P", "fx": "flicker",
@@ -706,7 +729,14 @@
       ],
       "choices": [
         { "id": "7.4.A", "text": "Let Hunter talk you across.", "effects": {}, "next": "7.5", "aftermath": [{ "text": "She strokes the white knuckles, talks her on inch by inch, lifts her onto rock. Aurie thanks her twice and laughs till she cries. Safe.", "still": "nw-7.4-safe", "cast": ["aurie", "hunter"] }] },
-        { "id": "7.4.B", "text": "Shut your eyes and crawl alone.", "effects": { "traits": { "courage": 1 } }, "next": "7.5", "aftermath": [{ "text": "Hunter still lifts her off at the end.", "still": "nw-7.4-safe", "cast": ["aurie", "hunter"] }] }
+        { "id": "7.4.B", "text": "Shut your eyes and crawl alone.", "effects": { "traits": { "courage": 1 } }, "next": "dead-7.4", "branch": [{ "requires": { "traits": { "courage": 3 } }, "next": "7.5" }], "aftermath": [{ "text": "Inch by inch, eyes shut.", "still": "nw-7.4-plank-crawl", "cast": ["aurie"] }] }
+      ]
+    },
+        "dead-7.4": {
+      "id": "dead-7.4", "title": "Dead end · The bottomless well", "type": "end", "pov": "POV", "fx": "dust", "retryFrom": "7.3",
+      "beats": [
+        { "text": "Eyes shut, alone, she puts a hand where the plank is not. Hunter's shout follows her down a long way.", "clip": "nw-dead-7.4-fall-v", "cast": [] },
+        { "text": "Courage is earned earlier than it is needed. The story goes back to the curry stall.", "style": "hook" }
       ]
     },
     "7.5": {
@@ -722,8 +752,15 @@
         "exits": { "7.5.A": "Aurie says yes.", "7.5.B": "Aurie says no." }
       },
       "choices": [
-        { "id": "7.5.A", "text": "Yes.", "effects": { "vars": { "MARQUIS_TRUST": 2 } }, "next": "7.6", "aftermath": [{ "text": "The cold kiss; frost over her skin, eyes frozen open. A hand closes on Lamia's neck: the marquis, barefoot, in a blanket, a filthy cloth round his throat. Give her back her life. Lamia breathes it back and spits ice in her face.", "still": "nw-7.5-marquis", "cast": ["aurie", "lamia", "marquis"] }] },
+        { "id": "7.5.A", "text": "Yes.", "effects": { "vars": { "MARQUIS_TRUST": 2 } }, "next": "dead-7.5", "branch": [{ "requires": { "vars": { "MARQUIS_TRUST": 1 } }, "next": "7.6" }], "aftermath": [{ "text": "The cold kiss; frost over her skin, eyes frozen open. A hand closes on Lamia's neck: the marquis, barefoot, in a blanket, a filthy cloth round his throat. Give her back her life. Lamia breathes it back and spits ice in her face.", "still": "nw-7.5-marquis", "cast": ["aurie", "lamia", "marquis"] }] },
         { "id": "7.5.B", "text": "No.", "effects": { "traits": { "courage": 1 }, "vars": { "MARQUIS_TRUST": 1 } }, "next": "7.6", "aftermath": [{ "text": "She tries anyway; Aurie pulls back; the marquis arrives, barefoot, a cloth round his throat. Why did people think him dead? Because they killed me.", "still": "nw-7.5-marquis", "cast": ["aurie", "lamia", "marquis"] }] }
+      ]
+    },
+        "dead-7.5": {
+      "id": "dead-7.5", "title": "Dead end · Frost", "type": "end", "pov": "3P", "fx": "frost", "retryFrom": "7.3",
+      "beats": [
+        { "text": "The cold kiss; frost over her skin, eyes frozen open. No hand closes on Lamia's neck. The marquis, twice called a fraud by this woman, is a minute late, and stays late.", "clip": "nw-dead-7.5-frost-v", "cast": ["aurie", "lamia"] },
+        { "text": "The story goes back to the curry stall.", "style": "hook" }
       ]
     },
     "7.6": {
@@ -741,8 +778,15 @@
       "choices": [
         { "id": "7.6.A", "text": "I do. Search me.", "effects": { "traits": { "loyalty": 2 } }, "next": "7.6b", "aftermath": [{ "text": "Her old front-door key. Vandemar crushes it like foil and lectures on where to kick: knee, shoulder, ribs.", "still": "nw-7.6-kicked", "cast": ["aurie", "vandemar"] }] },
         { "id": "7.6.B", "text": "Say nothing.", "effects": {}, "next": "7.6b", "aftermath": [{ "text": "Door answers for her. Aurie is kicked anyway, less.", "still": "nw-7.6-kicked", "cast": ["aurie", "vandemar"] }] },
-        { "id": "7.6.C", "text": "She has it.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 } }, "next": "7.6b" },
+        { "id": "7.6.C", "text": "She has it.", "effects": { "traits": { "loyalty": -4 }, "vars": { "DOOR_BOND": -2 } }, "next": "dead-7.6" },
         { "id": "7.6.D", "text": "Door! Hunter's with them!", "requires": { "vars": { "HUNTER_SUSPECT": 2 } }, "effects": { "traits": { "loyalty": 1 }, "vars": { "DOOR_BOND": 1 } }, "next": "7.6b", "aftermath": [{ "text": "Too late to matter, but Door looks at her, and remembers it.", "still": "nw-7.6-bound", "cast": ["door", "croup", "vandemar", "hunter"] }] }
+      ]
+    },
+        "dead-7.6": {
+      "id": "dead-7.6", "title": "Dead end · We don't need you", "type": "end", "pov": "3P", "fx": "dust", "retryFrom": "7.4",
+      "beats": [
+        { "text": "Croup: how very helpful. Vandemar: then we don't need her. He is quick, and it does not hurt for long. Door's scream is the last thing in the well.", "clip": "nw-dead-7.6-well-v", "cast": ["aurie", "vandemar", "door"] },
+        { "text": "The story goes back to Down Street.", "style": "hook" }
       ]
     },
     "7.6b": {
@@ -799,8 +843,15 @@
       ],
       "choices": [
         { "id": "8.2.A", "text": "Strike. Under and up.", "effects": { "flags": { "WARRIOR": true } }, "next": "8.3" },
-        { "id": "8.2.B", "text": "Throw the spear, as in the dream.", "requires": { "notFlags": ["BEAST_SHARED"] }, "effects": {}, "next": "8.3", "aftermath": [{ "text": "The throw glances off and the dream nearly comes true. Hunter, dying, drives her knife into its eye. A cracked rib.", "still": "nw-8.2-knife-eye", "cast": ["hunter"] }] },
+        { "id": "8.2.B", "text": "Throw the spear, as in the dream.", "requires": { "notFlags": ["BEAST_SHARED"] }, "effects": {}, "next": "dead-8.2" },
         { "id": "8.2.C", "text": "Drop the spear and drag Hunter clear.", "effects": { "traits": { "loyalty": 2, "mercy": 1 }, "flags": { "LATE": true } }, "remembered": "Time is passing in the angel's hall.", "next": "8.3", "aftermath": [{ "text": "The Beast thunders off, wounded.", "still": "nw-8.2-wounded", "cast": ["aurie", "hunter"] }] }
+      ]
+    },
+        "dead-8.2": {
+      "id": "dead-8.2", "title": "Dead end · The dream comes true", "type": "end", "pov": "POV", "fx": "embers", "retryFrom": "8.1c",
+      "beats": [
+        { "text": "The throw glances off. The charge, the drops of water hanging in the air, face down in bloody water: the dream she had on the first morning, every detail kept.", "clip": "nw-dead-8.2-charge-v", "cast": [] },
+        { "text": "Hunter told her: hold it at the blunt end. The story goes back to the Fleet Marsh.", "style": "hook" }
       ]
     },
     "8.3": {
@@ -913,10 +964,10 @@
     "end-D": {
       "id": "end-D", "title": "Ending D · Jam tomorrow", "type": "end", "pov": "3P", "fx": "glitter",
       "beats": [
-        { "text": "The angel walks into true light, promising to reward the worthy and cast down the hateful. The abbot: we have lost the key; God help us all.", "still": "nw-endD-light", "cast": ["islington"] },
-        { "text": "In Lucienne's library a locked door shivers. Return to the last choice.", "style": "hook" }
+        { "text": "The angel walks into true light, promising to reward the worthy and cast down the hateful. The abbot: we have lost the key; God help us all.", "clip": "nw-endD-light-v", "cast": ["islington"] },
+        { "text": "In Lucienne's library a locked door shivers. The story goes back to the market on HMS Belfast, where the key could still have been lent.", "style": "hook" }
       ],
-      "next": "8.4"
+      "retryFrom": "7.2"
     },
     "8.5": {
       "id": "8.5", "title": "The friars' table", "pov": "3P", "fx": "dust",
@@ -1049,7 +1100,7 @@
     "end-B": {
       "id": "end-B", "title": "Ending B · Lady of the Underside", "type": "end", "pov": "3P", "fx": "flicker",
       "beats": [
-        { "text": "She never goes up. The next Floating Market: Aurie helping Door broker peace between baronies; Old Bailey waving his little flag.", "still": "nw-endB-market", "cast": ["aurie", "door", "oldbailey"] },
+        { "text": "She never goes up. The next Floating Market: Aurie helping Door broker peace between baronies; Old Bailey waving his little flag.", "clip": "nw-endB-market-v", "cast": ["aurie", "door", "oldbailey"] },
         { "text": "At the edge of the crowd, a rat-speaker girl who might be Anaesthesia.", "if": ["ANA_HEARD"], "still": "nw-endB-girl", "cast": ["anaesthesia"] },
         { "text": "Hunter's name, carved on the giants' gate.", "if": ["HUNTER_FORGIVEN"], "still": "nw-endB-gate", "cast": [] }
       ],
@@ -1059,7 +1110,7 @@
       "id": "end-C", "title": "Ending C · Get used to it", "type": "end", "pov": "3P", "fx": "rain",
       "beats": [
         { "text": "Nothing opens. Dawn on the pavement.", "if": ["KNIFE"], "still": "nw-endC-dawn", "cast": ["aurie"] },
-        { "text": "The penthouse; the cases unpacked at last, the girl from Computer Services helping; the knife in a drawer.", "still": "nw-endC-penthouse", "cast": ["aurie"] },
+        { "text": "The penthouse; the cases unpacked at last, the girl from Computer Services helping; the knife in a drawer.", "clip": "nw-endC-penthouse-v", "cast": ["aurie"] },
         { "text": "Lucienne: it is not a bad life. It is just not hers.", "still": "nw-endC-library", "cast": ["lucienne"] }
       ],
       "next": "fin-credits"
