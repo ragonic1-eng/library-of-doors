@@ -41,6 +41,12 @@ One-shot sound effects exist since 2026-10-23 (`beat.sfx`, `tools/gen_sfx.py`). 
 
 ## Log
 
+### 2026-10-24
+
+| Time | Who | Area | Change | Touched | Live |
+|---|---|---|---|---|---|
+| 00:10 | Claude | docs | Plan rule 13 (owner's addition): every loop closes on its own first frame; end-frame rendering tested once in the budgeted video test, ping-pong and end-to-start dissolve as the free fallbacks, seam under 6 before publishing. | `plan-neverwhere.md` | n/a |
+
 ### 2026-10-23
 
 | Time | Who | Area | Change | Touched | Live |

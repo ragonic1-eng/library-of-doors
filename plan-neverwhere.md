@@ -62,7 +62,7 @@ before the story, the cast and the props were final.
 
 ---
 
-## 2. The twelve rules for Neverwhere
+## 2. The thirteen rules for Neverwhere
 
 Each rule names what enforces it. A rule with no check is a wish.
 
@@ -79,6 +79,7 @@ Each rule names what enforces it. A rule with no check is a wish.
 | 9 | **Every check is local and free.** Likeness (OpenCV), face restore (FaceFusion), music, ambience and effects (MusicGen, AudioLDM), and now voice transcripts too: add `faster-whisper` locally instead of paying the voice model to listen. | the ¥76 round | `tools/` |
 | 10 | **Real-actor check on every sheet before approval.** | Madoc, Loki, Nuala, Hob, Burgess redesigns | a gate in Phase 4 |
 | 11 | **Ranked backups and a spend cap in every tool** (already built). | stalls and overruns | `MODEL_*_FALLBACK`, `--budget` |
+| 13 | **Every loop closes on its own first frame.** A talking or listening loop, and any scene loop that plays more than once, must end on the picture it started from, so the join is invisible. Three ways, in order: (a) render it with the same keyframe as first **and** last frame, if the gateway accepts an end frame (tested once, see §6 decision 3; the motion prompt also says "returns to the starting pose, mouth closed, eyes where they began"); (b) if not, the free ping-pong (forward, then backward), which already carries all 45 Sandman loops and suits small head and mouth movement; (c) for directional motion that cannot reverse (walking, rain, smoke), a one-second dissolve of the end into the start, also free. | the loop seam snapping every few seconds | the seam measure from `pingpong_loops.py` (first-to-last frame difference under 6) must pass before a loop is published |
 | 12 | **Each Part is signed off in the Developer menu before its voice is recorded, and the changelog gets a line per Part with its cost.** | late rewrites after money is spent | the owner's sign-off per Part |
 
 ---
@@ -162,7 +163,7 @@ what gets media):
 
 Proposed cap **¥500**, hard stop ¥550, enforced per Part by the clip tool's budget flag. For comparison The Sandman
 cost ¥1,187 for 95 scenes (about ¥12.50 a scene); this plan is about ¥6.50 a scene for a story of similar length,
-and the difference is the twelve rules, not lower quality: the same video model, the same stills, fewer of them
+and the difference is the thirteen rules, not lower quality: the same video model, the same stills, fewer of them
 wasted. A leaner alternative (25 clips, cutaways all as stills) would land near ¥350.
 
 ---
@@ -171,9 +172,12 @@ wasted. A leaner alternative (25 clips, cutaways all as stills) would land near 
 
 1. **The hero's name.** Aurie Mayhew (recommended) / Rachel Mayhew / Richard.
 2. **Scope and cap.** Full story with the quota above, cap ¥500 (recommended) / lean, cap ¥350.
-3. **A ¥15 test before Part 1** of `kling-video-o1`, a video model on the key that takes several reference photos of
-   one person. Go/no-go written now: it goes into the ranked list ahead of wan2.7 only if the same Aurie shot
-   scores 0.45 or better on its worst frame where wan2.7 scored under 0.35. Otherwise it is never tried again.
+3. **A ¥15 test before Part 1**, two questions in one session: (i) `kling-video-o1`, a video model on the key that takes several reference photos of
+   one person; go/no-go written now: it goes into the ranked list ahead of wan2.7 only if the same Aurie shot
+   scores 0.45 or better on its worst frame where wan2.7 scored under 0.35; (ii) whether the gateway accepts an
+   **end frame** as well as a start frame (wan2.x has a first-and-last-frame mode; Kling has an image tail). Go/no-go:
+   a talking loop rendered with the same picture at both ends must measure a seam under 6 straight out of the model.
+   If either fails it is written down and never tried again.
 4. **Casting London Below.** The novel fixes some looks (the marquis is Black; Hunter's skin is burnt caramel; the
    friars are dark-skinned; Croup is pallid with orange hair; Islington is androgynous and golden-haired), and those
    stay. For the characters the book leaves open, the standing rule says new characters lean Asian: recommended
