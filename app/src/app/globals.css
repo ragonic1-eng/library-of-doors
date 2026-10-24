@@ -539,6 +539,23 @@ button.ghost { border-color: transparent; color: var(--dim); }
   background: rgba(201, 162, 74, 0.05);
 }
 .reading a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.reading-dream { margin-top: 2.2rem; padding-top: 1.6rem; border-top: 1px solid rgba(201, 162, 74, 0.2); }
+.reading-dream h3 { margin: 0.2rem auto 0.6rem; font-weight: 400; font-style: italic; font-size: clamp(1.4rem, 3.8vw, 2.2rem); color: #f0e2bd; text-shadow: 0 0 18px rgba(201, 162, 74, 0.35); }
+.reading-realm { margin: 0 auto; max-width: 42rem; line-height: 1.6; color: #d9d1c2; }
+.reading-gifts { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; text-align: left; }
+.reading-gifts li { padding: 1rem 1.1rem; border-radius: 4px; border: 1px solid rgba(160, 170, 230, 0.22); background: linear-gradient(160deg, rgba(70, 80, 160, 0.16), rgba(20, 18, 40, 0.3)); }
+.gift-to { display: block; margin-bottom: 0.45rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #aab4ea; }
+.reading-gifts p { margin: 0; font-style: italic; line-height: 1.5; font-size: 0.92rem; color: #e4e1f2; }
+.reading-nightmare { margin: 1.4rem auto 0; max-width: 42rem; padding: 0.9rem 1.2rem 1rem; border-radius: 4px; border: 1px solid rgba(190, 70, 60, 0.3); background: rgba(90, 15, 12, 0.22); }
+.reading-nightmare .reading-label { margin-top: 0; color: #d98b7a; }
+.reading-nightmare p:last-child { margin: 0; font-style: italic; line-height: 1.5; color: #e6cfca; }
+.reading-depth { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid rgba(201, 162, 74, 0.2); }
+.reading-strengths { list-style: none; margin: 0 auto 1rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+.reading-strengths li { padding: 0.35rem 0.9rem; border-radius: 999px; border: 1px solid rgba(201, 162, 74, 0.45); color: #ead9ac; font-size: 0.9rem; }
+.reading-depth dl { margin: 0 auto; max-width: 42rem; display: grid; gap: 0.8rem; text-align: left; }
+.reading-depth dt { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+.reading-depth dd { margin: 0.2rem 0 0; line-height: 1.5; }
+@media (max-width: 760px) { .reading-gifts { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .reading-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
 @media (max-height: 520px) {
   .reading { padding-top: calc(1rem + env(safe-area-inset-top)); }

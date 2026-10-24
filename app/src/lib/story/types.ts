@@ -167,6 +167,8 @@ export interface Reading {
   archetype: string;
   tagline: string;
   dims: { name: string; low: string; high: string; score: number; because: string }[]; // score 0..100
+  depth?: { strengths: string[]; shadow: string; fears: string; love: string };
+  dream?: { title: string; realm: string; gifts: { to: string; dream: string }[]; nightmare: string }; // what she becomes in the book's own terms (Sandman: what kind of Dream she is)
   moments: string[]; // her own choices, word for word, that defined her
   letter: string; // a few lines from Lucienne
   found?: string[]; // ending scene ids she has reached in any playthrough of this book

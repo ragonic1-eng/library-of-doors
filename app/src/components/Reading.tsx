@@ -21,7 +21,8 @@ export default function Reading({ book, profile, sceneId, onReading, children }:
   // The ending she reached: the last scene marked as one of the book's endings in her journal.
   const ending = [...journal].reverse().find((j) => book.scenes[j.scene].ending)?.scene ?? sceneId;
   const endings = Object.values(book.scenes).filter((s) => s.ending);
-  const key = `${ending}:${lineId(journal.map((j) => j.choice ?? "").join("|"))}`;
+  // v2: the deeper reading (what kind of Dream she is); a reading saved before it is written again once.
+  const key = `v2:${ending}:${lineId(journal.map((j) => j.choice ?? "").join("|"))}`;
   const saved = profile.readings?.[book.id];
   const [reading, setReading] = useState<ReadingT | null>(saved?.key === key ? saved : null);
   const visited = new Set((profile.visited ?? []).filter((id) => book.scenes[id]));
@@ -86,6 +87,45 @@ export default function Reading({ book, profile, sceneId, onReading, children }:
           </ul>
         )}
       </div>
+
+      {reading?.dream && (
+        <div className="reading-dream">
+          <p className="reading-label">What kind of Dream you are</p>
+          <h3>{reading.dream.title}</h3>
+          {reading.dream.realm && <p className="reading-realm">{reading.dream.realm}</p>}
+          {reading.dream.gifts.length > 0 && (
+            <>
+              <p className="reading-label">The dreams you will give tonight</p>
+              <ul className="reading-gifts">
+                {reading.dream.gifts.map((g) => (
+                  <li key={g.to}>
+                    <span className="gift-to">For {g.to}</span>
+                    <p>{g.dream}</p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {reading.dream.nightmare && (
+            <div className="reading-nightmare">
+              <p className="reading-label">Your nightmares</p>
+              <p>{reading.dream.nightmare}</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {reading?.depth && (reading.depth.strengths.length > 0 || reading.depth.shadow) && (
+        <div className="reading-depth">
+          <p className="reading-label">Your light and your shadow</p>
+          {reading.depth.strengths.length > 0 && <ul className="reading-strengths">{reading.depth.strengths.map((s) => <li key={s}>{s}</li>)}</ul>}
+          <dl>
+            {reading.depth.shadow && <div><dt>Your shadow</dt><dd>{reading.depth.shadow}</dd></div>}
+            {reading.depth.fears && <div><dt>What you fear</dt><dd>{reading.depth.fears}</dd></div>}
+            {reading.depth.love && <div><dt>How you love</dt><dd>{reading.depth.love}</dd></div>}
+          </dl>
+        </div>
+      )}
 
       {reading && reading.moments.length > 0 && (
         <div className="reading-moments">
