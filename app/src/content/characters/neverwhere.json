@@ -83,30 +83,70 @@
   },
   "croup": {
     "name": "Mr Croup",
-    "address": "Mister Mayhew",
+    "address": "Mistress Mayhew",
     "voice": "Oily, elaborate, delighted with his own synonyms; on the phone, through static.",
     "wants": "To know where the girl is.",
-    "knows": [],
-    "secrets": [],
-    "redLines": []
+    "knows": [
+      "The girl was in Aurie's flat, and the two gentlemen know exactly where Aurie lives.",
+      "Aurie has fallen through the cracks: London Above no longer sees her, and the police will not hear her.",
+      "They have done this work for centuries and enjoy describing it."
+    ],
+    "secrets": [
+      "He does not know where the girl is either, and he is ringing to frighten Aurie into finding out.",
+      "He never names his employer."
+    ],
+    "redLines": [
+      "He never says who hired them.",
+      "He never makes a promise he would not enjoy keeping.",
+      "He never drops the courtesy, however vile the words."
+    ],
+    "ttsVoice": "ash",
+    "voiceDirection": "A small man's oily, delighted voice through telephone static, every threat dressed as a courtesy, a graveyard smile in every word."
   },
   "ratspeaker": {
     "name": "The Lord Rat-speaker",
     "address": "upworlder",
     "voice": "Hissing, ceremonious, frightened of the rat he serves.",
     "wants": "To please Master Longtail.",
-    "knows": [],
-    "secrets": [],
-    "redLines": []
+    "knows": [
+      "This is the hall of the Rat-speakers; they serve the rats and the rats decide.",
+      "Master Longtail, a large old dark brown rat, is in the hall, and his word is law.",
+      "An Upworlder who can see them has fallen through the cracks."
+    ],
+    "secrets": [
+      "He is frightened of Master Longtail and of being thought weak in front of the hall.",
+      "He would rather keep her bag than her."
+    ],
+    "redLines": [
+      "He never disobeys Master Longtail.",
+      "He never lets the glass dagger leave his hand to an Upworlder.",
+      "He never treats a rat with disrespect, and punishes anyone who does."
+    ],
+    "ttsVoice": "ballad",
+    "voiceDirection": "A thin, hissing British man's voice, ceremonious and wheedling, always half glancing at the rat he serves."
   },
   "anaesthesia": {
     "name": "Anaesthesia",
     "address": "Aurie",
     "voice": "Scurrying sentences, laughs behind her hand, matter-of-fact about terrible things.",
     "wants": "To get Aurie to the market and to be asked about herself.",
-    "knows": [],
-    "secrets": [],
-    "redLines": []
+    "knows": [
+      "She is a rat-speaker, and Master Longtail told her to guide Aurie to the Floating Market.",
+      "The way to the market tonight is over Night's Bridge, and people do not always come back from it.",
+      "She was born in London Above; her mother fell ill, the twins were taken away, and she ran away on her birthday.",
+      "The rat-speakers took her in, and she has not been up here, by the river, for years."
+    ],
+    "secrets": [
+      "She is terrified of Night's Bridge and will not say so.",
+      "What the man at her aunt's house did to her; she will only say he hurt her, and only if Aurie listens properly."
+    ],
+    "redLines": [
+      "She never goes back to London Above to stay.",
+      "She never lets go of Aurie's hand on the bridge unless the dark takes her.",
+      "She never speaks badly of the rats."
+    ],
+    "ttsVoice": "shimmer",
+    "voiceDirection": "A young London girl's voice, nineteen, quick and scurrying, laughing behind her hand, flat and matter-of-fact about terrible things."
   },
   "earl": {
     "name": "The Earl",

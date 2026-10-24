@@ -94,11 +94,24 @@ video.film { background: transparent; }
 .title-plate h1 { font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 400; letter-spacing: 0.12em; margin: 0; }
 .title-plate .sub { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.8rem; }
 
-/* Inner voice */
-.inner {
+/* Top notes: her thought, then any ripple under it, in one column (never two layers on top of each other) */
+.topnotes {
   position: absolute;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
+  width: min(70ch, 72vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 13;
+  pointer-events: none;
+}
+.topnotes:empty { display: none; }
+
+/* Inner voice */
+.inner {
   max-width: min(70ch, 80vw);
   text-align: center;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
@@ -106,7 +119,7 @@ video.film { background: transparent; }
   line-height: 1.5;
   animation: fade-in 1.4s ease both;
 }
-.inner { top: 10%; color: var(--accent); font-style: italic; }
+.inner { color: var(--accent); font-style: italic; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 /* Conversation */
@@ -245,10 +258,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
 
 /* Consequence ripple: the world reacting to what she said */
 .ripple {
-  position: absolute;
-  left: 50%;
-  top: 22%;
-  transform: translateX(-50%);
   max-width: min(60ch, 80vw);
   text-align: center;
   font-style: italic;
@@ -259,8 +268,8 @@ button.ghost { border-color: transparent; color: var(--dim); }
   animation: ripple 4.5s ease both;
 }
 @keyframes ripple {
-  0% { opacity: 0; transform: translate(-50%, 6px); }
-  15% { opacity: 1; transform: translate(-50%, 0); }
+  0% { opacity: 0; transform: translateY(6px); }
+  15% { opacity: 1; transform: none; }
   80% { opacity: 1; }
   100% { opacity: 0; }
 }
@@ -335,7 +344,8 @@ button.ghost { border-color: transparent; color: var(--dim); }
   button { padding: 0.45rem 0.8rem; }
   .options { gap: 0.3rem; max-height: 34dvh; }
   .options button { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-  .inner { top: 6%; font-size: 0.95rem; }
+  .topnotes { top: 6%; }
+  .inner { font-size: 0.95rem; }
   .epcard { font-size: 1rem; letter-spacing: 0.2em; }
   .hook { font-size: 1.1rem; }
   .ripple { top: 16%; font-size: 0.9rem; }
@@ -372,7 +382,8 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .curtain.on { opacity: 1; transition: opacity 0.7s ease; }
 @media (prefers-reduced-motion: reduce) { .curtain, .curtain.on { transition-duration: 0.3s; } }
 @media (max-height: 520px) {
-  .inner { top: 3%; font-size: 0.9rem; max-width: 60vw; }
+  .topnotes { top: 3%; width: 60vw; }
+  .inner { font-size: 0.9rem; max-width: 60vw; }
   .transcript p { font-size: 0.92rem; }
   .transcript .aside { font-size: 0.85rem; }
 }

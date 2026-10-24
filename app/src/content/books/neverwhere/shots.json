@@ -67,22 +67,6 @@
       "place": "orme-passage",
       "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     },
-    "nw-4.1-sleeve-v": {
-      "kind": "clip",
-      "scene": "4.1",
-      "cast": [
-        "aurie"
-      ],
-      "location": "A crowded London Underground platform, Monday morning rush hour, curved tiled walls, a train at the platform.",
-      "keyframe": "Medium-wide, side-on, beside a Tube train: Aurie in her suit (black trouser suit, white shirt, black coat) has one arm inside the carriage as the doors hiss shut on her coat sleeve; her briefcase in the other hand; commuters push past, none looking at her.",
-      "motion": "The train pulls away; Aurie is dragged along the platform, stumbling faster and faster, drops the briefcase, tugs at the trapped sleeve; it rips and she falls forward onto the platform as the train is gone. Nobody turns. Seen side-on and from behind; her face strained but not distorted.",
-      "seconds": 6,
-      "source": "novel ch. 3 lines 1563-1580",
-      "why": "The first physical proof that she has fallen out of the world: it hurts, and no one sees.",
-      "audited": true,
-      "place": "tube-rush",
-      "scale": "Scale: People and creatures: Aurie 1.65 m. Tube carriage doors are about 1.9 m high: a standing adult's head comes close to the top of the door. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
-    },
     "nw-4.3-door-v": {
       "kind": "clip",
       "scene": "4.3",
@@ -117,24 +101,6 @@
       "place": "death-grey",
       "scale": "Scale: People and creatures: Death 1.65 m. No objects at all; the mist begins a few metres away; a person stands at ordinary height, camera at adult eye level. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
       "newPlace": "after a death: the grey edge of the dream where her sister waits"
-    },
-    "nw-5.3-hall-v": {
-      "kind": "clip",
-      "scene": "5.3",
-      "cast": [
-        "aurie",
-        "ratspeaker",
-        "longtail"
-      ],
-      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
-      "keyframe": "Medium-wide by firelight: Aurie in her sweater (black cable-knit sweater, black jeans, black sports bag on her shoulder) reaches for a glass dagger on a trestle; across it the Lord Rat-speaker (tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags) watches, fingertips pressed together; on the trestle Master Longtail, a large old dark brown rat with a long pink tail, a grizzled muzzle and a torn left ear, turns his head away.",
-      "motion": "Her hand closes on the glass; the Rat-speaker's hand closes over hers first, slow and certain; the rat does not move; the fires gutter and the frame darkens.",
-      "seconds": 5,
-      "source": "dead end (dead-2.4); the hall, novel ch. 4 lines 2076-2125; Longtail of the clan Gray, dark brown, 1134, 2061",
-      "why": "Dead end on video: rudeness to a rat in the rats' own hall.",
-      "audited": true,
-      "place": "ratspeaker-hall",
-      "scale": "Scale: People and creatures: Aurie 1.65 m; the Lord Rat-speaker 1.85 m (permanently stooped, so he stands about 1.65 m), about one head taller than Aurie; Master Longtail 0.3 m (nose to rump, the tail as long again). Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     },
     "nw-5.4-journal-v": {
       "kind": "clip",
@@ -1216,6 +1182,415 @@
       "seconds": 5,
       "audited": true,
       "ownerPassed": "2026-10-24: owner kept it by eye after the face check held it back"
+    },
+    "nw-4.1-office": {
+      "kind": "still",
+      "scene": "4.1",
+      "cast": [
+        "aurie"
+      ],
+      "place": "office",
+      "keyframe": "Medium shot in the office: Aurie in her suit (black trouser suit, white shirt, black coat with one sleeve torn, a graze on her hand) stands, ignored, as two removal men carry her desk and its row of plastic trolls past her; her colleagues glance through her as if she were not there.",
+      "source": "novel ch. 3 lines 1640-1700",
+      "audited": false,
+      "newPlace": "travel: the Tube spits her out at the office",
+      "location": "Aurie's open-plan office off the Strand on a Friday evening: rows of desks with grey monitors and in-trays, strip lights, windows onto wet London streets at dusk.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. Desks waist-high; the ceiling about 2.8 m; the windows about 2 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.1-hob": {
+      "kind": "still",
+      "scene": "4.1",
+      "cast": [
+        "aurie",
+        "hob"
+      ],
+      "place": "white-horse",
+      "keyframe": "Inside the White Horse by the rain-streaked window: Hob Gadling, exactly as in his Sandman sheet in modern clothes, sits at the window table and raises his pint, puzzled, toward Aurie in her suit (black trouser suit, white shirt, black coat with one sleeve torn, a graze on her hand), who stands outside on the wet pavement looking in through the glass, the only person in London who sees her.",
+      "source": "bridge (bridges.md: Hob remembers her)",
+      "audited": false,
+      "newPlace": "travel: walking past the pub",
+      "location": "The White Horse, an old London pub: dark wooden booths and tables, a black beam carved with a white horse, tall rain-streaked windows onto the street, a jukebox, a dartboard, brass beer taps on the bar.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Hob Gadling 1.78 m, about half a head taller than Aurie. Tables and the bar waist-high; the windows about 2 m tall; the beam about 2.5 m up. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.1-jessica": {
+      "kind": "still",
+      "scene": "4.1",
+      "cast": [
+        "aurie",
+        "jessica"
+      ],
+      "place": "jessica-tower",
+      "keyframe": "The cold marble lobby of Jessica's mirrored tower, Angels over England posters on the wall: Aurie in her suit (black trouser suit, white shirt, black coat with one sleeve torn, a graze on her hand), dishevelled, faces Jessica (British Korean, long dark chestnut corkscrew curls, camel city coat over a black dress), who looks at her politely and blankly, as at a stranger.",
+      "source": "novel ch. 3 lines 1630-1700",
+      "audited": false,
+      "newPlace": "travel: up the road to Jessica's building",
+      "location": "A large crystalline mirrored office tower in the City of London: a cold marble lobby with uniformed security guards, mirrored lift doors, glass, and posters for an exhibition called Angels over England.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Jessica Bartram 1.68 m, about the same height as Aurie. The lobby about 6 m high; the lift doors about 2.2 m; the posters about 2 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.2-bath": {
+      "kind": "still",
+      "scene": "4.2",
+      "cast": [],
+      "place": "flat-bathroom",
+      "keyframe": "POV from inside the bath, past the edge of the tub and the pushed-back shower curtain: in the bathroom doorway a young estate agent in a camel coat shows round a middle-aged couple; the woman runs a finger along the sink. Nobody looks at the bath.",
+      "source": "novel ch. 3 lines 1700-1760",
+      "audited": false,
+      "location": "Aurie's small bathroom: white tiles, a bathtub with a shower curtain pushed back, a sink and a mirror, spotlessly empty.",
+      "scale": "Scale: The bath about 1.7 m long and knee-high; the sink waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.2-phone": {
+      "kind": "still",
+      "scene": "4.2",
+      "cast": [
+        "aurie"
+      ],
+      "place": "aurie-flat",
+      "keyframe": "The dark hallway: Aurie in her suit (black trouser suit, white shirt, black coat with one sleeve torn, a graze on her hand), without the coat, holds the wall telephone's receiver to her ear, frozen, listening; the window behind her shows night.",
+      "source": "novel ch. 3 lines 1760-1790",
+      "audited": false,
+      "newPlace": "she walks out of the bathroom to the ringing phone",
+      "location": "Aurie's small rented flat at night: the narrow hallway and front door, stairwell light beyond.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. The hallway is about 1 m wide; the front door about 2 m high; a wall telephone at shoulder height. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.4-packing": {
+      "kind": "still",
+      "scene": "4.4",
+      "cast": [
+        "aurie"
+      ],
+      "place": "flat-living",
+      "keyframe": "The living room: Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) stuffs socks, a passport, a wallet and fruit from the bowl into the black sports bag on the sofa, her suit thrown over a chair.",
+      "source": "novel ch. 3 lines 1790-1800",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.4-iliaster": {
+      "kind": "still",
+      "scene": "4.4",
+      "cast": [
+        "aurie",
+        "iliaster"
+      ],
+      "place": "cashpoint-street",
+      "keyframe": "Night by the glowing cash machine in the wall: Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) holds out her bank card to Iliaster (short, old, balding, scraggly yellow-grey beard, dirt-lined face, a railwayman's lamp), who stares at her, startled: he can see her.",
+      "source": "novel ch. 3 lines 1806-1840",
+      "audited": false,
+      "newPlace": "travel: out into the night streets",
+      "location": "A London street at night by a row of boarded-up derelict houses: a bank cash machine glowing in a wall, a bench under a street lamp, and garbage-strewn steps going down to abandoned basement flats with a battered basement door.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Iliaster 1.55 m, about half a head shorter than Aurie. The cash machine at chest height; the basement steps about 2.5 m down; the bench knee-high; the street lamp about 5 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.4-steps": {
+      "kind": "still",
+      "scene": "4.4",
+      "cast": [
+        "aurie",
+        "iliaster"
+      ],
+      "place": "cashpoint-street",
+      "keyframe": "Iliaster (short, old, balding, scraggly yellow-grey beard, dirt-lined face, a railwayman's lamp) hurries down the garbage-strewn steps to the battered basement door, lamp raised, beckoning; Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) follows him down.",
+      "source": "novel ch. 3 lines 1835-1845",
+      "audited": false,
+      "location": "A London street at night by a row of boarded-up derelict houses: a bank cash machine glowing in a wall, a bench under a street lamp, and garbage-strewn steps going down to abandoned basement flats with a battered basement door.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Iliaster 1.55 m, about half a head shorter than Aurie. The cash machine at chest height; the basement steps about 2.5 m down; the bench knee-high; the street lamp about 5 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.5-bench": {
+      "kind": "still",
+      "scene": "4.5",
+      "cast": [
+        "aurie"
+      ],
+      "place": "cashpoint-street",
+      "keyframe": "Night under the street lamp: Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) asleep on the bench, curled round her sports bag, rain on the pavement.",
+      "source": "added (variant: she sends him away)",
+      "audited": false,
+      "location": "A London street at night by a row of boarded-up derelict houses: a bank cash machine glowing in a wall, a bench under a street lamp, and garbage-strewn steps going down to abandoned basement flats with a battered basement door.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. The cash machine at chest height; the basement steps about 2.5 m down; the bench knee-high; the street lamp about 5 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.5-rat": {
+      "kind": "still",
+      "scene": "4.5",
+      "cast": [
+        "aurie",
+        "rat"
+      ],
+      "place": "cashpoint-street",
+      "keyframe": "Grey dawn: a brown rat sits on the top step to the basement flats, looking back at Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder), who stands by the bench, rubbing her eyes.",
+      "source": "added (variant)",
+      "audited": false,
+      "location": "A London street at night by a row of boarded-up derelict houses: a bank cash machine glowing in a wall, a bench under a street lamp, and garbage-strewn steps going down to abandoned basement flats with a battered basement door.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. The cash machine at chest height; the basement steps about 2.5 m down; the bench knee-high; the street lamp about 5 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.1-cellar": {
+      "kind": "still",
+      "scene": "5.1",
+      "cast": [
+        "croup",
+        "vandemar"
+      ],
+      "place": "hospital-cellar",
+      "keyframe": "In a rotting room of the hospital cellar, oily water underfoot: Mr Vandemar (huge, about 2.05 m, bristle-cut hair, blank face, the same wrong suit, raven-skull rings) has driven his knife through his own left hand into the plaster wall and stands pinned there, blank; Mr Croup (thin, pallid, lank orange hair, graveyard grin, greasy black suit with wrong seams) watches, pleased.",
+      "source": "novel ch. 4 lines 1884-1960",
+      "audited": false,
+      "location": "The basement of a closed Victorian hospital: a warren of tiny rotting rooms, a thin layer of oily rainwater on the floor reflecting the dark, abandoned hospital supplies, a squat iron furnace, damp plaster walls.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m; Mr Vandemar 2.05 m, about one and a half heads taller than Mr Croup. Ceilings about 2.4 m, low and rotting; doorways about 2 m; the furnace chest-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.1-hand": {
+      "kind": "still",
+      "scene": "5.1",
+      "cast": [
+        "vandemar"
+      ],
+      "place": "hospital-cellar",
+      "keyframe": "Close on Mr Vandemar (huge, about 2.05 m, bristle-cut hair, blank face, the same wrong suit, raven-skull rings)'s big hand, raven-skull rings: he spits on the wound in his palm and it is closing.",
+      "source": "novel ch. 4 lines 1950-1965",
+      "audited": false,
+      "location": "The basement of a closed Victorian hospital: a warren of tiny rotting rooms, a thin layer of oily rainwater on the floor reflecting the dark, abandoned hospital supplies, a squat iron furnace, damp plaster walls.",
+      "scale": "Scale: People and creatures: Mr Vandemar 2.05 m. Ceilings about 2.4 m, low and rotting; doorways about 2 m; the furnace chest-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.2-hall": {
+      "kind": "still",
+      "scene": "5.2",
+      "cast": [
+        "aurie",
+        "ratspeaker",
+        "longtail",
+        "anaesthesia",
+        "iliaster"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "The vaulted hall of greasy fires: the Lord Rat-speaker (tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags, a glass dagger) holds the glass dagger at the throat of Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder); Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) tips out Aurie's bag on the floor; Iliaster (short, old, balding, scraggly yellow-grey beard, dirt-lined face, a railwayman's lamp) stands aside; across the hall everyone lies flat as Master Longtail (a large old dark brown rat with a long pink tail, grizzled muzzle and torn left ear) comes out of a hole in the wall.",
+      "source": "novel ch. 4 lines 2020-2075",
+      "audited": false,
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the Lord Rat-speaker 1.85 m (permanently stooped, so he stands about 1.65 m), about one head taller than Aurie; Master Longtail 0.3 m (nose to rump, the tail as long again); Anaesthesia 1.5 m, about half a head shorter than Aurie; Iliaster 1.55 m, about half a head shorter than Aurie. Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.2-girl": {
+      "kind": "still",
+      "scene": "5.2",
+      "cast": [
+        "aurie",
+        "anaesthesia"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "By a fire in the hall: Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) is told off to guide Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder), who stands with her emptied bag; the girl looks up at her, wary and curious.",
+      "source": "novel ch. 4 lines 2060-2075",
+      "audited": false,
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Anaesthesia 1.5 m, about half a head shorter than Aurie. Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.2-nick": {
+      "kind": "still",
+      "scene": "5.2",
+      "cast": [
+        "aurie",
+        "ratspeaker"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "Medium shot by firelight: the Lord Rat-speaker (tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags, a glass dagger) draws the glass dagger back from the jaw of Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder), leaving a thin red line under it; she stands very still.",
+      "source": "added (variant: Longtail hesitates)",
+      "audited": false,
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the Lord Rat-speaker 1.85 m (permanently stooped, so he stands about 1.65 m), about one head taller than Aurie. Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.4-hall": {
+      "kind": "still",
+      "scene": "5.4",
+      "cast": [
+        "door",
+        "marquis",
+        "arch-family"
+      ],
+      "place": "portico-hall",
+      "keyframe": "The white entrance chamber hung with pictures of rooms: Door (washed, short choppy near-black hair with copper lights, the enormous brown leather flying jacket over her patchwork corset bodice) and the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat) stand in the middle; in the frames around them, faintly translucent like memories, Door's mother, sister and brother seem to move in their rooms.",
+      "source": "novel ch. 3 lines 2127-2205",
+      "audited": false,
+      "location": "The white entrance chamber of the House Without Doors: walls hung edge to edge with framed pictures, each picture a different room of the house, soft even light, a white floor.",
+      "scale": "Scale: People and creatures: Door 1.52 m; the marquis de Carabas 1.88 m, about one and a half heads taller than Door; Door's mother, sister and brother 1.6 m, about half a head taller than Door. The chamber about 4 m high; each picture about the size of a door, about 2 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.4-study": {
+      "kind": "still",
+      "scene": "5.4",
+      "cast": [
+        "door",
+        "marquis"
+      ],
+      "place": "portico-study",
+      "keyframe": "Her father's study: Door (washed, short choppy near-black hair with copper lights, the enormous brown leather flying jacket over her patchwork corset bodice) stands at the desk looking at the journal machine; behind her, the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat) slips a small black obsidian beast from the desk into his coat.",
+      "source": "novel ch. 3 lines 2400-2470",
+      "audited": false,
+      "newPlace": "travel: through a picture into the study",
+      "location": "The study in the House Without Doors: a stuffed crocodile on the ceiling, an astrolabe, a bust of Portico, a brown stain; on the desk the journal machine, a cabinet of walnut, brass and prisms with a gramophone horn and a small screen.",
+      "scale": "Scale: People and creatures: Door 1.52 m; the marquis de Carabas 1.88 m, about one and a half heads taller than Door. The desk is waist-high; the journal machine's screen is about the size of a hardback book; the crocodile on the ceiling is about 3 m long. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.4-watch": {
+      "kind": "still",
+      "scene": "5.4",
+      "cast": [
+        "marquis",
+        "door"
+      ],
+      "place": "portico-study",
+      "keyframe": "the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat) snaps open Lord Portico's gold pocket-watch, admiring it; Door (washed, short choppy near-black hair with copper lights, the enormous brown leather flying jacket over her patchwork corset bodice) watches him, wiping her eyes.",
+      "source": "novel ch. 3 lines 2697-2714",
+      "audited": false,
+      "location": "The study in the House Without Doors: a stuffed crocodile on the ceiling, an astrolabe, a bust of Portico, a brown stain; on the desk the journal machine, a cabinet of walnut, brass and prisms with a gramophone horn and a small screen.",
+      "scale": "Scale: People and creatures: the marquis de Carabas 1.88 m; Door 1.52 m, about one and a half heads shorter than the marquis de Carabas. The desk is waist-high; the journal machine's screen is about the size of a hardback book; the crocodile on the ceiling is about 3 m long. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-5.4-varney": {
+      "kind": "still",
+      "scene": "5.4",
+      "cast": [
+        "croup",
+        "vandemar",
+        "varney"
+      ],
+      "place": "tunnels",
+      "keyframe": "In a tunnel under London: Varney (huge, shaven head, ruined teeth, patched car-seat jacket, tattoos) watches, appalled, as Mr Vandemar (huge, about 2.05 m, bristle-cut hair, blank face, the same wrong suit, raven-skull rings) pulls his morning-star apart link by link with his bare hands; Mr Croup (thin, pallid, lank orange hair, graveyard grin, greasy black suit with wrong seams) smiles.",
+      "source": "novel ch. 4 lines 2580-2600",
+      "audited": false,
+      "newPlace": "a cutaway elsewhere: Croup and Vandemar hiring",
+      "location": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m; Mr Vandemar 2.05 m, about one and a half heads taller than Mr Croup; Varney 1.95 m, about one head taller than Mr Croup. Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-6.1-hall": {
+      "kind": "still",
+      "scene": "6.1",
+      "cast": [
+        "aurie",
+        "anaesthesia"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "By the hall's spits: Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) eats the last of Aurie's bananas, the I AM 11 badge on her rags; Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) sits beside her, looking at the cooking meat with suspicion.",
+      "source": "novel ch. 4 lines 2076-2125",
+      "audited": false,
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Anaesthesia 1.5 m, about half a head shorter than Aurie. Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-6.1-embankment": {
+      "kind": "still",
+      "scene": "6.1",
+      "cast": [
+        "aurie",
+        "anaesthesia"
+      ],
+      "place": "embankment",
+      "keyframe": "Night on the Embankment bench: Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) and Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) sit side by side, the girl fingering the quartz beads at her throat as she talks without looking up; behind them the Albert Bridge glitters with tiny white lights doubled in the Thames.",
+      "source": "novel ch. 4 lines 2309-2385",
+      "audited": false,
+      "newPlace": "travel: up onto the Embankment",
+      "location": "The Chelsea Embankment at night: a bench by the river wall, the Thames black and doubling the city's lights, and the Albert Bridge hung with thousands of tiny white lights.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Anaesthesia 1.5 m, about half a head shorter than Aurie. The river wall waist-high; the bench knee-high; the bridge's towers about 20 m tall across the water. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-6.2-varney": {
+      "kind": "still",
+      "scene": "6.2",
+      "cast": [
+        "aurie",
+        "anaesthesia",
+        "varney",
+        "hunter"
+      ],
+      "place": "nights-bridge",
+      "keyframe": "At the start of Night's Bridge: Varney (huge, shaven head, patched car-seat jacket) shoves Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) to the stones; Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) hisses at him like a cornered rat; behind them a tall woman in dappled leather, Hunter (tall Asian woman, long braid fading to bronze, quarterstaff), watches from the dark.",
+      "source": "novel ch. 4 lines 2772-2800",
+      "audited": false,
+      "location": "Night's Bridge: a narrow medieval stone span into total black, no sky, no water.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Anaesthesia 1.5 m, about half a head shorter than Aurie; Varney 1.95 m, about one and a half heads taller than Aurie; Hunter 1.78 m, about half a head taller than Aurie. The bridge is about 2 m wide with waist-high (about 1 m) stone parapets. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-6.3-hauled": {
+      "kind": "still",
+      "scene": "6.3",
+      "cast": [
+        "aurie",
+        "hunter"
+      ],
+      "place": "nights-bridge",
+      "keyframe": "Hunter (tall Asian woman, long braid fading to bronze, thin sleeveless dappled suede top, leather leggings) hauls Aurie in her sweater (black cable-knit sweater, black jeans, black sneakers, the black sports bag on her shoulder) back by the collar at the edge of the dark; quartz beads roll away into the black.",
+      "source": "novel ch. 4 lines 2895-2915",
+      "audited": false,
+      "location": "Night's Bridge: a narrow medieval stone span into total black, no sky, no water.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Hunter 1.78 m, about half a head taller than Aurie. The bridge is about 2 m wide with waist-high (about 1 m) stone parapets. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-croup-4.2": {
+      "kind": "loop",
+      "scene": "4.2",
+      "key": "croup-4.2",
+      "cast": [
+        "croup"
+      ],
+      "place": "hospital-cellar",
+      "keyframe": "First frame of a talking loop. Medium shot: Mr Croup (thin, pallid, lank orange hair, graveyard grin, greasy black suit with wrong seams) in a rotting cellar room, holding an old Bakelite telephone receiver to his ear, smiling a fraction too late, mouth closed, eyes to the side.",
+      "motion": "Mr Croup speaks into the telephone with oily delight, small nods, a slow wet smile; at the end he is back in the starting pose, mouth closed. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 4 lines 1884-1900; the call, ch. 3 lines 1760-1790",
+      "audited": false,
+      "location": "The basement of a closed Victorian hospital: a warren of tiny rotting rooms, a thin layer of oily rainwater on the floor reflecting the dark, abandoned hospital supplies, a squat iron furnace, damp plaster walls.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m. Ceilings about 2.4 m, low and rotting; doorways about 2 m; the furnace chest-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-ratspeaker-5.2": {
+      "kind": "loop",
+      "scene": "5.2",
+      "key": "ratspeaker-5.2",
+      "cast": [
+        "ratspeaker"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "First frame of a talking loop. Medium shot by firelight: the Lord Rat-speaker (tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags, a glass dagger) faces the camera at a slight angle, fingertips pressed together, the glass dagger in one hand, mouth closed.",
+      "motion": "The Lord Rat-speaker speaks in a hissing, ceremonious way, glancing aside toward an unseen rat; at the end he is back in the starting pose, mouth closed. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 4 lines 2020-2075",
+      "audited": false,
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: the Lord Rat-speaker 1.85 m (permanently stooped, so he stands about 1.65 m). Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-anaesthesia-6.1": {
+      "kind": "loop",
+      "scene": "6.1",
+      "key": "anaesthesia-6.1",
+      "cast": [
+        "anaesthesia"
+      ],
+      "place": "embankment",
+      "keyframe": "First frame of a talking loop. Medium shot on the Embankment bench at night: Anaesthesia (a small thin British Filipina of nineteen, long ragged black hair, fur-trimmed rags, a quartz-bead necklace, a red badge reading I AM 11) faces the camera at a slight angle, fingering her quartz beads, eyes lowered, mouth closed; the Albert Bridge's tiny white lights behind her.",
+      "motion": "Anaesthesia talks quietly, not looking up, small nervous movements of her fingers on the beads, a quick laugh behind her hand; at the end she is back in the starting pose, mouth closed. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 4 lines 2309-2385",
+      "audited": false,
+      "location": "The Chelsea Embankment at night: a bench by the river wall, the Thames black and doubling the city's lights, and the Albert Bridge hung with thousands of tiny white lights.",
+      "scale": "Scale: People and creatures: Anaesthesia 1.5 m. The river wall waist-high; the bench knee-high; the bridge's towers about 20 m tall across the water. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-4.1-sleeve": {
+      "scene": "4.1",
+      "cast": [
+        "aurie"
+      ],
+      "place": "tube-rush",
+      "keyframe": "Medium-wide, side-on, beside a Tube train: Aurie in her suit (black trouser suit, white shirt, black coat) has one arm inside the carriage as the doors hiss shut on her coat sleeve; her briefcase in the other hand; commuters push past, none looking at her.",
+      "source": "novel ch. 3 lines 1563-1580",
+      "location": "A crowded London Underground platform, Monday morning rush hour, curved tiled walls, a train at the platform.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. Tube carriage doors are about 1.9 m high: a standing adult's head comes close to the top of the door. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "kind": "still",
+      "audited": true,
+      "heldClip": "nw-4.1-sleeve-v held back: face drifts while she is dragged (restored 0.24 to 0.40, worst 0.17)",
+      "heldMotion": "The train pulls away; Aurie is dragged along the platform, stumbling faster and faster, drops the briefcase, tugs at the trapped sleeve; it rips and she falls forward onto the platform as the train is gone. Nobody turns. Seen side-on and from behind; her face strained but not distorted."
+    },
+    "nw-5.3-hall": {
+      "scene": "5.3",
+      "cast": [
+        "aurie",
+        "ratspeaker",
+        "longtail"
+      ],
+      "place": "ratspeaker-hall",
+      "keyframe": "Medium-wide by firelight: Aurie in her sweater (black cable-knit sweater, black jeans, black sports bag on her shoulder) reaches for a glass dagger on a trestle; across it the Lord Rat-speaker (tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags) watches, fingertips pressed together; on the trestle Master Longtail, a large old dark brown rat with a long pink tail, a grizzled muzzle and a torn left ear, turns his head away.",
+      "source": "dead end (dead-2.4); the hall, novel ch. 4 lines 2076-2125; Longtail of the clan Gray, dark brown, 1134, 2061",
+      "location": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the Lord Rat-speaker 1.85 m (permanently stooped, so he stands about 1.65 m), about one head taller than Aurie; Master Longtail 0.3 m (nose to rump, the tail as long again). Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "kind": "still",
+      "audited": true,
+      "heldClip": "nw-5.3-hall-v held back: face drifts (restored 0.18 to 0.33, worst below 0)",
+      "heldMotion": "Her hand closes on the glass; the Rat-speaker's hand closes over hers first, slow and certain; the rat does not move; the fires gutter and the frame darkens."
     }
   }
 }

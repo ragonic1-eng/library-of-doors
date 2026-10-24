@@ -770,6 +770,49 @@
       "approved": true,
       "approvedFrom": "assets/plates/nw-flat-bathroom/candidates/nw-place-flat-bathroom-v1.png"
     },
+    "white-horse": {
+      "name": "The White Horse (from the Sandman)",
+      "look": "The White Horse, an old London pub: dark wooden booths and tables, a black beam carved with a white horse, tall rain-streaked windows onto the street, a jukebox, a dartboard, brass beer taps on the bar.",
+      "scale": "Tables and the bar waist-high; the windows about 2 m tall; the beam about 2.5 m up.",
+      "plate": "assets/plates/tavern-1989/plate.png",
+      "approved": true,
+      "reuse": "assets/plates/tavern-1989/plate.png"
+    },
+    "jessica-tower": {
+      "name": "Jessica's mirrored tower in the City",
+      "look": "A large crystalline mirrored office tower in the City of London: a cold marble lobby with uniformed security guards, mirrored lift doors, glass, and posters for an exhibition called Angels over England.",
+      "scale": "The lobby about 6 m high; the lift doors about 2.2 m; the posters about 2 m tall.",
+      "plate": null,
+      "approved": false
+    },
+    "cashpoint-street": {
+      "name": "The street of derelict houses",
+      "look": "A London street at night by a row of boarded-up derelict houses: a bank cash machine glowing in a wall, a bench under a street lamp, and garbage-strewn steps going down to abandoned basement flats with a battered basement door.",
+      "scale": "The cash machine at chest height; the basement steps about 2.5 m down; the bench knee-high; the street lamp about 5 m.",
+      "plate": null,
+      "approved": false
+    },
+    "hospital-cellar": {
+      "name": "The closed hospital's cellar",
+      "look": "The basement of a closed Victorian hospital: a warren of tiny rotting rooms, a thin layer of oily rainwater on the floor reflecting the dark, abandoned hospital supplies, a squat iron furnace, damp plaster walls.",
+      "scale": "Ceilings about 2.4 m, low and rotting; doorways about 2 m; the furnace chest-high.",
+      "plate": null,
+      "approved": false
+    },
+    "portico-hall": {
+      "name": "The entrance hall of the House Without Doors",
+      "look": "The white entrance chamber of the House Without Doors: walls hung edge to edge with framed pictures, each picture a different room of the house, soft even light, a white floor.",
+      "scale": "The chamber about 4 m high; each picture about the size of a door, about 2 m tall.",
+      "plate": null,
+      "approved": false
+    },
+    "embankment": {
+      "name": "The Embankment by night",
+      "look": "The Chelsea Embankment at night: a bench by the river wall, the Thames black and doubling the city's lights, and the Albert Bridge hung with thousands of tiny white lights.",
+      "scale": "The river wall waist-high; the bench knee-high; the bridge's towers about 20 m tall across the water.",
+      "plate": null,
+      "approved": false
+    },
     "penthouse": {
       "name": "The penthouse",
       "look": "Aurie's new penthouse flat on a Saturday morning: floor-to-ceiling windows over London, packing cases half emptied.",

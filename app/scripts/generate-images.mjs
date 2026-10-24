@@ -177,9 +177,17 @@ if (existsSync(NW_CAST_FILE) && existsSync(NW_SHOTS_FILE)) {
     const smiling = aurie && /Aurie[^.;]*\b(smil|grin|laugh)/i.test(sh.keyframe);
     const faces = aurie ? [...AURIE_NOW, ...(smiling ? AURIE_SMILE : [])] : dream ? AURIE_FACES : [];
     const plate = join(ROOT, nw.places[sh.place].plate ?? `assets/plates/nw-${sh.place}/plate.png`);
-    const refs = [...faces, ...people.map(sheetOf), plate];
+    // Each person's approved sheet, plus their head-angle sheet when it exists (shots of up to three people), so a face
+    // seen from any side is copied, not invented.
+    const label = new Map();
+    for (const w of people) {
+      label.set(sheetOf(w), `the approved sheet for ${nw.characters[w].name}`);
+      const heads = join(dirname(sheetOf(w)), "heads.png");
+      if (people.length <= 3 && existsSync(heads)) label.set(heads, `head angles of ${nw.characters[w].name} (the same face from six sides)`);
+    }
+    const refs = [...faces, ...label.keys(), plate];
     const look = aurie ? (nw.characters.aurie.looks ?? []).find((l) => cmp(sh.scene, l.from) >= 0 && cmp(sh.scene, l.to) <= 0) : null;
-    const guide = refs.map((r, i) => `(${i + 1}) ${faces.includes(r) ? "a real photograph of Aurie (her face)" : r === plate ? "the location plate: match its architecture, light and colours exactly, take no people from it" : `the approved sheet for ${nw.characters[people[people.map(sheetOf).indexOf(r)]].name}`}`).join("; ");
+    const guide = refs.map((r, i) => `(${i + 1}) ${faces.includes(r) ? "a real photograph of Aurie (her face)" : r === plate ? "the location plate: match its architecture, light and colours exactly, take no people from it" : label.get(r)}`).join("; ");
     const locks = people.map((w) => nw.characters[w].lock + (w === "aurie" && look ? ` In this scene she wears ${look.look}.` : "")).join("\n");
     const faceVisible = !/from behind|back to (the )?camera|seen from behind/i.test(sh.keyframe);
     jobs.push({

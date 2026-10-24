@@ -1333,13 +1333,15 @@ export default function Player({ book }: { book: Book }) {
         </div>
       )}
 
-      {ripple && <div key={ripple} className="ripple">{ripple}</div>}
-
-      {inner && (phase === "talk" || phase === "choose") && (
-        <div className="inner" role="button" tabIndex={0} title="Tap to dismiss" onClick={() => setInner(null)}>
-          <span className="inner-who">{profile.name}, thinking</span>{inner}
-        </div>
-      )}
+      {/* Her thought and a ripple share one column at the top, so they stack instead of overlapping. */}
+      <div className="topnotes">
+        {inner && (phase === "talk" || phase === "choose") && (
+          <div className="inner" role="button" tabIndex={0} title="Tap to dismiss" onClick={() => setInner(null)}>
+            <span className="inner-who">{profile.name}, thinking</span>{inner}
+          </div>
+        )}
+        {ripple && <div key={ripple} className="ripple">{ripple}</div>}
+      </div>
 
       {updateReady && (
         <div className="updatebar" role="status">

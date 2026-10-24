@@ -776,10 +776,10 @@
       "beats": [
         {
           "text": "Monday. On the Tube her sleeve catches in the closing doors; the train drags her along the platform until the cloth tears and she falls. Nobody looks.",
-          "clip": "nw-4.1-sleeve-v",
           "cast": [
             "aurie"
-          ]
+          ],
+          "still": "nw-4.1-sleeve"
         },
         {
           "text": "Taxis glide past her raised hand. Coins fall straight through the ticket machine. In the office her desk is being carried out, and Sylvia asks politely: and you are?",
@@ -1220,12 +1220,12 @@
       "beats": [
         {
           "text": "Her hand closes on the glass; the Rat-speaker's closes first. Master Longtail does not stop him, because no one in this hall has ever seen her be polite to a rat.",
-          "clip": "nw-5.3-hall-v",
           "cast": [
             "aurie",
             "ratspeaker",
             "longtail"
-          ]
+          ],
+          "still": "nw-5.3-hall"
         },
         {
           "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",

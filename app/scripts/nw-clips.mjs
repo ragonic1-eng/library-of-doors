@@ -44,7 +44,7 @@ const published = (id, sh) => sh.kind === "loop" ? join(PUB, "react", `${sh.key}
 async function used() {
   // The gateway sometimes drops a connection: retry a few times rather than crash a run that has tasks in flight.
   let j;
-  for (let i = 0; i < 4 && !j; i++) try { j = await (await fetch(`${ORIGIN}/api/usage/token`, { headers: H() })).json(); } catch { await sleep(5000 * (i + 1)); }
+  for (let i = 0; i < 4 && !j; i++) try { j = await (await fetch(`${ORIGIN}/api/usage/token`, { headers: H(), signal: AbortSignal.timeout(30000) })).json(); } catch { await sleep(5000 * (i + 1)); }
   if (typeof j?.data?.total_used !== "number") throw new Error("no usage reading; refusing to spend without the cap");
   return j.data.total_used;
 }
@@ -76,7 +76,7 @@ async function run(id, sh) {
       fd.append("model", MODEL); fd.append("seconds", String(secs)); fd.append("size", "1280x720");
       fd.append("prompt", `${sh.motion} Keep every face, costume and the set exactly as in the first frame; people stay at their true sizes.`);
       fd.append("input_reference", new Blob([readFileSync(KF(id))], { type: "image/png" }), "keyframe.png");
-      const r = await fetch(`${BASE}/videos`, { method: "POST", headers: H(), body: fd });
+      let r; try { r = await fetch(`${BASE}/videos`, { method: "POST", headers: H(), body: fd, signal: AbortSignal.timeout(120000) }); } catch (e) { return console.log(`✗ ${id} not submitted: ${e.message}`); }
       const t = await r.text();
       if (!r.ok) return console.log(`✗ ${id} refused: HTTP ${r.status} ${t.slice(0, 200)}`);
       task = JSON.parse(t).id; ledger[id] = { task, at: new Date().toISOString() }; save();
@@ -84,9 +84,10 @@ async function run(id, sh) {
     }
     for (let i = 0; ; i++) {
       if (i > 90) return console.log(`… ${id} still running after 15 minutes; run again to resume`);
-      let j; try { j = await (await fetch(`${BASE}/videos/${task}`, { headers: H() })).json(); } catch { await sleep(10000); continue; }
+      let j; try { j = await (await fetch(`${BASE}/videos/${task}`, { headers: H(), signal: AbortSignal.timeout(60000) })).json(); } catch { await sleep(10000); continue; }
       if (j.status === "completed") {
-        const res = j.metadata?.url ? await fetch(j.metadata.url) : await fetch(`${BASE}/videos/${task}/content`, { headers: H() });
+        // Every network call has a time limit: a hung connection becomes a retry on the next run, never a silent stop.
+        let res; try { res = j.metadata?.url ? await fetch(j.metadata.url, { signal: AbortSignal.timeout(180000) }) : await fetch(`${BASE}/videos/${task}/content`, { headers: H(), signal: AbortSignal.timeout(180000) }); } catch (e) { return console.log(`✗ ${id}: download failed (${e.message}); run again to collect it`); }
         if (!res.ok) return console.log(`✗ ${id}: download HTTP ${res.status}`);
         writeFileSync(raw, Buffer.from(await res.arrayBuffer())); ledger[id].done = true; save(); break;
       }
