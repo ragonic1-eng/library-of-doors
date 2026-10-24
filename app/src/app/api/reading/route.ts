@@ -60,9 +60,12 @@ Rules:
 - dims: score each 0 to 100 (50 is balanced). "because": one short second-person sentence naming a specific choice she made. Her Mercy in the game is ${mercy} on a scale of -10 to 10; let the Mercy sentence agree with that.
 - moments: the three choices that defined her most, copied WORD FOR WORD from the lines marked SHE CHOSE.
 - letter: 60 to 90 words from you to her, addressed "My lady", British English, warm and dry, specific to two or three of her choices, ending with a hint that other doors in the library are waiting. Sign it "Lucienne".
-- Plain, kind, honest. Flattering where earned, gently frank where not. No headings, no lists inside strings.`;
+- Plain, kind, honest. Flattering where earned, gently frank where not. No headings, no lists inside strings.
+Answer with this JSON object only, nothing before or after it:
+{"archetype": "one of: ${ARCHETYPES.join(" | ")}", "tagline": "...", "dims": {${DIMS.map((d) => `"${d.name}": {"score": 0-100, "because": "..."}`).join(", ")}}, "moments": ["...", "...", "..."], "letter": "..."}`;
     const user = `Her story, in order:\n${story || "(she made no recorded choices)"}\n\nHow the people she met feel about her now: ${relations || "unknown"}.\nAllies who came when she needed them: ${profile.vars?.[bookId]?.allies ?? 0}.\nHer ending: ${book.scenes[ending]?.title ?? ending}.`;
     for (const model of modelOrder(models.dialogue, models.dialogueFallbacks)) {
+      let text: string;
       try {
         const j = await gatewayJson<{ choices: { message: { content: string } }[] }>("/chat/completions", {
           model,
@@ -71,19 +74,30 @@ Rules:
           max_tokens: 1400,
           response_format: { type: "json_schema", json_schema: { name: "reading", strict: true, schema: readingSchema } },
         }, 45_000);
-        const text = j.choices?.[0]?.message?.content ?? "";
-        raw = JSON.parse(text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1)) as Raw;
+        text = j.choices?.[0]?.message?.content ?? "";
         reportModel(model, true);
-        break;
       } catch (e) {
-        reportModel(model, false);
+        reportModel(model, false); // the channel failed: benched for the dialogue too
         console.error(`reading: ${model} failed:`, (e as Error).message.slice(0, 160));
+        continue;
+      }
+      try {
+        raw = JSON.parse(text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1)) as Raw;
+        break;
+      } catch {
+        console.error(`reading: ${model} answered without usable JSON:`, text.slice(0, 160)); // a bad answer, not a dead channel
       }
     }
   }
   if (!raw) return NextResponse.json({ error: "reading unavailable" }, { status: 502 });
 
   // Never trust the model's numbers or quotes: clamp the scores, set Mercy from the game, keep only real choices.
+  // Some gateway models ignore the schema, so accept dims as {Name: {...}} in any case, or as [{name, ...}].
+  const dimOf = (name: string): { score?: number; because?: string } | undefined => {
+    const d = raw!.dims as unknown;
+    if (Array.isArray(d)) return d.find((x) => String(x?.name ?? x?.dimension ?? "").toLowerCase() === name.toLowerCase());
+    if (d && typeof d === "object") return Object.entries(d).find(([k]) => k.toLowerCase() === name.toLowerCase())?.[1] as { score?: number; because?: string };
+  };
   const clamp = (n: unknown) => Math.max(0, Math.min(100, Math.round(Number(n) || 50)));
   const real = new Set(choices);
   const moments = [...new Set((raw.moments ?? []).filter((m) => real.has(m)))];
@@ -92,7 +106,7 @@ Rules:
     key,
     archetype: ARCHETYPES.includes(raw.archetype) ? raw.archetype : ARCHETYPES[0],
     tagline: String(raw.tagline ?? ""),
-    dims: DIMS.map((d) => ({ ...d, score: d.name === "Mercy" ? clamp((mercy + 10) * 5) : clamp(raw.dims?.[d.name]?.score), because: String(raw.dims?.[d.name]?.because ?? "") })),
+    dims: DIMS.map((d) => ({ ...d, score: d.name === "Mercy" ? clamp((mercy + 10) * 5) : clamp(dimOf(d.name)?.score), because: String(dimOf(d.name)?.because ?? "") })),
     moments: moments.slice(0, 3),
     letter: String(raw.letter ?? ""),
   };

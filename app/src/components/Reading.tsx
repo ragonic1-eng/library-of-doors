@@ -80,7 +80,7 @@ export default function Reading({ book, profile, sceneId, onReading, children }:
               <li key={d.name}>
                 <div className="dim-head"><span>{d.low}</span><b>{d.name}</b><span>{d.high}</span></div>
                 <div className="dim-bar"><i style={{ left: `${d.score}%` }} /></div>
-                <p>{d.because}</p>
+                {d.because && <p>{d.because}</p>}
               </li>
             ))}
           </ul>
