@@ -169,9 +169,21 @@ for (const dir of readdirSync(BOOKS)) {
     const isCut = (sc) => /^Cutaway/.test(sc.title ?? "");
     for (const [sid, sc] of Object.entries(S)) {
       const beats = [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])];
-      if (!isCut(sc) && sc.type !== "end" && beats.some((b) => b.cast) && !beats.some((b) => b.cast?.includes("aurie"))) err(`${book.id} ${sid}: no picture of Aurie in this scene`);
+      if (!isCut(sc) && sc.type !== "end" && beats.some((b) => b.cast) && !beats.some((b) => b.cast?.some((c) => c === "aurie" || c.startsWith("aurie-")))) err(`${book.id} ${sid}: no picture of Aurie in this scene`);
       if (isCut(sc) && sc.next && S[sc.next] && isCut(S[sc.next])) err(`${book.id} ${sid}: two cutaways in a row (${sc.next})`);
     }
+  }
+
+  // The cast record (production/<book>-cast.json, where it exists: not on Vercel): every person or creature named in
+  // a beat's cast must be there, as a character with a sheet or as background, so no one is drawn without a reference.
+  const castFile = join(APP, "..", "production", `${book.id}-cast.json`);
+  if (existsSync(castFile)) {
+    const rec = JSON.parse(readFileSync(castFile, "utf8"));
+    const known = new Set([...Object.keys(rec.characters ?? {}), ...Object.keys(rec.background ?? {})]);
+    const missing = new Map();
+    for (const [sid, sc] of Object.entries(S)) for (const b of [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])]) for (const w of b.cast ?? []) if (!known.has(w)) missing.set(w, sid);
+    for (const [w, sid] of missing) err(`${book.id} ${sid}: "${w}" is in the picture but not in production/${book.id}-cast.json`);
+    for (const [id, c] of Object.entries(rec.characters ?? {})) if (c.sheet && !existsSync(join(APP, "..", c.sheet)) && existsSync(join(APP, "..", "characters"))) warn(`${book.id}: ${id} has no sheet yet (${c.sheet})`);
   }
 
   // Every scene must be reachable from the start.

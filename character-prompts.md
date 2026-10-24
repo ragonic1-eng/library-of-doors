@@ -899,6 +899,53 @@ SURREAL DETAIL: the silver key casts a shadow slightly larger than itself.
 [Style Bible]
 ```
 
+### N30 The House of Arch: Door's mother, sister and brother (tier C)
+
+**Group sheet** (attach Door's approved sheet: they must look like her family):
+```
+Character reference sheet on a seamless matte charcoal studio backdrop: three people of one British Chinese family standing side by side, full length, equal spacing, the same soft octabox key light. Originals who resemble no real actor or public figure; all three clearly related to Door in the attached sheet (the same pale heart-shaped face and small pointed chin). LEFT Lady Portico, Door's mother, about forty-five, graceful, black hair pinned up with an old silver comb, in a long dress pieced from faded velvet and lace in dusty rose and grey. CENTRE Door's younger sister, about fourteen, a slight girl with short choppy black hair and Door's opal-flecked eyes, in a patched velvet pinafore over a lace blouse, holding a small watering can. RIGHT Door's elder brother, about twenty, slim, black hair swept back, in a Victorian bathing costume of striped wool. Calm, warm, a little sad, like a family portrait.
+SURREAL DETAIL: all three are faintly translucent at the edges, like a memory painted on air.
+[Style Bible]
+```
+
+### N31 The girl from Computer Services (tier B, head angles)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The new girl from Computer Services, Aurie's colleague, a British Malaysian Chinese woman of about twenty-eight, about 1.63 m, slim. An original, unknown person who resembles no real actor, celebrity or public figure. Face: friendly and pretty, a round face, bright dark eyes, an easy smile, a little shy. Hair: shoulder-length black hair with a soft fringe. Clothing: smart office casual, a pale blue blouse, a navy cardigan, grey trousers, a lanyard with a staff pass, a small silver necklace. Posture: relaxed, holding a takeaway coffee. Expression: warm, hopeful, ordinary in the best way.
+SURREAL DETAIL: the steam from her coffee draws, for a moment, the shape of a door.
+[Style Bible]
+```
+
+### N32 Mr Stockton (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Mr Stockton, Jessica's employer, the media magnate behind the exhibition Angels over England, a British Hong Kong Chinese man of about sixty, about 1.72 m, solid. An original, unknown person who resembles no real actor, businessman, celebrity or public figure. Face: broad and confident, silver hair swept back, rimless glasses, a practised smile. Clothing: an immaculate charcoal three-piece suit, a silk tie, a pocket square, a heavy gold watch. Posture: commanding, one hand raised as if about to pull a cord. Expression: pleased with himself.
+SURREAL DETAIL: his shadow on the backdrop is facing the other way.
+[Style Bible]
+```
+
+### N33 The Great Weasel (tier C)
+
+**Reference sheet:**
+```
+Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT head straight on, CENTRE three-quarter view standing, RIGHT full side view mid-step. The Great Weasel of the undercity beneath Bangkok, an enormous weasel the size of a horse: sleek, glossy dark-brown fur, a long supple body, a cream throat and belly, small round ears, small fierce shining black eyes, long whiskers, sharp white teeth glimpsed at the lip. Graceful, dangerous, almost playful.
+SURREAL DETAIL: its fur ripples like water when it moves.
+[Style Bible]
+```
+
+### N34 Miss Whiskers (tier C)
+
+**Reference sheet:**
+```
+Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT head close-up, CENTRE three-quarter view sitting up, RIGHT full side view. Miss Whiskers, a small, sleek, glossy brown rat (not black) with very long white whiskers, a neat pale belly and bright alert black eyes; quick, precise, a little prim.
+SURREAL DETAIL: she holds her head like a duchess receiving visitors.
+[Style Bible]
+```
+
 ---
 
 ## 3b. Expression and pose sheets (movement library)

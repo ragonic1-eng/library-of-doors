@@ -130,10 +130,11 @@ const NW_CAST = [
   ["sable", "N16", "turnaround"], ["beast", "N17", "turnaround"], ["gary", "N18", "heads"], ["oldwoman", "N19", "C"], ["tooley", "N20", "C"],
   ["iliaster", "N21", "C"], ["ross", "N22", "C"], ["lear", "N23", "C"], ["serpentine", "N24", "C"], ["hammersmith", "N25", "C"],
   ["fuliginous", "N26", "C"], ["portico", "N27", "C"], ["rat", "N28", "C"], ["nw-props", "N29", "C"],
+  ["arch-family", "N30", "C"], ["compgirl", "N31", "heads"], ["stockton", "N32", "C"], ["weasel", "N33", "C"], ["misswhiskers", "N34", "C"],
 ];
 for (const [id, n] of NW_CAST) {
-  const refs = id === "aurie-mayhew" ? AURIE_NOW : id === "portico" ? [join(C("door"), "sheet.png")] : [];
-  jobs.push({ id: `${id}-sheet`, group: "nw-sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(`### ${n}`, id === "nw-props" ? "**Prop sheet" : "**Reference sheet")), refs });
+  const refs = id === "aurie-mayhew" ? AURIE_NOW : id === "portico" || id === "arch-family" ? [join(C("door"), "sheet.png")] : [];
+  jobs.push({ id: `${id}-sheet`, group: "nw-sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(`### ${n}`, id === "nw-props" ? "**Prop sheet" : id === "arch-family" ? "**Group sheet" : "**Reference sheet")), refs });
 }
 
 // Aurie Mayhew's expressions, with her real smile and laugh as references (needs her approved sheet).
