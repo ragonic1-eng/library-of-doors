@@ -23,6 +23,10 @@ SOURCES = {
     "aurie": ["characters/dream/photo-4.jpg", "characters/dream/photo-6.jpg", "characters/dream/photo-9.jpg", "characters/dream/photo-11.jpg", "characters/dream/photo-12.jpg", "characters/dream/photo-13.jpg", "characters/dream/photo-14.jpg", "characters/dream/photo-16.jpg", "characters/dream/photo-18.jpg"],
     "alex": ["characters/alex/photo.jpg", "characters/alex/photo-2.jpg", "characters/alex/face.jpg", "characters/alex/photo-7.jpg", "characters/alex/photo-8.jpg", "characters/alex/photo-9.jpg"],
 }
+# Clips the pass must never touch. It breaks a face that differs from every source photo in a way it cannot
+# draw: Alex without his glasses (all his photos wear them, so a ghost outline of glasses was painted on his
+# face like a scar), or a hand across the face. Check these by eye; the likeness score cannot see them.
+NO_RESTORE = {"1.4b-A"}
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import face_score as fs  # noqa: E402  (same detector and recogniser as the likeness checks)
 
@@ -50,6 +54,8 @@ def person_position(who, clip):
 
 def restore(who, clip, apply):
     name = os.path.basename(clip)
+    if os.path.splitext(name)[0] in NO_RESTORE:
+        print(f"{name}: on the no-restore list (see NO_RESTORE), skipped"); return
     pos = person_position(who, clip)
     if pos is None:
         print(f"{name}: no {who} face found in the first frame, skipped"); return
