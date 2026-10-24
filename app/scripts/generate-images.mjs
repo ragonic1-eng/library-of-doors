@@ -224,6 +224,20 @@ ${STYLE}`,
   refs: [join(C("aurie-mayhew"), "sheet.png"), ...AURIE_SOFT_SMILE, ...AURIE_SMILE, ...AURIE_LAUGH],
 });
 
+// Aurie Mayhew's outfit sheet: every look the story puts her in (cast record `looks`), full length, one lineup,
+// so stills and clips keep each outfit identical from scene to scene.
+if (existsSync(NW_CAST_FILE)) {
+  const looks = JSON.parse(readFileSync(NW_CAST_FILE, "utf8")).characters.aurie.looks ?? [];
+  jobs.push({
+    id: "aurie-mayhew-looks", group: "nw-angles", dir: join(C("aurie-mayhew"), "candidates"), approved: join(C("aurie-mayhew"), "looks.png"),
+    prompt: () => `Costume lineup sheet on a seamless matte charcoal studio backdrop: the same woman shown ${looks.length} times side by side, full length, standing, front view, the same soft octabox light, a small plain caption number under each figure (1 to ${looks.length}). Reference images: real photographs of her face first, then her approved reference sheet. Her face, hair, curvy figure and slightly long legs are identical in every figure, exactly as in the sheet; only the clothes change:
+${looks.map((l, i) => `${i + 1}. ${l.look}`).join("\n")}
+Always clothed. One single image, a clean lineup, no other text.
+${STYLE}`,
+    refs: [...AURIE_NOW, join(C("aurie-mayhew"), "sheet.png")],
+  });
+}
+
 // Angle sheets (character-prompts.md §3c): every side of the face and body, so stills and video never have to invent one.
 const TURN_FRAME = block("## 3c.", "Turnaround frame");
 const HEAD_FRAME = block("## 3c.", "Head-angle frame");

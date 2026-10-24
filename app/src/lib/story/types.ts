@@ -116,6 +116,7 @@ export interface Book {
   start: string;
   scenes: Record<string, Scene>;
   status?: "planning"; // a branch skeleton: visible in the Developer menu, its door still locked on the title page
+  signedOff?: Record<string, string>; // batch letter -> when and by whom it was signed off (plan rule 12: no narration before)
 }
 
 export interface CharacterCard {

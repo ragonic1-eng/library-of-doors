@@ -211,7 +211,7 @@ for (const dir of readdirSync(BOOKS)) {
     const shotList = JSON.parse(readFileSync(shotsFile, "utf8")).shots ?? {};
     const checks = existsSync(checksFile) ? JSON.parse(readFileSync(checksFile, "utf8")) : {};
     for (const [sid, sh] of Object.entries(shotList)) {
-      if (sh.kind !== "clip" || sh.made || !(sh.cast ?? []).some((c) => c.startsWith("aurie"))) continue;
+      if (sh.kind !== "clip" || sh.made || sh.reuse || !(sh.cast ?? []).some((c) => c.startsWith("aurie"))) continue;
       if (existsSync(join(media, `${sid}.mp4`)) && !checks[sid]?.restore) err(`${book.id} ${sid}: published with Aurie in it but never face-restored (LIKENESS rule 8; run nw-clips, which restores automatically)`);
     }
   }

@@ -915,7 +915,10 @@ export default function Player({ book }: { book: Book }) {
   // Load the saved profile and resume position once.
   useEffect(() => {
     const p = loadProfile();
-    if (p.position?.book === book.id && book.scenes[p.position.scene]) setSceneId(p.position.scene);
+    // Test-play from the Developer menu (/play/<book>?from=<scene>) starts at that scene, even in a book still being built.
+    const from = new URLSearchParams(window.location.search).get("from");
+    if (from && book.scenes[from]) setSceneId(from);
+    else if (p.position?.book === book.id && book.scenes[p.position.scene]) setSceneId(p.position.scene);
     profileRef.current = p;
     setProfile(p);
   }, [book]);

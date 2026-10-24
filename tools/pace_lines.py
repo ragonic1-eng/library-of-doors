@@ -15,8 +15,9 @@ import numpy as np, soundfile as sf, imageio_ffmpeg
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "assets", "audio", "lines-raw")
-OUT = os.path.join(ROOT, "app", "public", "clips", "sandman", "audio", "lines")
-BOOK = os.path.join(ROOT, "app", "src", "content", "books", "sandman", "book.json")
+BOOK_ID = os.environ.get("BOOK_ID", "sandman")  # BOOK_ID=neverwhere paces another book's narration
+OUT = os.path.join(ROOT, "app", "public", "clips", BOOK_ID, "audio", "lines")
+BOOK = os.path.join(ROOT, "app", "src", "content", "books", BOOK_ID, "book.json")
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 SR = 24000
 

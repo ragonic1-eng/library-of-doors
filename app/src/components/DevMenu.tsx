@@ -173,6 +173,8 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose, books, onSw
 
 /** Production roadmap for a book being planned: one row per chapter, what it needs and how far each part has got. */
 const CLIP_YUAN = 3, STILL_YUAN = 0.11;
+// Production batches (plan-neverwhere.md §3): A Prologue to 3, B 4 to 6, C 7 to 9, D 10 to 11, E 12 to 14, F 15 to 17, G 18 to 20, H 21 to 23.
+const batchOf = (sceneId: string) => "AAAABBBCCCDDEEEFFFGGGHHH"[Math.min(Number(sceneId.split(".")[0]) || 0, 23)];
 const BACKGROUND = new Set(["crowd", "guards", "footman", "rat"]);
 function Roadmap({ book, columns, shots, onOpen }: { book: Book; columns: { title: string; ids: string[] }[]; shots: Record<string, Shot>; onOpen: (id: string) => void }) {
   const rows = columns.map((col) => {
@@ -208,7 +210,7 @@ function Roadmap({ book, columns, shots, onOpen }: { book: Book; columns: { titl
             <tr key={r.col.title + r.col.ids[0]}>
               <td><button className="dev-goto" onClick={() => onOpen(r.col.ids[0])}>{r.col.title}</button></td>
               <td className="dev-dim-text">{r.src}</td>
-              <td>{r.col.ids[0]} to {r.col.ids[r.col.ids.length - 1]}{r.dead ? <span className="dev-chip unless">{r.dead} dead end{r.dead > 1 ? "s" : ""}</span> : null}</td>
+              <td>{r.col.ids[0]} to {r.col.ids[r.col.ids.length - 1]}{book.signedOff?.[batchOf(r.col.ids[0])] ? <span className="dev-chip if">batch {batchOf(r.col.ids[0])} signed off</span> : null}{r.dead ? <span className="dev-chip unless">{r.dead} dead end{r.dead > 1 ? "s" : ""}</span> : null}</td>
               <td>{r.stills.length}</td>
               <td>{r.clips.length}</td>
               <td>{r.clips.length ? <span className={`dev-chip ${r.audited === r.clips.length ? "if" : r.written ? "" : "unless"}`}>{r.audited === r.clips.length ? "audited" : `${r.written}/${r.clips.length} written, ${r.audited} audited`}</span> : "none"}</td>
@@ -412,7 +414,7 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning
           </p>
           <p className="dev-from">Comes from: {incoming.length ? incoming.map((f) => <GoTo key={f} to={f} book={book} onOpen={onOpen} />) : <em>nothing (start or orphan)</em>}</p>
         </div>
-        {onPlay ? <button className="primary dev-play" onClick={() => onPlay(id)}>▶ Play from here</button> : planning ? <span className="dev-chip">not playable yet</span> : <a className="primary dev-play" href={`/play/${book.id}`}>Open this book</a>}
+        {onPlay ? <button className="primary dev-play" onClick={() => onPlay(id)}>▶ Play from here</button> : planning ? <a className="primary dev-play" href={`/play/${book.id}?from=${encodeURIComponent(id)}`}>▶ Test-play from here</a> : <a className="primary dev-play" href={`/play/${book.id}`}>Open this book</a>}
       </div>
       <BeatList beats={sc.beats} start={null} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} shots={shots} />
       {sc.conversation && (

@@ -18,7 +18,9 @@ import sys, os, re, json, base64, urllib.request, urllib.error, subprocess, temp
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BOOK = os.path.join(ROOT, "app", "src", "content", "books", "sandman", "book.json")
+# BOOK_ID=neverwhere narrates another book (default the Sandman); line ids are hashes of the words, so files never collide.
+BOOK_ID = os.environ.get("BOOK_ID", "sandman")
+BOOK = os.path.join(ROOT, "app", "src", "content", "books", BOOK_ID, "book.json")
 # Untouched renders; tools/pace_lines.py tightens them into app/public/clips/sandman/audio/lines/.
 RAW = os.environ.get("NARRATION_OUT") or os.path.join(ROOT, "assets", "audio", "lines-raw")
 

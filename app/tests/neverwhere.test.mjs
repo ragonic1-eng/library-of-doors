@@ -63,11 +63,11 @@ test('the bridge opens one way for each Sandman ending, and remembers the latest
   const passes = (p, b) => (!b.if || b.if.every((f) => flagOn(p, B, f))) && (!b.unless || !b.unless.some((f) => flagOn(p, B, f)));
   const variant = (visited) => {
     const p = { ...newProfile(), visited };
-    return S['0.1'].beats.filter((b) => b.still && passes(p, b)).map((b) => b.still);
+    return S['0.1'].beats.filter((b) => (b.still || (b.clip && b.clip !== 'nw-2.1-beast-dream-v')) && passes(p, b)).map((b) => b.still ?? b.clip);
   };
   assert.deepEqual(variant([]), ['nw-0.1-library'], 'Sandman not finished');
   assert.deepEqual(variant(['7.5', 'end-A', 'fin-dream']), ['nw-0.1-wake', 'nw-0.1-daniel'], 'the Wake');
-  assert.deepEqual(variant(['end-B']), ['nw-0.1-ash']);
+  assert.deepEqual(variant(['end-B']), ['nw-0.1-ash-v'], "the Sandman's own clip of Aurie alone");
   assert.deepEqual(variant(['end-C']), ['nw-0.1-flat']);
   assert.deepEqual(variant(['end-R']), ['nw-0.1-throne']);
   assert.deepEqual(variant(['end-A', 'fin-dream', 'end-C']), ['nw-0.1-flat'], 'played the Sandman twice: the latest ending counts');

@@ -37,12 +37,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const batchOf = (s) => "AAAABBBCCCDDEEEFFFGGGHHH"[Math.min(Number(s.split(".")[0]), 23)];
 const rel = (f) => f.replace(ROOT, "").replace(/^[\\/]/, "");
 
-const selected = Object.entries(shots).filter(([id, sh]) => (sh.kind === "clip" || sh.kind === "loop") && !sh.made
+const selected = Object.entries(shots).filter(([id, sh]) => (sh.kind === "clip" || sh.kind === "loop") && !sh.made && !sh.reuse
   && (want.includes(id) || want.includes(batchOf(sh.scene))));
 const published = (id, sh) => sh.kind === "loop" ? join(PUB, "react", `${sh.key}-talking.mp4`) : join(PUB, `${id}.mp4`);
 
 async function used() {
-  const j = await (await fetch(`${ORIGIN}/api/usage/token`, { headers: H() })).json();
+  // The gateway sometimes drops a connection: retry a few times rather than crash a run that has tasks in flight.
+  let j;
+  for (let i = 0; i < 4 && !j; i++) try { j = await (await fetch(`${ORIGIN}/api/usage/token`, { headers: H() })).json(); } catch { await sleep(5000 * (i + 1)); }
   if (typeof j?.data?.total_used !== "number") throw new Error("no usage reading; refusing to spend without the cap");
   return j.data.total_used;
 }
