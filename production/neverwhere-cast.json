@@ -152,18 +152,19 @@
     },
     "croup": {
       "name": "Mr Croup",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/croup/sheet.png",
       "angles": [
         "heads",
         "turnaround"
       ],
       "lock": "Mr Croup exactly as in his sheet: thin, pallid, lank greasy unlikely-orange hair, faded china-blue eyes, a graveyard grin; a greasy black suit whose every seam is subtly wrong.",
-      "height": 1.68
+      "height": 1.68,
+      "approvedFrom": "characters/croup/candidates/croup-sheet-v1.png"
     },
     "vandemar": {
       "name": "Mr Vandemar",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/vandemar/sheet.png",
       "angles": [
         "heads",
@@ -171,7 +172,8 @@
       ],
       "lock": "Mr Vandemar exactly as in his sheet: huge (about 2.05 m), bristle-cut grey-and-black hair, a blank face; the same wrong black suit; four raven-skull rings on his right hand.",
       "height": 2.05,
-      "heightNote": "the novel's own figure"
+      "heightNote": "the novel's own figure",
+      "approvedFrom": "characters/vandemar/candidates/vandemar-sheet-v1.png"
     },
     "islington": {
       "name": "The Angel Islington",
@@ -199,7 +201,7 @@
     },
     "anaesthesia": {
       "name": "Anaesthesia",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/anaesthesia/sheet.png",
       "angles": [
         "heads",
@@ -207,44 +209,48 @@
       ],
       "lock": "Anaesthesia exactly as in her sheet: a British Filipina of nineteen who looks nineteen, small and thin, long ragged black hair, fur-trimmed rags, quartz-bead necklace, the red I AM 11 badge, a candle in a lemonade bottle; rats at her feet.",
       "notes": "Remade so she looks nineteen (round 1 self-review).",
-      "height": 1.5
+      "height": 1.5,
+      "approvedFrom": "characters/anaesthesia/candidates/anaesthesia-sheet-v2.jpg"
     },
     "oldbailey": {
       "name": "Old Bailey",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/oldbailey/sheet.png",
       "angles": [
         "heads",
         "turnaround"
       ],
       "lock": "Old Bailey exactly as in his sheet: short, round, grey muttonchops, a coat covered entirely in feathers, ropes wound round him, spectacles on a string.",
-      "height": 1.55
+      "height": 1.55,
+      "approvedFrom": "characters/oldbailey/candidates/oldbailey-sheet-v1.png"
     },
     "abbot": {
       "name": "The abbot",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/abbot/sheet.png",
       "angles": [
         "heads",
         "turnaround"
       ],
       "lock": "The abbot exactly as in his sheet: a very old Black British friar, blind cataract eyes, short white beard, black Dominican habit, walking stick.",
-      "height": 1.7
+      "height": 1.7,
+      "approvedFrom": "characters/abbot/candidates/abbot-sheet-v1.png"
     },
     "jessica": {
       "name": "Jessica Bartram",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/jessica/sheet.png",
       "angles": [
         "heads",
         "turnaround"
       ],
       "lock": "Jessica exactly as in her sheet: a British Korean woman of twenty-six, long dark chestnut corkscrew curls, a camel city coat over a black dress. At the museum (10.5): an off-the-shoulder green silk dress.",
-      "height": 1.68
+      "height": 1.68,
+      "approvedFrom": "characters/jessica/candidates/jessica-sheet-v1.png"
     },
     "earl": {
       "name": "The earl",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/earl/sheet.png",
       "angles": [
         "heads",
@@ -252,42 +258,46 @@
       ],
       "lock": "The earl exactly as in his sheet: immense and elderly, the black patch over his LEFT eye, a red-grey beard, fur cap, wine-red fur-lined dressing gown, striped pyjamas, slippers.",
       "notes": "Sheet mirrored so the patch is on his left eye, as in the novel.",
-      "height": 1.9
+      "height": 1.9,
+      "approvedFrom": "characters/earl/candidates/earl-sheet-v2.png"
     },
     "ratspeaker": {
       "name": "The Lord Rat-speaker",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/ratspeaker/sheet.png",
       "angles": [
         "turnaround"
       ],
       "lock": "The Lord Rat-speaker exactly as in his sheet: tall, permanently stooped, long greasy hair, patchy beard, calico-fur-trimmed rags, a glass dagger; fingertips pressed together.",
       "height": 1.85,
-      "heightNote": "permanently stooped, so he stands about 1.65 m"
+      "heightNote": "permanently stooped, so he stands about 1.65 m",
+      "approvedFrom": "characters/ratspeaker/candidates/ratspeaker-sheet-v1.png"
     },
     "varney": {
       "name": "Varney",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/varney/sheet.png",
       "angles": [
         "turnaround"
       ],
       "lock": "Varney exactly as in his sheet: a huge shaven-headed brute with ruined teeth, patched car-seat jacket, tattoos, a morning-star.",
-      "height": 1.95
+      "height": 1.95,
+      "approvedFrom": "characters/varney/candidates/varney-sheet-v1.png"
     },
     "sable": {
       "name": "Brother Sable",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/sable/sheet.png",
       "angles": [
         "turnaround"
       ],
       "lock": "Brother Sable exactly as in his sheet: a tall powerful Black British friar, shaved head, black habit, quarterstaff; a split lip after Hunter.",
-      "height": 1.93
+      "height": 1.93,
+      "approvedFrom": "characters/sable/candidates/sable-sheet-v1.png"
     },
     "beast": {
       "name": "The Great Beast of London",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/beast/sheet.png",
       "angles": [
         "turnaround"
@@ -295,130 +305,147 @@
       "lock": "The Great Beast exactly as in its sheet: a boar the size of a bull elephant, black-brown bristled hide stuck with broken spears and blades, two great curved boar tusks rising from the lower jaw (never horns), small red eyes. Always huge against people and tunnels.",
       "notes": "Remade with proper boar tusks (round 1 self-review).",
       "height": 3.2,
-      "heightNote": "at the shoulder, about 6 m long"
+      "heightNote": "at the shoulder, about 6 m long",
+      "approvedFrom": "characters/beast/candidates/beast-sheet-v2.png"
     },
     "gary": {
       "name": "Gary",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/gary/sheet.png",
       "angles": [
         "heads"
       ],
       "lock": "Gary exactly as in his sheet: a British Chinese man of about thirty, neat gelled black hair, rimless glasses, grey office suit, loosened blue tie.",
-      "height": 1.75
+      "height": 1.75,
+      "approvedFrom": "characters/gary/candidates/gary-sheet-v1.png"
     },
     "compgirl": {
       "name": "The girl from Computer Services",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/compgirl/sheet.png",
       "angles": [
         "heads"
       ],
       "lock": "The girl from Computer Services exactly as in her sheet: a British Malaysian Chinese woman of about twenty-eight, shoulder-length black hair with a fringe, a friendly round face, office casual.",
-      "height": 1.6
+      "height": 1.6,
+      "approvedFrom": "characters/compgirl/candidates/compgirl-sheet-v1.png"
     },
     "oldwoman": {
       "name": "The old woman with the umbrella",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/oldwoman/sheet.png",
       "lock": "The old woman exactly as in her sheet: tiny, very old, sharp eyes, wool hat, layers of coats and shawls; the white Tube-map umbrella.",
-      "height": 1.45
+      "height": 1.45,
+      "approvedFrom": "characters/oldwoman/candidates/oldwoman-sheet-v1.png"
     },
     "tooley": {
       "name": "Tooley",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/tooley/sheet.png",
       "lock": "Tooley exactly as in his sheet: an old painted jester in faded red-and-yellow motley.",
-      "height": 1.6
+      "height": 1.6,
+      "approvedFrom": "characters/tooley/candidates/tooley-sheet-v1.png"
     },
     "iliaster": {
       "name": "Iliaster",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/iliaster/sheet.png",
       "lock": "Iliaster exactly as in his sheet: short, old, balding, scraggly yellow-grey beard, dirt-lined face, a railwayman's lamp.",
-      "height": 1.55
+      "height": 1.55,
+      "approvedFrom": "characters/iliaster/candidates/iliaster-sheet-v1.png"
     },
     "ross": {
       "name": "Mr Ross",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/ross/sheet.png",
       "lock": "Mr Ross exactly as in his sheet: huge, hairless, grubby, filthy T-shirt and crusted jeans.",
-      "height": 1.95
+      "height": 1.95,
+      "approvedFrom": "characters/ross/candidates/ross-sheet-v1.png"
     },
     "lear": {
       "name": "Lear",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/lear/sheet.png",
       "lock": "Lear exactly as in his sheet: a very tall British Vietnamese busker, long forked black beard, saxophone.",
-      "height": 1.93
+      "height": 1.93,
+      "approvedFrom": "characters/lear/candidates/lear-sheet-v1.png"
     },
     "serpentine": {
       "name": "Serpentine",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/serpentine/sheet.png",
       "lock": "Serpentine exactly as in her sheet: a towering old woman, grey hair piled high, white leather corset and boots over a shredded lace wedding dress.",
-      "height": 1.9
+      "height": 1.9,
+      "approvedFrom": "characters/serpentine/candidates/serpentine-sheet-v1.png"
     },
     "hammersmith": {
       "name": "Hammersmith",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/hammersmith/sheet.png",
       "lock": "Hammersmith exactly as in his sheet: a Mongolian Londoner of about forty, huge, a topknot and a braided black beard, scorched leather apron.",
       "notes": "Redesigned so he resembles no real public figure (round 1 self-review).",
-      "height": 2.0
+      "height": 2.0,
+      "approvedFrom": "characters/hammersmith/candidates/hammersmith-sheet-v2.png"
     },
     "fuliginous": {
       "name": "Brother Fuliginous",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/fuliginous/sheet.png",
       "lock": "Brother Fuliginous exactly as in his sheet: a young slight Black British friar with a battered Polaroid camera.",
-      "height": 1.7
+      "height": 1.7,
+      "approvedFrom": "characters/fuliginous/candidates/fuliginous-sheet-v1.png"
     },
     "portico": {
       "name": "Lord Portico",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/portico/sheet.png",
       "lock": "Lord Portico exactly as in his sheet: Door's father, a thin British Chinese man of about sixty with her heart-shaped face, almost bald, threadbare smoking jacket, black skullcap. In Door's dream (12.1): younger, thick black hair, an easy smile.",
-      "height": 1.72
+      "height": 1.72,
+      "approvedFrom": "characters/portico/candidates/portico-sheet-v1.png"
     },
     "arch-family": {
       "name": "Door's mother, sister and brother",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/arch-family/sheet.png",
       "lock": "Door's mother, sister and brother exactly as in their group sheet, faintly translucent, like memories.",
-      "height": 1.6
+      "height": 1.6,
+      "approvedFrom": "characters/arch-family/candidates/arch-family-sheet-v2.png"
     },
     "stockton": {
       "name": "Mr Stockton",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/stockton/sheet.png",
       "lock": "Mr Stockton exactly as in his sheet: a British Hong Kong media magnate of about sixty, silver hair, rimless glasses, charcoal three-piece suit.",
-      "height": 1.72
+      "height": 1.72,
+      "approvedFrom": "characters/stockton/candidates/stockton-sheet-v1.png"
     },
     "weasel": {
       "name": "The Great Weasel",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/weasel/sheet.png",
       "lock": "The Great Weasel exactly as in its sheet: a weasel the size of a horse, glossy dark-brown fur, cream throat, fierce black eyes.",
       "height": 1.6,
-      "heightNote": "at the shoulder, the size of a horse"
+      "heightNote": "at the shoulder, the size of a horse",
+      "approvedFrom": "characters/weasel/candidates/weasel-sheet-v1.png"
     },
     "longtail": {
       "name": "Master Longtail",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/rat/sheet.png",
       "lock": "Master Longtail: a large old dark brown rat (clan Gray) with a long pink tail, a grizzled muzzle and a torn left ear.",
       "height": 0.3,
       "heightNote": "nose to rump, the tail as long again",
-      "notes": "Fact check 2026-10-24: the novel makes him dark brown, not black; the sheet needs remaking before approval."
+      "notes": "Fact check 2026-10-24: the novel makes him dark brown, not black; the sheet needs remaking before approval.",
+      "approvedFrom": "characters/rat/candidates/rat-sheet-v2.png"
     },
     "misswhiskers": {
       "name": "Miss Whiskers",
-      "approved": false,
+      "approved": true,
       "sheet": "characters/misswhiskers/sheet.png",
       "lock": "Miss Whiskers exactly as in her sheet: a small sleek brown rat with very long white whiskers.",
       "height": 0.2,
-      "heightNote": "nose to rump"
+      "heightNote": "nose to rump",
+      "approvedFrom": "characters/misswhiskers/candidates/misswhiskers-sheet-v1.png"
     },
     "lucienne": {
       "name": "Lucienne",
@@ -461,7 +488,8 @@
       "the bronze spear of faces",
       "the obsidian boar token",
       "Old Bailey's silver box"
-    ]
+    ],
+    "approved": true
   },
   "background": {
     "crowd": "Floating Market traders and buyers (a knight selling lost property, a dentist with a hand drill, dream sellers), described in the shot; faces kept small or turned away.",
@@ -480,8 +508,8 @@
     },
     "library": {
       "name": "Lucienne's library (from the Sandman)",
-      "look": "Lucienne's library between worlds: endless dark wooden shelves of books that were never written, lamplight, a plain wooden door standing alone in the aisle.",
-      "scale": "Shelves about 5 m tall; the lone door is an ordinary 2.1 m door.",
+      "look": "Lucienne's library between worlds: tall dark bookshelves of books that were never written, a long wooden reading table with an oil lantern, drifting dust and sand, and in the far wall a row of doors from other stories: a dark plank door marked NEVERWHERE, a pale blue door marked CORALINE, a rough wooden door marked THE ALCHEMIST, a white door standing ajar on mist.",
+      "scale": "Shelves about 5 m tall; each door an ordinary 2.1 m door; the reading table waist-high.",
       "plate": "assets/plates/library-hub/plate.png",
       "approved": true,
       "reuse": "assets/plates/library-hub/plate.png"
@@ -685,6 +713,56 @@
       "plate": "assets/plates/nw-market-b/plate.png",
       "approved": true,
       "approvedFrom": "assets/plates/nw-market-b/candidates/nw-place-market-b-v1.png"
+    },
+    "dream-throne": {
+      "name": "The throne room of the Dreaming (from the Sandman)",
+      "look": "The throne room of the Dreaming: a vast floor of polished black glass inlaid with fine silver lines, walls of night sky full of stars, a high black throne with one candle beside it, pale gates with antler-like spires far behind.",
+      "scale": "The throne about 2.5 m tall; the gates about 4 m; the candle stand waist-high.",
+      "plate": "assets/plates/throne-room/plate.png",
+      "approved": true,
+      "reuse": "assets/plates/throne-room/plate.png"
+    },
+    "tunnels": {
+      "name": "Under London: the old tunnels",
+      "look": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high.",
+      "plate": null,
+      "approved": false
+    },
+    "office": {
+      "name": "Aurie's office off the Strand",
+      "look": "Aurie's open-plan office off the Strand on a Friday evening: rows of desks with grey monitors and in-trays, strip lights, windows onto wet London streets at dusk.",
+      "scale": "Desks waist-high; the ceiling about 2.8 m; the windows about 2 m tall.",
+      "plate": null,
+      "approved": false
+    },
+    "ladder-tower": {
+      "name": "The ladder up the tower",
+      "look": "The outside of a stone tower a thousand feet above London in daylight: a rusted iron ladder bolted to the sheer wall, the whole city spread far below, wind.",
+      "scale": "Rungs about 30 cm apart, the ladder about 50 cm wide: one person fills it; the city below is tiny.",
+      "plate": null,
+      "approved": false
+    },
+    "rooftops": {
+      "name": "Old Bailey's rooftops",
+      "look": "Old Bailey's rooftops: slate roofs and chimney stacks of old London at dusk, a tent of tarpaulin and rope, a small fire with a cooking pot, starlings and pigeons.",
+      "scale": "Chimney stacks about 2 m above the roof; the tent about 2 m high; the pot knee-high.",
+      "plate": null,
+      "approved": false
+    },
+    "flat-living": {
+      "name": "Aurie's flat: living room and kitchen",
+      "look": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall.",
+      "plate": null,
+      "approved": false
+    },
+    "flat-bathroom": {
+      "name": "Aurie's flat: the bathroom",
+      "look": "Aurie's small bathroom: white tiles, a bathtub with a shower curtain pushed back, a sink and a mirror, spotlessly empty.",
+      "scale": "The bath about 1.7 m long and knee-high; the sink waist-high.",
+      "plate": null,
+      "approved": false
     },
     "penthouse": {
       "name": "The penthouse",

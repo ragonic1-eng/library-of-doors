@@ -1056,7 +1056,9 @@ export default function Player({ book }: { book: Book }) {
   useEffect(() => () => { musicRef.current.a?.pause(); ambRef.current.a?.pause(); }, []);
 
   const talker = phase === "talk" ? scene.conversation?.character : undefined;
-  const reactFor = (m: string) => (talker ? media(`${book.id}/react/${talker}-${m}.mp4`) : undefined);
+  // A talk can have its own loops (Neverwhere: one per scene, so the set behind the speaker matches the scene).
+  const loopKey = scene.conversation?.loop ?? talker;
+  const reactFor = (m: string) => (talker ? media(`${book.id}/react/${loopKey}-${m}.mp4`) : undefined);
   // Prefer the exact mood, then neutral; if neither exists, the scene's last frame stays on screen.
   // Two layers: the listening loop (mood, else neutral) and the talking loop, which cross-fades in while the voice is
   // audible. A character with only a talking loop keeps it on screen, held still, between lines.

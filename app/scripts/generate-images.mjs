@@ -156,6 +156,48 @@ ${STYLE}`,
   }
 }
 
+// Neverwhere keyframes and stills (Phase 5), one job group per batch (nw-A = Prologue to 3, nw-B = 4 to 6, ...).
+// Every prompt is assembled from the cast record and the shot list: the approved sheet and lock text of each person in
+// frame (Aurie's real face photographs first), her look for that scene, the approved place plate, the shot's
+// composition, the place's locked look and its scale line. A shot whose place or people are not approved yet has a
+// missing reference, so it waits instead of running.
+const NW_SHOTS_FILE = join(ROOT, "app", "src", "content", "books", "neverwhere", "shots.json");
+if (existsSync(NW_CAST_FILE) && existsSync(NW_SHOTS_FILE)) {
+  const nw = JSON.parse(readFileSync(NW_CAST_FILE, "utf8"));
+  const shots = JSON.parse(readFileSync(NW_SHOTS_FILE, "utf8")).shots;
+  const K = (id) => join(ROOT, "assets", "keyframes", "neverwhere", id);
+  const ordOf = (s) => s.split(".").map(Number);
+  const cmp = (a, b) => { const [x1, y1] = ordOf(a), [x2, y2] = ordOf(b); return x1 - x2 || y1 - y2; };
+  const batchOf = (s) => "AAAABBBCCCDDEEEFFFGGGHHH"[Math.min(ordOf(s)[0], 23)];
+  const sheetOf = (w) => (w === "aurie" ? join(C("aurie-mayhew"), "sheet.png") : join(ROOT, nw.characters[w].sheet));
+  for (const [id, sh] of Object.entries(shots)) {
+    if (sh.reuse || sh.made || !sh.keyframe || !sh.place) continue;
+    const people = sh.cast.filter((w) => nw.characters[w]);
+    const aurie = people.includes("aurie"), dream = people.includes("aurie-dream");
+    const smiling = aurie && /Aurie[^.;]*\b(smil|grin|laugh)/i.test(sh.keyframe);
+    const faces = aurie ? [...AURIE_NOW, ...(smiling ? AURIE_SMILE : [])] : dream ? AURIE_FACES : [];
+    const plate = join(ROOT, nw.places[sh.place].plate ?? `assets/plates/nw-${sh.place}/plate.png`);
+    const refs = [...faces, ...people.map(sheetOf), plate];
+    const look = aurie ? (nw.characters.aurie.looks ?? []).find((l) => cmp(sh.scene, l.from) >= 0 && cmp(sh.scene, l.to) <= 0) : null;
+    const guide = refs.map((r, i) => `(${i + 1}) ${faces.includes(r) ? "a real photograph of Aurie (her face)" : r === plate ? "the location plate: match its architecture, light and colours exactly, take no people from it" : `the approved sheet for ${nw.characters[people[people.map(sheetOf).indexOf(r)]].name}`}`).join("; ");
+    const locks = people.map((w) => nw.characters[w].lock + (w === "aurie" && look ? ` In this scene she wears ${look.look}.` : "")).join("\n");
+    const faceVisible = !/from behind|back to (the )?camera|seen from behind/i.test(sh.keyframe);
+    jobs.push({
+      id: `nw-kf-${id}`, group: `nw-${batchOf(sh.scene)}`, dir: join(K(id), "candidates"), approved: join(K(id), "keyframe.png"),
+      who: (aurie || dream) && faceVisible ? "aurie" : null,
+      prompt: () => `Reference images, in order: ${guide}.
+${locks}
+Scene${sh.kind === "loop" ? " (the first frame of a talking loop)" : sh.kind === "clip" ? " (the first frame of a video clip)" : ""}: ${sh.keyframe}
+Location: ${sh.location}
+${sh.scale}
+All people must match their reference images exactly: same faces, hair, costumes and builds; never give one person another person's face.${aurie || dream ? " Aurie's face is the real woman of the photographs, a little slimmer in the face as in her sheet, instantly recognisable." : ""}
+One single cinematic photograph in 16:9, never a collage, grid or split screen, no text except signs the scene names.
+${STYLE}`,
+      refs,
+    });
+  }
+}
+
 // The ¥15 video test (plan decision 3): two real 21.3 first frames on the approved Westminster plate.
 if (existsSync(NW_CAST_FILE)) {
   const nw = JSON.parse(readFileSync(NW_CAST_FILE, "utf8"));
@@ -493,7 +535,7 @@ async function run(job) {
     return;
   }
   mkdirSync(job.dir, { recursive: true });
-  const who = identityOf(job.id);
+  const who = job.who !== undefined ? job.who : identityOf(job.id);
   let kept = 0;
   const budgetTries = minScore != null && who ? Math.max(perJob, maxTries) : perJob;
   for (let attempt = 0; attempt < budgetTries && kept < perJob; attempt++) {

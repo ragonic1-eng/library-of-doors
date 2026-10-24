@@ -71,6 +71,9 @@ for (const dir of readdirSync(BOOKS)) {
   const cards = existsSync(join(CARDS, `${book.id}.json`)) ? JSON.parse(readFileSync(join(CARDS, `${book.id}.json`), "utf8")) : {};
   const media = join(APP, "public", "clips", book.id);
   const haveMedia = existsSync(media);
+  // A book still being built is missing most of its media by design: count it as progress, not as failures.
+  let notYet = 0;
+  const want = (m) => (book.status === "planning" ? notYet++ : err(m));
   const S = book.scenes;
   for (const [id, card] of Object.entries(cards)) {
     if (!card || typeof card !== "object") continue;
@@ -104,11 +107,11 @@ for (const dir of readdirSync(BOOKS)) {
     const allBeats = [...(sc.beats ?? []), ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])];
     for (const b of allBeats) {
       if (b.fx && !FX.has(b.fx)) err(`${at}: unknown fx "${b.fx}"`);
-      if (haveMedia && b.clip && !existsSync(join(media, `${b.clip}.mp4`))) err(`${at}: clip ${b.clip}.mp4 is missing`);
-      if (haveMedia && b.still && !existsSync(join(media, "stills", `${b.still}.jpg`))) err(`${at}: still ${b.still}.jpg is missing`);
+      if (haveMedia && b.clip && !existsSync(join(media, `${b.clip}.mp4`))) want(`${at}: clip ${b.clip}.mp4 is missing`);
+      if (haveMedia && b.still && !existsSync(join(media, "stills", `${b.still}.jpg`))) want(`${at}: still ${b.still}.jpg is missing`);
       if (bed(b.ambience)) err(`${at}: ambience ${b.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
-      if (haveMedia && b.sfx && !existsSync(join(media, "audio", "sfx", `${b.sfx}.mp3`))) err(`${at}: sound effect ${b.sfx}.mp3 is missing (run tools/gen_sfx.py)`);
-      if (haveMedia && b.text && !existsSync(join(media, "audio", "lines", `${lineId(b.text)}.mp3`))) err(`${at}: no narration recording for "${b.text.slice(0, 50)}" (run tools/gen_narration.py, then tools/pace_lines.py)`);
+      if (haveMedia && b.sfx && !existsSync(join(media, "audio", "sfx", `${b.sfx}.mp3`))) want(`${at}: sound effect ${b.sfx}.mp3 is missing (run tools/gen_sfx.py)`);
+      if (haveMedia && b.text && !existsSync(join(media, "audio", "lines", `${lineId(b.text)}.mp3`))) want(`${at}: no narration recording for "${b.text.slice(0, 50)}" (run tools/gen_narration.py, then tools/pace_lines.py)`);
     }
 
     const ids = new Set();
@@ -200,6 +203,7 @@ for (const dir of readdirSync(BOOKS)) {
   }
   for (const id of Object.keys(S)) if (!reach.has(id)) warn(`${book.id} ${id}: no path from the start reaches this scene`);
   if (!haveMedia) warn(`${book.id}: media folder not present here, picture and narration checks skipped`);
+  if (notYet) warn(`${book.id}: still being built, ${notYet} pictures, recordings or sounds not made yet`);
 }
 
 for (const w of warnings) console.log(`  note: ${w}`);

@@ -49,7 +49,9 @@
           ],
           "still": "nw-0.1-wake",
           "cast": [
-            "aurie-dream"
+            "death",
+            "hob",
+            "lucienne"
           ]
         },
         {
@@ -59,7 +61,6 @@
           ],
           "still": "nw-0.1-daniel",
           "cast": [
-            "aurie-dream",
             "daniel-dream"
           ]
         },
@@ -70,8 +71,7 @@
           ],
           "still": "nw-0.1-ash",
           "cast": [
-            "aurie-dream",
-            "lucienne"
+            "aurie-dream"
           ]
         },
         {
@@ -397,7 +397,8 @@
           "2.1.A": "Aurie helps without asking who she is.",
           "2.1.B": "Aurie insists on a doctor and the police.",
           "2.1.C": "Aurie makes a joke of the whole thing."
-        }
+        },
+        "loop": "door-2.1"
       },
       "choices": [
         {
@@ -478,7 +479,8 @@
           "2.2.A": "Aurie says she has not seen her.",
           "2.2.B": "Aurie threatens them with the police.",
           "2.2.C": "Aurie glances at the bathroom and gives the girl away."
-        }
+        },
+        "loop": "croup-vandemar-2.2"
       },
       "choices": [
         {
@@ -642,7 +644,8 @@
           "3.1.A": "A favour. A really big one.",
           "3.1.B": "She'll owe you. So will I.",
           "3.1.C": "Aurie bluffs that Door can pay."
-        }
+        },
+        "loop": "marquis-3.1"
       },
       "choices": [
         {
@@ -873,7 +876,8 @@
           "4.2.A": "Aurie says she does not know where Door is.",
           "4.2.B": "Aurie offers to help them find Door.",
           "4.2.C": "Aurie says she is calling the police."
-        }
+        },
+        "loop": "croup-4.2"
       },
       "choices": [
         {
@@ -1123,7 +1127,8 @@
           "5.2.A": "Aurie greets the rat and asks it about Door.",
           "5.2.B": "Aurie kneels with everyone and waits.",
           "5.2.C": "Aurie grabs for the glass dagger."
-        }
+        },
+        "loop": "ratspeaker-5.2"
       },
       "choices": [
         {
@@ -1338,7 +1343,8 @@
           "6.1.A": "Aurie asks about her, and listens.",
           "6.1.B": "Aurie talks about her own job and fiancée.",
           "6.1.C": "Aurie promises to get her back up here one day."
-        }
+        },
+        "loop": "anaesthesia-6.1"
       },
       "choices": [
         {
@@ -1732,7 +1738,8 @@
           "7.3.A": "Aurie says she did not have much choice.",
           "7.3.B": "Aurie says she came to find her.",
           "7.3.C": "Aurie says Door knew this would happen to her."
-        }
+        },
+        "loop": "door-7.3"
       },
       "choices": [
         {
@@ -1915,7 +1922,8 @@
           "8.4.A": "Aurie says she has nowhere else to be.",
           "8.4.B": "Aurie will come only if Door gets her home.",
           "8.4.C": "Aurie says no, and Door sits beside her in silence until she asks again."
-        }
+        },
+        "loop": "door-8.4"
       },
       "choices": [
         {
@@ -2185,7 +2193,8 @@
           "9.4.A": "Aurie lets Door handle it.",
           "9.4.B": "Aurie speaks up for the marquis.",
           "9.4.C": "Aurie agrees the marquis seems dodgy."
-        }
+        },
+        "loop": "earl-9.4"
       },
       "choices": [
         {
@@ -2449,7 +2458,8 @@
         "exits": {
           "10.3.A": "Aurie puts herself between them and Door.",
           "10.3.B": "Aurie grabs Door's hand and runs."
-        }
+        },
+        "loop": "croup-vandemar-10.3"
       },
       "choices": [
         {
@@ -2594,7 +2604,8 @@
           "10.5.A": "Aurie tells her who she was, gently.",
           "10.5.B": "Aurie tells her cheekily: her birthday, the song she hums.",
           "10.5.C": "Aurie says nothing and walks away."
-        }
+        },
+        "loop": "jessica-10.5"
       },
       "choices": [
         {
@@ -2767,7 +2778,8 @@
           "11.1.A": "Aurie asks for her life back.",
           "11.1.B": "Aurie asks only that Door be helped.",
           "11.1.C": "Aurie asks why an angel lives under London."
-        }
+        },
+        "loop": "islington-11.1"
       },
       "choices": [
         {
@@ -3066,7 +3078,8 @@
           "12.2.A": "Aurie says nothing.",
           "12.2.B": "Aurie asks what she would give for her chance at it.",
           "12.2.C": "Aurie tells her she dreams about the Beast."
-        }
+        },
+        "loop": "hunter-12.2"
       },
       "choices": [
         {
@@ -3161,7 +3174,8 @@
           "13.1.A": "Aurie asks how much of an ordeal it is, and goes.",
           "13.1.B": "Aurie asks if he could just hand the key over, then goes.",
           "13.1.C": "Aurie asks Door whether she wants her to."
-        }
+        },
+        "loop": "abbot-13.1"
       },
       "choices": [
         {
@@ -3371,7 +3385,8 @@
         "exits": {
           "14.1.A": "Aurie holds on and steps onto the train when the doors open.",
           "14.1.B": "Aurie climbs down onto the track after the troll."
-        }
+        },
+        "loop": "other-aurie-14.1"
       },
       "choices": [
         {
@@ -3758,7 +3773,8 @@
         "exits": {
           "15.4.A": "Aurie insists on hiring her.",
           "15.4.B": "Aurie says it is Door's call."
-        }
+        },
+        "loop": "lamia-15.4"
       },
       "choices": [
         {
@@ -3973,7 +3989,8 @@
         "exits": {
           "16.3.A": "Aurie says yes.",
           "16.3.B": "Aurie says no."
-        }
+        },
+        "loop": "lamia-16.3"
       },
       "choices": [
         {
@@ -4131,7 +4148,8 @@
           "17.1.B": "Aurie says nothing.",
           "17.1.C": "Aurie says Door has it.",
           "17.1.D": "Aurie warns Door that Hunter is with them."
-        }
+        },
+        "loop": "croup-vandemar-17.1"
       },
       "choices": [
         {
@@ -4967,7 +4985,8 @@
           "20.3.A": "Aurie tells Door not to open it; they don't matter.",
           "20.3.B": "Aurie begs Door to open it.",
           "20.3.C": "Aurie accuses it of sinking a city and calling it unfortunate."
-        }
+        },
+        "loop": "islington-20.3"
       },
       "choices": [
         {
@@ -5380,7 +5399,8 @@
           "21.1.A": "Aurie asks when they could do this.",
           "21.1.B": "Aurie asks what happens to London Below first.",
           "21.1.C": "Aurie gives the key back and says she is staying."
-        }
+        },
+        "loop": "abbot-21.1"
       },
       "choices": [
         {
@@ -5602,7 +5622,8 @@
           "21.3.B": "Aurie stays (earned by loyalty and their bond).",
           "21.3.B2": "Aurie stays, as she already said at the friars' table.",
           "21.3.C": "Aurie takes the key and turns it herself."
-        }
+        },
+        "loop": "door-21.3"
       },
       "choices": [
         {
@@ -5903,7 +5924,8 @@
         "exits": {
           "22.4.A": "Aurie cuts a door in the brick with Hunter's knife and hammers on it.",
           "22.4.B": "Aurie takes the next taxi home."
-        }
+        },
+        "loop": "gary-22.4"
       },
       "choices": [
         {

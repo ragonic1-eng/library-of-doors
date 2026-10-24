@@ -8,14 +8,15 @@
         "beast"
       ],
       "location": "The labyrinth under London: old brick sewer tunnels opening into the Fleet Marsh, a floor of mud and foul standing water, whining mosquitoes, lit only by a fitful yellow-amber flare.",
-      "keyframe": "POV of a dreamer standing in a Victorian brick sewer: the Great Beast of London fills the tunnel ahead, a boar so huge it touches both walls and the curved roof (the size of a bull elephant), massive head down, black-brown bristled hide stuck with broken spears and blades, two curved tusks rising from the lower jaw, small red eyes, breath steaming in the cold. In the lower frame the dreamer's own hand grips a spear: the arm furred with dark hair, the nails almost claws.",
+      "keyframe": "POV of a dreamer standing in a Victorian brick sewer: the Great Beast of London fills the tunnel ahead completely: a boar the size of a bull elephant, its bristled back scraping the curved brick roof and its shoulders brushing both walls, so that almost nothing of the tunnel shows around it, massive head down, black-brown bristled hide stuck with broken spears and blades, two curved tusks rising from the lower jaw, small red eyes, breath steaming in the cold. In the lower frame the dreamer's own hand grips a spear: the arm furred with dark hair, the nails almost claws.",
       "motion": "Almost still for two seconds (it pauses 'for a hundred years'): steam drifts, water drips. Then the Beast lowers its head and charges in dreamlike slow motion, drops of water hanging in the air; the spear is thrown, too late; the tusks fill the frame and it cuts to black.",
       "seconds": 6,
       "source": "bridge; the dream, novel ch. 1 lines 750-762",
       "why": "The recurring nightmare is the spine of the book: it opens the bridge from the Sandman, returns as the dead end at 19.2 and comes true at 19.1.",
       "audited": true,
       "place": "labyrinth",
-      "scale": "Scale: People and creatures: the Great Beast of London 3.2 m (at the shoulder, about 6 m long). Brick tunnels about 4 m high and 4 m wide: a standing person reaches less than half way to the roof; the Beast's back nearly scrapes it. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+      "scale": "Scale: People and creatures: the Great Beast of London 3.2 m (at the shoulder, about 6 m long). Brick tunnels about 4 m high and 4 m wide: a standing person reaches less than half way to the roof; the Beast's back nearly scrapes it. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "the dream itself, seen as a vision (Lucienne's report in 0.1; Aurie's nightmare in 2.1)"
     },
     "nw-0.2-threshold-v": {
       "kind": "clip",
@@ -23,7 +24,7 @@
       "cast": [
         "aurie-dream"
       ],
-      "location": "Lucienne's library between worlds: endless dark wooden shelves of books that were never written, lamplight, a plain wooden door standing alone in the aisle.",
+      "location": "Lucienne's library between worlds: tall dark bookshelves of books that were never written, a long wooden reading table with an oil lantern, drifting dust and sand, and in the far wall a row of doors from other stories: a dark plank door marked NEVERWHERE, a pale blue door marked CORALINE, a rough wooden door marked THE ALCHEMIST, a white door standing ajar on mist.",
       "keyframe": "From behind and slightly to one side, medium-wide: Aurie as Dream of the Endless in her long black high-collared gown with a faint starry shimmer, raven-black hair down her back, stands before a lone wooden door in the dim library, her hand on the handle. The door has just begun to open: a slice of wet street light, rain and warm pub-window glow spills across the floorboards.",
       "motion": "The door swings slowly inward; rain-light and a few blown drops wash over the gown; she steps through, back to camera, and the library behind her stays dark. Plays forward once.",
       "seconds": 5,
@@ -31,7 +32,7 @@
       "why": "The threshold between the two books: one doorway shot carries the reader from the Sandman into Neverwhere.",
       "audited": true,
       "place": "library",
-      "scale": "Scale: People and creatures: Aurie 1.65 m. Shelves about 5 m tall; the lone door is an ordinary 2.1 m door. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+      "scale": "Scale: People and creatures: Aurie 1.65 m. Shelves about 5 m tall; each door an ordinary 2.1 m door; the reading table waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     },
     "nw-0.3-umbrella-v": {
       "kind": "clip",
@@ -131,7 +132,8 @@
       "why": "One shared clip for every dead end: her sister sends her back, so each dead end costs one clip, not two.",
       "audited": true,
       "place": "death-grey",
-      "scale": "Scale: People and creatures: Death 1.65 m. No objects at all; the mist begins a few metres away; a person stands at ordinary height, camera at adult eye level. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+      "scale": "Scale: People and creatures: Death 1.65 m. No objects at all; the mist begins a few metres away; a person stands at ordinary height, camera at adult eye level. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "after a death: the grey edge of the dream where her sister waits"
     },
     "nw-5.3-hall-v": {
       "kind": "clip",
@@ -715,6 +717,488 @@
       "audited": true,
       "place": "penthouse",
       "scale": "Scale: People and creatures: Aurie 1.65 m; the girl from Computer Services 1.6 m, about the same height as Aurie. The ceiling about 3 m; packing cases knee-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-0.1-library": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "aurie-dream",
+        "lucienne"
+      ],
+      "place": "library",
+      "keyframe": "Wide shot in Lucienne's library: Aurie as Dream of the Endless (her long black high-collared gown with a faint starry shimmer, raven-black hair, pinpoints of starlight in her eyes) stands by the reading table looking at the far wall, where the dark plank door marked NEVERWHERE trembles in its frame, dust shaking loose from it; Lucienne, exactly as in her Sandman sheet, beside her holds up her lantern, alarmed.",
+      "source": "bridge (bridges.md, the default opening)",
+      "why": "",
+      "audited": false,
+      "location": "Lucienne's library between worlds: tall dark bookshelves of books that were never written, a long wooden reading table with an oil lantern, drifting dust and sand, and in the far wall a row of doors from other stories: a dark plank door marked NEVERWHERE, a pale blue door marked CORALINE, a rough wooden door marked THE ALCHEMIST, a white door standing ajar on mist.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Lucienne 1.8 m, about half a head taller than Aurie. Shelves about 5 m tall; each door an ordinary 2.1 m door; the reading table waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-0.1-wake": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "death",
+        "hob",
+        "lucienne"
+      ],
+      "reuse": "app/public/clips/sandman/stills/still-wake.jpg",
+      "source": "bridge: the Sandman's own wake picture (end-A)",
+      "audited": true
+    },
+    "nw-0.1-daniel": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "daniel-dream"
+      ],
+      "reuse": "app/public/clips/sandman/stills/still-daniel-dream.jpg",
+      "source": "bridge: the Sandman's own picture of Daniel (end-A)",
+      "audited": true
+    },
+    "nw-0.1-ash": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "aurie-dream"
+      ],
+      "reuse": "app/public/clips/sandman/aurie-alone.mp4#0.4",
+      "source": "bridge: a frame of the Sandman's own clip (end-B)",
+      "audited": true
+    },
+    "nw-0.1-flat": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "aurie"
+      ],
+      "place": "flat-living",
+      "keyframe": "Medium-wide at night in Aurie's living room: Aurie in her black cable-knit sweater and black jeans asleep on the sofa, a book open on her chest, lamplight; on the plain wall behind her the faint outline of a door that is not there glows very slightly.",
+      "source": "bridge (bridges.md, after the Sandman ending end-C)",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-0.1-throne": {
+      "kind": "still",
+      "scene": "0.1",
+      "cast": [
+        "aurie-dream",
+        "lucienne"
+      ],
+      "place": "dream-throne",
+      "keyframe": "Wide: Aurie as Dream of the Endless (her long black high-collared gown with a faint starry shimmer, raven-black hair, pinpoints of starlight in her eyes) sits on her high black throne, unchanged and still; before her, on the black glass floor where nothing stood yesterday, a plain black London street door stands on its own; Lucienne, exactly as in her Sandman sheet, holds her lantern up toward it.",
+      "source": "bridge (bridges.md, after the Sandman ending end-R)",
+      "why": "",
+      "audited": false,
+      "location": "The throne room of the Dreaming: a vast floor of polished black glass inlaid with fine silver lines, walls of night sky full of stars, a high black throne with one candle beside it, pale gates with antler-like spires far behind.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Lucienne 1.8 m, about half a head taller than Aurie. The throne about 2.5 m tall; the gates about 4 m; the candle stand waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "variant opening (after the Sandman ending end-R): her throne room"
+    },
+    "nw-0.2-door": {
+      "kind": "still",
+      "scene": "0.2",
+      "cast": [
+        "aurie-dream",
+        "lucienne"
+      ],
+      "place": "library",
+      "keyframe": "Medium shot from behind and to one side of Aurie as Dream of the Endless (her long black high-collared gown with a faint starry shimmer, raven-black hair, pinpoints of starlight in her eyes), facing the dark plank door marked NEVERWHERE, close now: peeling black paint, a brass letterbox, a London Underground roundel worn into the wood; Lucienne at her shoulder with the lantern.",
+      "source": "bridge (bridges.md)",
+      "why": "",
+      "audited": false,
+      "location": "Lucienne's library between worlds: tall dark bookshelves of books that were never written, a long wooden reading table with an oil lantern, drifting dust and sand, and in the far wall a row of doors from other stories: a dark plank door marked NEVERWHERE, a pale blue door marked CORALINE, a rough wooden door marked THE ALCHEMIST, a white door standing ajar on mist.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Lucienne 1.8 m, about half a head taller than Aurie. Shelves about 5 m tall; each door an ordinary 2.1 m door; the reading table waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-0.3-kerb": {
+      "kind": "still",
+      "scene": "0.3",
+      "cast": [
+        "aurie",
+        "oldwoman"
+      ],
+      "place": "scottish-street",
+      "keyframe": "Night, pelting rain outside the pub: Aurie in her leaving party clothes (black going-out top, black jeans, black coat, wet hair) sits shivering on the kerb clutching a rolled-up white umbrella; the old woman with the umbrella (tiny, very old, sharp eyes in a beaky grimy face, wool hat, layers of coats and shawls) bends over her, holding Aurie's hand palm up, and blinks in surprise. The old woman has no umbrella of her own yet: the only umbrella in the picture is the rolled-up white one in Aurie's hands.",
+      "source": "novel prologue lines 25-95",
+      "why": "",
+      "audited": false,
+      "location": "A narrow street in a small Scottish town at night, outside a pub with glowing windows; pelting rain, wet cobbles.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the old woman with the umbrella 1.45 m, about one head shorter than Aurie. The pub door is about 2 m high; the umbrella opens about 1 m across. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.1-tunnels": {
+      "kind": "still",
+      "scene": "1.1",
+      "cast": [
+        "croup",
+        "vandemar",
+        "ross"
+      ],
+      "place": "tunnels",
+      "keyframe": "In the tunnels by the light of one far lamp: Mr Croup (thin, pallid, lank greasy orange hair, graveyard grin, greasy black suit with every seam subtly wrong) and Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) stand back, elegant and patient, while Mr Ross (huge, hairless, grubby, a filthy T-shirt and crusted jeans) lumbers ahead into the dark, head down, like a dog on a scent.",
+      "source": "novel ch. 1 lines 155-175",
+      "why": "",
+      "audited": false,
+      "location": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m; Mr Vandemar 2.05 m, about one and a half heads taller than Mr Croup; Mr Ross 1.95 m, about one head taller than Mr Croup. Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.1-rat": {
+      "kind": "still",
+      "scene": "1.1",
+      "cast": [
+        "croup",
+        "vandemar"
+      ],
+      "place": "tunnels",
+      "keyframe": "Medium shot in the tunnel: Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) holds a brown rat on the point of his knife and lifts it toward his mouth; Mr Croup (thin, pallid, lank greasy orange hair, graveyard grin, greasy black suit with every seam subtly wrong)'s hand is a blur mid-slap, knocking it away.",
+      "source": "novel ch. 1 lines 180-195",
+      "why": "",
+      "audited": false,
+      "location": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m; Mr Vandemar 2.05 m, about one and a half heads taller than Mr Croup. Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.1-ross": {
+      "kind": "still",
+      "scene": "1.1",
+      "cast": [
+        "door",
+        "ross",
+        "croup",
+        "vandemar"
+      ],
+      "place": "tunnels",
+      "keyframe": "In the low burrow by lamplight: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted), a fresh cut on her arm, presses her palm flat to Mr Ross's chest; the huge hairless man freezes, eyes wide, as if a door had opened inside him; far back in the tunnel Mr Croup (thin, pallid, lank greasy orange hair, graveyard grin, greasy black suit with every seam subtly wrong) and Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) wait.",
+      "source": "novel ch. 1 lines 420-450",
+      "why": "",
+      "audited": false,
+      "location": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Scale: People and creatures: Door 1.52 m; Mr Ross 1.95 m, about two heads taller than Door; Mr Croup 1.68 m, about half a head taller than Door; Mr Vandemar 2.05 m, about two and a half heads taller than Door. Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.1-wall": {
+      "kind": "still",
+      "scene": "1.1",
+      "cast": [
+        "door"
+      ],
+      "place": "tunnels",
+      "keyframe": "Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted), bleeding, cornered at the blind brick end of the tunnel, both palms flat on the wall, eyes shut, praying.",
+      "source": "novel ch. 1 lines 600-615",
+      "why": "",
+      "audited": false,
+      "location": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
+      "scale": "Scale: People and creatures: Door 1.52 m. Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.2-office": {
+      "kind": "still",
+      "scene": "1.2",
+      "cast": [
+        "aurie"
+      ],
+      "place": "office",
+      "keyframe": "Medium shot at Aurie's desk at dusk, the office emptying: Aurie in her suit (black trouser suit, white shirt) stares at a framed photograph of Jessica with a yellow Post-it stuck to the glass; a row of little plastic trolls with wild hair rings her monitor; papers for a late report.",
+      "source": "novel ch. 1 lines 320-395",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's open-plan office off the Strand on a Friday evening: rows of desks with grey monitors and in-trays, strip lights, windows onto wet London streets at dusk.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m. Desks waist-high; the ceiling about 2.8 m; the windows about 2 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.2-coin": {
+      "kind": "still",
+      "scene": "1.2",
+      "cast": [
+        "aurie",
+        "jessica",
+        "iliaster"
+      ],
+      "place": "brick-wall",
+      "keyframe": "Evening on the pavement: Aurie in her suit (black trouser suit, white shirt, black coat) stoops to drop a coin into the hand of Iliaster (short, old, balding, scraggly yellow-grey beard, dirt-lined face, a railwayman's lamp) sitting in a doorway; Jessica (British Korean, long dark chestnut corkscrew curls, camel city coat over a black dress) pulls at Aurie's arm, impatient.",
+      "source": "novel ch. 1 lines 570-590",
+      "why": "",
+      "audited": false,
+      "location": "A London pavement at night beside a high blank brick wall, street lamps, wet paving stones.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Jessica Bartram 1.68 m, about the same height as Aurie; Iliaster 1.55 m, about half a head shorter than Aurie. The brick wall is about 4 m high; the door that opens in it is ordinary size, about 2 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "travel: hurrying from the office to the restaurant"
+    },
+    "nw-1.2-blood": {
+      "kind": "still",
+      "scene": "1.2",
+      "cast": [
+        "aurie",
+        "door",
+        "jessica"
+      ],
+      "place": "brick-wall",
+      "keyframe": "Night under a street lamp by the high brick wall: Aurie in her suit (black trouser suit, white shirt, black coat) kneels over Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted), who lies on the pavement, her eyes open, white in a smudge of dust and blood; Aurie looks at the blood on her own fingertips; Jessica in her camel coat stands over them, impatient.",
+      "source": "novel ch. 1 lines 640-697",
+      "why": "",
+      "audited": false,
+      "location": "A London pavement at night beside a high blank brick wall, street lamps, wet paving stones.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie; Jessica Bartram 1.68 m, about the same height as Aurie. The brick wall is about 4 m high; the door that opens in it is ordinary size, about 2 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.2-flat": {
+      "kind": "still",
+      "scene": "1.2",
+      "cast": [
+        "aurie",
+        "door"
+      ],
+      "place": "aurie-flat",
+      "keyframe": "Night on the landing outside Aurie's flat: Aurie in her suit (black trouser suit, white shirt, black coat), the front of her white shirt soaked with blood, carries Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) in her arms; Door's limp hand touches the locked front door and it swings open on its own into the dark hallway.",
+      "source": "novel ch. 1 lines 700-720",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat at night: the narrow hallway and front door, stairwell light beyond.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The hallway is about 1 m wide; the front door about 2 m high; a wall telephone at shoulder height. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-1.3-midnight": {
+      "kind": "still",
+      "scene": "1.3",
+      "cast": [
+        "aurie",
+        "door"
+      ],
+      "place": "brick-wall",
+      "keyframe": "Midnight in the rain by the high brick wall: Aurie in her suit (black trouser suit, white shirt, black coat) finds Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) still lying on the pavement under a street lamp, unseen by anyone, and crouches to lift her.",
+      "source": "added (variant: the ambulance never came)",
+      "why": "",
+      "audited": false,
+      "location": "A London pavement at night beside a high blank brick wall, street lamps, wet paving stones.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The brick wall is about 4 m high; the door that opens in it is ordinary size, about 2 m. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-2.1-flat-morning": {
+      "kind": "still",
+      "scene": "2.1",
+      "cast": [
+        "aurie",
+        "door"
+      ],
+      "place": "flat-living",
+      "keyframe": "Morning in the kitchenette: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) stands at the window staring down at a red bus; Aurie in her rumpled suit (black trouser suit, white shirt, no coat) winds a bandage round Door's forearm at the sink.",
+      "source": "novel ch. 2 lines 790-840",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "morning: she wakes from the dream in her flat"
+    },
+    "nw-2.2-doorway": {
+      "kind": "still",
+      "scene": "2.2",
+      "cast": [
+        "aurie",
+        "croup",
+        "vandemar"
+      ],
+      "place": "aurie-flat",
+      "keyframe": "Aurie's front door open onto the landing: Aurie in her rumpled suit (black trouser suit, white shirt, no coat) holds it half shut; on the landing Mr Croup (thin, pallid, lank greasy orange hair, graveyard grin, greasy black suit with every seam subtly wrong) holds up a poster reading HAVE YOU SEEN THIS GIRL? with a drawing of a girl, smiling a fraction too late, and Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) looms behind him.",
+      "source": "novel ch. 2 lines 860-930",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat at night: the narrow hallway and front door, stairwell light beyond.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Mr Croup 1.68 m, about the same height as Aurie; Mr Vandemar 2.05 m, about one and a half heads taller than Aurie. The hallway is about 1 m wide; the front door about 2 m high; a wall telephone at shoulder height. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-2.2-bathroom": {
+      "kind": "still",
+      "scene": "2.2",
+      "cast": [
+        "vandemar"
+      ],
+      "place": "flat-bathroom",
+      "keyframe": "Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) fills the doorway of the tiny bathroom, sniffing the air; the bath, the curtain and the floor are spotlessly empty.",
+      "source": "novel ch. 2 lines 900-925",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small bathroom: white tiles, a bathtub with a shower curtain pushed back, a sink and a mirror, spotlessly empty.",
+      "scale": "Scale: People and creatures: Mr Vandemar 2.05 m. The bath about 1.7 m long and knee-high; the sink waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "Vandemar walks into the bathroom"
+    },
+    "nw-2.2-tea": {
+      "kind": "still",
+      "scene": "2.2",
+      "cast": [
+        "aurie",
+        "door"
+      ],
+      "place": "flat-living",
+      "keyframe": "The kitchenette: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) pours tea from the kettle into two mugs; Aurie in her rumpled suit (black trouser suit, white shirt, no coat) stands by the answering machine, its red light blinking.",
+      "source": "novel ch. 2 lines 980-1005",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-2.3-pigeon": {
+      "kind": "still",
+      "scene": "2.3",
+      "cast": [
+        "aurie",
+        "door"
+      ],
+      "place": "flat-living",
+      "keyframe": "At the open window: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) holds a grey pigeon and ties a little rolled note to its leg with a blue rubber band; Aurie in her rumpled suit (black trouser suit, white shirt, no coat) watches, baffled.",
+      "source": "novel ch. 2 lines 1040-1070",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-2.3-rat": {
+      "kind": "still",
+      "scene": "2.3",
+      "cast": [
+        "aurie",
+        "door",
+        "rat"
+      ],
+      "place": "flat-living",
+      "keyframe": "The living room floor by the shelves of videotapes: a brown rat sits up on its haunches with a small brown-paper note tied to its back with a blue rubber band; Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) kneels to it, whistling softly; Aurie in her rumpled suit (black trouser suit, white shirt, no coat) stands behind, a TV remote in her hand.",
+      "source": "novel ch. 2 lines 1088-1150",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-3.1-marquis": {
+      "kind": "still",
+      "scene": "3.1",
+      "cast": [
+        "aurie",
+        "marquis"
+      ],
+      "place": "orme-passage",
+      "keyframe": "Under the single gas jet: the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) bows with a flourish and a sudden white grin to Aurie in her suit (black trouser suit, white shirt, black coat), who stares up at him.",
+      "source": "novel ch. 2 lines 1215-1260",
+      "why": "",
+      "audited": false,
+      "location": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-3.2-flare": {
+      "kind": "still",
+      "scene": "3.2",
+      "cast": [
+        "aurie",
+        "marquis"
+      ],
+      "place": "orme-passage",
+      "keyframe": "In the alley the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) kneels by an open manhole, a little metal key in one hand and a burning scarlet flare in the other, lighting rusted rungs that go down into total darkness; Aurie in her suit (black trouser suit, white shirt, black coat) stands over him.",
+      "source": "novel ch. 2 lines 1270-1315",
+      "why": "",
+      "audited": false,
+      "location": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-3.2-ladder": {
+      "kind": "still",
+      "scene": "3.2",
+      "cast": [
+        "marquis"
+      ],
+      "place": "ladder-tower",
+      "keyframe": "Daylight, seen from below on the ladder: the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) climbs the rusted ladder up the outside of the tower a thousand feet above London, both hands off the rungs, waggling his fingers, his huge black coat flapping in the wind; the city tiny beneath him.",
+      "source": "novel ch. 2 lines 1325-1350",
+      "why": "",
+      "audited": false,
+      "location": "The outside of a stone tower a thousand feet above London in daylight: a rusted iron ladder bolted to the sheer wall, the whole city spread far below, wind.",
+      "scale": "Scale: People and creatures: the marquis de Carabas 1.88 m. Rungs about 30 cm apart, the ladder about 50 cm wide: one person fills it; the city below is tiny. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "newPlace": "down the manhole, and the same ladder climbs out into daylight on a tower"
+    },
+    "nw-3.2-roof": {
+      "kind": "still",
+      "scene": "3.2",
+      "cast": [
+        "aurie",
+        "marquis",
+        "oldbailey"
+      ],
+      "place": "rooftops",
+      "keyframe": "On the rooftop at dusk: Old Bailey (short, round, grey muttonchops, a coat made entirely of feathers, ropes wound round him, spectacles on a string) holds out a steaming pot of starling stew; the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) presses an ornate silver box into his other hand; Aurie in her suit (black trouser suit, white shirt, black coat) stands by a chimney stack.",
+      "source": "novel ch. 2 lines 1360-1420",
+      "why": "",
+      "audited": false,
+      "location": "Old Bailey's rooftops: slate roofs and chimney stacks of old London at dusk, a tent of tarpaulin and rope, a small fire with a cooking pot, starlings and pigeons.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie; Old Bailey 1.55 m, about half a head shorter than Aurie. Chimney stacks about 2 m above the roof; the tent about 2 m high; the pot knee-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-3.3-goodbye": {
+      "kind": "still",
+      "scene": "3.3",
+      "cast": [
+        "aurie",
+        "door",
+        "marquis"
+      ],
+      "place": "flat-living",
+      "keyframe": "Aurie's living room: Door, washed now, her short choppy hair shining dark auburn and copper, in the enormous brown leather flying jacket over her patchwork corset bodice, stands on tiptoe to kiss Aurie's cheek; Aurie in her rumpled suit (black trouser suit, white shirt, no coat); the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) kneels by the door.",
+      "source": "novel ch. 2 lines 1450-1485",
+      "why": "",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie; the marquis de Carabas 1.88 m, about one head taller than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-door-2.1": {
+      "kind": "loop",
+      "scene": "2.1",
+      "key": "door-2.1",
+      "cast": [
+        "door"
+      ],
+      "place": "flat-living",
+      "keyframe": "First frame of a talking loop. Medium shot, waist up: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted), her forearm freshly bandaged, sits at the little kitchen table in morning light, facing the camera at a slight three-quarter angle, eyes on someone just beside the lens, guarded, mouth closed.",
+      "motion": "Door speaks quietly to someone just beside the camera, small head movements, she blinks; at the end she is back in the starting pose, mouth closed, eyes where they began. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 2 lines 790-840",
+      "audited": false,
+      "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
+      "scale": "Scale: People and creatures: Door 1.52 m. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-croup-vandemar-2.2": {
+      "kind": "loop",
+      "scene": "2.2",
+      "key": "croup-vandemar-2.2",
+      "cast": [
+        "croup",
+        "vandemar"
+      ],
+      "place": "aurie-flat",
+      "keyframe": "First frame of a talking loop. Medium two-shot on the landing outside the open front door: Mr Croup (thin, pallid, lank greasy orange hair, graveyard grin, greasy black suit with every seam subtly wrong) in front, smiling a fraction late, Mr Vandemar (huge, about 2.05 m, bristle-cut grey-and-black hair, blank face, the same wrong suit, raven-skull rings on his right hand) behind him, towering: Mr Croup's head reaches only Mr Vandemar's chest, Mr Vandemar's head is far above it, blank; both face the camera slightly off-axis, mouths closed.",
+      "motion": "Mr Croup speaks with small polite nods and an oily smile; Mr Vandemar sniffs the air once and is otherwise still; at the end both are back in the starting pose, mouths closed. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 2 lines 860-930",
+      "audited": false,
+      "location": "Aurie's small rented flat at night: the narrow hallway and front door, stairwell light beyond.",
+      "scale": "Scale: People and creatures: Mr Croup 1.68 m; Mr Vandemar 2.05 m, about one and a half heads taller than Mr Croup. The hallway is about 1 m wide; the front door about 2 m high; a wall telephone at shoulder height. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-marquis-3.1": {
+      "kind": "loop",
+      "scene": "3.1",
+      "key": "marquis-3.1",
+      "cast": [
+        "marquis"
+      ],
+      "place": "orme-passage",
+      "keyframe": "First frame of a talking loop. Medium shot under the gas jet: the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) faces the camera at a slight angle, one eyebrow raised, a faint white grin, mouth closed.",
+      "motion": "The marquis speaks smoothly to someone just beside the camera, small amused gestures of one hand, a slow blink; at the end he is back in the starting pose, mouth closed. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 2 lines 1215-1260",
+      "audited": false,
+      "location": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
+      "scale": "Scale: People and creatures: the marquis de Carabas 1.88 m. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "loop-door-21.3": {
+      "kind": "loop",
+      "scene": "21.3",
+      "key": "door-21.3",
+      "cast": [
+        "door"
+      ],
+      "place": "westminster",
+      "keyframe": "First frame of a talking loop. Medium shot: Door, washed and clean, stands at the top of the frosted hill with the dawn behind her and to one side, facing the camera at a slight three-quarter angle, eyes on someone just beside the lens, calm and a little sad, mouth closed. Her cheeks are dry.",
+      "motion": "Door speaks softly to someone just beside the camera, a few calm sentences: small natural head movements, she blinks, a breath of wind moves her hair and the frosted grass. At the end she returns exactly to the starting pose, mouth closed, eyes where they began. Locked-off camera, no zoom, no cut.",
+      "seconds": 5,
+      "source": "novel ch. 19 lines 9484-9535",
+      "audited": true,
+      "made": "the ¥15 video test (owner: looks great)",
+      "location": "The island of Westminster at dawn: long grass white with melting frost, a small hill, the Thames beyond, wheeling gulls.",
+      "scale": "Scale: People and creatures: Door 1.52 m. The grass is knee-high; the hill a gentle slope about 15 m long, so a person at the top is still clearly readable. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     }
   }
 }

@@ -31,10 +31,14 @@ const ord = (id) => id.split(".").map(Number);
 const cmp = (a, b) => { const [x1, y1] = ord(a), [x2, y2] = ord(b); return x1 - x2 || y1 - y2; };
 const within = (id, from, to) => cmp(id, from) >= 0 && (!to || cmp(id, to) <= 0);
 
-// Every clip beat in the story, with its scene and cast.
-const clipBeats = new Map();
-for (const [sid, sc] of Object.entries(S)) for (const b of [...sc.beats, ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])]) {
-  if (b.clip && !clipBeats.has(b.clip)) clipBeats.set(b.clip, { scene: sid, cast: b.cast ?? [], text: b.text ?? "" });
+// Every clip and still beat in the story, with its scene and cast; every talk's loop key.
+const clipBeats = new Map(), stillBeats = new Map(), talkLoops = new Map();
+for (const [sid, sc] of Object.entries(S)) {
+  for (const b of [...sc.beats, ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])]) {
+    if (b.clip && !clipBeats.has(b.clip)) clipBeats.set(b.clip, { scene: sid, cast: b.cast ?? [], text: b.text ?? "" });
+    if (b.still && !stillBeats.has(b.still)) stillBeats.set(b.still, { scene: sid, cast: b.cast ?? [], text: b.text ?? "" });
+  }
+  if (sc.conversation?.loop) talkLoops.set(sc.conversation.loop, sid);
 }
 
 const problems = [], warnings = [];
@@ -43,15 +47,24 @@ const warn = (id, m) => warnings.push(`${id}: ${m}`);
 const has = (text, words) => words.some((w) => new RegExp(w, "i").test(text));
 
 for (const [clip, beat] of clipBeats) if (!shots[clip]) warn(clip, `clip beat in ${beat.scene} has no shot yet`);
-const placesByScene = {};
 
 for (const [id, sh] of Object.entries(shots)) {
-  if (sh.kind && sh.kind !== "clip") continue;
-  const beat = clipBeats.get(id);
-  if (!beat) { fail(id, "no clip beat in the story uses this shot"); continue; }
+  const kind = sh.kind ?? "clip", moving = kind !== "still";
+  // A talking loop belongs to a talk scene; its people are the ones who speak there.
+  const beat = kind === "clip" ? clipBeats.get(id) : kind === "still" ? stillBeats.get(id)
+    : talkLoops.get(sh.key) ? { scene: talkLoops.get(sh.key), cast: sh.cast ?? [] } : null;
+  if (!beat) { fail(id, kind === "loop" ? `no talk scene has loop "${sh.key}"` : `no ${kind} beat in the story uses this shot`); continue; }
+  if (kind === "loop" && !S[beat.scene].conversation.character.split("-").every((c) => !cast.characters?.[c] || (sh.cast ?? []).includes(c))) fail(id, "the loop must show the character who talks");
   const sid = sh.scene ?? beat.scene;
+  // A finished picture reused from an earlier book: only who is in it is checked.
+  if (sh.reuse) {
+    if (!existsSync(join(ROOT, sh.reuse.split("#")[0]))) fail(id, `reused picture ${sh.reuse} is missing`);
+    const w = new Set(beat.cast), g = new Set(sh.cast ?? []);
+    if ([...w].some((x) => !g.has(x)) || [...g].some((x) => !w.has(x))) fail(id, `cast [${[...g]}] differs from the beat's cast [${[...w]}]`);
+    continue;
+  }
   const kf = sh.keyframe ?? "", mo = sh.motion ?? "", all = `${kf}\n${mo}`;
-  for (const f of ["keyframe", "motion", "location", "source"]) if (!sh[f]) fail(id, `missing ${f}`);
+  for (const f of ["keyframe", ...(moving ? ["motion"] : []), "location", "source"]) if (!sh[f]) fail(id, `missing ${f}`);
   if (sh.source && !/lines?\s*\d+/i.test(sh.source) && !/bridge|added|dead end|ending/i.test(sh.source)) fail(id, "source must name the novel lines it is checked against");
   if ((sh.seconds ?? 5) > 10) fail(id, "longer than 10 seconds");
   const want = new Set(beat.cast), got = new Set(sh.cast ?? []);
@@ -68,8 +81,8 @@ for (const [id, sh] of Object.entries(shots)) {
   if (got.has("aurie")) {
     const look = (cast.characters.aurie.looks ?? []).find((l) => within(sid, l.from, l.to));
     if (look && !kf.toLowerCase().includes(look.key.split(" ")[0])) fail(id, `Aurie's look here is "${look.key}" (${look.look}); the keyframe must say so`);
-    if (has(kf, ["extreme close", "close-up of (her|aurie)", "macro"])) fail(id, "Aurie in a close-up: keep her at medium shot in video (LIKENESS rule 2)");
-    if (has(mo, ["turns? (her head )?to(ward)? (the )?camera", "screams?", "laughs? (out loud|loudly)", "whips? (her )?head", "spins? round"]) && !/from behind|back to (the )?camera|silhouette/i.test(all)) fail(id, "Aurie's face moves too much for video (LIKENESS rules 3 and 4): calm her, or show her from behind");
+    if (moving && has(kf, ["extreme close", "close-up of (her|aurie)", "macro"])) fail(id, "Aurie in a close-up: keep her at medium shot in video (LIKENESS rule 2)");
+    if (moving && has(mo, ["turns? (her head )?to(ward)? (the )?camera", "screams?", "laughs? (out loud|loudly)", "whips? (her )?head", "spins? round"]) && !/from behind|back to (the )?camera|silhouette/i.test(all)) fail(id, "Aurie's face moves too much for video (LIKENESS rules 3 and 4): calm her, or show her from behind");
   }
   // Continuity from the cast record.
   const door = cast.characters?.door?.continuity, mq = cast.characters?.marquis?.continuity, hu = cast.characters?.hunter?.continuity;
@@ -85,7 +98,6 @@ for (const [id, sh] of Object.entries(shots)) {
     if (sh.location !== pl.look) fail(id, `location has drifted from the place's locked look (${sh.place})`);
     if (!pl.approved) warn(id, `place ${sh.place} has no approved reference plate yet`);
     if (!(sh.scale ?? "").includes(pl.scale)) fail(id, `scale line must carry the place's size anchors (${sh.place})`);
-    if (!id.includes("shared")) (placesByScene[sid] ??= new Set()).add(sh.place);
   }
   for (const w of got) {
     const c = cast.characters?.[w];
@@ -93,14 +105,24 @@ for (const [id, sh] of Object.entries(shots)) {
     else if (c && !(sh.scale ?? "").includes(`${c.height} m`)) fail(id, `scale line must give ${c.name}'s height (${c.height} m)`);
   }
   // Faces turned to camera for minor characters are fine; a talking character speaking to camera belongs in a talking loop.
-  if (has(mo, ["talks? to (the )?camera", "speaks? to (the )?camera", "lip ?sync"])) warn(id, "talking to camera belongs in a talking loop, not a scene clip");
+  if (kind === "clip" && has(mo, ["talks? to (the )?camera", "speaks? to (the )?camera", "lip ?sync"])) warn(id, "talking to camera belongs in a talking loop, not a scene clip");
 }
 
-// One scene, one place: shots inside a scene may not jump to another environment.
-for (const [sid, set] of Object.entries(placesByScene)) if (set.size > 1) fail(sid, `shots in one scene use different places (${[...set].join(", ")})`);
+// No accidental jumps: a picture whose place differs from the picture before it (same scene, same run of beats)
+// must say why in `newPlace` (travel, a variant opening, a dream); otherwise the set has drifted.
+for (const [sid, sc] of Object.entries(S)) for (const list of [sc.beats, ...(sc.choices ?? []).map((c) => c.aftermath ?? [])]) {
+  let prev = null;
+  for (const b of list) {
+    const pic = b.clip ?? b.still; if (!pic) continue;
+    const sh = shots[pic];
+    if (!sh || sh.reuse || !sh.place) { prev = null; continue; }
+    if (prev && sh.place !== prev && !sh.newPlace) fail(pic, `in ${sid} the place jumps from ${prev} to ${sh.place}: give newPlace (why the set changes) or keep the set`);
+    prev = sh.place;
+  }
+}
 
 const n = Object.keys(shots).length;
-console.log(`${book.title}: ${clipBeats.size} clip beats, ${n} shots written`);
+console.log(`${book.title}: ${clipBeats.size} clip beats, ${stillBeats.size} still beats, ${talkLoops.size} talks; ${n} shots written`);
 for (const w of warnings) console.log(`  note: ${w}`);
 for (const p of problems) console.log(`  ✗ ${p}`);
 if (problems.length || (strict && warnings.length)) { console.log(`\nShot audit failed: ${problems.length} problem(s)${strict ? `, ${warnings.length} warning(s)` : ""}.`); process.exit(1); }
