@@ -74,7 +74,7 @@ for (const dir of readdirSync(BOOKS)) {
       }
     }
     // Owner's rule: endings and dead ends play on video.
-    if (sc.type === "end" && book.status === "planning" && !(sc.beats ?? []).some((b) => b.clip) && sc.id !== "fin-credits") err(`${at}: an ending or dead end must have a video, not only stills`);
+    if (sc.type === "end" && book.status === "planning" && !(sc.beats ?? []).some((b) => b.clip) && !/credits/i.test(sc.title ?? "")) err(`${at}: an ending or dead end must have a video, not only stills`);
     const bed = (id) => haveMedia && id && id !== "none" && !existsSync(join(media, "audio", "ambience", `${id}.mp3`));
     if (bed(sc.ambience)) err(`${at}: ambience ${sc.ambience}.mp3 is missing (run tools/gen_ambience.py)`);
 

@@ -100,6 +100,7 @@ export interface Scene {
   next?: string; // for scenes with no choices
   branch?: Branch[]; // alternate routes instead of next, for players whose earlier deeds qualify
   retryFrom?: string; // a dead end (type "end"): the story goes back to this earlier scene, undoing everything since
+  source?: string; // where the scene comes from in the planning documents ("story map 4.3")
 }
 
 export interface Book {

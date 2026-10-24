@@ -71,85 +71,103 @@ Each rule names what enforces it. A rule with no check is a wish.
 | 1 | **The branch map is locked before a word of script.** Every choice either opens a variant scene, or sets a flag that is read at a named later scene, or is cut. | 56 unread flags; branches bolted on in five passes | a skeleton `book.json` (ids, choices, flags, conditions, no prose) that passes `check-story` and a play simulator: every scene reachable, every ending reachable, every flag read somewhere. Shown in the Developer menu map for sign-off |
 | 2 | **The hero is on screen in every core scene**, at least one picture of Aurie per scene; cutaways are the only exception and never more than two in a row. | Aurie vanishing for 20 chapters | a count in `check-story` (to add) |
 | 3 | **Script, then picture plan, then audit, then voice.** Narration is recorded once, after the text is frozen. The picture plan carries a one-line caption per slot and is audited against the lines before anything is generated. | 295 weak lines fixed after the fact; re-recorded narration | `audit_pictures` / `match_pictures` run on the plan, not on the finished game |
-| 4 | **The bible comes before the shots, one character at a time: every new character's sheet is generated, shown in chat and approved by the owner before that character appears in any still or clip** (owner's rule, 2026-10-24). Every character's gender, age, ethnicity and look is decided and approved on a sheet; every prop that appears with Aurie has a reference picture (the key, Hunter's knife, Door's flying jacket, the Beast, Croup and Vandemar's suits, the Angelus door) made first, the way `sphere.png` and `helm.png` should have been. Aurie's seven looks in this book are edits of one approved base picture. | the sphere's three passes, the helm, the gown, Orphea | the Part 1 storyboard cannot start until the bible is approved |
-| 5 | **Stills and animated overlays by default; a video quota per Part.** No picture is generated before its scene's beats are final; no "spare" clips. | 39 unused clips | the quota table in §5; `generate-clips` only renders shots listed in the frozen storyboard |
+| 4 | **The bible comes before the shots, one character at a time: every new character's sheet is generated, shown in chat and approved by the owner before that character appears in any still or clip** (owner's rule, 2026-10-24). Every character's gender, age, ethnicity and look is decided and approved on a sheet; every prop that appears with Aurie has a reference picture (the key, Hunter's knife, Door's flying jacket, the Beast, Croup and Vandemar's suits, the Angelus door) made first, the way `sphere.png` and `helm.png` should have been. Aurie's seven looks in this book are edits of one approved base picture. | the sphere's three passes, the helm, the gown, Orphea | the first batch's storyboard cannot start until the bible is approved |
+| 5 | **Stills and animated overlays by default; a video quota per batch.** No picture is generated before its scene's beats are final; no "spare" clips. | 39 unused clips | the quota table in §5; `generate-clips` only renders shots listed in the frozen storyboard |
 | 6 | **Faces: first frame from an approved still, medium shots, calm motion, automatic likeness check, free face-restoring pass.** | face re-renders | `LIKENESS.md` rules 1 to 8, already in the tools |
-| 7 | **One render per clip.** If a clip fails its checks, the beat keeps its still plus an overlay; a second render needs a named reason in the changelog. | rerolls | the budget cap per Part |
+| 7 | **One render per clip.** If a clip fails its checks, the beat keeps its still plus an overlay; a second render needs a named reason in the changelog. | rerolls | the budget cap per batch |
 | 8 | **Probes are cheap, once, and have a go/no-go line written down before they run.** | Wan 3.0 | §6, decision 3 |
 | 9 | **Every check is local and free.** Likeness (OpenCV), face restore (FaceFusion), music, ambience and effects (MusicGen, AudioLDM), and now voice transcripts too: add `faster-whisper` locally instead of paying the voice model to listen. | the ¥76 round | `tools/` |
 | 10 | **Real-actor check on every sheet before approval.** | Madoc, Loki, Nuala, Hob, Burgess redesigns | a gate in Phase 4 |
 | 11 | **Ranked backups and a spend cap in every tool** (already built). | stalls and overruns | `MODEL_*_FALLBACK`, `--budget` |
 | 14 | **Dead ends make choices matter** (owner, 2026-10-24). Seven scenes where Aurie dies or causes a death and the story goes back a few scenes, with her state restored to how it was when she first arrived there (flags, traits, relics, what the world remembers), not only the last choice. Each needs two wrong steps or one the story warned about: giving Door away twice (back to the gentlemen at the door), grabbing the Rat-speaker's glass with no rat's respect (back to the cash machine), letting go on Night's Bridge and walking on (back to Anaesthesia), crawling the plank alone without earned courage (back to the curry stall), taking Lamia's kiss after doubting the marquis twice (same), giving Door up to the killers (back to Down Street), throwing the spear as in the dream (back to the Fleet Marsh). The Ordeal (E) and the angel walking free (D) go back the same way, to the friars' bridge and to HMS Belfast where the key could still be lent. The card names what killed her and where the story resumes. **Every dead end and every ending plays on video, never a still alone** (owner's rule). | choices with no weight; a game-over that only replays one tap | `retryFrom` + checkpoints in the engine; `check-story` requires the retry scene to lead back to the dead end and a video on every ending; the simulator plays on from each death |
 | 13 | **Talking loops close on their own first frame; scene clips play once and are never looped.** This rule covers only the loops that play while a character talks or listens to the player. Each must end on the picture it started from, so the join is invisible: (a) render it with the same keyframe as first **and** last frame, if the gateway accepts an end frame (tested once, see §6 decision 3; the motion prompt also says "returns to the starting pose, mouth closed, eyes where they began"); (b) if not, the free ping-pong (forward, then backward), which suits small head and mouth movement. Everything else (Hell and the demons, movement, fire, any dramatic beat) is a one-way scene clip: it plays forward once, is never ping-ponged, and if the beat must hold afterwards the player keeps the last frame with its slow push-in, as it does today. | the loop seam snapping every few seconds; reversed motion on action shots | the seam measure (first-to-last frame difference under 6) on talking loops only, before publishing |
-| 12 | **Each Part is signed off in the Developer menu before its voice is recorded, and the changelog gets a line per Part with its cost.** | late rewrites after money is spent | the owner's sign-off per Part |
+| 12 | **Each batch of chapters is signed off in the Developer menu before its voice is recorded, and the changelog gets a line per batch with its cost.** | late rewrites after money is spent | the owner's sign-off per batch |
 
 ---
 
 ## 3. How it is built: phases and gates
 
-Nothing costs money until Phase 4, and nothing is generated for a Part until that Part's storyboard is frozen.
+Nothing costs money until Phase 4, and nothing is generated for a chapter until its storyboard is frozen. Work moves in **eight batches of chapters**, each signed off before the next: A Prologue to 3, B 4 to 6, C 7 to 9, D 10 to 11, E 12 to 14, F 15 to 17, G 18 to 20, H 21 to 23.
 
 | Phase | What | Who signs | Cost |
 |---|---|---|---|
 | 0 | **Decisions** (§6) | owner | ¥0 |
 | 1 | **Branch spine lock.** The skeleton `book.json` from `story-map-neverwhere.md`: every scene id and title, every choice with its flag or variant, every condition, every picture slot marked still or clip, no prose. `check-story` and the simulator pass. The owner walks the map in the Developer menu and approves the shape. | owner | ¥0 |
 | 2 | **The second door.** Engine work: the library hub with two doors, switching books, the LOYALTY trait and this book's variables (DOOR_BOND, MARQUIS_TRUST), the way in and out of the book (series bible §2b), tests. | me | ¥0 |
-| 3 | **Script, one Part at a time.** Beats (one narrated sentence each), choice aftermaths, conversation cards (22 live talks in the map; the dialogue engine is reused as is), the picture plan with a caption per slot, the hero-on-screen count, the text audit. Each Part's storyboard is read in the Developer menu before it is frozen. | owner reads, me | ¥0 |
+| 3 | **Script, one batch of chapters at a time, Batch A first.** Beats (one narrated sentence each), choice aftermaths, conversation cards (22 live talks in the map; the dialogue engine is reused as is), the picture plan with a caption per slot, the hero-on-screen count, the text audit. Each batch's storyboards are read in the Developer menu before they are frozen. | owner reads, me | ¥0 |
 | 4 | **The bible.** Cast sheets (about 24 named characters), expression sheets only for the 10 who speak most, Aurie's base and her seven looks, prop references, the two palettes (London Above: sodium orange and glass; Below: fire, ochre and soot). Real-actor check. | owner approves faces | about ¥35 *est.* |
-| 5 | **Media per Part, in story order.** Stills first (1 candidate, 2 only when Aurie is in it), then clips from approved stills, then talking loops, each with its checks and the restore pass. | me, checks | about ¥300 *est.* |
-| 6 | **Voice and sound per Part.** Narration once; music, ambience and effects made locally in one pass per place. | me | about ¥105 *est.* |
-| 7 | **QA and deploy per Part.** Simulated plays reach every exit; the owner plays the Part on the phone; the changelog line carries the Part's cost. | owner | ¥0 |
+| 5 | **Media per batch, in story order.** Stills first (1 candidate, 2 only when Aurie is in it), then clips from approved stills, then talking loops, each with its checks and the restore pass. | me, checks | about ¥300 *est.* |
+| 6 | **Voice and sound per batch.** Narration once; music, ambience and effects made locally in one pass per place. | me | about ¥105 *est.* |
+| 7 | **QA and deploy per batch.** Simulated plays reach every exit; the owner plays the batch on the phone; the changelog line carries its cost. | owner | ¥0 |
 
 The first thing the owner sees after saying go is Phase 1: the whole of Neverwhere as a map in the Developer menu,
 every fork and ending visible, before any writing.
 
 ---
 
-## 4. The branch spine (from the story map, with the tightenings proposed)
+## 4. The branch spine, by chapter
 
-Eight Parts, 49 core scenes, 14 cutaways, 5 endings plus one variant. Three **master switches** decide the
-ending: **the key** (keep it after the Ordeal and refuse to lend it at the market, and there is no copy for Door to
-trick the angel with: the road to Ending D), **the knife** (refuse Hunter's knife and the canonical ending is
-impossible), and **Hunter's secret** (collect two clues and Richard can warn Door before the betrayal).
+Every scene id is **chapter.position** (owner, 2026-10-24): 9.4 is the fourth scene of Chapter 9, whether it is a
+scene, a cutaway, a variant, a dead end or an ending (the title says which); picture ids carry the same number
+(`nw-9.4-...`) and choice ids add a letter (9.4.C). To ask for a change, name the id. The full list, regenerated from
+the game after every change, is **`story-index-neverwhere.md`** (every scene, its kind, its pictures, its choices
+and where they lead, and its number in the story map).
 
-| Part | Core scenes | The fork that opens a variant scene | Flags set here, and where they are read |
+Prologue and 23 chapters, 94 scenes: 22 live talks, 12 cutaways, 9 dead ends (7 deaths plus the Ordeal and the angel
+walking free), 4 endings and credits. Three **master switches** decide the ending: **the key** (keep it after the
+Ordeal at 14.3 and refuse to lend it at 15.3, and there is no copy for Door to trick the angel with: the road to
+20.7), **the knife** (refuse Hunter's knife at 19.3 and the canonical ending is impossible), and **Hunter's secret**
+(two clues among 10.2, 10.4, 12.1 and 12.2, and Aurie can warn Door at 17.1).
+
+| Chapter | Scenes | The fork that matters | Read later at |
 |---|---|---|---|
-| 1 Doors | 1.0 to 1.7 (+C1) | 1.2 carry Door home, or dial 999 and find her again at midnight | UMBRELLA_GIVEN (6.5, 8.9); TOLD_CV (5.2); RAT_RESPECT (2.3, 2.4); MARQUIS_TRUST starts |
-| 2 Fallen through the cracks | 2.1 to 2.6 (+C2 to C4) | 2.3 Iliaster leads you down, or a night on a bench and the rats | ANA_HEARD (6.5, 8.6); BEAD_KEPT (3.1, 6.5); 2.6 "you let go" echoed in 6.5 |
-| 3 The Floating Market | 3.1 to 3.4 (+C5, C6) | 3.3 sit down in the sewer, or follow them at a distance | OLD_BAILEY_FRIEND (C13, 8.6); LAMIA_NOTICED (7.1, 7.5); DOOR_PROMISE (8.7) |
-| 4 Earl's Court | 4.1 to 4.4 (+C7 to C9) | 4.3 speak up for the marquis, or call him dodgy | MARQUIS_TRUST ± (A vs A-variant); 4.2 heeded Hunter (an anchor in 6.5) |
-| 5 Angels over England | 5.1 to 5.6 (+C10) | 5.3 Jessica: tell her gently, cheekily, or walk away (security or not) | HUNTER_SUSPECT (7.6); ANA_ASKED (8.6); ISLINGTON_BARGAIN self / door / atlantis (8.4); TOLD_CV pays off |
-| 6 The Ordeal of the Key | 6.1 to 6.6 (+C11, C12) | 6.5 the Ordeal: hold on, or climb down (Ending E, return to the last choice); 6.6 toss the key to Door or keep it | BEAST_SHARED (8.2); KEY_TAKEN (7.2, 8.7) |
-| 7 Down Street | 7.1 to 7.6 (+C13) | 7.2 lend the key or not (NO_COPY); 7.6 warn Door if HUNTER_SUSPECT ≥ 2 | NO_COPY (8.4, Ending D); LAMIA_GUIDE (7.5); decoy with the old key (bruises in Part 8) |
-| 8 The Beast, the angel and the door | 8.1 to 8.9 (+C14) | 8.2 strike, throw, or drag Hunter clear (LATE); 8.4 the copy path or the real-key path; 8.5 give the key back; 8.7 go home or stay; 8.9 cut the door or take the taxi | WARRIOR, KNIFE, HUNTER_FORGIVEN, KEY_RETURNED, ABOVE_ANCHOR, KEPT_FEATHER: all read in 8.6 to 8.9 and the endings |
+| Prologue · The umbrella | 0.1 to 0.2 | 0.2 give the old woman her umbrella | 14.1 (an anchor in the Ordeal), 22.4 |
+| 1 · Door on the pavement | 1.1 to 1.3 | 1.2 carry Door home, or dial 999 (1.3 Midnight) | DOOR_BOND |
+| 2 · Two gentlemen at the door | 2.1 to 2.3 | 2.2 lie to the killers, bluster, or give her away; 2.3 apologise to the rat | 4.3 dead end, 10.3; 4.5, 5.2 |
+| 3 · The marquis de Carabas | 3.1 to 3.3 | 3.1 what Door offers him; 3.2 climb the ladder | MARQUIS_TRUST |
+| 4 · Fallen through the cracks | 4.1 to 4.5 | 4.2 offer to help the killers (4.3 dead end if she gave Door away before); 4.4 Iliaster or the bench (4.5) | |
+| 5 · The Rat-speakers | 5.1 to 5.4 | 5.2 greet the rat, kneel, or grab the glass (5.3 dead end without the rats' respect) | 21.2 |
+| 6 · Night's Bridge | 6.1 to 6.4 | 6.1 listen to Anaesthesia; 6.2 hold her hand or let go; 6.3 keep a bead (6.4 dead end if she let go and walks on) | 14.1, 23.3 |
+| 7 · The Floating Market | 7.1 to 7.3 | 7.1 smile at Lamia; 7.2 what she pays Old Bailey | 15.1, 16.3; 15.2, 21.2 |
+| 8 · Are you coming? | 8.1 to 8.5 | 8.1 sit in the sewer or follow (8.2); 8.4 "Are you coming?" | 21.3 |
+| 9 · Earl's Court | 9.1 to 9.6 | 9.2 heed Hunter at the gap; 9.4 defend the marquis or call him dodgy | 14.1; 16.4 dead end, 23.1 vs 23.2 |
+| 10 · Angels over England | 10.1 to 10.6 | 10.3 stand in front of Door; 10.5 Jessica (security or not) | 10.6 |
+| 11 · The Angel Islington | 11.1 to 11.3 | 11.1 what she asks the angel for | 20.3 |
+| 12 · Serpentine | 12.1 to 12.2 | 12.2 tell Hunter she dreams of the Beast | 19.1 (removes the spear trap) |
+| 13 · The Black Friars | 13.1 to 13.3 | 13.1 take the Ordeal, or ask Door | |
+| 14 · The Ordeal | 14.1 to 14.3 | 14.1 hold on (14.2 dead end, back to 13.1); 14.3 toss the key or keep it | 15.3, 21.3 |
+| 15 · HMS Belfast | 15.1 to 15.4 | 15.3 lend the key or not (no copy); 15.4 hire Lamia | 20.4, 20.7; 16.3 |
+| 16 · Down Street | 16.1 to 16.4 | 16.1 the plank (16.2 dead end without courage); 16.3 Lamia's kiss (16.4 dead end after doubting the marquis) | |
+| 17 · Hunter's choice | 17.1 to 17.3 | 17.1 decoy, silence, give Door up (17.2 dead end) or warn her | |
+| 18 · The labyrinth | 18.1 to 18.4 | 18.1 go on or wait (18.2) | |
+| 19 · The Beast | 19.1 to 19.5 | 19.1 strike, throw (19.2 dead end) or drag Hunter clear; 19.3 take the knife; 19.4 forgive her | 21.2, 22.4; 23.3 |
+| 20 · The angel's hall | 20.1 to 20.7 | late or in time (20.2); 20.3 defy the angel; 20.4 goad the killers; the copy (20.5) or the true door (20.6); 20.7 the angel walks free, back to 15.3 | 21.2 |
+| 21 · Lady of the Underside | 21.1 to 21.3 | 21.1 give the key back; 21.3 go home, stay, or turn it herself | 23.3 |
+| 22 · London Above | 22.1 to 22.4 | 22.1 take Jessica's ring; 22.3 keep the feather; 22.4 cut the door or take the taxi | 23.1 to 23.4 |
+| 23 · The endings | 23.1 to 23.5 | 23.1 *Are you coming?* (the marquis), 23.2 *The opener* (Door), 23.3 *Lady of the Underside*, 23.4 *Get used to it*, 23.5 credits | |
 
-Endings: **A** *Are you coming?* (the marquis at the cut door), **A-variant** (Door opens it), **B** *Sir Richard
-of the Underside* (she never goes up), **C** *Get used to it* (the taxi), **D** *Jam tomorrow* (the angel walks
-free; return to the last choice), **E** the wall of those who failed (the Ordeal; return to the last choice).
+Tightenings kept so the map stays buildable within the quota (the story map keeps everything; these decide what
+gets media):
 
-Tightenings proposed so the map stays buildable within the quota (the story map keeps everything; these decide
-what gets media):
-
-- **Variant scenes capped at about twelve** (one per Part plus the endings). Every other consequence is a line
-  that reads a flag, which costs words, not pictures. The Sandman showed that variant scenes are where media cost
-  hides.
-- **Cutaways: four on video, the rest as a still with narration.** Video: C1 Door's fall through the wall, C3 the
-  House Without Doors, C10 the marquis trading questions with the killers, C13 the marquis coughing up the sewer.
-- **2.1's "pick three of five attempts to be seen" becomes one choice** with the montage as stills.
-- **Endings D and E are "return to the last choice"**, so each is one still and a few lines.
-- **Aurie is in every core scene by nature** (the novel never leaves Richard), so rule 2 costs nothing here; the
-  cutaways are the only beats without her and are spaced so no two run back to back.
+- **About a dozen variant scenes**; every other consequence is a line that reads a flag, which costs words, not
+  pictures. The Sandman showed that variant scenes are where media cost hides.
+- **Cutaways: four on video, the rest as a still with narration.** Video: Door's fall through the wall (in 1.2), the
+  House Without Doors (5.4), the marquis trading questions with the killers (11.3), the marquis coughing up the
+  sewer (15.2).
+- **The Monday nobody sees (4.1) is one choice**, with the montage as one video.
+- **Every dead end and ending plays on video** (rule 14).
+- **Aurie is in every scene but the cutaways** (checked on every build), and no two cutaways run back to back.
 
 ---
 
 ## 5. Media quota and budget
 
-| Per Part (8 Parts) | Quota |
+| Per batch (8 batches of chapters) | Quota |
 |---|---|
 | Stills | about 20 (160 in all, plus about 10 for endings and the hub) |
-| Clips | 5 (40 in all): the Part's one big moment, one POV beat, one cutaway where listed, two of Aurie at medium shot; plus one for each of the 7 dead ends and the 5 endings (rule 14) |
+| Clips | 5 (40 in all): the batch's one big moment, one POV beat, one cutaway where listed, two of Aurie at medium shot; plus one for each of the 7 dead ends and the 5 endings (rule 14) |
 | Talking loops | 12 for the whole book (Door, the marquis, Hunter, Croup, Vandemar, Islington, Anaesthesia, Old Bailey, Lamia, the abbot, Jessica, the earl), made as ping-pongs |
-| Narration | about 70 lines per Part (about 550 in all), recorded once |
+| Narration | about 70 lines per batch (about 550 in all), recorded once |
 | Music / ambience / effects | one theme per recurring place and person (about 14 themes, 12 beds), all local and free |
 
 | Budget item | Count | Cost *est.* |
@@ -162,7 +180,7 @@ what gets media):
 | Dialogue and play checks | | ¥10 |
 | **Total** | | **about ¥500** |
 
-Cap **¥500** (the dead-end and ending videos added about ¥40, so the estimate now meets the cap; if it tightens, the cutaway videos go first), hard stop ¥550, enforced per Part by the clip tool's budget flag. For comparison The Sandman
+Cap **¥500** (the dead-end and ending videos added about ¥40, so the estimate now meets the cap; if it tightens, the cutaway videos go first), hard stop ¥550, enforced per batch by the clip tool's budget flag. For comparison The Sandman
 cost ¥1,187 for 95 scenes (about ¥12.50 a scene); this plan is about ¥6.50 a scene for a story of similar length,
 and the difference is the thirteen rules, not lower quality: the same video model, the same stills, fewer of them
 wasted. A leaner alternative (25 clips, cutaways all as stills) would land near ¥350.
@@ -171,11 +189,11 @@ wasted. A leaner alternative (25 clips, cutaways all as stills) would land near 
 
 ## 6. Decisions (taken by the owner on 2026-10-24: all four as recommended)
 
-Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before Part 1; **Asian Londoners for the open roles**, the book's fixed looks kept. The original questions follow for the record.
+Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before Batch A's media; **Asian Londoners for the open roles**, the book's fixed looks kept. The original questions follow for the record.
 
 1. **The hero's name.** Aurie Mayhew (recommended) / Rachel Mayhew / Richard.
 2. **Scope and cap.** Full story with the quota above, cap ¥500 (recommended) / lean, cap ¥350.
-3. **A ¥15 test before Part 1**, two questions in one session: (i) `kling-video-o1`, a video model on the key that takes several reference photos of
+3. **A ¥15 test before the first media**, two questions in one session: (i) `kling-video-o1`, a video model on the key that takes several reference photos of
    one person; go/no-go written now: it goes into the ranked list ahead of wan2.7 only if the same Aurie shot
    scores 0.45 or better on its worst frame where wan2.7 scored under 0.35; (ii) whether the gateway accepts an
    **end frame** as well as a start frame (wan2.x has a first-and-last-frame mode; Kling has an image tail). Go/no-go:
@@ -193,7 +211,7 @@ Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before 
 
 Done the same morning as the go: the skeleton `app/src/content/books/neverwhere/book.json` (94 scenes: 49 core, 11 variants, 12 cutaways, 7 dead ends, 6 endings and credits; 133 picture slots each with its caption and who is in frame; every flag and condition from the map), stub cards for the 14 talk characters, the book registered in the engine with its door shown as *Being built* on the title page, a book switcher in the Developer menu so Neverwhere's map and storyboards can be walked from inside the Sandman, `check-story` extended (a flag read but never set fails any book; in a planning book a flag set but never read fails too; every non-cutaway scene must show Aurie; no two cutaways in a row), and `scripts/simulate-story.mjs`. Results: the story check passes; 4,000 random plays reach every scene, take every choice and reach every ending; a consistently generous player ends at A, a consistently selfish one at D; the real-key rescue (8.4d) and A-variant are rare under random play by design. The first flags the check caught (DOOR_PROMISE, BARGAIN_DOOR, LAMIA_GUIDE, GOADED set and never read; two scenes without Aurie) were fixed before anything was built on them.
 
-Next: Phase 2 (the way in and out of the book, the LOYALTY trait on the profile) and Phase 3 (script, Part One first), then the character sheets for approval and the ¥15 test.
+Next: Phase 2 (the way in and out of the book, the LOYALTY trait on the profile) and Phase 3 (script, Batch A: the Prologue to Chapter 3, first), then the character sheets for approval and the ¥15 test.
 
 ## 7b. What was promised after the go
 
