@@ -13,6 +13,7 @@ import ReactLoop from "@/components/ReactLoop";
 import RotatePrompt from "@/components/RotatePrompt";
 import DevMenu from "@/components/DevMenu";
 import Reading from "@/components/Reading";
+import { cachedUrl, saveBook, scenesAhead, warm } from "@/lib/story/preload";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
 type Phase = "film" | "talk" | "choose" | "end";
@@ -24,9 +25,11 @@ interface Turn {
 }
 
 interface Layer {
-  url: string;
+  url: string; // what plays: the in-memory copy when it has arrived, else the remote file
+  src: string; // the remote file, which names the picture
   key: string;
   still: boolean;
+  poster?: string; // a clip's first frame, shown at once while the video loads
 }
 
 interface Segment {
@@ -49,6 +52,7 @@ const DUCK_VOLUME = 0.14; // bed level while someone speaks
 const FADE_MS = 2500;
 const CARD_MS = 2600; // a silent time/place card
 const CREDIT_MS = 4600; // a closing credit lingers longer
+const LOAD_WAIT_MS = 25_000; // longest the loading page holds the story back on a very slow connection
 const BEAT_GAP_MS = 250; // breath between narrated lines
 const HOLD_MS = 2000; // longest a clip keeps playing after its line before the next picture cuts in
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
@@ -164,6 +168,9 @@ export default function Player({ book }: { book: Book }) {
   const vp = useViewport();
   const fs = useFullscreen();
   const [started, setStarted] = useState(false);
+  const [loading, setLoading] = useState<{ done: number; all: number } | null>(null); // the opening pictures, before the story starts
+  const [savedBook, setSavedBook] = useState<{ done: number; all: number } | null>(null); // the whole book saved on the phone
+  const savingBook = useRef(false);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [sceneId, setSceneId] = useState(book.start);
   const [phase, setPhase] = useState<Phase>("film");
@@ -178,7 +185,6 @@ export default function Player({ book }: { book: Book }) {
   const [missing, setMissing] = useState<string | null>(null);
   const [card, setCard] = useState<{ text: string; credit?: string } | null>(null);
   const [subtitle, setSubtitle] = useState<{ text: string; hook: boolean } | null>(null);
-  const [upcoming, setUpcoming] = useState<string | null>(null);
   const [beatFx, setBeatFx] = useState<Fx | undefined>(undefined);
   const [beatAmb, setBeatAmb] = useState<string | undefined>(undefined);
   // The moment a decision is made, shown plainly so she always knows what she chose.
@@ -302,6 +308,11 @@ export default function Player({ book }: { book: Book }) {
   const lineUrl = (text: string) => `${CLIP_BASE}/${book.id}/audio/lines/${lineFile(text)}`;
   const clipUrl = (clip: string) => media(`${book.id}/${clip}.mp4`);
   const stillUrl = (still: string) => media(`${book.id}/stills/${still}.jpg`);
+  const posterUrl = (clip: string) => media(`${book.id}/posters/${clip}.jpg`);
+  /** Every picture of these scenes (narrated beats and every choice's aftermath), each clip's poster before the clip. */
+  const mediaOf = (scenes: Scene[]) =>
+    scenes.flatMap((sc) => [...sc.beats, ...(sc.choices ?? []).flatMap((c) => c.aftermath ?? [])])
+      .flatMap((b) => (b.clip ? [posterUrl(b.clip), clipUrl(b.clip)] : b.still ? [stillUrl(b.still)] : []));
 
   // Preloaded narrator lines, so each starts the instant its subtitle appears.
   const lineCache = useRef(new Map<string, HTMLAudioElement>());
@@ -499,9 +510,9 @@ export default function Player({ book }: { book: Book }) {
   const show = (b: Beat) => {
     if (b.fx) setBeatFx(b.fx);
     if (b.ambience) setBeatAmb(b.ambience);
-    const url = b.clip ? clipUrl(b.clip) : b.still ? stillUrl(b.still) : null;
-    if (!url || topLayer.current?.url === url) return; // nothing new, or already on screen: keep holding it
-    const layer = { url, key: `${url}#${++layerSeq.current}`, still: !!b.still };
+    const src = b.clip ? clipUrl(b.clip) : b.still ? stillUrl(b.still) : null;
+    if (!src || topLayer.current?.src === src) return; // nothing new, or already on screen: keep holding it
+    const layer: Layer = { url: cachedUrl(src), src, key: `${src}#${++layerSeq.current}`, still: !!b.still, poster: b.clip ? cachedUrl(posterUrl(b.clip)) : undefined };
     topLayer.current = layer;
     clipDone.current.waiters.splice(0).forEach((w) => w());
     clipDone.current = { key: layer.key, done: layer.still, waiters: [] };
@@ -539,7 +550,6 @@ export default function Player({ book }: { book: Book }) {
           if (b.text) logLine("Narrator", b.text);
           continue;
         }
-        setUpcoming(list.slice(i + 1).find((x) => x.clip)?.clip ?? null);
         show(b);
         if (b.sfx) playSfx(b.sfx);
         // A tap skips the rest of this beat.
@@ -694,6 +704,9 @@ export default function Player({ book }: { book: Book }) {
       ...[...new Set(following)].flatMap((nid) => book.scenes[nid].beats.slice(0, 4)),
     ];
     setTimeout(() => preloadLines(ahead.filter((b) => b.text).map((b) => b.text!)), 1500);
+    // Pictures of the next few scenes load quietly in the background, two at a time, so a slow connection
+    // has them ready before she gets there.
+    void warm(mediaOf(scenesAhead(book, id, 3)), undefined, 2);
     if (await runTimeline(sc.beats, token)) await afterFilm(sc, token);
   }
 
@@ -1159,9 +1172,35 @@ export default function Player({ book }: { book: Book }) {
       void fetch("/api/dialogue?warm=1").catch(() => undefined);
       void fetch("/api/tts").catch(() => undefined);
       resumeFrom.current = from ?? null;
-      setStarted(true);
+      // The opening scenes' pictures load first, behind a loading page, so the story never opens on black.
+      // A very slow connection waits at most LOAD_WAIT_MS; the rest keeps loading while she plays.
+      setLoading({ done: 0, all: 1 });
+      const ready = warm(mediaOf(scenesAhead(book, from ?? sceneId, 2)), (done, all) => setLoading({ done, all }));
+      void Promise.race([ready, sleep(LOAD_WAIT_MS)]).then(() => { setLoading(null); setStarted(true); });
+      // Then the whole book is saved on the phone in story order (what lies ahead of her first, then the rest),
+      // so no scene ever waits for the network when she reaches it, and the next visit starts at once.
+      if (!savingBook.current) {
+        savingBook.current = true;
+        const ahead = scenesAhead(book, from ?? sceneId, 999);
+        const rest = Object.values(book.scenes).filter((s) => !ahead.includes(s));
+        void ready.then(() => saveBook(mediaOf([...ahead, ...rest]), (done, all) => setSavedBook({ done, all })));
+      }
     };
     const chapterTitle = book.scenes[chapterOf(sceneId)]?.episodeTitle ?? scene.title;
+    if (loading) {
+      return (
+        <main className="stage">
+          <div className="gate">
+            <div className="gate-title">{book.title}</div>
+            <div className="loading">
+              <p className="loading-line">Lucienne is gathering the pages…</p>
+              <div className="loading-bar"><i style={{ width: `${Math.round((loading.done / Math.max(loading.all, 1)) * 100)}%` }} /></div>
+              <button className="ghost" onClick={() => { setLoading(null); setStarted(true); }}>Begin now</button>
+            </div>
+          </div>
+        </main>
+      );
+    }
     return (
       <main className="stage">
         <div className="gate">
@@ -1210,6 +1249,7 @@ export default function Player({ book }: { book: Book }) {
               key={l.key}
               className={`film ${isTop ? "" : "prev"} ${held === l.key ? "held" : ""}`}
               src={l.url}
+              poster={l.poster}
               autoPlay={isTop}
               playsInline
               muted
@@ -1227,7 +1267,6 @@ export default function Player({ book }: { book: Book }) {
         <div className="vignette" />
       </div>
       <div className={`curtain ${curtain ? "on" : ""}`} aria-hidden="true" />
-      {upcoming && <video className="prefetch" src={clipUrl(upcoming)} preload="auto" muted playsInline aria-hidden="true" />}
 
       {/* Top-right controls: fullscreen and the pause menu */}
       <div className="hud">
@@ -1426,6 +1465,11 @@ export default function Player({ book }: { book: Book }) {
               <>
                 <h2>Paused</h2>
                 <p className="menu-where">{book.scenes[chapterOf(sceneId)]?.episodeTitle}</p>
+                {savedBook && savedBook.all > 0 && (
+                  <p className="menu-where">
+                    {savedBook.done >= savedBook.all ? "The whole book is saved on this phone" : `Saving the book on this phone… ${Math.round((savedBook.done / savedBook.all) * 100)}%`}
+                  </p>
+                )}
                 <button className="primary" onClick={closeMenu}>Resume</button>
                 {undoRef.current && <button onClick={() => { const undo = undoRef.current; closeMenu(); undo?.(); }}>Undo my last choice</button>}
                 <button onClick={() => setMenu("journal")}>Story so far</button>

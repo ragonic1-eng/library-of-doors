@@ -47,6 +47,12 @@ if (process.argv.includes("--list")) {
   process.exit(0);
 }
 
+// Every clip goes out light enough for a weak connection, with its poster (tools/web_clips.py): a clip
+// straight from the video model or the face-restoring pass can be 10 to 70 MB, which played as black.
+if (!process.argv.includes("--list")) {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync("python", ["-I", join(ROOT, "tools", "web_clips.py")], { stdio: "inherit" });
+}
 const files = walk(LOCAL);
 
 // Media is cached for a year under its name, so a regenerated clip with the same name would keep showing
