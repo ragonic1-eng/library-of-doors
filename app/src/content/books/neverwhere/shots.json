@@ -1182,23 +1182,7 @@
       "audited": true,
       "heldClip": "nw-0.1-library-v held back: Aurie small in a wide shot, worst frame 0.19 after the restore"
     },
-    "nw-3.2-flare": {
-      "scene": "3.2",
-      "cast": [
-        "aurie",
-        "marquis"
-      ],
-      "place": "orme-passage",
-      "keyframe": "In the alley the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) kneels by an open manhole, a little metal key in one hand and a burning scarlet flare in the other, lighting rusted rungs that go down into total darkness; Aurie in her suit (black trouser suit, white shirt, black coat) stands over him.",
-      "source": "novel ch. 2 lines 1270-1315",
-      "location": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
-      "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
-      "kind": "still",
-      "audited": true,
-      "heldClip": "nw-3.2-flare-v held back: face small in red smoke, worst 0.15, restore could not help",
-      "heldMotion": "The marquis strikes the scarlet flare; it bursts into hissing red light and smoke, flooding the alley and the rusted rungs going down into the dark manhole; Aurie leans to look down, calm. Locked-off or slow camera; no cut."
-    },
-    "nw-3.3-goodbye": {
+    "nw-3.3-goodbye-v": {
       "scene": "3.3",
       "cast": [
         "aurie",
@@ -1210,10 +1194,28 @@
       "source": "novel ch. 2 lines 1450-1485",
       "location": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
       "scale": "Scale: People and creatures: Aurie 1.65 m; Door 1.52 m, about half a head shorter than Aurie; the marquis de Carabas 1.88 m, about one head taller than Aurie. The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
-      "kind": "still",
+      "kind": "clip",
+      "motion": "Door kisses Aurie's cheek and steps back; Aurie closes her eyes for a moment; when she opens them the room is empty: Door and the marquis are gone, the door is shut, a little dust drifts in the light. Locked-off or slow camera; no cut.",
+      "seconds": 5,
       "audited": true,
-      "heldClip": "nw-3.3-goodbye-v held back: restored 0.29 to 0.45 average, worst 0.25 (eyes closed); owner to judge by eye",
-      "heldMotion": "Door kisses Aurie's cheek and steps back; Aurie closes her eyes for a moment; when she opens them the room is empty: Door and the marquis are gone, the door is shut, a little dust drifts in the light. Locked-off or slow camera; no cut."
+      "ownerPassed": "2026-10-24: owner kept it by eye after the face check held it back"
+    },
+    "nw-3.2-flare-v": {
+      "scene": "3.2",
+      "cast": [
+        "aurie",
+        "marquis"
+      ],
+      "place": "orme-passage",
+      "keyframe": "In the alley the marquis de Carabas (tall, lean, very dark skin, long locs tied back, the huge black dandy's coat with torn lace cuffs, ragged layers, high black boots, eyes burning white) kneels by an open manhole, a little metal key in one hand and a burning scarlet flare in the other, lighting rusted rungs that go down into total darkness; Aurie in her suit (black trouser suit, white shirt, black coat) stands over him.",
+      "source": "novel ch. 2 lines 1270-1315",
+      "location": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the marquis de Carabas 1.88 m, about one head taller than Aurie. The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise.",
+      "kind": "clip",
+      "motion": "The marquis strikes the scarlet flare; it bursts into hissing red light and smoke, flooding the alley and the rusted rungs going down into the dark manhole; Aurie leans to look down, calm. Locked-off or slow camera; no cut.",
+      "seconds": 5,
+      "audited": true,
+      "ownerPassed": "2026-10-24: owner kept it by eye after the face check held it back"
     }
   }
 }

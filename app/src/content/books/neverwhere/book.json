@@ -696,7 +696,7 @@
             "aurie",
             "marquis"
           ],
-          "still": "nw-3.2-flare"
+          "clip": "nw-3.2-flare-v"
         },
         {
           "text": "Rusted rungs in total darkness, then daylight: the same ladder climbs the outside of a tower a thousand feet up, though it was dusk a moment ago. Above her the marquis lets go with both hands and waggles his fingers.",
@@ -761,7 +761,7 @@
             "door",
             "marquis"
           ],
-          "still": "nw-3.3-goodbye"
+          "clip": "nw-3.3-goodbye-v"
         }
       ],
       "next": "4.1",

@@ -156,7 +156,7 @@ def chatterbox_tts(text, voice, exaggeration=0.7, cfg=0.3):
 
 # ---------- checking a take before it is kept ----------
 # The voice model sometimes reads its direction aloud, repeats a phrase, skips words, or goes quiet partway
-# through while claiming it read everything. Each gateway take is listened to (gpt-audio as a transcriber)
+# through while claiming it read everything. Each gateway take is listened to (faster-whisper on this PC, free; gpt-audio as the backup transcriber)
 # and, when numpy is available (tools/venv), measured for dead air. A failed take is recorded again.
 def _words(t):
     t = t.lower().replace("’", "'").replace("‘", "'")
@@ -200,7 +200,30 @@ def compare(script, heard):
     if len(run) >= 3: extra.append(" ".join(run))
     return missing, extra
 
+_whisper = []  # the local model, loaded once
+
+def listen_local(data):
+    """Transcribe with faster-whisper on this PC (plan rule 9: checks are local and free); None if it is not installed."""
+    try:
+        if not _whisper:
+            from faster_whisper import WhisperModel
+            _whisper.append(WhisperModel("small.en", device="cpu", compute_type="int8",
+                                         download_root=os.path.join(ROOT, "tools", "models", "whisper")))
+        # Decode with the project's own ffmpeg (16 kHz mono) and hand whisper the samples, so its audio library is never needed.
+        import numpy as np, imageio_ffmpeg, subprocess
+        raw = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-v", "error", "-i", "pipe:0", "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+                             input=data, capture_output=True).stdout
+        audio = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
+        segs, _ = _whisper[0].transcribe(audio, language="en", beam_size=5, vad_filter=False)
+        return " ".join(s.text.strip() for s in segs).strip() or None
+    except Exception as e:
+        print(f"   local transcriber unavailable ({e}); using the gateway", flush=True)
+        return None
+
 def listen(data):
+    heard = listen_local(data)
+    if heard:
+        return heard
     base = os.environ["INFISTAR_BASE_URL"].rstrip("/")
     body = json.dumps({"model": next((m for m in TTS_MODELS if m not in _down), TTS_MODELS[-1]), "modalities": ["text"], "messages": [{"role": "user", "content": [
         {"type": "text", "text": "Transcribe exactly every word spoken in this audio, from the first sound to the last, including anything that sounds like an instruction. Output only the words."},
