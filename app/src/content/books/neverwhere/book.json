@@ -1880,7 +1880,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "A rock hall, iron pillars, a waterfall, a black door of flint and silver. Candles light as a barefoot figure in white passes and go out behind it. No wings. Unmistakably an angel.",
+          "text": "A rock hall, iron pillars, a waterfall, a black door of flint and silver. Candles light as a small barefoot woman in white passes, and go out behind her. No wings. Unmistakably an angel.",
           "still": "nw-8.5-hall",
           "cast": [
             "islington"
@@ -2604,14 +2604,14 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "The rock hall. Islington, neither man nor woman, golden hair, eyes of old grey light, pours wine from Atlantis like a sacrament. To former glories.",
+          "text": "The rock hall. Islington, small and golden-haired and sweet-faced as a girl, with eyes of old grey light, pours wine from Atlantis like a sacrament. To former glories.",
           "clip": "nw-11.1-wine-v",
           "cast": [
             "islington"
           ]
         },
         {
-          "text": "It gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep.",
+          "text": "She gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep.",
           "still": "nw-11.1-hall",
           "cast": [
             "aurie",
@@ -2624,7 +2624,7 @@
         "character": "islington",
         "maxTurns": 3,
         "canon": [
-          "Islington is gentle, patient and gives no hint of what it wants beyond the key.",
+          "Islington is gentle, patient and gives no hint of what she wants beyond the key.",
           "It asks Aurie what she wants; the answer is remembered."
         ],
         "opening": "And you, Aurie Mayhew? What is it that you want?",
@@ -2683,7 +2683,7 @@
           "next": "11.2",
           "aftermath": [
             {
-              "text": "It tells of the waves, and of a first city that sank.",
+              "text": "She tells of the waves, and of a first city that sank.",
               "still": "nw-11.1-atlantis",
               "cast": [
                 "islington"
@@ -4568,7 +4568,7 @@
           ]
         },
         {
-          "text": "You asked nothing for yourself, it says. Then your pain is your gift to her.",
+          "text": "You asked nothing for yourself, she says. Then your pain is your gift to Door.",
           "if": [
             "BARGAIN_DOOR"
           ],
@@ -4584,9 +4584,9 @@
         "character": "islington",
         "maxTurns": 3,
         "canon": [
-          "Islington wants Door to open the flint door; it will hurt Aurie to make her.",
-          "If BARGAIN_SELF: it offers Aurie her life back if she tells Door to open it. If BARGAIN_DOOR: it mocks that her pain is her gift to Door. If BARGAIN_ATLANTIS: it knows she knows about the city.",
-          "It never raises its voice until it screams that they deserved it."
+          "Islington wants Door to open the flint door; she will hurt Aurie to make her.",
+          "If BARGAIN_SELF: she offers Aurie her life back if Aurie tells Door to open it. If BARGAIN_DOOR: she mocks that Aurie's pain is her gift to Door. If BARGAIN_ATLANTIS: she knows Aurie knows about the city.",
+          "She never raises her voice until she screams that they deserved it."
         ],
         "opening": "Tell her to open it, Aurie Mayhew. And I keep my word: your life back. Every bit of it.",
         "exits": {
@@ -4843,7 +4843,7 @@
       "fx": "glitter",
       "beats": [
         {
-          "text": "The real key opens on quiet gold light. Islington steps forward. The killers seize its robe for their pay.",
+          "text": "The real key opens on quiet gold light. Islington steps forward. The killers seize her robe for their pay.",
           "still": "nw-20.6-gold",
           "cast": [
             "islington",

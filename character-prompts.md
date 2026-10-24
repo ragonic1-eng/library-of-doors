@@ -670,13 +670,15 @@ SURREAL DETAIL: a thin line of an old wound on the back of his hand knits closed
 [Style Bible]
 ```
 
-### N07 The Angel Islington (tier A)
+### N07 The Angel Islington (tier A; owner: a female angel)
 
 **Reference sheet:**
 ```
 [Reference sheet frame]
-The Angel Islington, an angel who has lived under London since Atlantis sank, about 1.80 m, barefoot, neither man nor woman: perfectly androgynous and very beautiful. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: pale, wise, gentle and slightly lonely, smooth ageless skin, a straight nose, a calm mouth; luminous pearl-grey eyes as old as the universe. Hair: golden, shoulder length, soft. Clothing: a plain long robe that looks white and then looks woven from light, no belt, no ornament. No wings. Posture: serene, hands open at its sides. Expression: kind, patient, infinitely sad.
-SURREAL DETAIL: the candles nearest it have lit themselves, and the ones behind it have just gone out, trailing smoke.
+The Angel Islington, an angel who has lived under London since Atlantis sank, appearing as a petite young woman of about twenty-three, about 1.58 m, with a curvy body: a small waist, full bust and hips, soft shapely legs; beautiful and alluring yet with an innocent, gentle, almost childlike sweetness in her face. An original, unknown person who resembles no real actor, actress, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face, exactly half Greek and half East Asian, the two blended evenly: soft almond eyes with gentle single eyelids and long lashes from her Asian side; a straight Grecian nose and softly arched brows from her Greek side; a delicate oval face, rounded cheeks, small full lips; luminous pearl-grey eyes as old as the universe; flawless pale skin with a faint golden glow. Hair: long, soft, golden, falling in loose waves past her shoulders, a few strands lifting in a breeze no one else feels.
+CLOTHING: a long flowing robe that looks white and then looks woven from light: fine sheer white silk gathered at the shoulders with thin gold cords, fitted softly over her figure and falling to bare feet, a deep V at the neck, translucent where the light passes through it while its flowing folds cover her; no belt, no jewellery. No wings. Pure, radiant, sensual and innocent at once; never explicit.
+Posture: serene, hands open at her sides, palms a little forward, as if welcoming you. Expression: sweet, kind, patient, a little lonely.
+SURREAL DETAIL: the candles nearest her have lit themselves, and the ones behind her have just gone out, trailing smoke.
 [Style Bible]
 ```
 

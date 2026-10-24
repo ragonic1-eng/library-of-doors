@@ -528,7 +528,7 @@ Description paragraphs in the register of `character-prompts.md` §3 (add the Re
 **Mr Vandemar.** Two and a half heads taller than Croup, huge and impassive; grey-and-black hair cut bristle-short, brown eyes, a bullet head. The same wrong black suit. On his right hand, rings made from the skulls of four ravens; a knife holstered in his sleeve. He walks the way death walks.
 *Surreal detail:* when he spits on a wound in his hand, the flesh knits closed on camera.
 
-**The Angel Islington.** Barefoot, not much taller than Richard yet making him feel a child; neither man nor woman, perfectly androgynous and very beautiful. A pale, wise, gentle, slightly lonely face, golden hair, luminous pearl-grey eyes as old as the universe. A plain robe that looks white, then looks woven from light. No wings.
+**The Angel Islington.** *(Owner, 2026-10-24: in this game Islington is a woman, petite and curvy, beautiful and innocent-looking, half Greek and half East Asian; see `character-prompts.md` N07 and `production/neverwhere-cast.json`.)* Barefoot, not much taller than Richard yet making him feel a child; neither man nor woman, perfectly androgynous and very beautiful. A pale, wise, gentle, slightly lonely face, golden hair, luminous pearl-grey eyes as old as the universe. A plain robe that looks white, then looks woven from light. No wings.
 *Surreal detail:* candles light themselves as it approaches and go out behind it.
 
 **Anaesthesia.** A thin, bedraggled girl in her late teens who moves in scurries and laughs behind her hand. Ragged layers trimmed with scraps of fur, a necklace of rough quartz beads, a stained red birthday badge reading I AM 11. Carries a candle in a lemonade bottle.
