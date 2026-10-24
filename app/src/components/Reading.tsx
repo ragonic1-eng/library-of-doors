@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Book, Profile, Reading as ReadingT } from "@/lib/story/types";
 import { getCharacter } from "@/lib/story/load";
 import { lineId } from "@/lib/story/lines";
+import { drawKeepsake, shareKeepsake } from "@/lib/story/keepsake";
 
 // One relic per book goes on the library's reading table (series-bible.md §6).
 const RELICS: Record<string, string> = { sand: "A pinch of dream sand", angel_key: "The Angel's key", button_key: "The black button key", stones: "Urim and Thummim" };
@@ -29,6 +30,7 @@ export default function Reading({ book, profile, sceneId, onReading, children }:
   // Endings found add up over every playthrough: the saved reading carries them across "play again".
   const found = [...new Set([...(saved?.found ?? []), ...endings.filter((s) => visited.has(s.id)).map((s) => s.id)])];
   const [failed, setFailed] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (reading) return;
@@ -136,7 +138,26 @@ export default function Reading({ book, profile, sceneId, onReading, children }:
 
       {reading?.letter && <p className="reading-letter">{reading.letter}</p>}
 
-      <div className="endactions">{children}</div>
+      <div className="endactions">
+        {reading && (
+          <button
+            className="primary"
+            disabled={saving}
+            onClick={async () => {
+              setSaving(true);
+              try {
+                const blob = await drawKeepsake(reading, { book: book.title, ending: book.scenes[ending]?.title ?? "The End", mercy, dedication: "for Charmaine Lim" });
+                await shareKeepsake(blob, `my-reading-${book.id}.png`);
+              } finally {
+                setSaving(false);
+              }
+            }}
+          >
+            {saving ? "Painting your page…" : "Save my Reading as a picture"}
+          </button>
+        )}
+        {children}
+      </div>
     </section>
   );
 }
