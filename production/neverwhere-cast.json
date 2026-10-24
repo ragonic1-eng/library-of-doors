@@ -474,8 +474,9 @@
       "name": "The labyrinth and the Fleet Marsh",
       "look": "The labyrinth under London: old brick sewer tunnels opening into the Fleet Marsh, a floor of mud and foul standing water, whining mosquitoes, lit only by a fitful yellow-amber flare.",
       "scale": "Brick tunnels about 4 m high and 4 m wide: a standing person reaches less than half way to the roof; the Beast's back nearly scrapes it.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-labyrinth/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-labyrinth/candidates/nw-place-labyrinth-v1.png"
     },
     "library": {
       "name": "Lucienne's library (from the Sandman)",
@@ -489,183 +490,209 @@
       "name": "Outside the pub, Scotland",
       "look": "A narrow street in a small Scottish town at night, outside a pub with glowing windows; pelting rain, wet cobbles.",
       "scale": "The pub door is about 2 m high; the umbrella opens about 1 m across.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-scottish-street/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-scottish-street/candidates/nw-place-scottish-street-v1.png"
     },
     "brick-wall": {
       "name": "The pavement by the wall",
       "look": "A London pavement at night beside a high blank brick wall, street lamps, wet paving stones.",
       "scale": "The brick wall is about 4 m high; the door that opens in it is ordinary size, about 2 m.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-brick-wall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-brick-wall/candidates/nw-place-brick-wall-v1.png"
     },
     "orme-passage": {
       "name": "Orme Passage",
       "look": "Orme Passage: a narrow alley that should not exist, one hissing gas jet, wet cobbles, a metal dustbin at the dead end.",
       "scale": "The alley is about 2 m wide; the dustbin is waist-high (about 1 m); the gas jet bracket is about 2.5 m up the wall.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-orme-passage/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-orme-passage/candidates/nw-place-orme-passage-v1.png"
     },
     "tube-rush": {
       "name": "A Tube platform at rush hour",
       "look": "A crowded London Underground platform, Monday morning rush hour, curved tiled walls, a train at the platform.",
       "scale": "Tube carriage doors are about 1.9 m high: a standing adult's head comes close to the top of the door.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-tube-rush/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-tube-rush/candidates/nw-place-tube-rush-v1.png"
     },
     "aurie-flat": {
       "name": "Aurie's flat",
       "look": "Aurie's small rented flat at night: the narrow hallway and front door, stairwell light beyond.",
       "scale": "The hallway is about 1 m wide; the front door about 2 m high; a wall telephone at shoulder height.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-aurie-flat/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-aurie-flat/candidates/nw-place-aurie-flat-v1.png"
     },
     "death-grey": {
       "name": "The grey edge of the dream",
       "look": "A quiet grey nowhere at the edge of a dream: completely empty, no buildings, ruins, doors or furniture, only soft grey mist over a smooth pale grey floor, fading to white with no horizon, soft even light.",
       "scale": "No objects at all; the mist begins a few metres away; a person stands at ordinary height, camera at adult eye level.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-death-grey/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-death-grey/candidates/nw-place-death-grey-v2.png"
     },
     "ratspeaker-hall": {
       "name": "The Rat-speakers' hall",
       "look": "The Rat-speakers' hall under London: greasy fires, rat holes in every wall, people lying prostrate before a single rat.",
       "scale": "Rat holes are fist-sized; a rat is about 25 to 30 cm nose to rump; trestles are waist-high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-ratspeaker-hall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-ratspeaker-hall/candidates/nw-place-ratspeaker-hall-v1.png"
     },
     "portico-study": {
       "name": "Portico's study, the House Without Doors",
       "look": "The study in the House Without Doors: a stuffed crocodile on the ceiling, an astrolabe, a bust of Portico, a brown stain; on the desk the journal machine, a cabinet of walnut, brass and prisms with a gramophone horn and a small screen.",
       "scale": "The desk is waist-high; the journal machine's screen is about the size of a hardback book; the crocodile on the ceiling is about 3 m long.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-portico-study/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-portico-study/candidates/nw-place-portico-study-v1.png"
     },
     "nights-bridge": {
       "name": "Night's Bridge",
       "look": "Night's Bridge: a narrow medieval stone span into total black, no sky, no water.",
       "scale": "The bridge is about 2 m wide with waist-high (about 1 m) stone parapets.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-nights-bridge/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-nights-bridge/candidates/nw-place-nights-bridge-v1.png"
     },
     "harrods-market": {
       "name": "The Floating Market in Harrods",
       "look": "The Floating Market in Harrods' Egyptian Room at night: thousands of lights, stalls set on the shop counters, curry smoke, open fires, a jostling crowd of London Below.",
       "scale": "Shop counters are waist-high (about 1 m); the hall's ceiling is about 6 m.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-harrods-market/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-harrods-market/candidates/nw-place-harrods-market-v1.png"
     },
     "spiral-stair": {
       "name": "The 259 steps",
       "look": "The bottom of a disused Tube station's spiral staircase: metal railings, a sign warning of 259 steps, steel lift doors.",
       "scale": "Each step about 18 cm high; railings waist-high; the lift doors about 2.1 m high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-spiral-stair/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-spiral-stair/candidates/nw-place-spiral-stair-v1.png"
     },
     "great-hall": {
       "name": "Islington's Great Hall",
       "look": "Islington's Great Hall: rock walls, iron pillars running into the dark, a waterfall into a small rock-pool, hundreds of candles, a huge door of black flint set in silver tarnished almost black between two iron pillars.",
       "scale": "Iron pillars about 8 m tall; the black flint door about 4 m tall, more than twice a person's height; candles stand knee- to waist-high; the rock-pool about 2 m across.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-great-hall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-great-hall/candidates/nw-place-great-hall-v1.png"
     },
     "central-line": {
       "name": "A Central Line platform",
       "look": "A Central Line platform at night, a few late passengers, posters for films and underwear, the recorded voice: Mind the Gap.",
       "scale": "About 3 m from the platform edge to the back wall; Tube carriage doors about 1.9 m high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-central-line/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-central-line/candidates/nw-place-central-line-v1.png"
     },
     "museum-storeroom": {
       "name": "The museum storeroom",
       "look": "A museum storeroom: a dim hall crowded with junk, crates and statues on plinths.",
       "scale": "Plinths about 1 m high, so a man standing on one has his head far above everyone else's; crates chest-high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-museum-storeroom/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-museum-storeroom/candidates/nw-place-museum-storeroom-v1.png"
     },
     "museum-hall": {
       "name": "The Angels over England party",
       "look": "The museum's exhibition hall during the Angels over England party: guests in evening dress, drinks, and on a stage the Angelus, an enormous carved cathedral door.",
       "scale": "The stage is about 1 m high; the Angelus is about 5 m tall, nearly three times a person's height.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-museum-hall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-museum-hall/candidates/nw-place-museum-hall-v1.png"
     },
     "cellar": {
       "name": "The cellar of maggots",
       "look": "A dank cellar: dripping water, rustling maggots, one lantern.",
       "scale": "The ceiling is about 2.3 m, low over a tall man's head; the figurine fits in two cupped hands (about 20 cm).",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-cellar/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-cellar/candidates/nw-place-cellar-v1.png"
     },
     "blackfriars-marsh": {
       "name": "The marsh before the Black Friars' bridge",
       "look": "A marsh in thick yellow fog at the foot of the Black Friars' bridge rising out of the mist; muddy water.",
       "scale": "The bridge parapet is waist-high; the water ankle- to knee-deep; a quarterstaff is as tall as the man who holds it.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-blackfriars-marsh/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-blackfriars-marsh/candidates/nw-place-blackfriars-marsh-v1.png"
     },
     "blackfriars-platform": {
       "name": "Blackfriars station",
       "look": "Blackfriars Underground station: a dim platform, BLACKFRIARS on the tiled wall, posters on the far wall across the tracks.",
       "scale": "Tube carriage doors about 1.9 m high; the posters across the tracks about 3 m wide.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-blackfriars-platform/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-blackfriars-platform/candidates/nw-place-blackfriars-platform-v1.png"
     },
     "friars-crypt": {
       "name": "The crypt of those who failed",
       "look": "A low, crypt-like room under the Black Friars' abbey, candlelit: a long wall of portraits of those who failed the Ordeal, Polaroids among sepia prints, pencil sketches and painted miniatures.",
       "scale": "The ceiling is low, about 2.2 m; each picture is palm-sized.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-friars-crypt/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-friars-crypt/candidates/nw-place-friars-crypt-v1.png"
     },
     "london-wall": {
       "name": "The London Wall at Tower Hill",
       "look": "The top of a remnant of the old Roman London Wall near Tower Hill at night, moonlight, the Thames beyond.",
       "scale": "The wall stands about 4 m high and is about 2.4 m wide on top, room for a body laid out with space beside it.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-london-wall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-london-wall/candidates/nw-place-london-wall-v1.png"
     },
     "down-street": {
       "name": "Down Street's well",
       "look": "Down Street: a vast inside-out Tower of Babel, a bottomless well about 40 m across, its rock walls carved with an ornate spiral road winding down for thousands of feet, dim lamps along the road, tiny fires far, far below; an old lift cage hangs at the top beside a narrow wooden ledge, and a single long plank bridges the drop from the ledge to the top of the spiral road.",
       "scale": "The well is about 40 m across and thousands of feet deep; the plank is about 30 cm wide and 6 m long, a thin line over the drop; the ledge by the lift no wider than a plank; the lift cage about 2.2 m high; the spiral road about 3 m wide; the fires far below are pinpricks.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-down-street/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-down-street/candidates/nw-place-down-street-v2.png"
     },
     "westminster": {
       "name": "The island of Westminster",
       "look": "The island of Westminster at dawn: long grass white with melting frost, a small hill, the Thames beyond, wheeling gulls.",
       "scale": "The grass is knee-high; the hill a gentle slope about 15 m long, so a person at the top is still clearly readable.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-westminster/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-westminster/candidates/nw-place-westminster-v1.png"
     },
     "trafalgar": {
       "name": "Trafalgar Square",
       "look": "Trafalgar Square on a warm October mid-morning: blue sky, Nelson's Column, the Landseer lions, red buses and black taxis, tourists feeding legions of tubby pigeons.",
       "scale": "Nelson's Column about 52 m; each lion about 6 m long on a high plinth; a pigeon about 30 cm.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-trafalgar/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-trafalgar/candidates/nw-place-trafalgar-v1.png"
     },
     "brewer-wall": {
       "name": "The wall off Brewer Street",
       "look": "A dark brick wall in a narrow street off Brewer Street, Soho, at night; a door shape scratched into the bricks.",
       "scale": "The scratched door shape is about 2 m high, just taller than a person.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-brewer-wall/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-brewer-wall/candidates/nw-place-brewer-wall-v1.png"
     },
     "market-b": {
       "name": "The next Floating Market",
       "look": "A Floating Market in a lantern-lit underground hall: stalls, smoke, traders, a crowd of London Below.",
       "scale": "Trestles waist-high; lanterns hung about 3 m up.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-market-b/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-market-b/candidates/nw-place-market-b-v1.png"
     },
     "penthouse": {
       "name": "The penthouse",
       "look": "Aurie's new penthouse flat on a Saturday morning: floor-to-ceiling windows over London, packing cases half emptied.",
       "scale": "The ceiling about 3 m; packing cases knee-high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-penthouse/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-penthouse/candidates/nw-place-penthouse-v1.png"
     }
   }
 }

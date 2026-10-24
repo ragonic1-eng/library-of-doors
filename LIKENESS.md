@@ -59,7 +59,8 @@ likeness check and the face-restoring pass use only the clear, straight-on, arm'
 
 ## Options not yet used (need the owner's go-ahead)
 
-- **A video model that sees several face references.** The Infistar key offers `kling-video-o1` (its "Elements"
+- ~~**A video model that sees several face references.**~~ Tested 2026-10-24 (plan-neverwhere.md §6 decision 3): `kling-video-o1` has no image-to-video or reference-image route on this gateway; wan2.7-i2v from a 0.46 medium-shot first frame held 0.41 on its worst frame. Not to be retried.
+  Original note: The Infistar key offers `kling-video-o1` (its "Elements"
   take several reference angles of one subject) and `doubao-seedance-2-0`. A small test, the same Aurie shot in
   each, about ¥10 to ¥15, would show whether they hold her face better than wan2.7-i2v.
 - ~~A face-restoring pass after the video~~ (now rule 8) with FaceFusion (open source, runs on this PC, free; needs a download of

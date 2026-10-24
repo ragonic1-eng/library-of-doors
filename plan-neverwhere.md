@@ -206,6 +206,17 @@ Hero **Aurie Mayhew**; **full story, cap ¥500**; the **¥15 test runs** before 
    **end frame** as well as a start frame (wan2.x has a first-and-last-frame mode; Kling has an image tail). Go/no-go:
    a talking loop rendered with the same picture at both ends must measure a seam under 6 straight out of the model.
    If either fails it is written down and never tried again.
+   **Result (run 2026-10-24, ¥6.22 of ¥15; `app/scripts/video-test.mjs`, clips in `assets/clips/neverwhere/test/`):**
+   (i) `kling-video-o1` **no-go, and free**: the gateway has no route for image-to-video or reference images on it
+   ("用参考图生成" refused with or without the extra face photos; text-only only), so it cannot start from an approved
+   frame at all. `kling-v2-6`'s own route is "temporarily restricted" for this key, as in the Sandman. `wan2.7-i2v` stays
+   first, and the test shows why it now works: from a 0.463 first frame of Aurie at medium shot with calm motion it held
+   0.458 on average and **0.411 on its worst frame** (the Sandman's wan2.7 clips fell under 0.35). It renders a 5 s clip in
+   about 40 s for ¥3.00 (¥0.60 a second).
+   (ii) end frame **no-go**: wan2.7 through the task route with the same picture as first and last frame came back with a
+   seam of 7.15; the last frame was not honoured, though the motion prompt brought Door back to her pose. Talking loops
+   therefore use the free ping-pong (rule 13 b): Door's loop measured 4.41 after it, the same as one frame step in that
+   shot, under the 6 line. Neither question is to be paid for again.
 4. **Casting London Below.** The novel fixes some looks (the marquis is Black; Hunter's skin is burnt caramel; the
    friars are dark-skinned; Croup is pallid with orange hair; Islington is androgynous and golden-haired), and those
    stay. For the characters the book leaves open, the standing rule says new characters lean Asian: recommended

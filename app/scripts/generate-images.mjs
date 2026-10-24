@@ -156,6 +156,23 @@ ${STYLE}`,
   }
 }
 
+// The ¥15 video test (plan decision 3): two real 21.3 first frames on the approved Westminster plate.
+if (existsSync(NW_CAST_FILE)) {
+  const nw = JSON.parse(readFileSync(NW_CAST_FILE, "utf8"));
+  const pl = nw.places.westminster, ch = nw.characters;
+  const shot = (who, scale, body) => `One single cinematic photograph in 16:9, never a collage, grid or split screen, no text. Reference images: the person's approved sheet first${who === "aurie" ? " and her real face photographs" : ""}, the location plate last: match the plate's grass, river, hill and dawn light exactly.
+${body}
+Location: ${pl.look}
+Scale: ${scale} ${pl.scale} True adult proportions, camera at adult eye level.
+${STYLE}`;
+  jobs.push({ id: "nw-test-door-talk", group: "nw-test", dir: join(ROOT, "assets", "keyframes", "neverwhere", "talk-door-21.3"), approved: join(ROOT, "assets", "keyframes", "neverwhere", "talk-door-21.3", "keyframe.png"),
+    prompt: () => shot("door", `Door is ${ch.door.height} m, petite.`, `First frame of a talking loop. Medium shot, waist up: ${ch.door.lock.replace("Filthy and ragged at first (until 3.3), washed afterwards; the outfit is the same.", "Washed and clean.")} She stands at the top of the frosted hill with the dawn behind her and to one side, facing the camera at a slight three-quarter angle, eyes on someone just beside the lens, calm and a little sad, mouth closed, hands relaxed. Her cheeks are dry.`),
+    refs: [join(C("door"), "sheet.png"), join(P("nw-westminster"), "plate.png")] });
+  jobs.push({ id: "nw-test-aurie-21.3", group: "nw-test", dir: join(ROOT, "assets", "keyframes", "neverwhere", "still-aurie-21.3"), approved: join(ROOT, "assets", "keyframes", "neverwhere", "still-aurie-21.3", "keyframe.png"),
+    prompt: () => shot("aurie", `Aurie is ${ch.aurie.height} m.`, `Medium shot, waist up, of Aurie listening: ${ch.aurie.lock} Her look in this scene: ${ch.aurie.looks.find((l) => l.key === "friar's robe").look}. She stands on the frosted grass at dawn, turned three-quarters toward the camera, eyes on someone just beside the lens, calm, the faint warmth she always has, mouth closed.`),
+    refs: [...AURIE_NOW, join(C("aurie-mayhew"), "sheet.png"), join(P("nw-westminster"), "plate.png")] });
+}
+
 // Aurie Mayhew's expressions, with her real smile and laugh as references (needs her approved sheet).
 jobs.push({
   id: "aurie-mayhew-expressions", group: "nw-angles", dir: join(C("aurie-mayhew"), "candidates"), approved: join(C("aurie-mayhew"), "expressions.png"),
