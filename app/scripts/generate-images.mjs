@@ -114,9 +114,37 @@ for (const [id, section] of [["fates", "### 3.8"], ["johanna", "### 3.9"], ["rac
   jobs.push({ id: `${id}-sheet`, group: "sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(section, "**Reference sheet")), refs });
 }
 
+// Neverwhere cast (character-prompts.md §3n): its own groups (nw-sheets, nw-angles) so a Sandman run never touches it.
+// Tier A: head angles + turnaround; tier B: one of them; tier C: the sheet only.
+const AURIE_NOW = [...AURIE_FACES, ...["photo-18.jpg", "photo-11.jpg", "photo-14.jpg"].map((f) => join(C("dream"), f))];
+const NW_CAST = [
+  ["aurie-mayhew", "N01", "A"], ["door", "N02", "A"], ["marquis", "N03", "A"], ["hunter", "N04", "A"], ["croup", "N05", "A"],
+  ["vandemar", "N06", "A"], ["islington", "N07", "A"], ["lamia", "N08", "A"], ["anaesthesia", "N09", "A"], ["oldbailey", "N10", "A"],
+  ["abbot", "N11", "A"], ["jessica", "N12", "A"], ["earl", "N13", "A"], ["ratspeaker", "N14", "turnaround"], ["varney", "N15", "turnaround"],
+  ["sable", "N16", "turnaround"], ["beast", "N17", "turnaround"], ["gary", "N18", "heads"], ["oldwoman", "N19", "C"], ["tooley", "N20", "C"],
+  ["iliaster", "N21", "C"], ["ross", "N22", "C"], ["lear", "N23", "C"], ["serpentine", "N24", "C"], ["hammersmith", "N25", "C"],
+  ["fuliginous", "N26", "C"], ["portico", "N27", "C"], ["rat", "N28", "C"], ["nw-props", "N29", "C"],
+];
+for (const [id, n] of NW_CAST) {
+  const refs = id === "aurie-mayhew" ? AURIE_NOW : id === "portico" ? [join(C("door"), "sheet.png")] : [];
+  jobs.push({ id: `${id}-sheet`, group: "nw-sheets", dir: join(C(id), "candidates"), approved: join(C(id), "sheet.png"), prompt: () => assemble(block(`### ${n}`, id === "nw-props" ? "**Prop sheet" : "**Reference sheet")), refs });
+}
+
 // Angle sheets (character-prompts.md §3c): every side of the face and body, so stills and video never have to invent one.
 const TURN_FRAME = block("## 3c.", "Turnaround frame");
 const HEAD_FRAME = block("## 3c.", "Head-angle frame");
+const AURIE_MAYHEW_LOCK = "Her face is an exact likeness of the real woman in the first photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, narrow or beautify her. Styling exactly as in the reference sheet: her own natural skin and long dark hair, the cream cable-knit sweater, jeans and white sneakers; a curvy, full figure.";
+for (const [id, , tier] of NW_CAST) {
+  for (const kind of tier === "A" ? ["heads", "turnaround"] : tier === "heads" || tier === "turnaround" ? [tier] : []) {
+    const creature = id === "beast";
+    const frame = kind === "heads" ? HEAD_FRAME : creature ? TURN_FRAME.replace(/identical person/g, "identical animal").replace("Neutral standing pose, arms relaxed.", "Standing pose.") : TURN_FRAME;
+    jobs.push({
+      id: `${id}-${kind}`, group: "nw-angles", dir: join(C(id), "candidates"), approved: join(C(id), `${kind}.png`),
+      prompt: () => `${frame}\n${id === "aurie-mayhew" ? AURIE_MAYHEW_LOCK : ""}\n${STYLE}`.trim(),
+      refs: [...(id === "aurie-mayhew" ? AURIE_NOW : []), join(C(id), "sheet.png")],
+    });
+  }
+}
 const ANGLE_LOCK = {
   aurie: "Her face is an exact likeness of the real woman in the first four photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, narrow or beautify her. Styling (pale skin, black hair, black gown) as in the reference sheet.",
   "alex-young": "His face is an exact likeness of the real man in the first two photographs: a very broad, round, full face, heavy cheeks and a wide soft jaw; narrow single-lidded eyes behind rectangular matte-black glasses; a broad nose with a rounded tip; full lips; prominent ears. Do not slim or reshape him. Costume as in the reference sheet.",
@@ -483,7 +511,8 @@ async function main() {
     console.error("No INFISTAR_API_KEY found in the project .env. Nothing was sent.");
     process.exit(1);
   }
-  const selected = cmd === "one" ? jobs.filter((j) => j.id === argv[1]) : jobs.filter((j) => j.group === cmd);
+  // `one` takes one or more job ids: one door-sheet marquis-sheet
+  const selected = cmd === "one" ? jobs.filter((j) => argv.slice(1).includes(j.id)) : jobs.filter((j) => j.group === cmd);
   if (!selected.length) {
     console.error(`Nothing matches "${argv.slice(0, 2).join(" ")}". Try: list, sheets, portraits, plates, one <job-id>.`);
     process.exit(1);

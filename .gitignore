@@ -42,3 +42,6 @@ __pycache__/
 # FaceFusion (local face-restoring pass) and its environment
 /tools/facefusion/
 /tools/venv-ff/
+
+# Review contact sheets (contain real faces): local only
+/review/

@@ -599,6 +599,302 @@ SURREAL DETAIL: the red thread runs from the Mother's hands out of the frame, ta
 
 ---
 
+## 3n. Neverwhere cast (Book 2)
+
+Every Neverwhere character, studied from the novel (`source-text/neverwhere.txt`) and `story-map-neverwhere.md` §7, with the owner's casting (2026-10-24): the roles the novel leaves open are East and South-East Asian Londoners (Door, Anaesthesia, Jessica, Gary, Lamia, Hammersmith, Lear, and so Door's father, Lord Portico); the looks the novel fixes stay as written. Every character is an original, unknown person who resembles no real actor, celebrity or public figure, and above all no actor from the 1996 BBC series, the 2013 radio drama or any stage version. Sheets are approved in chat before anyone appears in a picture (plan rule 4). Tiers: **A** sheet + head angles + turnaround (on video or with a talking loop); **B** sheet + turnaround (one action clip) or sheet + head angles (Gary); **C** sheet only. Lucienne, Death, Daniel and Hob come from the Sandman, already approved.
+
+### N01 Aurie Mayhew, the hero (tier A; real person)
+
+**Reference sheet** (attach Charmaine's face crops and straight-on photographs first; likeness gate 0.45):
+```
+[Reference sheet frame]
+Use the attached photographs as the exact face of this woman. She must be instantly recognisable to her family: keep her bone structure, the shape and set of her eyes, her brows, nose, lips, chin and the proportions between them exactly as they are: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids and slightly downturned outer corners; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, reshape or idealise her. Make her lovely the way a portrait photographer would, with light and calm, never by changing her face.
+She is Aurie Mayhew, a London office worker in her thirties, a mortal woman: her own natural skin tone with real texture, her own dark eyes (no star-points), her own long straight dark brown-black hair worn loose past the shoulders, a little untidy. BODY: a curvy, full-figured woman of average height; keep her real shape and proportions; do not slim her.
+CLOTHING (the look she wears for most of the story): a thick cream cable-knit wool sweater, slightly oversized; dark blue straight-leg jeans; worn white canvas sneakers; a black sports bag on one shoulder. Clean and new for this sheet.
+POSE: standing easy, weight on one hip, one hand on the strap of the bag. EXPRESSION: open, kind, a little bewildered, the face of someone who stops for strangers.
+SURREAL DETAIL: a single rough quartz bead in her jeans pocket catches a light that is not in the room.
+[Style Bible]
+```
+
+### N02 Door (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Door, the Lady Door of the House of Arch, a young British Chinese woman of about twenty, clearly adult, very small and slight, about 1.55 m. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: pale, heart-shaped and elfin, a small pointed chin, high delicate cheekbones, a small straight nose, a wide expressive mouth. Eyes: large, almond-shaped, single-lidded, and their irises are like fire opals, flickering green, blue, red and gold as she moves. Hair: short, choppy and self-cut, near-black with deep auburn and copper lights where the light catches it, tangled. Clothing: layer upon layer of ripped and patched velvet, lace, taffeta, silk and brocade in faded jewel colours, rips through which other layers show, under an enormous battered brown leather flying jacket with a sheepskin collar that swallows her and makes her look smaller; worn black boots. Posture: guarded, quick, ready to run. Expression: wary, determined, older than her years.
+SURREAL DETAIL: where her hand rests on the jacket's zip, hairline seams of white light run through the metal, as if it wants to open.
+[Style Bible]
+```
+
+### N03 The marquis de Carabas (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The marquis de Carabas, a tall Black British man of uncertain age, perhaps forty, about 1.90 m, lean, who moves like a great cat. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: very dark skin, a long elegant face with high cheekbones and a strong jaw, eyes whose whites burn bright in the dark face, a sudden wide grin of white teeth. Hair: long black locs tied back at the nape. Clothing: a huge dandyish black coat, neither frock coat nor trench coat, cut long and full with far too many inside pockets, its lace cuffs grubby and torn; under it ragged mismatched layers, a once-fine waistcoat with a missing button; high square-toed black boots; a gold pocket watch on a chain across the waistcoat. Posture: lounging, weight on one hip, one hand inside the coat. Expression: amused, sly, measuring everyone's price.
+SURREAL DETAIL: the coat's lining shows more pockets than a coat could hold, receding into darkness.
+[Style Bible]
+```
+
+### N04 Hunter (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Hunter, a tall woman of no readable age (she could be thirty-five or a thousand), about 1.82 m, long-limbed and strong, of mixed African and Caribbean descent. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: skin the colour of burnt caramel, a calm face like carved wood at rest, high cheekbones, nut-brown eyes that miss nothing, a full mouth whose rare smile could stop a revolution. Hair: long, thick, tawny, in a loose heavy braid over one shoulder. Clothing: close-fitting soft leathers dappled grey and brown like an animal's coat, a battered canvas duffel across her back, a long wooden quarterstaff in one hand, a broad hunting knife in a sheath on her belt, a small torch strapped to her left wrist. Posture: perfectly balanced, still, ready. Expression: watchful, unreadable, faintly amused.
+SURREAL DETAIL: the dust on the floor does not stir where she stands.
+[Style Bible]
+```
+
+### N05 Mr Croup (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Mr Croup, one of two very old killers who look like men, about 1.70 m, thin and quick, always almost dancing. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: pallid skin, a sharp foxlike face, faded china-blue eyes, lank greasy hair of an unlikely orange, a wide grin of teeth like an accident in a graveyard. Clothing: a greasy, frayed black suit made two hundred years ago from someone's description of a modern suit, so every line and seam is subtly wrong: lapels too wide, buttons in odd places, trousers a little short; a grubby white shirt, a thin black tie. No jewellery. Posture: leaning forward, hands rubbing together. Expression: delighted, oily, dangerous.
+SURREAL DETAIL: his smile is a fraction of a second late, a faint ghost of the previous expression still on his face.
+[Style Bible]
+```
+
+### N06 Mr Vandemar (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Mr Vandemar, Mr Croup's partner, a huge impassive man about 2.05 m tall, broad as a door. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: a bullet head, grey-and-black hair cut bristle-short, flat calm brown eyes, a heavy jaw, no expression at all. Clothing: the same wrong two-hundred-year-old black suit as his partner, straining at the shoulders; on his right hand four rings made from the small skulls of ravens; the hilt of a knife just visible at his sleeve. Posture: utterly still, arms at his sides, like something that has never needed to hurry. Expression: blank, patient, literal.
+SURREAL DETAIL: a thin line of an old wound on the back of his hand knits closed as you watch.
+[Style Bible]
+```
+
+### N07 The Angel Islington (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The Angel Islington, an angel who has lived under London since Atlantis sank, about 1.80 m, barefoot, neither man nor woman: perfectly androgynous and very beautiful. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: pale, wise, gentle and slightly lonely, smooth ageless skin, a straight nose, a calm mouth; luminous pearl-grey eyes as old as the universe. Hair: golden, shoulder length, soft. Clothing: a plain long robe that looks white and then looks woven from light, no belt, no ornament. No wings. Posture: serene, hands open at its sides. Expression: kind, patient, infinitely sad.
+SURREAL DETAIL: the candles nearest it have lit themselves, and the ones behind it have just gone out, trailing smoke.
+[Style Bible]
+```
+
+### N08 Lamia (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Lamia, a Velvet, one of London Below's pale cold women, appearing as a British Japanese woman of about twenty-eight, slight, about 1.62 m. An original, unknown person who resembles no real actor, celebrity or public figure, and no actor from any adaptation of Neverwhere. Face: very pale porcelain skin, a delicate oval face, eyes the colour of foxgloves (a soft purple-pink), lips the deep colour of plum bloom. Hair: black, perfectly coiffed and piled high, pinned with silver. Clothing: a long jet-black velvet dress, high-necked, long-sleeved, fitted, sweeping the floor; silver rings and a silver collar. Elegant and alluring, never explicit. Posture: very still, hands folded, head a little tilted. Expression: amused, curious, hungry under the politeness.
+SURREAL DETAIL: frost feathers the velvet at her fingertips, and her breath does not mist in the cold air.
+[Style Bible]
+```
+
+### N09 Anaesthesia (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Anaesthesia, a rat-speaker girl of London Below, a British Filipina of nineteen who looks exactly nineteen, clearly adult but young, thin and small, about 1.52 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: young and quick, soft youthful skin, a small chin, large dark watchful eyes, never gaunt or older-looking, a small mouth she hides behind her hand when she laughs, a smudge of soot on one cheek. Hair: black, long and ragged, tied back with string. Clothing: ragged layers trimmed with scraps of fur, fingerless gloves, a necklace of rough clear quartz beads on a string, a stained red birthday badge reading I AM 11 pinned to her coat; she holds a lit candle inside a cut-down lemonade bottle. Posture: hunched, ready to scurry. Expression: shy, curious, braver than she looks.
+SURREAL DETAIL: two small brown rats sit at her feet looking the same way she does.
+[Style Bible]
+```
+
+### N10 Old Bailey (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Old Bailey, an old man who lives on London's rooftops and talks to birds, round and short, about 1.60 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: kind, creased and weathered, a red nose, bright small eyes, grey muttonchop whiskers; battered spectacles hanging on a string round his neck. Clothing: a nameless garment, part coat and part cape, covered thickly and entirely in feathers of every kind, ropes wound round and round his body, fingerless gloves more hole than glove, old boots. Posture: rocking on his heels. Expression: cheerful, shrewd, fond.
+SURREAL DETAIL: a single feather lifts off his coat and, a little way off, is turning into a small grey bird.
+[Style Bible]
+```
+
+### N11 The abbot of the Black Friars (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The abbot of the Black Friars, a very old Black British man of about ninety, slight and stooped, about 1.70 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: deep brown, deeply lined, gentle; eyes glaucous blue-white with cataracts, blind; a short white beard. Clothing: a black Dominican habit with its cowl down over his shoulders, a plain wooden rosary at the belt; one gnarled brown hand resting on a plain wooden walking stick. Posture: upright despite his age. Expression: serene, wry, listening.
+SURREAL DETAIL: the steam from the cup of tea in his other hand bends toward his face as if he could see it.
+[Style Bible]
+```
+
+### N12 Jessica Bartram (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Jessica Bartram, Aurie's fiancée, a British Korean woman of twenty-six, very beautiful, about 1.70 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: an oval face, dark flashing eyes, strong elegant brows, a confident mouth. Hair: long, glossy, dark chestnut, in loose corkscrew curls. Clothing: a smart camel city coat over a fitted black dress, black heels, a slim leather bag, an engagement ring; poised and expensive. Posture: upright, organised, a phone in one hand. Expression: polite, busy, a little terrifying.
+SURREAL DETAIL: on the page of her diary, one name is fading as you look at it.
+[Style Bible]
+```
+
+### N13 The earl of Earl's Court (tier A)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The earl of Earl's Court, an immense elderly Englishman, about 2.05 m and broad, so tall his head brushes a ceiling. An original, unknown person who resembles no real actor, celebrity or public figure. Face: ruddy and jovial, a black patch over his left eye, a big red-grey beard with crumbs in it, bushy brows. Clothing: a fur cap over his balding head, a fur-lined dressing gown of faded wine-red brocade, striped pyjama trousers, carpet slippers; a heavy gold chain of office over the gown. Posture: expansive, one hand on his belly. Expression: delighted, forgetful, a little dangerous.
+SURREAL DETAIL: a coin in his hand is dated a year that has not happened yet.
+[Style Bible]
+```
+
+### N14 The Lord Rat-speaker (tier B, turnaround)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+The Lord Rat-speaker, ruler of the rat-speakers, a tall man of about fifty bent into a permanent stoop. An original, unknown person who resembles no real actor, celebrity or public figure. Face: long and gaunt, a patchy brown beard, yellow teeth, small suspicious eyes; long greasy hair. Clothing: rags trimmed with orange, white and black calico fur; a glass dagger with a fur-wrapped grip in his belt. Posture: stooped, hands held at his chest with the fingertips pressed together. Expression: obsequious, sly, afraid of the rat he serves.
+SURREAL DETAIL: his shadow on the backdrop has a long thin tail.
+[Style Bible]
+```
+
+### N15 Varney (tier B, turnaround)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Varney, a hired bodyguard of London Below, a huge man about 1.95 m, like a bull that has been shaved, dehorned and tattooed. An original, unknown person who resembles no real actor, celebrity or public figure. Face: a shaven scarred head, heavy brow, broken nose, a mouth of complete dental ruin. Clothing: a jacket and trousers stitched together from old car-seat upholstery and rubber car mats, heavy boots, tattoos down his arms; a spiked morning-star on a chain in one fist. Posture: chest out, looming. Expression: stupid, cruel, sure of himself.
+SURREAL DETAIL: a faint heat haze trails from the morning-star as if he were lifting it with his mind.
+[Style Bible]
+```
+
+### N16 Brother Sable (tier B, turnaround)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Brother Sable of the Black Friars, a tall Black British friar of about forty, about 1.92 m, powerful. An original, unknown person who resembles no real actor, celebrity or public figure. Face: skin the dark brown of old mahogany, a calm strong face, a shaved head, a split lower lip healing. Clothing: a black Dominican habit, sleeves pushed up; a plain wooden quarterstaff as tall as himself. Posture: staff grounded, feet apart. Expression: stern, fair, unhurried.
+SURREAL DETAIL: the mist at his feet parts around the staff in a perfect circle.
+[Style Bible]
+```
+
+### N17 The Great Beast of London (tier B, turnaround)
+
+**Reference sheet:**
+```
+Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT its head straight on, CENTRE three-quarter view standing, RIGHT full side view. The Great Beast of London: a boar that escaped into the Fleet Ditch three centuries ago and grew in the sewers to the size of a bull elephant, about 3.5 m at the shoulder. A steaming, bristled black-brown hide, matted and scarred, stuck all over with the broken shafts of spears, shattered sword blades and rusted knives from three hundred years of hunters; two great curved tusks jutting up and outward from the lower jaw like a wild boar's (never horns), yellowed, chipped and stained with dried blood; small red eyes; a ridge of coarse bristles along the spine. It looks ancient and slow, and enormous.
+SURREAL DETAIL: drops of sewer water hang motionless in the air around it.
+[Style Bible]
+```
+
+### N18 Gary (tier B, head angles)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Gary, Aurie's colleague and friend, a British Chinese man of about thirty, about 1.75 m, slim. An original, unknown person who resembles no real actor, celebrity or public figure. Face: friendly and open, clean-shaven, black hair neatly cut and gelled so every hair is in place, rimless glasses. Clothing: a grey office suit, a white shirt, a loosened blue tie, a lanyard. Posture: easy, hands in his trouser pockets. Expression: kind, worried, out of his depth.
+SURREAL DETAIL: the mug of tea in his hand is the only thing in the frame that steams.
+[Style Bible]
+```
+
+### N19 The old woman with the umbrella (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+An old Scottish woman, very old, small, who was once a dancer. An original, unknown person who resembles no real actor, celebrity or public figure. Face: a beaky, grimy, wrinkled face with two very sharp bright eyes, white hair escaping a wool hat of no colour. Clothing: layer upon layer of old coats and shawls; she holds a white umbrella printed with the map of the London Underground. Posture: upright, a dancer's straight back under all the layers. Expression: shrewd, kind, amused.
+SURREAL DETAIL: the rain around her is falling slightly slower than it should.
+[Style Bible]
+```
+
+### N20 Tooley, the earl's jester (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Tooley, the earl's jester, an arthritic old man of about seventy, small and bent. An original, unknown person who resembles no real actor, celebrity or public figure. Face: a painted face, white with faded red cheeks, a pinched, humourless mouth, tired eyes. Clothing: faded patched motley of red and yellow, a limp cap with tarnished bells, a bauble on a stick. Posture: hunched. Expression: sour, wary, a joke he has told too many times.
+SURREAL DETAIL: the bells on his cap ring though he is not moving.
+[Style Bible]
+```
+
+### N21 Iliaster (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Iliaster, a man of London Below who lives among the homeless of London Above, short and old, about 1.58 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: balding, a scraggly yellow-and-grey beard, facial lines etched with black dirt, grey rheumy eyes. Clothing: a filthy long coat over a ruined dark grey sweater, fingerless gloves; an old railwayman's lamp that gives less light than a match. Posture: shoulders hunched. Expression: suspicious, then cautiously kind.
+SURREAL DETAIL: the rain falls around him without touching him.
+[Style Bible]
+```
+
+### N22 Mr Ross, the canary (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Mr Ross, a killer Croup and Vandemar use as their canary, huge, almost as big as Vandemar, about 2.0 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: completely hairless head and face, heavy and grubby, small dull eyes. Clothing: a filthy T-shirt, crusted blue jeans, heavy boots. Posture: lumbering. Expression: dull menace, pleased with himself.
+SURREAL DETAIL: a small yellow feather is caught on his shoulder.
+[Style Bible]
+```
+
+### N23 Lear, the busker (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Lear, a busker in the Bank tunnel who can see London Below, a British Vietnamese man of about forty, extremely tall, about 1.98 m, thin. An original, unknown person who resembles no real actor, celebrity or public figure. Face: long, deep-set eyes, a serious nose, a long forked black beard, shoulder-length black hair. Clothing: a ragged T-shirt, oil-stained jeans, an old army coat spread at his feet with a few coins on it; a battered tenor saxophone. Posture: stooped over the saxophone. Expression: dreamy, sad, alert.
+SURREAL DETAIL: the coins on his coat are dated years that have not happened yet.
+[Style Bible]
+```
+
+### N24 Serpentine of the Seven Sisters (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Serpentine of the Seven Sisters, a towering old Englishwoman, about 2.0 m, gaunt and imperious. An original, unknown person who resembles no real actor, celebrity or public figure. Face: ravaged and proud, sharp grey eyes, a mouth like a cruel slash, greying hair piled high. Clothing: a white leather corset and high white leather boots over the shredded, dirt-stained remains of a long lace wedding dress. Posture: very straight, one hand on the back of a chair. Expression: contemptuous, amused, ancient.
+SURREAL DETAIL: the torn train of the dress drags through a puddle and leaves no mark.
+[Style Bible]
+```
+
+### N25 Hammersmith (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Hammersmith, a smith of London Below, a Mongolian Londoner of about forty built like a small mountain, about 2.0 m, enormously broad. An original, unknown person who resembles no real actor, artist, celebrity or public figure. Face: broad and wind-burnt, a flat broad nose, warm round dark eyes, long black hair pulled back into a topknot, a thick black beard braided into a short plait at the chin, a shy smile. Clothing: a heavy scorched leather apron over a bare barrel chest and huge arms, a hammer in one hand that looks small in it, a black iron rose in the other. Posture: careful, as if afraid of breaking things. Expression: gentle, bashful.
+SURREAL DETAIL: a drop of dew sits on the iron rose and does not dry in the forge heat.
+[Style Bible]
+```
+
+### N26 Brother Fuliginous (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Brother Fuliginous of the Black Friars, a young Black British friar of about twenty-five, slight, about 1.72 m. An original, unknown person who resembles no real actor, celebrity or public figure. Face: deep rich brown skin, a thin nervous face, a short-cropped head. Clothing: a black Dominican habit; a battered old Polaroid camera on a strap. Posture: eager, a little nervous. Expression: earnest.
+SURREAL DETAIL: a Polaroid developing in his hand shows a face that is not in the room.
+[Style Bible]
+```
+
+### N27 Lord Portico, Door's father (tier C)
+
+**Reference sheet:**
+```
+[Reference sheet frame]
+Lord Portico of the House of Arch, Door's father, a British Chinese man of about sixty, thin and ascetic. An original, unknown person who resembles no real actor, celebrity or public figure; his face is clearly related to Door's (the same heart-shaped face and pointed chin, grown long and lean with age). Face: almost bald, a high forehead, deep-set wise eyes, a thin mouth; "Caesar as Prospero". Clothing: a threadbare velvet smoking jacket, a black skullcap. Posture: upright, hands clasped behind his back. Expression: grave, tender, tired.
+SURREAL DETAIL: an orange in his hand is slowly turning itself inside out.
+[Style Bible]
+```
+
+### N28 The rats of London Below (tier C)
+
+**Reference sheet:**
+```
+Creature reference sheet on a seamless matte charcoal studio backdrop, three views of the identical animal side by side, the same soft octabox key light: LEFT head close-up, CENTRE three-quarter view sitting up on its haunches, RIGHT full side view walking. Master Longtail, a large old black rat with a grizzled muzzle, a torn left ear, long whiskers and bright clever black eyes; a lord among rats, dignified and amused.
+SURREAL DETAIL: his expression is unmistakably that of someone about to wink.
+[Style Bible]
+```
+
+### N29 Props of Neverwhere
+
+**Prop sheet:**
+```
+Prop reference sheet on a seamless matte charcoal studio backdrop, five objects laid out in one row with equal spacing, each lit by the same soft octabox key light, photographed straight on, no text, no labels. Left to right: (1) the key of the Black Friars: an old silver key about 12 cm long, an ornate bow worked with tiny angels' wings, tarnished, hanging from a plain grey thread; (2) Hunter's knife: a broad-bladed hunting knife with a worn bone handle and a brass guard; (3) the spear of faces: a bronze-headed spear, its wooden haft carved with small grotesque faces, shown upright; (4) the token: a small black obsidian statuette of a boar, about 8 cm long; (5) Old Bailey's silver box: a small tarnished silver snuffbox, its lid engraved with a bird.
+SURREAL DETAIL: the silver key casts a shadow slightly larger than itself.
+[Style Bible]
+```
+
+---
+
 ## 3b. Expression and pose sheets (movement library)
 
 Every speaking character gets two extra sheets, always generated from their approved reference sheet. They give Kling more to work with (more varied, more natural movement per clip) and they are the source frames for the **reaction loops**: short looping clips, one per mood, that play behind live dialogue so a character visibly reacts to what Aurie says (see `ai-dialogue-design.md` §6).
