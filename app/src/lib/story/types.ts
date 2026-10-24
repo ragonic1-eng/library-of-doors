@@ -28,6 +28,7 @@ export interface Beat {
   clip?: string; // video to show; it holds on its last frame until another picture is named
   still?: string; // still image to show instead (slow push-in); file stills/<id>.jpg
   card?: string; // silent full-screen time/place card ("England · 1916"), about 2.5 s
+  credit?: string; // makes the card a closing credit: this small line ("Aurie") above the card's text as a name, about 4.5 s
   sfx?: string; // one-shot sound effect played as this beat starts; file audio/sfx/<id>.mp3
   ambience?: string; // looping background bed from this beat on (overrides the scene's); file audio/ambience/<id>.mp3
   style?: "hook"; // show the text as a large centred cliffhanger line
@@ -100,6 +101,8 @@ export interface Scene {
   next?: string; // for scenes with no choices
   branch?: Branch[]; // alternate routes instead of next, for players whose earlier deeds qualify
   retryFrom?: string; // a dead end (type "end"): the story goes back to this earlier scene, undoing everything since
+  report?: boolean; // the book's final end card: show her Reading (a personality report from her choices)
+  ending?: boolean; // one of the book's endings, named on her Reading (part ends are not)
   source?: string; // where the scene comes from in the planning documents ("story map 4.3")
 }
 
@@ -155,6 +158,18 @@ export interface Profile {
   visited?: string[]; // scene ids reached, for unlocking chapters
   checkpoints?: Record<string, Checkpoint>; // "<book>:<scene>" -> her state on arriving there, for dead ends that send her back
   syncCode?: string; // cloud save code, to continue on another phone
+  readings?: Record<string, Reading>; // book id -> her Reading at the end of that book (kept when she plays again)
+}
+
+/** The personality report written at the end of a book from the choices she actually made. */
+export interface Reading {
+  key: string; // which ending and which choices it was written from; a different playthrough gets a new one
+  archetype: string;
+  tagline: string;
+  dims: { name: string; low: string; high: string; score: number; because: string }[]; // score 0..100
+  moments: string[]; // her own choices, word for word, that defined her
+  letter: string; // a few lines from Lucienne
+  found?: string[]; // ending scene ids she has reached in any playthrough of this book
 }
 
 /** Everything a dead end rolls back: what she is, what she has done, and what the world remembers. */

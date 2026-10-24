@@ -151,6 +151,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
 /* End card */
 .endcard {
   position: absolute; inset: 0;
+  z-index: 14; /* above the picture (1), talking loop (2), fx (3) and vignette (4); under the buttons (15) */
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem;
   text-align: center; padding: 2rem;
   background: rgba(0, 0, 0, 0.6);
@@ -394,6 +395,9 @@ button.ghost { border-color: transparent; color: var(--dim); }
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 8vw;
+  text-align: center;
+  text-wrap: balance;
   background: rgba(0, 0, 0, 0.62);
   font-size: clamp(1.6rem, 4.5vw, 3.2rem);
   letter-spacing: 0.18em;
@@ -403,6 +407,43 @@ button.ghost { border-color: transparent; color: var(--dim); }
   pointer-events: none;
   animation: timecard 2.6s ease both;
 }
+/* A closing credit: a small spaced role line, then the name in a large, quiet italic. */
+.timecard.credit {
+  flex-direction: column;
+  gap: 0.9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.5) 70%);
+  animation: credit 4.6s ease both;
+}
+.credit-role {
+  font-size: clamp(0.72rem, 1.7vw, 0.95rem);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.credit-name {
+  font-style: italic;
+  font-size: clamp(1.9rem, 5.2vw, 3.4rem);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+.credit-name::after {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: 1px;
+  margin: 0.9rem auto 0;
+  background: var(--accent);
+  opacity: 0.55;
+}
+@keyframes credit {
+  0% { opacity: 0; transform: translateY(6px); }
+  18% { opacity: 1; transform: none; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .timecard.credit { animation: none; } }
 @keyframes timecard {
   0% { opacity: 0; letter-spacing: 0.1em; }
   20% { opacity: 1; }
@@ -459,6 +500,52 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .endcard .echoes { max-height: 40dvh; font-size: 0.9rem; gap: 0.35rem; }
 }
 .endactions .primary { border-color: var(--accent); color: var(--accent); }
+
+/* Her Reading: the personality report on a book's last page */
+.reading {
+  position: absolute; inset: 0;
+  z-index: 14; /* as .endcard */
+  overflow-y: auto;
+  padding: calc(1.6rem + env(safe-area-inset-top)) max(6vw, 1rem) 2rem;
+  background: radial-gradient(ellipse at 50% 20%, rgba(20, 16, 10, 0.93), rgba(0, 0, 0, 0.97) 70%);
+  text-align: center;
+  animation: fade-in 2s ease both;
+}
+.reading > * { max-width: 60rem; margin-left: auto; margin-right: auto; }
+.reading-kicker { margin: 0 auto 0.4rem; font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); }
+.reading h2 { margin: 0 auto; font-weight: 400; font-style: italic; font-size: clamp(1.7rem, 4.6vw, 2.8rem); }
+.reading h2.reading-wait { font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--dim); animation: breathe 2.4s ease-in-out infinite; }
+@keyframes breathe { 50% { opacity: 0.45; } }
+.reading-tagline { margin: 0.5rem auto 1.4rem; max-width: 44rem; color: #d9c8a0; font-style: italic; line-height: 1.45; }
+.reading-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 2rem; text-align: left; align-items: start; }
+.reading-facts { margin: 0; display: grid; gap: 0.7rem; }
+.reading-facts div { border-bottom: 1px solid rgba(201, 162, 74, 0.18); padding-bottom: 0.45rem; }
+.reading-facts dt { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+.reading-facts dd { margin: 0.15rem 0 0; font-size: 1.05rem; }
+.reading-facts small { color: var(--dim); font-size: 0.75rem; margin-left: 0.3rem; }
+.reading-dims { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.dim-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.72rem; color: var(--dim); letter-spacing: 0.06em; }
+.dim-head b { font-weight: 400; font-size: 0.95rem; color: var(--ink); letter-spacing: 0.14em; text-transform: uppercase; }
+.dim-bar { position: relative; height: 2px; margin: 0.45rem 0 0.4rem; background: linear-gradient(to right, rgba(201, 162, 74, 0.15), rgba(201, 162, 74, 0.55), rgba(201, 162, 74, 0.15)); }
+.dim-bar i { position: absolute; top: 50%; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(201, 162, 74, 0.8); transform: translate(-50%, -50%); animation: dim-in 1.4s ease both; }
+@keyframes dim-in { from { left: 50%; opacity: 0; } }
+.reading-dims p { margin: 0; font-size: 0.85rem; color: #cfc6b6; font-style: italic; line-height: 1.4; }
+.reading-label { margin: 1.8rem auto 0.6rem; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); }
+.reading-moments blockquote { margin: 0.4rem auto; max-width: 44rem; font-style: italic; color: var(--ink); }
+.reading-letter {
+  margin: 1.8rem auto 1rem; max-width: 40rem; padding: 1.2rem 1.4rem;
+  text-align: left; white-space: pre-line; font-style: italic; line-height: 1.6; color: #e6dcc8;
+  border: 1px solid rgba(201, 162, 74, 0.3); border-radius: 4px;
+  background: rgba(201, 162, 74, 0.05);
+}
+.reading a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+@media (max-width: 640px) { .reading-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
+@media (max-height: 520px) {
+  .reading { padding-top: calc(1rem + env(safe-area-inset-top)); }
+  .reading-tagline { margin-bottom: 1rem; font-size: 0.92rem; }
+  .reading-dims { gap: 0.75rem; }
+}
+@media (prefers-reduced-motion: reduce) { .reading, .dim-bar i, .reading h2.reading-wait { animation: none; } }
 
 /* A clip that has played out keeps drifting toward the viewer while the narration finishes */
 .sway > .film.held:not(.react) { animation: push-in 14s ease-out both; }

@@ -12,6 +12,7 @@ import Ambience from "@/components/Ambience";
 import ReactLoop from "@/components/ReactLoop";
 import RotatePrompt from "@/components/RotatePrompt";
 import DevMenu from "@/components/DevMenu";
+import Reading from "@/components/Reading";
 
 // film: narrated beats are playing. talk: a live conversation. choose: a pure decision. end: part over.
 type Phase = "film" | "talk" | "choose" | "end";
@@ -47,6 +48,7 @@ const MUSIC_VOLUME = 0.38; // bed level (15% softer by the owner's request, 2026
 const DUCK_VOLUME = 0.14; // bed level while someone speaks
 const FADE_MS = 2500;
 const CARD_MS = 2600; // a silent time/place card
+const CREDIT_MS = 4600; // a closing credit lingers longer
 const BEAT_GAP_MS = 250; // breath between narrated lines
 const HOLD_MS = 2000; // longest a clip keeps playing after its line before the next picture cuts in
 const NPC_TEXT_WAIT_MS = 6000; // longest a character's line waits for its voice before it is shown anyway
@@ -174,7 +176,7 @@ export default function Player({ book }: { book: Book }) {
   // a time/place card, and the narrator's subtitle, which exists only while its line is being spoken.
   const [layers, setLayers] = useState<Layer[]>([]);
   const [missing, setMissing] = useState<string | null>(null);
-  const [card, setCard] = useState<string | null>(null);
+  const [card, setCard] = useState<{ text: string; credit?: string } | null>(null);
   const [subtitle, setSubtitle] = useState<{ text: string; hook: boolean } | null>(null);
   const [upcoming, setUpcoming] = useState<string | null>(null);
   const [beatFx, setBeatFx] = useState<Fx | undefined>(undefined);
@@ -545,8 +547,8 @@ export default function Player({ book }: { book: Book }) {
         const skipped = new Promise<void>((r) => (skipRes = r));
         skipRef.current = () => { skipRes(); stopAllVoices(); };
         if (b.card) {
-          setCard(b.card);
-          await Promise.race([sleep(CARD_MS), skipped]);
+          setCard({ text: b.card, credit: b.credit });
+          await Promise.race([sleep(b.credit ? CREDIT_MS : CARD_MS), skipped]);
           setCard(null);
         }
         if (b.text && token === runRef.current) {
@@ -867,7 +869,7 @@ export default function Player({ book }: { book: Book }) {
   }
   function playAgain() {
     const p = profileRef.current;
-    commit({ ...newProfile(p?.name), playerModel: p?.playerModel ?? {}, syncCode: p?.syncCode });
+    commit({ ...newProfile(p?.name), playerModel: p?.playerModel ?? {}, syncCode: p?.syncCode, readings: p?.readings });
     jump(book.start);
   }
   /** A dead end: back to an earlier scene with her state as it was when she first arrived there. */
@@ -1166,7 +1168,7 @@ export default function Player({ book }: { book: Book }) {
               <button className="gate-cta" onClick={() => begin()}>Continue · {chapterTitle}</button>
               <div className="gate-links">
                 <button className="ghost" onClick={() => begin(chapterOf(sceneId))}>Restart this chapter</button>
-                <button className="ghost" onClick={() => { const p = profileRef.current; commit({ ...newProfile(p?.name), playerModel: p?.playerModel ?? {}, syncCode: p?.syncCode }); setSceneId(book.start); begin(book.start); }}>Start from the beginning</button>
+                <button className="ghost" onClick={() => { const p = profileRef.current; commit({ ...newProfile(p?.name), playerModel: p?.playerModel ?? {}, syncCode: p?.syncCode, readings: p?.readings }); setSceneId(book.start); begin(book.start); }}>Start from the beginning</button>
               </div>
             </>
           ) : (
@@ -1262,7 +1264,13 @@ export default function Player({ book }: { book: Book }) {
 
       {scene.episodeTitle && <div key={`ep-${scene.id}`} className="eptag">{scene.episodeTitle}</div>}
 
-      {card && <div key={card} className="timecard">{card}</div>}
+      {card && !card.credit && <div key={card.text} className="timecard">{card.text}</div>}
+      {card?.credit && (
+        <div key={card.credit + card.text} className="timecard credit">
+          <span className="credit-role">{card.credit}</span>
+          <span className="credit-name">{card.text}</span>
+        </div>
+      )}
 
       {subtitle && !subtitle.hook && <div key={subtitle.text} className="subtitle">{subtitle.text}</div>}
       {subtitle?.hook && <div key={subtitle.text} className="hook">{subtitle.text}</div>}
@@ -1379,7 +1387,13 @@ export default function Player({ book }: { book: Book }) {
           </div>
         </section>
       )}
-      {phase === "end" && !(scene.retryFrom && book.scenes[scene.retryFrom]) && (
+      {phase === "end" && scene.report && profile && (
+        <Reading book={book} profile={profile} sceneId={scene.id} onReading={(r) => { const p = profileRef.current; if (p) commit({ ...p, readings: { ...(p.readings ?? {}), [book.id]: r } }); }}>
+          <button onClick={playAgain}>Play again, choose differently</button>
+          <Link href="/">Return to the library</Link>
+        </Reading>
+      )}
+      {phase === "end" && !scene.report && !(scene.retryFrom && book.scenes[scene.retryFrom]) && (
         <section className="endcard">
           <h2>{scene.title}</h2>
           <p className="meta">What the world remembers about you</p>

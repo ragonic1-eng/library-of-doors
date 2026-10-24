@@ -7234,6 +7234,7 @@
     "end-A": {
       "id": "end-A",
       "title": "The Wake",
+      "ending": true,
       "pov": "3P",
       "music": "wake",
       "fx": "dust",
@@ -7418,6 +7419,7 @@
     "end-B": {
       "id": "end-B",
       "title": "The King Who Would Not Change",
+      "ending": true,
       "pov": "3P",
       "music": "kindly-ones",
       "fx": "ash",
@@ -7468,6 +7470,7 @@
     "end-C": {
       "id": "end-C",
       "title": "The Deserter",
+      "ending": true,
       "pov": "3P",
       "music": "the-years",
       "fx": "mist",
@@ -7502,6 +7505,7 @@
     "end-R": {
       "id": "end-R",
       "title": "The Song That Never Ends",
+      "ending": true,
       "pov": "3P",
       "music": "greek-lament",
       "fx": "dust",
@@ -8471,6 +8475,7 @@
       "id": "fin-credits",
       "title": "The End",
       "type": "end",
+      "report": true,
       "pov": "3P",
       "music": "finale",
       "fx": "glitter",
@@ -8481,10 +8486,12 @@
           "still": "library-hub"
         },
         {
-          "card": "Aurie · Charmaine Lim"
+          "credit": "Aurie",
+          "card": "Charmaine Lim"
         },
         {
-          "card": "Specially prepared and programmed for Charmaine Lim"
+          "credit": "Specially prepared and programmed for",
+          "card": "Charmaine Lim"
         },
         {
           "text": "The End of The Sandman.",
