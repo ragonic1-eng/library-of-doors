@@ -133,7 +133,7 @@ for (const [id, n] of NW_CAST) {
 // Angle sheets (character-prompts.md §3c): every side of the face and body, so stills and video never have to invent one.
 const TURN_FRAME = block("## 3c.", "Turnaround frame");
 const HEAD_FRAME = block("## 3c.", "Head-angle frame");
-const AURIE_MAYHEW_LOCK = "Her face is an exact likeness of the real woman in the first photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip. Do not slim, narrow or beautify her. Styling exactly as in the reference sheet: her own natural skin and long dark hair, the cream cable-knit sweater, jeans and white sneakers; a curvy, full figure.";
+const AURIE_MAYHEW_LOCK = "Her face is an exact likeness of the real woman in the first photographs: a full, round, soft face, wider than it is long, full cheeks and a soft rounded jaw; straight thick dark brows set fairly low; almond eyes with subtle single eyelids; a broad nose with a soft rounded tip; a small mouth with a fuller lower lip; her face a little slimmer than in the photographs and her legs slightly long, exactly as in the reference sheet (the owner's refinement), never reshaped further. Styling exactly as in the reference sheet: her own natural skin and long dark hair, the cream cable-knit sweater, jeans and white sneakers; a curvy, full figure.";
 for (const [id, , tier] of NW_CAST) {
   for (const kind of tier === "A" ? ["heads", "turnaround"] : tier === "heads" || tier === "turnaround" ? [tier] : []) {
     const creature = id === "beast";

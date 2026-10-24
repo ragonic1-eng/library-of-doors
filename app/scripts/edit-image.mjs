@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Edit an approved image while keeping everything else, above all the face, identical.
 // Safer than generating anew when likeness matters.
-//   node scripts/edit-image.mjs <source.png> <out.png> "<what to change>" [--score aurie|alex] [--ref <image> ...]
+//   node scripts/edit-image.mjs <source.png> <out.png> "<what to change>" [--score aurie|alex] [--ref <image> ...] [--subtle]
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { dirname, join, resolve } from "node:path";
@@ -18,7 +18,13 @@ const who = process.argv.includes("--score") ? process.argv[process.argv.indexOf
 const refs = process.argv.flatMap((a, i) => (a === "--ref" ? [process.argv[i + 1]] : []));
 if (!src || !out || !change) { console.error('usage: edit-image.mjs <source> <out> "<change>" [--score aurie]'); process.exit(1); }
 
-const prompt = `Edit the first attached photograph. Keep it exactly the same: identical person, identical face shape and features, framing, camera, lens, lighting, background, clothing and colours, pixel for pixel wherever possible. Change ONLY this: ${change}. The face must remain an exact likeness of the person in the photograph; do not slim, reshape, beautify or age it.${refs.length ? " The other attached images are only references for the look of anyone or anything the change adds." : ""}`;
+// --subtle: the change itself touches the person's face or figure (an owner-requested gentle refinement), so the usual
+// "never reshape" lock would contradict it; the person must still be instantly recognisable.
+const subtle = process.argv.includes("--subtle");
+const lock = subtle
+  ? "The person must remain instantly and unmistakably recognisable as the same person: change her face and figure only as much as the instruction says, gently, keeping her eyes, brows, nose, mouth, skin and expression exactly as they are."
+  : "The face must remain an exact likeness of the person in the photograph; do not slim, reshape, beautify or age it.";
+const prompt = `Edit the first attached photograph. Keep it exactly the same: identical person, identical face${subtle ? " features" : " shape and features"}, framing, camera, lens, lighting, background, clothing and colours, pixel for pixel wherever possible. Change ONLY this: ${change}. ${lock}${refs.length ? " The other attached images are only references for the look of anyone or anything the change adds." : ""}`;
 // Ranked backups, tried in order when a model's gateway channel is down (same request format).
 const MODELS = [...new Set([MODEL, ...(process.env.MODEL_IMAGE_FALLBACK ?? "gemini-3.1-flash-image,gemini-nano-banana-2.1,gemini-3-pro-image").split(",").map((m) => m.trim()).filter(Boolean)])];
 let j;
