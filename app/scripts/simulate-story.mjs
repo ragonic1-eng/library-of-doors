@@ -26,8 +26,37 @@ const flagsSet = new Set();
 let longest = 0;
 const bump = (m, k) => m.set(k, (m.get(k) ?? 0) + 1);
 
+// Conditions on other books ("sandman:HOB_FRIEND", "sandman:@2.6", "sandman:last=end-A|end-B"): each play gets a
+// random history in those books (one of the endings or none, each named scene and flag at even odds), so every
+// bridge variant and echo is exercised; the kind and cruel players have no history in other books.
+const foreign = new Set();
+const noteF = (f) => { if (f.includes(":")) foreign.add(f); };
+for (const sc of Object.values(S)) for (const x of [sc, ...(sc.choices ?? [])]) {
+  for (const f of [...(x.requires?.flags ?? []), ...(x.requires?.notFlags ?? [])]) noteF(f);
+  for (const b of x.branch ?? []) for (const f of [...(b.requires?.flags ?? []), ...(b.requires?.notFlags ?? [])]) noteF(f);
+  for (const b of [...(x.beats ?? []), ...(x.aftermath ?? [])]) for (const f of [...(b.if ?? []), ...(b.unless ?? [])]) noteF(f);
+}
+function history() {
+  const visited = {}, flags = {};
+  const coin = () => Math.random() < 0.5;
+  const endingSets = new Map();
+  for (const f of foreign) {
+    const [other, rest] = [f.slice(0, f.indexOf(":")), f.slice(f.indexOf(":") + 1)];
+    visited[other] ??= []; flags[other] ??= {};
+    if (rest.startsWith("last=")) endingSets.set(other, new Set([...(endingSets.get(other) ?? []), ...rest.slice(5).split("|")]));
+    else if (rest.startsWith("@")) { if (coin() && !visited[other].includes(rest.slice(1))) visited[other].push(rest.slice(1)); }
+    else if (coin()) flags[other][rest] = true;
+  }
+  for (const [other, set] of endingSets) { const list = [...set]; const pick = Math.floor(Math.random() * (list.length + 1)); if (pick < list.length) visited[other].push(list[pick]); }
+  const p = newProfile();
+  p.flags = flags;
+  p.visited = visited.sandman ?? [];
+  p.visitedBy = Object.fromEntries(Object.entries(visited).filter(([k]) => k !== "sandman"));
+  return p;
+}
+
 for (let n = 0; n < plays; n++) {
-  let p = newProfile();
+  let p = policy === "random" ? history() : newProfile();
   let id = book.start;
   const seen = new Set();
   const snaps = new Map(); // scene -> her state on arriving, as the player keeps for dead ends
@@ -87,6 +116,7 @@ for (const sc of Object.values(S)) {
   }
   for (const c of Object.values(sc.conversation?.consequences ?? {})) { noteReq(c.requires); for (const f of Object.keys(c.effects?.flags ?? {})) declared.add(f); }
 }
+for (const f of [...read]) if (f.includes(":")) read.delete(f); // other books' flags are checked by check-story
 const unread = [...declared].filter((f) => !read.has(f));
 const unset = [...read].filter((f) => !declared.has(f));
 console.log(unread.length ? `✗ flags set but never read: ${unread.join(" ")}` : "✓ every flag that is set is read somewhere");

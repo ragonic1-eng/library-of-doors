@@ -13,40 +13,158 @@
     "Cutaways (titles 'Cutaway · ...') are the only scenes without Aurie; none runs back to back with another.",
     "Cross-book echoes (ALEX_CURSED, Lucifer met, MATTHEW_RAVEN, Coraline courage) are text-only and added in Phase 3 when the engine can read another book's flags.",
     "Dead ends (owner, 2026-10-24): scenes of type end with retryFrom; the player goes back with her state restored to how it was on arriving there. Each needs two wrong steps, or one the story warned about: 4.3 (gave Door away twice), 5.3 (grabbed the glass with no rat's respect), 6.4 (let go and walked on), 16.2 (crawled alone with courage under 3), 16.4 (took the kiss after doubting the marquis), 17.2 (gave Door up to the killers), 19.2 (threw the spear as in the dream). The Ordeal (14.2) and the angel walking free (20.7) go back the same way, to 13.1 and 15.3.",
-    "Owner's rule (2026-10-24): every ending and every dead end plays on video, never on a still alone."
+    "Owner's rule (2026-10-24): every ending and every dead end plays on video, never on a still alone.",
+    "Bridge from The Sandman (bridges.md, 2026-10-24): 0.1 opens differently for each Sandman ending, read with flagOn conditions: 'sandman:last=end-A|end-B|end-C|end-R' is true when end-A is the most recent of those four reached; 'sandman:@2.6' means a scene was reached; 'sandman:FLAG' reads a Sandman flag. Players who have not finished the Sandman get the first variant. Death (Aurie's sister) meets her at every dead end. Echoes: 2.2 Alex cursed, 4.1 Hob, 6.2 the Lyke Wake Dirge, 20.4 Lucifer, 21.2 Matthew's feather, 23.5 the shelf. The Sandman itself is not edited."
   ],
   "scenes": {
     "0.1": {
       "id": "0.1",
-      "title": "The Neverwhere door",
+      "title": "The library between",
       "episodeTitle": "Prologue · The umbrella",
-      "pov": "POV",
+      "pov": "3P",
       "fx": "dust",
+      "source": "bridge from The Sandman (bridges.md)",
       "beats": [
         {
           "card": "The Library of Doors"
         },
         {
-          "text": "A plain London street door among the carved ones: peeling black paint, a brass letterbox, the Underground roundel worn into the wood.",
-          "still": "nw-0.1-door",
+          "text": "The Dreaming is still mending around her, but the library stands, and on its far wall one of the three new doors has begun to rattle, as if someone were knocking from the other side.",
+          "unless": [
+            "sandman:@end-A",
+            "sandman:@end-B",
+            "sandman:@end-C",
+            "sandman:@end-R"
+          ],
+          "still": "nw-0.1-library",
           "cast": [
             "aurie",
             "lucienne"
           ]
         },
         {
-          "text": "Lucienne: mind the stairs, my lady. They move. The door opens on rain and pub noise.",
-          "clip": "nw-0.1-threshold-v",
+          "text": "At her wake they sang the oldest song for the dead: if ever thou gavest hosen or shoon, the fire shall never make thee shrink. The Dreaming kept her anyway, the way it keeps every dream it is not ready to lose.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "still": "nw-0.1-wake",
+          "cast": [
+            "aurie"
+          ]
+        },
+        {
+          "text": "Daniel, the new Dream, in white, finds her among the shelves. You always wanted to know, he says, what it is like to be one of them. One life. No idea how it ends.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "still": "nw-0.1-daniel",
+          "cast": [
+            "aurie",
+            "daniel-dream"
+          ]
+        },
+        {
+          "text": "Her realm is ash, and she has forever. The nightmares she can no longer hold drift out into the waking world, and one of them has found a sleeper in London.",
+          "if": [
+            "sandman:last=end-B|end-A|end-C|end-R"
+          ],
+          "still": "nw-0.1-ash",
+          "cast": [
+            "aurie",
+            "lucienne"
+          ]
+        },
+        {
+          "text": "She walked away from the Dreaming years ago, and has a life now: a flat over a bakery, an office off the Strand, a fiancée called Jessica, and a name nobody questions. Some nights she dreams of a library, and a door.",
+          "if": [
+            "sandman:last=end-C|end-A|end-B|end-R"
+          ],
+          "still": "nw-0.1-flat",
+          "cast": [
+            "aurie"
+          ]
+        },
+        {
+          "text": "She keeps everything, and she will never change. So Lucienne brings her the only new thing in the Dreaming: a door that was not on the wall yesterday. A queen who will never change, Lucienne says, can still read.",
+          "if": [
+            "sandman:last=end-R|end-A|end-B|end-C"
+          ],
+          "still": "nw-0.1-throne",
+          "cast": [
+            "aurie",
+            "lucienne"
+          ]
+        },
+        {
+          "text": "Lucienne's report: a dream has come in from the waking world that belongs to no one here. A sewer. A boar the size of an ox. A spear, in a hand that is not quite a hand.",
+          "unless": [
+            "sandman:last=end-C|end-A|end-B|end-R"
+          ],
+          "clip": "nw-2.1-beast-dream-v",
+          "cast": []
+        },
+        {
+          "text": "In the dream, a librarian she half remembers reads her a report: a sewer, a boar the size of an ox, a spear in a hand that is not quite a hand.",
+          "if": [
+            "sandman:last=end-C|end-A|end-B|end-R"
+          ],
+          "clip": "nw-2.1-beast-dream-v",
+          "cast": []
+        },
+        {
+          "text": "Someone in London dreams it every night and never reaches the end. A dream that nobody finishes becomes a door."
+        },
+        {
+          "text": "It is her nightmare. She will have to go in and fetch it back.",
+          "if": [
+            "sandman:last=end-B|end-A|end-C|end-R"
+          ]
+        }
+      ],
+      "next": "0.2"
+    },
+    "0.2": {
+      "id": "0.2",
+      "title": "The Neverwhere door",
+      "pov": "POV",
+      "fx": "dust",
+      "beats": [
+        {
+          "text": "Among the carved doors, a plain London street door: peeling black paint, a brass letterbox, the Underground roundel worn into the wood.",
+          "still": "nw-0.2-door",
+          "cast": [
+            "aurie",
+            "lucienne"
+          ]
+        },
+        {
+          "text": "To walk a dream from the inside, the Queen of Dreams has to become its dreamer: one woman, one life, an office off the Strand, and a name, Aurie Mayhew. She will not remember being anything else until the story ends.",
+          "unless": [
+            "sandman:last=end-C|end-A|end-B|end-R"
+          ]
+        },
+        {
+          "text": "She does not have to become anyone. She already is Aurie Mayhew. She has only to remember to open the door.",
+          "if": [
+            "sandman:last=end-C|end-A|end-B|end-R"
+          ]
+        },
+        {
+          "text": "Lucienne: mind the stairs, my lady. They move. And if it goes wrong in there, you will only wake. Your sister will see to that."
+        },
+        {
+          "text": "The door opens on rain and pub noise.",
+          "clip": "nw-0.2-threshold-v",
           "cast": [
             "aurie"
           ]
         }
       ],
-      "next": "0.2",
+      "next": "0.3",
       "source": "story map 1.0"
     },
-    "0.2": {
-      "id": "0.2",
+    "0.3": {
+      "id": "0.3",
       "title": "The umbrella",
       "pov": "3P",
       "fx": "rain",
@@ -56,7 +174,7 @@
         },
         {
           "text": "Aurie, sick at her own leaving party, sits on the kerb under a white umbrella printed with the Tube map. An old woman in shawls reads her palm: not any London I know. Beware of doors.",
-          "still": "nw-0.2-kerb",
+          "still": "nw-0.3-kerb",
           "cast": [
             "aurie",
             "oldwoman"
@@ -65,7 +183,7 @@
       ],
       "choices": [
         {
-          "id": "0.2.A",
+          "id": "0.3.A",
           "text": "Run after her with the umbrella.",
           "effects": {
             "traits": {
@@ -80,7 +198,7 @@
           "aftermath": [
             {
               "text": "A good heart, she says, is sometimes enough. Mostly not.",
-              "still": "nw-0.2-umbrella",
+              "still": "nw-0.3-umbrella",
               "cast": [
                 "aurie",
                 "oldwoman"
@@ -89,7 +207,7 @@
           ]
         },
         {
-          "id": "0.2.B",
+          "id": "0.3.B",
           "text": "Go back inside.",
           "effects": {},
           "next": "1.1"
@@ -308,6 +426,12 @@
           "still": "nw-2.2-bathroom",
           "cast": [
             "vandemar"
+          ]
+        },
+        {
+          "text": "Vandemar, sniffing the air: we heard of a man who dreams of waking. Nasty.",
+          "if": [
+            "sandman:ALEX_CURSED"
           ]
         }
       ],
@@ -612,6 +736,17 @@
           ]
         },
         {
+          "text": "Only one person in London looks straight at her: a man outside the White Horse, who has drunk in that pub since 1389. He raises his glass. I know you, he says, puzzled. From somewhere.",
+          "if": [
+            "sandman:HOB_FRIEND"
+          ],
+          "still": "nw-4.1-hob",
+          "cast": [
+            "aurie",
+            "hob"
+          ]
+        },
+        {
           "text": "Jessica's office, Angels over England posters. She apologises for her dreadful memory for faces.",
           "still": "nw-4.1-jessica",
           "cast": [
@@ -744,6 +879,26 @@
             "aurie",
             "croup",
             "vandemar"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
           ]
         },
         {
@@ -992,6 +1147,26 @@
           ]
         },
         {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
           "text": "The story goes back to the cash machine.",
           "style": "hook"
         }
@@ -1136,6 +1311,15 @@
           "text": "A stone bridge over a void. The dark is turned up. Something slithers past; Anaesthesia's hand shakes in hers. An angel falls with burning wings. The candle flares.",
           "clip": "nw-6.2-dark-v",
           "cast": []
+        },
+        {
+          "text": "From somewhere, a song she cannot place: from Brig o' Dread when thou may'st pass, every night and all."
+        },
+        {
+          "text": "They sang it at her wake. She does not know how she knows that.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ]
         }
       ],
       "choices": [
@@ -1260,6 +1444,26 @@
           "clip": "nw-6.4-bridge-v",
           "cast": [
             "hunter"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
           ]
         },
         {
@@ -2984,6 +3188,26 @@
           ]
         },
         {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
           "text": "The story goes back to the bridge of the Black Friars.",
           "style": "hook"
         }
@@ -3413,6 +3637,26 @@
           "cast": []
         },
         {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
           "text": "Courage is earned earlier than it is needed. The story goes back to the curry stall.",
           "style": "hook"
         }
@@ -3531,6 +3775,26 @@
           "cast": [
             "aurie",
             "lamia"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
           ]
         },
         {
@@ -3680,6 +3944,26 @@
             "aurie",
             "vandemar",
             "door"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
           ]
         },
         {
@@ -3965,6 +4249,26 @@
           "text": "The throw glances off. The charge, the drops of water hanging in the air, face down in bloody water: the dream she had on the first morning, every detail kept.",
           "clip": "nw-19.2-charge-v",
           "cast": []
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
         },
         {
           "text": "Hunter told her: hold it at the blunt end. The story goes back to the Fleet Marsh.",
@@ -4401,6 +4705,57 @@
           ]
         },
         {
+          "id": "20.4.C",
+          "text": "I've sat across a table from Lucifer. I've met better angels than you. Worse ones too.",
+          "requires": {
+            "flags": [
+              "sandman:@2.6"
+            ]
+          },
+          "effects": {
+            "flags": {
+              "GOADED": true
+            }
+          },
+          "next": "20.5",
+          "branch": [
+            {
+              "requires": {
+                "flags": [
+                  "NO_COPY"
+                ],
+                "traits": {
+                  "loyalty": 4
+                },
+                "vars": {
+                  "DOOR_BOND": 2
+                }
+              },
+              "next": "20.6"
+            },
+            {
+              "requires": {
+                "flags": [
+                  "NO_COPY"
+                ]
+              },
+              "next": "20.7"
+            }
+          ],
+          "aftermath": [
+            {
+              "text": "Croup and Vandemar look at the angel, then at each other. They mean to be paid, in full, with interest and meat hooks.",
+              "still": "nw-20.4-keyhole",
+              "cast": [
+                "door",
+                "islington",
+                "croup",
+                "vandemar"
+              ]
+            }
+          ]
+        },
+        {
           "id": "20.4.B",
           "text": "Stay silent.",
           "effects": {},
@@ -4523,6 +4878,26 @@
           ]
         },
         {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You don't die in a dream, little sister, Death says. You wake. Go back, and choose better.",
+          "unless": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
+          "text": "Her sister is waiting, in black, a silver ankh at her throat. You did this properly once, Death says. This isn't that. Go back.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
+          ],
+          "clip": "nw-shared-death-v",
+          "cast": [
+            "death"
+          ]
+        },
+        {
           "text": "In Lucienne's library a locked door shivers. The story goes back to the market on HMS Belfast, where the key could still have been lent.",
           "style": "hook"
         }
@@ -4619,6 +4994,12 @@
           "cast": [
             "aurie",
             "oldbailey"
+          ]
+        },
+        {
+          "text": "The feather, Old Bailey says, came off a talking bird who works for a lady who dreams.",
+          "if": [
+            "sandman:MATTHEW_RAVEN"
           ]
         },
         {
@@ -5274,6 +5655,25 @@
           "cast": [
             "aurie",
             "lucienne"
+          ]
+        },
+        {
+          "text": "Lucienne shelves the book beside the Sandman. There is room on the shelf for two more.",
+          "still": "nw-23.5-shelf",
+          "cast": [
+            "lucienne"
+          ]
+        },
+        {
+          "text": "You forgave the one who sold you, Lucienne says. That was very like you, my lady.",
+          "if": [
+            "HUNTER_FORGIVEN"
+          ]
+        },
+        {
+          "text": "Daniel is waiting by the shelf. He wants to hear all of it.",
+          "if": [
+            "sandman:last=end-A|end-B|end-C|end-R"
           ]
         },
         {

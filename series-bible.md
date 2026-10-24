@@ -31,6 +31,8 @@ A single explorable location, revisited between books and between Sandman episod
 
 ---
 
+> **Bridges between books** (what each book carries from the ones before, one opening per earlier ending, the author's thread, Death at the dead ends, echoes): see `bridges.md`, which supersedes the bridge parts of §2b and §6 below (2026-10-24).
+
 ## 2b. Thresholds: how one story becomes another without a jolt
 
 Rule: **there is never a hard cut between worlds.** Every change of book, and every return, is a three-beat threshold, and the player's own identity shift is part of the fiction.

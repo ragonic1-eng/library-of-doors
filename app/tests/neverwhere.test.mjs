@@ -15,7 +15,7 @@ test('every scene id is its chapter and position, so the owner can name any scen
     pos++;
     assert.equal(id, `${chapter}.${pos}`, `${id} should be ${chapter}.${pos}`);
     for (const c of S[id].choices ?? []) assert.ok(c.id.startsWith(`${id}.`), `${c.id} belongs to ${id}`);
-    for (const b of [...S[id].beats, ...(S[id].choices ?? []).flatMap((c) => c.aftermath ?? [])]) for (const pic of [b.clip, b.still].filter(Boolean)) assert.ok(/^nw-\d+\.\d+-/.test(pic), pic);
+    for (const b of [...S[id].beats, ...(S[id].choices ?? []).flatMap((c) => c.aftermath ?? [])]) for (const pic of [b.clip, b.still].filter(Boolean)) assert.ok(/^nw-(\d+\.\d+|shared)-/.test(pic), pic);
   }
 });
 
@@ -56,4 +56,31 @@ test('throwing the spear is gone once she shared the dream with Hunter, and the 
   assert.ok(!meets(p, B, choice('19.1', '19.1.B').requires), 'BEAST_SHARED removes the dream trap');
   assert.equal(S['14.2'].retryFrom, '13.1');
   assert.equal(S['20.7'].retryFrom, '15.3');
+});
+
+test('the bridge opens one way for each Sandman ending, and remembers the latest one', async () => {
+  const { flagOn } = await import('../src/lib/state/profile.ts');
+  const passes = (p, b) => (!b.if || b.if.every((f) => flagOn(p, B, f))) && (!b.unless || !b.unless.some((f) => flagOn(p, B, f)));
+  const variant = (visited) => {
+    const p = { ...newProfile(), visited };
+    return S['0.1'].beats.filter((b) => b.still && passes(p, b)).map((b) => b.still);
+  };
+  assert.deepEqual(variant([]), ['nw-0.1-library'], 'Sandman not finished');
+  assert.deepEqual(variant(['7.5', 'end-A', 'fin-dream']), ['nw-0.1-wake', 'nw-0.1-daniel'], 'the Wake');
+  assert.deepEqual(variant(['end-B']), ['nw-0.1-ash']);
+  assert.deepEqual(variant(['end-C']), ['nw-0.1-flat']);
+  assert.deepEqual(variant(['end-R']), ['nw-0.1-throne']);
+  assert.deepEqual(variant(['end-A', 'fin-dream', 'end-C']), ['nw-0.1-flat'], 'played the Sandman twice: the latest ending counts');
+});
+
+test('one book remembers another: Lucifer, Hob, Alex, and Death at every dead end', async () => {
+  const { flagOn } = await import('../src/lib/state/profile.ts');
+  const p = { ...newProfile(), visited: ['2.6'], flags: { sandman: { HOB_FRIEND: true } } };
+  assert.ok(flagOn(p, B, 'sandman:@2.6'));
+  assert.ok(flagOn(p, B, 'sandman:HOB_FRIEND'));
+  assert.ok(!flagOn(p, B, 'sandman:ALEX_CURSED'));
+  assert.ok(!flagOn(p, B, 'HOB_FRIEND'), 'a plain flag is this book only');
+  assert.ok(meets(p, B, choice('20.4', '20.4.C').requires), 'met Lucifer: the extra retort');
+  assert.ok(!meets(newProfile(), B, choice('20.4', '20.4.C').requires));
+  for (const id of Object.keys(S).filter((x) => S[x].retryFrom)) assert.ok(S[id].beats.some((b) => b.clip === 'nw-shared-death-v'), `${id}: Death is there`);
 });

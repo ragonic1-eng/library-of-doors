@@ -160,6 +160,10 @@ gets media):
 
 ---
 
+**The bridge from The Sandman** (owner, 2026-10-24; full design in `bridges.md`): Neverwhere opens at **0.1 The library between**, differently for each Sandman ending (or not finished), with Richard's Beast dream as the reason to go; the *Lyke Wake Dirge* from the novel's epigraph is the thread (0.1, 6.2, 19.5); Death, Aurie's sister, meets her at every dead end; six echoes of her Sandman save (2.2, 4.1, 6.2, 20.4 as an extra choice, 21.2, 23.5). About ¥7 (six stills, Hob's still, one shared Death clip), no new character sheets, the Sandman not edited.
+
+---
+
 ## 5. Media quota and budget
 
 | Per batch (8 batches of chapters) | Quota |
@@ -178,7 +182,8 @@ gets media):
 | Narration, plus 10% retakes | about 550 lines | ¥105 |
 | The multi-reference video test (§6, decision 3) | once | ¥15 |
 | Dialogue and play checks | | ¥10 |
-| **Total** | | **about ¥500** |
+| The bridge from The Sandman (7 stills, 1 shared clip) | | ¥7 |
+| **Total** | | **about ¥507** |
 
 Cap **¥500** (the dead-end and ending videos added about ¥40, so the estimate now meets the cap; if it tightens, the cutaway videos go first), hard stop ¥550, enforced per batch by the clip tool's budget flag. For comparison The Sandman
 cost ¥1,187 for 95 scenes (about ¥12.50 a scene); this plan is about ¥6.50 a scene for a story of similar length,

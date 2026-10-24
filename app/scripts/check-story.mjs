@@ -41,6 +41,29 @@ function checkVoice(where, voice, direction) {
   if (woman && !man && MEN_VOICES.has(voice)) err(`${where}: a woman's voice direction on the man's voice "${voice}"`);
 }
 
+// Every book's scenes and the flags its choices can set, so one book may remember another ("sandman:HOB_FRIEND").
+const ALL = {};
+for (const dir of readdirSync(BOOKS)) {
+  const f = join(BOOKS, dir, "book.json");
+  if (!existsSync(f)) continue;
+  const b = JSON.parse(readFileSync(f, "utf8"));
+  const set = new Set();
+  for (const sc of Object.values(b.scenes)) {
+    for (const c of sc.choices ?? []) { for (const k of Object.keys(c.effects?.flags ?? {})) set.add(k); for (const e of c.effectsIf ?? []) for (const k of Object.keys(e.effects?.flags ?? {})) set.add(k); }
+    for (const c of Object.values(sc.conversation?.consequences ?? {})) for (const k of Object.keys(c.effects?.flags ?? {})) set.add(k);
+  }
+  ALL[b.id] = { scenes: b.scenes, flags: set };
+}
+/** A condition naming another book must name a book, scene or flag that exists. */
+function checkForeign(where, f) {
+  const i = f.indexOf(":");
+  const other = ALL[f.slice(0, i)], rest = f.slice(i + 1);
+  if (!other) return err(`${where}: "${f}" names a book that does not exist`);
+  const scenes = rest.startsWith("@") ? [rest.slice(1)] : rest.startsWith("last=") ? rest.slice(5).split("|") : [];
+  for (const s of scenes) if (!other.scenes[s]) err(`${where}: "${f}": ${f.slice(0, i)} has no scene ${s}`);
+  if (!scenes.length && !other.flags.has(rest)) err(`${where}: "${f}": no choice in ${f.slice(0, i)} sets ${rest}`);
+}
+
 for (const dir of readdirSync(BOOKS)) {
   const bookFile = join(BOOKS, dir, "book.json");
   if (!existsSync(bookFile)) continue;
@@ -135,6 +158,7 @@ for (const dir of readdirSync(BOOKS)) {
     }
     for (const c of Object.values(sc.conversation?.consequences ?? {})) { noteReq(c.requires); for (const f of Object.keys(c.effects?.flags ?? {})) setFlags.add(f); }
   }
+  for (const f of [...readFlags].filter((x) => x.includes(":"))) { checkForeign(book.id, f); readFlags.delete(f); }
   for (const f of readFlags) if (!setFlags.has(f) && !f.startsWith("C_")) err(`${book.id}: flag ${f} is read but nothing ever sets it`);
   if (book.status === "planning") for (const f of setFlags) if (!readFlags.has(f)) err(`${book.id}: flag ${f} is set but never read (a choice that changes nothing)`);
 

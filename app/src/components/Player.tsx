@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Beat, Book, Choice, DialogueReply, Fx, Profile, Scene } from "@/lib/story/types";
-import { adjustRelation, applyConsequence, applyEffect, loadProfile, meets, newProfile, remember, route, saveProfile } from "@/lib/state/profile";
+import { adjustRelation, applyConsequence, applyEffect, flagOn, loadProfile, markVisited, meets, newProfile, remember, route, saveProfile, visitedIn } from "@/lib/state/profile";
 import { lineFile } from "@/lib/story/lines";
 import VERSIONS from "@/content/media-versions.json";
 import { watchPlayback } from "@/lib/story/audio";
@@ -516,9 +516,9 @@ export default function Player({ book }: { book: Book }) {
   const [skippable, setSkippable] = useState(false);
 
   const passes = (b: Beat, p: Profile | null) => {
-    const flags = p?.flags[book.id] ?? {};
-    if (b.if && !b.if.every((f) => flags[f])) return false;
-    if (b.unless && b.unless.some((f) => flags[f])) return false;
+    const on = (f: string) => !!p && flagOn(p, book.id, f);
+    if (b.if && !b.if.every(on)) return false;
+    if (b.unless && b.unless.some(on)) return false;
     return true;
   };
 
@@ -683,7 +683,7 @@ export default function Player({ book }: { book: Book }) {
       const cp = retryTargets.has(id)
         ? { ...(p.checkpoints ?? {}), [`${book.id}:${id}`]: { traits: { ...p.traits }, relics: [...p.relics], flags: { ...(p.flags[book.id] ?? {}) }, vars: { ...(p.vars[book.id] ?? {}) }, relations: structuredClone(p.relations ?? {}), echoes: [...(p.echoes ?? [])], journal: [...(p.journal ?? [])] } }
         : p.checkpoints;
-      commit({ ...p, position: { book: book.id, scene: id }, visited: (p.visited ?? []).includes(id) ? p.visited : [...(p.visited ?? []), id], ...(cp ? { checkpoints: cp } : {}) });
+      commit({ ...markVisited(p, book.id, id), position: { book: book.id, scene: id }, ...(cp ? { checkpoints: cp } : {}) });
     }
     // Lines the player may hear next (every possible aftermath, and the opening of every scene that can follow)
     // load while she watches, so no line ever waits on the network.
@@ -1480,7 +1480,7 @@ export default function Player({ book }: { book: Book }) {
                 <h2>Chapters</h2>
                 <ul className="chapters">
                   {chapters.map((id) => {
-                    const open = id === book.start || (profile.visited ?? []).includes(id);
+                    const open = id === book.start || visitedIn(profile, book.id).includes(id);
                     return (
                       <li key={id}>
                         <button disabled={!open} onClick={() => jump(id)}>{book.scenes[id].episodeTitle}{open ? "" : " · locked"}</button>

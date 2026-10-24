@@ -33,8 +33,8 @@ export interface Beat {
   ambience?: string; // looping background bed from this beat on (overrides the scene's); file audio/ambience/<id>.mp3
   style?: "hook"; // show the text as a large centred cliffhanger line
   fx?: Fx; // ambient motion over the picture from this beat on (overrides the scene's)
-  if?: string[]; // play only when all these book flags are set
-  unless?: string[]; // skip when any of these book flags is set
+  if?: string[]; // play only when all these flags are set ("FLAG", or another book's: "sandman:FLAG", "sandman:@scene")
+  unless?: string[]; // skip when any of these is set (same forms; see flagOn in lib/state/profile.ts)
   cast?: string[]; // who is in the picture (planning and identity locks); "aurie" marks the hero on screen
 }
 
@@ -155,7 +155,8 @@ export interface Profile {
   playerModel: PlayerModel;
   position: { book: string; scene: string } | null;
   journal?: { scene: string; recap: string; choice?: string }[]; // what she has lived through, for "Story so far"
-  visited?: string[]; // scene ids reached, for unlocking chapters
+  visited?: string[]; // Sandman scene ids reached, latest visit last (chapters, and how other books remember it)
+  visitedBy?: Record<string, string[]>; // the same for every later book, kept apart because scene ids repeat between books
   checkpoints?: Record<string, Checkpoint>; // "<book>:<scene>" -> her state on arriving there, for dead ends that send her back
   syncCode?: string; // cloud save code, to continue on another phone
   readings?: Record<string, Reading>; // book id -> her Reading at the end of that book (kept when she plays again)

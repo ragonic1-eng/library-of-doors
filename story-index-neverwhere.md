@@ -2,14 +2,15 @@
 
 Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scene-index.mjs`; do not edit by hand. Every scene id is **chapter.position**: 9.4 is the fourth scene of Chapter 9. To ask for a change, name the id ("change 9.4", "cut choice 9.4.C"). Picture ids carry the same number (`nw-9.4-...`).
 
-24 chapters · 94 scenes · 22 live talks · 9 dead ends · 5 endings and credits
+24 chapters · 95 scenes · 22 live talks · 9 dead ends · 5 endings and credits
 
 ## Prologue · The umbrella
 
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
-| **0.1** | The Neverwhere door | scene | 1 video, 1 still | → 0.2 | 1.0 |
-| **0.2** | The umbrella | choice | 2 still | **0.2.A** “Run after her with the umbrella.” → 1.1<br>**0.2.B** “Go back inside.” → 1.1 | 1.1 |
+| **0.1** | The library between | scene | 1 video, 6 still | → 0.2 | bridge from The Sandman (bridges.md) |
+| **0.2** | The Neverwhere door | scene | 1 video, 1 still | → 0.3 | 1.0 |
+| **0.3** | The umbrella | choice | 2 still | **0.3.A** “Run after her with the umbrella.” → 1.1<br>**0.3.B** “Go back inside.” → 1.1 | 1.1 |
 
 ## Chapter 1 · Door on the pavement
 
@@ -39,9 +40,9 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
-| **4.1** | The Monday nobody sees | choice | 1 video, 1 still | **4.1.A** “It's okay. Forget it.” → 4.2<br>**4.1.B** “I'm sorry I upset you. I'd stop for her again.” → 4.2 | 2.1 |
+| **4.1** | The Monday nobody sees | choice | 1 video, 2 still | **4.1.A** “It's okay. Forget it.” → 4.2<br>**4.1.B** “I'm sorry I upset you. I'd stop for her again.” → 4.2 | 2.1 |
 | **4.2** | The flat is let | live talk | 2 still | **4.2.A** “I don't know where she is.” → 4.4<br>**4.2.B** “If I help you find her, will you leave me alone?” → 4.4 (or 4.3 if GAVE_HER_AWAY)<br>**4.2.C** “I'm calling the police.” → 4.4 | 2.2 |
-| **4.3** | Dead end · Disposed of | dead end | 1 video | ↺ goes back to 2.2 (Two gentlemen at the door) | dead-2.2 |
+| **4.3** | Dead end · Disposed of | dead end | 2 video | ↺ goes back to 2.2 (Two gentlemen at the door) | dead-2.2 |
 | **4.4** | The cash machine | choice | 2 still | **4.4.A** “I'm sorry I troubled you.” → 5.1<br>**4.4.B** “Grab his sleeve. Where is the Floating Market?” → 4.5 | 2.3 |
 | **4.5** | The bench | scene | 3 still | → 5.1 | 2.3b |
 
@@ -51,7 +52,7 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 |---|---|---|---|---|---|
 | **5.1** | Cutaway · The closed hospital | cutaway | 2 still | → 5.2 | c2 |
 | **5.2** | The Lord Rat-speaker | live talk | 3 still | **5.2.A** “Hello, Ratty. Do you know where Door is?” → 5.4<br>**5.2.B** “Kneel with everyone and wait.” → 5.4<br>**5.2.C** “Grab for the glass.” → 5.4 (or 5.3 if not RAT_RESPECT) | 2.4 |
-| **5.3** | Dead end · The glass dagger | dead end | 1 video | ↺ goes back to 4.4 (The cash machine) | dead-2.4 |
+| **5.3** | Dead end · The glass dagger | dead end | 2 video | ↺ goes back to 4.4 (The cash machine) | dead-2.4 |
 | **5.4** | Cutaway · The House Without Doors | cutaway | 4 still | → 6.1 | c3 |
 
 ## Chapter 6 · Night's Bridge
@@ -61,7 +62,7 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | **6.1** | Anaesthesia | live talk | 2 still | **6.1.A** “Tell me about you. I'm listening.” → 6.2<br>**6.1.B** “Talk about your job and your fiancée.” → 6.2<br>**6.1.C** “I'll get you back up here one day. I promise.” → 6.2 | 2.5 |
 | **6.2** | Night's Bridge | choice | 1 video, 1 still | **6.2.A** “Hold her hand tighter and keep walking.” → 6.3<br>**6.2.B** “Let go to shield your face.” → 6.3<br>**6.2.C** “Call her name into the dark.” → 6.3 | 2.6 |
 | **6.3** | The beads | choice | 2 still | **6.3.A** “Keep one bead.” → 7.1<br>**6.3.B** “Go back onto the bridge for her.” → 7.1<br>**6.3.C** “Walk on without looking.” → 7.1 (or 6.4 if LET_GO) | 2.6b |
-| **6.4** | Dead end · The bridge's toll | dead end | 1 video | ↺ goes back to 6.1 (Anaesthesia) | dead-2.6 |
+| **6.4** | Dead end · The bridge's toll | dead end | 2 video | ↺ goes back to 6.1 (Anaesthesia) | dead-2.6 |
 
 ## Chapter 7 · The Floating Market
 
@@ -131,7 +132,7 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
 | **14.1** | The Ordeal | live talk | 1 video, 3 still | **14.1.A** “Hold on. Step onto the train.” → 14.3<br>**14.1.B** “Climb down for the troll.” → 14.2 | 6.5 |
-| **14.2** | Ending E · The wall of those who failed | dead end | 1 video | ↺ goes back to 13.1 (The bridge of the Black Friars) | end-E |
+| **14.2** | Ending E · The wall of those who failed | dead end | 2 video | ↺ goes back to 13.1 (The bridge of the Black Friars) | end-E |
 | **14.3** | The key | choice | 1 still | **14.3.A** “Toss the key to Door.” → 15.1<br>**14.3.B** “Keep it. It's my ticket home.” → 15.1 | 6.6 |
 
 ## Chapter 15 · HMS Belfast
@@ -148,16 +149,16 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
 | **16.1** | Down Street | choice | 1 video, 3 still | **16.1.A** “Let Hunter talk you across.” → 16.3<br>**16.1.B** “Shut your eyes and crawl alone.” → 16.2 (or 16.3 if courage ≥ 3) | 7.4 |
-| **16.2** | Dead end · The bottomless well | dead end | 1 video | ↺ goes back to 15.4 (Curry and Lamia) | dead-7.4 |
+| **16.2** | Dead end · The bottomless well | dead end | 2 video | ↺ goes back to 15.4 (Curry and Lamia) | dead-7.4 |
 | **16.3** | The kiss of the Velvet | live talk | 2 still | **16.3.A** “Yes.” → 16.4 (or 17.1 if MARQUIS_TRUST ≥ 1)<br>**16.3.B** “No.” → 17.1 | 7.5 |
-| **16.4** | Dead end · Frost | dead end | 1 video | ↺ goes back to 15.4 (Curry and Lamia) | dead-7.5 |
+| **16.4** | Dead end · Frost | dead end | 2 video | ↺ goes back to 15.4 (Curry and Lamia) | dead-7.5 |
 
 ## Chapter 17 · Hunter's choice
 
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
 | **17.1** | Hunter's choice | live talk | 1 video, 2 still | **17.1.A** “I do. Search me.” → 17.3<br>**17.1.B** “Say nothing.” → 17.3<br>**17.1.C** “She has it.” → 17.2<br>**17.1.D** “Door! Hunter's with them!” *[needs HUNTER_SUSPECT ≥ 2]* → 17.3 | 7.6 |
-| **17.2** | Dead end · We don't need you | dead end | 1 video | ↺ goes back to 16.1 (Down Street) | dead-7.6 |
+| **17.2** | Dead end · We don't need you | dead end | 2 video | ↺ goes back to 16.1 (Down Street) | dead-7.6 |
 | **17.3** | Islington | choice | 1 still | **17.3.A** “Who's behind this?” → 18.1<br>**17.3.B** “Kill her.” → 18.1<br>**17.3.C** “Bring her.” → 18.1 | 7.6b |
 
 ## Chapter 18 · The labyrinth
@@ -174,7 +175,7 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | ID | Scene | Kind | Pictures | Choices and where they lead | Map ref |
 |---|---|---|---|---|---|
 | **19.1** | The Beast | choice | 1 video, 2 still | **19.1.A** “Strike. Under and up.” → 19.3<br>**19.1.B** “Throw the spear, as in the dream.” *[needs not BEAST_SHARED]* → 19.2<br>**19.1.C** “Drop the spear and drag Hunter clear.” → 19.3 | 8.2 |
-| **19.2** | Dead end · The dream comes true | dead end | 1 video | ↺ goes back to 18.3 (The Fleet Marsh) | dead-8.2 |
+| **19.2** | Dead end · The dream comes true | dead end | 2 video | ↺ goes back to 18.3 (The Fleet Marsh) | dead-8.2 |
 | **19.3** | Hunter's last words | choice | 2 still | **19.3.A** “Take the knife.” → 19.4<br>**19.3.B** “Refuse it. Twice.” → 19.4 | 8.3 |
 | **19.4** | Forgiveness | choice | 1 still | **19.4.A** “I forgive you.” → 19.5<br>**19.4.B** “Hold her hand in silence.” → 19.5 | 8.3b |
 | **19.5** | The Beast's blood | choice | 1 video, 2 still | **19.5.A** “Do it.” → 20.1<br>**19.5.B** “Refuse.” → 20.1 | 8.3c |
@@ -186,10 +187,10 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | **20.1** | Into the hall | scene | 1 still | → 20.3 (or 20.7 if LATE, NO_COPY) (or 20.2 if LATE) | 8.4 |
 | **20.2** | The empty hall | scene | 1 still | **20.2.A** “Hold her.” → 21.1 | 8.4L |
 | **20.3** | The angel's hall | live talk | 1 video, 3 still | **20.3.A** “Don't do it, Door. We don't matter.” → 20.4<br>**20.3.B** “Door, please. Do it.” *[needs BARGAIN_SELF]* → 20.4<br>**20.3.C** “You sank a city and called it unfortunate.” *[needs BARGAIN_ATLANTIS]* → 20.4 | 8.4a |
-| **20.4** | Jam tomorrow | choice | 1 still | **20.4.A** “To the killers: you don't think you'll ever see him again, do you?” → 20.5 (or 20.6 if loyalty ≥ 4, DOOR_BOND ≥ 2, NO_COPY) (or 20.7 if NO_COPY)<br>**20.4.B** “Stay silent.” → 20.5 (or 20.7 if NO_COPY) | 8.4b |
+| **20.4** | Jam tomorrow | choice | 1 still | **20.4.A** “To the killers: you don't think you'll ever see him again, do you?” → 20.5 (or 20.6 if loyalty ≥ 4, DOOR_BOND ≥ 2, NO_COPY) (or 20.7 if NO_COPY)<br>**20.4.C** “I've sat across a table from Lucifer. I've met better angels than you. Worse ones too.” *[needs sandman:@2.6]* → 20.5 (or 20.6 if loyalty ≥ 4, DOOR_BOND ≥ 2, NO_COPY) (or 20.7 if NO_COPY)<br>**20.4.B** “Stay silent.” → 20.5 (or 20.7 if NO_COPY) | 8.4b |
 | **20.5** | The false door | scene | 1 video, 2 still | → 21.1 | 8.4c |
 | **20.6** | The true door | scene | 2 still | **20.6.A** “Door, shut it!” → 21.1 | 8.4d |
-| **20.7** | Ending D · Jam tomorrow | dead end | 1 video | ↺ goes back to 15.3 (HMS Belfast) | end-D |
+| **20.7** | Ending D · Jam tomorrow | dead end | 2 video | ↺ goes back to 15.3 (HMS Belfast) | end-D |
 
 ## Chapter 21 · Lady of the Underside
 
@@ -216,4 +217,4 @@ Generated from `app/src/content/books/neverwhere/book.json` by `app/scripts/scen
 | **23.2** | Ending A · The opener | ending | 1 video, 1 still | → 23.5 | end-Avar |
 | **23.3** | Ending B · Lady of the Underside | ending | 1 video, 2 still | → 23.5 | end-B |
 | **23.4** | Ending C · Get used to it | ending | 1 video, 2 still | → 23.5 | end-C |
-| **23.5** | Neverwhere · credits | ending | 1 still |  | fin-credits |
+| **23.5** | Neverwhere · credits | ending | 2 still |  | fin-credits |
