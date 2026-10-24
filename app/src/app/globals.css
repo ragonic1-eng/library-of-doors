@@ -915,3 +915,12 @@ button.ghost { border-color: transparent; color: var(--dim); }
   .dev-bar { gap: 0.4rem; }
   .dev-head { flex-direction: column; }
 }
+
+.dev-road { overflow: auto; }
+.dev-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.dev-table th, .dev-table td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.dev-table th { color: var(--dim); font-weight: 400; position: sticky; top: 0; background: #0d0d10; }
+.dev-dim-text { color: var(--dim); font-size: 0.78rem; }
+.dev-shot { margin-top: 0.4rem; font-size: 0.8rem; }
+.dev-shot summary { cursor: pointer; list-style: none; }
+.dev-shot p { margin: 0.3rem 0; line-height: 1.4; }

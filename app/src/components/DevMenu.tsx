@@ -3,7 +3,7 @@
 // with the exact picture or video under every line, so the story can be audited and jumped into by hand.
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { Beat, Book, Scene } from "@/lib/story/types";
-import { listAllBooks } from "@/lib/story/load";
+import { getShots, listAllBooks, type Shot } from "@/lib/story/load";
 
 // SHA-256 of "lod-dev:" + the owner's code. The code itself is never stored in the game.
 const CODE_HASH = "c58a2f5553e69f751f1b3b8253968cac9fe7be06594b90c52962f9b497f7dac4";
@@ -131,7 +131,8 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose, books, onSw
   }, [order, book]);
 
   const [sel, setSel] = useState(current in book.scenes ? current : book.start);
-  const [view, setView] = useState<"map" | "board">("map");
+  const [view, setView] = useState<"map" | "board" | "road">("map");
+  const shots = useMemo(() => getShots(book.id), [book]);
   const [q, setQ] = useState("");
   const hits = useMemo(() => {
     const s = q.trim().toLowerCase();
@@ -156,13 +157,67 @@ function DevMap({ book, current, clipUrl, stillUrl, onPlay, onClose, books, onSw
         <div className="dev-tabs">
           <button className={view === "map" ? "on" : ""} onClick={() => setView("map")}>Map</button>
           <button className={view === "board" ? "on" : ""} onClick={() => setView("board")}>Storyboard · {sel}</button>
+          {book.status === "planning" && <button className={view === "road" ? "on" : ""} onClick={() => setView("road")}>Roadmap</button>}
         </div>
         <input className="dev-search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find scene, title or line" />
         <button className="dev-close" onClick={onClose} aria-label="Close developer menu">✕</button>
       </header>
       {view === "map"
         ? <MapView book={book} columns={columns} incoming={incoming} sel={sel} current={current} hits={hits} onSelect={(id) => open(id, false)} onOpen={(id) => open(id)} />
-        : <Board book={book} id={sel} incoming={incoming[sel] ?? []} clipUrl={clipUrl} stillUrl={stillUrl} onOpen={open} onPlay={onPlay} planning={book.status === "planning"} />}
+        : view === "road"
+          ? <Roadmap book={book} columns={columns} shots={shots} onOpen={open} />
+          : <Board book={book} id={sel} incoming={incoming[sel] ?? []} clipUrl={clipUrl} stillUrl={stillUrl} onOpen={open} onPlay={onPlay} planning={book.status === "planning"} shots={shots} />}
+    </div>
+  );
+}
+
+/** Production roadmap for a book being planned: one row per chapter, what it needs and how far each part has got. */
+const CLIP_YUAN = 3, STILL_YUAN = 0.11;
+const BACKGROUND = new Set(["crowd", "guards", "footman", "rat"]);
+function Roadmap({ book, columns, shots, onOpen }: { book: Book; columns: { title: string; ids: string[] }[]; shots: Record<string, Shot>; onOpen: (id: string) => void }) {
+  const rows = columns.map((col) => {
+    const beats = col.ids.flatMap((id) => allBeats(book.scenes[id]));
+    const clips = [...new Set(beats.filter((b) => b.clip).map((b) => b.clip!))];
+    const stills = [...new Set(beats.filter((b) => b.still).map((b) => b.still!))];
+    const written = clips.filter((c) => shots[c]).length;
+    const audited = clips.filter((c) => shots[c]?.audited).length;
+    const cast = [...new Set(beats.flatMap((b) => b.cast ?? []))].filter((c) => !BACKGROUND.has(c));
+    const src = book.scenes[col.ids[0]]?.source?.split("novel ")[1] ?? "";
+    const talks = col.ids.filter((id) => book.scenes[id].conversation).length;
+    const dead = col.ids.filter((id) => book.scenes[id].retryFrom).length;
+    return { col, clips, stills, written, audited, cast, src, talks, dead };
+  });
+  const sum = (k: (r: (typeof rows)[number]) => number) => rows.reduce((a, r) => a + k(r), 0);
+  // Book totals count each picture once: a shared clip (Death at every dead end) is made once.
+  const allClips = [...new Set(rows.flatMap((r) => r.clips))], stillsN = new Set(rows.flatMap((r) => r.stills)).size;
+  const clipsN = allClips.length;
+  return (
+    <div className="dev-board dev-road">
+      <p className="dev-meta">
+        <span>{clipsN} videos (about ¥{Math.round(clipsN * CLIP_YUAN)})</span>
+        <span>{stillsN} stills (about ¥{Math.round(stillsN * STILL_YUAN)})</span>
+        <span>video prompts written {allClips.filter((c) => shots[c]).length} / {clipsN}</span>
+        <span>audited {allClips.filter((c) => shots[c]?.audited).length} / {clipsN}</span>
+        <span>{sum((r) => r.talks)} live talks</span>
+        <span>{sum((r) => r.dead)} dead ends</span>
+      </p>
+      <table className="dev-table">
+        <thead><tr><th>Chapter</th><th>Novel</th><th>Scenes</th><th>Stills</th><th>Videos</th><th>Prompts</th><th>Talk</th><th>Cast</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.col.title + r.col.ids[0]}>
+              <td><button className="dev-goto" onClick={() => onOpen(r.col.ids[0])}>{r.col.title}</button></td>
+              <td className="dev-dim-text">{r.src}</td>
+              <td>{r.col.ids[0]} to {r.col.ids[r.col.ids.length - 1]}{r.dead ? <span className="dev-chip unless">{r.dead} dead end{r.dead > 1 ? "s" : ""}</span> : null}</td>
+              <td>{r.stills.length}</td>
+              <td>{r.clips.length}</td>
+              <td>{r.clips.length ? <span className={`dev-chip ${r.audited === r.clips.length ? "if" : r.written ? "" : "unless"}`}>{r.audited === r.clips.length ? "audited" : `${r.written}/${r.clips.length} written, ${r.audited} audited`}</span> : "none"}</td>
+              <td>{r.talks || ""}</td>
+              <td className="dev-dim-text">{r.cast.join(", ")}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -277,7 +332,7 @@ function Cond({ b }: { b: Beat }) {
 
 /** One beat: the picture or video on screen (inherited when the beat names none) beside its line.
  *  In a planning skeleton the pictures do not exist yet, so the slot is shown as a labelled frame instead. */
-function BeatRow({ b, pic, n, clipUrl, stillUrl, planning }: { b: Beat; pic: { kind: "clip" | "still"; id: string } | null; n: number; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean }) {
+function BeatRow({ b, pic, n, clipUrl, stillUrl, planning, shot }: { b: Beat; pic: { kind: "clip" | "still"; id: string } | null; n: number; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean; shot?: Shot }) {
   const own = !!(b.clip || b.still);
   return (
     <li className={`dev-beat ${own ? "" : "dev-held"}`}>
@@ -294,12 +349,23 @@ function BeatRow({ b, pic, n, clipUrl, stillUrl, planning }: { b: Beat; pic: { k
         {b.text && <p className={b.style === "hook" ? "dev-hook" : ""}>{b.text}</p>}
         {!b.text && !b.card && <p className="dev-silent">(no narration)</p>}
         <div><Cond b={b} /></div>
+        {shot && (
+          <details className="dev-shot">
+            <summary><span className={`dev-chip ${shot.audited ? "if" : "unless"}`}>{shot.audited ? "prompt audited" : "prompt not audited"}</span>{shot.source && <span className="dev-dim-text"> {shot.source}</span>}</summary>
+            {shot.why && <p><b>Why video:</b> {shot.why}</p>}
+            <p><b>First frame:</b> {shot.keyframe}</p>
+            {shot.motion && <p><b>Motion:</b> {shot.motion}</p>}
+            {shot.location && <p className="dev-dim-text"><b>Place{shot.place ? ` (${shot.place})` : ""}:</b> {shot.location}</p>}
+            {shot.scale && <p className="dev-dim-text"><b>{shot.scale.split(":")[0]}:</b>{shot.scale.slice(shot.scale.indexOf(":") + 1)}</p>}
+          </details>
+        )}
+        {planning && b.clip && !shot && <span className="dev-chip unless">no prompt yet</span>}
       </div>
     </li>
   );
 }
 
-function BeatList({ beats, start, clipUrl, stillUrl, planning }: { beats: Beat[]; start: { kind: "clip" | "still"; id: string } | null; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean }) {
+function BeatList({ beats, start, clipUrl, stillUrl, planning, shots = {} }: { beats: Beat[]; start: { kind: "clip" | "still"; id: string } | null; clipUrl: (id: string) => string; stillUrl: (id: string) => string; planning?: boolean; shots?: Record<string, Shot> }) {
   // The picture on screen during each beat: its own, or the last one named before it.
   const pics = beats.reduce<({ kind: "clip" | "still"; id: string } | null)[]>((acc, b) => {
     const prev = acc.length ? acc[acc.length - 1] : start;
@@ -308,7 +374,7 @@ function BeatList({ beats, start, clipUrl, stillUrl, planning }: { beats: Beat[]
   }, []);
   return (
     <ol className="dev-beats">
-      {beats.map((b, i) => <BeatRow key={i} b={b} pic={pics[i]} n={i + 1} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} />)}
+      {beats.map((b, i) => <BeatRow key={i} b={b} pic={pics[i]} n={i + 1} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} shot={b.clip ? shots[b.clip] : b.still ? shots[b.still] : undefined} />)}
     </ol>
   );
 }
@@ -323,9 +389,9 @@ function GoTo({ to, book, onOpen }: { to: string; book: Book; onOpen: (id: strin
   return <button key={to} className="dev-goto" onClick={() => onOpen(to)}>{to} · {book.scenes[to]?.title ?? "missing!"}</button>;
 }
 
-function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning }: {
+function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning, shots = {} }: {
   book: Book; id: string; incoming: string[]; clipUrl: (id: string) => string; stillUrl: (id: string) => string;
-  onOpen: (id: string) => void; onPlay?: (id: string) => void; planning?: boolean;
+  onOpen: (id: string) => void; onPlay?: (id: string) => void; planning?: boolean; shots?: Record<string, Shot>;
 }) {
   const sc = book.scenes[id];
   const top = useRef<HTMLDivElement>(null);
@@ -348,7 +414,7 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning
         </div>
         {onPlay ? <button className="primary dev-play" onClick={() => onPlay(id)}>▶ Play from here</button> : planning ? <span className="dev-chip">not playable yet</span> : <a className="primary dev-play" href={`/play/${book.id}`}>Open this book</a>}
       </div>
-      <BeatList beats={sc.beats} start={null} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} />
+      <BeatList beats={sc.beats} start={null} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} shots={shots} />
       {sc.conversation && (
         <div className="dev-talk">
           <h3>💬 Live talk with {sc.conversation.character} · up to {sc.conversation.maxTurns ?? "?"} turns</h3>
@@ -361,7 +427,7 @@ function Board({ book, id, incoming, clipUrl, stillUrl, onOpen, onPlay, planning
           <h3>⑂ {c.id}: “{c.text}” <GoTo to={c.next} book={book} onOpen={onOpen} />{(c.branch ?? []).map((b) => <span key={b.next} className="dev-chip if">or if {JSON.stringify(b.requires)} → <GoTo to={b.next} book={book} onOpen={onOpen} /></span>)}</h3>
           {c.requires && <p className="dev-req">requires {JSON.stringify(c.requires)}</p>}
           {c.effects && <p className="dev-req">effects {JSON.stringify(c.effects)}</p>}
-          {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} /> : null}
+          {c.aftermath?.length ? <BeatList beats={c.aftermath} start={end} clipUrl={clipUrl} stillUrl={stillUrl} planning={planning} shots={shots} /> : null}
         </div>
       ))}
       {sc.retryFrom && <p className="dev-next">Dead end. She goes back, with her state restored, to: <GoTo to={sc.retryFrom} book={book} onOpen={onOpen} /></p>}

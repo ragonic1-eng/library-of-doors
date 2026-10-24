@@ -165,7 +165,7 @@
         }
       ],
       "next": "0.3",
-      "source": "story map 1.0"
+      "source": "story map 1.0 · novel hub"
     },
     "0.3": {
       "id": "0.3",
@@ -177,7 +177,7 @@
           "card": "A small Scottish town · the night before London"
         },
         {
-          "text": "Aurie, sick at her own leaving party, sits on the kerb under a white umbrella printed with the Tube map. An old woman in shawls reads her palm: not any London I know. Beware of doors.",
+          "text": "Aurie, sick at her own leaving party, shivers on the kerb clutching a rolled-up white umbrella, her friends' gift. A beaky old woman in shawls reads her palm and blinks: not any London I know. It starts with doors.",
           "still": "nw-0.3-kerb",
           "cast": [
             "aurie",
@@ -201,12 +201,12 @@
           "next": "1.1",
           "aftermath": [
             {
-              "text": "A good heart, she says, is sometimes enough. Mostly not.",
-              "still": "nw-0.3-umbrella",
+              "text": "She clicks the umbrella open and it blossoms into the whole Underground, every line a colour. The old woman wraps herself round it: a good heart is sometimes enough. She wobbles off into the rain, a round white shape spelling Earl's Court, Blackfriars, Angel.",
               "cast": [
                 "aurie",
                 "oldwoman"
-              ]
+              ],
+              "clip": "nw-0.3-umbrella-v"
             }
           ]
         },
@@ -217,7 +217,7 @@
           "next": "1.1"
         }
       ],
-      "source": "story map 1.1"
+      "source": "story map 1.1 · novel prologue, pp. 3 to 6"
     },
     "1.1": {
       "id": "1.1",
@@ -230,21 +230,37 @@
           "card": "Three years later · under London"
         },
         {
-          "text": "A girl has run four days through the tunnels. Behind her, two gentlemen in black suits walk their canary, Mr Ross.",
+          "text": "Under London a girl has run for four days and sleeps at last in a stone burrow. Somewhere behind her, two gentlemen in elegant black suits send their canary ahead: huge, hairless Mr Ross.",
           "still": "nw-1.1-tunnels",
           "cast": [
-            "door",
             "croup",
             "vandemar",
             "ross"
           ]
         },
         {
-          "text": "Ross finds her. Her hand goes to his chest, and she opens him. She runs, bleeding.",
+          "text": "A rat crosses the tunnel. Mr Vandemar's knife flies thirty feet and pins it; he eats it head first, and Mr Croup slaps it out of his hand. People to damage, Mr Vandemar.",
+          "still": "nw-1.1-rat",
+          "cast": [
+            "croup",
+            "vandemar"
+          ]
+        },
+        {
+          "text": "Ross tears the rags off her; his knife catches her arm. She lays her hand on his chest and opens him. Croup and Vandemar wait in the tunnel; she knees Croup and runs, bleeding.",
           "still": "nw-1.1-ross",
           "cast": [
             "door",
-            "ross"
+            "ross",
+            "croup",
+            "vandemar"
+          ]
+        },
+        {
+          "text": "Cornered at a blank wall, she prays to the Temple, the Arch, anyone, somewhere safe, and puts her hand to the brick.",
+          "still": "nw-1.1-wall",
+          "cast": [
+            "door"
           ]
         }
       ],
@@ -255,25 +271,33 @@
       "id": "1.2",
       "title": "Door on the pavement",
       "pov": "3P",
-      "fx": "rain",
+      "fx": "mist",
       "beats": [
         {
-          "text": "Friday in the office off the Strand: trolls on the monitor, a Post-it on Jessica's photo. Late for dinner with her boss.",
+          "text": "Friday, half past six, off the Strand: trolls ring the monitor, the Wandsworth report is late, and a yellow Post-it on Jessica's photo says tonight. Dinner with her boss. Aurie forgot.",
           "still": "nw-1.2-office",
           "cast": [
-            "aurie",
-            "jessica"
+            "aurie"
           ]
         },
         {
-          "text": "A dark street behind a high brick wall. A door opens where there was no door, and a figure falls through it.",
+          "text": "Hurrying to the restaurant, Aurie stops to drop a coin to an old man in a doorway with a yellow-grey beard. There isn't time, says Jessica.",
+          "still": "nw-1.2-coin",
+          "cast": [
+            "aurie",
+            "jessica",
+            "iliaster"
+          ]
+        },
+        {
+          "text": "Ahead of them a door opens in a high brick wall. A girl steps out, sways for one long terrible moment, and folds onto the pavement.",
           "clip": "nw-1.2-fall-v",
           "cast": [
             "door"
           ]
         },
         {
-          "text": "Jessica steps over her. Aurie kneels; blood on her fingers. The girl's eyes open: not a hospital, they'll find me. Jessica: put her down, or the engagement is over.",
+          "text": "Jessica steps over her. Aurie kneels; blood on her fingertips. The girl's eyes open, white in a smudge of dust and blood: not a hospital, they'll find me. Jessica: dial 999, don't give your name, we'll be late.",
           "still": "nw-1.2-blood",
           "cast": [
             "aurie",
@@ -294,7 +318,7 @@
           "next": "2.1",
           "aftermath": [
             {
-              "text": "Jessica walks away in tears. At the flat the keys are inside; the girl touches the door and it swings open.",
+              "text": "Aurie lifts her; she is surprisingly light. Put that girl down, says Jessica, or this engagement is at an end. Aurie walks on and leaves her on the pavement in tears. At the flat the keys lie inside; the girl touches the door, and it swings open.",
               "still": "nw-1.2-flat",
               "cast": [
                 "aurie",
@@ -317,7 +341,7 @@
           "next": "1.3"
         }
       ],
-      "source": "story map 1.2"
+      "source": "story map 1.2 · novel ch. 1, pp. 10 to 22"
     },
     "1.3": {
       "id": "1.3",
@@ -326,7 +350,7 @@
       "fx": "rain",
       "beats": [
         {
-          "text": "Walking home alone at midnight, Aurie finds the girl still lying there, seen by no one. She carries her home after all.",
+          "text": "The ambulance never came. Walking home alone at midnight, Aurie finds the girl still lying there, seen by no one. She carries her home after all.",
           "still": "nw-1.3-midnight",
           "cast": [
             "aurie",
@@ -335,7 +359,7 @@
         }
       ],
       "next": "2.1",
-      "source": "story map 1.2b"
+      "source": "story map 1.2b · novel ch. 1, pp. 10 to 22"
     },
     "2.1": {
       "id": "2.1",
@@ -368,7 +392,7 @@
           "Most of the blood was someone else's.",
           "Nothing here reveals who she is beyond her first name, which she gives only after the two gentlemen have been."
         ],
-        "opening": "I'm in London Above. That's... not where I meant to be.",
+        "opening": "London Above. I asked for somewhere safe.",
         "exits": {
           "2.1.A": "Aurie helps without asking who she is.",
           "2.1.B": "Aurie insists on a doctor and the police.",
@@ -410,7 +434,7 @@
           "next": "2.2"
         }
       ],
-      "source": "story map 1.3"
+      "source": "story map 1.3 · novel ch. 2, pp. 23 to 25"
     },
     "2.2": {
       "id": "2.2",
@@ -516,7 +540,7 @@
           "next": "2.3",
           "aftermath": [
             {
-              "text": "They find nothing, and leave. The girl comes out of the wall behind the bath and does not look at Aurie for a long time. I'm Door.",
+              "text": "They find nothing, and leave. Then the girl is simply there in the kitchen, making tea, and does not look at Aurie for a long time. I'm Door.",
               "still": "nw-2.2-tea",
               "cast": [
                 "aurie",
@@ -526,7 +550,7 @@
           ]
         }
       ],
-      "source": "story map 1.4"
+      "source": "story map 1.4 · novel ch. 2, pp. 25 to 30"
     },
     "2.3": {
       "id": "2.3",
@@ -543,7 +567,7 @@
           ]
         },
         {
-          "text": "A rat runs from the videotapes. Aurie throws the remote at it. It was carrying the reply.",
+          "text": "Something bigger than a mouse darts from the videotapes; Aurie flings the remote at it. Door whistles it back: a rat, carrying a brown-paper reply tied on with the same blue rubber band.",
           "still": "nw-2.3-rat",
           "cast": [
             "aurie",
@@ -578,7 +602,7 @@
           "next": "3.1"
         }
       ],
-      "source": "story map 1.5"
+      "source": "story map 1.5 · novel ch. 2, pp. 30 to 33"
     },
     "3.1": {
       "id": "3.1",
@@ -596,7 +620,7 @@
           ]
         },
         {
-          "text": "The marquis de Carabas, in a coat with more pockets than a coat could hold.",
+          "text": "The rags become the marquis de Carabas: a huge dandyish black coat, half frock coat, half trench coat, high black boots, rags beneath, eyes burning white in a very dark face. De Carabas, at your service.",
           "still": "nw-3.1-marquis",
           "cast": [
             "aurie",
@@ -609,7 +633,9 @@
         "maxTurns": 3,
         "canon": [
           "The marquis trades in favours and never answers a question directly.",
-          "He will help Door for a favour; what Aurie offers shapes how much he trusts her."
+          "He will help Door for a favour; what Aurie offers shapes how much he trusts her.",
+          "He shoves Aurie down onto the cobbles first and asks the questions himself.",
+          "Door's family have been killed; Door wants an escort home and a bodyguard."
         ],
         "opening": "And what, exactly, is the lady Door offering me?",
         "exits": {
@@ -650,7 +676,7 @@
           "next": "3.2"
         }
       ],
-      "source": "story map 1.6"
+      "source": "story map 1.6 · novel ch. 2, pp. 33 to 41"
     },
     "3.2": {
       "id": "3.2",
@@ -659,7 +685,15 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "A sewer ladder that comes out on a rooftop in daylight. London tiny below. The marquis lets go with both hands and waggles his fingers.",
+          "text": "He lifts a manhole with a little metal key and lights a scarlet flare. No questions, no buts: he will hide Door until the Floating Market, two days from now.",
+          "still": "nw-3.2-flare",
+          "cast": [
+            "aurie",
+            "marquis"
+          ]
+        },
+        {
+          "text": "Rusted rungs in total darkness, then daylight: the same ladder climbs the outside of a tower a thousand feet up, though it was dusk a moment ago. Above her the marquis lets go with both hands and waggles his fingers.",
           "still": "nw-3.2-ladder",
           "cast": [
             "marquis"
@@ -695,7 +729,7 @@
           "next": "3.3",
           "aftermath": [
             {
-              "text": "He gives none, but he waits. On the roof Old Bailey offers starling stew; the marquis forces a silver box on him.",
+              "text": "He gives none, but he waits. On the roof Old Bailey offers starling stew; the marquis forces a silver box on him. A broom cupboard lets them out in Aurie's own stairwell.",
               "still": "nw-3.2-roof",
               "cast": [
                 "aurie",
@@ -706,7 +740,7 @@
           ]
         }
       ],
-      "source": "story map 1.6b"
+      "source": "story map 1.6b · novel ch. 2, pp. 33 to 41"
     },
     "3.3": {
       "id": "3.3",
@@ -715,7 +749,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Door, washed, in a huge leather flying jacket. The marquis kneels: my lady. She kisses Aurie's cheek as friends do and says sorry without saying for what. When Aurie looks up, nobody is there.",
+          "text": "Door, washed, her short hair shining dark auburn and copper, in a huge leather flying jacket. The marquis kneels: my lady. She kisses Aurie's cheek as friends do and says sorry without saying for what. When Aurie looks up, nobody is there.",
           "still": "nw-3.3-goodbye",
           "cast": [
             "aurie",
@@ -725,7 +759,7 @@
         }
       ],
       "next": "4.1",
-      "source": "story map 1.7"
+      "source": "story map 1.7 · novel ch. 2, pp. 41 to 42"
     },
     "4.1": {
       "id": "4.1",
@@ -735,8 +769,15 @@
       "fx": "rain",
       "beats": [
         {
-          "text": "A taxi, a ticket machine, the Tube doors, Sylvia, Gary: nobody sees her. In the shop glass her reflection lags half a beat behind.",
-          "clip": "nw-4.1-unseen-v",
+          "text": "Monday. On the Tube her sleeve catches in the closing doors; the train drags her along the platform until the cloth tears and she falls. Nobody looks.",
+          "clip": "nw-4.1-sleeve-v",
+          "cast": [
+            "aurie"
+          ]
+        },
+        {
+          "text": "Taxis glide past her raised hand. Coins fall straight through the ticket machine. In the office her desk is being carried out, and Sylvia asks politely: and you are?",
+          "still": "nw-4.1-office",
           "cast": [
             "aurie"
           ]
@@ -753,7 +794,7 @@
           ]
         },
         {
-          "text": "Jessica's office, Angels over England posters. She apologises for her dreadful memory for faces.",
+          "text": "Jessica's mirrored tower, Angels over England posters. Aurie says she is sorry, not for what she did, but for upsetting her. Jessica apologises for her dreadful memory for faces.",
           "still": "nw-4.1-jessica",
           "cast": [
             "aurie",
@@ -766,7 +807,17 @@
           "id": "4.1.A",
           "text": "It's okay. Forget it.",
           "effects": {},
-          "next": "4.2"
+          "next": "4.2",
+          "aftermath": [
+            {
+              "text": "She calls after her: Aurie... Maybury?",
+              "still": "nw-4.1-jessica",
+              "cast": [
+                "aurie",
+                "jessica"
+              ]
+            }
+          ]
         },
         {
           "id": "4.1.B",
@@ -789,7 +840,7 @@
           ]
         }
       ],
-      "source": "story map 2.1"
+      "source": "story map 2.1 · novel ch. 3, pp. 43 to 47"
     },
     "4.2": {
       "id": "4.2",
@@ -798,11 +849,9 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "An agent shows the flat to a couple while Aurie hides behind a washcloth in the bath. We'll take it.",
+          "text": "Through the bathroom door, from the bath: a young agent in a camel coat and a middle-aged couple. The woman runs a finger along the sink. We'll take it.",
           "still": "nw-4.2-bath",
-          "cast": [
-            "aurie"
-          ]
+          "cast": []
         },
         {
           "text": "The phone. Through static, Mr Croup asks whether she knows what her own liver tastes like.",
@@ -816,7 +865,7 @@
         "character": "croup",
         "maxTurns": 3,
         "canon": [
-          "Croup cannot reach her yet; he wants to know where Door is.",
+          "Croup knows she does not know where Door is; he rings to threaten her: they know where she lives, and they make a promise.",
           "The operator cannot hear Aurie if she dials the police."
         ],
         "opening": "Do you know what your own liver tastes like, Mistress Mayhew? Because it's one of the things we could find out together.",
@@ -868,7 +917,7 @@
           "next": "4.4"
         }
       ],
-      "source": "story map 2.2"
+      "source": "story map 2.2 · novel ch. 3, pp. 48 to 51"
     },
     "4.3": {
       "id": "4.3",
@@ -921,12 +970,22 @@
       "fx": "rain",
       "beats": [
         {
+          "text": "Jeans, trainers, her thick black sweater. Into a black sports bag: socks, passport, wallet, fruit from the bowl. You knew, she tells the empty flat. You knew this would happen.",
+          "still": "nw-4.4-packing",
+          "cast": [
+            "aurie"
+          ]
+        },
+        {
           "text": "The card is rejected. Aurie gives it to a short old homeless man: fifteen hundred in there, if you can get to it. He hands it back. He can see her.",
           "still": "nw-4.4-iliaster",
           "cast": [
             "aurie",
             "iliaster"
           ]
+        },
+        {
+          "text": "He has a yellow-grey beard; she gave him a coin once. Have you heard of the Floating Market? A girl called Door? He backs away."
         }
       ],
       "choices": [
@@ -961,7 +1020,7 @@
           "next": "4.5"
         }
       ],
-      "source": "story map 2.3"
+      "source": "story map 2.3 · novel ch. 3, pp. 51 to 53"
     },
     "4.5": {
       "id": "4.5",
@@ -1000,7 +1059,7 @@
         }
       ],
       "next": "5.1",
-      "source": "story map 2.3b"
+      "source": "story map 2.3b · novel ch. 3, pp. 51 to 53"
     },
     "5.1": {
       "id": "5.1",
@@ -1010,7 +1069,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "A sub-cellar. Croup throws razor blades between his fingers; Vandemar pins his own hand to the wall with his knife. The Bakelite phone: the employer wants the Door female, alive.",
+          "text": "In a sub-cellar of rot and dripping water, Vandemar drives his knife through his own hand into the plaster. That's how it's done.",
           "still": "nw-5.1-cellar",
           "cast": [
             "croup",
@@ -1018,15 +1077,21 @@
           ]
         },
         {
+          "text": "Croup takes the call on a Bakelite phone and cringes: the employer wants the Door girl alive."
+        },
+        {
           "text": "Vandemar spits on the wound, and it closes.",
           "still": "nw-5.1-hand",
           "cast": [
             "vandemar"
           ]
+        },
+        {
+          "text": "If you cut us, do we not bleed? Vandemar thinks about it in the dark. No."
         }
       ],
       "next": "5.2",
-      "source": "story map c2"
+      "source": "story map c2 · novel pp. 54 to 57"
     },
     "5.2": {
       "id": "5.2",
@@ -1035,12 +1100,14 @@
       "fx": "embers",
       "beats": [
         {
-          "text": "A vaulted hall of small fires and spits. A glass dagger at her throat. Across the hall people fall to the floor as a small black shape approaches: a rat, who seems to wink.",
+          "text": "A vaulted hall of greasy fires and spits. A glass dagger at her throat, a thin girl tipping out her bag, and across the hall people drop flat as a small black rat comes on: the one she threw the remote at. It seems to wink.",
           "still": "nw-5.2-hall",
           "cast": [
             "aurie",
             "ratspeaker",
-            "longtail"
+            "longtail",
+            "anaesthesia",
+            "iliaster"
           ]
         }
       ],
@@ -1086,7 +1153,7 @@
           "next": "5.4",
           "aftermath": [
             {
-              "text": "Without the rat's respect the Rat-speaker gets his nick in.",
+              "text": "Longtail hesitates a moment too long, and the glass leaves a thin red line under her jaw.",
               "unless": [
                 "RAT_RESPECT"
               ],
@@ -1133,7 +1200,7 @@
           ]
         }
       ],
-      "source": "story map 2.4"
+      "source": "story map 2.4 · novel ch. 3 to 4, pp. 52 to 60"
     },
     "5.3": {
       "id": "5.3",
@@ -1186,7 +1253,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "A white hall hung with pictures of rooms. Memories in the walls: her brother in a Victorian pool; her mother and sister watering plants until Croup steps in.",
+          "text": "Before dawn, a boarded door in a misty court; Door takes the marquis's hand and it falls into darkness. Inside, a white hall hung with pictures of rooms, and the walls remember: her brother floating in a Victorian pool, her mother and sister watering plants until Croup steps in.",
           "still": "nw-5.4-hall",
           "cast": [
             "door",
@@ -1203,11 +1270,21 @@
           ]
         },
         {
-          "text": "The journal machine: Lord Portico, bleeding. Go to Islington. Trust Islington. Avenge us.",
-          "still": "nw-5.4-journal",
+          "text": "The marquis snaps open Lord Portico's gold watch and fastens it to his own waistcoat. He's not using it any more.",
+          "still": "nw-5.4-watch",
           "cast": [
-            "portico"
+            "marquis",
+            "door"
           ]
+        },
+        {
+          "text": "The journal machine: a cabinet of walnut, brass and prisms. Lord Portico, bleeding, on its little screen: go to Islington. Trust Islington. Avenge us. He steps out of frame, and blood arcs across the white wall.",
+          "cast": [
+            "portico",
+            "door",
+            "marquis"
+          ],
+          "clip": "nw-5.4-journal-v"
         },
         {
           "text": "Elsewhere, Croup and Vandemar hire Varney by pulling his morning-star apart link by link.",
@@ -1220,7 +1297,7 @@
         }
       ],
       "next": "6.1",
-      "source": "story map c3"
+      "source": "story map c3 · novel pp. 60 to 75"
     },
     "6.1": {
       "id": "6.1",
@@ -1230,20 +1307,23 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "The girl wears a stained badge, I AM 11, and quartz beads. Do you like cat? Thigh or breast?",
-          "still": "nw-6.1-vaults",
+          "text": "By the hall's spits the thin girl, a stained badge on her rags reading I AM 11, finishes Aurie's last banana. Do you like cat? Thigh or breast?",
+          "still": "nw-6.1-hall",
           "cast": [
             "aurie",
             "anaesthesia"
           ]
         },
         {
-          "text": "A bench on the Embankment; the Albert Bridge in its lights. Nobody ever gets both.",
+          "text": "A bench on the Embankment, the city's lights doubled in the Thames and the Albert Bridge strung with tiny white lights. Quartz beads at the girl's throat. Nobody ever gets both.",
           "still": "nw-6.1-embankment",
           "cast": [
             "aurie",
             "anaesthesia"
           ]
+        },
+        {
+          "text": "And where is this nasty neighbourhood? Knightsbridge. Aurie laughs, and the girl turns away: I said you'd laugh."
         }
       ],
       "conversation": {
@@ -1296,7 +1376,7 @@
           "next": "6.2"
         }
       ],
-      "source": "story map 2.5"
+      "source": "story map 2.5 · novel ch. 4, pp. 60 to 71"
     },
     "6.2": {
       "id": "6.2",
@@ -1305,7 +1385,7 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "Varney's gang shoves Aurie down; Anaesthesia hisses like a cornered rat and Varney backs off. A tall woman in mottled leather joins them.",
+          "text": "Varney's gang shoves Aurie down; Anaesthesia hisses like a cornered rat and Varney backs off, spits at her shoes and leads his gang over the bridge first. A tall woman in mottled leather joins them. Anaesthesia puts the candle-lamp in Aurie's hand.",
           "still": "nw-6.2-varney",
           "cast": [
             "aurie",
@@ -1315,7 +1395,7 @@
           ]
         },
         {
-          "text": "A stone bridge over a void. The dark is turned up. Something slithers past; Anaesthesia's hand shakes in hers. An angel falls with burning wings. The candle flares.",
+          "text": "A stone bridge over a void, no sky and no water. The dark is turned up until it touches the skin. Jessica's contempt; a labyrinth; a spear; the Beast charging slowly out of the black. Anaesthesia's hand shakes in hers. The candle flares so bright it hurts.",
           "clip": "nw-6.2-dark-v",
           "cast": []
         },
@@ -1366,7 +1446,7 @@
           "next": "6.3"
         }
       ],
-      "source": "story map 2.6"
+      "source": "story map 2.6 · novel ch. 4, pp. 75 to 80"
     },
     "6.3": {
       "id": "6.3",
@@ -1376,11 +1456,11 @@
       "beats": [
         {
           "text": "Nobody is holding her hand. Beads patter down the bridge. The woman in leather: the bridge takes its toll.",
-          "still": "nw-6.3-beads",
           "cast": [
             "aurie",
             "hunter"
-          ]
+          ],
+          "clip": "nw-6.3-beads-v"
         }
       ],
       "choices": [
@@ -1436,7 +1516,7 @@
           ]
         }
       ],
-      "source": "story map 2.6b"
+      "source": "story map 2.6b · novel ch. 4, pp. 75 to 80"
     },
     "6.4": {
       "id": "6.4",
@@ -1488,7 +1568,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "Knightsbridge; her watch has gone blank and she bins it. Harrods' Egyptian Room ablaze: dream sellers, a knight selling lost property, a dentist with a hand drill.",
+          "text": "Knightsbridge. Her blank watch goes in a bin. In Harrods' Egyptian Room colour and light break over her: dream sellers, a man in armour selling lost property, a dentist with a hand drill. The woman in leather says fare you well and slips into the crowd.",
           "still": "nw-7.1-market",
           "cast": [
             "aurie",
@@ -1496,43 +1576,8 @@
           ]
         },
         {
-          "text": "A pale woman in black velvet smiles at her.",
-          "still": "nw-7.1-lamia",
-          "cast": [
-            "aurie",
-            "lamia"
-          ]
-        }
-      ],
-      "choices": [
-        {
-          "id": "7.1.A",
-          "text": "Smile back.",
-          "effects": {
-            "flags": {
-              "LAMIA_NOTICED": true
-            }
-          },
-          "next": "7.2"
-        },
-        {
-          "id": "7.1.B",
-          "text": "Look away.",
-          "effects": {},
-          "next": "7.2"
-        }
-      ],
-      "source": "story map 3.1"
-    },
-    "7.2": {
-      "id": "7.2",
-      "title": "Old Bailey's birds and information",
-      "pov": "3P",
-      "fx": "flicker",
-      "beats": [
-        {
-          "text": "A sign: OLD BAILEY'S BIRDS AND INFORMATION. The bodyguard auditions, he says, are in the Food Halls. What'll you give me?",
-          "still": "nw-7.2-stall",
+          "text": "OLD BAILEY'S BIRDS AND INFORMATION. The feathered old roof-man knows her from the rooftops, and knows where Door is. What'll you give me?",
+          "still": "nw-7.1-stall",
           "cast": [
             "aurie",
             "oldbailey"
@@ -1541,7 +1586,7 @@
       ],
       "choices": [
         {
-          "id": "7.2.A",
+          "id": "7.1.A",
           "text": "Aunt Maude's handkerchief.",
           "effects": {
             "flags": {
@@ -1549,11 +1594,11 @@
             }
           },
           "remembered": "Old Bailey will remember that.",
-          "next": "7.3",
+          "next": "7.2",
           "aftermath": [
             {
-              "text": "He waves it like a flag.",
-              "still": "nw-7.2-flag",
+              "text": "He waves the handkerchief like a flag and points to the Food Halls: they're auditioning.",
+              "still": "nw-7.1-flag",
               "cast": [
                 "aurie",
                 "oldbailey"
@@ -1562,7 +1607,7 @@
           ]
         },
         {
-          "id": "7.2.B",
+          "id": "7.1.B",
           "text": "Anaesthesia's bead.",
           "requires": {
             "flags": [
@@ -1577,20 +1622,65 @@
               "BEAD_KEPT": false
             }
           },
-          "next": "7.3"
+          "next": "7.2"
         },
         {
-          "id": "7.2.C",
+          "id": "7.1.C",
           "text": "Nothing. I'll find them myself.",
           "effects": {
             "flags": {
               "MARKET_LATE": true
             }
           },
+          "next": "7.2",
+          "aftermath": [
+            {
+              "text": "Nothing for nothing, he says. She finds the way herself, too late for the first bouts.",
+              "still": "nw-7.1-market",
+              "cast": [
+                "aurie",
+                "crowd"
+              ]
+            }
+          ]
+        }
+      ],
+      "source": "story map 3.1 · novel pp. 81 to 87"
+    },
+    "7.2": {
+      "id": "7.2",
+      "title": "The Velvets",
+      "pov": "3P",
+      "fx": "flicker",
+      "beats": [
+        {
+          "text": "On the way to the Food Halls five pale sisters sweep past in heavy velvet; the last, the palest, in thin white linen, smiles at her.",
+          "still": "nw-7.2-lamia",
+          "cast": [
+            "aurie",
+            "lamia"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "id": "7.2.A",
+          "text": "Smile back.",
+          "effects": {
+            "flags": {
+              "LAMIA_NOTICED": true
+            }
+          },
+          "next": "7.3"
+        },
+        {
+          "id": "7.2.B",
+          "text": "Look away.",
+          "effects": {},
           "next": "7.3"
         }
       ],
-      "source": "story map 3.1b"
+      "source": "story map 3.1 · novel ch. 5 (lines 3245 to 3254)"
     },
     "7.3": {
       "id": "7.3",
@@ -1610,7 +1700,7 @@
           ]
         },
         {
-          "text": "Late, Aurie sees only the end of it.",
+          "text": "Late, she pushes into the ring of spectators as a bout ends, and a thrown fighter lands on her.",
           "if": [
             "MARKET_LATE"
           ],
@@ -1621,15 +1711,7 @@
           ]
         },
         {
-          "text": "The leather woman puts Varney down with his own knife. I'm called Hunter. The Hunter? I'm back.",
-          "clip": "nw-7.3-hunter-v",
-          "cast": [
-            "hunter",
-            "varney"
-          ]
-        },
-        {
-          "text": "Door, on the smoked-salmon counter, furious: what is she doing here?",
+          "text": "She opens her eyes on fire-opal eyes in a pale, furious face. Temple and Arch. What are you doing here?",
           "still": "nw-7.3-door",
           "cast": [
             "aurie",
@@ -1642,8 +1724,8 @@
         "character": "door",
         "maxTurns": 3,
         "canon": [
-          "Door is angry because Aurie is in danger because of her.",
-          "Hunter has just been hired as bodyguard; the marquis is here."
+          "Door is angry because Aurie is in danger because of her; she is kneeling over Aurie on the sawdust.",
+          "The bodyguard auditions are still going on; Hunter has not arrived yet. The marquis is here."
         ],
         "opening": "Why did you have to come here? Why couldn't you just stay where you were safe?",
         "exits": {
@@ -1680,15 +1762,44 @@
           "next": "8.1"
         }
       ],
-      "source": "story map 3.2"
+      "source": "story map 3.2 · novel pp. 87 to 94"
     },
     "8.1": {
       "id": "8.1",
-      "title": "Left in the sewer",
+      "title": "The bell",
       "episodeTitle": "Chapter 8 · Are you coming?",
       "pov": "3P",
       "fx": "mist",
       "beats": [
+        {
+          "text": "A tall woman in mottled leather walks into the ring and puts Varney down with his own blade. I'm called Hunter. The Hunter? I'm back.",
+          "still": "nw-8.1-hunter",
+          "cast": [
+            "hunter",
+            "varney"
+          ]
+        },
+        {
+          "text": "Varney staggers up, snatches the crowbar and hurls it at Hunter's head; she simply reaches out a hand and catches it.",
+          "clip": "nw-8.1-crowbar-v",
+          "cast": [
+            "hunter",
+            "varney",
+            "door",
+            "marquis",
+            "aurie"
+          ]
+        },
+        {
+          "text": "A Black Friar tolls a brass bell. The market packs itself away; they come out into a wet, empty street.",
+          "still": "nw-8.1-bell",
+          "cast": [
+            "aurie",
+            "door",
+            "marquis",
+            "hunter"
+          ]
+        },
         {
           "text": "The marquis explains the two Londons: Aurie has fallen through the cracks. Good night. She follows down the ladder. Go away. No. They leave her.",
           "still": "nw-8.1-ladder",
@@ -1707,7 +1818,7 @@
           "next": "8.3",
           "aftermath": [
             {
-              "text": "She cries, for the first time since her father died.",
+              "text": "The water rushes on toward East London. Alone in the dark, for the first time since her father died, Aurie cries.",
               "still": "nw-8.1-sits",
               "cast": [
                 "aurie"
@@ -1729,7 +1840,7 @@
           "next": "8.2"
         }
       ],
-      "source": "story map 3.3"
+      "source": "story map 3.3 · novel pp. 94 to 96"
     },
     "8.2": {
       "id": "8.2",
@@ -1746,7 +1857,7 @@
         }
       ],
       "next": "8.3",
-      "source": "story map 3.3b"
+      "source": "story map 3.3b · novel pp. 94 to 96"
     },
     "8.3": {
       "id": "8.3",
@@ -1755,16 +1866,16 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "Varney flees down a spiral stair; Vandemar waits at the bottom paring his nails with Varney's machete; Croup falls on him.",
-          "still": "nw-8.3-stairs",
+          "text": "Varney flees down a spiral stair, two hundred and fifty-nine steps. At the bottom the lift doors slide open with magnificent slowness: Vandemar on the bottom step, paring his nails with Varney's machete. Croup falls on him from above.",
           "cast": [
             "varney",
             "vandemar",
             "croup"
-          ]
+          ],
+          "clip": "nw-8.3-stairs-v"
         },
         {
-          "text": "In a tunnel Door stops: we can't leave her. The marquis: of course we can; we did. You are working for me, aren't you?",
+          "text": "In a tunnel Door stops: we can't leave her. The marquis: of course we can; we did. Door, too tired for patience: you are working for me, aren't you?",
           "still": "nw-8.3-tunnel",
           "cast": [
             "door",
@@ -1774,7 +1885,7 @@
         }
       ],
       "next": "8.4",
-      "source": "story map c5"
+      "source": "story map c5 · novel pp. 96 to 98"
     },
     "8.4": {
       "id": "8.4",
@@ -1821,7 +1932,7 @@
           "next": "8.5",
           "aftermath": [
             {
-              "text": "She hugs her and promises to try to get her home. They are looking for an angel. Aurie laughs until it echoes.",
+              "text": "She hugs her and promises to try to get her home. They are looking for an angel named Islington. Aurie laughs until it echoes.",
               "still": "nw-8.4-hug",
               "cast": [
                 "aurie",
@@ -1871,7 +1982,7 @@
           ]
         }
       ],
-      "source": "story map 3.4"
+      "source": "story map 3.4 · novel pp. 98 to 100"
     },
     "8.5": {
       "id": "8.5",
@@ -1880,15 +1991,15 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "A rock hall, iron pillars, a waterfall, a black door of flint and silver. Candles light as a small barefoot woman in white passes, and go out behind her. No wings. Unmistakably an angel.",
-          "still": "nw-8.5-hall",
+          "text": "A rock hall, iron pillars running off into the dark, a waterfall into a rock pool, a black door of flint and silver. Candles wake as a small barefoot woman in white passes; she kneels at the pool, drinks, closes her eyes. No wings, but unmistakably an angel: Islington.",
           "cast": [
             "islington"
-          ]
+          ],
+          "clip": "nw-8.5-candles-v"
         }
       ],
       "next": "9.1",
-      "source": "story map c6"
+      "source": "story map c6 · novel p. 100"
     },
     "9.1": {
       "id": "9.1",
@@ -1898,7 +2009,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Hunter: there are shepherds in Shepherd's Bush; pray you never meet them. In the Bank tunnel the busker Lear can see them. The marquis plays a reel that empties passers-by's pockets onto his coat.",
+          "text": "Hunter: there are shepherds in Shepherd's Bush; pray you never meet them. In the Bank tunnel the busker Lear can see them; the marquis buys his train schedule with a pennywhistle reel that sets passers-by tossing coins onto Lear's coat.",
           "still": "nw-9.1-lear",
           "cast": [
             "aurie",
@@ -1909,7 +2020,7 @@
           ]
         },
         {
-          "text": "He taps Angel on the Tube map. Islington.",
+          "text": "He taps Angel on the Tube map: Islington. Aurie has heard enough about angels.",
           "still": "nw-9.1-map",
           "cast": [
             "aurie",
@@ -1939,7 +2050,7 @@
           "next": "9.2"
         }
       ],
-      "source": "story map 4.1"
+      "source": "story map 4.1 · novel ch. 6, pp. 101 to 105"
     },
     "9.2": {
       "id": "9.2",
@@ -2001,7 +2112,7 @@
           ]
         }
       ],
-      "source": "story map 4.2"
+      "source": "story map 4.2 · novel ch. 6, pp. 105 to 107"
     },
     "9.3": {
       "id": "9.3",
@@ -2019,7 +2130,7 @@
         }
       ],
       "next": "9.4",
-      "source": "story map c7"
+      "source": "story map c7 · novel pp. 107 to 109"
     },
     "9.4": {
       "id": "9.4",
@@ -2028,7 +2139,17 @@
       "fx": "embers",
       "beats": [
         {
-          "text": "A dark, empty-looking carriage that inside is a medieval court: straw, chickens, a log fire, a wolfhound, old men-at-arms in knitted chain mail. The one-eyed earl in dressing gown and slippers.",
+          "text": "On the platform one carriage stands dark and locked. The marquis knocks; the door slides open six inches on firelight and smoke, and an old bespectacled face peers out.",
+          "clip": "nw-9.4-carriage-v",
+          "cast": [
+            "marquis",
+            "aurie",
+            "door",
+            "hunter"
+          ]
+        },
+        {
+          "text": "Through the glass the carriage is dark and empty; inside the door, firelight. Straw, chickens, a wolfhound, old men-at-arms in knitted chain mail. The huge one-eyed earl shuffles in, in a fur dressing gown and carpet slippers.",
           "still": "nw-9.4-court",
           "cast": [
             "aurie",
@@ -2040,12 +2161,15 @@
           ]
         },
         {
-          "text": "The earl recognises the marquis, and his eye, and orders him seized.",
+          "text": "The earl surges up, his head brushing the roof. De Carabas cost him a dozen men and an eye in the retreat from White City. Two ancient guards level crossbows at the marquis.",
           "still": "nw-9.4-seized",
           "cast": [
             "earl",
             "marquis"
           ]
+        },
+        {
+          "text": "At a stop an old man-at-arms raps a vending machine: orders from the earl. It spits chocolate bars into his helmet."
         }
       ],
       "conversation": {
@@ -2053,9 +2177,10 @@
         "maxTurns": 3,
         "canon": [
           "The earl holds an old grudge against the marquis (the White City retreat, his eye).",
-          "Door can invoke her house; the marquis leaves at the next station either way."
+          "Door can invoke her house; the marquis leaves at the next station either way.",
+          "Tooley the jester calls Aurie a mooncalf; the earl does not."
         ],
-        "opening": "Mooncalf! Who brought the marquis de Carabas into my court? Speak, or Tooley shall be funny at you.",
+        "opening": "I know you, de Carabas. I may be old, but I haven't forgotten. Who brought him into my court?",
         "exits": {
           "9.4.A": "Aurie lets Door handle it.",
           "9.4.B": "Aurie speaks up for the marquis.",
@@ -2094,7 +2219,7 @@
           "next": "9.5"
         }
       ],
-      "source": "story map 4.3"
+      "source": "story map 4.3 · novel ch. 6 to 7, pp. 110 to 118"
     },
     "9.5": {
       "id": "9.5",
@@ -2103,12 +2228,14 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Behind the throne, a stone library of lost property: dentures, gnomes, umbrellas, a wooden leg; Tube tunnels rushing past the windows.",
+          "text": "Behind the throne, a stone library of everything London ever lost: umbrellas, dentures, a wooden leg, four garden gnomes. Tube lights flicker past the windows. The quick way to Islington works only once, the earl mumbles, and only for an opener.",
           "still": "nw-9.5-library",
           "cast": [
             "aurie",
             "door",
-            "earl"
+            "earl",
+            "hunter",
+            "tooley"
           ]
         }
       ],
@@ -2120,7 +2247,7 @@
           "next": "9.6",
           "aftermath": [
             {
-              "text": "She gets the scroll: use the Angelus. They are dropped at BRITISH MUSEUM. There isn't one, says Aurie. Then be very careful getting off, says the delighted earl.",
+              "text": "Door gets the scroll: use the Angelus. The train drops them at BRITISH MUSEUM. There isn't a British Museum station, says Aurie. Then be very careful getting off, booms the delighted earl.",
               "still": "nw-9.5-scroll",
               "cast": [
                 "aurie",
@@ -2144,7 +2271,7 @@
           "next": "9.6",
           "aftermath": [
             {
-              "text": "The scroll: use the Angelus. They are dropped at BRITISH MUSEUM. Be very careful getting off, says the delighted earl.",
+              "text": "Door gets the scroll: use the Angelus. The train drops them at BRITISH MUSEUM. Then be very careful getting off, booms the delighted earl.",
               "still": "nw-9.5-scroll",
               "cast": [
                 "aurie",
@@ -2155,7 +2282,7 @@
           ]
         }
       ],
-      "source": "story map 4.4"
+      "source": "story map 4.4 · novel ch. 7, pp. 119 to 122"
     },
     "9.6": {
       "id": "9.6",
@@ -2172,7 +2299,7 @@
           ]
         },
         {
-          "text": "Old Bailey's roof facing St Paul's. He names the obsidian figure: the Great Beast of London, a butcher's animal that escaped into the Fleet Ditch and grew. The marquis drops off the roof: keep the box.",
+          "text": "Old Bailey's roof facing St Paul's. He names the obsidian figure: the Great Beast of London, a butcher's animal that escaped into the Fleet Ditch and grew. The marquis drops off the roof: keep the box till this is over; the rats will tell you what to do with it.",
           "still": "nw-9.6-roof",
           "cast": [
             "oldbailey",
@@ -2181,7 +2308,7 @@
         }
       ],
       "next": "10.1",
-      "source": "story map c9"
+      "source": "story map c9 · novel ch. 8, pp. 123 to 126"
     },
     "10.1": {
       "id": "10.1",
@@ -2216,7 +2343,7 @@
           "next": "10.2",
           "aftermath": [
             {
-              "text": "Taken as tribute, the rat says. Sometimes they come back.",
+              "text": "The rats don't blame her, Miss Whiskers says. Anaesthesia was taken by the night, as tribute. Sometimes they come back.",
               "still": "nw-10.1-station",
               "cast": [
                 "aurie",
@@ -2234,16 +2361,16 @@
           "next": "10.2"
         }
       ],
-      "source": "story map 5.1"
+      "source": "story map 5.1 · novel ch. 8, pp. 126 to 129"
     },
     "10.2": {
       "id": "10.2",
-      "title": "Hunter will not climb",
+      "title": "Hunter stays Below",
       "pov": "3P",
       "fx": "dust",
       "beats": [
         {
-          "text": "Hunter will not go Above. She guards Door Below and cannot climb; a curse, she admits, like an embarrassing illness.",
+          "text": "At the foot of the stairs Hunter stops. She guards Door in London Below and cannot follow her Above: a curse, she admits, like an embarrassing illness.",
           "still": "nw-10.2-hunter",
           "cast": [
             "aurie",
@@ -2280,7 +2407,7 @@
           "next": "10.3"
         }
       ],
-      "source": "story map 5.1b"
+      "source": "story map 5.1b · novel ch. 8, pp. 126 to 129"
     },
     "10.3": {
       "id": "10.3",
@@ -2289,7 +2416,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Croup and Vandemar on plinths among museum junk. To Door: a traitor in your nest, a cuckoo.",
+          "text": "In a storeroom of priceless junk, two figures stand on plinths like exhibits. Then Croup smiles.",
           "still": "nw-10.3-plinths",
           "cast": [
             "aurie",
@@ -2316,9 +2443,9 @@
         "maxTurns": 2,
         "canon": [
           "They are here to frighten Door, not to kill her.",
-          "If TOLD_CV is set, Croup has just thanked Aurie for her earlier help, in front of Door."
+          "If TOLD_CV is set, Croup has just thanked Aurie for her earlier help, in front of Door. Croup's 'traitor in your nest' comes at the end, to Door alone, and is what makes them run."
         ],
-        "opening": "CROUP: There's a traitor in your nest, my lady. A cuckoo. VANDEMAR: Cuckoo.",
+        "opening": "CROUP: So paint me grey and call me a dire wolf: two little lost lambs out on their own. VANDEMAR: You could call me a wolf too, Mister Croup.",
         "exits": {
           "10.3.A": "Aurie puts herself between them and Door.",
           "10.3.B": "Aurie grabs Door's hand and runs."
@@ -2350,12 +2477,14 @@
           "next": "10.4",
           "aftermath": [
             {
-              "text": "Vandemar, pleased: all right. Thanks. They run; behind them, cuckoo calls and a wolf's howl.",
-              "still": "nw-10.3-run",
+              "text": "Vandemar, pleased: all right. Thanks. Croup leans to Door alone: there's a traitor in your nest. A cuckoo. They run; behind them, cuckoo calls and a wolf's howl.",
               "cast": [
                 "aurie",
-                "door"
-              ]
+                "door",
+                "croup",
+                "vandemar"
+              ],
+              "clip": "nw-10.3-run-v"
             }
           ]
         },
@@ -2377,17 +2506,19 @@
           "next": "10.4",
           "aftermath": [
             {
-              "text": "Behind them, cuckoo calls and a wolf's howl.",
-              "still": "nw-10.3-run",
+              "text": "Croup leans to Door alone: there's a traitor in your nest. A cuckoo. They run; behind them, cuckoo calls and a wolf's howl.",
               "cast": [
                 "aurie",
-                "door"
-              ]
+                "door",
+                "croup",
+                "vandemar"
+              ],
+              "clip": "nw-10.3-run-v"
             }
           ]
         }
       ],
-      "source": "story map 5.2"
+      "source": "story map 5.2 · novel ch. 8, pp. 129 to 133"
     },
     "10.4": {
       "id": "10.4",
@@ -2396,8 +2527,8 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Outside, catching their breath. A traitor?",
-          "still": "nw-10.4-outside",
+          "text": "Great Russell Street at night. The side gate won't open for Door; she has opened too many doors today. Unseen in the queue of furs and dinner jackets on the museum steps, Aurie asks: a traitor?",
+          "still": "nw-10.4-steps",
           "cast": [
             "aurie",
             "door"
@@ -2432,7 +2563,7 @@
           "next": "10.5"
         }
       ],
-      "source": "story map 5.2b"
+      "source": "story map 5.2b · novel ch. 8, pp. 129 to 133"
     },
     "10.5": {
       "id": "10.5",
@@ -2445,7 +2576,8 @@
           "still": "nw-10.5-gallery",
           "cast": [
             "aurie",
-            "jessica"
+            "jessica",
+            "door"
           ]
         }
       ],
@@ -2454,9 +2586,10 @@
         "maxTurns": 3,
         "canon": [
           "Jessica cannot remember Aurie but feels she should.",
-          "Reminding her, gently or cheekily, ends with her sending for security; saying nothing does not."
+          "Reminding her, gently or cheekily, ends with her sending for security; saying nothing does not.",
+          "They were engaged eighteen months; Jessica ended it on the Friday. Her birthday is the twenty-third of April; she hums 'I'm a Believer'."
         ],
-        "opening": "I'm so sorry, I'm dreadful with faces. Are you with the caterers?",
+        "opening": "You won't believe this, but my assistant didn't note which paper you're from. You are with the media?",
         "exits": {
           "10.5.A": "Aurie tells her who she was, gently.",
           "10.5.B": "Aurie tells her cheekily: her birthday, the song she hums.",
@@ -2466,7 +2599,7 @@
       "choices": [
         {
           "id": "10.5.A",
-          "text": "We were engaged, Jess. Until three weeks ago.",
+          "text": "Jess, we've been engaged eighteen months. You dumped me on Friday.",
           "effects": {
             "flags": {
               "SECURITY": true
@@ -2476,7 +2609,7 @@
         },
         {
           "id": "10.5.B",
-          "text": "Your birthday's the twelfth. You hum when you're nervous. You're humming now.",
+          "text": "Your birthday's April the twenty-third. And you hum 'I'm a Believer' when you're happy.",
           "effects": {
             "flags": {
               "SECURITY": true
@@ -2491,7 +2624,7 @@
           "next": "10.6"
         }
       ],
-      "source": "story map 5.3"
+      "source": "story map 5.3 · novel ch. 9, pp. 134 to 143"
     },
     "10.6": {
       "id": "10.6",
@@ -2500,7 +2633,7 @@
       "fx": "glitter",
       "beats": [
         {
-          "text": "Mr Stockton pulls the cord: a cathedral door carved with a staring medieval angel.",
+          "text": "Stockton pulls the rope. The curtain parts on a cathedral door twice a man's height, carved with an angel in red, white and gold that stares with blank medieval eyes.",
           "still": "nw-10.6-angelus",
           "cast": [
             "aurie",
@@ -2521,15 +2654,15 @@
           ]
         },
         {
-          "text": "Nobody stops them. Door's hand on the door; light like fireworks.",
+          "text": "Nobody stops them. Door's hand on the carved door; it swings in and light pours out like fireworks; they walk into it and are gone.",
           "unless": [
             "SECURITY"
           ],
-          "still": "nw-10.6-light",
           "cast": [
             "aurie",
             "door"
-          ]
+          ],
+          "clip": "nw-10.6-light-v"
         }
       ],
       "choices": [
@@ -2545,12 +2678,12 @@
           "next": "11.1",
           "aftermath": [
             {
-              "text": "Wrong London. Her hand on the door; light like fireworks; they walk into it, and the room agrees it never happened.",
-              "still": "nw-10.6-light",
+              "text": "Wrong London. Door's hand on the carved door; it swings in and light pours out like fireworks; they walk into it, and the room agrees it never happened.",
               "cast": [
                 "aurie",
                 "door"
-              ]
+              ],
+              "clip": "nw-10.6-light-v"
             }
           ]
         },
@@ -2573,12 +2706,12 @@
           "next": "11.1",
           "aftermath": [
             {
-              "text": "She screams anyway, and will not go without her. Light like fireworks; they walk into it.",
-              "still": "nw-10.6-light",
+              "text": "Door will not go without her. The scream has frozen the room; Aurie pulls free and takes her hand. The door swings in on light like fireworks; they walk into it.",
               "cast": [
                 "aurie",
                 "door"
-              ]
+              ],
+              "clip": "nw-10.6-light-v"
             }
           ]
         },
@@ -2591,10 +2724,20 @@
             ]
           },
           "effects": {},
-          "next": "11.1"
+          "next": "11.1",
+          "aftermath": [
+            {
+              "text": "The door swings in on light like fireworks; they walk into it and are gone.",
+              "clip": "nw-10.6-light-v",
+              "cast": [
+                "aurie",
+                "door"
+              ]
+            }
+          ]
         }
       ],
-      "source": "story map 5.4"
+      "source": "story map 5.4 · novel ch. 9, pp. 143 to 146"
     },
     "11.1": {
       "id": "11.1",
@@ -2604,20 +2747,11 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "The rock hall. Islington, small and golden-haired and sweet-faced as a girl, with eyes of old grey light, pours wine from Atlantis like a sacrament. To former glories.",
-          "clip": "nw-11.1-wine-v",
+          "text": "The rock hall again, candles lighting themselves down the miles of iron pillars. Islington pours wine from Atlantis, glowing like sun on a swimming pool. To former glories. The Angelus works once for each traveller.",
           "cast": [
             "islington"
-          ]
-        },
-        {
-          "text": "She gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep.",
-          "still": "nw-11.1-hall",
-          "cast": [
-            "aurie",
-            "door",
-            "islington"
-          ]
+          ],
+          "still": "nw-11.1-wine"
         }
       ],
       "conversation": {
@@ -2625,7 +2759,8 @@
         "maxTurns": 3,
         "canon": [
           "Islington is gentle, patient and gives no hint of what she wants beyond the key.",
-          "It asks Aurie what she wants; the answer is remembered."
+          "She asks Aurie what she wants; the answer is remembered.",
+          "Door asks who ordered her family killed; Islington does not know, but will help. London Below is the second city Islington has cared for; the first sank."
         ],
         "opening": "And you, Aurie Mayhew? What is it that you want?",
         "exits": {
@@ -2654,6 +2789,15 @@
                 "door",
                 "islington"
               ]
+            },
+            {
+              "text": "She gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep. Door pockets it: my father had one of these.",
+              "still": "nw-11.1-hall",
+              "cast": [
+                "aurie",
+                "door",
+                "islington"
+              ]
             }
           ]
         },
@@ -2669,7 +2813,18 @@
             }
           },
           "remembered": "The angel will remember that.",
-          "next": "11.2"
+          "next": "11.2",
+          "aftermath": [
+            {
+              "text": "She gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep. Door pockets it: my father had one of these.",
+              "still": "nw-11.1-hall",
+              "cast": [
+                "aurie",
+                "door",
+                "islington"
+              ]
+            }
+          ]
         },
         {
           "id": "11.1.C",
@@ -2688,11 +2843,20 @@
               "cast": [
                 "islington"
               ]
+            },
+            {
+              "text": "She gives Door a black Beast statuette to bring her safely back, and asks for the key the Black Friars keep. Door pockets it: my father had one of these.",
+              "still": "nw-11.1-hall",
+              "cast": [
+                "aurie",
+                "door",
+                "islington"
+              ]
             }
           ]
         }
       ],
-      "source": "story map 5.5"
+      "source": "story map 5.5 · novel ch. 9 to 10, pp. 146 to 151"
     },
     "11.2": {
       "id": "11.2",
@@ -2701,7 +2865,7 @@
       "fx": "glitter",
       "beats": [
         {
-          "text": "Drunk on Atlantean wine, on the museum steps at dawn. Door giggles.",
+          "text": "Dawn. They wake on the gallery floor beneath the Angelus, the party long over. Outside, the museum's stone steps run down to Great Russell Street, and the wine is still in them.",
           "still": "nw-11.2-steps",
           "cast": [
             "aurie",
@@ -2721,12 +2885,12 @@
           "next": "11.3",
           "aftermath": [
             {
-              "text": "Door joins in, dances better, and they tumble at the bottom laughing. Hunter, at the station: they are very drunk.",
-              "clip": "nw-11.2-dance-v",
+              "text": "Aurie soft-shoes down the steps; Door giggles, joins in, dances better, and they tumble at the bottom laughing. Hunter, at the station: they are very drunk.",
               "cast": [
                 "aurie",
                 "door"
-              ]
+              ],
+              "still": "nw-11.2-tumble"
             }
           ]
         },
@@ -2747,7 +2911,7 @@
           ]
         }
       ],
-      "source": "story map 5.6"
+      "source": "story map 5.6 · novel ch. 10, pp. 151 to 157"
     },
     "11.3": {
       "id": "11.3",
@@ -2756,7 +2920,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "The marquis in the killers' cellar holds a stolen T'ang figurine under a hammer and trades three questions each. Why not kill Door? She's the only one who can open the door. Why protect her? Her father saved his life.",
+          "text": "In a cellar of drips and rustling maggots the marquis holds a hammer over a stolen T'ang figurine and buys three answers. Why not kill Door? She's the only one who can open the door. Why protect her? Her father saved his life.",
           "still": "nw-11.3-hammer",
           "cast": [
             "marquis",
@@ -2765,7 +2929,18 @@
           ]
         },
         {
-          "text": "Croup eats the figurine with joy. Under Marble Arch, Vandemar is already waiting on the steps. A knife hilt to the temple.",
+          "text": "Croup asks why the Upworlder travels with her. Sentimentality, says the marquis, and wonders whether that is the whole truth."
+        },
+        {
+          "text": "Croup takes the figurine, grins far too wide, and bites its head off; china dust whitens his chin as he chews.",
+          "clip": "nw-11.3-figurine-v",
+          "cast": [
+            "croup",
+            "vandemar"
+          ]
+        },
+        {
+          "text": "Thirty-five minutes later, on tunnel steps past Marble Arch, Vandemar sits picking his nails with a knife. Funny is not the same as harmless. A knife hilt to the temple.",
           "still": "nw-11.3-marble-arch",
           "cast": [
             "marquis",
@@ -2774,7 +2949,7 @@
         }
       ],
       "next": "12.1",
-      "source": "story map c10"
+      "source": "story map c10 · novel pp. 147 to 158"
     },
     "12.1": {
       "id": "12.1",
@@ -2784,8 +2959,8 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "Three dreams: Hunter dancing with the Great Weasel under Bangkok; Door's father teaching her to open a padlock; Aurie's Beast, bigger, weapons bristling from its hide.",
-          "clip": "nw-12.1-dreams-v",
+          "text": "Three dreams: Hunter dancing with the Great Weasel under Bangkok; Door's father teaching her to open a padlock, all things want to open; Aurie's Beast, bigger, weapons bristling from its hide.",
+          "still": "nw-12.1-dreams",
           "cast": [
             "hunter",
             "door",
@@ -2795,13 +2970,29 @@
           ]
         },
         {
-          "text": "A tiny Tube platform laid for breakfast, trains feet away. Serpentine of the Seven Sisters in a white corset and a shredded wedding dress. To Hunter: you'll need the spear, of course. To Door: your hero. He's not my hero. I'm afraid she is.",
+          "text": "A bucket of cold water in the face. Straw, a stable, and on the wall a snake-shaped S ringed by seven stars. Door goes white: Serpentine.",
+          "still": "nw-12.1-stable",
+          "cast": [
+            "aurie",
+            "door",
+            "hunter"
+          ]
+        },
+        {
+          "text": "Breakfast on a twelve-foot Tube platform, trains roaring past feet away. Serpentine, towering in a white corset and a shredded wedding dress: how is your father? He's dead. See? Your hero can't hold her wine. She's not my hero. I'm afraid she is. Then, to Hunter: you'll need the spear, of course.",
           "still": "nw-12.1-breakfast",
           "cast": [
             "aurie",
             "door",
             "hunter",
             "serpentine"
+          ]
+        },
+        {
+          "text": "On Old Bailey's roof the silver box begins to pulse red, like a heartbeat. He's in trouble.",
+          "still": "nw-12.1-box",
+          "cast": [
+            "oldbailey"
           ]
         }
       ],
@@ -2845,7 +3036,7 @@
           "next": "12.2"
         }
       ],
-      "source": "story map 6.1"
+      "source": "story map 6.1 · novel ch. 10, pp. 158 to 167"
     },
     "12.2": {
       "id": "12.2",
@@ -2854,7 +3045,7 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "A slippery bank, a black lake, then a yellow pea-souper that seems to hold shapes. Hunter speaks of the blind white alligator king under New York, the bear under Berlin, the tiger under Calcutta, and the Beast of London, which she will kill or die trying.",
+          "text": "Along a slippery bank and past a black lake Hunter tells of the blind white alligator king under New York, the talking bear under Berlin, the black tiger under Calcutta, and the Beast of London, which she will kill or die trying. White shapes seem to writhe in the river mist. Then the mist turns to a yellow pea-souper that tastes of soot.",
           "still": "nw-12.2-fog",
           "cast": [
             "aurie",
@@ -2928,7 +3119,7 @@
           ]
         }
       ],
-      "source": "story map 6.2"
+      "source": "story map 6.2 · novel ch. 11, pp. 168 to 170"
     },
     "13.1": {
       "id": "13.1",
@@ -2938,15 +3129,17 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "Friars in black robes with crossbows. Brother Sable pushes Aurie into the mud; Hunter beats Sable at quarterstaff.",
+          "text": "A bridge rises out of a fogbound marsh. Brother Sable, tall, in black Dominican robes, nudges Aurie into the mud with his staff. Hunter takes him on: a faked stumble, then her staff across the backs of his knees.",
           "clip": "nw-13.1-quarterstaff-v",
           "cast": [
             "hunter",
-            "sable"
+            "sable",
+            "aurie",
+            "door"
           ]
         },
         {
-          "text": "Door answers Brother Fuliginous's riddle: a key. The blind abbot: the last test falls to the one who neither fought nor answered.",
+          "text": "Door answers Brother Fuliginous's riddle: a key. The fog lifts on a ring of crossbows. The blind abbot: we are holy men; it is the ordeal that kills you. The last test falls to the one who neither fought nor answered.",
           "still": "nw-13.1-abbot",
           "cast": [
             "aurie",
@@ -3018,7 +3211,7 @@
           ]
         }
       ],
-      "source": "story map 6.3"
+      "source": "story map 6.3 · novel ch. 11, pp. 170 to 174"
     },
     "13.2": {
       "id": "13.2",
@@ -3027,7 +3220,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "A Polaroid flash. A wall of faces going back through daguerreotypes to watercolours.",
+          "text": "Smile! A Polaroid flash in a crypt. Her face goes up on a wall that runs back through sepia, daguerreotypes, pencil sketches and miniatures: everyone who failed.",
           "still": "nw-13.2-wall",
           "cast": [
             "aurie",
@@ -3039,32 +3232,29 @@
           "still": "nw-13.2-tea",
           "cast": [
             "aurie",
-            "abbot"
+            "abbot",
+            "fuliginous"
           ]
+        },
+        {
+          "text": "The bolts slam behind her like gunshots. It's 'lay on', the abbot says sadly, but he hadn't the heart to correct her."
         }
       ],
       "next": "13.3",
-      "source": "story map 6.4"
+      "source": "story map 6.4 · novel ch. 11, pp. 174 to 178"
     },
     "13.3": {
       "id": "13.3",
-      "title": "Cutaway · The box pulses red",
+      "title": "Cutaway · The butterfly house",
       "pov": "3P",
       "fx": "mist",
       "beats": [
         {
-          "text": "On Old Bailey's roof the silver box pulses red like a heartbeat. He's in trouble.",
-          "still": "nw-13.3-box",
-          "cast": [
-            "oldbailey"
-          ]
-        },
-        {
-          "text": "On the bridge Door remembers being five in Kew's butterfly house: her father pointing out a man in a big coat, a fraud and possibly a monster; if you're ever in trouble, go to him.",
+          "text": "On the bridge Door remembers turning five in the butterfly house at Kew: her father pointing out a dark man in a big coat, a fraud, a cheat, possibly a monster. If you're ever in trouble, go to him. He has to protect you. The man winks.",
           "still": "nw-13.3-kew",
           "cast": [
-            "door",
-            "hunter"
+            "portico",
+            "marquis"
           ]
         },
         {
@@ -3078,7 +3268,7 @@
         }
       ],
       "next": "14.1",
-      "source": "story map c12"
+      "source": "story map c12 · novel pp. 174 to 177"
     },
     "14.1": {
       "id": "14.1",
@@ -3088,13 +3278,31 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "An empty, dim Blackfriars platform that flashes into rush hour. Posters: GIVE UP. YOU WERE NEVER THERE.",
+          "text": "BLACKFRIARS. An empty platform, a lonely mausoleum, newspaper pages skittering onto the rails. Then light and noise hit like a bottle: rush hour. Posters: GIVE UP. YOU WERE NEVER THERE.",
           "clip": "nw-14.1-platform-v",
-          "cast": []
+          "cast": [
+            "aurie"
+          ]
         },
         {
           "text": "Gary sits down: I'm not really here. I'm you. His face runs like putty into her own.",
           "still": "nw-14.1-gary",
+          "cast": [
+            "aurie",
+            "gary"
+          ]
+        },
+        {
+          "text": "In the train window she sees herself: filthy, black-eyed, a street sleeper. Jessica, who is also her, cries that she had a breakdown.",
+          "still": "nw-14.1-window",
+          "cast": [
+            "aurie",
+            "jessica"
+          ]
+        },
+        {
+          "text": "Gary tosses her the purple-haired troll from her old desk; it falls through her hands. She crawls after it through the crowd; someone stamps on her fingers; an old woman's foot knocks it into the gap. It lies by the third rail.",
+          "still": "nw-14.1-troll",
           "cast": [
             "aurie",
             "gary"
@@ -3170,7 +3378,16 @@
           "id": "14.1.A",
           "text": "Hold on. Step onto the train.",
           "effects": {},
-          "next": "14.3"
+          "next": "14.3",
+          "aftermath": [
+            {
+              "text": "Headlights glare out of the tunnel. The doors hiss open on grey, still passengers, the lost from the wall. She steps in, and every light goes out.",
+              "clip": "nw-14.1-train-v",
+              "cast": [
+                "aurie"
+              ]
+            }
+          ]
         },
         {
           "id": "14.1.B",
@@ -3179,7 +3396,7 @@
           "next": "14.2"
         }
       ],
-      "source": "story map 6.5"
+      "source": "story map 6.5 · novel ch. 12, pp. 179 to 187"
     },
     "14.2": {
       "id": "14.2",
@@ -3189,7 +3406,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "A poor creature lifted from the shrine floor. A new Polaroid on the wall. Door and Hunter led away through the fog.",
+          "text": "A poor creature lifted from the shrine floor. Her Polaroid stays on the wall of those who failed. Door and Hunter are walked away into the fog.",
           "clip": "nw-14.2-polaroid-v",
           "cast": [
             "abbot",
@@ -3236,7 +3453,18 @@
           "cast": [
             "aurie",
             "abbot",
-            "hunter"
+            "fuliginous"
+          ]
+        },
+        {
+          "text": "On the bridge Fuliginous reminds her to take the key; she remembers the riddle. Out of the fog, beside the abbot, comes an Aurie who stands lower and steadier. Hunter sees that she has begun to grow up.",
+          "still": "nw-14.3-bridge",
+          "cast": [
+            "aurie",
+            "abbot",
+            "fuliginous",
+            "hunter",
+            "door"
           ]
         }
       ],
@@ -3272,7 +3500,7 @@
           "next": "15.1"
         }
       ],
-      "source": "story map 6.6"
+      "source": "story map 6.6 · novel ch. 12, pp. 186 to 188"
     },
     "15.1": {
       "id": "15.1",
@@ -3291,7 +3519,10 @@
           ]
         },
         {
-          "text": "A woman in black velvet asks the same, and looks at Aurie as she says she'll see her there.",
+          "text": "On the wall, still wet, a fresh and unflattering painting of the three of them."
+        },
+        {
+          "text": "A very pale woman in thin white linen, eyes the colour of foxgloves, asks the same, and looks at Aurie as she says she'll see her there.",
           "if": [
             "LAMIA_NOTICED"
           ],
@@ -3302,7 +3533,7 @@
           ]
         },
         {
-          "text": "A woman in black velvet asks the same, and looks at Door as she says she'll see them there.",
+          "text": "A very pale woman in thin white linen, eyes the colour of foxgloves, asks the same, and looks at Door as she says she'll see them there.",
           "unless": [
             "LAMIA_NOTICED"
           ],
@@ -3346,7 +3577,7 @@
           ]
         }
       ],
-      "source": "story map 7.1"
+      "source": "story map 7.1 · novel ch. 13, pp. 192 to 196"
     },
     "15.2": {
       "id": "15.2",
@@ -3363,7 +3594,7 @@
           ]
         },
         {
-          "text": "Old Bailey buys it for a bottle of Chanel No. 5 and drags it to the top of the London Wall. In the silver box, a duck's egg; he smashes it with a toasting fork.",
+          "text": "At the Sewer Folk's stall on the warship, Old Bailey buys the body for a bottle of Chanel No. 5 and drags it on a pram base over Tower Bridge, up onto a stub of the Roman wall. In the silver box, a duck's egg.",
           "still": "nw-15.2-egg",
           "cast": [
             "oldbailey",
@@ -3371,7 +3602,15 @@
           ]
         },
         {
-          "text": "The marquis coughs up sewer water: I think my throat's been cut. Being dead is very dark and very cold.",
+          "text": "He brings a toasting fork down on the egg. One second of stillness, then wind from everywhere: leaves, newspaper and feathers whirl up around the wall.",
+          "clip": "nw-15.2-egg-v",
+          "cast": [
+            "oldbailey",
+            "marquis"
+          ]
+        },
+        {
+          "text": "The marquis coughs up sewer water: I think my throat's been cut. Being dead is very dark and very cold. He died to learn what killers say over a dying man. He owes Old Bailey a favour.",
           "still": "nw-15.2-alive",
           "cast": [
             "oldbailey",
@@ -3391,7 +3630,7 @@
         }
       ],
       "next": "15.3",
-      "source": "story map c13"
+      "source": "story map c13 · novel pp. 190 to 208"
     },
     "15.3": {
       "id": "15.3",
@@ -3400,7 +3639,7 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "A warship deck crowded with stalls. Hammersmith, a bearded mountain, hammers a black rose and lifts Door onto his booth.",
+          "text": "A grey warship's deck crowded with stalls. Hammersmith, a bearded mountain, swings Door up seven feet onto his booth, then hammers glowing metal into a perfect black rose and hisses it in a bucket.",
           "still": "nw-15.3-deck",
           "cast": [
             "aurie",
@@ -3481,7 +3720,7 @@
           ]
         }
       ],
-      "source": "story map 7.2"
+      "source": "story map 7.2 · novel ch. 14, pp. 200 to 209"
     },
     "15.4": {
       "id": "15.4",
@@ -3557,7 +3796,7 @@
           ]
         }
       ],
-      "source": "story map 7.3"
+      "source": "story map 7.3 · novel ch. 14, pp. 204 to 211"
     },
     "16.1": {
       "id": "16.1",
@@ -3567,7 +3806,14 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "A brass plate: DOWN STREET. PLEASE KNOCK. A sleepy footman, four flights of ever-shabbier stairs, an OUT OF ORDER lift.",
+          "text": "By the time the marquis reaches the market, barefoot, a rag knotted at his throat, they are gone.",
+          "still": "nw-16.1-late",
+          "cast": [
+            "marquis"
+          ]
+        },
+        {
+          "text": "A brass plate: DOWN STREET. PLEASE KNOCK. A sleepy footman in a crooked powdered wig lights a candelabra and leads them down four flights of stairs, each shabbier than the last, to a lift marked OUT OF ORDER.",
           "still": "nw-16.1-footman",
           "cast": [
             "aurie",
@@ -3578,9 +3824,13 @@
           ]
         },
         {
-          "text": "An inside-out Tower of Babel, a spiral road down a bottomless well, a plank to reach it. Someone calls the lift back up and the door slams. Aurie freezes on hands and knees.",
+          "text": "The lift hangs swaying over an inside-out Tower of Babel, a spiral road dropping round a bottomless well. Twenty feet of plank. The others cross; the lift slams shut and rises behind her, and Aurie sinks to her hands and knees.",
           "clip": "nw-16.1-plank-v",
-          "cast": []
+          "cast": [
+            "lamia",
+            "hunter",
+            "door"
+          ]
         }
       ],
       "choices": [
@@ -3606,6 +3856,9 @@
           "effects": {
             "traits": {
               "courage": 1
+            },
+            "flags": {
+              "CRAWLED_ALONE": true
             }
           },
           "next": "16.2",
@@ -3621,7 +3874,7 @@
           ],
           "aftermath": [
             {
-              "text": "Inch by inch, eyes shut.",
+              "text": "Eyes shut, cheek to the wood, she inches out alone over a few thousand feet of nothing.",
               "still": "nw-16.1-plank-crawl",
               "cast": [
                 "aurie"
@@ -3630,7 +3883,7 @@
           ]
         }
       ],
-      "source": "story map 7.4"
+      "source": "story map 7.4 · novel ch. 15, pp. 212 to 216"
     },
     "16.2": {
       "id": "16.2",
@@ -3679,7 +3932,18 @@
       "fx": "frost",
       "beats": [
         {
-          "text": "Lamia: let them go ahead. Aurie's breath steams; hers doesn't. Would she give her some of her heat, as payment?",
+          "text": "She crawls the last yards blind; Hunter's hands find her under the arms and set her on rock.",
+          "if": [
+            "CRAWLED_ALONE"
+          ],
+          "still": "nw-16.3-rock",
+          "cast": [
+            "aurie",
+            "hunter"
+          ]
+        },
+        {
+          "text": "Lamia lets the others go ahead and runs a cold finger down Aurie's cheek. You're so warm. Aurie's breath steams; hers doesn't. Would she give a little of that heat, as payment?",
           "still": "nw-16.3-lamia",
           "cast": [
             "aurie",
@@ -3718,6 +3982,9 @@
           "effects": {
             "vars": {
               "MARQUIS_TRUST": 2
+            },
+            "flags": {
+              "KISSED": true
             }
           },
           "next": "16.4",
@@ -3733,12 +4000,11 @@
           ],
           "aftermath": [
             {
-              "text": "The cold kiss; frost over her skin, eyes frozen open. A hand closes on Lamia's neck: the marquis, barefoot, in a blanket, a filthy cloth round his throat. Give her back her life. Lamia breathes it back and spits ice in her face.",
-              "still": "nw-16.3-marquis",
+              "text": "The cold kiss: frost creeps over her skin, her eyes freeze open.",
+              "clip": "nw-16.4-frost-v",
               "cast": [
                 "aurie",
-                "lamia",
-                "marquis"
+                "lamia"
               ]
             }
           ]
@@ -3768,7 +4034,7 @@
           ]
         }
       ],
-      "source": "story map 7.5"
+      "source": "story map 7.5 · novel ch. 15, pp. 216 to 219"
     },
     "16.4": {
       "id": "16.4",
@@ -3779,7 +4045,7 @@
       "retryFrom": "15.4",
       "beats": [
         {
-          "text": "The cold kiss; frost over her skin, eyes frozen open. No hand closes on Lamia's neck. The marquis, twice called a fraud by this woman, is a minute late, and stays late.",
+          "text": "The cold kiss: frost over her skin, eyes frozen open. No hand closes on Lamia's neck. The marquis, doubted once too often, is a minute late, and stays late.",
           "clip": "nw-16.4-frost-v",
           "cast": [
             "aurie",
@@ -3821,6 +4087,18 @@
       "fx": "dust",
       "beats": [
         {
+          "text": "A hand closes on Lamia's neck: the marquis, barefoot, in a blanket, a filthy cloth round his throat. Give her back her life. Lamia breathes the warmth back, spits ice in the marquis's face, and runs. Why did people think him dead? Because they killed me.",
+          "if": [
+            "KISSED"
+          ],
+          "still": "nw-17.1-rescue",
+          "cast": [
+            "aurie",
+            "lamia",
+            "marquis"
+          ]
+        },
+        {
           "text": "Across the well, two figures in shadow: a trap. A sprint down the spiral. Croup and Vandemar step out and bind Door.",
           "still": "nw-17.1-bound",
           "cast": [
@@ -3831,12 +4109,12 @@
           ]
         },
         {
-          "text": "Aurie shouts for Hunter. Hunter's kick, balletic, into her stomach. I'm afraid so. No hard feelings.",
-          "clip": "nw-17.1-kick-v",
+          "text": "Aurie shouts for Hunter. Hunter's kick, balletic, folds her in half. I'm afraid so. No hard feelings.",
           "cast": [
             "hunter",
             "aurie"
-          ]
+          ],
+          "still": "nw-17.1-kick"
         }
       ],
       "conversation": {
@@ -3867,10 +4145,22 @@
           "next": "17.3",
           "aftermath": [
             {
-              "text": "Her old front-door key. Vandemar crushes it like foil and lectures on where to kick: knee, shoulder, ribs.",
+              "text": "Her old front-door key. Something hard sits in her back pocket; no time to look. Vandemar crushes the front-door key like foil, then shows her where to kick: knee, shoulder, ribs.",
               "still": "nw-17.1-kicked",
               "cast": [
                 "aurie",
+                "vandemar"
+              ]
+            },
+            {
+              "text": "Croup turns out her pockets and finds the silver key: the real one.",
+              "if": [
+                "NO_COPY"
+              ],
+              "still": "nw-17.1-kicked",
+              "cast": [
+                "aurie",
+                "croup",
                 "vandemar"
               ]
             }
@@ -3887,6 +4177,18 @@
               "still": "nw-17.1-kicked",
               "cast": [
                 "aurie",
+                "vandemar"
+              ]
+            },
+            {
+              "text": "Croup turns out her pockets and finds the silver key: the real one.",
+              "if": [
+                "NO_COPY"
+              ],
+              "still": "nw-17.1-kicked",
+              "cast": [
+                "aurie",
+                "croup",
                 "vandemar"
               ]
             }
@@ -3907,7 +4209,7 @@
         },
         {
           "id": "17.1.D",
-          "text": "Door! Hunter's with them!",
+          "text": "I told you. I told you about her.",
           "requires": {
             "vars": {
               "HUNTER_SUSPECT": 2
@@ -3936,7 +4238,7 @@
           ]
         }
       ],
-      "source": "story map 7.6"
+      "source": "story map 7.6 · novel ch. 15, pp. 219 to 223"
     },
     "17.2": {
       "id": "17.2",
@@ -3952,7 +4254,8 @@
           "cast": [
             "aurie",
             "vandemar",
-            "door"
+            "door",
+            "croup"
           ]
         },
         {
@@ -3989,7 +4292,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Croup takes the Beast token from Door and tosses Hunter her payment: a bronze spear with faces carved on the haft. She loves it on sight. The marquis with a crossbow: tell her, Hunter. Islington.",
+          "text": "Croup takes the Beast token from Door and they lead her away. Then Croup tosses Hunter her payment in a fishing-rod bag: a five-foot spear, a curved bronze blade, little faces carved on a verdigris haft. She loves it on sight. I have bigger game to kill. The marquis, alive, with a crossbow: tell her, Hunter.",
           "still": "nw-17.3-spear",
           "cast": [
             "aurie",
@@ -4003,7 +4306,12 @@
           "id": "17.3.A",
           "text": "Who's behind this?",
           "effects": {},
-          "next": "18.1"
+          "next": "18.1",
+          "aftermath": [
+            {
+              "text": "Hunter, at crossbow point: Islington."
+            }
+          ]
         },
         {
           "id": "17.3.B",
@@ -4015,6 +4323,9 @@
           },
           "next": "18.1",
           "aftermath": [
+            {
+              "text": "Hunter, at crossbow point: Islington."
+            },
             {
               "text": "The marquis: death is so final. He brings her.",
               "still": "nw-17.3-spear",
@@ -4034,10 +4345,15 @@
               "mercy": 1
             }
           },
-          "next": "18.1"
+          "next": "18.1",
+          "aftermath": [
+            {
+              "text": "Hunter, at crossbow point: Islington."
+            }
+          ]
         }
       ],
-      "source": "story map 7.6b"
+      "source": "story map 7.6b · novel ch. 15, pp. 219 to 223"
     },
     "18.1": {
       "id": "18.1",
@@ -4047,12 +4363,21 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "A Cyclopean gate; beyond, a labyrinth of lanes from every century that fell through the cracks. When angels go bad, they go worse than anyone; Lucifer was an angel. A far bellow.",
+          "text": "A Cyclopean gate of rough stone, its doors rusted to fragments, one hinge taller than a man. Beyond, a labyrinth of lanes from every century that fell through the cracks. When angels go bad, they go worse than anyone; Lucifer was an angel. Far off, a bellow.",
           "still": "nw-18.1-gate",
           "cast": [
             "aurie",
             "marquis",
             "hunter"
+          ]
+        },
+        {
+          "text": "Without the angel's token you'd never find your way, Hunter sneers. The marquis lifts a little obsidian beast from under his blanket: taken from Portico's desk.",
+          "still": "nw-18.1-token",
+          "cast": [
+            "marquis",
+            "hunter",
+            "aurie"
           ]
         }
       ],
@@ -4078,7 +4403,7 @@
           "next": "18.2"
         }
       ],
-      "source": "story map 8.1"
+      "source": "story map 8.1 · novel ch. 16, pp. 224 to 229"
     },
     "18.2": {
       "id": "18.2",
@@ -4095,7 +4420,7 @@
         }
       ],
       "next": "18.3",
-      "source": "story map 8.1b"
+      "source": "story map 8.1b · novel ch. 16, pp. 224 to 229"
     },
     "18.3": {
       "id": "18.3",
@@ -4104,7 +4429,7 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "Mosquitoes, old corpses. Hunter: and I saved your life. Many times.",
+          "text": "The Fleet Marsh: knee-deep stink, huge mosquitoes, leathery corpses. Aurie leads with the flare and Hunter's spear; the marquis keeps his crossbow on Hunter, who says: and I saved your life. Many times.",
           "still": "nw-18.3-marsh",
           "cast": [
             "aurie",
@@ -4121,7 +4446,7 @@
           "next": "18.4",
           "aftermath": [
             {
-              "text": "The marquis steps on a rib cage; the token flies into the mud, glints, and a bubble of gas swallows it. Too late.",
+              "text": "The marquis treads on a rib cage; the token plops into the bog. Aurie kneels, lets her eyes drift, sees it glint, and a belch of marsh gas swallows it. Then, out of the dark, a bellow: too late.",
               "still": "nw-18.3-token",
               "cast": [
                 "aurie",
@@ -4142,7 +4467,7 @@
           "next": "18.4",
           "aftermath": [
             {
-              "text": "The marquis steps on a rib cage; the token flies into the mud, glints, and a bubble of gas swallows it. Too late.",
+              "text": "The marquis treads on a rib cage; the token plops into the bog. Aurie kneels, lets her eyes drift, sees it glint, and a belch of marsh gas swallows it. Then, out of the dark, a bellow: too late.",
               "still": "nw-18.3-token",
               "cast": [
                 "aurie",
@@ -4153,7 +4478,7 @@
           ]
         }
       ],
-      "source": "story map 8.1c"
+      "source": "story map 8.1c · novel ch. 16, pp. 224 to 229"
     },
     "18.4": {
       "id": "18.4",
@@ -4162,7 +4487,7 @@
       "fx": "mist",
       "beats": [
         {
-          "text": "Door marched through the labyrinth. You're afraid, aren't you? She shouts for the Beast; Vandemar gags her. An oak door with an oval mirror; the angel's face in it: enter.",
+          "text": "Croup and Vandemar march Door through the labyrinth. You're afraid, aren't you? Croup only chuckles, and Door knows the angel is not her friend. She shouts for the Beast; Vandemar gags her. An oak door with an oval mirror in a granite cliff; the angel's face in it: enter.",
           "still": "nw-18.4-mirror-door",
           "cast": [
             "door",
@@ -4172,7 +4497,7 @@
         }
       ],
       "next": "19.1",
-      "source": "story map c14"
+      "source": "story map c14 · novel pp. 226 to 230"
     },
     "19.1": {
       "id": "19.1",
@@ -4182,11 +4507,13 @@
       "fx": "embers",
       "beats": [
         {
-          "text": "By flare light it comes so slowly she thinks it sick, until she sees the ground it covers. Broken spears bristle from its hide. Hunter is a fraction late; the tusk opens her side.",
+          "text": "By flare light it comes so slowly she thinks it sick, until she sees the ground it covers: a boar the size of an elephant, broken spears bristling from its hide. Yes, Hunter breathes. At last. She is a fraction late; the spear tumbles from her numbed hands, a tusk opens her side, and the Beast is gone into the dark.",
           "clip": "nw-19.1-beast-v",
           "cast": [
             "hunter",
-            "beast"
+            "beast",
+            "aurie",
+            "marquis"
           ]
         },
         {
@@ -4206,7 +4533,18 @@
               "WARRIOR": true
             }
           },
-          "next": "19.3"
+          "next": "19.3",
+          "aftermath": [
+            {
+              "text": "She drives the spear under and up; the Beast rears over her, and falls.",
+              "clip": "nw-19.1-strike-v",
+              "cast": [
+                "aurie",
+                "hunter",
+                "beast"
+              ]
+            }
+          ]
         },
         {
           "id": "19.1.B",
@@ -4228,7 +4566,8 @@
               "mercy": 1
             },
             "flags": {
-              "LATE": true
+              "LATE": true,
+              "BEAST_LIVES": true
             }
           },
           "remembered": "Time is passing in the angel's hall.",
@@ -4246,7 +4585,7 @@
           ]
         }
       ],
-      "source": "story map 8.2"
+      "source": "story map 8.2 · novel ch. 16, pp. 229 to 233"
     },
     "19.2": {
       "id": "19.2",
@@ -4257,7 +4596,7 @@
       "retryFrom": "18.3",
       "beats": [
         {
-          "text": "The throw glances off. The charge, the drops of water hanging in the air, face down in bloody water: the dream she had on the first morning, every detail kept.",
+          "text": "The throw glances off. The charge, the drops of water hanging in the air, face down in bloody water: the dream from the night she brought Door home, every detail kept.",
           "clip": "nw-19.2-charge-v",
           "cast": [
             "beast"
@@ -4297,6 +4636,18 @@
       "fx": "embers",
       "beats": [
         {
+          "text": "Aurie shoulders the dead Beast half off her, like push-starting a tank.",
+          "if": [
+            "WARRIOR"
+          ],
+          "still": "nw-19.3-carcass",
+          "cast": [
+            "aurie",
+            "beast",
+            "hunter"
+          ]
+        },
+        {
           "text": "Blind now, she laughs: the greatest hunter in London Below. The Warrior.",
           "if": [
             "WARRIOR"
@@ -4309,15 +4660,15 @@
           ]
         },
         {
-          "text": "Blind now, she laughs: my last kill. Not bad.",
-          "unless": [
-            "WARRIOR"
-          ],
+          "text": "Blind now, she laughs: it got away from me. Again.",
           "still": "nw-19.3-hunter",
           "cast": [
             "aurie",
             "hunter",
             "marquis"
+          ],
+          "if": [
+            "BEAST_LIVES"
           ]
         },
         {
@@ -4358,7 +4709,7 @@
           "next": "19.4"
         }
       ],
-      "source": "story map 8.3"
+      "source": "story map 8.3 · novel ch. 16, pp. 232 to 235"
     },
     "19.4": {
       "id": "19.4",
@@ -4367,7 +4718,7 @@
       "fx": "embers",
       "beats": [
         {
-          "text": "Her hand in Aurie's.",
+          "text": "Hunter's fingers, suddenly small, lie cold in hers.",
           "still": "nw-19.3-hunter",
           "cast": [
             "aurie",
@@ -4398,7 +4749,7 @@
           "next": "19.5"
         }
       ],
-      "source": "story map 8.3b"
+      "source": "story map 8.3b · novel ch. 16, pp. 232 to 235"
     },
     "19.5": {
       "id": "19.5",
@@ -4407,13 +4758,28 @@
       "fx": "embers",
       "beats": [
         {
-          "text": "Touch the Beast's blood to your eyes and tongue, she says. The marquis: do it. He closes her eyes; we'll come back for the body later.",
+          "text": "Touch the Beast's blood to your eyes and tongue, Hunter says. The marquis: do it.",
           "still": "nw-19.5-blood",
           "cast": [
             "aurie",
             "marquis",
             "hunter",
             "beast"
+          ],
+          "unless": [
+            "BEAST_LIVES"
+          ]
+        },
+        {
+          "text": "Its blood is on the spear point. Touch it to your eyes and tongue, Hunter says. The marquis: do it.",
+          "if": [
+            "BEAST_LIVES"
+          ],
+          "still": "nw-19.5-spear",
+          "cast": [
+            "aurie",
+            "marquis",
+            "hunter"
           ]
         }
       ],
@@ -4425,12 +4791,11 @@
           "next": "20.1",
           "aftermath": [
             {
-              "text": "It tastes like an ocean. She runs straight through the labyrinth with the old dirge in her head: fire and fleet and candlelight.",
-              "clip": "nw-19.5-run-v",
+              "text": "It tastes like an ocean. The marquis closes Hunter's eyes; we'll come back for the body later, he says, and he will follow. Aurie runs straight through the labyrinth alone, the old dirge in her head: fire and fleet and candlelight.",
               "cast": [
-                "aurie",
-                "marquis"
-              ]
+                "aurie"
+              ],
+              "still": "nw-19.5-run"
             }
           ]
         },
@@ -4456,7 +4821,7 @@
           ]
         }
       ],
-      "source": "story map 8.3c"
+      "source": "story map 8.3c · novel ch. 16, pp. 232 to 235"
     },
     "20.1": {
       "id": "20.1",
@@ -4466,11 +4831,10 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "The iron pillars, the table, the candles, the black flint door.",
+          "text": "Alone, through high oak doors with a boiling quicksilver mirror, a path of burning candles leads Aurie to the octagon of iron pillars and the black flint door.",
           "still": "nw-20.1-approach",
           "cast": [
-            "aurie",
-            "marquis"
+            "aurie"
           ]
         }
       ],
@@ -4494,7 +4858,7 @@
           "next": "20.2"
         }
       ],
-      "source": "story map 8.4"
+      "source": "story map 8.4 · novel ch. 17, pp. 236 to 246"
     },
     "20.2": {
       "id": "20.2",
@@ -4543,7 +4907,7 @@
           ]
         },
         {
-          "text": "Vandemar breaks her little finger. Croup brings in the marquis. The mask slips.",
+          "text": "Croup's fist; then Vandemar bends back her little finger until it snaps. Croup brings in the marquis: you told me he was dead. He was. The mask slips.",
           "still": "nw-20.3-finger",
           "cast": [
             "aurie",
@@ -4552,8 +4916,18 @@
           ]
         },
         {
-          "text": "Atlantis drowning, four million voices; Islington waking and calling Croup through the rock pool. They deserved it. Then, mildly: just one of those things.",
-          "clip": "nw-20.3-atlantis-v",
+          "text": "Key, door and opener, the angel explains, must be the three. Portico laughed at it, so it had him killed. Lucifer was an idiot. And then, mildly: not all of you, of course."
+        },
+        {
+          "text": "Atlantis drowning, four million voices; Islington waking and calling Croup through the rock pool.",
+          "cast": [
+            "islington"
+          ],
+          "still": "nw-20.3-atlantis"
+        },
+        {
+          "text": "They deserved it, she screams, and for one moment the sweet face is something else entirely. Then, mildly: just one of those things.",
+          "clip": "nw-20.3-scream-v",
           "cast": [
             "islington"
           ]
@@ -4615,7 +4989,12 @@
               "ripple": "You asked nothing for yourself, and still ask nothing."
             }
           ],
-          "next": "20.4"
+          "next": "20.4",
+          "aftermath": [
+            {
+              "text": "The marquis, on his knees: actually, I matter very much."
+            }
+          ]
         },
         {
           "id": "20.3.B",
@@ -4651,7 +5030,7 @@
           "next": "20.4"
         }
       ],
-      "source": "story map 8.4a"
+      "source": "story map 8.4a · novel ch. 17, pp. 236 to 246"
     },
     "20.4": {
       "id": "20.4",
@@ -4660,7 +5039,7 @@
       "fx": "flicker",
       "beats": [
         {
-          "text": "Door: stop them, I'll open it. Her palm on the flint until a keyhole appears. Croup and Vandemar wait to be paid.",
+          "text": "Door: stop them, I'll open it. Her palm on the flint until a keyhole appears, throwing laser-white light. The angel whispers to the killers: when I am gone, kill them all, howsoever you wish.",
           "still": "nw-20.4-keyhole",
           "cast": [
             "aurie",
@@ -4674,7 +5053,7 @@
       "choices": [
         {
           "id": "20.4.A",
-          "text": "To the killers: you don't think you'll ever see him again, do you?",
+          "text": "To the killers: you don't think you'll ever see her again, do you?",
           "effects": {
             "flags": {
               "GOADED": true
@@ -4786,7 +5165,7 @@
           ]
         }
       ],
-      "source": "story map 8.4b"
+      "source": "story map 8.4b · novel ch. 17, pp. 236 to 246"
     },
     "20.5": {
       "id": "20.5",
@@ -4803,12 +5182,21 @@
           ]
         },
         {
-          "text": "It was Hammersmith's copy; she opened a door as far and hard away as she could. Islington offers news of her living sister, and falls. Croup, climbing Vandemar's back, boasts he killed her family; the suit tears. Bye-bye. The door slams.",
+          "text": "It was Hammersmith's copy; she opened a door as far and hard away as she could. Islington offers news of her living sister, and falls into the light.",
           "still": "nw-20.5-fall",
           "cast": [
             "islington",
             "croup",
             "vandemar"
+          ]
+        },
+        {
+          "text": "Croup climbs Vandemar's back, boasting that he killed her family; the old suit tears. Bye-bye, says Vandemar, and lets go. The door slams.",
+          "still": "nw-20.5-croup",
+          "cast": [
+            "croup",
+            "vandemar",
+            "door"
           ]
         },
         {
@@ -4834,7 +5222,7 @@
         }
       ],
       "next": "21.1",
-      "source": "story map 8.4c"
+      "source": "story map 8.4c · novel ch. 17, pp. 236 to 246"
     },
     "20.6": {
       "id": "20.6",
@@ -4871,11 +5259,18 @@
                 "aurie",
                 "door"
               ]
+            },
+            {
+              "text": "Unpaid, Croup and Vandemar spit at the angel's feet and walk out. Islington sits alone among her candles, a prisoner again, until the friars come with lanterns.",
+              "still": "nw-20.6-alone",
+              "cast": [
+                "islington"
+              ]
             }
           ]
         }
       ],
-      "source": "story map 8.4d"
+      "source": "story map 8.4d · novel ch. 17, pp. 236 to 246"
     },
     "20.7": {
       "id": "20.7",
@@ -4885,7 +5280,7 @@
       "fx": "glitter",
       "beats": [
         {
-          "text": "The angel walks into true light, promising to reward the worthy and cast down the hateful. The abbot: we have lost the key; God help us all.",
+          "text": "Behind her, Vandemar draws his knife: kill them all, howsoever you wish. The angel walks into true light, promising to reward the worthy and cast down the hateful. The abbot: we have lost the key; God help us all.",
           "clip": "nw-20.7-light-v",
           "cast": [
             "islington"
@@ -4927,7 +5322,15 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "Aurie wakes in a grey robe, finger splinted, ear stitched. Door in a robe far too big, reading Mansfield Park; the marquis wheeled in like a swashbuckler. Hunter? There was no body, only the Beast.",
+          "text": "In the labyrinth, a towering woman in white boots and a torn lace train lifts Hunter's body and the spear, and carries them away.",
+          "still": "nw-21.1-serpentine",
+          "cast": [
+            "serpentine",
+            "hunter"
+          ]
+        },
+        {
+          "text": "Aurie wakes in a grey robe, finger splinted, ear stitched. Door in a robe far too big, reading Mansfield Park; the marquis wheeled in like a swashbuckler. Hunter? There was no body.",
           "still": "nw-21.1-robe",
           "cast": [
             "aurie",
@@ -4937,7 +5340,27 @@
           ]
         },
         {
+          "text": "You are the Warrior, the abbot says.",
+          "if": [
+            "WARRIOR"
+          ]
+        },
+        {
           "text": "She slipped the real key into Aurie's pocket at the market. The abbot: you are all very stupid people. The key is the key to all reality; Aurie is its master until she returns it; it will take her home.",
+          "still": "nw-21.1-key",
+          "cast": [
+            "aurie",
+            "abbot"
+          ],
+          "unless": [
+            "NO_COPY"
+          ]
+        },
+        {
+          "text": "The friars took the real key back from the hall. The abbot: you are all very stupid people. You held it; you are its master until you return it; it will take you home.",
+          "if": [
+            "NO_COPY"
+          ],
           "still": "nw-21.1-key",
           "cast": [
             "aurie",
@@ -4991,7 +5414,7 @@
           "next": "21.2"
         }
       ],
-      "source": "story map 8.5"
+      "source": "story map 8.5 · novel ch. 19, pp. 248 to 252"
     },
     "21.2": {
       "id": "21.2",
@@ -5000,7 +5423,7 @@
       "fx": "dust",
       "beats": [
         {
-          "text": "A ghost station reached from the friars' bell tower. Old Bailey waves her handkerchief on a stick, me little flag, and gives her a black feather bound with red thread.",
+          "text": "A ghost station reached from the friars' bell tower. Old Bailey waves Aurie's own handkerchief on a stick, me little flag, and gives her a black feather bound with red thread.",
           "if": [
             "OLD_BAILEY_FRIEND"
           ],
@@ -5014,6 +5437,12 @@
           "text": "The feather, Old Bailey says, came off a talking bird who works for a lady who dreams.",
           "if": [
             "sandman:MATTHEW_RAVEN"
+          ]
+        },
+        {
+          "text": "She has said she is staying; Door sends her to be honoured all the same.",
+          "if": [
+            "KEY_RETURNED"
           ]
         },
         {
@@ -5079,11 +5508,19 @@
           ]
         },
         {
-          "text": "At a gloaming terminus the Lord Rat-speaker returns the bag: no hard feelings about Anaesthesia; the rats are your friends. In an underpass Lamia blows a kiss.",
+          "text": "At a gloaming terminus the Lord Rat-speaker returns the bag: no hard feelings about Anaesthesia; the rats are your friends.",
           "still": "nw-21.2-ratspeaker",
           "cast": [
             "aurie",
             "ratspeaker"
+          ]
+        },
+        {
+          "text": "In an underpass the Velvets watch from the shadows, and Lamia blows her a kiss.",
+          "still": "nw-21.2-velvets",
+          "cast": [
+            "aurie",
+            "lamia"
           ]
         }
       ],
@@ -5124,7 +5561,7 @@
           "next": "21.3"
         }
       ],
-      "source": "story map 8.6"
+      "source": "story map 8.6 · novel ch. 19, pp. 252 to 256"
     },
     "21.3": {
       "id": "21.3",
@@ -5133,7 +5570,7 @@
       "fx": "frost",
       "beats": [
         {
-          "text": "A frosted hill between three rivers at dawn: London three thousand years ago. Door in new brocade under the old jacket. There's sorting out to do and only her to do it; her sister may be alive. Please don't go.",
+          "text": "A frosted hill at dawn above a wide clean river, two smaller rivers running into it: London three thousand years ago. Door in new brocade under the old jacket. There's sorting out to do and only her to do it; her sister may be alive. Please don't go.",
           "still": "nw-21.3-hill",
           "cast": [
             "aurie",
@@ -5178,11 +5615,11 @@
           "aftermath": [
             {
               "text": "She turns the key in the air: just walk, don't look back. Aurie looks back; Door's cheeks are wet.",
-              "still": "nw-21.3-walk",
               "cast": [
                 "aurie",
                 "door"
-              ]
+              ],
+              "clip": "nw-21.3-key-v"
             }
           ]
         },
@@ -5248,7 +5685,7 @@
           ]
         }
       ],
-      "source": "story map 8.7"
+      "source": "story map 8.7 · novel ch. 19, pp. 256 to 258"
     },
     "22.1": {
       "id": "22.1",
@@ -5258,21 +5695,27 @@
       "fx": "rain",
       "beats": [
         {
-          "text": "Her reflection in step again. A sticky child says this woman is bothering her: Aurie grins and runs through the pigeons.",
-          "clip": "nw-22.1-pigeons-v",
+          "text": "Trafalgar Square, an October morning: a sticky child says this woman is bothering her. Aurie grins and runs through the pigeons, and they burst up around her.",
           "cast": [
             "aurie"
-          ]
+          ],
+          "clip": "nw-22.1-pigeons-v"
         },
         {
-          "text": "The cash machine works; a taxi stops; A. MAYHEW, JUNIOR PARTNER on a door; the penthouse of unpacked cases, Hunter's knife on the mantelpiece. Nights at the dark window.",
+          "text": "The cash machine works; a taxi stops; A. MAYHEW, JUNIOR PARTNER on a door; the penthouse of unpacked cases. Nights at the dark window.",
           "still": "nw-22.1-penthouse",
           "cast": [
             "aurie"
           ]
         },
         {
-          "text": "Jessica, with the ring: perhaps one day she'd give it back.",
+          "text": "Hunter's knife on the mantelpiece.",
+          "if": [
+            "KNIFE"
+          ]
+        },
+        {
+          "text": "Jessica, with the ring: perhaps one day Aurie would give it back to her.",
           "still": "nw-22.1-jessica",
           "cast": [
             "aurie",
@@ -5299,16 +5742,16 @@
           "next": "22.2"
         }
       ],
-      "source": "story map 8.8"
+      "source": "story map 8.8 · novel ch. 20, pp. 259 to 266"
     },
     "22.2": {
       "id": "22.2",
-      "title": "A rat on the Strand",
+      "title": "A rat on the bins",
       "pov": "3P",
       "fx": "rain",
       "beats": [
         {
-          "text": "A rat at the kerb, watching her.",
+          "text": "A brown rat on the bins behind Newton Mansions, cleaning its whiskers as if it owns the world. Across the road the Buchanans watch her.",
           "still": "nw-22.2-rat",
           "cast": [
             "aurie",
@@ -5334,7 +5777,7 @@
           "next": "22.3"
         }
       ],
-      "source": "story map 8.8b"
+      "source": "story map 8.8b · novel ch. 20, pp. 259 to 266"
     },
     "22.3": {
       "id": "22.3",
@@ -5343,11 +5786,26 @@
       "fx": "rain",
       "beats": [
         {
-          "text": "A Friday night out with the new girl from Computer Services; the rest of her life laid out: wedding, children, Croydon. Not a bad life. On Windmill Street, the black feather in her pocket.",
+          "text": "A Friday night out with the new girl from Computer Services; Aurie sees the rest of her life laid out: wedding, children, Croydon. Not a bad life.",
           "still": "nw-22.3-feather",
           "cast": [
             "aurie",
             "compgirl"
+          ]
+        },
+        {
+          "text": "A Friday in the pub, then Gary finds her outside; in a greasy spoon she tells him everything. The people who fall through the cracks freeze in doorways on the Strand, he says.",
+          "still": "nw-22.4-cafe",
+          "cast": [
+            "aurie",
+            "gary"
+          ]
+        },
+        {
+          "text": "On Windmill Street, the black feather in her pocket.",
+          "still": "nw-22.3-feather",
+          "cast": [
+            "aurie"
           ]
         }
       ],
@@ -5369,7 +5827,7 @@
           "next": "22.4"
         }
       ],
-      "source": "story map 8.9"
+      "source": "story map 8.9 · novel ch. 20, pp. 267 to 273"
     },
     "22.4": {
       "id": "22.4",
@@ -5378,11 +5836,17 @@
       "fx": "rain",
       "beats": [
         {
-          "text": "Gary finds her outside; in a greasy spoon Aurie tells him everything. The people who fall through the cracks freeze in doorways on the Strand; get used to it.",
-          "still": "nw-22.4-cafe",
+          "text": "Gary puts her in a taxi: this is reality; get used to it. She gets out at the next corner.",
+          "still": "nw-22.4-taxi",
           "cast": [
             "aurie",
             "gary"
+          ]
+        },
+        {
+          "text": "When she walks back, the feather is gone from the gutter.",
+          "unless": [
+            "KEPT_FEATHER"
           ]
         },
         {
@@ -5408,7 +5872,20 @@
           ]
         },
         {
-          "text": "If this is all there is, she doesn't want to be sane. A brick wall off Brewer Street.",
+          "text": "If this is all there is, she doesn't want to be sane. She draws Hunter's knife at a brick wall off Brewer Street.",
+          "still": "nw-22.4-wall",
+          "cast": [
+            "aurie"
+          ],
+          "if": [
+            "KNIFE"
+          ]
+        },
+        {
+          "text": "If this is all there is, she doesn't want to be sane. A brick wall off Brewer Street, and nothing in her hands.",
+          "unless": [
+            "KNIFE"
+          ],
           "still": "nw-22.4-wall",
           "cast": [
             "aurie"
@@ -5422,7 +5899,7 @@
           "Gary believes she has been ill; he is kind about it.",
           "Nothing he says changes the exits, which are taken alone at the wall."
         ],
-        "opening": "So. London Below. Rat-speakers. An angel. You do know how that sounds, right?",
+        "opening": "So. London Below. Rat-speakers. An angel. You do know how that sounds, right? Get in the taxi, Aurie.",
         "exits": {
           "22.4.A": "Aurie cuts a door in the brick with Hunter's knife and hammers on it.",
           "22.4.B": "Aurie takes the next taxi home."
@@ -5503,7 +5980,7 @@
           "next": "23.4"
         }
       ],
-      "source": "story map 8.9b"
+      "source": "story map 8.9b · novel ch. 20, pp. 267 to 273"
     },
     "23.1": {
       "id": "23.1",
@@ -5574,9 +6051,10 @@
         },
         {
           "text": "They walk through, leaving not even the doorway.",
-          "clip": "nw-23.1-through-v",
+          "clip": "nw-23.2-through-v",
           "cast": [
             "aurie",
+            "door",
             "marquis"
           ]
         }
@@ -5640,11 +6118,17 @@
           ]
         },
         {
-          "text": "The penthouse; the cases unpacked at last, the girl from Computer Services helping; the knife in a drawer.",
+          "text": "The penthouse; the cases unpacked at last, the girl from Computer Services helping.",
           "clip": "nw-23.4-penthouse-v",
           "cast": [
             "aurie",
             "compgirl"
+          ]
+        },
+        {
+          "text": "The knife in a drawer.",
+          "if": [
+            "KNIFE"
           ]
         },
         {
