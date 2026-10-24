@@ -97,7 +97,7 @@ video.film { background: transparent; }
 /* Top notes: her thought, then any ripple under it, in one column (never two layers on top of each other) */
 .topnotes {
   position: absolute;
-  top: 10%;
+  top: max(10%, calc(2.5% + env(safe-area-inset-top) + 50px)); /* below the top-right buttons */
   left: 50%;
   transform: translateX(-50%);
   width: min(70ch, 72vw);
@@ -344,7 +344,6 @@ button.ghost { border-color: transparent; color: var(--dim); }
   button { padding: 0.45rem 0.8rem; }
   .options { gap: 0.3rem; max-height: 34dvh; }
   .options button { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-  .topnotes { top: 6%; }
   .inner { font-size: 0.95rem; }
   .epcard { font-size: 1rem; letter-spacing: 0.2em; }
   .hook { font-size: 1.1rem; }
@@ -382,7 +381,7 @@ button.ghost { border-color: transparent; color: var(--dim); }
 .curtain.on { opacity: 1; transition: opacity 0.7s ease; }
 @media (prefers-reduced-motion: reduce) { .curtain, .curtain.on { transition-duration: 0.3s; } }
 @media (max-height: 520px) {
-  .topnotes { top: 3%; width: 60vw; }
+  .topnotes { width: 64vw; }
   .inner { font-size: 0.9rem; max-width: 60vw; }
   .transcript p { font-size: 0.92rem; }
   .transcript .aside { font-size: 0.85rem; }

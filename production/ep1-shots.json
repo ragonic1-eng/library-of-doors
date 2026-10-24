@@ -1981,6 +1981,42 @@
       "motion": "Eurydice slowly fades into pale mist like breath on a mirror and is drawn back down into the dark; Orphea reaches out and grasps empty air, her face crumpling. Slow motion."
     },
     {
+      "id": "6.2o-e",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "A long, narrow stone stairway cut into black rock, climbing out of the Greek underworld toward a faint grey light far above. Seen from behind and below: Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, a lyre slung on her back, climbs alone, one hand on the cold wall. Behind her the stairway falls away into total darkness: nobody can be seen following. Silence, loneliness, the faint light ahead. Classical Greek costume, never explicit."
+      },
+      "motion": "Orphea keeps climbing steadily up the stairs away from the camera, never turning her head; dust drifts in the faint light from above; the darkness behind her stays empty and still. Slow, locked-off camera."
+    },
+    {
+      "id": "6.2o-f",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "Medium shot on the dark stone stairway out of the underworld, faint grey light from above on one side of her face: Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, a lyre slung on her back, has stopped climbing. Her eyes are closed and her head is tilted, listening hard behind her, her hand tight on the lyre strap, fear and doubt in her face. Deep shadow all around. Classical Greek costume, never explicit."
+      },
+      "motion": "Orphea stays still with her eyes closed, listening; her breathing quickens; her fingers tighten on the lyre strap; she does not turn her head. Locked-off camera, no push-in."
+    },
+    {
+      "id": "6.2o-g",
+      "model": "video",
+      "seconds": 5,
+      "keyframe": {
+        "refs": [
+          "characters/orpheus/sheet.png"
+        ],
+        "prompt": "Wide shot at the mouth of a cave on a Greek hillside, seen from the side: Orphea, the beautiful young woman from the character sheet with very long black waves, a gold laurel circlet and a short sheer white chiton pinned at one shoulder, a lyre slung on her back, stands in the first warm daylight just outside the cave, her back to it. One step behind her, still inside the cave's shadow, Eurydice, a petite young East Asian woman with a glossy black bob, a gold headband and a short saffron-yellow chiton, barefoot, pale and faintly translucent like a ghost, reaches a hand toward Orphea's shoulder, almost touching. The line between sunlight and shadow falls exactly between them. Classical Greek costume, never explicit."
+      },
+      "motion": "Eurydice takes one slow step forward in the shadow, reaching for Orphea; Orphea, in the sunlight, begins to turn her head back toward the cave. The camera holds still."
+    },
+    {
       "id": "6.2o-d",
       "model": "video",
       "seconds": 5,
