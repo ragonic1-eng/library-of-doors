@@ -726,43 +726,49 @@
       "name": "Under London: the old tunnels",
       "look": "Under London: old stone and brick service tunnels, damp walls, puddles on the floor, a low burrow cut into a side wall, one lamp far off, and a blind end of plain brick.",
       "scale": "Tunnels about 2.5 m high and 2 m wide, a tall man's head close to the roof; the burrow about 1 m high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-tunnels/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-tunnels/candidates/nw-place-tunnels-v1.png"
     },
     "office": {
       "name": "Aurie's office off the Strand",
       "look": "Aurie's open-plan office off the Strand on a Friday evening: rows of desks with grey monitors and in-trays, strip lights, windows onto wet London streets at dusk.",
       "scale": "Desks waist-high; the ceiling about 2.8 m; the windows about 2 m tall.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-office/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-office/candidates/nw-place-office-v1.jpg"
     },
     "ladder-tower": {
       "name": "The ladder up the tower",
       "look": "The outside of a stone tower a thousand feet above London in daylight: a rusted iron ladder bolted to the sheer wall, the whole city spread far below, wind.",
       "scale": "Rungs about 30 cm apart, the ladder about 50 cm wide: one person fills it; the city below is tiny.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-ladder-tower/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-ladder-tower/candidates/nw-place-ladder-tower-v1.png"
     },
     "rooftops": {
       "name": "Old Bailey's rooftops",
       "look": "Old Bailey's rooftops: slate roofs and chimney stacks of old London at dusk, a tent of tarpaulin and rope, a small fire with a cooking pot, starlings and pigeons.",
       "scale": "Chimney stacks about 2 m above the roof; the tent about 2 m high; the pot knee-high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-rooftops/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-rooftops/candidates/nw-place-rooftops-v1.png"
     },
     "flat-living": {
       "name": "Aurie's flat: living room and kitchen",
       "look": "Aurie's small rented flat, the living room and kitchenette: a sofa, a television with shelves of videotapes, a window over a London street with red buses, a little kitchenette with a sink and a kettle.",
       "scale": "The ceiling about 2.5 m; the sink waist-high; the window about 1.5 m tall.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-flat-living/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-flat-living/candidates/nw-place-flat-living-v1.png"
     },
     "flat-bathroom": {
       "name": "Aurie's flat: the bathroom",
       "look": "Aurie's small bathroom: white tiles, a bathtub with a shower curtain pushed back, a sink and a mirror, spotlessly empty.",
       "scale": "The bath about 1.7 m long and knee-high; the sink waist-high.",
-      "plate": null,
-      "approved": false
+      "plate": "assets/plates/nw-flat-bathroom/plate.png",
+      "approved": true,
+      "approvedFrom": "assets/plates/nw-flat-bathroom/candidates/nw-place-flat-bathroom-v1.png"
     },
     "penthouse": {
       "name": "The penthouse",

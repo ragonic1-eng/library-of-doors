@@ -34,23 +34,6 @@
       "place": "library",
       "scale": "Scale: People and creatures: Aurie 1.65 m. Shelves about 5 m tall; each door an ordinary 2.1 m door; the reading table waist-high. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     },
-    "nw-0.3-umbrella-v": {
-      "kind": "clip",
-      "scene": "0.3",
-      "cast": [
-        "aurie",
-        "oldwoman"
-      ],
-      "location": "A narrow street in a small Scottish town at night, outside a pub with glowing windows; pelting rain, wet cobbles.",
-      "keyframe": "Medium shot in the rain: Aurie in her leaving party clothes (black going-out top, black jeans, black coat, rain in her long dark hair) holds out a white umbrella printed with the London Underground map, just clicked open, every line a different colour, to the old woman with the umbrella: tiny, very old, sharp eyes, wool hat, layers of coats and shawls. Pub light behind them.",
-      "motion": "The old woman takes the umbrella and smiles her thanks; a gust tugs at it; she wraps her arms round it, bends almost double against the wind and wobbles off down the street, a round white shape covered in Tube station names, shrinking into the night. Aurie stays where she is in the rain, calm.",
-      "seconds": 8,
-      "source": "novel prologue lines 95-112",
-      "why": "The good deed that comes back at the very end (22.4): the umbrella has to be seen whole and white here.",
-      "audited": true,
-      "place": "scottish-street",
-      "scale": "Scale: People and creatures: Aurie 1.65 m; the old woman with the umbrella 1.45 m, about one head shorter than Aurie. The pub door is about 2 m high; the umbrella opens about 1 m across. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
-    },
     "nw-1.2-fall-v": {
       "kind": "clip",
       "scene": "1.2",
@@ -972,7 +955,7 @@
         "door"
       ],
       "place": "flat-living",
-      "keyframe": "Morning in the kitchenette: Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) stands at the window staring down at a red bus; Aurie in her rumpled suit (black trouser suit, white shirt, no coat) winds a bandage round Door's forearm at the sink.",
+      "keyframe": "Morning in the kitchenette: Aurie and Door stand side by side at the kitchenette sink by the window, close together: Aurie in her rumpled suit (black trouser suit, white shirt, no coat) winds a white bandage round Door's outstretched forearm, while Door (filthy, blood-stained and tangled: layers of filthy velvet and lace under the enormous brown leather flying jacket, short choppy near-black hair matted) stares past her out of the window at a red bus below.",
       "source": "novel ch. 2 lines 790-840",
       "why": "",
       "audited": false,
@@ -1199,6 +1182,21 @@
       "made": "the ¥15 video test (owner: looks great)",
       "location": "The island of Westminster at dawn: long grass white with melting frost, a small hill, the Thames beyond, wheeling gulls.",
       "scale": "Scale: People and creatures: Door 1.52 m. The grass is knee-high; the hill a gentle slope about 15 m long, so a person at the top is still clearly readable. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
+    },
+    "nw-0.3-umbrella": {
+      "kind": "still",
+      "scene": "0.3",
+      "cast": [
+        "aurie",
+        "oldwoman"
+      ],
+      "place": "scottish-street",
+      "keyframe": "Medium shot in the rain: Aurie in her leaving party clothes (black going-out top, black jeans, black coat, rain in her long dark hair) holds out a white umbrella printed with the London Underground map, just clicked open, every line a different colour, to the old woman with the umbrella: tiny, very old, sharp eyes, wool hat, layers of coats and shawls. Pub light behind them.",
+      "source": "novel prologue lines 95-112",
+      "why": "Owner dropped the clip (2026-10-24: Aurie's face drifted); rule 7: the beat keeps a still, made from the clip's approved first frame.",
+      "audited": true,
+      "location": "A narrow street in a small Scottish town at night, outside a pub with glowing windows; pelting rain, wet cobbles.",
+      "scale": "Scale: People and creatures: Aurie 1.65 m; the old woman with the umbrella 1.45 m, about one head shorter than Aurie. The pub door is about 2 m high; the umbrella opens about 1 m across. Every person at true adult proportions (head about one-eighth of height); camera at adult eye level unless the shot says otherwise."
     }
   }
 }
